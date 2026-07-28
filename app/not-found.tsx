@@ -14,8 +14,8 @@ export default function NotFound() {
         <p className="text-6xl font-extrabold text-brand-200">404</p>
         <h1 className="mt-4 text-2xl font-extrabold sm:text-3xl">ไม่พบหน้าที่คุณค้นหา</h1>
         <p className="lead mt-4">
-          หน้านี้อาจถูกย้ายหรือลบไปแล้ว ลองเลือกจากบริการด้านล่าง
-          หรือโทรหาเราโดยตรงได้เลยครับ
+          หน้านี้อาจถูกย้ายหรือลบไปแล้วครับ ลองเลือกจากรายการด้านล่าง
+          หรือโทรหาผมโดยตรงก็ได้
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

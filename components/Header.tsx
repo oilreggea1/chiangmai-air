@@ -12,7 +12,7 @@ const desktopNav = [
   { href: "/pm25", label: "สู้ฝุ่น PM2.5" },
   { href: "/blog", label: "ความรู้" },
   { href: "/area", label: "พื้นที่บริการ" },
-  { href: "/about", label: "เกี่ยวกับเรา" },
+  { href: "/about", label: "รู้จักช่างอาร์ม" },
   { href: "/contact", label: "ติดต่อ" },
 ];
 
@@ -26,7 +26,7 @@ const mobileNav = [
   { href: "/blog", label: "คลังความรู้" },
   { href: "/area", label: "พื้นที่บริการ" },
   { href: "/portfolio", label: "ผลงาน" },
-  { href: "/about", label: "เกี่ยวกับเรา" },
+  { href: "/about", label: "รู้จักช่างอาร์ม" },
   { href: "/contact", label: "ติดต่อ" },
   { href: "/en", label: "English" },
 ];

@@ -59,13 +59,13 @@ export default function BlogIndex() {
       <div className="bg-gradient-to-b from-brand-50 to-white">
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-3xl pt-8 pb-14 text-center">
-          <p className="eyebrow">เขียนโดยช่างที่ลงหน้างานจริง</p>
+          <p className="eyebrow">ผมเขียนเองจากหน้างานจริง</p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
             คลังความรู้เรื่องแอร์ ฉบับช่างเชียงใหม่
           </h1>
           <p className="lead mt-5">
-            เราเขียนจากสิ่งที่เจอหน้างานจริงในเชียงใหม่ ไม่ใช่บทความคัดลอกทั่วไป
-            อ่านให้จบก่อนเรียกช่าง บางเรื่องคุณแก้เองได้และไม่ต้องเสียเงิน
+            ผมเขียนจากสิ่งที่เจอหน้างานจริง ไม่ได้คัดลอกใครมาครับ
+            อ่านให้จบก่อนเรียกช่างก็ดี บางเรื่องคุณแก้เองได้และไม่ต้องเสียเงินเลย
           </p>
         </section>
       </div>
@@ -92,7 +92,7 @@ export default function BlogIndex() {
           <div className="rounded-2xl bg-gradient-to-br from-brand-700 to-brand-500 p-6 text-white">
             <p className="text-sm font-semibold text-brand-100">บทความที่คนเชียงใหม่ควรอ่านที่สุด</p>
             <p className="mt-2 text-[15px] leading-8">
-              ไม่มีเว็บช่างแอร์เจ้าไหนในเชียงใหม่พูดเรื่องนี้ ทั้งที่เราเจอหน้าเผาทุกปี
+              ยังไม่เห็นช่างแอร์เจ้าไหนในเชียงใหม่พูดเรื่องนี้ ทั้งที่เราเจอหน้าเผากันทุกปี
             </p>
             <p className="mt-4 inline-flex items-center gap-2 text-sm text-brand-100">
               <IconClock className="h-4 w-4" />
@@ -139,7 +139,7 @@ export default function BlogIndex() {
 
       <CtaBand
         title="อ่านแล้วยังไม่แน่ใจ?"
-        subtitle="ทักมาเล่าอาการให้ฟัง เราบอกตรง ๆ ว่าต้องเรียกช่างหรือแก้เองได้ ไม่มีค่าใช้จ่ายในการปรึกษา"
+        subtitle="ทักมาเล่าอาการให้ผมฟัง ผมบอกตรง ๆ ว่าต้องเรียกช่างหรือคุณทำเองได้ ถามฟรีไม่คิดเงิน"
       />
     </>
   );

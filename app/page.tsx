@@ -30,7 +30,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              ตั้งอยู่ ต.ต้นเปา สันกำแพง · เข้างานไวที่สุดในโซน
+              ผมอยู่ ต.ต้นเปา สันกำแพง · วิ่งถึงงานในโซนนี้เร็วที่สุด
             </p>
 
             <h1 className="mt-5 text-[2rem] leading-[1.25] font-extrabold sm:text-[2.6rem] lg:text-[3.1rem]">
@@ -39,8 +39,9 @@ export default function Home() {
             </h1>
 
             <p className="lead mt-5 max-w-xl">
-              ล้างสะอาด ซ่อมไว จริงใจ ไม่ทิ้งงาน — เราแจ้งราคาชัดเจนก่อนเริ่มงานทุกครั้ง
-              ไม่ยัดเยียดเติมน้ำยาถ้าไม่ขาดจริง และเข้าหน้างานได้ภายใน 24 ชั่วโมง
+              ผมชื่อช่างอาร์มครับ ล้างแอร์ ซ่อมแอร์ ติดตั้ง และย้ายแอร์ในเชียงใหม่
+              ผมบอกราคาให้ครบก่อนลงมือทุกครั้ง น้ำยาไม่ขาดผมก็ไม่เติม
+              และถ้าซ่อมแล้วไม่คุ้ม ผมจะบอกคุณตรง ๆ ว่าไม่คุ้ม
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -92,8 +93,8 @@ export default function Home() {
                 <IconShield className="h-6 w-6" />
               </span>
               <span className="text-sm leading-tight">
-                <strong className="block text-ink">แจ้งราคาก่อนเริ่มงาน</strong>
-                <span className="text-ink-soft">ไม่มีบวกเพิ่มทีหลัง</span>
+                <strong className="block text-ink">บอกราคาก่อนลงมือ</strong>
+                <span className="text-ink-soft">ไม่บวกเพิ่มทีหลัง</span>
               </span>
             </div>
           </div>
@@ -104,11 +105,11 @@ export default function Home() {
       <section className="section" id="services">
         <div className="wrap">
           <div className="max-w-2xl">
-            <p className="eyebrow">บริการของเรา</p>
-            <h2 className="h2 mt-4">ครบทุกงานแอร์ จบที่ทีมเดียว</h2>
+            <p className="eyebrow">ผมรับงานอะไรบ้าง</p>
+            <h2 className="h2 mt-4">ครบทุกงานแอร์ จบที่ผมที่เดียว</h2>
             <p className="lead mt-3">
               ตั้งแต่ล้างประจำปี ซ่อมอาการเสีย ติดตั้งเครื่องใหม่ ไปจนถึงย้ายแอร์ตอนย้ายบ้าน
-              เลือกดูรายละเอียดและราคาของแต่ละบริการได้เลย
+              กดเข้าไปดูได้เลยครับ ผมลงราคาไว้ให้ดูก่อนตัดสินใจโทร
             </p>
           </div>
 
@@ -141,8 +142,8 @@ export default function Home() {
       <section className="section bg-sand">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">ทำไมต้องเรา</p>
-            <h2 className="h2 mt-4">คุณค่าที่เรามอบให้ แตกต่างยังไง?</h2>
+            <p className="eyebrow">วิธีทำงานของผม</p>
+            <h2 className="h2 mt-4">ผมทำงานยังไง</h2>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => {
@@ -161,7 +162,7 @@ export default function Home() {
 
           <div className="mt-12">
             <h3 className="text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">
-              ยี่ห้อที่เราเชี่ยวชาญและใช้อะไหล่แท้
+              ยี่ห้อที่ผมรับงานและใช้อะไหล่แท้
             </h3>
             <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
               {brands.map((b) => (
@@ -194,7 +195,7 @@ export default function Home() {
               </h2>
               <p className="mt-3 text-[15px] leading-8 text-ink-soft">
                 แผ่นกรองที่ติดมากับแอร์กรอง PM2.5 ไม่ได้ แต่แอร์ยังจำเป็นเพราะทำให้คุณปิดห้องได้
-                เราสรุปให้ครบว่าควรล้างตอนไหน ล้างแบบไหน และทำห้องปลอดฝุ่นยังไงให้ได้ผลจริง
+                ผมสรุปให้ครบว่าควรล้างตอนไหน ล้างแบบไหน และทำห้องปลอดฝุ่นยังไงให้ได้ผลจริง
               </p>
               <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700">
                 อ่านคู่มือสู้ฝุ่นฉบับเต็ม
@@ -220,7 +221,7 @@ export default function Home() {
         <div className="wrap">
           <div className="max-w-2xl">
             <p className="eyebrow">เทียบแล้วต่างตรงไหน</p>
-            <h2 className="h2 mt-4">4 เรื่องที่ร้านแอร์ทั่วไปในเชียงใหม่ไม่ค่อยทำ</h2>
+            <h2 className="h2 mt-4">4 เรื่องที่ผมทำต่างจากร้านทั่วไป</h2>
           </div>
           <div className="mt-9 grid gap-5 sm:grid-cols-2">
             {edges.map((e) => {
@@ -251,11 +252,11 @@ export default function Home() {
       <section className="section" id="compare">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">จุดที่เราต่างจากร้านอื่น</p>
+            <p className="eyebrow">จุดที่ผมต่างจากร้านอื่น</p>
             <h2 className="h2 mt-4">เปรียบเทียบ ล้างธรรมดา vs Premium Full Wash</h2>
             <p className="lead mt-3">
-              Premium Full Wash คือการถอดชิ้นส่วนออกมาล้างแยก 100%
-              จุดที่ล้างธรรมดาเข้าไม่ถึงคือใบพัดกรงกระรอก ซึ่งเป็นแหล่งสะสมเชื้อราและต้นเหตุของกลิ่นอับ
+              จุดที่ล้างธรรมดาเข้าไม่ถึงคือใบพัดกรงกระรอก ซึ่งเป็นที่สะสมเชื้อรามากที่สุดและเป็นต้นเหตุของกลิ่นอับ
+              ถ้าแอร์คุณยังไม่มีกลิ่น ผมบอกเลยว่าล้างธรรมดาก็พอครับ
             </p>
           </div>
 
@@ -308,7 +309,7 @@ export default function Home() {
             <p className="eyebrow">ราคาโปร่งใส</p>
             <h2 className="h2 mt-4">อัตราค่าบริการยอดนิยม</h2>
             <p className="lead mt-3">
-              ราคาที่เห็นคือราคาที่จ่ายจริง หากหน้างานมีค่าใช้จ่ายเพิ่ม เราแจ้งให้ทราบก่อนลงมือเสมอ
+              ราคาที่เห็นคือราคาที่จ่ายจริงครับ ถ้าหน้างานมีค่าใช้จ่ายเพิ่ม ผมหยุดถามคุณก่อนเสมอ
             </p>
           </div>
 
@@ -375,10 +376,10 @@ export default function Home() {
               <IconPin className="h-4 w-4" />
               พื้นที่ให้บริการ
             </p>
-            <h2 className="h2 mt-4">เราวิ่งงานทั่วเชียงใหม่ เข้าถึงไว</h2>
+            <h2 className="h2 mt-4">ผมวิ่งงานทั่วเชียงใหม่</h2>
             <p className="lead mt-3">
-              ร้านเราตั้งอยู่ ต.ต้นเปา อ.สันกำแพง จึงเข้างานโซนสันกำแพงและบ่อสร้างได้เร็วที่สุด
-              และครอบคลุมอำเภอเมืองเชียงใหม่ หางดง สารภี สันทราย
+              ผมอยู่ ต.ต้นเปา อ.สันกำแพง เลยวิ่งถึงงานโซนสันกำแพงกับบ่อสร้างได้ไวที่สุด
+              และรับงานอำเภอเมืองเชียงใหม่ หางดง สารภี สันทราย ด้วยครับ
             </p>
           </div>
 
@@ -423,9 +424,9 @@ export default function Home() {
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">ผลงานจริง</p>
-            <h2 className="h2 mt-4">ภาพผลงานของพวกเรา</h2>
+            <h2 className="h2 mt-4">ผลงานที่ผมทำมา</h2>
             <p className="lead mt-3">
-              การันตีคุณภาพงานด้วยภาพหน้างานจริง ทั้งล้างแอร์ ซ่อมแอร์ ติดตั้ง และย้ายแอร์
+              ทุกรูปถ่ายจากหน้างานจริงครับ ไม่ใช่ภาพสต็อก คุณจะเห็นทั้งการปูผ้าใบและสภาพชิ้นส่วนตอนถอดออกมา
             </p>
           </div>
 
@@ -462,18 +463,16 @@ export default function Home() {
             <p>
               หากคุณกำลังมองหา <strong className="text-ink">ช่างแอร์สันกำแพง</strong> ที่ตั้งอยู่ในพื้นที่จริง{" "}
               <strong className="text-ink">โปรเฟรชแคร์ (Pro Fresh Care)</strong>{" "}
-              พร้อมให้บริการคุณอย่างรวดเร็ว เนื่องจากร้านของเราตั้งอยู่ในเขต ต.ต้นเปา
-              ทำให้เราเข้าหน้างานในโซนสันกำแพง บ่อสร้าง และหมู่บ้านซีรีนพาร์คได้ทันที
-              ไม่ต้องรอช่างวิ่งข้ามเมืองมาเหมือนร้านที่อยู่ไกล
+              คือผมเองครับ ผมอยู่ในเขต ต.ต้นเปา เลยวิ่งถึงงานโซนสันกำแพง บ่อสร้าง
+              และหมู่บ้านซีรีนพาร์คได้เร็ว คุณไม่ต้องรอช่างขับข้ามเมืองมาเหมือนร้านที่อยู่ไกล
             </p>
             <p>
-              เราเชี่ยวชาญด้านบริการ <strong className="text-ink">Premium Full Wash 2,000 บาท</strong>{" "}
-              ซึ่งเป็นการล้างที่ละเอียดที่สุดในเชียงใหม่ ด้วยการถอดชิ้นส่วนทุกชิ้นออกมาล้างแยก
-              รวมถึงใบพัดกรงกระรอกที่เป็นจุดสะสมเชื้อรามากที่สุดและเป็นต้นเหตุของกลิ่นอับในห้อง
-              ซึ่งการล้างแบบฉีดผ่านทั่วไปเข้าไม่ถึง
+              งานที่ผมถนัดที่สุดคือ <strong className="text-ink">Premium Full Wash 2,000 บาท</strong>{" "}
+              คือถอดชิ้นส่วนออกมาล้างแยกทีละชิ้น รวมถึงใบพัดกรงกระรอกที่เป็นจุดสะสมเชื้อรามากที่สุด
+              และเป็นต้นเหตุของกลิ่นอับ ซึ่งการฉีดล้างผ่าน ๆ เข้าไม่ถึงจุดนั้น
             </p>
             <p>
-              นอกจากนี้เรายังรองรับงาน{" "}
+              นอกจากโซนนี้ ผมยังวิ่งงาน{" "}
               <Link href="/area/mueang-chiang-mai" className="font-semibold text-brand-700 hover:underline">
                 ล้างแอร์อำเภอเมืองเชียงใหม่
               </Link>{" "}
@@ -481,13 +480,12 @@ export default function Home() {
               <Link href="/area/nimman" className="font-semibold text-brand-700 hover:underline">
                 คอนโดย่านนิมมาน
               </Link>{" "}
-              ด้วยมาตรฐานความซื่อสัตย์ ไม่หลอกเติมน้ำยา และราคายุติธรรมที่สุดในพื้นที่
+              ราคาเดียวกันหมด ไม่มีบวกค่าเดินทาง
             </p>
             <p>
-              ทุกงานที่เราทำจะแจ้งราคาให้ทราบก่อนลงมือเสมอ ไม่มีการบวกเพิ่มทีหลัง
-              หากตรวจแล้วพบว่าไม่จำเป็นต้องซ่อมหรือไม่ต้องเติมน้ำยา เราจะบอกตรง ๆ
-              เพราะเราเชื่อว่าลูกค้าที่ไว้ใจจะกลับมาใช้บริการซ้ำและบอกต่อ
-              ซึ่งคุ้มกว่าการหลอกขายของครั้งเดียว
+              ทุกงานผมบอกราคาก่อนลงมือเสมอ ไม่บวกเพิ่มทีหลัง
+              ถ้าตรวจแล้วไม่จำเป็นต้องซ่อมหรือไม่ต้องเติมน้ำยา ผมก็บอกคุณตรง ๆ
+              เพราะลูกค้าที่ไว้ใจแล้วเรียกซ้ำและบอกต่อ มันคุ้มกว่าการฟันครั้งเดียวเยอะครับ
             </p>
           </div>
 
@@ -515,8 +513,8 @@ export default function Home() {
             <p className="eyebrow">คลังความรู้</p>
             <h2 className="h2 mt-4">อ่านก่อนเรียกช่าง บางเรื่องคุณแก้เองได้</h2>
             <p className="lead mt-3">
-              เราเขียนจากสิ่งที่เจอหน้างานจริงในเชียงใหม่ ไม่ใช่บทความคัดลอกทั่วไป
-              และบอกตรง ๆ ว่าอาการไหนคุณเช็คเองได้โดยไม่ต้องเสียเงิน
+              ผมเขียนจากสิ่งที่เจอหน้างานจริง ไม่ได้คัดลอกใครมา
+              และผมบอกตรง ๆ ว่าอาการไหนคุณทำเองได้ ไม่ต้องเรียกผมก็ได้ครับ
             </p>
           </div>
           <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -16,8 +16,8 @@ export default function Footer() {
             <span className="text-base font-extrabold">ช่างแอร์เชียงใหม่</span>
           </div>
           <p className="mt-4 text-sm leading-7 text-ink-soft">
-            {site.legalName} — ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ และย้ายแอร์ถึงบ้านทั่วเชียงใหม่
-            แจ้งราคาชัดเจนก่อนเริ่มงาน รับประกันผลงานทุกครั้ง
+            ผมชื่อช่างอาร์ม รับล้างแอร์ ซ่อมแอร์ ติดตั้ง และย้ายแอร์ถึงบ้านทั่วเชียงใหม่
+            บอกราคาก่อนลงมือทุกครั้ง และรับประกันผลงานให้
           </p>
           <a
             href={site.facebook}
@@ -25,12 +25,12 @@ export default function Footer() {
             rel="noopener"
             className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
           >
-            ติดตามผลงานบน Facebook →
+            ดูผลงานผมบน Facebook →
           </a>
         </div>
 
         <div>
-          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">บริการของเรา</h2>
+          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">งานที่ผมรับ</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
@@ -70,7 +70,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/about" className="text-ink-soft hover:text-brand-700 hover:underline">
-                เกี่ยวกับเรา
+                รู้จักช่างอาร์ม
               </Link>
             </li>
             <li>
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">ติดต่อเรา</h2>
+          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">ติดต่อผม</h2>
           <ul className="mt-4 space-y-4 text-sm">
             <li>
               <a href={`tel:${site.phoneTel}`} className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">

@@ -4,8 +4,8 @@ import { IconPhone, IconLine, IconChevron, IconStar, IconCheck } from "./Icons";
 
 /** แถบ CTA ปิดท้ายทุกหน้า */
 export function CtaBand({
-  title = "ต้องการช่างแอร์ด่วนในเชียงใหม่?",
-  subtitle = "ทักมาปรึกษาได้ฟรี ไม่มีค่าใช้จ่าย เราแจ้งราคาชัดเจนก่อนเริ่มงานเสมอ",
+  title = "แอร์มีปัญหาอยู่ตอนนี้ใช่ไหมครับ",
+  subtitle = "ทักมาเล่าอาการให้ผมฟังก่อนได้ ไม่คิดเงินค่าปรึกษา และผมบอกราคาให้ครบก่อนลงมือเสมอ",
 }: {
   title?: string;
   subtitle?: string;
@@ -42,7 +42,7 @@ export function CtaBand({
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">
-              เปิดบริการทุกวัน {site.hours} · เข้าหน้างานภายใน 24 ชม.
+              ผมรับงานทุกวัน {site.hours} · เข้าหน้างานได้ภายใน 24 ชม.
             </p>
           </div>
         </div>

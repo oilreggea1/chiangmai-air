@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="section">
         <div className="wrap grid gap-12 lg:grid-cols-2">
           <div>
-            <h2 className="h2">บริการนี้ได้อะไรบ้าง</h2>
+            <h2 className="h2">ผมทำอะไรให้บ้าง</h2>
             <div className="mt-6">
               <CheckList items={s.bullets} />
             </div>
@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="card bg-sand p-6 sm:p-8">
             <h2 className="text-xl font-bold">ราคา{s.name}เชียงใหม่</h2>
             <p className="mt-2 text-sm text-ink-soft">
-              ราคานี้คือราคาจริงที่จ่าย ไม่มีค่าเดินทางเพิ่มในเขตที่เราให้บริการ
+              ราคานี้คือราคาที่จ่ายจริงครับ ไม่มีค่าเดินทางเพิ่มในเขตที่ผมวิ่งงาน
             </p>
             <p className="mt-6 flex items-baseline gap-2">
               <span className="text-5xl font-extrabold text-brand-700">
@@ -122,9 +122,9 @@ export default async function ServicePage({ params }: Props) {
       {/* ขั้นตอน */}
       <section className="section bg-sand">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">ขั้นตอนการทำงานของเรา</h2>
+          <h2 className="h2">ผมทำงานยังไง ทีละขั้น</h2>
           <p className="lead mt-3">
-            เราทำงานตามขั้นตอนเดิมทุกงาน ไม่ลัดขั้นตอน เพื่อให้ผลงานออกมาเหมือนกันทุกครั้ง
+            ผมทำตามขั้นตอนเดิมทุกงานครับ ไม่ลัด แม้ขั้นที่ลูกค้ามองไม่เห็นก็ตาม
           </p>
           <div className="mt-9">
             <Steps steps={s.steps} />
@@ -140,7 +140,7 @@ export default async function ServicePage({ params }: Props) {
             พื้นที่ที่รับงาน{s.name}
           </h2>
           <p className="lead mt-3 max-w-2xl">
-            เรารับงาน{s.name}ครอบคลุมทั่วเชียงใหม่ กดเลือกพื้นที่ของคุณเพื่อดูรายละเอียดและเวลาเข้างาน
+            ผมรับงาน{s.name}ทั่วเชียงใหม่ กดเลือกพื้นที่ของคุณเพื่อดูรายละเอียดและเวลาเข้างานได้เลย
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((a) => (
@@ -165,7 +165,7 @@ export default async function ServicePage({ params }: Props) {
       {/* บริการอื่น */}
       <section className="section">
         <div className="wrap">
-          <h2 className="h2">บริการอื่นที่คุณอาจสนใจ</h2>
+          <h2 className="h2">งานอื่นที่ผมรับ</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-3">
             {others.map((o) => {
               const OIcon = serviceIcons[o.icon as keyof typeof serviceIcons];
@@ -193,7 +193,7 @@ export default async function ServicePage({ params }: Props) {
 
       <CtaBand
         title={`ต้องการช่าง${s.name}ในเชียงใหม่?`}
-        subtitle="ทักมาแจ้งอาการหรือบอกจำนวนเครื่อง เราประเมินราคาให้ฟรีทันที"
+        subtitle="ทักมาเล่าอาการหรือบอกจำนวนเครื่อง ผมประเมินราคาให้ฟรีทันที"
       />
     </>
   );

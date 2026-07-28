@@ -8,9 +8,9 @@ import {
 } from "@/components/Icons";
 import { CtaBand, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
-const title = "เกี่ยวกับโปรเฟรชแคร์ ช่างแอร์เชียงใหม่ ต้นเปา สันกำแพง";
+const title = "รู้จักช่างอาร์ม ช่างแอร์เชียงใหม่ ต้นเปา สันกำแพง";
 const description =
-  "รู้จักโปรเฟรชแคร์ ช่างแอร์เชียงใหม่ ตั้งอยู่ ต.ต้นเปา อ.สันกำแพง ทำงานด้วยหลักแจ้งราคาก่อนเริ่มงาน ไม่ยัดเยียดเติมน้ำยา เปิดทุกวัน 08:00-20:00 น. ออกใบกำกับภาษีได้";
+  "ช่างอาร์ม ช่างแอร์เชียงใหม่ อยู่ ต.ต้นเปา อ.สันกำแพง ทำงานด้วยหลักบอกราคาก่อนลงมือ ไม่เติมน้ำยาถ้าไม่ขาด รับงานทุกวัน 08:00-20:00 น. ออกใบกำกับภาษีได้";
 
 export const metadata: Metadata = {
   title,
@@ -21,39 +21,39 @@ export const metadata: Metadata = {
 
 const trail = [
   { name: "หน้าแรก", path: "/" },
-  { name: "เกี่ยวกับเรา", path: "/about" },
+  { name: "รู้จักช่างอาร์ม", path: "/about" },
 ];
 
 const promises = [
   {
-    title: "แจ้งราคาก่อนลงมือทุกครั้ง",
+    title: "ผมบอกราคาก่อนลงมือทุกครั้ง",
     detail:
-      "ไม่ว่างานเล็กงานใหญ่ เราบอกราคาที่แน่นอนก่อนเริ่มเสมอ ถ้าหน้างานมีค่าใช้จ่ายเพิ่มจากที่คุยไว้ เราหยุดถามก่อน ไม่บวกเพิ่มเงียบ ๆ แล้วมาเรียกเก็บตอนจบ",
+      "งานเล็กงานใหญ่ผมบอกราคาที่แน่นอนก่อนเริ่มเสมอ ถ้าหน้างานมีค่าใช้จ่ายเพิ่มจากที่คุยไว้ ผมหยุดถามคุณก่อน ไม่บวกเงียบ ๆ แล้วมาเรียกเก็บตอนจบ",
   },
   {
-    title: "ไม่เติมน้ำยาถ้าไม่ขาด",
+    title: "น้ำยาไม่ขาด ผมไม่เติม",
     detail:
-      "การเติมน้ำยาเกินความจำเป็นเป็นวิธีทำเงินที่ง่ายที่สุดในวงการนี้ และเป็นสิ่งที่ทำให้แอร์ลูกค้าพังเร็วขึ้น เราวัดให้ดูต่อหน้า ถ้าไม่ขาดเราบอกว่าไม่ต้องเติม",
+      "การเติมน้ำยาเกินความจำเป็นคือวิธีทำเงินที่ง่ายที่สุดในวงการนี้ และเป็นสิ่งที่ทำให้แอร์ลูกค้าพังเร็วขึ้น ผมวัดให้ดูต่อหน้า ถ้าไม่ขาดผมก็บอกว่าไม่ต้องเติม",
   },
   {
-    title: "ให้ดูของเก่าที่ถอดออกมา",
+    title: "ผมให้ดูของเก่าที่ถอดออกมา",
     detail:
-      "ทุกครั้งที่เปลี่ยนอะไหล่ เราเอาของเก่าให้ดูและอธิบายว่ามันเสียยังไง ลูกค้ามีสิทธิ์รู้ว่าจ่ายเงินไปกับอะไร",
+      "ทุกครั้งที่เปลี่ยนอะไหล่ ผมเอาของเก่ามาให้ดูและอธิบายว่ามันเสียยังไง คุณมีสิทธิ์รู้ว่าจ่ายเงินไปกับอะไร",
   },
   {
-    title: "บอกตรง ๆ ถ้าไม่คุ้มที่จะซ่อม",
+    title: "ถ้าซ่อมไม่คุ้ม ผมบอกตรง ๆ",
     detail:
-      "บางเคสค่าซ่อมเกินครึ่งของราคาเครื่องใหม่ เราจะบอกว่าไม่คุ้ม แม้ว่าการรับซ่อมจะทำให้เราได้เงินมากกว่าก็ตาม",
+      "บางเคสค่าซ่อมเกินครึ่งของราคาเครื่องใหม่ ผมจะบอกคุณว่าไม่คุ้ม ทั้งที่การรับซ่อมทำให้ผมได้เงินมากกว่า",
   },
   {
-    title: "ล้างเสร็จบ้านต้องสะอาดเหมือนเดิม",
+    title: "ล้างเสร็จบ้านต้องเหมือนเดิม",
     detail:
-      "ปูผ้าใบกันเลอะคลุมหนา 2 ชั้นก่อนเริ่มงานทุกครั้ง และเก็บกวาดหน้างานให้เรียบร้อยก่อนกลับ ลูกค้าไม่ควรต้องมาตามเช็ดพื้นหลังช่างกลับ",
+      "ผมปูผ้าใบคลุมหนา 2 ชั้นก่อนเริ่มงานทุกครั้ง และเก็บกวาดให้เรียบร้อยก่อนกลับ คุณไม่ควรต้องมาตามเช็ดพื้นหลังช่างกลับ",
   },
   {
-    title: "รับประกันแล้วกลับมาดูจริง",
+    title: "รับประกันแล้วผมกลับมาดูจริง",
     detail:
-      "ถ้าอาการเดิมกลับมาในระยะรับประกัน เรากลับไปดูให้ฟรี ไม่บ่ายเบี่ยง ไม่โยนว่าเป็นคนละอาการ",
+      "ถ้าอาการเดิมกลับมาในระยะรับประกัน ผมกลับไปดูให้ฟรี ไม่บ่ายเบี่ยง ไม่โยนว่าเป็นคนละอาการ",
   },
 ];
 
@@ -82,12 +82,12 @@ export default function AboutPage() {
               {site.address.street} {site.address.district} จ.{site.address.province}
             </p>
             <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
-              ช่างแอร์ที่ตั้งใจให้คุณเรียกซ้ำ ไม่ใช่แค่ครั้งเดียว
+              สวัสดีครับ ผมช่างอาร์ม
             </h1>
             <p className="lead mt-5">
-              โปรเฟรชแคร์ (Pro Fresh Care) เป็นทีมช่างแอร์ที่ตั้งอยู่ใน ต.ต้นเปา อ.สันกำแพง
-              รับงานล้าง ซ่อม ติดตั้ง และย้ายแอร์ทั่วเชียงใหม่
-              เราไม่ได้ตั้งเป้าเป็นร้านที่ใหญ่ที่สุด แต่ตั้งเป้าเป็นร้านที่ลูกค้ากล้าแนะนำต่อให้เพื่อนบ้าน
+              ผมทำงานในชื่อ โปรเฟรชแคร์ (Pro Fresh Care) อยู่ที่ ต.ต้นเปา อ.สันกำแพง
+              รับล้าง ซ่อม ติดตั้ง และย้ายแอร์ทั่วเชียงใหม่
+              ผมไม่ได้อยากเป็นร้านที่ใหญ่ที่สุดในเมืองนี้ครับ ผมแค่อยากเป็นช่างที่คุณกล้าแนะนำต่อให้เพื่อนบ้าน
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={`tel:${site.phoneTel}`} className="btn-call px-6 py-3.5" data-cta="about-call">
@@ -104,7 +104,7 @@ export default function AboutPage() {
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
               src={gallery[3].src}
-              alt={`${site.leadTech} ทีมช่างแอร์เชียงใหม่ โปรเฟรชแคร์ ขณะทำงานหน้างานจริง`}
+              alt={`${site.leadTech} ช่างแอร์เชียงใหม่ โปรเฟรชแคร์ ขณะทำงานที่บ้านลูกค้า`}
               width={900}
               height={1200}
               priority
@@ -118,7 +118,7 @@ export default function AboutPage() {
       {/* ช่างอาร์ม */}
       <section className="section">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">ใครมาทำงานที่บ้านคุณ</h2>
+          <h2 className="h2">ใครจะมาที่บ้านคุณ</h2>
           <div className="card mt-6 p-6 sm:p-8">
             <div className="flex items-start gap-4">
               <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-brand-600 text-white">
@@ -126,19 +126,19 @@ export default function AboutPage() {
               </span>
               <div>
                 <p className="text-lg font-bold">{site.leadTech}</p>
-                <p className="text-sm font-medium text-brand-700">ช่างผู้รับผิดชอบหน้างาน</p>
+                <p className="text-sm font-medium text-brand-700">คนที่จะไปหาคุณเอง</p>
               </div>
             </div>
             <p className="mt-5 text-[15px] leading-8 text-ink-soft">
-              งานส่วนใหญ่ที่คุณเห็นในหน้าผลงานคืองานที่ {site.leadTech} ลงมือทำเอง
-              เราตั้งใจให้ลูกค้ารู้ว่าใครจะเข้ามาในบ้าน ไม่ใช่ส่งใครก็ไม่รู้มาแล้วจบกันไป
+              งานเกือบทั้งหมดที่คุณเห็นในหน้าผลงาน ผมลงมือทำเองครับ
+              ผมอยากให้คุณรู้ตั้งแต่แรกว่าใครจะเข้ามาในบ้าน ไม่ใช่ส่งใครก็ไม่รู้ไปแล้วจบกันไป
               เพราะเวลาคุณต้องเรียกซ้ำหรือเคลมงานในระยะรับประกัน
-              คุณจะได้คุยกับคนเดิมที่รู้ว่าแอร์ตัวนั้นเคยเป็นอะไรมา
+              คุณจะได้คุยกับคนเดิมที่จำได้ว่าแอร์ตัวนั้นเคยเป็นอะไรมา
             </p>
             <p className="mt-4 text-[15px] leading-8 text-ink-soft">
-              ในรีวิวของลูกค้าที่ผ่านมา สิ่งที่ถูกพูดถึงบ่อยที่สุดคือ
-              งานล้างที่สะอาดจริงและห้องไม่เลอะ กับการแจ้งราคาชัดเจนก่อนทำโดยไม่มีการบวกเพิ่ม
-              สองอย่างนี้คือมาตรฐานที่เราตั้งใจรักษาไว้ทุกงาน
+              สองเรื่องที่ลูกค้าพูดถึงบ่อยที่สุดคือ งานล้างที่สะอาดจริงแล้วห้องไม่เลอะ
+              กับการบอกราคาให้ครบก่อนทำโดยไม่บวกเพิ่มทีหลัง
+              สองอย่างนี้แหละครับที่ผมตั้งใจรักษาไว้ทุกงาน ไม่ว่างานนั้นจะเล็กแค่ไหน
             </p>
           </div>
         </div>
@@ -147,9 +147,10 @@ export default function AboutPage() {
       {/* สัญญา 6 ข้อ */}
       <section className="section bg-sand">
         <div className="wrap max-w-4xl">
-          <h2 className="h2">6 ข้อที่เราสัญญากับลูกค้าทุกคน</h2>
+          <h2 className="h2">6 ข้อที่ผมสัญญากับลูกค้าทุกคน</h2>
           <p className="lead mt-3">
-            นี่ไม่ใช่คำโฆษณา แต่เป็นเกณฑ์ที่เราใช้ตัดสินใจหน้างานจริงเวลาเจอทางเลือกที่ทำเงินได้มากกว่า
+            นี่ไม่ใช่คำโฆษณาครับ แต่เป็นเกณฑ์ที่ผมใช้ตัดสินใจจริงตอนอยู่หน้างาน
+            โดยเฉพาะเวลาที่มีทางเลือกซึ่งทำเงินได้มากกว่าวางอยู่ตรงหน้า
           </p>
           <ul className="mt-9 grid gap-5 sm:grid-cols-2">
             {promises.map((p) => (
@@ -168,7 +169,7 @@ export default function AboutPage() {
       {/* จุดต่าง */}
       <section className="section">
         <div className="wrap max-w-4xl">
-          <h2 className="h2">เราต่างจากร้านแอร์ทั่วไปในเชียงใหม่ยังไง</h2>
+          <h2 className="h2">ผมต่างจากร้านแอร์ทั่วไปยังไง</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {edges.map((e) => {
               const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
@@ -189,7 +190,7 @@ export default function AboutPage() {
       {/* ค่านิยม + แบรนด์ */}
       <section className="section bg-sand">
         <div className="wrap">
-          <h2 className="h2 text-center">มาตรฐานการทำงาน</h2>
+          <h2 className="h2 text-center">มาตรฐานที่ผมยึด</h2>
           <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => {
               const Icon = serviceIcons[v.icon as keyof typeof serviceIcons];
@@ -206,7 +207,7 @@ export default function AboutPage() {
           </div>
 
           <h3 className="mt-12 text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">
-            ยี่ห้อที่เราเชี่ยวชาญและใช้อะไหล่แท้
+            ยี่ห้อที่ผมรับงานและใช้อะไหล่แท้
           </h3>
           <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
             {brands.map((b) => (
@@ -224,13 +225,13 @@ export default function AboutPage() {
       {/* ข้อมูลร้าน */}
       <section className="section">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">ข้อมูลร้าน</h2>
+          <h2 className="h2">ข้อมูลติดต่อ</h2>
           <dl className="mt-6 grid gap-5 sm:grid-cols-2">
             {[
               { t: "ที่ตั้ง", d: `${site.address.street} ${site.address.district} จ.${site.address.province} ${site.address.postalCode}`, Icon: IconPin },
-              { t: "เวลาทำการ", d: `เปิดทุกวัน ${site.hours} · เข้าหน้างานภายใน 24 ชม.`, Icon: IconClock },
+              { t: "เวลาทำการ", d: `ผมรับงานทุกวัน ${site.hours} · เข้าหน้างานได้ภายใน 24 ชม.`, Icon: IconClock },
               { t: "ติดต่อ", d: `โทร ${site.phone} · LINE ${site.lineId}`, Icon: IconPhone },
-              { t: "เอกสาร", d: "ออกใบกำกับภาษีได้ รับงานคาเฟ่ ร้านอาหาร โรงแรม หอพัก และออฟฟิศ", Icon: IconCheck },
+              { t: "เอกสาร", d: "ผมออกใบกำกับภาษีให้ได้ รับงานคาเฟ่ ร้านอาหาร โรงแรม หอพัก และออฟฟิศ", Icon: IconCheck },
             ].map((x) => (
               <div key={x.t} className="card flex items-start gap-3 p-5">
                 <x.Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
@@ -255,7 +256,7 @@ export default function AboutPage() {
           </p>
 
           <Link href="/blog" className="btn-ghost mt-8">
-            อ่านบทความความรู้ที่เราเขียนเอง
+            อ่านบทความที่ผมเขียนเอง
             <IconChevron className="h-4 w-4" />
           </Link>
         </div>
@@ -263,7 +264,7 @@ export default function AboutPage() {
 
       <section className="section bg-sand">
         <div className="wrap">
-          <h2 className="h2 text-center">เสียงจากลูกค้า</h2>
+          <h2 className="h2 text-center">ลูกค้าเขาพูดถึงผมยังไง</h2>
           <div className="mx-auto mt-9 grid max-w-4xl gap-5 sm:grid-cols-2">
             {reviews.map((r) => (
               <ReviewCard key={r.name} {...r} />

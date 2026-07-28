@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Air conditioner cleaning, repair, installation and relocation in Chiang Mai. Transparent pricing from 550 THB, same-week booking, open daily 8am-8pm. Condos, villas and Airbnb welcome. Tax invoice available.";
+  "Aircon cleaning, repair, installation and relocation in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open daily 8am-8pm. Condos, villas and Airbnb welcome. Tax invoice available.";
 
 export const metadata: Metadata = {
   title,
@@ -32,52 +32,52 @@ const servicesEn = [
     icon: IconSnow,
     name: "Aircon cleaning",
     price: "from 550 THB",
-    desc: "Standard clean 600 THB per wall unit (550 THB each for 3+ units). Full strip-down clean 2,000 THB, where we remove the blower wheel and every removable part and disinfect them separately.",
+    desc: "Standard clean 600 THB per wall unit, or 550 THB each for three or more. The full strip-down clean is 2,000 THB — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
   },
   {
     icon: IconWrench,
     name: "AC repair",
     price: "500 THB diagnostic",
-    desc: "Not cooling, water dripping, strange noises, unit cutting out. The 500 THB diagnostic fee is deducted from the repair cost if you go ahead. We quote before we touch anything.",
+    desc: "Not cooling, water dripping, strange noises, unit cutting out. I charge 500 THB to diagnose it, and I take that off the bill if you go ahead with the repair. I quote you before I touch anything.",
   },
   {
     icon: IconInstall,
     name: "New installation",
     price: "from 3,000 THB",
-    desc: "3,000 THB for 9,000–12,000 BTU, 3,500 THB for 18,000–24,000 BTU. Full vacuum of the line set, no shortcuts. Warranty up to 1 year.",
+    desc: "3,000 THB for 9,000–12,000 BTU, 3,500 THB for 18,000–24,000 BTU. I vacuum the line set properly every time — it is the step nobody can see and the one that kills compressors when it gets skipped. Warranty up to 1 year.",
   },
   {
     icon: IconMove,
     name: "Relocation",
     price: "3,500 THB",
-    desc: "Moving house or changing rooms. We pump the refrigerant back into the condenser before disconnecting, so you do not pay for a full recharge afterwards. Removal only is 700 THB.",
+    desc: "Moving house or changing rooms. I pump the refrigerant back into the condenser before disconnecting, so you are not paying for a full recharge afterwards. Removal only is 700 THB.",
   },
 ];
 
 const faqs = [
   {
     q: "Do you speak English?",
-    a: "We can handle bookings, quotes and job details in written English over LINE, which is the easiest way for us to communicate clearly and keep a record of what was agreed. Please message us on LINE rather than calling if you are not comfortable in Thai.",
+    a: "I handle bookings, quotes and job details in written English over LINE. It is the clearest way for both of us and it keeps a record of what was agreed. If you are not comfortable in Thai, please message me on LINE rather than calling.",
   },
   {
     q: "How much does aircon cleaning cost in Chiang Mai?",
-    a: "Our standard clean is 600 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 550 THB each when you have three or more units. Larger units at 18,001–38,000 BTU are 800 THB. The full strip-down Premium clean is 2,000 THB per unit.",
+    a: "My standard clean is 600 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 550 THB each when you have three or more. Larger units at 18,001–38,000 BTU are 800 THB. The full strip-down clean is 2,000 THB per unit.",
   },
   {
     q: "How often should I clean my aircon in Chiang Mai?",
-    a: "More often than in most places. During the burning season from February to April the air here carries far more soot and dust than usual, so filters clog quickly. We recommend a full clean in January before the season starts, rinsing the filters yourself every 2–4 weeks through the season, and a second full clean around May or June.",
+    a: "More often than in most places, unfortunately. During the burning season from February to April the air here carries far more soot than usual and filters clog fast. I suggest a full clean in January before the season starts, rinsing the filters yourself every 2–4 weeks through it, and a second full clean around May or June.",
   },
   {
     q: "Can you issue a tax invoice?",
-    a: "Yes. We regularly work with cafés, restaurants, hotels, guesthouses and offices that need proper documentation, and we can issue a tax invoice as normal.",
+    a: "Yes. I work with cafés, restaurants, hotels, guesthouses and offices that need proper documentation, and I can issue a tax invoice as normal.",
   },
   {
     q: "Do you work on condos and rental properties?",
-    a: "Yes, we do houses, condos, dormitories, hotels, restaurants and offices. If you manage an Airbnb or a rental villa and need units serviced between guests, message us with the number of units and the area and we will work out a schedule.",
+    a: "Yes — houses, condos, dormitories, hotels, restaurants and offices. If you manage an Airbnb or a rental villa and need units serviced between guests, message me with the number of units and the area and we can work out a schedule that fits your turnovers.",
   },
   {
     q: "How quickly can you come?",
-    a: "Usually within 24 hours, and same day if we have a slot free. We are open every day from 8am to 8pm. The one exception is April, when demand across the whole city peaks — book ahead if you can.",
+    a: "Usually within 24 hours, and the same day if I have a slot free. I work every day from 8am to 8pm. The one exception is April, when the whole city wants a technician at once — book ahead if you can.",
   },
 ];
 
@@ -92,15 +92,15 @@ export default function EnglishPage() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              Based in Ton Pao, San Kamphaeng · serving all of Chiang Mai
+              Arm · based in Ton Pao, San Kamphaeng · working across Chiang Mai
             </p>
             <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.5rem]">
               Aircon cleaning &amp; AC repair in Chiang Mai
             </h1>
             <p className="lead mt-5">
-              Straightforward pricing, published up front. We tell you the cost before we start,
-              we do not top up refrigerant that is not actually low, and we sheet the room so your
-              floor and furniture stay clean.
+              I am Arm, and I do the work myself. My prices are published up front,
+              I tell you the cost before I start, I do not top up refrigerant that is not actually low,
+              and I sheet the room so your floor and furniture stay exactly as they were.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -112,7 +112,7 @@ export default function EnglishPage() {
                 data-cta="en-line"
               >
                 <IconLine className="h-5 w-5" />
-                Message us on LINE
+                Message me on LINE
               </a>
               <a href={`tel:${site.phoneTel}`} className="btn-call px-6 py-3.5 text-lg" data-cta="en-call">
                 <IconPhone className="h-5 w-5" />
@@ -127,7 +127,7 @@ export default function EnglishPage() {
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
               src={gallery[2].src}
-              alt="Technician cleaning a wall-mounted air conditioner at a customer's home in Chiang Mai"
+              alt="Arm cleaning a wall-mounted air conditioner at a customer's home in Chiang Mai"
               width={900}
               height={1200}
               priority
@@ -140,7 +140,7 @@ export default function EnglishPage() {
 
       <section className="section" lang="en">
         <div className="wrap">
-          <h2 className="h2">What we do</h2>
+          <h2 className="h2">What I do</h2>
           <div className="mt-9 grid gap-5 sm:grid-cols-2">
             {servicesEn.map((s) => (
               <div key={s.name} className="card flex flex-col p-6">
@@ -154,8 +154,8 @@ export default function EnglishPage() {
             ))}
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
-            Refrigerant top-up is charged at 25 THB per pound for both R32 and R410A, and we check the
-            level free of charge first. If it is not low, we will tell you so rather than sell you a refill.
+            Refrigerant top-up is 25 THB per pound for both R32 and R410A, and I check the level free
+            of charge first. If it is not actually low, I will tell you so rather than sell you a refill.
           </p>
         </div>
       </section>
@@ -178,24 +178,24 @@ export default function EnglishPage() {
             </p>
             <p>
               Second, soot clogs coils fast. A unit that was fine in January can be blowing weakly by
-              March, and by April — the hottest month, when every technician in the city is booked out —
-              it is a bad time to discover the problem. Clean it before the season, not during it.
+              March, and April — the hottest month, when every technician in the city is booked out —
+              is a bad time to discover that. Get it cleaned before the season, not during it.
             </p>
           </div>
           <Link href="/pm25" className="btn-ghost mt-7">
-            Read our full guide on aircon and PM2.5 in Chiang Mai (Thai)
+            Read my full guide on aircon and PM2.5 in Chiang Mai (Thai)
           </Link>
         </div>
       </section>
 
       <section className="section" lang="en">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">Why customers pick us</h2>
+          <h2 className="h2">Why people call me back</h2>
           <ul className="mt-7 space-y-4">
             {[
-              "Prices published on this site. You know the cost before you call, and we confirm the final figure before we start work.",
-              "We do not top up refrigerant unless it is genuinely low. Overcharging a system shortens compressor life, and it is the easiest way for a dishonest technician to pad a bill.",
-              "We show you the old parts we removed, and explain what failed and why.",
+              "Prices are published on this site. You know roughly what it costs before you call, and I confirm the exact figure before I start.",
+              "I do not top up refrigerant unless it is genuinely low. Overcharging a system shortens compressor life, and it is the easiest way for a dishonest technician to pad a bill.",
+              "I show you the old parts I removed and explain what failed and why. And if a repair is not worth the money, I say so — even though I earn more if you let me do it.",
               "Two layers of drop sheets on every cleaning job. Your floor and furniture stay as they were.",
               "Warranty: 30 days on a standard clean, 60 days on the full strip-down clean, and up to 1 year on installation.",
               "Tax invoices available for businesses.",
@@ -213,10 +213,10 @@ export default function EnglishPage() {
 
       <section className="section bg-sand" lang="en">
         <div className="wrap">
-          <h2 className="h2">Areas we cover</h2>
+          <h2 className="h2">Areas I cover</h2>
           <p className="lead mt-3 max-w-2xl">
-            We are based in Ton Pao, San Kamphaeng, so the eastern side of the city is fastest for us,
-            but we cover the whole of Chiang Mai including the old city, Nimman and the southern suburbs.
+            I am based in Ton Pao, San Kamphaeng, so the eastern side of the city is quickest for me,
+            but I cover the whole of Chiang Mai including the old city, Nimman and the southern suburbs.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((a) => (
@@ -258,7 +258,7 @@ export default function EnglishPage() {
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 px-6 py-14 text-center sm:px-12">
             <h2 className="text-2xl font-bold text-white sm:text-3xl">Get a quote today</h2>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-8 text-brand-100">
-              Send us the number of units, roughly what size they are, and your area. We will give you
+              Send me the number of units, roughly what size they are, and your area. I will give you
               a price before anyone comes out. LINE is easiest for English.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
