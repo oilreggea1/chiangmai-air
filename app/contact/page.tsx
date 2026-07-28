@@ -21,7 +21,8 @@ const trail = [
   { name: "ติดต่อเรา", path: "/contact" },
 ];
 
-const mapQuery = encodeURIComponent("168/14 หมู่ 12 ตำบลสันกำแพง อำเภอสันกำแพง เชียงใหม่ 50130");
+// ใช้พิกัดจริงแทนการค้นหาจากที่อยู่ เพราะ Google หาบ้านเลขที่ในซอยไม่เจอบ่อย
+const mapQuery = `${site.geo.lat},${site.geo.lng}`;
 
 export default function Contact() {
   return (
@@ -145,7 +146,7 @@ export default function Contact() {
           <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
             <iframe
               title="แผนที่ที่ตั้งช่างแอร์เชียงใหม่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง"
-              src={`https://maps.google.com/maps?q=${mapQuery}&z=13&output=embed`}
+              src={`https://maps.google.com/maps?q=${mapQuery}&z=16&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[22rem] w-full border-0 lg:h-full lg:min-h-[24rem]"
