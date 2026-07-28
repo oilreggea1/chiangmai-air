@@ -61,6 +61,22 @@ const urgencyStyle = {
   รอได้: "bg-slate-100 text-slate-700",
 } as const;
 
+/** "-" = อะไหล่ชิ้นนี้ไม่มีในเครื่องแบบนั้น / null = ต้องดูรุ่นก่อนถึงบอกราคาได้ */
+function PriceCell({ value }: { value: string | null | "-" }) {
+  if (value === "-") {
+    return (
+      <>
+        <span aria-hidden="true" className="text-slate-300">–</span>
+        <span className="sr-only">ไม่มีอะไหล่ชิ้นนี้ในเครื่องประเภทนี้</span>
+      </>
+    );
+  }
+  if (value === null) {
+    return <span className="text-xs leading-6 text-ink-soft">ประเมินตามรุ่น</span>;
+  }
+  return <span className="text-[15px] font-bold whitespace-nowrap text-brand-700">{value}</span>;
+}
+
 export default function RepairPricePage() {
   const symptomArticles: Record<string, string> = {
     "air-mai-yen": "air-mai-yen-sa-het",
@@ -111,45 +127,74 @@ export default function RepairPricePage() {
             ))}
           </div>
 
-          <div className="mt-8 space-y-6">
+          <div className="card mt-8 border-2 border-amber-300 bg-amber-50 p-5 sm:p-6">
+            <p className="flex items-center gap-2.5 font-bold text-amber-900">
+              <IconShield className="h-5 w-5 shrink-0" />
+              อ่านตรงนี้ก่อนดูตาราง
+            </p>
+            <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+              ตัวเลขด้านล่างคือ <strong className="text-ink">ช่วงราคาประเมิน</strong> ที่อ้างอิงจากเรตตลาดปี 2569
+              และเป็นราคารวมค่าแรงกับค่าอะไหล่แล้ว
+              ราคาจริงของหน้างานคุณขึ้นกับยี่ห้อ รุ่น และสภาพเครื่อง
+              เราจึงตรวจให้เห็นของจริงก่อนแล้วแจ้งราคาที่แน่นอนให้ยืนยันทุกครั้งก่อนลงมือ
+              ถ้าไม่โอเคกับราคา จ่ายแค่ค่าตรวจเช็คแล้วจบได้เลย ไม่มีการกดดัน
+            </p>
+          </div>
+
+          <div className="mt-6 space-y-6">
             {repairPricing.map((g) => (
               <div key={g.group} className="card overflow-hidden">
-                <h3 className="border-b border-slate-100 bg-slate-50 px-5 py-4 text-base font-bold sm:px-6">
-                  {g.group}
-                </h3>
-                <ul className="divide-y divide-slate-100">
-                  {g.items.map((it) => (
-                    <li key={it.job} className="flex items-start justify-between gap-4 px-5 py-4 sm:px-6">
-                      <span>
-                        <span className="block text-[15px] leading-7 text-ink">{it.job}</span>
-                        {it.note && (
-                          <span className="mt-0.5 block text-xs leading-6 text-ink-soft">{it.note}</span>
-                        )}
-                      </span>
-                      <span
-                        className={`shrink-0 font-bold ${
-                          it.price ? "text-brand-700" : "text-sm font-medium text-ink-soft"
-                        }`}
-                      >
-                        {it.price ?? "แจ้งราคาก่อนซ่อม"}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="border-b border-slate-100 bg-slate-50 px-5 py-4 sm:px-6">
+                  <h3 className="text-base font-bold">{g.group}</h3>
+                  {g.intro && (
+                    <p className="mt-1.5 text-sm leading-7 text-ink-soft">{g.intro}</p>
+                  )}
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[34rem] border-collapse text-left">
+                    <caption className="sr-only">ช่วงราคาประเมินของ{g.group}</caption>
+                    <thead>
+                      <tr className="border-b border-slate-100 text-xs">
+                        <th scope="col" className="px-5 py-3 font-bold sm:px-6">รายการ</th>
+                        <th scope="col" className="px-3 py-3 text-right font-bold sm:px-4">แอร์ธรรมดา</th>
+                        <th scope="col" className="px-3 py-3 text-right font-bold sm:px-4">แอร์อินเวอร์เตอร์</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {g.items.map((it) => (
+                        <tr key={it.job}>
+                          <th scope="row" className="px-5 py-4 font-normal sm:px-6">
+                            <span className="block text-[15px] leading-7 font-medium text-ink">{it.job}</span>
+                            {it.note && (
+                              <span className="mt-0.5 block text-xs leading-6 text-ink-soft">{it.note}</span>
+                            )}
+                          </th>
+                          <td className="px-3 py-4 text-right align-top sm:px-4">
+                            <PriceCell value={it.std} />
+                          </td>
+                          <td className="px-3 py-4 text-right align-top sm:px-4">
+                            <PriceCell value={it.inv} />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="card mt-6 border-2 border-mint/40 bg-mint/6 p-6">
             <p className="flex items-center gap-2.5 font-bold text-emerald-800">
-              <IconShield className="h-5 w-5" />
-              ทำไมค่าอะไหล่ถึงไม่ลงตัวเลขตายตัว
+              <IconShield className="h-5 w-5 shrink-0" />
+              ทำไมบางช่องถึงขีดไว้
             </p>
             <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
-              เพราะอะไหล่ต่างยี่ห้อต่างรุ่นราคาห่างกันหลายเท่า
-              การลงตัวเลขลอย ๆ ไว้แล้วมาบวกเพิ่มหน้างานคือสิ่งที่เราไม่ทำ
-              เราตรวจให้คุณเห็นของจริง อธิบายว่าเสียตรงไหน แล้วแจ้งราคาที่แน่นอนก่อนลงมือทุกครั้ง
-              ถ้าคุณไม่โอเคกับราคา จ่ายแค่ค่าตรวจเช็คแล้วจบได้เลย ไม่มีการกดดัน
+              ช่องที่ขีด (–) ไม่ใช่ราคาที่เราไม่บอก แต่คืออะไหล่ที่เครื่องแบบนั้นไม่มี
+              แอร์อินเวอร์เตอร์ไม่มีคาปาซิเตอร์คอมเพรสเซอร์และไม่มีแมกเนติก
+              เพราะใช้แผงวงจรควบคุมความเร็วคอมเพรสเซอร์แทน
+              ถ้ามีช่างเสนอเปลี่ยนคาปาซิเตอร์คอมให้แอร์อินเวอร์เตอร์ของคุณ ให้สงสัยไว้ก่อน
             </p>
           </div>
         </div>

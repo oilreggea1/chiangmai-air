@@ -11,7 +11,7 @@ import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่ | แพ็กเกจห้องปลอดฝุ่นก่อนหน้าเผา";
 const description =
-  "หน้าเผาเชียงใหม่ ก.พ.–เม.ย. ทำให้แอร์ตันเร็วกว่าปกติหลายเท่า เราล้างแอร์ถอดชิ้นส่วน 100% และช่วยจัดห้องปลอดฝุ่นให้ทั้งห้อง จองคิวล่วงหน้าก่อนคิวเต็ม โทร 065-365-7673";
+  "หน้าเผาเชียงใหม่ ก.พ.–เม.ย. ทำให้แอร์ตันเร็วกว่าปกติหลายเท่า แพ็กเกจห้องปลอดฝุ่นเริ่ม 2,000 บาท ล้างแอร์ถอดชิ้นส่วน + อุดรอยรั่วของห้อง จองคิวก่อนคิวเต็ม โทร 065-365-7673";
 
 export const metadata: Metadata = {
   title,
@@ -306,24 +306,57 @@ export default function Pm25Page() {
             </div>
           </div>
 
-          <div className="card mt-5 p-6 sm:p-7">
-            <h3 className="text-lg font-bold">ให้เราช่วยจัดห้องปลอดฝุ่นทั้งห้อง</h3>
-            <p className="mt-2 text-[15px] leading-8 text-ink-soft">
-              นอกจากล้างแอร์ เรารับดูรอยรั่วของห้องที่ทำให้ฝุ่นเข้า อุดรูท่อแอร์ที่เจาะทะลุผนัง
-              และประเมินว่าแอร์รุ่นของคุณรับแผ่นกรองละเอียดเพิ่มได้หรือไม่โดยไม่ทำให้เครื่องพัง
-              ค่าบริการส่วนนี้ประเมินตามหน้างานจริง แจ้งราคาให้ทราบก่อนเริ่มงานเสมอ
-            </p>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="pm25-room-line">
-                <IconLine className="h-5 w-5" />
-                ส่งรูปห้องมาให้ประเมิน
-              </a>
-              {room && (
-                <Link href={`/blog/${room.slug}`} className="btn-ghost">
-                  อ่านวิธีทำห้องปลอดฝุ่นเอง
-                  <IconChevron className="h-4 w-4" />
-                </Link>
-              )}
+          <div className="card mt-5 overflow-hidden">
+            <div className="bg-gradient-to-br from-brand-700 to-brand-600 px-6 py-7 sm:px-8">
+              <p className="text-sm font-semibold text-brand-100">บริการเฉพาะของเรา</p>
+              <h3 className="mt-1.5 text-xl font-extrabold text-white sm:text-2xl">
+                แพ็กเกจห้องปลอดฝุ่น
+              </h3>
+              <p className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold text-white">2,000</span>
+                <span className="text-brand-100">บาท เริ่มต้น / ห้อง</span>
+              </p>
+              <p className="mt-3 max-w-2xl text-[15px] leading-8 text-brand-100">
+                ล้างแอร์อย่างเดียวยังไม่พอ ถ้าห้องยังมีรอยรั่วให้ฝุ่นเข้าได้
+                แพ็กเกจนี้จัดการทั้งตัวแอร์และตัวห้องไปพร้อมกัน
+              </p>
+            </div>
+
+            <div className="p-6 sm:p-8">
+              <ul className="grid gap-3.5 sm:grid-cols-2">
+                {[
+                  "ล้างแอร์แบบถอดชิ้นส่วน เคลียร์เขม่าที่สะสมจากหน้าเผา",
+                  "ฉีดน้ำยาฆ่าเชื้อโรคที่คอยล์และใบพัด",
+                  "ตรวจหารอยรั่วของห้องที่ทำให้ฝุ่นเล็ดลอดเข้ามา",
+                  "อุดรูท่อแอร์ที่เจาะทะลุผนัง จุดที่คนลืมบ่อยที่สุด",
+                  "ประเมินว่าแอร์รุ่นของคุณรับแผ่นกรองละเอียดได้แค่ไหนโดยไม่ทำให้เครื่องพัง",
+                  "แนะนำตำแหน่งวางเครื่องฟอกอากาศให้ทำงานได้เต็มประสิทธิภาพ",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <IconCheck className="mt-1.5 h-4 w-4 shrink-0 text-mint" />
+                    <span className="text-[15px] leading-7 text-ink-soft">{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-6 text-sm leading-7 text-ink-soft">
+                ราคาเริ่มต้นครอบคลุมห้องมาตรฐาน 1 ห้องพร้อมแอร์ 1 เครื่อง
+                หากห้องใหญ่กว่าปกติ มีแอร์หลายเครื่อง หรือรอยรั่วต้องแก้เยอะเป็นพิเศษ
+                เราแจ้งค่าใช้จ่ายเพิ่มให้ทราบก่อนเริ่มงานเสมอ
+              </p>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="pm25-room-line">
+                  <IconLine className="h-5 w-5" />
+                  ส่งรูปห้องมาให้ประเมิน
+                </a>
+                {room && (
+                  <Link href={`/blog/${room.slug}`} className="btn-ghost">
+                    อ่านวิธีทำห้องปลอดฝุ่นเอง
+                    <IconChevron className="h-4 w-4" />
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>
