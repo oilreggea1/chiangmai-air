@@ -11,6 +11,9 @@ export function localBusinessSchema() {
     name: site.name,
     legalName: site.legalName,
     alternateName: [site.legalNameEn, "ช่างแอร์เชียงใหม่", site.shortName],
+    // เลขทะเบียนนิติบุคคลไทยใช้เป็นเลขผู้เสียภาษีตัวเดียวกัน จึงใส่ทั้ง taxID และ vatID
+    taxID: site.taxId,
+    vatID: site.taxId,
     description:
       "ช่างแอร์เชียงใหม่ รับล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ และย้ายแอร์ถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ บอกราคาก่อนลงมือ รับประกันผลงาน ออกใบกำกับภาษีได้",
     url: site.url,

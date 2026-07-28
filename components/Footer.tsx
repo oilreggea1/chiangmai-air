@@ -129,7 +129,10 @@ export default function Footer() {
 
       <div className="border-t border-slate-200">
         <div className="wrap flex flex-col gap-2 py-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} {site.legalName} · {site.displayUrl}</p>
+          <p>
+            © {year} {site.legalName} · {site.displayUrl}
+            {site.taxId && <> · เลขประจำตัวผู้เสียภาษี {site.taxId}</>}
+          </p>
           <p>{site.legalNameEn} · ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ · สันกำแพง เชียงใหม่</p>
         </div>
       </div>
