@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #0c1b2a;
+  --color-ink-soft: #44586b;
+  --color-brand-50: #eff8ff;
+  --color-brand-100: #d9eeff;
+  --color-brand-200: #bce2ff;
+  --color-brand-300: #8ed0ff;
+  --color-brand-400: #59b6fd;
+  --color-brand-500: #3298f2;
+  --color-brand-600: #1c79d8;
+  --color-brand-700: #1861ae;
+  --color-brand-800: #17528e;
+  --color-brand-900: #184675;
+  --color-accent: #ff7a1a;
+  --color-accent-dark: #e05f00;
+  --color-mint: #0fb98b;
+  --color-sand: #f6f9fc;
+
+  --font-sans: var(--font-thai), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(12 27 42 / 0.04), 0 8px 24px -6px rgb(12 27 42 / 0.08);
+  --shadow-lift: 0 2px 4px rgb(12 27 42 / 0.06), 0 18px 40px -12px rgb(12 27 42 / 0.16);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* กันไม่ให้ sticky header บังหัวข้อเวลากดลิงก์ #anchor */
+    scroll-padding-top: 5.5rem;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: #fff;
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ภาษาไทยไม่มีเว้นวรรคระหว่างคำ ต้องช่วยเบราว์เซอร์ตัดบรรทัด */
+  h1, h2, h3, h4, p, li, td, th, summary {
+    word-break: break-word;
+    line-break: loose;
+    overflow-wrap: anywhere;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6;
+  }
+
+  /* Tailwind v4: @apply ใช้ได้เฉพาะ utility จริง ไม่รับคลาสที่เรานิยามเอง
+     จึงต้องเขียนสไตล์ฐานของปุ่มซ้ำในทุก variant แทนการ @apply .btn */
+  .btn,
+  .btn-call,
+  .btn-line,
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold
+           transition-all duration-150 select-none active:scale-[0.98];
+  }
+
+  .btn-call {
+    @apply bg-accent text-white shadow-lg shadow-accent/25
+           hover:bg-accent-dark hover:shadow-accent/35;
+  }
+
+  .btn-line {
+    @apply bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25 hover:brightness-95;
+  }
+
+  .btn-ghost {
+    @apply border-2 border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200/80 bg-white shadow-card;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-3.5 py-1.5
+           text-sm font-semibold text-brand-700 ring-1 ring-brand-100;
+  }
+
+  .section {
+    @apply py-14 sm:py-20;
+  }
+
+  .h2 {
+    @apply text-2xl font-bold sm:text-3xl lg:text-[2rem];
+  }
+
+  .lead {
+    @apply text-base leading-8 text-ink-soft sm:text-lg sm:leading-9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
