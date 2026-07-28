@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site, services, areas } from "@/lib/site";
+import { articles } from "@/content/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -7,9 +8,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { path: "/", priority: 1.0, freq: "weekly" as const },
     { path: "/price", priority: 0.9, freq: "monthly" as const },
+    { path: "/price/repair", priority: 0.9, freq: "monthly" as const },
+    { path: "/pm25", priority: 0.9, freq: "monthly" as const },
+    { path: "/blog", priority: 0.8, freq: "weekly" as const },
     { path: "/area", priority: 0.8, freq: "monthly" as const },
+    { path: "/about", priority: 0.7, freq: "monthly" as const },
     { path: "/portfolio", priority: 0.7, freq: "monthly" as const },
     { path: "/contact", priority: 0.8, freq: "monthly" as const },
+    { path: "/en", priority: 0.7, freq: "monthly" as const },
   ];
 
   return [
@@ -30,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+    })),
+    ...articles.map((a) => ({
+      url: `${site.url}/blog/${a.slug}`,
+      lastModified: new Date(a.updated),
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
     })),
   ];
 }

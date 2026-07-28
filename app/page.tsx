@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  site, services, areas, values, brands, reviews, faqs, washCompare, gallery,
+  site, services, areas, values, brands, reviews, faqs, washCompare, gallery, edges,
 } from "@/lib/site";
+import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconX, IconPin, IconChevron, IconClock, IconShield,
@@ -172,6 +173,76 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- แบนเนอร์ PM2.5 ---------- */}
+      <section className="section pb-0">
+        <div className="wrap">
+          <Link
+            href="/pm25"
+            className="group grid gap-6 overflow-hidden rounded-3xl border-2 border-amber-300 bg-gradient-to-br from-amber-50 to-white p-7 transition-all hover:shadow-lift sm:p-9 lg:grid-cols-[1.5fr_1fr] lg:items-center"
+          >
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3.5 py-1.5 text-sm font-semibold text-amber-900 ring-1 ring-amber-200">
+                <IconPin className="h-4 w-4" />
+                เรื่องที่คนเชียงใหม่ต้องรู้
+              </span>
+              <h2 className="mt-4 text-xl font-extrabold group-hover:text-brand-700 sm:text-2xl">
+                หน้าเผา ก.พ.–เม.ย. ทำให้แอร์คุณตันเร็วกว่าปกติหลายเท่า
+              </h2>
+              <p className="mt-3 text-[15px] leading-8 text-ink-soft">
+                แผ่นกรองที่ติดมากับแอร์กรอง PM2.5 ไม่ได้ แต่แอร์ยังจำเป็นเพราะทำให้คุณปิดห้องได้
+                เราสรุปให้ครบว่าควรล้างตอนไหน ล้างแบบไหน และทำห้องปลอดฝุ่นยังไงให้ได้ผลจริง
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700">
+                อ่านคู่มือสู้ฝุ่นฉบับเต็ม
+                <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </div>
+            <dl className="grid grid-cols-2 gap-4 rounded-2xl bg-white/70 p-5 ring-1 ring-amber-200">
+              <div>
+                <dt className="text-2xl font-extrabold text-amber-700">6,676</dt>
+                <dd className="mt-0.5 text-xs leading-6 text-ink-soft">จุดความร้อนภาคเหนือ ต้นปี 2569</dd>
+              </div>
+              <div>
+                <dt className="text-2xl font-extrabold text-amber-700">+67%</dt>
+                <dd className="mt-0.5 text-xs leading-6 text-ink-soft">เพิ่มขึ้นจากช่วงเดียวกันปีก่อน</dd>
+              </div>
+            </dl>
+          </Link>
+        </div>
+      </section>
+
+      {/* ---------- จุดต่างจากคู่แข่ง ---------- */}
+      <section className="section">
+        <div className="wrap">
+          <div className="max-w-2xl">
+            <p className="eyebrow">เทียบแล้วต่างตรงไหน</p>
+            <h2 className="h2 mt-4">4 เรื่องที่ร้านแอร์ทั่วไปในเชียงใหม่ไม่ค่อยทำ</h2>
+          </div>
+          <div className="mt-9 grid gap-5 sm:grid-cols-2">
+            {edges.map((e) => {
+              const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
+              return (
+                <div key={e.title} className="card flex gap-4 p-6">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <h3 className="font-bold">{e.title}</h3>
+                    <p className="mt-1.5 text-sm leading-7 text-ink-soft">{e.detail}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-8">
+            <Link href="/price/repair" className="btn-ghost">
+              ดูตารางราคาซ่อมแอร์แบบเปิดเผย
+              <IconChevron className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -433,6 +504,44 @@ export default function Home() {
               <IconClock className="h-5 w-5 text-brand-600" />
               เปิดทุกวัน {site.hours}
             </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- บทความ ---------- */}
+      <section className="section">
+        <div className="wrap">
+          <div className="max-w-2xl">
+            <p className="eyebrow">คลังความรู้</p>
+            <h2 className="h2 mt-4">อ่านก่อนเรียกช่าง บางเรื่องคุณแก้เองได้</h2>
+            <p className="lead mt-3">
+              เราเขียนจากสิ่งที่เจอหน้างานจริงในเชียงใหม่ ไม่ใช่บทความคัดลอกทั่วไป
+              และบอกตรง ๆ ว่าอาการไหนคุณเช็คเองได้โดยไม่ต้องเสียเงิน
+            </p>
+          </div>
+          <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {articles.slice(0, 6).map((a) => (
+              <li key={a.slug}>
+                <Link
+                  href={`/blog/${a.slug}`}
+                  className="card group flex h-full flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <span className="text-xs font-bold text-brand-600">{a.category}</span>
+                  <h3 className="mt-2 font-bold group-hover:text-brand-700">{a.h1}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{a.excerpt}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-ink-soft">
+                    <IconClock className="h-4 w-4" />
+                    อ่าน {a.readMins} นาที
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8">
+            <Link href="/blog" className="btn-ghost">
+              ดูบทความทั้งหมด {articles.length} เรื่อง
+              <IconChevron className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

@@ -45,8 +45,37 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/price/repair" className="text-ink-soft hover:text-brand-700 hover:underline">
+                ราคาซ่อมแอร์แยกตามอาการ
+              </Link>
+            </li>
+            <li>
+              <Link href="/pm25" className="text-ink-soft hover:text-brand-700 hover:underline">
+                ล้างแอร์สู้ฝุ่น PM2.5
+              </Link>
+            </li>
+            <li>
               <Link href="/portfolio" className="text-ink-soft hover:text-brand-700 hover:underline">
                 ภาพผลงานจริง
+              </Link>
+            </li>
+          </ul>
+
+          <h2 className="mt-8 text-sm font-bold tracking-wide text-ink uppercase">อื่น ๆ</h2>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            <li>
+              <Link href="/blog" className="text-ink-soft hover:text-brand-700 hover:underline">
+                คลังความรู้เรื่องแอร์
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="text-ink-soft hover:text-brand-700 hover:underline">
+                เกี่ยวกับเรา
+              </Link>
+            </li>
+            <li>
+              <Link href="/en" className="text-ink-soft hover:text-brand-700 hover:underline">
+                English
               </Link>
             </li>
           </ul>
