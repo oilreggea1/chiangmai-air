@@ -30,7 +30,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              ผมอยู่ ต.ต้นเปา สันกำแพง · วิ่งถึงงานในโซนนี้เร็วที่สุด
+              ผมอยู่สันกำแพง · วิ่งถึงงานในโซนนี้เร็วที่สุด
             </p>
 
             <h1 className="mt-5 text-[2rem] leading-[1.25] font-extrabold sm:text-[2.6rem] lg:text-[3.1rem]">
@@ -378,7 +378,7 @@ export default function Home() {
             </p>
             <h2 className="h2 mt-4">ผมวิ่งงานทั่วเชียงใหม่</h2>
             <p className="lead mt-3">
-              ผมอยู่ ต.ต้นเปา อ.สันกำแพง เลยวิ่งถึงงานโซนสันกำแพงกับบ่อสร้างได้ไวที่สุด
+              ผมอยู่ ต.สันกำแพง อ.สันกำแพง เลยวิ่งถึงงานโซนสันกำแพง ต้นเปา และบ่อสร้างได้ไวที่สุด
               และรับงานอำเภอเมืองเชียงใหม่ หางดง สารภี สันทราย ด้วยครับ
             </p>
           </div>
@@ -458,12 +458,12 @@ export default function Home() {
       {/* ---------- เนื้อหา SEO ---------- */}
       <section className="section bg-sand">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">บริการช่างแอร์เชียงใหม่ โซนต้นเปาและสันกำแพง</h2>
+          <h2 className="h2">ช่างแอร์เชียงใหม่ โซนสันกำแพงและต้นเปา</h2>
           <div className="mt-5 space-y-5 text-[15px] leading-8 text-ink-soft sm:text-base sm:leading-9">
             <p>
               หากคุณกำลังมองหา <strong className="text-ink">ช่างแอร์สันกำแพง</strong> ที่ตั้งอยู่ในพื้นที่จริง{" "}
               <strong className="text-ink">โปรเฟรชแคร์ (Pro Fresh Care)</strong>{" "}
-              คือผมเองครับ ผมอยู่ในเขต ต.ต้นเปา เลยวิ่งถึงงานโซนสันกำแพง บ่อสร้าง
+              คือผมเองครับ ผมอยู่ในเขต ต.สันกำแพง เลยวิ่งถึงงานโซนสันกำแพง ต้นเปา บ่อสร้าง
               และหมู่บ้านซีรีนพาร์คได้เร็ว คุณไม่ต้องรอช่างขับข้ามเมืองมาเหมือนร้านที่อยู่ไกล
             </p>
             <p>

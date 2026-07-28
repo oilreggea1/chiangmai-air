@@ -116,7 +116,9 @@ export default function Footer() {
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
               <span>
-                {site.address.street} {site.address.district}
+                {site.address.street}
+                <br />
+                {site.address.subDistrict} {site.address.district}
                 <br />
                 จ.{site.address.province} {site.address.postalCode}
               </span>
@@ -127,8 +129,8 @@ export default function Footer() {
 
       <div className="border-t border-slate-200">
         <div className="wrap flex flex-col gap-2 py-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} {site.name} · {site.displayUrl}</p>
-          <p>ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ เชียงใหม่ · สันกำแพง · ต้นเปา</p>
+          <p>© {year} {site.legalName} · {site.displayUrl}</p>
+          <p>{site.legalNameEn} · ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ · สันกำแพง เชียงใหม่</p>
         </div>
       </div>
     </footer>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, areas, services, faqs } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
-import { IconPhone, IconLine, IconPin, IconClock, IconChevron } from "@/components/Icons";
+import { IconPhone, IconLine, IconPin, IconClock, IconChevron, IconShield } from "@/components/Icons";
 import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ติดต่อช่างแอร์เชียงใหม่ โทร 065-365-7673 | โปรเฟรชแคร์ สันกำแพง";
 const description =
-  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 หรือ LINE @794xvrnm เปิดบริการทุกวัน 08:00-20:00 น. ตั้งอยู่ ต.ต้นเปา อ.สันกำแพง จ.เชียงใหม่";
+  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 หรือ LINE @794xvrnm รับงานทุกวัน 08:00-20:00 น. อยู่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง จ.เชียงใหม่";
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +21,7 @@ const trail = [
   { name: "ติดต่อเรา", path: "/contact" },
 ];
 
-const mapQuery = encodeURIComponent("ต้นเปา สันกำแพง เชียงใหม่");
+const mapQuery = encodeURIComponent("168/14 หมู่ 12 ตำบลสันกำแพง อำเภอสันกำแพง เชียงใหม่ 50130");
 
 export default function Contact() {
   return (
@@ -88,9 +88,9 @@ export default function Contact() {
                 <div>
                   <dt className="font-bold">ที่ตั้ง</dt>
                   <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                    {site.address.street} {site.address.district}
+                    {site.address.street} {site.address.subDistrict}
                     <br />
-                    จ.{site.address.province} {site.address.postalCode}
+                    {site.address.district} จ.{site.address.province} {site.address.postalCode}
                   </dd>
                 </div>
               </div>
@@ -120,12 +120,31 @@ export default function Contact() {
                   </dd>
                 </div>
               </div>
+              <div className="flex items-start gap-3">
+                <IconShield className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
+                <div>
+                  <dt className="font-bold">ข้อมูลนิติบุคคล</dt>
+                  <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
+                    {site.legalName}
+                    <br />
+                    {site.legalNameEn}
+                    {site.taxId && (
+                      <>
+                        <br />
+                        เลขประจำตัวผู้เสียภาษี {site.taxId}
+                      </>
+                    )}
+                    <br />
+                    ออกใบกำกับภาษีให้ได้ตามปกติครับ
+                  </dd>
+                </div>
+              </div>
             </dl>
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
             <iframe
-              title="แผนที่ที่ตั้งร้านช่างแอร์เชียงใหม่ ต.ต้นเปา อ.สันกำแพง"
+              title="แผนที่ที่ตั้งช่างแอร์เชียงใหม่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง"
               src={`https://maps.google.com/maps?q=${mapQuery}&z=13&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

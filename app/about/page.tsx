@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, edges, values, brands, gallery, areas, reviews } from "@/lib/site";
+import { site, addressLine, edges, values, brands, gallery, areas, reviews } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import {
   serviceIcons, IconPhone, IconLine, IconChevron, IconCheck, IconPin, IconClock, IconEngineer,
 } from "@/components/Icons";
 import { CtaBand, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
-const title = "รู้จักช่างอาร์ม ช่างแอร์เชียงใหม่ ต้นเปา สันกำแพง";
+const title = "รู้จักช่างอาร์ม ช่างแอร์เชียงใหม่ สันกำแพง";
 const description =
-  "ช่างอาร์ม ช่างแอร์เชียงใหม่ อยู่ ต.ต้นเปา อ.สันกำแพง ทำงานด้วยหลักบอกราคาก่อนลงมือ ไม่เติมน้ำยาถ้าไม่ขาด รับงานทุกวัน 08:00-20:00 น. ออกใบกำกับภาษีได้";
+  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด อยู่ ต.สันกำแพง อ.สันกำแพง ทำงานด้วยหลักบอกราคาก่อนลงมือ ไม่เติมน้ำยาถ้าไม่ขาด รับงานทุกวัน ออกใบกำกับภาษีได้";
 
 export const metadata: Metadata = {
   title,
@@ -79,14 +79,14 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              {site.address.street} {site.address.district} จ.{site.address.province}
+              {site.address.subDistrict} {site.address.district} จ.{site.address.province}
             </p>
             <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
               สวัสดีครับ ผมช่างอาร์ม
             </h1>
             <p className="lead mt-5">
-              ผมทำงานในชื่อ โปรเฟรชแคร์ (Pro Fresh Care) อยู่ที่ ต.ต้นเปา อ.สันกำแพง
-              รับล้าง ซ่อม ติดตั้ง และย้ายแอร์ทั่วเชียงใหม่
+              ผมทำงานในชื่อ โปรเฟรชแคร์ จดทะเบียนในนาม บริษัท เฌอร์ โซลูชั่น จำกัด
+              อยู่ที่ ต.สันกำแพง อ.สันกำแพง รับล้าง ซ่อม ติดตั้ง และย้ายแอร์ทั่วเชียงใหม่
               ผมไม่ได้อยากเป็นร้านที่ใหญ่ที่สุดในเมืองนี้ครับ ผมแค่อยากเป็นช่างที่คุณกล้าแนะนำต่อให้เพื่อนบ้าน
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -228,7 +228,7 @@ export default function AboutPage() {
           <h2 className="h2">ข้อมูลติดต่อ</h2>
           <dl className="mt-6 grid gap-5 sm:grid-cols-2">
             {[
-              { t: "ที่ตั้ง", d: `${site.address.street} ${site.address.district} จ.${site.address.province} ${site.address.postalCode}`, Icon: IconPin },
+              { t: "ที่ตั้ง", d: `${site.legalName} · ${addressLine}`, Icon: IconPin },
               { t: "เวลาทำการ", d: `ผมรับงานทุกวัน ${site.hours} · เข้าหน้างานได้ภายใน 24 ชม.`, Icon: IconClock },
               { t: "ติดต่อ", d: `โทร ${site.phone} · LINE ${site.lineId}`, Icon: IconPhone },
               { t: "เอกสาร", d: "ผมออกใบกำกับภาษีให้ได้ รับงานคาเฟ่ ร้านอาหาร โรงแรม หอพัก และออฟฟิศ", Icon: IconCheck },

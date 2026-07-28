@@ -31,7 +31,7 @@ export default function AreaIndex() {
         <section className="wrap max-w-3xl pt-8 pb-14 text-center">
           <p className="eyebrow">
             <IconPin className="h-4 w-4" />
-            ฐานอยู่ ต.ต้นเปา อ.สันกำแพง
+            ผมอยู่ ต.สันกำแพง อ.สันกำแพง
           </p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
             พื้นที่ให้บริการช่างแอร์เชียงใหม่

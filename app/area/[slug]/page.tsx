@@ -148,7 +148,7 @@ export default async function AreaPage({ params }: Props) {
           <h2 className="h2">ทำไมคนใน{a.name}ถึงเรียกผมซ้ำ</h2>
           <div className="mt-5 space-y-5 text-[15px] leading-8 text-ink-soft sm:text-base sm:leading-9">
             <p>
-              ผมอยู่ที่ <strong className="text-ink">ต.ต้นเปา อ.สันกำแพง</strong> ครับ{" "}
+              ผมอยู่ที่ <strong className="text-ink">ต.สันกำแพง อ.สันกำแพง</strong> ครับ{" "}
               เลยเข้าหน้างานใน{a.full}ได้เร็ว {a.note}
               {" "}จุดที่ลูกค้าโซนนี้เรียกใช้บ่อยได้แก่ {a.landmarks.join(" · ")}
             </p>

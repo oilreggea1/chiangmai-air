@@ -9,9 +9,10 @@ export function localBusinessSchema() {
     "@type": ["HVACBusiness", "LocalBusiness"],
     "@id": ID,
     name: site.name,
-    alternateName: [site.legalName, "ช่างแอร์เชียงใหม่", site.shortName],
+    legalName: site.legalName,
+    alternateName: [site.legalNameEn, "ช่างแอร์เชียงใหม่", site.shortName],
     description:
-      "ช่างแอร์เชียงใหม่ บริการล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ และย้ายแอร์ถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ แจ้งราคาชัดเจนก่อนเริ่มงาน รับประกันผลงาน",
+      "ช่างแอร์เชียงใหม่ รับล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ และย้ายแอร์ถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ บอกราคาก่อนลงมือ รับประกันผลงาน ออกใบกำกับภาษีได้",
     url: site.url,
     telephone: site.phoneRaw,
     priceRange: site.priceRange,
@@ -24,7 +25,7 @@ export function localBusinessSchema() {
     logo: `${site.url}/icon`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: site.address.street,
+      streetAddress: `${site.address.street} ${site.address.subDistrict}`,
       addressLocality: site.address.district,
       addressRegion: site.address.province,
       postalCode: site.address.postalCode,

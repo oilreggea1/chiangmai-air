@@ -31,7 +31,7 @@ export default async function OgImage() {
             fontSize: 28,
           }}
         >
-          ต.ต้นเปา · สันกำแพง · เชียงใหม่
+          สันกำแพง · เชียงใหม่
         </div>
 
         <div style={{ display: "flex", fontSize: 82, fontWeight: 800, marginTop: 34, lineHeight: 1.2 }}>
