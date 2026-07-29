@@ -10,12 +10,12 @@ export function localBusinessSchema() {
     "@id": ID,
     name: site.name,
     legalName: site.legalName,
-    alternateName: [site.legalNameEn, "ช่างแอร์เชียงใหม่", site.shortName],
+    alternateName: [site.legalNameEn, "โปรเฟรชแคร์ ช่างแอร์เชียงใหม่", "ช่างแอร์เชียงใหม่"],
     // เลขทะเบียนนิติบุคคลไทยใช้เป็นเลขผู้เสียภาษีตัวเดียวกัน จึงใส่ทั้ง taxID และ vatID
     taxID: site.taxId,
     vatID: site.taxId,
     description:
-      "ช่างแอร์เชียงใหม่ รับล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ และล้างเครื่องซักผ้าถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ บอกราคาก่อนลงมือ รับประกันผลงาน ออกใบกำกับภาษีได้",
+      "ช่างแอร์เชียงใหม่ รับล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ และล้างเครื่องซักผ้าถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ แจ้งราคาก่อนเริ่มงาน รับประกันผลงาน ออกใบกำกับภาษีได้",
     url: site.url,
     // เบอร์หลักไว้ใน telephone ให้ตรงกับ Google Business Profile เบอร์สำรองแยกไว้ใน contactPoint
     telephone: site.phoneRaw,

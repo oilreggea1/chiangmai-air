@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: Props) {
           <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-soft">
             <span className="inline-flex items-center gap-1.5">
               <IconEngineer className="h-4 w-4 text-brand-600" />
-              เขียนโดย {site.leadTech} · {site.shortName}
+              เขียนโดย {site.leadTech} · {site.name}
             </span>
             <span className="inline-flex items-center gap-1.5">
               <IconClock className="h-4 w-4 text-brand-600" />
