@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, services, areas, gallery, servicePhotos, washerBeforeAfter } from "@/lib/site";
+import { site, services, areas, gallery, servicePhotos, caseStudies } from "@/lib/site";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
-import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, BeforeAfter } from "@/components/Blocks";
+import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -141,11 +141,11 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       {/* เทียบก่อน-หลัง เฉพาะบริการที่มีชุดภาพจับคู่ยืนยันแล้ว */}
-      {s.slug === "lang-washing-machine" && (
-        <BeforeAfter
-          items={washerBeforeAfter}
-          title="สภาพเครื่องก่อนล้าง เทียบกับหลังถอดล้าง"
-          lead="คราบที่สะสมอยู่ในเครื่องซักผ้าอยู่ในจุดที่มองไม่เห็นขณะใช้งานปกติ ภาพต่อไปนี้ถ่ายจากงานจริง เพื่อให้เห็นว่าการถอดล้างเข้าถึงจุดใดได้บ้าง"
+      {caseStudies.some((c) => c.serviceSlug === s.slug) && (
+        <CaseStudies
+          items={caseStudies.filter((c) => c.serviceSlug === s.slug)}
+          title={`เคสงาน${s.name}จริง พร้อมภาพก่อนและหลัง`}
+          lead="แต่ละเคสเล่าว่าเจอสภาพอะไรหน้างาน ทำอะไรไปบ้าง และใช้เวลาเท่าใด เพื่อให้เห็นขอบเขตงานก่อนตัดสินใจ"
         />
       )}
 

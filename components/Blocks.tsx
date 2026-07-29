@@ -161,23 +161,18 @@ export function Steps({ steps }: { steps: { title: string; detail: string }[] })
   );
 }
 
-type BaItem = {
-  part: string;
-  before: { src: string; alt: string };
-  after: { src: string; alt: string };
-  note: string;
-};
+import type { CaseStudy } from "@/lib/site";
 
 /**
- * ตารางเทียบก่อน–หลังแบบจุดต่อจุด
- * แต่ละแถวคือชิ้นส่วนเดียวกันของเครื่องเดียวกัน ถ่ายก่อนล้างและหลังล้าง
+ * เคสงานจริง — ภาพก่อน/หลังของเครื่องเดียวกัน พร้อมเล่าว่างานนี้ทำอะไรบ้าง
+ * บังคับสัดส่วนภาพ 4:3 เท่ากันทั้งสองฝั่ง เพื่อให้เทียบกันได้ตรง ๆ
  */
-export function BeforeAfter({
+export function CaseStudies({
   items,
   title,
   lead,
 }: {
-  items: BaItem[];
+  items: CaseStudy[];
   title: string;
   lead: string;
 }) {
@@ -185,19 +180,29 @@ export function BeforeAfter({
     <section className="section bg-sand">
       <div className="wrap">
         <div className="max-w-2xl">
-          <p className="eyebrow">เทียบให้เห็นจุดต่อจุด</p>
+          <p className="eyebrow">เคสงานจริง</p>
           <h2 className="h2 mt-4">{title}</h2>
           <p className="lead mt-3">{lead}</p>
         </div>
 
-        <div className="mt-10 space-y-8">
-          {items.map((it) => (
-            <div key={it.part} className="card overflow-hidden p-5 sm:p-6">
-              <h3 className="text-lg font-bold sm:text-xl">{it.part}</h3>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 space-y-10">
+          {items.map((c, idx) => (
+            <article key={c.slug} className="card overflow-hidden">
+              <div className="border-b border-slate-200 bg-white px-5 py-5 sm:px-7">
+                <p className="flex flex-wrap items-center gap-2 text-sm font-semibold text-brand-700">
+                  <span className="grid h-6 w-6 place-items-center rounded-full bg-brand-600 text-xs text-white">
+                    {idx + 1}
+                  </span>
+                  {c.service}
+                </p>
+                <h3 className="mt-2.5 text-lg font-bold sm:text-xl">{c.title}</h3>
+                <p className="mt-3 text-[15px] leading-8 text-ink-soft">{c.context}</p>
+              </div>
+
+              <div className="grid gap-4 px-5 py-6 sm:grid-cols-2 sm:px-7">
                 {([
-                  { k: "ก่อนล้าง", img: it.before, bad: true },
-                  { k: "หลังล้าง", img: it.after, bad: false },
+                  { k: "ก่อนล้าง", img: c.before, bad: true },
+                  { k: "หลังล้าง", img: c.after, bad: false },
                 ] as const).map((col) => (
                   <figure key={col.k} className="m-0">
                     <div className="relative overflow-hidden rounded-xl ring-1 ring-slate-200">
@@ -219,21 +224,46 @@ export function BeforeAfter({
                       </span>
                     </div>
                     <figcaption className="mt-2.5 text-sm leading-6 text-ink-soft">
-                      {col.img.alt}
+                      {col.img.note}
                     </figcaption>
                   </figure>
                 ))}
               </div>
-              <p className="mt-4 flex items-start gap-2 rounded-xl bg-brand-50 px-4 py-3 text-sm leading-7 text-ink-soft">
-                <IconCheck className="mt-1 h-4 w-4 shrink-0 text-brand-600" />
-                {it.note}
-              </p>
-            </div>
+
+              <div className="grid gap-6 border-t border-slate-200 bg-white px-5 py-6 sm:px-7 lg:grid-cols-[1.3fr_0.7fr]">
+                <div>
+                  <p className="text-sm font-bold tracking-wide text-ink uppercase">
+                    งานนี้ทำอะไรบ้าง
+                  </p>
+                  <ol className="mt-4 space-y-3">
+                    {c.work.map((w, i) => (
+                      <li key={w} className="flex items-start gap-3">
+                        <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-50 text-xs font-bold text-brand-700">
+                          {i + 1}
+                        </span>
+                        <span className="text-[15px] leading-7 text-ink-soft">{w}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+
+                <dl className="grid grid-cols-2 gap-4 self-start rounded-xl bg-sand p-5 lg:grid-cols-1">
+                  {c.facts.map((f) => (
+                    <div key={f.label}>
+                      <dt className="text-xs font-semibold tracking-wide text-ink-soft uppercase">
+                        {f.label}
+                      </dt>
+                      <dd className="mt-1 text-[15px] font-bold text-ink">{f.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </article>
           ))}
         </div>
 
-        <p className="mt-6 text-sm leading-7 text-ink-soft">
-          ภาพในแต่ละคู่เป็นเครื่องเดียวกันและงานเดียวกัน ถ่ายก่อนเริ่มงานและหลังประกอบกลับ
+        <p className="mt-7 text-sm leading-7 text-ink-soft">
+          ภาพก่อนและหลังในแต่ละเคสเป็นเครื่องเดียวกันและงานเดียวกัน ถ่ายก่อนเริ่มงานและหลังประกอบกลับ
         </p>
       </div>
     </section>

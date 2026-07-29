@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { site, gallery, washerGallery, washerBeforeAfter, reviews } from "@/lib/site";
+import { site, gallery, washerGallery, caseStudies, reviews } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { CtaBand, Breadcrumbs, ReviewCard, BeforeAfter } from "@/components/Blocks";
+import { CtaBand, Breadcrumbs, ReviewCard, CaseStudies } from "@/components/Blocks";
 
 const title = "ผลงานล้างแอร์ ซ่อมแอร์ เชียงใหม่ ภาพหน้างานจริง";
 const description =
@@ -98,10 +98,10 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <BeforeAfter
-        items={washerBeforeAfter}
-        title="ก่อนล้าง เทียบกับ หลังล้าง"
-        lead="ภาพคู่ต่อไปนี้เป็นเครื่องเดียวกันและงานเดียวกัน ถ่ายก่อนเริ่มงานและหลังประกอบกลับ"
+      <CaseStudies
+        items={caseStudies}
+        title="เคสงานจริง เล่าว่าเจออะไรและทำอะไรไปบ้าง"
+        lead="ภาพก่อนและหลังในแต่ละเคสเป็นเครื่องเดียวกันและงานเดียวกัน พร้อมรายละเอียดขั้นตอนที่ทำจริงหน้างาน"
       />
 
       <section className="section">
