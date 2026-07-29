@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, areas, services } from "@/lib/site";
+import { site, areas, services, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
-const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ สันกำแพง ต้นเปา เมืองเชียงใหม่";
+const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ รัศมี 20 กม. 8 อำเภอ";
 const description =
-  "ช่างแอร์เชียงใหม่ให้บริการครอบคลุมสันกำแพง ต้นเปา บ่อสร้าง อำเภอเมืองเชียงใหม่ นิมมาน ช้างเผือก หนองป่าครั่ง ท่าศาลา ป่าแดด ช้างคลาน หางดง สารภี และสันทราย ไม่มีค่าเดินทางเพิ่ม";
+  "ช่างแอร์เชียงใหม่ รับงานรัศมี 20 กม. จากสันกำแพง ครอบคลุม 8 อำเภอ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง แม่ริม แม่ออน ดูรายชื่อตำบลที่รับงานได้ครบทุกตำบล ไม่บวกค่าเดินทาง";
 
 export const metadata: Metadata = {
   title,
@@ -37,8 +37,9 @@ export default function AreaIndex() {
             พื้นที่ให้บริการช่างแอร์เชียงใหม่
           </h1>
           <p className="lead mt-5">
-            ผมวิ่งงานทั้งฝั่งสันกำแพงและอำเภอเมืองเชียงใหม่
-            กดเลือกพื้นที่ของคุณเพื่อดูรายละเอียด ราคา และเวลาเข้างานของโซนนั้นได้เลย
+            ผมรับงานในรัศมีประมาณ 20 กิโลเมตรจากบ้านผมที่สันกำแพง
+            ครอบคลุม 8 อำเภอ รวม {coverageTotal} ตำบล ไม่บวกค่าเดินทางเพิ่ม
+            กดเลือกโซนของคุณเพื่อดูรายละเอียด หรือเลื่อนลงไปดูรายชื่อตำบลทั้งหมดด้านล่างครับ
           </p>
         </section>
       </div>
@@ -58,7 +59,12 @@ export default function AreaIndex() {
                   <h2 className="mt-4 text-lg font-bold group-hover:text-brand-700">
                     ช่างแอร์{a.name}
                   </h2>
-                  <p className="mt-1 text-sm font-medium text-ink-soft">{a.full}</p>
+                  <p className="mt-1 flex flex-wrap items-center gap-x-2 text-sm font-medium text-ink-soft">
+                    {a.full}
+                    <span className="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-bold text-brand-700">
+                      ~{a.km} กม.
+                    </span>
+                  </p>
                   <p className="mt-3 flex-1 text-sm leading-7 text-ink-soft">{a.note}</p>
                   <p className="mt-4 text-xs leading-6 text-ink-soft">
                     ครอบคลุม: {a.landmarks.join(" · ")}
@@ -74,13 +80,66 @@ export default function AreaIndex() {
         </div>
       </section>
 
-      <section className="section bg-sand">
+      {/* รายชื่อตำบลครบ — หน้าเดียวจบ ไม่แตกเป็นหน้าละตำบล */}
+      <section className="section bg-sand" id="tambon">
+        <div className="wrap max-w-4xl">
+          <h2 className="h2">ตำบลที่ผมรับงาน ครบทุกตำบล</h2>
+          <p className="lead mt-3">
+            หาชื่อตำบลของคุณในรายการนี้ได้เลยครับ ถ้าเจอ แปลว่าผมไปได้ ราคาเท่ากับทุกโซน ไม่บวกค่าเดินทาง
+          </p>
+
+          <div className="mt-9 space-y-4">
+            {coverage.map((c) => (
+              <div key={c.amphoe} className="card overflow-hidden">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 bg-slate-50 px-5 py-3.5 sm:px-6">
+                  <h3 className="text-base font-bold">{c.amphoe}</h3>
+                  <span className="text-sm font-semibold text-brand-700">
+                    {c.tambons.length} ตำบล · {c.km}
+                  </span>
+                </div>
+                <div className="px-5 py-4 sm:px-6">
+                  <ul className="flex flex-wrap gap-2">
+                    {c.tambons.map((t) => (
+                      <li
+                        key={t}
+                        className="rounded-full border border-brand-100 bg-brand-50/60 px-3 py-1 text-sm font-medium text-brand-800"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                  {"excluded" in c && c.excluded && (
+                    <p className="mt-3.5 text-xs leading-6 text-ink-soft">
+                      เกินรัศมี ต้องทักมาถามก่อน: {c.excluded.join(" · ")}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="card mt-6 border-2 border-brand-200 bg-brand-50 p-5 sm:p-6">
+            <p className="flex items-center gap-2.5 font-bold text-brand-800">
+              <IconPin className="h-5 w-5 shrink-0" />
+              ทำไมบางตำบลถึงไม่อยู่ในรายการ
+            </p>
+            <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+              ตำบลที่ตัดออกคือตำบลบนดอยหรือขอบนอกที่ไกลเกิน 20 กิโลเมตร เช่น ป่าเมี่ยง เทพเสด็จ
+              แม่กำปอง ม่อนแจ่ม โป่งแยง ผมไม่ได้ไม่รับ แต่อยากบอกตรง ๆ ก่อนว่าไกลกว่าปกติ
+              ถ้าคุณอยู่แถวนั้นทักมาคุยกันได้ครับ ผมจะบอกว่าไปได้ไหมและมีค่าเดินทางเพิ่มเท่าไหร่
+              ดีกว่าผมรับปากไว้แล้วไปไม่ได้จริง
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="wrap max-w-3xl">
           <h2 className="h2">ไม่เห็นพื้นที่ของคุณในรายการ?</h2>
           <p className="lead mt-4">
-            รายการด้านบนคือโซนที่ผมรับงานบ่อยที่สุด แต่ผมวิ่งทั่วจังหวัดเชียงใหม่ครับ
-            ถ้าที่ของคุณไม่อยู่ในรายการ ทักมาถามได้เลย ผมบอกตรง ๆ ว่าไปได้หรือไปไม่ได้
-            และถ้ามีค่าเดินทางเพิ่ม ผมบอกให้ทราบก่อนตกลงงานเสมอ
+            ทักมาถามได้เลยครับ ผมบอกตรง ๆ ว่าไปได้หรือไปไม่ได้
+            ถ้าไปได้แต่มีค่าเดินทางเพิ่ม ผมบอกให้ทราบก่อนตกลงงานเสมอ ไม่มีการบวกทีหลัง
+            และถ้าไกลเกินจนผมไปแล้วคุณไม่คุ้ม ผมก็จะบอกแบบนั้น
           </p>
 
           <h3 className="mt-10 text-lg font-bold">งานที่ผมรับทุกพื้นที่</h3>
