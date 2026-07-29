@@ -117,7 +117,7 @@ export default async function AreaPage({ params }: Props) {
           <p className="lead mt-3 max-w-2xl">
             บริการทั้งหมดด้านล่างครอบคลุม{a.full} ในอัตราเดียวกับพื้นที่อื่น ไม่มีค่าเดินทางเพิ่ม
           </p>
-          <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => {
               const Icon = serviceIcons[s.icon as keyof typeof serviceIcons];
               return (

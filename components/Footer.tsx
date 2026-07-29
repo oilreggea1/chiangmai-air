@@ -16,7 +16,7 @@ export default function Footer() {
             <span className="text-base font-extrabold">ช่างแอร์เชียงใหม่</span>
           </div>
           <p className="mt-4 text-sm leading-7 text-ink-soft">
-            ผมชื่อช่างอาร์ม รับล้างแอร์ ซ่อมแอร์ ติดตั้ง และย้ายแอร์ถึงบ้านทั่วเชียงใหม่
+            ผมชื่อช่างอาร์ม รับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์ และล้างถังเครื่องซักผ้าถึงบ้านทั่วเชียงใหม่
             บอกราคาก่อนลงมือทุกครั้ง และรับประกันผลงานให้
           </p>
           <a
@@ -104,6 +104,12 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href={`tel:${site.phone2Tel}`} className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+                <IconPhone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+                {site.phone2}
+              </a>
+            </li>
+            <li>
               <a href={site.lineUrl} target="_blank" rel="noopener" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
                 LINE {site.lineId}
@@ -133,7 +139,7 @@ export default function Footer() {
             © {year} {site.legalName} · {site.displayUrl}
             {site.taxId && <> · เลขประจำตัวผู้เสียภาษี {site.taxId}</>}
           </p>
-          <p>{site.legalNameEn} · ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ · สันกำแพง เชียงใหม่</p>
+          <p>{site.legalNameEn} · ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ ล้างเครื่องซักผ้า · สันกำแพง เชียงใหม่</p>
         </div>
       </div>
     </footer>

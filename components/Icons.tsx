@@ -65,6 +65,19 @@ export function IconMove({ className = base }: P) {
   );
 }
 
+export function IconWasher({ className = base }: P) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true"
+      stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round">
+      <rect x="4" y="2.5" width="16" height="19" rx="2.4" />
+      <path d="M4 7h16" strokeLinecap="round" />
+      <circle cx="12" cy="14.2" r="4.6" />
+      <path d="M8.2 12.6c1.3.9 2.2.9 3.8 0s2.5-.9 3.8 0" strokeLinecap="round" />
+      <path d="M7.2 4.8h.01M10 4.8h.01" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function IconShield({ className = base }: P) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true"
@@ -175,6 +188,7 @@ export const serviceIcons = {
   wrench: IconWrench,
   install: IconInstall,
   move: IconMove,
+  washer: IconWasher,
   shield: IconShield,
   sparkle: IconSparkle,
   engineer: IconEngineer,

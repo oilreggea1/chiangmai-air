@@ -113,6 +113,8 @@ export default function Contact() {
                   <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
                     โทร {site.phone}
                     <br />
+                    โทร {site.phone2}
+                    <br />
                     LINE {site.lineId}
                     <br />
                     <a href={site.facebook} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">

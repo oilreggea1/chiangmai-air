@@ -127,7 +127,9 @@ export default function AboutPage() {
               </span>
               <div>
                 <p className="text-lg font-bold">{site.leadTech}</p>
-                <p className="text-sm font-medium text-brand-700">ช่างผู้รับผิดชอบหน้างาน</p>
+                <p className="text-sm font-medium text-brand-700">
+                  ช่างผู้รับผิดชอบหน้างาน · ประสบการณ์{site.experience}
+                </p>
               </div>
             </div>
             <p className="mt-5 text-[15px] leading-8 text-ink-soft">

@@ -15,9 +15,27 @@ export function localBusinessSchema() {
     taxID: site.taxId,
     vatID: site.taxId,
     description:
-      "ช่างแอร์เชียงใหม่ รับล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ และย้ายแอร์ถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ บอกราคาก่อนลงมือ รับประกันผลงาน ออกใบกำกับภาษีได้",
+      "ช่างแอร์เชียงใหม่ รับล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ และล้างเครื่องซักผ้าถึงบ้าน ครอบคลุมสันกำแพง ต้นเปา และอำเภอเมืองเชียงใหม่ บอกราคาก่อนลงมือ รับประกันผลงาน ออกใบกำกับภาษีได้",
     url: site.url,
+    // เบอร์หลักไว้ใน telephone ให้ตรงกับ Google Business Profile เบอร์สำรองแยกไว้ใน contactPoint
     telephone: site.phoneRaw,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        telephone: site.phoneRaw,
+        areaServed: "TH",
+        availableLanguage: ["th", "en"],
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        telephone: site.phone2Raw,
+        areaServed: "TH",
+        availableLanguage: ["th", "en"],
+      },
+    ],
+    knowsAbout: services.map((s) => s.name),
     priceRange: site.priceRange,
     // Google อยากได้รูปหน้างานจริง ไม่ใช่กราฟิก OG
     image: [

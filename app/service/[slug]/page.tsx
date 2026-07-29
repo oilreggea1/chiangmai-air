@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, services, areas, gallery } from "@/lib/site";
+import { site, services, areas, gallery, servicePhotos } from "@/lib/site";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps } from "@/components/Blocks";
@@ -36,6 +36,14 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const others = services.filter((x) => x.slug !== s.slug);
+  // บริการที่มีภาพงานของตัวเองใช้ชุดนั้น ที่เหลือหยิบจากคลังภาพงานแอร์
+  const photos = servicePhotos[s.slug];
+  const hero = photos
+    ? photos[0]
+    : {
+        src: gallery[(services.indexOf(s) * 5 + 2) % gallery.length].src,
+        alt: `${s.name}เชียงใหม่ ผลงานจริงของช่างโปรเฟรชแคร์`,
+      };
   const Icon = serviceIcons[s.icon as keyof typeof serviceIcons];
   const trail = [
     { name: "หน้าแรก", path: "/" },
@@ -78,8 +86,8 @@ export default async function ServicePage({ params }: Props) {
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
-              src={gallery[(services.indexOf(s) * 5 + 2) % gallery.length].src}
-              alt={`${s.name}เชียงใหม่ ผลงานจริงของช่างโปรเฟรชแคร์`}
+              src={hero.src}
+              alt={hero.alt}
               width={900}
               height={1200}
               priority
@@ -132,6 +140,33 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ภาพงานจริงเฉพาะบริการนี้ */}
+      {photos && photos.length > 1 && (
+        <section className="section">
+          <div className="wrap">
+            <h2 className="h2">ภาพงาน{s.name}จริง</h2>
+            <p className="lead mt-3 max-w-2xl">
+              ภาพจากหน้างานจริง แสดงชิ้นส่วนที่ถอดออกมาและสภาพก่อนล้าง
+              เพื่อให้เห็นว่าคราบที่สะสมอยู่ในจุดที่มองไม่เห็นมีลักษณะอย่างไร
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {photos.slice(1).map((g) => (
+                <div key={g.src} className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
+                  <Image
+                    src={g.src}
+                    alt={g.alt}
+                    width={768}
+                    height={1024}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="h-72 w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* พื้นที่ */}
       <section className="section">
         <div className="wrap">
@@ -166,7 +201,7 @@ export default async function ServicePage({ params }: Props) {
       <section className="section">
         <div className="wrap">
           <h2 className="h2">บริการอื่นที่เกี่ยวข้อง</h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((o) => {
               const OIcon = serviceIcons[o.icon as keyof typeof serviceIcons];
               return (
