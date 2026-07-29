@@ -117,7 +117,9 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-              เปิดบริการทุกวัน {site.hours}
+              {site.daysLabel} {site.hours}
+              <br />
+              {site.closedNote}
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />

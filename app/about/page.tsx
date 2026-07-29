@@ -10,7 +10,7 @@ import { CtaBand, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
 const title = "รู้จักช่างอาร์ม ช่างแอร์เชียงใหม่ สันกำแพง";
 const description =
-  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด ที่ตั้ง ต.สันกำแพง อ.สันกำแพง ทำงานด้วยหลักแจ้งราคาก่อนเริ่มงาน ตรวจวัดน้ำยาก่อนเติม รับงานทุกวัน ออกใบกำกับภาษีได้";
+  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด ที่ตั้ง ต.สันกำแพง อ.สันกำแพง ทำงานด้วยหลักแจ้งราคาก่อนเริ่มงาน ตรวจวัดน้ำยาก่อนเติม รับงานจันทร์ถึงเสาร์ ออกใบกำกับภาษีได้";
 
 export const metadata: Metadata = {
   title,
@@ -232,7 +232,7 @@ export default function AboutPage() {
           <dl className="mt-6 grid gap-5 sm:grid-cols-2">
             {[
               { t: "ที่ตั้ง", d: `${site.legalName} · ${addressLine}`, Icon: IconPin },
-              { t: "เวลาทำการ", d: `รับงานทุกวัน ${site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง`, Icon: IconClock },
+              { t: "เวลาทำการ", d: `${site.daysLabel} ${site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง`, Icon: IconClock },
               { t: "ติดต่อ", d: `โทร ${site.phone} · LINE ${site.lineId}`, Icon: IconPhone },
               { t: "เอกสาร", d: "ออกใบกำกับภาษีได้ รองรับลูกค้านิติบุคคลทั้งคาเฟ่ ร้านอาหาร โรงแรม หอพัก และสำนักงาน", Icon: IconCheck },
             ].map((x) => (

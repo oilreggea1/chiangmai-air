@@ -42,7 +42,7 @@ export function CtaBand({
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">
-              รับงานทุกวัน {site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง
+              {site.daysLabel} {site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง
             </p>
           </div>
         </div>

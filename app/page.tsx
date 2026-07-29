@@ -501,7 +501,7 @@ export default function Home() {
             </a>
             <span className="inline-flex items-center gap-2 px-2 text-sm text-ink-soft">
               <IconClock className="h-5 w-5 text-brand-600" />
-              เปิดทุกวัน {site.hours}
+              {site.daysLabel} {site.hours} · {site.closedNote}
             </span>
           </div>
         </div>

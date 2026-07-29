@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: Props) {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              {s.priceLabel} · เปิดบริการทุกวัน {site.hours}
+              {s.priceLabel} · {site.daysLabel} {site.hours}
             </p>
           </div>
 

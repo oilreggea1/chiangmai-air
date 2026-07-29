@@ -7,7 +7,7 @@ import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ติดต่อช่างแอร์เชียงใหม่ โทร 065-365-7673 | โปรเฟรชแคร์ สันกำแพง";
 const description =
-  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 หรือ LINE @794xvrnm รับงานทุกวัน 08:00-20:00 น. อยู่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง จ.เชียงใหม่";
+  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 หรือ LINE @794xvrnm เวลาทำการ จันทร์-เสาร์ 08:00-18:00 น. อยู่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง จ.เชียงใหม่";
 
 export const metadata: Metadata = {
   title,
@@ -100,7 +100,7 @@ export default function Contact() {
                 <div>
                   <dt className="font-bold">เวลาทำการ</dt>
                   <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                    เปิดทุกวัน {site.hours}
+                    {site.daysLabel} {site.hours}
                     <br />
                     เข้าหน้างานได้ภายใน 24 ชั่วโมง
                   </dd>

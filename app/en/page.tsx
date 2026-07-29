@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning, repair, installation and relocation in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open daily 8am-8pm. Condos, villas and Airbnb welcome. Tax invoice available.";
+  "Aircon cleaning, repair, installation and relocation in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Tax invoice available.";
 
 export const metadata: Metadata = {
   title,
@@ -77,7 +77,7 @@ const faqs = [
   },
   {
     q: "How quickly can you come?",
-    a: "Usually within 24 hours, and the same day if I have a slot free. I work every day from 8am to 8pm. The one exception is April, when the whole city wants a technician at once — book ahead if you can.",
+    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 6pm, and can take bookings outside those hours for an additional fee. The one exception is April, when the whole city wants a technician at once — book ahead if you can.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function EnglishPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              LINE ID {site.lineId} · open daily 8:00–20:00 · usually on site within 24 hours
+              LINE ID {site.lineId} · Mon–Sat 8:00–18:00 · usually on site within 24 hours
             </p>
           </div>
 
@@ -273,7 +273,7 @@ export default function EnglishPage() {
             </div>
             <p className="mt-6 inline-flex items-center gap-2 text-sm text-brand-200">
               <IconClock className="h-4 w-4" />
-              Open daily 8:00–20:00
+              Mon–Sat 8:00–18:00 · closed Sunday
               <IconShield className="ml-3 h-4 w-4" />
               Tax invoice available
             </p>

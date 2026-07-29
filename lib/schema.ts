@@ -60,12 +60,19 @@ export function localBusinessSchema() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
+        // จันทร์–เสาร์เท่านั้น วันอาทิตย์หยุด จึงไม่อยู่ในรายการ
         dayOfWeek: [
-          "Monday", "Tuesday", "Wednesday", "Thursday",
-          "Friday", "Saturday", "Sunday",
+          "Monday", "Tuesday", "Wednesday",
+          "Thursday", "Friday", "Saturday",
         ],
         opens: site.hoursOpen,
         closes: site.hoursClose,
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Sunday",
+        opens: "00:00",
+        closes: "00:00",
       },
     ],
     sameAs: [site.facebook, site.lineUrl],
