@@ -8,7 +8,7 @@ import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
 const title = "คลังความรู้เรื่องแอร์ โดยช่างแอร์เชียงใหม่";
 const description =
-  "รวมบทความเรื่องแอร์จากช่างจริงในเชียงใหม่ ตั้งแต่แอร์ไม่เย็น น้ำหยด กลิ่นอับ ไปจนถึงราคาล้างแอร์ ฝุ่น PM2.5 หน้าเผา และวิธีดูว่าช่างล้างแอร์ให้จริงหรือไม่";
+  "รวมบทความเรื่องแอร์จากช่างจริงในเชียงใหม่ ตั้งแต่แอร์ไม่เย็น น้ำหยด กลิ่นอับ ไปจนถึงราคาล้างแอร์ ฝุ่น PM2.5 ฤดูหมอกควัน และวิธีตรวจสอบคุณภาพงานล้างแอร์";
 
 export const metadata: Metadata = {
   title,
@@ -92,7 +92,7 @@ export default function BlogIndex() {
           <div className="rounded-2xl bg-gradient-to-br from-brand-700 to-brand-500 p-6 text-white">
             <p className="text-sm font-semibold text-brand-100">บทความที่คนเชียงใหม่ควรอ่านที่สุด</p>
             <p className="mt-2 text-[15px] leading-8">
-              หัวข้อที่ยังไม่ค่อยมีการพูดถึงในเชียงใหม่ ทั้งที่เป็นสถานการณ์ที่เกิดขึ้นทุกปี
+              หัวข้อที่มีการกล่าวถึงไม่มากในเชียงใหม่ ทั้งที่เป็นสถานการณ์ซึ่งเกิดขึ้นทุกปี
             </p>
             <p className="mt-4 inline-flex items-center gap-2 text-sm text-brand-100">
               <IconClock className="h-4 w-4" />

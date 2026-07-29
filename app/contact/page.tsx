@@ -70,10 +70,10 @@ export default function Contact() {
             <span className="grid h-16 w-16 place-items-center rounded-2xl bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25">
               <IconLine className="h-8 w-8" />
             </span>
-            <h2 className="mt-5 text-lg font-bold">แชททาง LINE</h2>
+            <h2 className="mt-5 text-lg font-bold">ติดต่อทาง LINE</h2>
             <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
-              ส่งภาพเครื่องหรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในแชท
+              ส่งภาพเครื่องหรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในข้อความ
             </p>
           </a>
         </div>
@@ -163,10 +163,10 @@ export default function Contact() {
           <ol className="mt-6 space-y-4">
             {[
               "บริการที่ต้องการ — ล้าง ซ่อม ติดตั้ง หรือย้ายแอร์",
-              "จำนวนเครื่องและขนาด BTU (ดูได้จากสติกเกอร์ข้างเครื่อง หรือถ่ายรูปมาให้ดูก็ได้)",
+              "จำนวนเครื่องและขนาด BTU (ดูได้จากสติกเกอร์ข้างเครื่อง หรือส่งภาพมาให้ผมตรวจสอบ)",
               "ประเภทแอร์ — ติดผนัง แขวน ตู้ตั้ง หรือสี่ทิศทาง",
-              "อาการที่เจอ ถ้าเป็นงานซ่อม เช่น ไม่เย็น น้ำหยด มีเสียงดัง ไฟกระพริบ",
-              "พื้นที่ของคุณ เช่น สันกำแพง นิมมาน หางดง เพื่อให้ตรวจสอบคิวในโซนนั้นได้",
+              "อาการที่พบ กรณีเป็นงานซ่อม เช่น ไม่เย็น น้ำหยด มีเสียงดัง ไฟกระพริบ",
+              "พื้นที่ของคุณ เช่น สันกำแพง นิมมาน หางดง เพื่อให้ตรวจสอบคิวในพื้นที่นั้นได้",
             ].map((t, i) => (
               <li key={t} className="flex items-start gap-3.5">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-600 text-sm font-bold text-white">

@@ -42,19 +42,19 @@ export default async function AreaPage({ params }: Props) {
 
   const areaFaqs = [
     {
-      q: `รับงานใน${a.full} จริงไหม?`,
+      q: `รับงานใน${a.full} หรือไม่?`,
       a: `รับครับ ${a.note} ผมรับงานในพื้นที่นี้เป็นประจำ จึงคุ้นเคยเส้นทางและเข้าถึงหน้างานได้รวดเร็ว`,
     },
     {
-      q: `เรียกช่างแอร์${a.name} กี่วันได้คิว?`,
+      q: `เรียกช่างแอร์${a.name} ใช้เวลากี่วันจึงได้คิว?`,
       a: "ปกติผมเข้าหน้างานได้ภายใน 24 ชั่วโมงครับ และเข้าในวันเดียวกันได้หากคิวว่าง สามารถโทรหรือทาง LINE เพื่อสอบถามคิวล่วงหน้าได้",
     },
     {
-      q: `มีค่าเดินทางเพิ่มไหมถ้าอยู่${a.name}?`,
+      q: `กรณีอยู่ใน${a.name} มีค่าเดินทางเพิ่มหรือไม่?`,
       a: `ไม่มีครับ ${a.full} อยู่ในเขตให้บริการปกติ ราคาที่ระบุไว้คือราคาที่ชำระจริง`,
     },
     {
-      q: "รับล้างแอร์คอนโดและหอพักในโซนนี้ไหม?",
+      q: "รับล้างแอร์คอนโดและหอพักในพื้นที่นี้หรือไม่?",
       a: "รับครับ ทั้งบ้านพักอาศัย คอนโด หอพัก ร้านกาแฟ ร้านอาหาร และสำนักงาน กรณีล้างหลายเครื่องมีอัตราพิเศษให้",
     },
   ];
@@ -87,7 +87,7 @@ export default async function AreaPage({ params }: Props) {
               </a>
               <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line px-6 py-3.5 text-lg" data-cta="area-line">
                 <IconLine className="h-5 w-5" />
-                เช็คคิวทาง LINE
+                สอบถามคิวทาง LINE
               </a>
             </div>
             <p className="mt-4 inline-flex items-center gap-2 text-sm text-ink-soft">
@@ -150,7 +150,7 @@ export default async function AreaPage({ params }: Props) {
             <p>
               ที่ตั้งของผมอยู่ที่ <strong className="text-ink">ต.สันกำแพง อ.สันกำแพง</strong>{" "}
               จึงเข้าถึงหน้างานใน{a.full}ได้รวดเร็ว {a.note}
-              {" "}จุดที่ลูกค้าโซนนี้เรียกใช้บ่อยได้แก่ {a.landmarks.join(" · ")}
+              {" "}พื้นที่ที่ลูกค้าเรียกใช้บริการบ่อย ได้แก่ {a.landmarks.join(" · ")}
             </p>
             <p>
               สิ่งที่ลูกค้าในพื้นที่นี้กล่าวถึงบ่อยที่สุดคือ{" "}
@@ -184,7 +184,7 @@ export default async function AreaPage({ params }: Props) {
         <div className="wrap max-w-4xl">
           <h2 className="h2">ราคาช่างแอร์{a.name}</h2>
           <p className="lead mt-3">
-            ราคาเดียวกันทุกพื้นที่ในเขตบริการ ไม่มีค่าเดินทางแอบแฝง
+            ราคาเดียวกันทุกพื้นที่ในเขตบริการ ไม่มีค่าเดินทางเพิ่มเติม
           </p>
           <div className="mt-8 space-y-6">
             {pricing.map((g) => (

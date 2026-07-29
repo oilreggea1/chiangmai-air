@@ -16,8 +16,8 @@ export default function Footer() {
             <span className="text-base font-extrabold">ช่างแอร์เชียงใหม่</span>
           </div>
           <p className="mt-4 text-sm leading-7 text-ink-soft">
-            ผมชื่อช่างอาร์ม รับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์ และล้างถังเครื่องซักผ้าถึงบ้านทั่วเชียงใหม่
-            บอกราคาก่อนลงมือทุกครั้ง และรับประกันผลงานให้
+            ผมช่างอาร์ม รับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์ และล้างถังเครื่องซักผ้าถึงบ้านทั่วเชียงใหม่
+            แจ้งราคาก่อนเริ่มงานทุกครั้ง และรับประกันผลงาน
           </p>
           <a
             href={site.facebook}
@@ -25,7 +25,7 @@ export default function Footer() {
             rel="noopener"
             className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
           >
-            ดูผลงานผมบน Facebook →
+            ดูผลงานเพิ่มเติมบน Facebook →
           </a>
         </div>
 

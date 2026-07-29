@@ -7,7 +7,7 @@ import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
 const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ รัศมี 20 กม. 8 อำเภอ";
 const description =
-  "ช่างแอร์เชียงใหม่ รับงานรัศมี 20 กม. จากสันกำแพง ครอบคลุม 8 อำเภอ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง แม่ริม แม่ออน ดูรายชื่อตำบลที่รับงานได้ครบทุกตำบล ไม่บวกค่าเดินทาง";
+  "ช่างแอร์เชียงใหม่ รับงานรัศมี 20 กม. จากสันกำแพง ครอบคลุม 8 อำเภอ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง แม่ริม แม่ออน ดูรายชื่อตำบลที่รับงานได้ครบทุกตำบล ไม่คิดค่าเดินทางเพิ่ม";
 
 export const metadata: Metadata = {
   title,
@@ -121,7 +121,7 @@ export default function AreaIndex() {
           <div className="card mt-6 border-2 border-brand-200 bg-brand-50 p-5 sm:p-6">
             <p className="flex items-center gap-2.5 font-bold text-brand-800">
               <IconPin className="h-5 w-5 shrink-0" />
-              ทำไมบางตำบลถึงไม่อยู่ในรายการ
+              เหตุใดบางตำบลจึงไม่อยู่ในรายการ
             </p>
             <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
               ตำบลที่ไม่อยู่ในรายการคือตำบลบนพื้นที่สูงหรือขอบนอกที่ระยะทางเกิน 20 กิโลเมตร
@@ -135,7 +135,7 @@ export default function AreaIndex() {
 
       <section className="section">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">ไม่เห็นพื้นที่ของคุณในรายการ?</h2>
+          <h2 className="h2">หากไม่พบพื้นที่ของคุณในรายการ สอบถามเข้ามาได้ครับ</h2>
           <p className="lead mt-4">
             สอบถามเข้ามาได้ครับ ผมจะแจ้งตามจริงว่าสามารถให้บริการได้หรือไม่
             กรณีที่ให้บริการได้แต่มีค่าเดินทางเพิ่ม ผมแจ้งให้ทราบก่อนตกลงงานเสมอ
