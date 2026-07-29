@@ -37,8 +37,8 @@ export default function Contact() {
             ติดต่อช่างแอร์เชียงใหม่
           </h1>
           <p className="lead mt-5">
-            โทรหรือทัก LINE มาได้เลยครับ ผมตอบเองในเวลาทำการ
-            เล่าอาการมา บอกจำนวนเครื่องหรือขนาด BTU ก็ได้ ผมประเมินราคาให้ฟรีก่อนตัดสินใจ
+            ติดต่อทางโทรศัพท์หรือ LINE ได้ในเวลาทำการ ผมเป็นผู้ตอบเอง
+            แจ้งอาการ จำนวนเครื่อง หรือขนาด BTU เข้ามา ผมประเมินราคาให้ก่อนตัดสินใจโดยไม่คิดค่าใช้จ่าย
           </p>
         </section>
       </div>
@@ -56,7 +56,7 @@ export default function Contact() {
             <h2 className="mt-5 text-lg font-bold">โทรเรียกช่างทันที</h2>
             <p className="mt-2 text-3xl font-extrabold text-accent">{site.phone}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
-              เหมาะกับงานด่วน แอร์เสียกะทันหัน หรืออยากคุยกับผมโดยตรง
+              เหมาะกับงานเร่งด่วน หรือกรณีที่ต้องการสอบถามรายละเอียดโดยตรง
             </p>
           </a>
 
@@ -73,7 +73,7 @@ export default function Contact() {
             <h2 className="mt-5 text-lg font-bold">แชททาง LINE</h2>
             <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
-              ส่งรูปแอร์หรือคลิปอาการมาให้ผมดูก่อนได้ หลายเคสผมบอกช่วงราคาให้ได้ตั้งแต่ในแชท
+              ส่งภาพเครื่องหรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในแชท
             </p>
           </a>
         </div>
@@ -82,7 +82,7 @@ export default function Contact() {
       <section className="section bg-sand pt-4">
         <div className="wrap grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <h2 className="h2">ข้อมูลร้าน</h2>
+            <h2 className="h2">ข้อมูลการติดต่อ</h2>
             <dl className="mt-6 space-y-5">
               <div className="flex items-start gap-3">
                 <IconPin className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
@@ -116,7 +116,7 @@ export default function Contact() {
                     LINE {site.lineId}
                     <br />
                     <a href={site.facebook} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">
-                      Facebook ของผม
+                      Facebook
                     </a>
                   </dd>
                 </div>
@@ -136,7 +136,7 @@ export default function Contact() {
                       </>
                     )}
                     <br />
-                    ออกใบกำกับภาษีให้ได้ตามปกติครับ
+                    ออกใบกำกับภาษีได้ตามปกติ
                   </dd>
                 </div>
               </div>
@@ -157,14 +157,14 @@ export default function Contact() {
 
       <section className="section">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">บอกอะไรผมมาบ้าง จะได้ราคาเร็วที่สุด</h2>
+          <h2 className="h2">ข้อมูลที่ช่วยให้ประเมินราคาได้เร็วที่สุด</h2>
           <ol className="mt-6 space-y-4">
             {[
               "บริการที่ต้องการ — ล้าง ซ่อม ติดตั้ง หรือย้ายแอร์",
               "จำนวนเครื่องและขนาด BTU (ดูได้จากสติกเกอร์ข้างเครื่อง หรือถ่ายรูปมาให้ดูก็ได้)",
               "ประเภทแอร์ — ติดผนัง แขวน ตู้ตั้ง หรือสี่ทิศทาง",
               "อาการที่เจอ ถ้าเป็นงานซ่อม เช่น ไม่เย็น น้ำหยด มีเสียงดัง ไฟกระพริบ",
-              "พื้นที่ของคุณ เช่น สันกำแพง นิมมาน หางดง ผมจะได้เช็คคิวในโซนนั้นให้",
+              "พื้นที่ของคุณ เช่น สันกำแพง นิมมาน หางดง เพื่อให้ตรวจสอบคิวในโซนนั้นได้",
             ].map((t, i) => (
               <li key={t} className="flex items-start gap-3.5">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-600 text-sm font-bold text-white">
