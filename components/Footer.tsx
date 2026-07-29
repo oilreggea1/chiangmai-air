@@ -35,7 +35,7 @@ export default function Footer() {
             {services.map((s) => (
               <li key={s.slug}>
                 <Link href={`/service/${s.slug}`} className="text-ink-soft hover:text-brand-700 hover:underline">
-                  {s.h1.split(" ").slice(0, 2).join(" ")}เชียงใหม่
+                  {s.name}เชียงใหม่
                 </Link>
               </li>
             ))}

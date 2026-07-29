@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { site, gallery, reviews } from "@/lib/site";
+import { site, gallery, washerGallery, reviews } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { CtaBand, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
@@ -38,7 +38,7 @@ export default function Portfolio() {
           name: title,
           description,
           url: `${site.url}/portfolio`,
-          image: gallery.map((g) => `${site.url}${g.src}`),
+          image: [...gallery, ...washerGallery].map((g) => `${site.url}${g.src}`),
         })}
       />
 
@@ -50,8 +50,8 @@ export default function Portfolio() {
             ภาพผลงานช่างแอร์เชียงใหม่
           </h1>
           <p className="lead mt-5">
-            ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ ครอบคลุมงานถอดล้าง งานซ่อม งานติดตั้ง และงานย้ายแอร์
-            แสดงทั้งขั้นตอนการปูผ้าใบและสภาพชิ้นส่วนขณะถอดล้าง
+            ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ ครอบคลุมงานถอดล้าง งานซ่อม งานติดตั้ง งานย้ายแอร์
+            และงานล้างถังเครื่องซักผ้า แสดงทั้งขั้นตอนการปูผ้าใบและสภาพชิ้นส่วนขณะถอดล้าง
           </p>
         </section>
       </div>
@@ -68,6 +68,27 @@ export default function Portfolio() {
                   height={800}
                   priority={i < 4}
                   loading={i < 4 ? undefined : "lazy"}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </li>
+            ))}
+          </ul>
+
+          {/* งานเครื่องซักผ้าแยกกลุ่ม เพราะ alt คนละชุดกับงานแอร์ */}
+          <h2 className="h2 mt-14">งานล้างถังเครื่องซักผ้า</h2>
+          <p className="lead mt-3 max-w-2xl">
+            ภาพชิ้นส่วนที่ถอดออกมาและสภาพก่อนล้าง ซึ่งเป็นบริเวณที่มองไม่เห็นขณะเครื่องประกอบอยู่
+          </p>
+          <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {washerGallery.map((g) => (
+              <li key={g.src} className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200">
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  width={800}
+                  height={800}
+                  loading="lazy"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
                 />

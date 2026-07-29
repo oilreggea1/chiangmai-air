@@ -4,12 +4,12 @@ import Image from "next/image";
 import { site, gallery, areas } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import {
-  IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconShield,
+  IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconShield,
 } from "@/components/Icons";
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning, repair, installation and relocation in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Tax invoice available.";
+  "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Tax invoice available.";
 
 export const metadata: Metadata = {
   title,
@@ -51,6 +51,12 @@ const servicesEn = [
     name: "Relocation",
     price: "3,500 THB",
     desc: "Moving house or changing rooms. I pump the refrigerant back into the condenser before disconnecting, so you are not paying for a full recharge afterwards. Removal only is 700 THB.",
+  },
+  {
+    icon: IconWasher,
+    name: "Washing machine drum clean",
+    price: "from 999 THB",
+    desc: "I take the drum out and wash every removable part, rather than pouring cleaner in and running a cycle — the build-up sits on the outside of the drum where a cycle cannot reach. Top loaders start at 999 THB and go by capacity; front loaders start at 1,299 THB because they are more involved to strip down. Around three hours per machine, 30-day warranty.",
   },
 ];
 

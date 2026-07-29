@@ -5,9 +5,9 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconCheck, IconX, IconChevron, IconShield } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 550-2,000 ซ่อม ติดตั้ง ย้ายแอร์";
+const title = "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 550-2,000 ซ่อม ติดตั้ง ย้ายแอร์ ล้างเครื่องซักผ้า";
 const description =
-  "ตารางราคาช่างแอร์เชียงใหม่ครบทุกรายการ ล้างแอร์ 550-800 บาท Premium Full Wash 2,000 บาท ติดตั้ง 3,000-3,500 บาท ย้ายแอร์ 3,500 บาท เติมน้ำยา 25 บาท/ปอนด์ ไม่มีค่าเดินทางเพิ่ม";
+  "ตารางราคาช่างแอร์เชียงใหม่ครบทุกรายการ ล้างแอร์ 550-800 บาท Premium Full Wash 2,000 บาท ติดตั้ง 3,000-3,500 บาท ย้ายแอร์ 3,500 บาท ล้างเครื่องซักผ้าฝาบน 999 ฝาหน้า 1,299 บาท ไม่มีค่าเดินทางเพิ่ม";
 
 export const metadata: Metadata = {
   title,
