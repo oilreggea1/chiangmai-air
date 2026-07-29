@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { IconPhone, IconLine, IconChevron, IconStar, IconCheck } from "./Icons";
 
@@ -157,5 +158,84 @@ export function Steps({ steps }: { steps: { title: string; detail: string }[] })
         </li>
       ))}
     </ol>
+  );
+}
+
+type BaItem = {
+  part: string;
+  before: { src: string; alt: string };
+  after: { src: string; alt: string };
+  note: string;
+};
+
+/**
+ * ตารางเทียบก่อน–หลังแบบจุดต่อจุด
+ * แต่ละแถวคือชิ้นส่วนเดียวกันของเครื่องเดียวกัน ถ่ายก่อนล้างและหลังล้าง
+ */
+export function BeforeAfter({
+  items,
+  title,
+  lead,
+}: {
+  items: BaItem[];
+  title: string;
+  lead: string;
+}) {
+  return (
+    <section className="section bg-sand">
+      <div className="wrap">
+        <div className="max-w-2xl">
+          <p className="eyebrow">เทียบให้เห็นจุดต่อจุด</p>
+          <h2 className="h2 mt-4">{title}</h2>
+          <p className="lead mt-3">{lead}</p>
+        </div>
+
+        <div className="mt-10 space-y-8">
+          {items.map((it) => (
+            <div key={it.part} className="card overflow-hidden p-5 sm:p-6">
+              <h3 className="text-lg font-bold sm:text-xl">{it.part}</h3>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {([
+                  { k: "ก่อนล้าง", img: it.before, bad: true },
+                  { k: "หลังล้าง", img: it.after, bad: false },
+                ] as const).map((col) => (
+                  <figure key={col.k} className="m-0">
+                    <div className="relative overflow-hidden rounded-xl ring-1 ring-slate-200">
+                      <Image
+                        src={col.img.src}
+                        alt={col.img.alt}
+                        width={900}
+                        height={900}
+                        loading="lazy"
+                        sizes="(max-width: 640px) 100vw, 45vw"
+                        className="aspect-4/3 w-full object-cover"
+                      />
+                      <span
+                        className={`absolute top-3 left-3 rounded-full px-3 py-1 text-sm font-bold text-white ${
+                          col.bad ? "bg-accent" : "bg-mint"
+                        }`}
+                      >
+                        {col.k}
+                      </span>
+                    </div>
+                    <figcaption className="mt-2.5 text-sm leading-6 text-ink-soft">
+                      {col.img.alt}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+              <p className="mt-4 flex items-start gap-2 rounded-xl bg-brand-50 px-4 py-3 text-sm leading-7 text-ink-soft">
+                <IconCheck className="mt-1 h-4 w-4 shrink-0 text-brand-600" />
+                {it.note}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-6 text-sm leading-7 text-ink-soft">
+          ภาพในแต่ละคู่เป็นเครื่องเดียวกันและงานเดียวกัน ถ่ายก่อนเริ่มงานและหลังประกอบกลับ
+        </p>
+      </div>
+    </section>
   );
 }

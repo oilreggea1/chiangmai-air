@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, services, areas, gallery, servicePhotos } from "@/lib/site";
+import { site, services, areas, gallery, servicePhotos, washerBeforeAfter } from "@/lib/site";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
-import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps } from "@/components/Blocks";
+import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, BeforeAfter } from "@/components/Blocks";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -139,6 +139,15 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* เทียบก่อน-หลัง เฉพาะบริการที่มีชุดภาพจับคู่ยืนยันแล้ว */}
+      {s.slug === "lang-washing-machine" && (
+        <BeforeAfter
+          items={washerBeforeAfter}
+          title="สภาพเครื่องก่อนล้าง เทียบกับหลังถอดล้าง"
+          lead="คราบที่สะสมอยู่ในเครื่องซักผ้าอยู่ในจุดที่มองไม่เห็นขณะใช้งานปกติ ภาพต่อไปนี้ถ่ายจากงานจริง เพื่อให้เห็นว่าการถอดล้างเข้าถึงจุดใดได้บ้าง"
+        />
+      )}
 
       {/* ภาพงานจริงเฉพาะบริการนี้ */}
       {photos && photos.length > 1 && (
