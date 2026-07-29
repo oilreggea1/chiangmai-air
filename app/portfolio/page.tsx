@@ -45,13 +45,13 @@ export default function Portfolio() {
       <div className="bg-gradient-to-b from-brand-50 to-white">
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-3xl pt-8 pb-14 text-center">
-          <p className="eyebrow">ผลงานจริง ไม่ใช่ภาพสต็อก</p>
+          <p className="eyebrow">ภาพจากหน้างานจริง</p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
             ภาพผลงานช่างแอร์เชียงใหม่
           </h1>
           <p className="lead mt-5">
-            ภาพทั้งหมดถ่ายจากหน้างานจริง ครอบคลุมงานถอดล้าง งานซ่อม งานติดตั้ง และงานย้ายแอร์
-            แสดงทั้งขั้นตอนการปูผ้าใบและสภาพชิ้นส่วนขณะถอดล้างตามจริง
+            ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ ครอบคลุมงานถอดล้าง งานซ่อม งานติดตั้ง และงานย้ายแอร์
+            แสดงทั้งขั้นตอนการปูผ้าใบและสภาพชิ้นส่วนขณะถอดล้าง
           </p>
         </section>
       </div>

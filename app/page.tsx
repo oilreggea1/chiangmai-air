@@ -272,7 +272,7 @@ export default function Home() {
                   <th scope="col" className="bg-brand-600 px-3 py-4 text-center text-sm font-bold text-white sm:px-6">
                     Premium Full Wash
                     <span className="mt-0.5 block text-[11px] font-medium text-brand-100">
-                      เจ้าเดียวในเชียงใหม่
+                      ถอดชิ้นส่วนล้าง 100%
                     </span>
                   </th>
                 </tr>
@@ -427,7 +427,7 @@ export default function Home() {
             <p className="eyebrow">ผลงานจริง</p>
             <h2 className="h2 mt-4">ตัวอย่างผลงาน</h2>
             <p className="lead mt-3">
-              ภาพทั้งหมดถ่ายจากหน้างานจริง ไม่ใช่ภาพสต็อก แสดงทั้งขั้นตอนการปูผ้าใบและสภาพชิ้นส่วนขณะถอดล้าง
+              ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ แสดงทั้งขั้นตอนการปูผ้าใบและสภาพชิ้นส่วนขณะถอดล้าง
             </p>
           </div>
 
