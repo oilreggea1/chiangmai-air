@@ -556,10 +556,14 @@ export const servicePhotos: Record<string, typeof washerGallery> = {
   "lang-washing-machine": washerGallery,
 };
 
+/**
+ * ภาพผลงานงานแอร์ อัปเดตชุดใหม่ ก.ค. 2569 หลังเปลี่ยนเสื้อทีมช่างเป็นสีกรมท่า
+ * ห้ามนำภาพชุดเก่า (ช่างใส่เสื้อขาว) กลับมาใช้ เพราะไม่ตรงกับหน้างานปัจจุบัน
+ */
 export const gallery = Array.from({ length: 24 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return {
-    src: `/work/lang-air-chiangmai-${n}.${i === 0 ? "webp" : "jpg"}`,
+    src: `/work/air-2569-${n}.jpg`,
     alt: `ผลงานล้างแอร์และซ่อมแอร์เชียงใหม่ โดยช่างโปรเฟรชแคร์ ภาพที่ ${i + 1}`,
   };
 });

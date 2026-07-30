@@ -39,9 +39,9 @@ export function localBusinessSchema() {
     priceRange: site.priceRange,
     // Google อยากได้รูปหน้างานจริง ไม่ใช่กราฟิก OG
     image: [
-      `${site.url}/work/lang-air-chiangmai-01.webp`,
-      `${site.url}/work/lang-air-chiangmai-02.jpg`,
-      `${site.url}/work/lang-air-chiangmai-03.jpg`,
+      `${site.url}/work/air-2569-01.jpg`,
+      `${site.url}/work/air-2569-02.jpg`,
+      `${site.url}/work/air-2569-03.jpg`,
     ],
     logo: `${site.url}/icon`,
     address: {
