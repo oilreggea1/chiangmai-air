@@ -15,6 +15,7 @@ import { article as langAirBoi } from "./lang-air-boi-kae-nai";
 import { article as langAirEng } from "./lang-air-eng-dai-mai";
 import { article as langAirVsPremium } from "./lang-air-thammada-vs-premium";
 import { article as langThangSakPha } from "./lang-thang-sak-pha";
+import { article as sakPhaFaNaVsFaBon } from "./sak-pha-fa-na-vs-fa-bon";
 import { article as namYa } from "./nam-ya-r32-r410a-r22";
 import { article as pm25 } from "./pm25-lang-air-chiangmai";
 import { article as rakhaLangAir } from "./rakha-lang-air-chiangmai-2569";
@@ -33,6 +34,7 @@ export const articles: Article[] = [
   langAirBoi,
   langAirEng,
   langThangSakPha,
+  sakPhaFaNaVsFaBon,
   airMaiYen,
   airNamYot,
   airMenAp,

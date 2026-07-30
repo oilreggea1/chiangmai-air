@@ -17,7 +17,7 @@ export const article: Article = {
     "ล้างเครื่องซักผ้าฝาหน้า ราคา", "ล้างเครื่องซักผ้าฝาบน ราคา",
   ],
   relatedService: "lang-washing-machine",
-  related: ["air-men-ap-chuea-ra", "lang-air-thammada-vs-premium", "chek-chang-lang-air"],
+  related: ["sak-pha-fa-na-vs-fa-bon", "air-men-ap-chuea-ra", "chek-chang-lang-air"],
   blocks: [
     {
       type: "p",
