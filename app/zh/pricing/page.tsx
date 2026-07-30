@@ -9,7 +9,8 @@ const description =
   "清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 550 泰铢起，深度拆洗 2,000 泰铢，吊顶机 1,300 泰铢起。中国客户与泰国客户同价，开工前先报价。";
 
 export const metadata: Metadata = {
-  title,
+  // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
+  title: { absolute: title },
   description,
   alternates: {
     canonical: "/zh/pricing",

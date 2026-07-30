@@ -12,7 +12,8 @@ const description =
   "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Tax invoice available.";
 
 export const metadata: Metadata = {
-  title,
+  // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
+  title: { absolute: title },
   description,
   keywords: [
     "aircon cleaning Chiang Mai", "AC repair Chiang Mai", "air conditioner service Chiang Mai",

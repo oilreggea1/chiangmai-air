@@ -12,7 +12,8 @@ const description =
   "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗 550 泰铢起，价格全部公开，开工前先报价。可用微信或 LINE 文字沟通，能开税务发票。";
 
 export const metadata: Metadata = {
-  title,
+  // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
+  title: { absolute: title },
   description,
   keywords: [
     "清迈空调清洗", "清迈空调维修", "清迈洗空调", "清迈空调安装",

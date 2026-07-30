@@ -9,7 +9,8 @@ const description =
   "Aircon cleaning and repair across Chiang Mai within 20 km of San Kamphaeng, including Nimman, the old city, Santitham, Hang Dong, Saraphi, San Sai and Doi Saket. No travel surcharge inside the service area.";
 
 export const metadata: Metadata = {
-  title,
+  // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
+  title: { absolute: title },
   description,
   alternates: {
     canonical: "/en/areas",

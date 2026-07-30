@@ -9,7 +9,8 @@ const description =
   "Aircon cleaning between guests for Airbnb hosts, villa managers and rental owners in Chiang Mai. Scheduled around turnovers, from 550 THB per wall unit, tax invoice available.";
 
 export const metadata: Metadata = {
-  title,
+  // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
+  title: { absolute: title },
   description,
   alternates: {
     canonical: "/en/airbnb",

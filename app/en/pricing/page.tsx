@@ -9,7 +9,8 @@ const description =
   "Full published price list for aircon cleaning, repair, installation and relocation in Chiang Mai. Wall units from 550 THB, deep clean 2,000 THB, cassette units from 1,500 THB. Same price for Thai and foreign customers.";
 
 export const metadata: Metadata = {
-  title,
+  // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
+  title: { absolute: title },
   description,
   alternates: {
     canonical: "/en/pricing",
