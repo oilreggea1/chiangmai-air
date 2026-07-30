@@ -21,7 +21,8 @@ export type ArticleCategory =
   | "ดูแลรักษา"
   | "ฝุ่น PM2.5"
   | "ราคาและค่าใช้จ่าย"
-  | "เลือกซื้อแอร์";
+  | "เลือกซื้อแอร์"
+  | "เครื่องซักผ้า";
 
 export type Article = {
   slug: string;
