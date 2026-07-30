@@ -72,6 +72,7 @@ export default function Contact() {
             </span>
             <h2 className="mt-5 text-lg font-bold">ติดต่อทาง LINE</h2>
             <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId}</p>
+            <p className="mt-1 text-lg font-bold text-[#06C755]">หรือ {site.lineId2}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
               ส่งภาพเครื่องหรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในข้อความ
             </p>
@@ -116,6 +117,8 @@ export default function Contact() {
                     โทร {site.phone2}
                     <br />
                     LINE {site.lineId}
+                    <br />
+                    LINE {site.lineId2}
                     <br />
                     <a href={site.facebook} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">
                       Facebook

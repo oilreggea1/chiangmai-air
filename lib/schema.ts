@@ -75,7 +75,7 @@ export function localBusinessSchema() {
         closes: "00:00",
       },
     ],
-    sameAs: [site.facebook, site.lineUrl],
+    sameAs: [site.facebook, site.lineUrl, site.lineUrl2],
     areaServed: areas.map((a) => ({
       "@type": "City",
       name: `${a.full} จ.เชียงใหม่`,

@@ -126,7 +126,7 @@ export default function EnglishPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              LINE ID {site.lineId} · Mon–Sat 8:00–18:00 · usually on site within 24 hours
+              LINE ID {site.lineId} or {site.lineId2} · Mon–Sat 8:00–18:00 · usually on site within 24 hours
             </p>
           </div>
 

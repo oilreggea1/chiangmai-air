@@ -115,6 +115,12 @@ export default function Footer() {
                 LINE {site.lineId}
               </a>
             </li>
+            <li>
+              <a href={site.lineUrl2} target="_blank" rel="noopener" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+                <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
+                LINE {site.lineId2}
+              </a>
+            </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
               {site.daysLabel} {site.hours}

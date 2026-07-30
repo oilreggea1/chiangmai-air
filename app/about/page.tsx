@@ -233,7 +233,7 @@ export default function AboutPage() {
             {[
               { t: "ที่ตั้ง", d: `${site.legalName} · ${addressLine}`, Icon: IconPin },
               { t: "เวลาทำการ", d: `${site.daysLabel} ${site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง`, Icon: IconClock },
-              { t: "ติดต่อ", d: `โทร ${site.phone} · LINE ${site.lineId}`, Icon: IconPhone },
+              { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE ${site.lineId} และ ${site.lineId2}`, Icon: IconPhone },
               { t: "เอกสาร", d: "ออกใบกำกับภาษีได้ รองรับลูกค้านิติบุคคลทั้งคาเฟ่ ร้านอาหาร โรงแรม หอพัก และสำนักงาน", Icon: IconCheck },
             ].map((x) => (
               <div key={x.t} className="card flex items-start gap-3 p-5">
