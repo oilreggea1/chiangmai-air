@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/en",
-    languages: { "th-TH": "/", "en-US": "/en" },
+    languages: { "th-TH": "/", "en-US": "/en", "zh-CN": "/zh" },
   },
   openGraph: { title, description, url: `${site.url}/en`, type: "website", locale: "en_US" },
 };

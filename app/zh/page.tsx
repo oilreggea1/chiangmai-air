@@ -1,0 +1,252 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { site, heroPhotos, coverage } from "@/lib/site";
+import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import {
+  IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron,
+} from "@/components/Icons";
+
+const title = "清迈空调清洗维修 | Pro Fresh Care 泰国清迈";
+const description =
+  "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗 550 泰铢起，价格全部公开，开工前先报价。可用微信或 LINE 文字沟通，能开税务发票。";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  keywords: [
+    "清迈空调清洗", "清迈空调维修", "清迈洗空调", "清迈空调安装",
+    "清迈洗衣机清洗", "清迈家电清洗", "尼曼路空调清洗",
+  ],
+  alternates: {
+    canonical: "/zh",
+    languages: { "th-TH": "/", "en-US": "/en", "zh-CN": "/zh" },
+  },
+  openGraph: { title, description, url: `${site.url}/zh`, type: "website", locale: "zh_CN" },
+};
+
+const trail = [
+  { name: "หน้าแรก", path: "/" },
+  { name: "中文", path: "/zh" },
+];
+
+const servicesZh = [
+  {
+    icon: IconSnow,
+    name: "空调清洗",
+    price: "550 泰铢起",
+    desc: "壁挂机常规清洗每台 600 泰铢，三台以上每台 550 泰铢。深度拆洗 2,000 泰铢，会把风轮和所有可拆部件取下单独清洗消毒。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。",
+  },
+  {
+    icon: IconWrench,
+    name: "空调维修",
+    price: "检测费 500 泰铢",
+    desc: "不制冷、漏水、有异响、频繁停机。检测费 500 泰铢，确定维修后从维修费中扣除。动手之前一定先报价给您确认。",
+  },
+  {
+    icon: IconInstall,
+    name: "新机安装",
+    price: "3,000 泰铢起",
+    desc: "9,000–12,000 BTU 为 3,000 泰铢，18,000–24,000 BTU 为 3,500 泰铢。每次都会完整抽真空，这一步客户看不见，但省略后压缩机会提前损坏。保修最长一年。",
+  },
+  {
+    icon: IconMove,
+    name: "空调移机",
+    price: "3,500 泰铢",
+    desc: "搬家或换房间。拆管前会先把冷媒回收进室外机，所以之后不需要重新加冷媒。只拆不装为 700 泰铢。",
+  },
+  {
+    icon: IconWasher,
+    name: "洗衣机内桶清洗",
+    price: "999 泰铢起",
+    desc: "把内桶整个拆下来逐件清洗，而不是倒清洁剂空转。污垢主要积在内桶外壁，空转根本碰不到。上开式 999 泰铢起按容量计价，前开式 1,299 泰铢起，因为拆装更复杂。每台约三小时，保修 30 天。",
+  },
+];
+
+const faqs = [
+  {
+    q: "师傅会说中文吗？",
+    a: "我本人不会中文，所以请用 LINE 文字联系我，我会用翻译软件回复您。报价、时间和工作内容都用文字确认，双方都有记录，比电话更清楚。很多在清迈的中国客户都是这样和我沟通的。",
+  },
+  {
+    q: "清迈空调清洗多少钱？",
+    a: "壁挂机 9,000–18,000 BTU 每台 600 泰铢，三台以上每台 550 泰铢。18,001–38,000 BTU 每台 800 泰铢。深度拆洗每台 2,000 泰铢。所有价格都公开在网站上，中国客户和泰国客户价格完全一样。",
+  },
+  {
+    q: "对中国客人会不会加价？",
+    a: "不会。这个网站上的价格就是所有人付的价格，和泰文页面上的数字完全相同。开工前我会把总价告诉您确认，事后不会再加钱。",
+  },
+  {
+    q: "清迈的空调多久洗一次？",
+    a: "比其他城市要勤一些。二月到四月是烧芭季节，空气中的烟尘比平时多很多，滤网很快就堵。建议一月做一次彻底清洗，季节中每 2–4 周自己冲洗滤网，五六月再洗一次。",
+  },
+  {
+    q: "可以开发票吗？",
+    a: "可以。我以 Cher Solutions Co., Ltd. 公司名义经营，可以开具正规税务发票，适合需要做账的咖啡厅、餐厅、酒店和公司。",
+  },
+  {
+    q: "公寓和出租房可以做吗？",
+    a: "可以。住宅、公寓、宿舍、酒店、餐厅和办公室都做。如果您是房东或民宿业主，需要在客人退房和入住之间清洗，请告诉我房间数量和地址，我会配合您的时间安排。",
+  },
+];
+
+export default function ChinesePage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(breadcrumbSchema(trail))} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema(faqs))} />
+
+      <div className="bg-gradient-to-b from-brand-50 via-white to-white" lang="zh-CN">
+        <section className="wrap grid gap-10 pt-12 pb-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:pb-20">
+          <div>
+            <p className="eyebrow">
+              <IconPin className="h-4 w-4" />
+              位于 San Kamphaeng · 服务清迈市区及周边 20 公里
+            </p>
+            <h1 className="mt-5 text-[1.9rem] leading-[1.35] font-extrabold sm:text-[2.5rem]">
+              清迈空调清洗 · 维修 · 安装
+            </h1>
+            <p className="lead mt-5">
+              我是 Arm，所有工作都由我本人上门完成。价格全部公开在网站上，
+              开工前先报价，冷媒不缺就不会加，施工前会铺两层防尘布，
+              走的时候把现场收拾干净。
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line px-6 py-3.5 text-lg" data-cta="zh-line">
+                <IconLine className="h-5 w-5" />
+                用 LINE 联系我
+              </a>
+              <a href={`tel:${site.phoneTel}`} className="btn-call px-6 py-3.5 text-lg" data-cta="zh-call">
+                <IconPhone className="h-5 w-5" />
+                {site.phone}
+              </a>
+            </div>
+            <p className="mt-4 text-sm text-ink-soft">
+              LINE ID {site.lineId} 或 {site.lineId2} · 周一至周六 8:00–18:00 · 一般 24 小时内上门
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
+            <Image
+              src={heroPhotos.en.src}
+              alt="清迈空调清洗师傅正在客户家中清洗室外机"
+              width={900}
+              height={1200}
+              priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="h-[22rem] w-full object-cover sm:h-[27rem]"
+            />
+          </div>
+        </section>
+      </div>
+
+      <section className="section bg-sand" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <div className="card p-6 sm:p-8">
+            <h2 className="text-xl font-bold">关于语言沟通</h2>
+            <p className="mt-3 text-[15px] leading-8 text-ink-soft">
+              我本人不会说中文。请用 LINE 发文字消息给我，我会用翻译软件回复您。
+              报价、上门时间和工作范围都用文字写清楚，双方都留有记录，
+              比电话沟通更不容易出错。您也可以直接拍照片发给我，
+              很多问题看到照片就能先判断个大概。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" lang="zh-CN">
+        <div className="wrap">
+          <h2 className="h2">服务项目与价格</h2>
+          <div className="mt-9 grid gap-5 sm:grid-cols-2">
+            {servicesZh.map((s) => (
+              <div key={s.name} className="card flex flex-col p-6">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600">
+                  <s.icon className="h-6 w-6" />
+                </span>
+                <div className="mt-4 flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-lg font-bold">{s.name}</h3>
+                  <span className="font-bold text-brand-700">{s.price}</span>
+                </div>
+                <p className="mt-2.5 flex-1 text-[15px] leading-8 text-ink-soft">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link href="/zh/pricing" className="btn-ghost">
+              查看完整价目表
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">每一单都包含这些</h2>
+          <ul className="mt-6 space-y-3.5">
+            {[
+              "开工前先报价。现场如果发现额外情况，我会先停下来问您。",
+              "地面和家具铺两层防尘布，收工前把现场清理干净。",
+              "当着您的面量冷媒。如果不缺，我会告诉您，不会硬加。",
+              "更换任何零件都会把旧件拿给您看。",
+              "清洗保修 30 天，新机安装保修最长一年。",
+            ].map((t) => (
+              <li key={t} className="flex items-start gap-3">
+                <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />
+                <span className="text-[15px] leading-8 text-ink-soft">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">服务范围</h2>
+          <p className="lead mt-3">
+            以 San Kamphaeng 为中心，半径约 20 公里，覆盖 {coverage.length} 个县，
+            范围内不加收车费。包括尼曼路一带、古城、Santitham、Hang Dong、Saraphi、San Sai 和 Doi Saket。
+          </p>
+          <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+            {coverage.map((c) => (
+              <li key={c.amphoe} className="card flex items-center justify-between gap-3 px-5 py-4">
+                <span className="text-sm font-semibold">{c.amphoe}</span>
+                <span className="shrink-0 text-xs text-ink-soft">{c.km}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">常见问题</h2>
+          <div className="mt-7 space-y-5">
+            {faqs.map((f) => (
+              <div key={f.q} className="card p-6">
+                <h3 className="font-bold">{f.q}</h3>
+                <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">{f.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="zh-faq-line">
+              <IconLine className="h-5 w-5" />
+              用 LINE 咨询
+            </a>
+            <Link href="/zh/pricing" className="btn-ghost">
+              完整价目表
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/en" className="btn-ghost" hrefLang="en">
+              English
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

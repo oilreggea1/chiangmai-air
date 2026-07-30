@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     // บอก Google ว่าหน้าไทยกับอังกฤษเป็นคู่กัน ไม่ใช่เนื้อหาซ้ำ
-    languages: { "th-TH": "/", "en-US": "/en" },
+    languages: { "th-TH": "/", "en-US": "/en", "zh-CN": "/zh" },
   },
   openGraph: {
     type: "website",
