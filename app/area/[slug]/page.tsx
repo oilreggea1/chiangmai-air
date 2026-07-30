@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, areas, services, pricing, reviews, gallery } from "@/lib/site";
+import { site, areas, services, pricing, reviews, workingPhotos } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin, IconClock } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
@@ -98,7 +98,7 @@ export default async function AreaPage({ params }: Props) {
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
-              src={gallery[(idx * 3 + 4) % gallery.length].src}
+              src={workingPhotos[idx % workingPhotos.length].src}
               alt={`ช่างแอร์${a.name} กำลังให้บริการล้างแอร์ถึงบ้านลูกค้าใน${a.full}`}
               width={900}
               height={1200}
@@ -160,7 +160,7 @@ export default async function AreaPage({ params }: Props) {
             </p>
             <p>
               งานล้างทุกครั้งผมปูผ้าใบคลุมหนา 2 ชั้นก่อนเริ่ม และเก็บพื้นที่ให้เรียบร้อยก่อนส่งมอบ
-              พร้อมรับประกัน 30–60 วันตามแพ็กเกจที่เลือก หากเกิดปัญหาน้ำหยดหรือทำความเย็นไม่ได้ในระยะดังกล่าว
+              พร้อมรับประกันงานล้าง 30 วัน หากเกิดปัญหาน้ำหยดหรือทำความเย็นไม่ได้ในระยะดังกล่าว
               ผมกลับไปแก้ไขให้โดยไม่คิดค่าใช้จ่าย
             </p>
           </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, gallery, areas } from "@/lib/site";
+import { site, areas, heroPhotos } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconShield,
@@ -132,7 +132,7 @@ export default function EnglishPage() {
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
-              src={gallery[2].src}
+              src={heroPhotos.en.src}
               alt="Arm cleaning a wall-mounted air conditioner at a customer's home in Chiang Mai"
               width={900}
               height={1200}
@@ -203,7 +203,7 @@ export default function EnglishPage() {
               "I do not top up refrigerant unless it is genuinely low. Overcharging a system shortens compressor life, and it is the easiest way for a dishonest technician to pad a bill.",
               "I show you the old parts I removed and explain what failed and why. And if a repair is not worth the money, I say so — even though I earn more if you let me do it.",
               "Two layers of drop sheets on every cleaning job. Your floor and furniture stay as they were.",
-              "Warranty: 30 days on a standard clean, 60 days on the full strip-down clean, and up to 1 year on installation.",
+              "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
               "Tax invoices available for businesses.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, addressLine, edges, values, brands, gallery, areas, reviews } from "@/lib/site";
+import { site, addressLine, edges, values, brands, areas, reviews, heroPhotos } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import {
   serviceIcons, IconPhone, IconLine, IconChevron, IconCheck, IconPin, IconClock, IconEngineer,
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
-              src={gallery[3].src}
+              src={heroPhotos.about.src}
               alt={`${site.leadTech} ช่างแอร์เชียงใหม่ โปรเฟรชแคร์ ขณะทำงานที่บ้านลูกค้า`}
               width={900}
               height={1200}

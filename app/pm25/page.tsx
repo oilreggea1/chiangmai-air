@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, gallery, areas } from "@/lib/site";
+import { site, heroPhotos, areas } from "@/lib/site";
 import { getArticle } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import {
@@ -112,8 +112,8 @@ export default function Pm25Page() {
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
-              src={gallery[6].src}
-              alt="ช่างแอร์เชียงใหม่ถอดล้างคอยล์เย็นที่เต็มไปด้วยฝุ่นและเขม่าจากช่วงหมอกควัน"
+              src={heroPhotos.pm25.src}
+              alt={heroPhotos.pm25.alt}
               width={900}
               height={1200}
               priority
@@ -296,7 +296,7 @@ export default function Pm25Page() {
                   "ถอดใบพัดกรงกระรอกออกมาล้างแยก จุดที่เชื้อราสะสมมากที่สุด",
                   "ถอดชิ้นส่วนล้างทุกชิ้น 100%",
                   "ฉีดน้ำยาฆ่าเชื้อโรค",
-                  "รับประกันงานล้าง 60 วัน",
+                  "รับประกันงานล้าง 30 วัน",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm leading-7 text-ink-soft">
                     <IconCheck className="mt-1.5 h-4 w-4 shrink-0 text-mint" />

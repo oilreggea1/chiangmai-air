@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  site, services, areas, values, brands, reviews, faqs, washCompare, gallery, edges,
-} from "@/lib/site";
+import { site, services, areas, values, brands, reviews, faqs, washCompare, gallery, edges, heroPhotos } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
@@ -65,7 +63,7 @@ export default function Home() {
               {[
                 { k: "550.-", v: "ล้างแอร์เริ่มต้น" },
                 { k: "24 ชม.", v: "เข้าหน้างานเร็วที่สุด" },
-                { k: "60 วัน", v: "รับประกันงานล้าง" },
+                { k: "30 วัน", v: "รับประกันงานล้าง" },
                 { k: "12 ยี่ห้อ", v: "อะไหล่แท้ทุกแบรนด์" },
               ].map((s) => (
                 <div key={s.v}>
@@ -79,7 +77,7 @@ export default function Home() {
           <div className="relative">
             <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
               <Image
-                src={gallery[1].src}
+                src={heroPhotos.home.src}
                 alt="ช่างแอร์เชียงใหม่กำลังล้างแอร์ถึงบ้านลูกค้า พร้อมปูผ้าใบคลุมพื้นที่โดยรอบ"
                 width={900}
                 height={1200}
@@ -322,7 +320,7 @@ export default function Home() {
               },
               {
                 name: "Premium Full Wash", price: "2,000", unit: "บาท / เครื่อง",
-                note: "ถอดล้าง 100% · รับประกัน 60 วัน",
+                note: "ถอดล้าง 100% · รับประกัน 30 วัน",
                 feats: ["ถอดชิ้นส่วนล้างแยกทุกชิ้น", "ถอดใบพัดกรงกระรอกออกมาล้าง", "ฉีดน้ำยาฆ่าเชื้อโรค", "เหมาะกับบ้านที่มีคนแพ้ฝุ่น"],
                 popular: true,
               },

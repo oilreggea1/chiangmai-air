@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { site, gallery, portfolio, portfolioTotal, caseStudies, reviews } from "@/lib/site";
+import { site, portfolio, portfolioTotal, caseStudies, reviews } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { CtaBand, Breadcrumbs, ReviewCard, CaseStudies } from "@/components/Blocks";
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description,
     url: `${site.url}/portfolio`,
     type: "article",
-    images: [{ url: gallery[0].src }],
+    images: [{ url: portfolio[0].photos[0].src }],
   },
 };
 

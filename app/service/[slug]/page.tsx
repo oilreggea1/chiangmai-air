@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, services, areas, gallery, servicePhotos, caseStudies } from "@/lib/site";
+import { site, services, areas, heroPhotos, servicePhotos, caseStudies } from "@/lib/site";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
@@ -38,12 +38,12 @@ export default async function ServicePage({ params }: Props) {
   const others = services.filter((x) => x.slug !== s.slug);
   // บริการที่มีภาพงานของตัวเองใช้ชุดนั้น ที่เหลือหยิบจากคลังภาพงานแอร์
   const photos = servicePhotos[s.slug];
-  const hero = photos
-    ? photos[0]
-    : {
-        src: gallery[(services.indexOf(s) * 5 + 2) % gallery.length].src,
-        alt: `${s.name}เชียงใหม่ ผลงานจริงของช่างโปรเฟรชแคร์`,
-      };
+  // ภาพหลักกำหนดไว้ต่อบริการ ไม่สุ่มจาก gallery เพราะเคยได้ภาพที่ไม่ตรงหัวข้อ
+  const hero = photos?.[0] ??
+    heroPhotos.service[s.slug] ?? {
+      src: "/work/pf-lang-premium-01.jpg",
+      alt: `${s.name}เชียงใหม่ ผลงานจริงของช่างโปรเฟรชแคร์`,
+    };
   const Icon = serviceIcons[s.icon as keyof typeof serviceIcons];
   const trail = [
     { name: "หน้าแรก", path: "/" },
