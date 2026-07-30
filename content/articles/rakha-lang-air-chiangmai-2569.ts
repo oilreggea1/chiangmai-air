@@ -15,7 +15,7 @@ export const article: Article = {
     "ราคาล้างแอร์เชียงใหม่", "ล้างแอร์เชียงใหม่ ราคา 2569", "ค่าล้างแอร์ติดผนัง",
     "ล้างแอร์แขวนใต้ฝ้า ราคา", "ล้างแอร์ 4 ทิศทาง ราคา", "ล้างแอร์ถูก เชียงใหม่",
   ],
-  relatedService: "lang-air",
+  relatedService: "lang-air-khwaen-cassette",
   related: ["lang-air-thammada-vs-premium", "chek-chang-lang-air", "lang-air-boi-kae-nai"],
   blocks: [
     {
