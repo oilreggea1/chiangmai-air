@@ -57,6 +57,7 @@ export const categories: ArticleCategory[] = [
   "ดูแลรักษา",
   "ราคาและค่าใช้จ่าย",
   "เลือกซื้อแอร์",
+  "เครื่องซักผ้า",
 ];
 
 export function getArticle(slug: string) {

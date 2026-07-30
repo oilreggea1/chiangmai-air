@@ -123,7 +123,7 @@ export default async function ArticlePage({ params }: Props) {
         </section>
       )}
 
-      <FaqList items={a.faqs} title="คำถามที่พบบ่อยจากบทความนี้" />
+      <FaqList items={a.faqs} title="คำถามที่พบบ่อย" />
 
       {related.length > 0 && (
         <section className="section">

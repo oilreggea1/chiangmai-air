@@ -5,9 +5,9 @@ import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
-const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ รัศมี 20 กม. 8 อำเภอ";
+const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ สันกำแพง เมือง สารภี ดอยสะเก็ด";
 const description =
-  "ช่างแอร์เชียงใหม่ รับงานรัศมี 20 กม. จากสันกำแพง ครอบคลุม 7 อำเภอ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง แม่ออน ดูรายชื่อตำบลที่รับงานได้ครบทุกตำบล ไม่คิดค่าเดินทางเพิ่ม";
+  "ช่างแอร์เชียงใหม่ รับงาน อ.สันกำแพง อ.สารภี อ.เมืองเชียงใหม่ (ทุกตำบล) อ.ดอยสะเก็ด และ ต.สันพระเนตร อ.สันทราย ดูรายชื่อตำบลที่รับงานได้ครบ ไม่คิดค่าเดินทางเพิ่ม";
 
 export const metadata: Metadata = {
   title,
@@ -40,8 +40,9 @@ export default function AreaIndex() {
             พื้นที่ให้บริการช่างแอร์เชียงใหม่
           </h1>
           <p className="lead mt-5">
-            ผมรับงานในรัศมีประมาณ 20 กิโลเมตรจากที่ตั้งในสันกำแพง
-            ครอบคลุม 8 อำเภอ รวม {coverageTotal} ตำบล โดยไม่คิดค่าเดินทางเพิ่ม
+            ผมรับงานในอำเภอสันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด และ ต.สันพระเนตร อ.สันทราย
+            รวม {coverage.length} อำเภอ {coverageTotal} ตำบล โดยไม่คิดค่าเดินทางเพิ่ม
+            สำหรับอำเภอเมืองเชียงใหม่ผมรับทุกตำบล ส่วนอำเภออื่นรับเฉพาะตำบลที่อยู่ในระยะให้บริการ
             เลือกโซนของคุณเพื่อดูรายละเอียด หรือดูรายชื่อตำบลทั้งหมดที่ด้านล่าง
           </p>
         </section>
@@ -64,9 +65,6 @@ export default function AreaIndex() {
                   </h2>
                   <p className="mt-1 flex flex-wrap items-center gap-x-2 text-sm font-medium text-ink-soft">
                     {a.full}
-                    <span className="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-bold text-brand-700">
-                      ~{a.km} กม.
-                    </span>
                   </p>
                   <p className="mt-3 flex-1 text-sm leading-7 text-ink-soft">{a.note}</p>
                   <p className="mt-4 text-xs leading-6 text-ink-soft">
@@ -97,7 +95,7 @@ export default function AreaIndex() {
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 bg-slate-50 px-5 py-3.5 sm:px-6">
                   <h3 className="text-base font-bold">{c.amphoe}</h3>
                   <span className="text-sm font-semibold text-brand-700">
-                    {c.tambons.length} ตำบล · {c.km}
+                    {c.tambons.length} ตำบล
                   </span>
                 </div>
                 <div className="px-5 py-4 sm:px-6">
@@ -111,9 +109,9 @@ export default function AreaIndex() {
                       </li>
                     ))}
                   </ul>
-                  {"excluded" in c && c.excluded && (
+                  {"all" in c && c.all && (
                     <p className="mt-3.5 text-xs leading-6 text-ink-soft">
-                      นอกรัศมี กรุณาสอบถามก่อน: {c.excluded.join(" · ")}
+                      อำเภอนี้ผมรับทุกตำบล
                     </p>
                   )}
                 </div>
@@ -127,10 +125,10 @@ export default function AreaIndex() {
               เหตุใดบางตำบลจึงไม่อยู่ในรายการ
             </p>
             <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
-              ตำบลที่ไม่อยู่ในรายการคือตำบลบนพื้นที่สูงหรือขอบนอกที่ระยะทางเกิน 20 กิโลเมตร
-              เช่น ป่าเมี่ยง เทพเสด็จ แม่กำปอง ม่อนแจ่ม และโป่งแยง ซึ่งไม่ได้หมายความว่าไม่รับงาน
-              แต่ผมต้องการแจ้งระยะทางที่แท้จริงให้ทราบก่อน หากที่ตั้งของคุณอยู่ในพื้นที่เหล่านี้
-              สามารถสอบถามเข้ามาได้ ผมจะแจ้งว่าสามารถให้บริการได้หรือไม่ และมีค่าเดินทางเพิ่มเท่าใด
+              รายชื่อด้านบนคือตำบลที่ผมเข้าถึงได้โดยไม่คิดค่าเดินทางเพิ่ม
+              ตำบลที่ไม่อยู่ในรายการไม่ได้แปลว่าผมไม่รับงาน แต่อยู่ไกลออกไปจนอาจมีค่าเดินทาง
+              หากที่ตั้งของคุณอยู่นอกรายการ สอบถามเข้ามาได้ครับ
+              ผมแจ้งตามตรงว่าไปได้หรือไม่ และมีค่าเดินทางเพิ่มเท่าใดก่อนตกลงนัด
             </p>
           </div>
         </div>

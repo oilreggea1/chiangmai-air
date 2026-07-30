@@ -5,7 +5,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { IconPhone, IconLine, IconPin, IconClock, IconChevron, IconShield } from "@/components/Icons";
 import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ติดต่อช่างแอร์เชียงใหม่ โทร 065-365-7673 | โปรเฟรชแคร์ สันกำแพง";
+const title = "ติดต่อช่างแอร์เชียงใหม่ โทร 065-365-7673";
 const description =
   "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 หรือ LINE @794xvrnm เวลาทำการ จันทร์-เสาร์ 08:00-18:00 น. อยู่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง จ.เชียงใหม่";
 
@@ -171,7 +171,7 @@ export default function Contact() {
               "จำนวนเครื่องและขนาด BTU (ดูได้จากสติกเกอร์ข้างเครื่อง หรือส่งภาพมาให้ผมตรวจสอบ)",
               "ประเภทแอร์ — ติดผนัง แขวนใต้ฝ้า หรือสี่ทิศทางฝังฝ้า",
               "อาการที่พบ กรณีเป็นงานซ่อม เช่น ไม่เย็น น้ำหยด มีเสียงดัง ไฟกระพริบ",
-              "พื้นที่ของคุณ เช่น สันกำแพง นิมมาน หางดง เพื่อให้ตรวจสอบคิวในพื้นที่นั้นได้",
+              "พื้นที่ของคุณ เช่น สันกำแพง นิมมาน สารภี เพื่อให้ตรวจสอบคิวในพื้นที่นั้นได้",
             ].map((t, i) => (
               <li key={t} className="flex items-start gap-3.5">
                 <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-600 text-sm font-bold text-white">

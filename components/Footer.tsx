@@ -78,6 +78,11 @@ export default function Footer() {
                 English
               </Link>
             </li>
+            <li>
+              <Link href="/zh" className="text-ink-soft hover:text-brand-700 hover:underline">
+                中文
+              </Link>
+            </li>
           </ul>
         </div>
 

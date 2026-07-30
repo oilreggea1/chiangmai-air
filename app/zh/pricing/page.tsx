@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons"
 
 const title = "清迈空调清洗价格表 | Pro Fresh Care";
 const description =
-  "清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 550 泰铢起，深度拆洗 2,000 泰铢，吊顶机 1,300 泰铢起。中国客户与泰国客户同价，开工前先报价。";
+  "清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 600 泰铢起，深度拆洗 2,000 泰铢，吊顶机 1,300 泰铢起。中国客户与泰国客户同价，开工前先报价。";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "价格里包含上门费吗？",
-    a: "包含。服务范围内不另收车费，也就是 San Kamphaeng 周边约 20 公里，含尼曼路、古城、Santitham、Hang Dong、Saraphi、San Sai 和 Doi Saket。",
+    a: "包含。服务范围内不另收车费。范围是清迈市区（Mueang Chiang Mai）全部乡，含尼曼路、古城、Santitham 和机场一带，另有 San Kamphaeng、Saraphi、Doi Saket 以及 San Sai 的 San Phra Net 乡。若您在范围之外，请先用 LINE 告诉我地址，我会如实说明能否上门以及车费多少。"
   },
   {
     q: "怎么知道我家是哪种机型？",

@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Receipts issued in the company name.";
+  "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 600 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Receipts issued in the company name.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -35,7 +35,7 @@ const servicesEn = [
   {
     icon: IconSnow,
     name: "Aircon cleaning",
-    price: "from 550 THB",
+    price: "from 600 THB",
     desc: "Standard clean 600 THB per wall unit, or 550 THB each for three or more. The full strip-down clean is 2,000 THB — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
   },
   {
@@ -102,7 +102,7 @@ export default function EnglishPage() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              Arm · based in Ton Pao, San Kamphaeng · working across Chiang Mai
+              Arm · based in San Kamphaeng · working across Chiang Mai
             </p>
             <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.5rem]">
               Aircon cleaning &amp; AC repair in Chiang Mai
@@ -225,8 +225,9 @@ export default function EnglishPage() {
         <div className="wrap">
           <h2 className="h2">Areas I cover</h2>
           <p className="lead mt-3 max-w-2xl">
-            I am based in Ton Pao, San Kamphaeng, so the eastern side of the city is quickest for me,
-            but I cover the whole of Chiang Mai including the old city, Nimman and the southern suburbs.
+            I am based in San Kamphaeng, so the eastern side of the city is quickest for me.
+            I cover every sub-district of Mueang Chiang Mai — the old city, Nimman, Santitham and
+            the airport side — plus San Kamphaeng, Saraphi, Doi Saket and San Phra Net.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((a) => (
@@ -240,6 +241,29 @@ export default function EnglishPage() {
                     <span className="block font-bold">{a.name}</span>
                     <span className="mt-0.5 block text-xs text-ink-soft">{a.landmarks[0]}</span>
                   </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="en">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">More in English</h2>
+          <ul className="mt-7 grid gap-3 sm:grid-cols-3">
+            {[
+              { href: "/en/pricing", t: "Full price list", d: "Every service, published up front" },
+              { href: "/en/areas", t: "Areas I cover", d: "District and sub-district list" },
+              { href: "/en/airbnb", t: "Airbnb and rentals", d: "Cleaning between guests" },
+            ].map((x) => (
+              <li key={x.href}>
+                <Link
+                  href={x.href}
+                  className="card flex h-full flex-col justify-between gap-2 p-5 transition-all hover:shadow-lift"
+                >
+                  <span className="font-bold">{x.t}</span>
+                  <span className="text-sm text-ink-soft">{x.d}</span>
                 </Link>
               </li>
             ))}

@@ -1,15 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, heroPhotos, coverage } from "@/lib/site";
+import { site, heroPhotos, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron,
 } from "@/components/Icons";
 
+/** ชื่ออำเภอภาษาจีน ให้ลูกค้าจีนอ่านออกโดยไม่ต้องแปลเอง */
+const amphoeZh: Record<string, string> = {
+  "อ.สันกำแพง": "San Kamphaeng 县",
+  "อ.สารภี": "Saraphi 县",
+  "อ.เมืองเชียงใหม่": "清迈市区 Mueang Chiang Mai（全部乡）",
+  "อ.ดอยสะเก็ด": "Doi Saket 县",
+  "อ.สันทราย": "San Sai 县（仅 San Phra Net 乡）",
+};
+
 const title = "清迈空调清洗维修 | Pro Fresh Care 泰国清迈";
 const description =
-  "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗 550 泰铢起，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开公司抬头收据。";
+  "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗每台 600 泰铢起，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开公司抬头收据。";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -35,7 +44,7 @@ const servicesZh = [
   {
     icon: IconSnow,
     name: "空调清洗",
-    price: "550 泰铢起",
+    price: "600 泰铢起",
     desc: "壁挂机常规清洗每台 600 泰铢，三台以上每台 550 泰铢。深度拆洗 2,000 泰铢，会把风轮和所有可拆部件取下单独清洗消毒。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。",
   },
   {
@@ -102,7 +111,7 @@ export default function ChinesePage() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              位于 San Kamphaeng · 服务清迈市区及周边 20 公里
+              位于 San Kamphaeng · 服务清迈市区全部乡及周边
             </p>
             <h1 className="mt-5 text-[1.9rem] leading-[1.35] font-extrabold sm:text-[2.5rem]">
               清迈空调清洗 · 维修 · 安装
@@ -206,14 +215,17 @@ export default function ChinesePage() {
         <div className="wrap max-w-3xl">
           <h2 className="h2">服务范围</h2>
           <p className="lead mt-3">
-            以 San Kamphaeng 为中心，半径约 20 公里，覆盖 {coverage.length} 个县，
-            范围内不加收车费。包括尼曼路一带、古城、Santitham、Hang Dong、Saraphi、San Sai 和 Doi Saket。
+            我以 San Kamphaeng 为据点，覆盖 {coverage.length} 个县共 {coverageTotal} 个乡，
+            范围内不加收车费。清迈市区（Mueang Chiang Mai）全部乡都接，包括尼曼路一带、古城、Santitham
+            和机场周边；此外还有 San Kamphaeng、Saraphi、Doi Saket，以及 San Sai 的 San Phra Net 乡。
           </p>
           <ul className="mt-7 grid gap-3 sm:grid-cols-2">
             {coverage.map((c) => (
               <li key={c.amphoe} className="card flex items-center justify-between gap-3 px-5 py-4">
-                <span className="text-sm font-semibold">{c.amphoe}</span>
-                <span className="shrink-0 text-xs text-ink-soft">{c.km}</span>
+                <span className="text-sm font-semibold">
+                  {amphoeZh[c.amphoe] ?? c.amphoe}
+                </span>
+                <span className="shrink-0 text-xs text-ink-soft">{c.tambons.length} 个乡</span>
               </li>
             ))}
           </ul>

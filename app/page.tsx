@@ -10,7 +10,17 @@ import {
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  // ต้องใส่ languages ซ้ำตรงนี้ด้วย เพราะ Next merge alternates แบบตื้น
+  // ถ้าใส่แค่ canonical จะไปทับ languages ที่ตั้งไว้ใน layout จนหน้าแรกไม่มี hreflang เลย
+  alternates: {
+    canonical: "/",
+    languages: {
+      "th-TH": "/",
+      "en-US": "/en",
+      "zh-CN": "/zh",
+      "x-default": "/",
+    },
+  },
 };
 
 export default function Home() {
@@ -28,7 +38,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              ที่ตั้ง ต.สันกำแพง · ให้บริการในรัศมี 20 กิโลเมตร
+              ที่ตั้ง ต.สันกำแพง · รับงานสันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด
             </p>
 
             <h1 className="mt-5 text-[2rem] leading-[1.25] font-extrabold sm:text-[2.6rem] lg:text-[3.1rem]">
@@ -61,7 +71,7 @@ export default function Home() {
 
             <dl className="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4">
               {[
-                { k: "550.-", v: "ล้างแอร์เริ่มต้น" },
+                { k: "600.-", v: "ล้างแอร์ติดผนัง" },
                 { k: "24 ชม.", v: "เข้าหน้างานเร็วที่สุด" },
                 { k: "30 วัน", v: "รับประกันงานล้าง" },
                 { k: "12 ยี่ห้อ", v: "อะไหล่แท้ทุกแบรนด์" },
@@ -374,10 +384,10 @@ export default function Home() {
               <IconPin className="h-4 w-4" />
               พื้นที่ให้บริการ
             </p>
-            <h2 className="h2 mt-4">พื้นที่ให้บริการ รัศมี 20 กิโลเมตร</h2>
+            <h2 className="h2 mt-4">พื้นที่ให้บริการ</h2>
             <p className="lead mt-3">
-              ผมรับงานในรัศมีประมาณ 20 กิโลเมตรจากที่ตั้งในสันกำแพง ครอบคลุม 7 อำเภอ
-              ได้แก่ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง และแม่ออน
+              ผมรับงานในอำเภอสันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด และ ต.สันพระเนตร อ.สันทราย โดยไม่คิดค่าเดินทางเพิ่ม สำหรับอำเภอเมืองเชียงใหม่ผมรับทุกตำบล
+              อำเภอเมืองเชียงใหม่รับทุกตำบล ส่วนอำเภออื่นรับเฉพาะตำบลที่อยู่ในระยะให้บริการ
               โดยคิดราคาเดียวกันทุกพื้นที่ ไม่มีค่าเดินทางเพิ่ม
             </p>
           </div>

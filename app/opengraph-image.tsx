@@ -64,7 +64,7 @@ export default async function OgImage() {
               fontWeight: 600,
             }}
           >
-            ล้างเริ่ม 550.-
+            ล้างเริ่ม 600.-
           </div>
         </div>
       </div>

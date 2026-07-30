@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons"
 
 const title = "Aircon Cleaning Prices in Chiang Mai | Pro Fresh Care";
 const description =
-  "Full published price list for aircon cleaning, repair, installation and relocation in Chiang Mai. Wall units from 550 THB, deep clean 2,000 THB, cassette units from 1,500 THB. Same price for Thai and foreign customers.";
+  "Full published price list for aircon cleaning, repair, installation and relocation in Chiang Mai. Wall units from 600 THB, deep clean 2,000 THB, cassette units from 1,500 THB. Same price for Thai and foreign customers.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Is travel to my area included?",
-    a: "Yes, within my service radius of about 20 kilometres from San Kamphaeng, which covers Nimman, the old city, Santitham, Hang Dong, Saraphi, San Sai and Doi Saket. There is no separate travel fee inside that area.",
+    a: "Yes, inside my service area there is no separate travel fee. That covers all of Mueang Chiang Mai — Nimman, the old city, Santitham and the airport side — plus San Kamphaeng, Saraphi, Doi Saket and San Phra Net. If you are outside it, message me and I will tell you honestly whether I can come and what the travel cost would be.",
   },
   {
     q: "How do I know which type of unit I have?",

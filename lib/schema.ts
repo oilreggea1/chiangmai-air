@@ -1,4 +1,4 @@
-import { site, services, areas, reviews } from "./site";
+import { site, services, areas } from "./site";
 
 const ID = `${site.url}/#business`;
 
@@ -91,16 +91,6 @@ export function localBusinessSchema() {
         url: `${site.url}/service/${s.slug}`,
       })),
     },
-    review: reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: r.rating,
-        bestRating: 5,
-      },
-      reviewBody: r.text,
-    })),
   };
 }
 

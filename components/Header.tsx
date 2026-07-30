@@ -29,6 +29,7 @@ const mobileNav = [
   { href: "/about", label: "รู้จักช่างอาร์ม" },
   { href: "/contact", label: "ติดต่อ" },
   { href: "/en", label: "English" },
+  { href: "/zh", label: "中文" },
 ];
 
 export default function Header() {

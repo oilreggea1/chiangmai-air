@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 const title = "Areas I Cover in Chiang Mai | Aircon Service by Pro Fresh Care";
 const description =
-  "Aircon cleaning and repair across Chiang Mai within 20 km of San Kamphaeng, including Nimman, the old city, Santitham, Hang Dong, Saraphi, San Sai and Doi Saket. No travel surcharge inside the service area.";
+  "Aircon cleaning and repair around San Kamphaeng, covering all of Mueang Chiang Mai including Nimman, the old city and Santitham, plus Saraphi, Doi Saket and San Phra Net. No travel surcharge inside the service area.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -31,9 +31,7 @@ const amphoeEn: Record<string, string> = {
   "อ.สารภี": "Saraphi",
   "อ.เมืองเชียงใหม่": "Mueang Chiang Mai (city, Nimman, old town, Santitham)",
   "อ.ดอยสะเก็ด": "Doi Saket",
-  "อ.สันทราย": "San Sai",
-  "อ.หางดง": "Hang Dong",
-  "อ.แม่ออน": "Mae On",
+  "อ.สันทราย": "San Sai (San Phra Net sub-district only)",
 };
 
 const faqs = [
@@ -65,15 +63,15 @@ export default function EnAreasPage() {
         <section className="wrap max-w-3xl pt-12 pb-14 text-center">
           <p className="eyebrow justify-center">
             <IconPin className="h-4 w-4" />
-            Based in San Kamphaeng · 20 km radius
+            Based in San Kamphaeng · east side of Chiang Mai
           </p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
             Areas I cover in Chiang Mai
           </h1>
           <p className="lead mt-5">
-            I work across {coverage.length} districts and {coverageTotal} sub-districts within
-            roughly 20 kilometres of San Kamphaeng. Every area on this page is charged at the
-            same rate, with no travel surcharge.
+            I work across {coverage.length} districts and {coverageTotal} sub-districts around
+            San Kamphaeng, including all of Mueang Chiang Mai. Every area on this page is charged
+            at the same rate, with no travel surcharge.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line px-6 py-3.5" data-cta="en-area-line">
@@ -96,16 +94,17 @@ export default function EnAreasPage() {
               <div key={c.amphoe} className="card p-6">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-lg font-bold">{amphoeEn[c.amphoe] ?? c.amphoe}</h3>
-                  <span className="text-sm font-semibold text-brand-700">{c.km}</span>
+                  <span className="text-sm font-semibold text-brand-700">
+                    {c.tambons.length} sub-districts
+                  </span>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-ink-soft">
                   <span className="font-semibold text-ink">Sub-districts covered:</span>{" "}
                   {c.tambons.join(" · ")}
                 </p>
-                {"excluded" in c && c.excluded.length > 0 && (
+                {"all" in c && c.all && (
                   <p className="mt-2 text-sm leading-7 text-ink-soft">
-                    <span className="font-semibold text-ink">Outside my radius:</span>{" "}
-                    {c.excluded.join(" · ")}
+                    I cover every sub-district in this district.
                   </p>
                 )}
               </div>
@@ -113,7 +112,8 @@ export default function EnAreasPage() {
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
             Sub-district names are given in Thai so you can match them against your address
-            or show them to a driver. Distances were measured from my location in San Kamphaeng.
+            or show them to a driver. If your address is not on the list, message me — I will
+            tell you honestly whether I can come and what the travel cost would be.
           </p>
         </div>
       </section>
@@ -134,7 +134,6 @@ export default function EnAreasPage() {
                   className="card flex items-center justify-between gap-3 px-5 py-4 transition-all hover:shadow-lift"
                 >
                   <span className="text-sm font-semibold">{a.name}</span>
-                  <span className="shrink-0 text-xs text-ink-soft">{a.km} km</span>
                 </Link>
               </li>
             ))}
