@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = areas.find((x) => x.slug === slug);
   if (!a) return {};
   const title = `ช่างแอร์${a.name} ล้างแอร์ ซ่อมแอร์ถึงบ้าน`;
-  const description = `ช่างแอร์${a.name} เชียงใหม่ ล้างแอร์เริ่ม 600 บาท ซ่อมแอร์ด่วน ติดตั้งและย้ายแอร์ถึงบ้านใน${a.full} ${a.note} โทร ${site.phone}`;
+  const description = `ช่างแอร์${a.name} โทร ${site.phone} ล้างแอร์ 600 บาท 3 เครื่องขึ้นไป 550 บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}`;
   return {
     title,
     description,
@@ -34,6 +34,8 @@ export default async function AreaPage({ params }: Props) {
 
   const others = areas.filter((x) => x.slug !== a.slug);
   const idx = areas.findIndex((x) => x.slug === a.slug);
+  // หน้าอำเภอบ้านตัวเอง ห้ามเขียนว่า "อยู่ไม่ไกลจาก" เพราะร้านตั้งอยู่ในอำเภอนั้นเอง
+  const isHomeArea = a.slug === "san-kamphaeng";
   const trail = [
     { name: "หน้าแรก", path: "/" },
     { name: "พื้นที่ให้บริการ", path: "/area" },
@@ -42,15 +44,15 @@ export default async function AreaPage({ params }: Props) {
 
   const areaFaqs = [
     {
-      q: `รับงานใน${a.full} หรือไม่?`,
-      a: `รับครับ ${a.note} ผมรับงานในพื้นที่นี้เป็นประจำ จึงคุ้นเคยเส้นทางและเข้าถึงหน้างานได้รวดเร็ว`,
+      q: `รับงานใน ${a.full} หรือไม่?`,
+      a: `รับครับ ผมรับงานใน ${a.full} เป็นประจำ จึงคุ้นเคยเส้นทางและเข้าถึงหน้างานได้รวดเร็ว`,
     },
     {
       q: `เรียกช่างแอร์${a.name} ใช้เวลากี่วันจึงได้คิว?`,
-      a: "ปกติผมเข้าหน้างานได้ภายใน 24 ชั่วโมงครับ และเข้าในวันเดียวกันได้หากคิวว่าง สามารถโทรหรือทาง LINE เพื่อสอบถามคิวล่วงหน้าได้",
+      a: "ปกติผมเข้าหน้างานได้ภายใน 24 ชั่วโมงครับ และเข้าในวันเดียวกันได้หากคิวว่าง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด แนะนำให้สอบถามคิวล่วงหน้าทางโทรศัพท์หรือ LINE",
     },
     {
-      q: `กรณีอยู่ใน${a.name} มีค่าเดินทางเพิ่มหรือไม่?`,
+      q: `กรณีอยู่ใน ${a.name} มีค่าเดินทางเพิ่มหรือไม่?`,
       a: `ไม่มีครับ ${a.full} อยู่ในเขตให้บริการปกติ ราคาที่ระบุไว้คือราคาที่ชำระจริง`,
     },
     {
@@ -76,7 +78,7 @@ export default async function AreaPage({ params }: Props) {
               ช่างแอร์{a.name} ล้างแอร์ ซ่อมแอร์ ถึงบ้าน
             </h1>
             <p className="lead mt-5">
-              {a.note} ผมรับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์ และล้างถังเครื่องซักผ้าใน{a.full}{" "}
+              {a.note} ผมรับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์ และล้างถังเครื่องซักผ้าใน {a.full}{" "}
               แจ้งราคาก่อนเริ่มงาน และไม่คิดค่าเดินทางเพิ่ม
             </p>
 
@@ -99,7 +101,7 @@ export default async function AreaPage({ params }: Props) {
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
               src={workingPhotos[idx % workingPhotos.length].src}
-              alt={`ช่างแอร์${a.name} กำลังให้บริการล้างแอร์ถึงบ้านลูกค้าใน${a.full}`}
+              alt={`ช่างแอร์${a.name} กำลังให้บริการล้างแอร์ถึงบ้านลูกค้าใน ${a.full}`}
               width={900}
               height={1200}
               priority
@@ -113,9 +115,9 @@ export default async function AreaPage({ params }: Props) {
       {/* บริการในพื้นที่ */}
       <section className="section">
         <div className="wrap">
-          <h2 className="h2">บริการช่างแอร์ที่รับใน{a.name}</h2>
+          <h2 className="h2">บริการช่างแอร์ที่รับใน {a.name}</h2>
           <p className="lead mt-3 max-w-2xl">
-            บริการทั้งหมดด้านล่างครอบคลุม{a.full} ในอัตราเดียวกับพื้นที่อื่น ไม่มีค่าเดินทางเพิ่ม
+            บริการทั้งหมดด้านล่างครอบคลุม {a.full} ในอัตราเดียวกับพื้นที่อื่น ไม่มีค่าเดินทางเพิ่ม
           </p>
           <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => {
@@ -145,17 +147,18 @@ export default async function AreaPage({ params }: Props) {
       {/* เนื้อหาเฉพาะพื้นที่ */}
       <section className="section bg-sand">
         <div className="wrap max-w-3xl">
-          <h2 className="h2">เหตุผลที่ลูกค้าใน{a.name}เลือกใช้บริการต่อเนื่อง</h2>
+          <h2 className="h2">วิธีทำงานของผมในพื้นที่นี้</h2>
           <div className="mt-5 space-y-5 text-[15px] leading-8 text-ink-soft sm:text-base sm:leading-9">
             <p>
               ที่ตั้งของผมอยู่ที่ <strong className="text-ink">ต.สันกำแพง อ.สันกำแพง</strong>{" "}
-              จึงเข้าถึงหน้างานใน{a.full}ได้รวดเร็ว {a.note}
-              {" "}พื้นที่ที่ลูกค้าเรียกใช้บริการบ่อย ได้แก่ {a.landmarks.join(" · ")}
+              {isHomeArea
+                ? "ซึ่งอยู่ในอำเภอเดียวกับพื้นที่นี้ ผมจึงเข้าถึงหน้างานได้เร็วที่สุด"
+                : `จึงเข้าถึงหน้างานใน ${a.full} ได้รวดเร็ว`}
+              {" "}จุดที่ผมเข้าไปทำงานบ่อยในพื้นที่นี้ ได้แก่ {a.landmarks.join(" · ")}
             </p>
             <p>
-              สิ่งที่ลูกค้าในพื้นที่นี้กล่าวถึงบ่อยที่สุดคือ{" "}
-              <strong className="text-ink">การแจ้งราคาก่อนเริ่มงานทุกครั้ง</strong>{" "}
-              ผมตรวจให้ลูกค้าดูต่อหน้า อธิบายสาเหตุที่แท้จริง และไม่เติมน้ำยาหากไม่พร่อง
+              ผม<strong className="text-ink">แจ้งราคาก่อนเริ่มงานทุกครั้ง</strong>{" "}
+              ตรวจให้ลูกค้าดูต่อหน้า อธิบายสาเหตุที่แท้จริง และไม่เติมน้ำยาหากไม่พร่อง
               เนื่องจากการเติมเกินทำให้ใช้ไฟมากขึ้นและลดอายุคอมเพรสเซอร์
             </p>
             <p>
@@ -250,7 +253,11 @@ export default async function AreaPage({ params }: Props) {
 
       <CtaBand
         title={`เรียกช่างแอร์${a.name}วันนี้`}
-        subtitle={`ที่ตั้งของผมอยู่ไม่ไกลจาก${a.full} สอบถามคิวเข้ามาได้ เข้าหน้างานภายใน 24 ชั่วโมง`}
+        subtitle={
+          isHomeArea
+            ? `ที่ตั้งของผมอยู่ใน ${a.full} เอง สอบถามคิวเข้ามาได้ ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด`
+            : `ที่ตั้งของผมอยู่ไม่ไกลจาก ${a.full} สอบถามคิวเข้ามาได้ ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด`
+        }
       />
     </>
   );

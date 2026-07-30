@@ -10,7 +10,7 @@ import { CtaBand, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
 const title = "รู้จักช่างอาร์ม ช่างแอร์เชียงใหม่ สันกำแพง";
 const description =
-  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด ที่ตั้ง ต.สันกำแพง อ.สันกำแพง ทำงานด้วยหลักแจ้งราคาก่อนเริ่มงาน ตรวจวัดน้ำยาก่อนเติม รับงานจันทร์ถึงเสาร์ ออกใบเสร็จในนามบริษัทได้";
+  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด ที่ตั้ง ต.สันกำแพง อ.สันกำแพง แจ้งราคาก่อนเริ่มงาน ตรวจน้ำยาก่อนเติม ออกใบเสร็จในนามบริษัทได้";
 
 export const metadata: Metadata = {
   title,
@@ -53,7 +53,7 @@ const promises = [
   {
     title: "รับผิดชอบตามระยะรับประกันจริง",
     detail:
-      "หากอาการเดิมเกิดซ้ำภายในระยะรับประกัน ผมกลับไปแก้ไขให้โดยไม่คิดค่าใช้จ่าย และไม่ตีความว่าเป็นคนละอาการเพื่อเลี่ยงความรับผิดชอบ",
+      "หากอาการเดิมเกิดซ้ำภายในระยะรับประกัน ผมกลับไปแก้ไขให้โดยไม่คิดค่าใช้จ่าย",
   },
 ];
 
@@ -139,8 +139,8 @@ export default function AboutPage() {
               ลูกค้าจะได้ติดต่อกับผู้ที่ทราบประวัติของเครื่องนั้นโดยตรง
             </p>
             <p className="mt-4 text-[15px] leading-8 text-ink-soft">
-              สองเรื่องที่ลูกค้ากล่าวถึงบ่อยที่สุดคือความสะอาดของงานล้างและความเรียบร้อยของพื้นที่
-              กับการแจ้งราคาให้ครบถ้วนก่อนเริ่มงานโดยไม่เรียกเก็บเพิ่มภายหลัง
+              สองเรื่องที่ผมให้ความสำคัญที่สุดคือความสะอาดของงานล้างพร้อมความเรียบร้อยของพื้นที่
+              และการแจ้งราคาให้ครบถ้วนก่อนเริ่มงาน หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อนเสมอ
               ทั้งสองข้อนี้คือมาตรฐานที่ผมรักษาไว้ในทุกงาน ไม่ว่าจะเป็นงานขนาดใดก็ตาม
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function AboutPage() {
       {/* จุดต่าง */}
       <section className="section">
         <div className="wrap max-w-4xl">
-          <h2 className="h2">สิ่งที่เราให้ความสำคัญเป็นพิเศษ</h2>
+          <h2 className="h2">สิ่งที่ผมให้ความสำคัญเป็นพิเศษ</h2>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {edges.map((e) => {
               const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
@@ -210,7 +210,7 @@ export default function AboutPage() {
           </div>
 
           <h3 className="mt-12 text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">
-            ยี่ห้อที่รับงานและใช้อะไหล่แท้
+            ยี่ห้อที่ผมรับงาน
           </h3>
           <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
             {brands.map((b) => (
@@ -222,6 +222,10 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-ink-soft">
+            ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ
+            ผมแจ้งให้ทราบพร้อมราคาก่อนเสมอ
+          </p>
         </div>
       </section>
 
@@ -232,7 +236,11 @@ export default function AboutPage() {
           <dl className="mt-6 grid gap-5 sm:grid-cols-2">
             {[
               { t: "ที่ตั้ง", d: `${site.legalName} · ${addressLine}`, Icon: IconPin },
-              { t: "เวลาทำการ", d: `${site.daysLabel} ${site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง`, Icon: IconClock },
+              {
+                t: "เวลาทำการ",
+                d: `${site.daysLabel} ${site.hours} · ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด`,
+                Icon: IconClock,
+              },
               { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE ${site.lineId} และ ${site.lineId2}`, Icon: IconPhone },
               { t: "เอกสาร", d: "ออกใบเสร็จรับเงินในนามบริษัทได้ ยังไม่ได้จดภาษีมูลค่าเพิ่ม จึงยังออกใบกำกับภาษีไม่ได้", Icon: IconCheck },
             ].map((x) => (

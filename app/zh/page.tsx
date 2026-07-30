@@ -18,7 +18,7 @@ const amphoeZh: Record<string, string> = {
 
 const title = "清迈空调清洗维修 | Pro Fresh Care 泰国清迈";
 const description =
-  "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗每台 600 泰铢起，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开公司抬头收据。";
+  "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗每台 600 泰铢，三台以上每台 550 泰铢，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开公司抬头收据。";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -44,7 +44,7 @@ const servicesZh = [
   {
     icon: IconSnow,
     name: "空调清洗",
-    price: "600 泰铢起",
+    price: "600 泰铢 · 三台以上 550",
     desc: "壁挂机常规清洗每台 600 泰铢，三台以上每台 550 泰铢。深度拆洗 2,000 泰铢，会把风轮和所有可拆部件取下单独清洗消毒。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。",
   },
   {

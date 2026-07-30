@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 600 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Receipts issued in the company name.";
+  "Aircon cleaning and AC repair in Chiang Mai by Arm, a local technician. 600 THB per wall unit, 550 THB each for three or more. Open Mon-Sat 8am-6pm.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -35,7 +35,7 @@ const servicesEn = [
   {
     icon: IconSnow,
     name: "Aircon cleaning",
-    price: "from 600 THB",
+    price: "600 THB · 550 for 3+",
     desc: "Standard clean 600 THB per wall unit, or 550 THB each for three or more. The full strip-down clean is 2,000 THB — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
   },
   {
@@ -137,7 +137,7 @@ export default function EnglishPage() {
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
               src={heroPhotos.en.src}
-              alt="Arm cleaning a wall-mounted air conditioner at a customer's home in Chiang Mai"
+              alt={heroPhotos.en.alt}
               width={900}
               height={1200}
               priority

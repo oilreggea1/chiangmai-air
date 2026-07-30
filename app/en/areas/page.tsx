@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 const title = "Areas I Cover in Chiang Mai | Aircon Service by Pro Fresh Care";
 const description =
-  "Aircon cleaning and repair around San Kamphaeng, covering all of Mueang Chiang Mai including Nimman, the old city and Santitham, plus Saraphi, Doi Saket and San Phra Net. No travel surcharge inside the service area.";
+  "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — plus Saraphi, Doi Saket and San Phra Net. No travel fee.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย

@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/compon
 
 const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning between guests for Airbnb hosts, villa managers and rental owners in Chiang Mai. Scheduled around turnovers, from 600 THB per wall unit, receipts issued in the company name.";
+  "Aircon cleaning between guests for Airbnb hosts and rental owners in Chiang Mai. 600 THB per wall unit, 550 THB each for three or more.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย

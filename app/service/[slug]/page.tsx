@@ -145,7 +145,7 @@ export default async function ServicePage({ params }: Props) {
         <CaseStudies
           items={caseStudies.filter((c) => c.serviceSlug === s.slug)}
           title={`งาน${s.name}ที่ผมทำมา`}
-          lead="สภาพที่พบตอนถอดออกมา และสภาพหลังประกอบกลับ พร้อมขั้นตอนที่ทำและเวลาที่ใช้ต่อเครื่อง"
+          lead="สภาพเครื่องตอนผมถอดออกมา และสภาพหลังประกอบกลับ"
         />
       )}
 

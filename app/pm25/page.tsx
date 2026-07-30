@@ -9,9 +9,9 @@ import {
 } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่ | แพ็กเกจห้องปลอดฝุ่นก่อนฤดูหมอกควัน";
+const title = "ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่ | แพ็กเกจรับมือฝุ่นก่อนฤดูหมอกควัน";
 const description =
-  "ฤดูหมอกควันเชียงใหม่ ก.พ.–เม.ย. ทำให้แอร์อุดตันเร็วกว่าปกติหลายเท่า แพ็กเกจห้องปลอดฝุ่นเริ่ม 2,000 บาท ล้างแอร์ถอดชิ้นส่วน + อุดรอยรั่วของห้อง จองคิวก่อนคิวเต็ม โทร 065-365-7673";
+  "แพ็กเกจรับมือฝุ่น PM2.5 เชียงใหม่ เริ่ม 2,000 บาท โทร 065-365-7673 ล้างแอร์ถอดชิ้นส่วนและอุดรอยรั่วของห้อง ก่อนฤดูหมอกควัน ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด";
 
 export const metadata: Metadata = {
   title,
@@ -92,8 +92,7 @@ export default function Pm25Page() {
               ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่
             </h1>
             <p className="lead mt-5">
-              ฤดูหมอกควัน หรือที่คนเชียงใหม่เรียกกันว่าหน้าเผา ส่งผลต่อระบบทางเดินหายใจโดยตรง
-              และยังทำให้แอร์ในบ้านอุดตันเร็วกว่าปกติหลายเท่า
+              ฤดูหมอกควันของเชียงใหม่ทำให้แอร์ในบ้านอุดตันเร็วกว่าปกติหลายเท่า
               เมื่อถึงเดือนเมษายนซึ่งเป็นช่วงที่ร้อนที่สุด เครื่องที่อุดตันจะทำความเย็นได้ไม่เพียงพอ
               ขณะที่คิวช่างทั้งจังหวัดเต็มจนต้องรอเป็นสัปดาห์
             </p>
@@ -174,7 +173,7 @@ export default function Pm25Page() {
           <p className="mt-6 text-[15px] leading-8 text-ink-soft sm:text-base sm:leading-9">
             อย่างไรก็ตามแอร์ยังมีความจำเป็น เพราะการเปิดแอร์ทำให้ต้องปิดประตูหน้าต่าง
             ซึ่งเป็นการตัดทางเข้าหลักของฝุ่นจากภายนอก
-            คู่มือห้องปลอดฝุ่นของ สสส. ระบุขั้นตอนการเปิดเครื่องปรับอากาศไว้ด้วยเช่นกัน
+            คู่มือห้องปลอดฝุ่นของกรมอนามัย กระทรวงสาธารณสุข ระบุขั้นตอนการเปิดเครื่องปรับอากาศไว้ด้วยเช่นกัน
             แนวทางที่ได้ผลจึงต้องทำครบทั้งสามส่วน ไม่ใช่เลือกอย่างใดอย่างหนึ่ง
           </p>
 
@@ -281,7 +280,7 @@ export default function Pm25Page() {
 
             <div className="card relative flex flex-col p-6 shadow-lift ring-2 ring-brand-500 sm:p-7">
               <span className="absolute -top-3 left-6 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-white">
-                แนะนำสำหรับบ้านที่มีคนแพ้ฝุ่น
+                แนะนำเมื่อเครื่องเริ่มมีกลิ่นอับ
               </span>
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-600 text-white">
                 <IconShield className="h-6 w-6" />
@@ -295,7 +294,7 @@ export default function Pm25Page() {
                 {[
                   "ถอดใบพัดกรงกระรอกออกมาล้างแยก จุดที่เชื้อราสะสมมากที่สุด",
                   "ถอดชิ้นส่วนล้างทุกชิ้น 100%",
-                  "ฉีดน้ำยาฆ่าเชื้อโรค",
+                  "ฉีดน้ำยาทำความสะอาดคอยล์ ช่วยลดคราบและกลิ่นอับ",
                   "รับประกันงานล้าง 30 วัน",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm leading-7 text-ink-soft">
@@ -311,7 +310,7 @@ export default function Pm25Page() {
             <div className="bg-gradient-to-br from-brand-700 to-brand-600 px-6 py-7 sm:px-8">
               <p className="text-sm font-semibold text-brand-100">แพ็กเกจครบชุด</p>
               <h3 className="mt-1.5 text-xl font-extrabold text-white sm:text-2xl">
-                แพ็กเกจห้องปลอดฝุ่น
+                แพ็กเกจรับมือฝุ่น PM2.5
               </h3>
               <p className="mt-3 flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold text-white">2,000</span>
@@ -327,7 +326,7 @@ export default function Pm25Page() {
               <ul className="grid gap-3.5 sm:grid-cols-2">
                 {[
                   "ล้างแอร์แบบถอดชิ้นส่วน ขจัดเขม่าที่สะสมจากฤดูหมอกควัน",
-                  "ฉีดน้ำยาฆ่าเชื้อโรคที่คอยล์และใบพัด",
+                  "ฉีดน้ำยาทำความสะอาดที่คอยล์และใบพัด ช่วยลดคราบและกลิ่นอับ",
                   "ตรวจหารอยรั่วของห้องที่ทำให้ฝุ่นเล็ดลอดเข้ามา",
                   "อุดรูท่อแอร์ที่เจาะทะลุผนัง ซึ่งเป็นจุดที่มักถูกมองข้าม",
                   "ประเมินว่าเครื่องรุ่นของคุณรองรับแผ่นกรองละเอียดได้ในระดับใดโดยไม่กระทบอายุเครื่อง",
@@ -353,7 +352,7 @@ export default function Pm25Page() {
                 </a>
                 {room && (
                   <Link href={`/blog/${room.slug}`} className="btn-ghost">
-                    อ่านวิธีทำห้องปลอดฝุ่นเอง
+                    อ่านวิธีลดฝุ่นเข้าห้องด้วยตัวเอง
                     <IconChevron className="h-4 w-4" />
                   </Link>
                 )}

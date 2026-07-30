@@ -71,10 +71,10 @@ export default function Home() {
 
             <dl className="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4">
               {[
-                { k: "600.-", v: "ล้างแอร์ติดผนัง" },
-                { k: "24 ชม.", v: "เข้าหน้างานเร็วที่สุด" },
+                { k: "600.-", v: "ล้างแอร์ติดผนัง · 3 เครื่องขึ้นไป 550.-" },
+                { k: "24 ชม.", v: "ปกติเข้าหน้างานได้ใน 24 ชม. ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด" },
                 { k: "30 วัน", v: "รับประกันงานล้าง" },
-                { k: "12 ยี่ห้อ", v: "อะไหล่แท้ทุกแบรนด์" },
+                { k: "12 ยี่ห้อ", v: "รับงานทุกแบรนด์หลัก" },
               ].map((s) => (
                 <div key={s.v}>
                   <dt className="text-2xl font-extrabold text-brand-700 sm:text-[1.6rem]">{s.k}</dt>
@@ -102,7 +102,7 @@ export default function Home() {
               </span>
               <span className="text-sm leading-tight">
                 <strong className="block text-ink">แจ้งราคาก่อนเริ่มงาน</strong>
-                <span className="text-ink-soft">ไม่เรียกเก็บเพิ่มภายหลัง</span>
+                <span className="text-ink-soft">หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อน</span>
               </span>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function Home() {
       <section className="section" id="services">
         <div className="wrap">
           <div className="max-w-2xl">
-            <p className="eyebrow">บริการของเรา</p>
+            <p className="eyebrow">งานที่ผมรับ</p>
             <h2 className="h2 mt-4">ดูแลงานแอร์และเครื่องซักผ้าถึงบ้าน</h2>
             <p className="lead mt-3">
               ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย ติดตั้งเครื่องใหม่ ย้ายแอร์
@@ -170,7 +170,7 @@ export default function Home() {
 
           <div className="mt-12">
             <h3 className="text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">
-              ยี่ห้อที่ผมรับงานและใช้อะไหล่แท้
+              ยี่ห้อที่ผมรับงาน
             </h3>
             <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
               {brands.map((b) => (
@@ -182,6 +182,10 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-ink-soft">
+              ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ
+              ผมแจ้งให้ทราบพร้อมราคาก่อนเสมอ
+            </p>
           </div>
         </div>
       </section>
@@ -203,7 +207,7 @@ export default function Home() {
               </h2>
               <p className="mt-3 text-[15px] leading-8 text-ink-soft">
                 แผ่นกรองที่ติดมากับแอร์กรอง PM2.5 ไม่ได้ แต่แอร์ยังจำเป็นเพราะทำให้ปิดห้องได้สนิท
-                ผมสรุปไว้ครบว่าควรล้างเมื่อใด ล้างแบบใด และทำห้องปลอดฝุ่นอย่างไรจึงได้ผล
+                ผมสรุปไว้ครบว่าควรล้างเมื่อใด ล้างแบบใด และลดฝุ่นที่เข้าห้องได้ด้วยวิธีใดบ้าง
               </p>
               <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700">
                 อ่านคู่มือสู้ฝุ่นฉบับเต็ม
@@ -229,7 +233,7 @@ export default function Home() {
         <div className="wrap">
           <div className="max-w-2xl">
             <p className="eyebrow">เทียบแล้วต่างอย่างไร</p>
-            <h2 className="h2 mt-4">4 เรื่องที่เราให้ความสำคัญเป็นพิเศษ</h2>
+            <h2 className="h2 mt-4">4 เรื่องที่ผมให้ความสำคัญเป็นพิเศษ</h2>
           </div>
           <div className="mt-9 grid gap-5 sm:grid-cols-2">
             {edges.map((e) => {
@@ -331,7 +335,12 @@ export default function Home() {
               {
                 name: "Premium Full Wash", price: "2,000", unit: "บาท / เครื่อง",
                 note: "ถอดล้าง 100% · รับประกัน 30 วัน",
-                feats: ["ถอดชิ้นส่วนล้างแยกทุกชิ้น", "ถอดใบพัดกรงกระรอกออกมาล้าง", "ฉีดน้ำยาฆ่าเชื้อโรค", "เหมาะกับบ้านที่มีคนแพ้ฝุ่น"],
+                feats: [
+                  "ถอดชิ้นส่วนล้างแยกทุกชิ้น",
+                  "ถอดใบพัดกรงกระรอกออกมาล้าง",
+                  "ฉีดน้ำยาทำความสะอาดคอยล์ ช่วยลดคราบและกลิ่นอับ",
+                  "เหมาะกับเครื่องที่มีกลิ่นอับหรือไม่ได้ถอดล้างมานาน",
+                ],
                 popular: true,
               },
               {
@@ -417,8 +426,8 @@ export default function Home() {
       <section className="section bg-sand">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">เสียงจากลูกค้า</p>
-            <h2 className="h2 mt-4">รีวิวจากลูกค้าจริงในเชียงใหม่</h2>
+            <p className="eyebrow">รีวิว</p>
+            <h2 className="h2 mt-4">ความเห็นจากลูกค้า</h2>
           </div>
           <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
             {reviews.map((r) => (
@@ -492,7 +501,8 @@ export default function Home() {
               โดยคิดอัตราเดียวกันทุกพื้นที่ ไม่มีค่าเดินทางเพิ่ม
             </p>
             <p>
-              ทุกงานผมแจ้งราคาก่อนเริ่มเสมอ และไม่เรียกเก็บเพิ่มภายหลัง
+              ทุกงานผมแจ้งราคาก่อนเริ่มเสมอ หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อนทุกครั้ง
+              และไม่บวกเพิ่มเงียบ ๆ ตอนเก็บเงิน
               หากตรวจแล้วพบว่ายังไม่จำเป็นต้องซ่อมหรือไม่ต้องเติมน้ำยา ผมจะแจ้งตามจริง
               เพราะลูกค้าที่ไว้วางใจและกลับมาใช้บริการซ้ำมีค่ามากกว่ารายได้จากงานครั้งเดียว
             </p>

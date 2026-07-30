@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const trail = [
   { name: "หน้าแรก", path: "/" },
-  { name: "ผลงานของเรา", path: "/portfolio" },
+  { name: "ผลงานที่ผมทำ", path: "/portfolio" },
 ];
 
 export default function Portfolio() {
@@ -104,12 +104,12 @@ export default function Portfolio() {
       <CaseStudies
         items={caseStudies}
         title="สภาพเครื่องตอนผมไปถึง กับตอนทำเสร็จ"
-        lead="คราบผงซักฟอกและตะกรันเกาะอยู่ด้านนอกถัง ซึ่งเป็นบริเวณที่มองไม่เห็นขณะเครื่องประกอบอยู่ ผมถ่ายเก็บไว้ทั้งตอนถอดออกมาและตอนประกอบกลับ"
+        lead="คราบผงซักฟอกและตะกรันเกาะอยู่ด้านนอกถัง ซึ่งเป็นบริเวณที่มองไม่เห็นขณะเครื่องประกอบอยู่"
       />
 
       <section className="section">
         <div className="wrap">
-          <h2 className="h2 text-center">เสียงจากลูกค้าที่ใช้บริการจริง</h2>
+          <h2 className="h2 text-center">ความเห็นจากลูกค้า</h2>
           <div className="mx-auto mt-9 grid max-w-4xl gap-5 sm:grid-cols-2">
             {reviews.map((r) => (
               <ReviewCard key={r.name} {...r} />

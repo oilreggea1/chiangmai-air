@@ -43,7 +43,8 @@ export function CtaBand({
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">
-              {site.daysLabel} {site.hours} · เข้าหน้างานภายใน 24 ชั่วโมง
+              {site.daysLabel} {site.hours} · ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง
+              ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด
             </p>
           </div>
         </div>
@@ -180,7 +181,7 @@ export function CaseStudies({
     <section className="section bg-sand">
       <div className="wrap">
         <div className="max-w-2xl">
-          <p className="eyebrow">เคสงานจริง</p>
+          <p className="eyebrow">ก่อนล้างและหลังล้าง</p>
           <h2 className="h2 mt-4">{title}</h2>
           <p className="lead mt-3">{lead}</p>
         </div>
@@ -233,7 +234,7 @@ export function CaseStudies({
               <div className="grid gap-6 border-t border-slate-200 bg-white px-5 py-6 sm:px-7 lg:grid-cols-[1.3fr_0.7fr]">
                 <div>
                   <p className="text-sm font-bold tracking-wide text-ink uppercase">
-                    งานนี้ทำอะไรบ้าง
+                    ขั้นตอนที่ทำในงานนี้
                   </p>
                   <ol className="mt-4 space-y-3">
                     {c.work.map((w, i) => (
