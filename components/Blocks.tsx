@@ -262,9 +262,6 @@ export function CaseStudies({
           ))}
         </div>
 
-        <p className="mt-7 text-sm leading-7 text-ink-soft">
-          ภาพก่อนและหลังในแต่ละเคสเป็นเครื่องเดียวกันและงานเดียวกัน ถ่ายก่อนเริ่มงานและหลังประกอบกลับ
-        </p>
       </div>
     </section>
   );

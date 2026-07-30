@@ -144,8 +144,8 @@ export default async function ServicePage({ params }: Props) {
       {caseStudies.some((c) => c.serviceSlug === s.slug) && (
         <CaseStudies
           items={caseStudies.filter((c) => c.serviceSlug === s.slug)}
-          title={`เคสงาน${s.name}จริง พร้อมภาพก่อนและหลัง`}
-          lead="แต่ละเคสเล่าว่าเจอสภาพอะไรหน้างาน ทำอะไรไปบ้าง และใช้เวลาเท่าใด เพื่อให้เห็นขอบเขตงานก่อนตัดสินใจ"
+          title={`งาน${s.name}ที่ผมทำมา`}
+          lead="สภาพที่พบตอนถอดออกมา และสภาพหลังประกอบกลับ พร้อมขั้นตอนที่ทำและเวลาที่ใช้ต่อเครื่อง"
         />
       )}
 
@@ -155,8 +155,8 @@ export default async function ServicePage({ params }: Props) {
           <div className="wrap">
             <h2 className="h2">ภาพงาน{s.name}จริง</h2>
             <p className="lead mt-3 max-w-2xl">
-              ภาพจากหน้างานจริง แสดงชิ้นส่วนที่ถอดออกมาและสภาพก่อนล้าง
-              เพื่อให้เห็นว่าคราบที่สะสมอยู่ในจุดที่มองไม่เห็นมีลักษณะอย่างไร
+              คราบที่เกาะอยู่ในเครื่องส่วนใหญ่อยู่ในจุดที่มองไม่เห็นจนกว่าจะถอดชิ้นส่วนออกมา
+              นี่คือลักษณะที่ผมพบบ่อยที่สุดหน้างาน
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {photos.slice(1).map((g) => (
