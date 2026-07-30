@@ -7,12 +7,15 @@ import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
 const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ รัศมี 20 กม. 8 อำเภอ";
 const description =
-  "ช่างแอร์เชียงใหม่ รับงานรัศมี 20 กม. จากสันกำแพง ครอบคลุม 8 อำเภอ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง แม่ริม แม่ออน ดูรายชื่อตำบลที่รับงานได้ครบทุกตำบล ไม่คิดค่าเดินทางเพิ่ม";
+  "ช่างแอร์เชียงใหม่ รับงานรัศมี 20 กม. จากสันกำแพง ครอบคลุม 7 อำเภอ สันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด สันทราย หางดง แม่ออน ดูรายชื่อตำบลที่รับงานได้ครบทุกตำบล ไม่คิดค่าเดินทางเพิ่ม";
 
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/area" },
+  alternates: {
+    canonical: "/area",
+    languages: { "th-TH": "/area", "en-US": "/en/areas" },
+  },
   openGraph: { title, description, url: `${site.url}/area`, type: "article" },
 };
 

@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/portfolio", priority: 0.7, freq: "monthly" as const },
     { path: "/contact", priority: 0.8, freq: "monthly" as const },
     { path: "/en", priority: 0.7, freq: "monthly" as const },
+    { path: "/en/pricing", priority: 0.7, freq: "monthly" as const },
+    { path: "/en/areas", priority: 0.6, freq: "monthly" as const },
+    { path: "/en/airbnb", priority: 0.7, freq: "monthly" as const },
   ];
 
   return [

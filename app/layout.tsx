@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import StickyCta from "@/components/StickyCta";
 import { site } from "@/lib/site";
 import { localBusinessSchema, websiteSchema, jsonLd } from "@/lib/schema";
+// Vercel Analytics ไม่ใช้คุกกี้และไม่เก็บข้อมูลระบุตัวตน จึงไม่ต้องมีแบนเนอร์ขอความยินยอมตาม PDPA
+import { Analytics } from "@vercel/analytics/next";
 
 const thai = Noto_Sans_Thai({
   subsets: ["thai", "latin"],
@@ -33,7 +35,11 @@ export const metadata: Metadata = {
     "ล้างแอร์แขวนเชียงใหม่", "ล้างแอร์ 4 ทิศทางเชียงใหม่", "ล้างแอร์ฝังฝ้าเชียงใหม่",
     "ล้างเครื่องซักผ้าฝาหน้าเชียงใหม่", "ล้างเครื่องซักผ้าฝาบนเชียงใหม่",
   ],
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    // บอก Google ว่าหน้าไทยกับอังกฤษเป็นคู่กัน ไม่ใช่เนื้อหาซ้ำ
+    languages: { "th-TH": "/", "en-US": "/en" },
+  },
   openGraph: {
     type: "website",
     locale: "th_TH",
@@ -91,6 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <StickyCta />
+        <Analytics />
       </body>
     </html>
   );

@@ -18,7 +18,10 @@ export const metadata: Metadata = {
     "aircon cleaning Chiang Mai", "AC repair Chiang Mai", "air conditioner service Chiang Mai",
     "aircon service Nimman", "AC cleaning San Kamphaeng", "Airbnb aircon Chiang Mai",
   ],
-  alternates: { canonical: "/en" },
+  alternates: {
+    canonical: "/en",
+    languages: { "th-TH": "/", "en-US": "/en" },
+  },
   openGraph: { title, description, url: `${site.url}/en`, type: "website", locale: "en_US" },
 };
 
