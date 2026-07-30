@@ -39,8 +39,8 @@ const faqs = [
     a: "A wall unit is the rectangular one mounted high on a wall. A cassette is the square panel set into the ceiling with air blowing out of four sides. A suspended unit hangs below the ceiling, usually in restaurants and shops. If you are unsure, send me a photo on LINE and I will tell you.",
   },
   {
-    q: "Can you issue a tax invoice?",
-    a: "Yes. I work as Cher Solutions Co., Ltd. and can issue a proper tax invoice for cafés, restaurants, hotels, guesthouses and offices that need one for their accounts.",
+    q: "Can you give me a receipt for my accounts?",
+    a: "I issue receipts in the company name, Cher Solutions Co., Ltd. To be straight with you: the company is not yet VAT registered, so I cannot issue a full VAT tax invoice. If your business needs one to reclaim input VAT, please tell me before booking.",
   },
   {
     q: "What payment methods do you accept?",

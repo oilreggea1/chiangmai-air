@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Tax invoice available.";
+  "Aircon cleaning, repair, installation, relocation and washing machine drum cleaning in Chiang Mai by Arm, a local technician who does the work himself. Prices published up front from 550 THB, open Mon-Sat 8am-6pm. Condos, villas and Airbnb welcome. Receipts issued in the company name.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -78,8 +78,8 @@ const faqs = [
     a: "More often than in most places, unfortunately. During the burning season from February to April the air here carries far more soot than usual and filters clog fast. I suggest a full clean in January before the season starts, rinsing the filters yourself every 2–4 weeks through it, and a second full clean around May or June.",
   },
   {
-    q: "Can you issue a tax invoice?",
-    a: "Yes. I work with cafés, restaurants, hotels, guesthouses and offices that need proper documentation, and I can issue a tax invoice as normal.",
+    q: "Can you give me a receipt for my accounts?",
+    a: "I issue receipts in the company name, Cher Solutions Co., Ltd., which work as proof of payment for cafés, restaurants, hotels, guesthouses and offices. To be straight with you: the company is not yet VAT registered, so I cannot issue a full VAT tax invoice. If your business needs one to reclaim input VAT, please tell me before booking.",
   },
   {
     q: "Do you work on condos and rental properties?",
@@ -208,7 +208,7 @@ export default function EnglishPage() {
               "I show you the old parts I removed and explain what failed and why. And if a repair is not worth the money, I say so — even though I earn more if you let me do it.",
               "Two layers of drop sheets on every cleaning job. Your floor and furniture stay as they were.",
               "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
-              "Tax invoices available for businesses.",
+              "Receipts issued in the company name. Not VAT registered, so no VAT tax invoice yet.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint/12 text-mint">
@@ -285,7 +285,7 @@ export default function EnglishPage() {
               <IconClock className="h-4 w-4" />
               Mon–Sat 8:00–18:00 · closed Sunday
               <IconShield className="ml-3 h-4 w-4" />
-              Tax invoice available
+              Company receipt available
             </p>
           </div>
         </div>

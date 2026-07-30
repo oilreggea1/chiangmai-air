@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/compon
 
 const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning between guests for Airbnb hosts, villa managers and rental owners in Chiang Mai. Scheduled around turnovers, from 550 THB per wall unit, tax invoice available.";
+  "Aircon cleaning between guests for Airbnb hosts, villa managers and rental owners in Chiang Mai. Scheduled around turnovers, from 550 THB per wall unit, receipts issued in the company name.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -43,8 +43,8 @@ const faqs = [
     a: "Wall units are 600 THB each, dropping to 550 THB each from three units up, which covers most apartments and villas. Larger 18,001 to 38,000 BTU units are 800 THB, or 700 THB each from two up. Send me the number of units and I will confirm the total before I come.",
   },
   {
-    q: "Can I get an invoice for my accounts?",
-    a: "Yes. I work as Cher Solutions Co., Ltd. and issue proper tax invoices, which most management companies and accountants need.",
+    q: "Can I get paperwork for my accounts?",
+    a: "I issue receipts in the company name, Cher Solutions Co., Ltd., which most owners and management companies accept as proof of payment. The company is not yet VAT registered, so a full VAT tax invoice is not available. If your accountant requires one, please tell me before booking.",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function EnAirbnbPage() {
               "I confirm the total price and the time slot before anything is booked.",
               "I coordinate access directly with your cleaner, caretaker or condo office.",
               "Sheeting goes down before I start, and the room is left as I found it.",
-              "You get photos of the work and, if you need one, a tax invoice for your accounts.",
+              "You get photos of the work and a receipt in the company name for your records.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />
