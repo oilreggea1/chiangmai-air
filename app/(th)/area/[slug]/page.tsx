@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = areas.find((x) => x.slug === slug);
   if (!a) return {};
   const title = `ช่างแอร์${a.name} ล้างแอร์ ซ่อมแอร์ถึงบ้าน`;
-  const description = `ช่างแอร์${a.name} โทร ${site.phone} ล้างแอร์ 600 บาท 3 เครื่องขึ้นไป 550 บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}`;
+  const description = `ช่างแอร์${a.name} โทร ${site.phone} ล้างแอร์ 500 บาท 3 เครื่องขึ้นไป 450 บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}`;
   return {
     title,
     description,

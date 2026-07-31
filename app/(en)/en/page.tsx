@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning and AC repair in Chiang Mai by Arm, a local technician. 600 THB per wall unit, 550 THB each for three or more. Open Mon-Sat 8am-6pm.";
+  "Aircon cleaning and AC repair in Chiang Mai by Arm, a local technician. 500 THB per wall unit, 450 THB each for three or more. Open Mon-Sat 8am-6pm.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -35,8 +35,8 @@ const servicesEn = [
   {
     icon: IconSnow,
     name: "Aircon cleaning",
-    price: "600 THB · 550 for 3+",
-    desc: "Standard clean 600 THB per wall unit, or 550 THB each for three or more. The full strip-down clean is 2,000 THB — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
+    price: "500 THB · 450 for 3+",
+    desc: "Standard clean 500 THB per wall unit, or 450 THB each for three or more. The full strip-down clean is 2,000 THB — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
   },
   {
     icon: IconWrench,
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "How much does aircon cleaning cost in Chiang Mai?",
-    a: "My standard clean is 600 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 550 THB each when you have three or more. Larger units at 18,001–38,000 BTU are 800 THB. The full strip-down clean is 2,000 THB per unit.",
+    a: "My standard clean is 500 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 450 THB each when you have three or more. Larger units at 18,001–38,000 BTU are 800 THB. The full strip-down clean is 2,000 THB per unit.",
   },
   {
     q: "How often should I clean my aircon in Chiang Mai?",

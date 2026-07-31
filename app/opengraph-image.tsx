@@ -64,7 +64,7 @@ export default async function OgImage() {
               fontWeight: 600,
             }}
           >
-            ล้าง 600.- · 3 เครื่อง 550.-
+            ล้าง 500.- · 3 เครื่อง 450.-
           </div>
         </div>
       </div>

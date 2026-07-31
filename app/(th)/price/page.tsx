@@ -5,9 +5,9 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconCheck, IconX, IconChevron, IconShield } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 600 บาท · 3 เครื่องขึ้นไป 550 บาท";
+const title = "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 500 บาท · 3 เครื่องขึ้นไป 450 บาท";
 const description =
-  "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 550-800 บาท Premium Full Wash 2,000 บาท ติดตั้ง 3,000-3,500 บาท ย้ายแอร์ 3,500 บาท ไม่มีค่าเดินทางเพิ่ม โทร 065-365-7673";
+  "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 450-800 บาท Premium Full Wash 2,000 บาท ติดตั้ง 3,000-3,500 บาท ย้ายแอร์ 3,500 บาท ไม่มีค่าเดินทางเพิ่ม โทร 065-365-7673";
 
 export const metadata: Metadata = {
   title,
@@ -82,7 +82,7 @@ export default function PricePage() {
 
       <section className="section bg-sand">
         <div className="wrap max-w-4xl">
-          <h2 className="h2 text-center">ล้างธรรมดา 600.- กับ Premium 2,000.- ต่างกันอย่างไร</h2>
+          <h2 className="h2 text-center">ล้างธรรมดา 500.- กับ Premium 2,000.- ต่างกันอย่างไร</h2>
           <p className="lead mt-3 text-center">
             ส่วนต่างของราคามาจากจำนวนขั้นตอนและเวลาที่ใช้ต่อเครื่อง
           </p>

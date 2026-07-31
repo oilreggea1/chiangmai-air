@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/compon
 
 const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning between guests for Airbnb hosts and rental owners in Chiang Mai. 600 THB per wall unit, 550 THB each for three or more.";
+  "Aircon cleaning between guests for Airbnb hosts and rental owners in Chiang Mai. 500 THB per wall unit, 450 THB each for three or more.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What does it cost for a whole property?",
-    a: "Wall units are 600 THB each, dropping to 550 THB each from three units up, which covers most apartments and villas. Larger 18,001 to 38,000 BTU units are 800 THB, or 700 THB each from two up. Send me the number of units and I will confirm the total before I come.",
+    a: "Wall units are 500 THB each, dropping to 450 THB each from three units up, which covers most apartments and villas. Larger 18,001 to 38,000 BTU units are 800 THB, or 700 THB each from two up. Send me the number of units and I will confirm the total before I come.",
   },
   {
     q: "Can I get paperwork for my accounts?",
@@ -101,7 +101,7 @@ export default function EnAirbnbPage() {
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             {[
               { k: "45–60 min", v: "per wall unit for a standard clean" },
-              { k: "550 THB", v: "each from three units up" },
+              { k: "450 THB", v: "each from three units up" },
               { k: "30 days", v: "warranty on the work" },
             ].map((x) => (
               <div key={x.v} className="card p-5">

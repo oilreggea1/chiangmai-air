@@ -261,7 +261,7 @@ export default function Pm25Page() {
               <h3 className="mt-4 text-lg font-bold">ล้างใหญ่ก่อนเข้าฤดูหมอกควัน</h3>
               <p className="mt-2 flex items-baseline gap-1.5">
                 <span className="text-3xl font-extrabold text-brand-700">600</span>
-                <span className="text-sm text-ink-soft">บาท / เครื่อง · 3 เครื่องขึ้นไป 550.-</span>
+                <span className="text-sm text-ink-soft">บาท / เครื่อง · 3 เครื่องขึ้นไป 450.-</span>
               </p>
               <ul className="mt-5 flex-1 space-y-2.5">
                 {[
