@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, services, areas, heroPhotos, servicePhotos, caseStudies } from "@/lib/site";
+import { articles } from "@/content/articles";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
@@ -36,6 +37,9 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const others = services.filter((x) => x.slug !== s.slug);
+  // บทความที่ผูกกับบริการนี้ไว้ หน้าบริการเป็นหน้าที่แข็งที่สุดของเว็บ
+  // ถ้าไม่ลิงก์ออกไป บทความจะได้ลิงก์ภายในจากหน้ารวมบทความอย่างเดียว
+  const guides = articles.filter((x) => x.relatedService === s.slug).slice(0, 4);
   // บริการที่มีภาพงานของตัวเองใช้ชุดนั้น ที่เหลือหยิบจากคลังภาพงานแอร์
   const photos = servicePhotos[s.slug];
   // ภาพหลักกำหนดไว้ต่อบริการ ไม่สุ่มจาก gallery เพราะเคยได้ภาพที่ไม่ตรงหัวข้อ
@@ -203,6 +207,34 @@ export default async function ServicePage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {guides.length > 0 && (
+        <section className="section bg-sand">
+          <div className="wrap">
+            <h2 className="h2">อ่านเพิ่มเติมก่อนตัดสินใจเรื่อง{s.name}</h2>
+            <p className="lead mt-3 max-w-2xl">
+              บทความที่ผมเขียนอธิบายสาเหตุและวิธีตรวจเบื้องต้นด้วยตัวเอง อ่านก่อนเรียกช่างได้ครับ
+            </p>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              {guides.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/blog/${g.slug}`}
+                  className="card group flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <span className="text-xs font-semibold text-brand-600">{g.category}</span>
+                  <h3 className="mt-2 font-bold leading-8 group-hover:text-brand-700">{g.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{g.excerpt}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+                    อ่านบทความ
+                    <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <FaqList items={s.faqs} title={`คำถามที่พบบ่อยเรื่อง${s.name}`} />
 
