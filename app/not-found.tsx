@@ -1,6 +1,8 @@
 import Link from "next/link";
+import "./globals.css";
 import { site, services, areas } from "@/lib/site";
 import { IconPhone, IconChevron } from "@/components/Icons";
+import { Shell } from "@/components/Shell";
 
 export const metadata = {
   title: "ไม่พบหน้าที่คุณค้นหา",
@@ -8,7 +10,9 @@ export const metadata = {
 };
 
 export default function NotFound() {
+  // เว็บมี root layout สามชุด หน้า 404 กลางจึงไม่มี layout ครอบ ต้องเรียก Shell เอง
   return (
+    <Shell lang="th">
     <section className="section">
       <div className="wrap max-w-2xl text-center">
         <p className="text-6xl font-extrabold text-brand-200">404</p>
@@ -55,5 +59,6 @@ export default function NotFound() {
         </p>
       </div>
     </section>
+    </Shell>
   );
 }

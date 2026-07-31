@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: "/en/airbnb",
-    languages: { "en-US": "/en/airbnb" },
+    languages: { "en-US": "/en/airbnb", "x-default": "/en/airbnb" },
   },
   openGraph: { title, description, url: `${site.url}/en/airbnb`, type: "article", locale: "en_US" },
 };

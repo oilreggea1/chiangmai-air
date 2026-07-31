@@ -1,31 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_Thai } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import StickyCta from "@/components/StickyCta";
+import "../globals.css";
+import { Shell, baseMetadata, baseViewport } from "@/components/Shell";
 import { site } from "@/lib/site";
-import { localBusinessSchema, websiteSchema, jsonLd } from "@/lib/schema";
-// Vercel Analytics ไม่ใช้คุกกี้และไม่เก็บข้อมูลระบุตัวตน จึงไม่ต้องมีแบนเนอร์ขอความยินยอมตาม PDPA
-import { Analytics } from "@vercel/analytics/next";
 
-const thai = Noto_Sans_Thai({
-  subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-thai",
-  display: "swap",
-});
-
+/** root layout ของหน้าภาษาไทย ซึ่งเป็นหน้าส่วนใหญ่ของเว็บ */
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  ...baseMetadata,
   title: {
     default: "ช่างแอร์เชียงใหม่ ล้างแอร์ ซ่อมแอร์ ถึงบ้าน | โปรเฟรชแคร์ 065-365-7673",
     template: "%s | ช่างแอร์เชียงใหม่ โปรเฟรชแคร์",
   },
   description:
     "ช่างแอร์เชียงใหม่ โทร 065-365-7673 ล้างแอร์ 600 บาท 3 เครื่องขึ้นไปเครื่องละ 550 บาท ซ่อม ติดตั้ง ย้ายแอร์ และล้างเครื่องซักผ้าถึงบ้าน แจ้งราคาก่อนเริ่มงาน",
-  applicationName: site.name,
-  authors: [{ name: site.name }],
   keywords: [
     "ช่างแอร์เชียงใหม่", "ล้างแอร์เชียงใหม่", "ซ่อมแอร์เชียงใหม่",
     "ติดตั้งแอร์เชียงใหม่", "ย้ายแอร์เชียงใหม่", "ช่างแอร์สันกำแพง",
@@ -35,11 +21,6 @@ export const metadata: Metadata = {
     "ล้างแอร์แขวนเชียงใหม่", "ล้างแอร์ 4 ทิศทางเชียงใหม่", "ล้างแอร์ฝังฝ้าเชียงใหม่",
     "ล้างเครื่องซักผ้าฝาหน้าเชียงใหม่", "ล้างเครื่องซักผ้าฝาบนเชียงใหม่",
   ],
-  alternates: {
-    canonical: "/",
-    // บอก Google ว่าหน้าไทยกับอังกฤษเป็นคู่กัน ไม่ใช่เนื้อหาซ้ำ
-    languages: { "th-TH": "/", "en-US": "/en", "zh-CN": "/zh", "x-default": "/" },
-  },
   openGraph: {
     type: "website",
     locale: "th_TH",
@@ -54,51 +35,10 @@ export const metadata: Metadata = {
     title: "ช่างแอร์เชียงใหม่ ล้างแอร์ ซ่อมแอร์ ถึงบ้าน",
     description: "ล้างแอร์ 600 บาท · 3 เครื่องขึ้นไป เครื่องละ 550 บาท ทั่วเชียงใหม่",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
-  },
-  // เก็บ verification เดิมของ Search Console ไว้ ไม่งั้นต้องยืนยันสิทธิ์ใหม่
-  verification: {
-    google: "isjs4u6Kgw7maBmLaOhLQc32zpw74pXuOwd5epvip9c",
-  },
-  other: {
-    "geo.region": "TH-50",
-    "geo.placename": "Chiang Mai",
-    "geo.position": `${site.geo.lat};${site.geo.lng}`,
-    ICBM: `${site.geo.lat}, ${site.geo.lng}`,
-  },
 };
 
-export const viewport: Viewport = {
-  themeColor: "#1c79d8",
-  width: "device-width",
-  initialScale: 1,
-};
+export const viewport: Viewport = baseViewport;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="th" className={thai.variable}>
-      <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(localBusinessSchema())} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(websiteSchema())} />
-      </head>
-      <body className="font-sans antialiased">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-white"
-        >
-          ข้ามไปยังเนื้อหาหลัก
-        </a>
-        <Header />
-        <main id="main" className="pb-24 lg:pb-0">
-          {children}
-        </main>
-        <Footer />
-        <StickyCta />
-        <Analytics />
-      </body>
-    </html>
-  );
+export default function ThaiLayout({ children }: { children: React.ReactNode }) {
+  return <Shell lang="th">{children}</Shell>;
 }

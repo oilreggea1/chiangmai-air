@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: "/area",
-    languages: { "th-TH": "/area", "en-US": "/en/areas" },
+    languages: { "th-TH": "/area", "en-US": "/en/areas", "x-default": "/area" },
   },
   openGraph: { title, description, url: `${site.url}/area`, type: "article" },
 };
