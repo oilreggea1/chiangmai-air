@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
       { source: "/area/san-sai", destination: "/area/san-phra-net", permanent: true },
       { source: "/area/hang-dong", destination: "/area/mae-hia", permanent: true },
       { source: "/area/mae-on", destination: "/area", permanent: true },
+
+      // หมวดผลงานที่ตัดออกเพราะเจ้าของไม่ได้รับซ่อมเครื่องซักผ้า รับเฉพาะงานล้าง
+      { source: "/portfolio/wm-repair", destination: "/portfolio/wm-top", permanent: true },
+      { source: "/portfolio/wm-repair/:page", destination: "/portfolio/wm-top", permanent: true },
     ];
   },
   async headers() {

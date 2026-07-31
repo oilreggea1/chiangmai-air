@@ -10,6 +10,9 @@ import { article as airTatBoi } from "./air-tat-boi";
 import { article as chekChang } from "./chek-chang-lang-air";
 import { article as hongPlodFun } from "./hong-plod-fun-chiangmai";
 import { article as inverterVs } from "./inverter-vs-thammada";
+import { article as khopYangRa } from "./khop-yang-sak-pha-khuen-ra";
+import { article as sakPhaBoi } from "./lang-khrueang-sak-pha-boi-kae-nai";
+import { article as sakPhaEng } from "./lang-khrueang-sak-pha-eng-dai-mai";
 import { article as khamnuanBtu } from "./khamnuan-btu";
 import { article as langAirBoi } from "./lang-air-boi-kae-nai";
 import { article as langAirEng } from "./lang-air-eng-dai-mai";
@@ -37,6 +40,9 @@ export const articles: Article[] = [
   langAirEng,
   langThangSakPha,
   sakPhaFaNaVsFaBon,
+  sakPhaEng,
+  sakPhaBoi,
+  khopYangRa,
   langAirRanAhan,
   yaiAir,
   airMaiYen,
