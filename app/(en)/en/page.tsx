@@ -57,6 +57,18 @@ const servicesEn = [
     desc: "Moving house or changing rooms. I pump the refrigerant back into the condenser before disconnecting, so you are not paying for a full recharge afterwards. Removal only is 700 THB.",
   },
   {
+    icon: IconSnow,
+    name: "Suspended and ceiling units",
+    price: "from 1,300 THB",
+    desc: "Restaurants, cafés and offices usually have units suspended below the ceiling or recessed into it. They sit high up and everything below has to be sheeted off first, so they take longer than a wall unit. Suspended units from 1,300 THB, ceiling-recessed from 1,500 THB. The final price depends on the size of the unit and how high the ceiling is, and I tell you before I start.",
+  },
+  {
+    icon: IconInstall,
+    name: "Buying a unit and trade-ins",
+    price: "quoted per model",
+    desc: "I sell both new and checked second-hand units, fitted. Buying and fitting from one person means that if something goes wrong later there is no argument about whether it is the unit or the installation. Unit prices depend on the model and the promotion running at the time, so I quote per model. Second-hand units carry a 1 month warranty on the unit itself. I also take your old unit in part-exchange, but I have to see it before I can put a price on it.",
+  },
+  {
     icon: IconWasher,
     name: "Washing machine drum clean",
     price: "from 999 THB",
