@@ -2,6 +2,21 @@ import { site, services, areas } from "./site";
 
 const ID = `${site.url}/#business`;
 
+/**
+ * ราคาของบริการเป็นช่วง ไม่ใช่ตัวเลขตายตัว
+ * ถ้าประกาศเป็น price เดี่ยว Google จะเข้าใจว่าเป็นราคาสุดท้าย ซึ่งไม่ตรงกับตารางบนหน้าเว็บ
+ */
+function offerPrice(s: (typeof services)[number]) {
+  return {
+    "@type": "PriceSpecification",
+    priceCurrency: "THB",
+    minPrice: s.priceFrom,
+    ...(s.priceTo ? { maxPrice: s.priceTo } : {}),
+    ...(s.priceNote ? { description: s.priceNote } : {}),
+  };
+}
+
+
 /** LocalBusiness หลัก — ต้องตรงกับ Google Business Profile เป๊ะ ๆ (NAP consistency) */
 export function localBusinessSchema() {
   return {
@@ -86,8 +101,7 @@ export function localBusinessSchema() {
       itemListElement: services.map((s) => ({
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: s.name, description: s.short },
-        price: s.priceFrom,
-        priceCurrency: "THB",
+        priceSpecification: offerPrice(s),
         url: `${site.url}/service/${s.slug}`,
       })),
     },
@@ -112,8 +126,7 @@ export function serviceSchema(slug: string) {
     })),
     offers: {
       "@type": "Offer",
-      price: s.priceFrom,
-      priceCurrency: "THB",
+      priceSpecification: offerPrice(s),
       availability: "https://schema.org/InStock",
     },
   };
@@ -163,11 +176,13 @@ export function howToSchema(s: (typeof services)[number]) {
     "@type": "HowTo",
     name: `ขั้นตอนการ${s.name}โดยช่างมืออาชีพ`,
     description: s.intro,
-    totalTime: "PT1H",
+    // ใส่เวลาเฉพาะบริการที่หน้าเว็บระบุไว้จริง ที่เหลือไม่ประกาศ ดีกว่าประกาศตัวเลขที่เดาเอา
+    ...(s.durationISO ? { totalTime: s.durationISO } : {}),
     estimatedCost: {
       "@type": "MonetaryAmount",
       currency: "THB",
-      value: s.priceFrom,
+      minValue: s.priceFrom,
+      ...(s.priceTo ? { maxValue: s.priceTo } : {}),
     },
     step: s.steps.map((st, i) => ({
       "@type": "HowToStep",

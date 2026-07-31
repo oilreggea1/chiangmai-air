@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
       { source: "/wp-admin/:path*", destination: "/", permanent: true },
       { source: "/wp-login.php", destination: "/", permanent: true },
       { source: "/wp-content/:path*", destination: "/", permanent: true },
+
+      // หน้าพื้นที่ที่ยกเลิกไปตอนย่อเขตบริการเหลือ 10 กม. (31 ก.ค. 2569)
+      // Google เคยเก็บ URL เหล่านี้ไว้แล้ว ถ้าปล่อยเป็น 404 จะเสียสัญญาณที่สะสมมา
+      // จึงชี้ไปหน้าที่รับช่วงเนื้อหาต่อจริง ไม่ใช่โยนกลับหน้าแรก
+      { source: "/area/san-sai", destination: "/area/san-phra-net", permanent: true },
+      { source: "/area/hang-dong", destination: "/area/mae-hia", permanent: true },
+      { source: "/area/mae-on", destination: "/area", permanent: true },
     ];
   },
   async headers() {
