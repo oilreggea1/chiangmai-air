@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, portfolio } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
+import { PhotoGrid } from "../PhotoGrid";
 import { PER_PAGE, pageCount, pageSlice } from "../paging";
 
 /** หน้าย่อยที่ 2 เป็นต้นไปของหมวดที่มีรูปเกิน PER_PAGE — หน้าแรกอยู่ที่ /portfolio/[key] */
@@ -76,22 +76,7 @@ export default async function PortfolioCategoryPagedPage({
 
       <section className="section pt-4">
         <div className="wrap">
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {photos.map((g, i) => (
-              <li key={g.src} className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200">
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  width={800}
-                  height={800}
-                  priority={i < 4}
-                  loading={i < 4 ? undefined : "lazy"}
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </li>
-            ))}
-          </ul>
+          <PhotoGrid photos={photos} />
 
           <nav aria-label="หน้าของหมวดนี้" className="mt-9 flex flex-wrap items-center gap-2">
             {Array.from({ length: pages }, (_, i) => i + 1).map((p) =>

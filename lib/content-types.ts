@@ -32,6 +32,8 @@ export type Article = {
   category: ArticleCategory;
   updated: string;        // YYYY-MM-DD (ค.ศ.) — ใช้ทำ dateModified schema
   readMins: number;
+  /** ภาพนำของบทความ ใช้ทั้งบนหน้าและใน BlogPosting schema ให้ Google Images เก็บ index ได้ */
+  image?: { src: string; alt: string };
   excerpt: string;        // สรุป 1-2 ประโยค โชว์ในหน้ารวมบทความ
   keywords: string[];
   blocks: Block[];

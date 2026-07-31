@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site, services, areas, portfolio } from "@/lib/site";
+import { site, services, areas, portfolio, heroPhotos } from "@/lib/site";
 import { articles } from "@/content/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -35,12 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+      images: heroPhotos.service[s.slug] ? [`${site.url}${heroPhotos.service[s.slug].src}`] : undefined,
     })),
+    // หน้าหมวดผลงาน ประกาศรูปในหน้าให้ Google Images เก็บ index ได้ตรงหน้า
+    // หน้าแรกของหมวดแสดง 96 ภาพ จึงประกาศเท่าที่แสดงจริง ไม่ประกาศเกินสิ่งที่อยู่บนหน้า
     ...portfolio.map((c) => ({
       url: `${site.url}/portfolio/${c.key}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      images: c.photos.slice(0, 96).map((g) => `${site.url}${g.src}`),
     })),
     ...areas.map((a) => ({
       url: `${site.url}/area/${a.slug}`,
@@ -53,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(a.updated),
       changeFrequency: "yearly" as const,
       priority: 0.6,
+      images: a.image ? [`${site.url}${a.image.src}`] : undefined,
     })),
   ];
 }

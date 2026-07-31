@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, services } from "@/lib/site";
 import { articles, getArticle, relatedArticles } from "@/content/articles";
@@ -70,6 +71,7 @@ export default async function ArticlePage({ params }: Props) {
           inLanguage: "th-TH",
           keywords: a.keywords.join(", "),
           articleSection: a.category,
+          ...(a.image ? { image: `${site.url}${a.image.src}` } : {}),
           author: { "@type": "Organization", name: site.name, "@id": `${site.url}/#business` },
           publisher: { "@id": `${site.url}/#business` },
         })}
@@ -81,6 +83,22 @@ export default async function ArticlePage({ params }: Props) {
           <p className="eyebrow">{a.category}</p>
           <h1 className="mt-5 text-[1.8rem] leading-[1.35] font-extrabold sm:text-[2.3rem]">{a.h1}</h1>
           <p className="lead mt-5">{a.excerpt}</p>
+          {a.image && (
+            <figure className="mt-7 overflow-hidden rounded-2xl ring-1 ring-slate-200">
+              <Image
+                src={a.image.src}
+                alt={a.image.alt}
+                width={1200}
+                height={800}
+                priority
+                sizes="(max-width: 768px) 100vw, 720px"
+                className="aspect-[3/2] w-full bg-slate-100 object-cover"
+              />
+              <figcaption className="bg-white px-4 py-2.5 text-xs leading-5 text-ink-soft">
+                {a.image.alt}
+              </figcaption>
+            </figure>
+          )}
           <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-ink-soft">
             <span className="inline-flex items-center gap-1.5">
               <IconEngineer className="h-4 w-4 text-brand-600" />

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, portfolio } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
+import { PhotoGrid } from "./PhotoGrid";
 import { PER_PAGE, pageCount, pageSlice } from "./paging";
 
 /**
@@ -69,7 +69,11 @@ export default async function PortfolioCategoryPage({
           "@type": "ImageGallery",
           name: `${c.label} เชียงใหม่ ภาพผลงานจริง`,
           url: `${site.url}/portfolio/${c.key}`,
-          image: photos.map((g) => `${site.url}${g.src}`),
+          image: photos.map((g) => ({
+            "@type": "ImageObject",
+            contentUrl: `${site.url}${g.src}`,
+            caption: g.alt,
+          })),
         })}
       />
 
@@ -89,22 +93,7 @@ export default async function PortfolioCategoryPage({
 
       <section className="section pt-4">
         <div className="wrap">
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {photos.map((g, i) => (
-              <li key={g.src} className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200">
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  width={800}
-                  height={800}
-                  priority={i < 4}
-                  loading={i < 4 ? undefined : "lazy"}
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </li>
-            ))}
-          </ul>
+          <PhotoGrid photos={photos} />
 
           {pages > 1 && (
             <nav aria-label="หน้าของหมวดนี้" className="mt-9 flex flex-wrap items-center gap-2">
