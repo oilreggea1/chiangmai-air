@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { site, portfolio, portfolioTotal, caseStudies, reviews } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs, ReviewCard, CaseStudies } from "@/components/Blocks";
 
 const title = "ผลงานช่างแอร์เชียงใหม่ แยกหมวดงาน ภาพหน้างานจริง";
@@ -21,6 +23,9 @@ export const metadata: Metadata = {
   },
 };
 
+/** จำนวนภาพตัวอย่างต่อหมวดบนหน้ารวม */
+const PREVIEW = 8;
+
 const trail = [
   { name: "หน้าแรก", path: "/" },
   { name: "ผลงานที่ผมทำ", path: "/portfolio" },
@@ -38,7 +43,7 @@ export default function Portfolio() {
           name: title,
           description,
           url: `${site.url}/portfolio`,
-          image: portfolio.flatMap((c) => c.photos).map((g) => `${site.url}${g.src}`),
+          image: portfolio.flatMap((c) => c.photos.slice(0, PREVIEW)).map((g) => `${site.url}${g.src}`),
         })}
       />
 
@@ -61,19 +66,20 @@ export default function Portfolio() {
         <div className="wrap">
           <nav aria-label="หมวดผลงาน" className="flex flex-wrap gap-2.5">
             {portfolio.map((c) => (
-              <a
+              <Link
                 key={c.key}
-                href={`#${c.key}`}
+                href={`/portfolio/${c.key}`}
                 className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-ink-soft transition-colors hover:border-brand-300 hover:text-brand-700"
               >
                 {c.label}
                 <span className="ml-1.5 text-xs text-ink-soft/70">{c.photos.length}</span>
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
       </section>
 
+      {/* หน้ารวมโชว์ตัวอย่างหมวดละ 8 ภาพ ที่เหลืออยู่ในหน้าของหมวดนั้น */}
       {portfolio.map((c, ci) => (
         <section key={c.key} id={c.key} className={`section scroll-mt-24 ${ci % 2 ? "bg-sand" : ""}`}>
           <div className="wrap">
@@ -82,7 +88,7 @@ export default function Portfolio() {
               <p className="text-sm text-ink-soft">{c.photos.length} ภาพ</p>
             </div>
             <ul className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {c.photos.map((g, i) => (
+              {c.photos.slice(0, PREVIEW).map((g, i) => (
                 <li key={g.src} className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200">
                   <Image
                     src={g.src}
@@ -97,6 +103,15 @@ export default function Portfolio() {
                 </li>
               ))}
             </ul>
+            {c.photos.length > PREVIEW && (
+              <Link
+                href={`/portfolio/${c.key}`}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:underline"
+              >
+                ดู{c.label}ทั้งหมด {c.photos.length} ภาพ
+                <IconChevron className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </section>
       ))}

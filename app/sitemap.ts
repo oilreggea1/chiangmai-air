@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site, services, areas } from "@/lib/site";
+import { site, services, areas, portfolio } from "@/lib/site";
 import { articles } from "@/content/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -35,6 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+    })),
+    ...portfolio.map((c) => ({
+      url: `${site.url}/portfolio/${c.key}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     ...areas.map((a) => ({
       url: `${site.url}/area/${a.slug}`,
