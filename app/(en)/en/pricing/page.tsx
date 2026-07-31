@@ -25,6 +25,18 @@ const trail = [
   { name: "Prices", path: "/en/pricing" },
 ];
 
+/** ชื่อกลุ่มและรายการเป็นภาษาอังกฤษ เดิมหน้านี้โชว์ภาษาไทยล้วน ลูกค้าต่างชาติอ่านตัวเลขได้แต่ไม่รู้ว่ารายการอะไร */
+const groupEn: Record<string, string> = {
+  "ล้างแอร์ติดผนัง": "Wall-mounted aircon cleaning",
+  "ล้างแอร์แขวนและแอร์ 4 ทิศทาง": "Suspended and ceiling-recessed units",
+  "ติดตั้งแอร์ใหม่": "New aircon installation",
+  "ขายแอร์และรับเทิร์นเครื่องเก่า": "Buying a unit and trading in your old one",
+  "ซ่อมและบริการอื่น ๆ": "Repairs and other services",
+  "แพ็กเกจรับมือฝุ่น PM2.5": "PM2.5 dust-season package",
+  "ล้างเครื่องซักผ้า ฝาบน": "Top-load washing machine cleaning",
+  "ล้างเครื่องซักผ้า ฝาหน้า": "Front-load washing machine cleaning",
+};
+
 const faqs = [
   {
     q: "Do you charge foreigners more than Thai customers?",
@@ -82,7 +94,7 @@ export default function EnPricingPage() {
         <div className="wrap max-w-4xl space-y-6">
           {pricing.map((g) => (
             <div key={g.group} className="card p-6 sm:p-7">
-              <h2 className="text-lg font-bold sm:text-xl">{g.group}</h2>
+              <h2 className="text-lg font-bold sm:text-xl">{groupEn[g.group] ?? g.group}</h2>
               <ul className="mt-5 divide-y divide-slate-100">
                 {g.items.map((it) => (
                   <li key={it.label} className="flex items-baseline justify-between gap-4 py-3">
@@ -95,8 +107,9 @@ export default function EnPricingPage() {
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            Group names and item labels are shown in Thai because those are the exact terms
-            I use when quoting. If any line is unclear, message me on LINE and I will explain it in English.
+            Item labels stay in Thai because those are the exact terms I use when quoting,
+            so you can match them line by line against the Thai price list.
+            If any line is unclear, message me on LINE and I will explain it in English.
           </p>
         </div>
       </section>
