@@ -1,11 +1,6 @@
 {
   "version": "0.0.1",
   "configurations": [
-    {
-      "name": "chiangmai-air",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000
-    }
+    { "name": "chiangmai-air", "runtimeExecutable": "npx", "runtimeArgs": ["next", "dev", "-p", "3111"], "port": 3111 }
   ]
 }

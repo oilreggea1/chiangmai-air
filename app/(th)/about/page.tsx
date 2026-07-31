@@ -178,7 +178,7 @@ export default function AboutPage() {
               const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
               return (
                 <div key={e.title} className="card p-6">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-600">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-4 font-bold">{e.title}</h3>
@@ -199,7 +199,7 @@ export default function AboutPage() {
               const Icon = serviceIcons[v.icon as keyof typeof serviceIcons];
               return (
                 <div key={v.title} className="card p-6">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-600/10 text-brand-700">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-4 font-bold">{v.title}</h3>

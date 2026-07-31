@@ -128,7 +128,7 @@ export default async function AreaPage({ params }: Props) {
                   href={`/service/${s.slug}`}
                   className="card group flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
                 >
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70 transition-all group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:ring-brand-700">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-4 text-lg font-bold">{s.name}{a.name}</h3>

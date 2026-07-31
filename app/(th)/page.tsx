@@ -43,7 +43,7 @@ export default function Home() {
 
             <h1 className="mt-5 text-[2rem] leading-[1.25] font-extrabold sm:text-[2.6rem] lg:text-[3.1rem]">
               ช่างแอร์เชียงใหม่ ล้างแอร์ ซ่อมแอร์{" "}
-              <span className="text-brand-600">ถึงบ้าน</span>
+              <span className="text-accent">ถึงบ้าน</span>
             </h1>
 
             <p className="lead mt-5 max-w-xl">
@@ -130,7 +130,7 @@ export default function Home() {
                   href={`/service/${s.slug}`}
                   className="card group flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
                 >
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70 transition-all group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:ring-brand-700">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-4 text-lg font-bold">{s.name}เชียงใหม่</h3>
@@ -147,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* ---------- คุณค่า ---------- */}
-      <section className="section bg-sand">
+      <section className="section band-dark">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">มาตรฐานการทำงาน</p>
@@ -158,31 +158,31 @@ export default function Home() {
               const Icon = serviceIcons[v.icon as keyof typeof serviceIcons];
               return (
                 <div key={v.title} className="card p-6">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-600/10 text-brand-700">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-white/10 text-ice">
                     <Icon className="h-6 w-6" />
                   </span>
                   <h3 className="mt-4 text-base font-bold sm:text-lg">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-ink-soft">{v.detail}</p>
+                  <p className="mt-2 text-sm leading-7 text-brand-200">{v.detail}</p>
                 </div>
               );
             })}
           </div>
 
           <div className="mt-12">
-            <h3 className="text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">
+            <h3 className="text-center text-sm font-semibold tracking-wide text-brand-200 uppercase">
               ยี่ห้อที่ผมรับงาน
             </h3>
             <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
               {brands.map((b) => (
                 <li
                   key={b}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-ink-soft"
+                  className="rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-sm font-semibold text-brand-100"
                 >
                   {b}
                 </li>
               ))}
             </ul>
-            <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-ink-soft">
+            <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-brand-200">
               ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ
               ผมแจ้งให้ทราบพร้อมราคาก่อนเสมอ
             </p>
@@ -438,7 +438,7 @@ export default function Home() {
       </section>
 
       {/* ---------- ผลงาน ---------- */}
-      <section className="section" id="portfolio">
+      <section className="section band-dark" id="portfolio">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">ผลงานจริง</p>
@@ -450,7 +450,7 @@ export default function Home() {
 
           <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {gallery.slice(0, 8).map((g) => (
-              <li key={g.src} className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200">
+              <li key={g.src} className="overflow-hidden rounded-xl bg-brand-800 ring-1 ring-white/15">
                 <Image
                   src={g.src}
                   alt={g.alt}

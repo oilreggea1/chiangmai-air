@@ -1,27 +1,42 @@
 @import "tailwindcss";
 
+/**
+ * ชุดสี: กรมท่าเข้ม + ฟ้าน้ำแข็ง (เจ้าของเลือกเอง 1 ส.ค. 2569)
+ *
+ * ของเดิมเป็นฟ้า #1c79d8 คู่กับส้ม #ff7a1a ซึ่งเป็นคู่สีที่เว็บบริการเกือบทุกเจ้าใช้
+ * จึงกลืนไปกับคู่แข่งและดูเหมือนเทมเพลตสำเร็จรูป
+ *
+ * กรมท่าเข้มเข้ากับเสื้อทีมช่างที่ใส่จริงในรูปผลงาน ส่วนฟ้าน้ำแข็งสื่อความเย็น
+ * ตรงกับงานแอร์โดยไม่ต้องใช้ฟ้าสดแบบเดิม
+ *
+ * ปุ่ม LINE ต้องเป็น #06C755 เสมอ เป็นสีบังคับของ LINE ห้ามผูกกับตัวแปรธีม
+ */
 @theme {
-  --color-ink: #0c1b2a;
-  --color-ink-soft: #44586b;
-  --color-brand-50: #eff8ff;
-  --color-brand-100: #d9eeff;
-  --color-brand-200: #bce2ff;
-  --color-brand-300: #8ed0ff;
-  --color-brand-400: #59b6fd;
-  --color-brand-500: #3298f2;
-  --color-brand-600: #1c79d8;
-  --color-brand-700: #1861ae;
-  --color-brand-800: #17528e;
-  --color-brand-900: #184675;
-  --color-accent: #ff7a1a;
-  --color-accent-dark: #e05f00;
-  --color-mint: #0fb98b;
-  --color-sand: #f6f9fc;
+  --color-ink: #111a2e;
+  --color-ink-soft: #4d5a75;
+  --color-brand-50: #f2f5fc;
+  --color-brand-100: #e3eaf8;
+  --color-brand-200: #c6d4ee;
+  --color-brand-300: #9db3de;
+  --color-brand-400: #6d8ac6;
+  --color-brand-500: #4867a8;
+  --color-brand-600: #33508f;
+  --color-brand-700: #2a3f77;
+  --color-brand-800: #1d2c56;
+  --color-brand-900: #111a2e;
+  /* ฟ้าน้ำแข็งเป็นสีปุ่มโทรและสีเน้น ตัดกับกรมท่าได้ชัดโดยไม่แย่งความสนใจกันเอง */
+  --color-accent: #0e7490;
+  --color-accent-dark: #155e75;
+  --color-ice: #7dd3fc;
+  --color-mint: #0d9488;
+  --color-sand: #f4f6fa;
 
   --font-sans: var(--font-thai), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-card: 0 1px 2px rgb(12 27 42 / 0.04), 0 8px 24px -6px rgb(12 27 42 / 0.08);
-  --shadow-lift: 0 2px 4px rgb(12 27 42 / 0.06), 0 18px 40px -12px rgb(12 27 42 / 0.16);
+  /* เงาสองชั้น ชั้นบนคมสั้นให้ขอบชัด ชั้นล่างฟุ้งกว้างให้การ์ดลอยขึ้นจากพื้น */
+  --shadow-card: 0 1px 2px rgb(17 26 46 / 0.05), 0 10px 28px -10px rgb(17 26 46 / 0.14);
+  --shadow-lift: 0 2px 6px rgb(17 26 46 / 0.08), 0 22px 46px -14px rgb(17 26 46 / 0.24);
+  --shadow-deep: 0 4px 10px rgb(17 26 46 / 0.12), 0 30px 60px -18px rgb(17 26 46 / 0.34);
 }
 
 @layer base {
@@ -75,21 +90,29 @@
            transition-all duration-150 select-none active:scale-[0.98];
   }
 
+  /* ปุ่มหลักไล่เฉดอ่อน ๆ แทนสีแบน เพื่อให้มีความหนาโดยไม่ต้องใส่ขอบ
+     เงาอมสีของตัวเองทำให้ปุ่มดูลอยขึ้นจากพื้นจริง ไม่ใช่แค่สี่เหลี่ยมสี */
   .btn-call {
-    @apply bg-accent text-white shadow-lg shadow-accent/25
-           hover:bg-accent-dark hover:shadow-accent/35;
+    @apply bg-gradient-to-b from-accent to-accent-dark text-white
+           shadow-[0_1px_0_rgb(255_255_255/0.18)_inset,0_8px_20px_-6px_rgb(14_116_144/0.5)]
+           hover:from-accent-dark hover:to-accent-dark
+           hover:shadow-[0_1px_0_rgb(255_255_255/0.18)_inset,0_12px_26px_-6px_rgb(14_116_144/0.62)]
+           hover:-translate-y-px;
   }
 
   .btn-line {
-    @apply bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25 hover:brightness-95;
+    @apply bg-gradient-to-b from-[#0ad066] to-[#06C755] text-white
+           shadow-[0_1px_0_rgb(255_255_255/0.2)_inset,0_8px_20px_-6px_rgb(6_199_85/0.5)]
+           hover:brightness-[0.97] hover:-translate-y-px;
   }
 
   .btn-ghost {
-    @apply border-2 border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
+    @apply border-2 border-brand-200 bg-white text-brand-800
+           hover:border-brand-400 hover:bg-brand-50 hover:-translate-y-px;
   }
 
   .card {
-    @apply rounded-2xl border border-slate-200/80 bg-white shadow-card;
+    @apply rounded-2xl border border-brand-100 bg-white shadow-card;
   }
 
   .eyebrow {
@@ -99,6 +122,34 @@
 
   .section {
     @apply py-14 sm:py-20;
+  }
+
+  /* แถบสีเข้มสำหรับคั่นหน้า ใช้สลับกับพื้นขาวเพื่อไม่ให้หน้ายาว ๆ เป็นสีเดียวรวด
+     ไล่เฉดทแยงบวกแสงฟุ้งจุดเดียว ทำให้พื้นเข้มไม่ตายเป็นบล็อกทึบ */
+  .band-dark {
+    @apply relative isolate overflow-hidden text-white;
+    background:
+      radial-gradient(70rem 30rem at 12% -10%, rgb(125 211 252 / 0.16), transparent 60%),
+      linear-gradient(155deg, var(--color-brand-800) 0%, var(--color-brand-900) 100%);
+  }
+
+  /* ตัวหนังสือรองบนแถบเข้ม อ่านง่ายแต่ไม่แย่งหัวข้อ */
+  .band-dark .lead,
+  .band-dark .text-ink-soft {
+    @apply text-brand-200;
+  }
+
+  .band-dark .card {
+    @apply border-white/10 bg-white/[0.07] text-white backdrop-blur-sm;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 18px 40px -18px rgb(0 0 0 / 0.5);
+  }
+
+  .band-dark .eyebrow {
+    @apply bg-white/10 text-ice ring-white/15;
+  }
+
+  .band-dark .btn-ghost {
+    @apply border-white/25 bg-white/[0.07] text-white hover:border-ice hover:bg-white/15;
   }
 
   .h2 {

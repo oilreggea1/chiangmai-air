@@ -16,7 +16,7 @@ export default async function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "72px 80px",
-          background: "linear-gradient(135deg, #17528e 0%, #1c79d8 55%, #3298f2 100%)",
+          background: "linear-gradient(135deg, #111a2e 0%, #1d2c56 52%, #33508f 100%)",
           color: "#fff",
           fontFamily: "sans-serif",
         }}
@@ -37,7 +37,7 @@ export default async function OgImage() {
         <div style={{ display: "flex", fontSize: 82, fontWeight: 800, marginTop: 34, lineHeight: 1.2 }}>
           ช่างแอร์เชียงใหม่
         </div>
-        <div style={{ display: "flex", fontSize: 46, marginTop: 10, color: "#d9eeff" }}>
+        <div style={{ display: "flex", fontSize: 46, marginTop: 10, color: "#c6d4ee" }}>
           ล้างแอร์ · ซ่อมแอร์ · ติดตั้ง · ย้ายแอร์ ถึงบ้าน
         </div>
 
@@ -47,7 +47,7 @@ export default async function OgImage() {
               display: "flex",
               padding: "18px 34px",
               borderRadius: 18,
-              background: "#ff7a1a",
+              background: "#0e7490",
               fontSize: 40,
               fontWeight: 700,
             }}
