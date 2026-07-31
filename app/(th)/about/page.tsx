@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, addressLine, edges, values, brands, areas, reviews, heroPhotos } from "@/lib/site";
+import { site, addressLine, edges, values, areas, reviews, heroPhotos } from "@/lib/site";
+import { BrandStrip } from "@/components/BrandStrip";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import {
   serviceIcons, IconPhone, IconLine, IconChevron, IconCheck, IconPin, IconClock, IconEngineer,
@@ -209,19 +210,9 @@ export default function AboutPage() {
             })}
           </div>
 
-          <h3 className="mt-12 text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">
-            ยี่ห้อที่ผมรับงาน
-          </h3>
-          <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
-            {brands.map((b) => (
-              <li
-                key={b}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-ink-soft"
-              >
-                {b}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-12 text-ink-soft">
+            <BrandStrip />
+          </div>
           <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-ink-soft">
             ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ
             ผมแจ้งให้ทราบพร้อมราคาก่อนเสมอ

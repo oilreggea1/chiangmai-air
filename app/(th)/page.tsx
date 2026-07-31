@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, services, areas, values, brands, reviews, faqs, washCompare, gallery, edges, heroPhotos } from "@/lib/site";
+import { site, services, areas, values, reviews, faqs, washCompare, gallery, edges, heroPhotos } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconX, IconPin, IconChevron, IconClock, IconShield,
 } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
+import { BrandStrip } from "@/components/BrandStrip";
 
 export const metadata: Metadata = {
   // ต้องใส่ languages ซ้ำตรงนี้ด้วย เพราะ Next merge alternates แบบตื้น
@@ -74,7 +75,7 @@ export default function Home() {
                 { k: "500.-", v: "ล้างแอร์ติดผนัง · 3 เครื่องขึ้นไป 450.-" },
                 { k: "24 ชม.", v: "ปกติเข้าหน้างานได้ใน 24 ชม. ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด" },
                 { k: "30 วัน", v: "รับประกันงานล้าง" },
-                { k: "12 ยี่ห้อ", v: "รับงานทุกแบรนด์หลัก" },
+                { k: "29 ยี่ห้อ", v: "รับงานทุกแบรนด์ที่ขายในไทย" },
               ].map((s) => (
                 <div key={s.v}>
                   <dt className="text-2xl font-extrabold text-brand-700 sm:text-[1.6rem]">{s.k}</dt>
@@ -168,21 +169,9 @@ export default function Home() {
             })}
           </div>
 
-          <div className="mt-12">
-            <h3 className="text-center text-sm font-semibold tracking-wide text-brand-200 uppercase">
-              ยี่ห้อที่ผมรับงาน
-            </h3>
-            <ul className="mt-5 flex flex-wrap justify-center gap-2.5">
-              {brands.map((b) => (
-                <li
-                  key={b}
-                  className="rounded-full border border-white/15 bg-white/[0.07] px-4 py-2 text-sm font-semibold text-brand-100"
-                >
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-brand-200">
+          <div className="mt-14">
+            <BrandStrip />
+            <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-brand-200">
               ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ
               ผมแจ้งให้ทราบพร้อมราคาก่อนเสมอ
             </p>

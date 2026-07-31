@@ -760,9 +760,53 @@ export const values = [
   },
 ];
 
-export const brands = [
-  "Mitsubishi", "Daikin", "Samsung", "LG", "Panasonic", "Carrier",
-  "Haier", "Sharp", "Toshiba", "Gree", "Hitachi", "Trane",
+/**
+ * ยี่ห้อแอร์ที่รับงาน เรียงตามโอกาสเจอหน้างานจริงในเชียงใหม่
+ *
+ * logo เป็นไฟล์ใน public/brands ที่ดึงจาก Wikimedia Commons ซึ่งระบุสถานะเป็น
+ * public domain (โลโก้ตัวอักษร/รูปทรงเรียบง่าย ต่ำกว่าเกณฑ์ลิขสิทธิ์) แต่ยังเป็น
+ * เครื่องหมายการค้าของเจ้าของแบรนด์ จึงต้องมีข้อความกำกับใน BrandStrip เสมอว่า
+ * ไม่ได้เป็นตัวแทนจำหน่ายหรือศูนย์บริการที่แบรนด์แต่งตั้ง
+ *
+ * แบรนด์ที่ไม่มี logo คือแบรนด์ที่ไม่มีไฟล์บน Commons ส่วนใหญ่เป็นแบรนด์ไทย
+ * แสดงเป็นชื่อตัวอักษรในแผ่นเดียวกันแทน อย่าไปดึงโลโก้จากเว็บแบรนด์มาใส่เอง
+ * เพราะไฟล์เหล่านั้นมีลิขสิทธิ์เต็ม
+ *
+ * Trane ตั้งใจไม่ใส่โลโก้ เพราะไฟล์บน Commons เป็นของ Trane Technologies บริษัทแม่
+ * ซึ่งคนละแบบกับโลโก้แอร์ Trane ที่ลูกค้าคุ้น ใส่ไปจะทำให้เข้าใจผิด
+ */
+export type Brand = { name: string; logo?: string };
+
+export const brands: Brand[] = [
+  { name: "Mitsubishi Electric", logo: "/brands/mitsubishi-electric.svg" },
+  { name: "Daikin", logo: "/brands/daikin.svg" },
+  { name: "Mitsubishi Heavy Duty", logo: "/brands/mitsubishi-heavy.svg" },
+  { name: "Panasonic", logo: "/brands/panasonic.svg" },
+  { name: "LG", logo: "/brands/lg.svg" },
+  { name: "Samsung", logo: "/brands/samsung.svg" },
+  { name: "Carrier", logo: "/brands/carrier.svg" },
+  { name: "Saijo Denki" },
+  { name: "Central Air" },
+  { name: "Haier", logo: "/brands/haier.svg" },
+  { name: "Hitachi", logo: "/brands/hitachi.svg" },
+  { name: "Toshiba", logo: "/brands/toshiba.svg" },
+  { name: "Eminent Air" },
+  { name: "Midea", logo: "/brands/midea.png" },
+  { name: "TCL", logo: "/brands/tcl.svg" },
+  { name: "Gree", logo: "/brands/gree.svg" },
+  { name: "Sharp", logo: "/brands/sharp.svg" },
+  { name: "Amena" },
+  { name: "Tasaki" },
+  { name: "Star Aire" },
+  { name: "Uni-Aire" },
+  { name: "York" },
+  { name: "Fujitsu General", logo: "/brands/fujitsu.png" },
+  { name: "Trane" },
+  { name: "Hisense", logo: "/brands/hisense.svg" },
+  { name: "AUX", logo: "/brands/aux.svg" },
+  { name: "Comfee" },
+  { name: "Electrolux", logo: "/brands/electrolux.svg" },
+  { name: "Aconatic" },
 ];
 
 export const reviews = [
