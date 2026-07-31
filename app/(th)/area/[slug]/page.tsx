@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, areas, services, pricing, reviews, workingPhotos } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin, IconClock } from "@/components/Icons";
+import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, serviceIcons } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -42,11 +42,11 @@ export default async function AreaPage({ params }: Props) {
     { name: `ช่างแอร์${a.name}`, path: `/area/${a.slug}` },
   ];
 
+  // FAQ เฉพาะโซนมาก่อน แล้วตามด้วยคำถามกลางที่ใช้ร่วมทุกโซน
+  // เดิมทั้งสี่ข้อเป็นเทมเพลตเดียวกันสลับแค่ชื่อตำบล ซึ่ง Google อ่านเป็นเนื้อหาซ้ำ
+  const localFaqs = "local" in a && a.local && "faqs" in a.local ? a.local.faqs : [];
   const areaFaqs = [
-    {
-      q: `รับงานใน ${a.full} หรือไม่?`,
-      a: `รับครับ ผมรับงานใน ${a.full} เป็นประจำ จึงคุ้นเคยเส้นทางและเข้าถึงหน้างานได้รวดเร็ว`,
-    },
+    ...localFaqs,
     {
       q: `เรียกช่างแอร์${a.name} ใช้เวลากี่วันจึงได้คิว?`,
       a: "ปกติผมเข้าหน้างานได้ภายใน 24 ชั่วโมงครับ และเข้าในวันเดียวกันได้หากคิวว่าง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด แนะนำให้สอบถามคิวล่วงหน้าทางโทรศัพท์หรือ LINE",
@@ -181,6 +181,27 @@ export default async function AreaPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {/* เนื้อหาเฉพาะพื้นที่ เขียนจากข้อเท็จจริงของตัวพื้นที่ ไม่ใช่คำอ้างเรื่องลูกค้า */}
+      {"local" in a && a.local && (
+        <section className="section">
+          <div className="wrap max-w-3xl">
+            <h2 className="h2">งานแอร์ใน{a.name} มีอะไรที่ต่างจากพื้นที่อื่น</h2>
+            <p className="lead mt-4">{a.local.lead}</p>
+            <ul className="mt-9 space-y-5">
+              {a.local.points.map((pt) => (
+                <li key={pt.t} className="card p-6">
+                  <p className="flex items-start gap-2.5 font-bold">
+                    <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />
+                    {pt.t}
+                  </p>
+                  <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">{pt.d}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* ราคา */}
       <section className="section">
