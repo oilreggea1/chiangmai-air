@@ -26,8 +26,8 @@ export function BrandStrip({
 }) {
   const mark =
     tone === "dark"
-      ? "opacity-70 [filter:brightness(0)_invert(1)]"
-      : "opacity-65 [filter:brightness(0)]";
+      ? "opacity-85 [filter:brightness(0)_invert(1)]"
+      : "opacity-75 [filter:brightness(0)]";
   // ชื่อยี่ห้อเป็นตัวหนังสือจริง ต้องผ่านคอนทราสต์ ไม่ใช่จางตามโลโก้ได้
   // ink ที่ 55% บนพื้น sand ได้แค่ 3.90 ต่ำกว่าเกณฑ์ 4.5 จึงต้องใช้ 70% (6.11)
   const label = tone === "dark" ? "text-white/70" : "text-ink/70";
@@ -41,13 +41,13 @@ export function BrandStrip({
         จอ sm ขึ้นไปกลับเป็นตารางที่เห็นครบในครั้งเดียว
       */}
       <ul
-        className="mt-7 grid auto-cols-[6.5rem] grid-flow-col grid-rows-2 items-center gap-x-6 gap-y-5
+        className="mt-6 grid auto-cols-[6.5rem] grid-flow-col grid-rows-2 items-center gap-x-6 gap-y-5
                    overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
-                   sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-5 sm:grid-rows-none
-                   sm:overflow-visible sm:pb-0 md:grid-cols-6 lg:grid-cols-8"
+                   sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-6 sm:grid-rows-none
+                   sm:gap-x-5 sm:gap-y-4 sm:overflow-visible sm:pb-0 md:grid-cols-8 lg:grid-cols-10"
       >
         {brands.map((b) => (
-          <li key={b.name} className="flex h-8 items-center justify-center">
+          <li key={b.name} className="flex h-8 items-center justify-center sm:h-7">
             {b.logo ? (
               <Image
                 src={b.logo}
@@ -55,11 +55,11 @@ export function BrandStrip({
                 width={160}
                 height={48}
                 loading="lazy"
-                className={`max-h-5 w-auto max-w-full object-contain transition-opacity sm:max-h-6 ${mark}`}
+                className={`max-h-[1.375rem] w-auto max-w-full object-contain transition-opacity ${mark}`}
               />
             ) : (
               <span
-                className={`text-center text-[0.72rem] leading-tight font-bold tracking-wide sm:text-xs ${label}`}
+                className={`text-center text-[0.72rem] leading-tight font-bold tracking-wide sm:text-[0.68rem] ${label}`}
               >
                 {b.name}
               </span>
@@ -70,7 +70,7 @@ export function BrandStrip({
 
       <p className="mt-3 text-center text-xs opacity-50 sm:hidden">เลื่อนดูยี่ห้อทั้งหมดได้</p>
 
-      <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-6 opacity-60">{note}</p>
+      <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-6 opacity-60">{note}</p>
     </div>
   );
 }
