@@ -772,6 +772,9 @@ export const values = [
  * แสดงเป็นชื่อตัวอักษรในแผ่นเดียวกันแทน อย่าไปดึงโลโก้จากเว็บแบรนด์มาใส่เอง
  * เพราะไฟล์เหล่านั้นมีลิขสิทธิ์เต็ม
  *
+ * Carrier กับ TCL ตั้งใจไม่ใส่โลโก้ ไฟล์บน Commons เป็นตัวหนังสือขาวอยู่ในกรอบสี
+ * พอทำเป็นสีเดียวตามสไตล์แถบ จะกลายเป็นก้อนทึบไม่เหลือรูปโลโก้ และไม่มีแบบพื้นใสให้ใช้
+ *
  * Trane ตั้งใจไม่ใส่โลโก้ เพราะไฟล์บน Commons เป็นของ Trane Technologies บริษัทแม่
  * ซึ่งคนละแบบกับโลโก้แอร์ Trane ที่ลูกค้าคุ้น ใส่ไปจะทำให้เข้าใจผิด
  */
@@ -784,15 +787,15 @@ export const brands: Brand[] = [
   { name: "Panasonic", logo: "/brands/panasonic.svg" },
   { name: "LG", logo: "/brands/lg.svg" },
   { name: "Samsung", logo: "/brands/samsung.svg" },
-  { name: "Carrier", logo: "/brands/carrier.svg" },
+  { name: "Carrier" },
   { name: "Saijo Denki" },
   { name: "Central Air" },
   { name: "Haier", logo: "/brands/haier.svg" },
   { name: "Hitachi", logo: "/brands/hitachi.svg" },
   { name: "Toshiba", logo: "/brands/toshiba.svg" },
   { name: "Eminent Air" },
-  { name: "Midea", logo: "/brands/midea.png" },
-  { name: "TCL", logo: "/brands/tcl.svg" },
+  { name: "Midea", logo: "/brands/midea.svg" },
+  { name: "TCL" },
   { name: "Gree", logo: "/brands/gree.svg" },
   { name: "Sharp", logo: "/brands/sharp.svg" },
   { name: "Amena" },
@@ -800,7 +803,7 @@ export const brands: Brand[] = [
   { name: "Star Aire" },
   { name: "Uni-Aire" },
   { name: "York" },
-  { name: "Fujitsu General", logo: "/brands/fujitsu.png" },
+  { name: "Fujitsu General", logo: "/brands/fujitsu.svg" },
   { name: "Trane" },
   { name: "Hisense", logo: "/brands/hisense.svg" },
   { name: "AUX", logo: "/brands/aux.svg" },

@@ -211,7 +211,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-ink-soft">
-            <BrandStrip />
+            <BrandStrip tone="light" />
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-center text-sm leading-7 text-ink-soft">
             ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ

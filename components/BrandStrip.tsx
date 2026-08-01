@@ -8,36 +8,46 @@ import { brands } from "@/lib/site";
  * ซึ่งเป็นการใช้เพื่อระบุตัวสินค้า ไม่ใช่การอ้างว่าเป็นตัวแทนหรือศูนย์บริการของแบรนด์
  * จึงต้องมีข้อความปฏิเสธความเกี่ยวข้องกำกับไว้เสมอ ห้ามตัดออก
  *
- * โลโก้ส่วนใหญ่เป็นตัวอักษรสีเข้ม จึงต้องวางบนแผ่นสีขาวเสมอ
- * ถ้าวางบนพื้นกรมท่าของ band-dark ตรง ๆ จะมองไม่เห็น
+ * เดิมวางโลโก้สีเต็มบนแผ่นสีขาว 29 แผ่น ซึ่งบนจอคอมกลายเป็นลายพร้อยแย่งความสนใจ
+ * จากเนื้อหาหลัก จึงเปลี่ยนเป็นทำทุกยี่ห้อให้เป็นสีเดียวกันแบบผนังโลโก้พาร์ทเนอร์
+ * ได้ทั้งความสงบและทำให้ยี่ห้อที่ไม่มีไฟล์โลโก้ (แสดงเป็นชื่อ) กลืนไปกับตัวที่มีโลโก้
+ *
+ * filter brightness(0) ทำให้ทุกสีในไฟล์กลายเป็นดำก่อน แล้ว invert ตามถ้าอยู่บนพื้นเข้ม
+ * วิธีนี้ใช้ได้กับทุกไฟล์ไม่ว่าต้นฉบับจะสีอะไร รวมถึง PNG ที่แก้สีทีละ path ไม่ได้
  */
 export function BrandStrip({
+  tone = "dark",
   title = "ยี่ห้อที่ผมรับงาน",
   note = "ผมรับงานล้าง ซ่อม ติดตั้ง และย้ายแอร์ทุกยี่ห้อข้างต้น โดยไม่ได้เป็นตัวแทนจำหน่ายหรือศูนย์บริการของแบรนด์ใด เครื่องหมายการค้าทั้งหมดเป็นของเจ้าของแบรนด์นั้น ๆ",
 }: {
+  tone?: "dark" | "light";
   title?: string;
   note?: string;
 }) {
+  const mark =
+    tone === "dark"
+      ? "opacity-70 [filter:brightness(0)_invert(1)]"
+      : "opacity-65 [filter:brightness(0)]";
+  // ชื่อยี่ห้อเป็นตัวหนังสือจริง ต้องผ่านคอนทราสต์ ไม่ใช่จางตามโลโก้ได้
+  // ink ที่ 55% บนพื้น sand ได้แค่ 3.90 ต่ำกว่าเกณฑ์ 4.5 จึงต้องใช้ 70% (6.11)
+  const label = tone === "dark" ? "text-white/70" : "text-ink/70";
+
   return (
     <div>
-      <h3 className="text-center text-sm font-semibold tracking-wide uppercase opacity-80">{title}</h3>
+      <h3 className="text-center text-sm font-semibold tracking-wide uppercase opacity-70">{title}</h3>
 
       {/*
-        29 ยี่ห้อเรียงเป็นตารางบนจอมือถือกินความสูงถึง 730px หรือเกือบเต็มหน้าจอ
-        บนมือถือจึงไหลเป็น 2 แถวเลื่อนแนวนอนแทน เหลือความสูงราว 130px
-        พอถึงจอ sm ขึ้นไปค่อยกลับเป็นตารางปกติที่เห็นครบในครั้งเดียว
+        มือถือไหลเป็น 2 แถวเลื่อนแนวนอน เพราะเรียงเป็นตารางแล้วสูงถึง 730px
+        จอ sm ขึ้นไปกลับเป็นตารางที่เห็นครบในครั้งเดียว
       */}
       <ul
-        className="mt-6 grid auto-cols-[7.5rem] grid-flow-col grid-rows-2 gap-2.5 overflow-x-auto
-                   pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+        className="mt-7 grid auto-cols-[6.5rem] grid-flow-col grid-rows-2 items-center gap-x-6 gap-y-5
+                   overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
                    sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-5 sm:grid-rows-none
-                   sm:overflow-visible sm:pb-0 lg:grid-cols-6"
+                   sm:overflow-visible sm:pb-0 md:grid-cols-6 lg:grid-cols-8"
       >
         {brands.map((b) => (
-          <li
-            key={b.name}
-            className="flex h-14 items-center justify-center rounded-xl bg-white px-3 shadow-[0_1px_2px_rgb(17_26_46/0.06),0_6px_16px_-8px_rgb(17_26_46/0.25)] ring-1 ring-black/5 sm:h-16"
-          >
+          <li key={b.name} className="flex h-8 items-center justify-center">
             {b.logo ? (
               <Image
                 src={b.logo}
@@ -45,10 +55,12 @@ export function BrandStrip({
                 width={160}
                 height={48}
                 loading="lazy"
-                className="max-h-7 w-auto max-w-full object-contain sm:max-h-8"
+                className={`max-h-5 w-auto max-w-full object-contain transition-opacity sm:max-h-6 ${mark}`}
               />
             ) : (
-              <span className="text-center text-xs leading-tight font-bold text-ink sm:text-sm">
+              <span
+                className={`text-center text-[0.72rem] leading-tight font-bold tracking-wide sm:text-xs ${label}`}
+              >
                 {b.name}
               </span>
             )}
@@ -56,9 +68,9 @@ export function BrandStrip({
         ))}
       </ul>
 
-      <p className="mt-2 text-center text-xs opacity-60 sm:hidden">เลื่อนดูยี่ห้อทั้งหมดได้</p>
+      <p className="mt-3 text-center text-xs opacity-50 sm:hidden">เลื่อนดูยี่ห้อทั้งหมดได้</p>
 
-      <p className="mx-auto mt-4 max-w-2xl text-center text-xs leading-6 opacity-70">{note}</p>
+      <p className="mx-auto mt-6 max-w-2xl text-center text-xs leading-6 opacity-60">{note}</p>
     </div>
   );
 }
