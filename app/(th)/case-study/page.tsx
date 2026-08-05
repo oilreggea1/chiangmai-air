@@ -6,7 +6,7 @@ import { IconChevron } from "@/components/Icons";
 import { workCases } from "@/lib/work-cases";
 
 export const metadata: Metadata = {
-  title: "Case Study ผลงานช่างแอร์เชียงใหม่ จากหน้างานจริง",
+  title: "เคสจริงช่างแอร์เชียงใหม่ อาการและวิธีแก้",
   description: "รวมผลงานจริงของช่างอาร์ม พร้อมสภาพก่อนทำ จุดที่ตรวจพบ ขั้นตอนการทำงาน และภาพผลลัพธ์หลังให้บริการ",
   alternates: { canonical: "/case-study" },
 };

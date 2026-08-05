@@ -4,7 +4,7 @@ import { breadcrumbSchema, jsonLd, videoSchema } from "@/lib/schema";
 import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { reels, ReelsShowcase } from "@/components/ReelsShowcase";
 
-const title = "วิดีโอผลงานช่างแอร์เชียงใหม่ ติดตั้ง ล้าง และซ่อมแอร์";
+const title = "วิดีโอผลงานช่างแอร์เชียงใหม่ ล้าง ติดตั้ง ซ่อม";
 const description = "รวมวิดีโอหน้างานจริงของช่างอาร์ม โปรเฟรชแคร์ เชียงใหม่ งานติดตั้งแอร์ ล้างแอร์ ซ่อมแอร์ แผงวงจร และคอยล์ร้อน";
 
 export const metadata: Metadata = {

@@ -6,7 +6,7 @@ import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs, ReviewCard, CaseStudies } from "@/components/Blocks";
 
-const title = "ผลงานช่างแอร์เชียงใหม่ แยกหมวดงาน ภาพหน้างานจริง";
+const title = "ผลงานช่างแอร์เชียงใหม่ ภาพหน้างานจริง";
 const description =
   "รวมภาพผลงานจริงของช่างแอร์เชียงใหม่ โปรเฟรชแคร์ แยกหมวดครบทุกประเภทงาน ทั้งล้างแอร์แบบถอดล้าง ติดตั้ง ย้ายแอร์ แอร์แขวน แอร์ฝังฝ้า และล้างถังเครื่องซักผ้า";
 

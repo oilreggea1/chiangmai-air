@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/components/Icons";
 
-const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai | Pro Fresh Care";
+const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai";
 const description =
   "Aircon cleaning between guests for Airbnb hosts and rental owners in Chiang Mai. 500 THB per wall unit, 450 THB each for three or more.";
 

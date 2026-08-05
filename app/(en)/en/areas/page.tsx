@@ -4,7 +4,7 @@ import { site, areas, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
-const title = "Areas I Cover in Chiang Mai | Aircon Service by Pro Fresh Care";
+const title = "Areas I Cover in Chiang Mai | Pro Fresh Care";
 const description =
   "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — plus Saraphi, Doi Saket and San Phra Net. No travel fee.";
 

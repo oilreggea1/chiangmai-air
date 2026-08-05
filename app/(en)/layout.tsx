@@ -7,8 +7,8 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   ...baseMetadata,
   title: {
-    default: "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care",
-    template: "%s | Pro Fresh Care Chiang Mai",
+    default: "Aircon Cleaning & AC Repair Chiang Mai | Pro Fresh Care",
+    template: "%s | Pro Fresh Care",
   },
   openGraph: {
     type: "website",

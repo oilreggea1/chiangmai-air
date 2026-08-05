@@ -25,7 +25,12 @@ export async function generateMetadata({
   const { key } = await params;
   const c = portfolio.find((x) => x.key === key);
   if (!c) return {};
-  const title = `${c.label} เชียงใหม่ ภาพผลงานจริง ${c.photos.length} ภาพ`;
+  // ชื่อหมวดยาวไม่เท่ากัน หมวดเครื่องซักผ้ายาวกว่าหมวดแอร์ราว 10 ตัวอักษร
+  // ถ้าใช้สูตรเดียวกันหมด หมวดที่ชื่อยาวจะเกินกรอบแล้วชื่อร้านหายไป
+  const long = c.label.length > 22;
+  const title = long
+    ? `${c.label} ผลงานจริง ${c.photos.length} ภาพ`
+    : `${c.label} เชียงใหม่ ผลงานจริง ${c.photos.length} ภาพ`;
   const description = `ภาพหน้างานจริงหมวด${c.label} โดยช่างอาร์ม โปรเฟรชแคร์ ${c.photos.length} ภาพ จากงานที่ผมลงมือทำเอง โทร ${site.phone}`;
   return {
     title,
