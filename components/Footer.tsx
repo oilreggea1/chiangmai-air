@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <p className="mt-4 text-sm leading-7 text-ink-soft">
             ผมช่างอาร์ม รับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์ และล้างถังเครื่องซักผ้าถึงบ้านทั่วเชียงใหม่
-            แจ้งราคาก่อนเริ่มงานทุกครั้ง และรับประกันผลงาน
+            ดูราคา ขั้นตอน และหลักฐานผลงานจริงได้ก่อนติดต่อ
           </p>
           <a
             href={site.facebook}
@@ -59,10 +59,20 @@ export default function Footer() {
                 ภาพผลงานจริง
               </Link>
             </li>
+            <li>
+              <Link href="/case-study" className="text-ink-soft hover:text-brand-700 hover:underline">
+                Case Study รายงานงานจริง
+              </Link>
+            </li>
           </ul>
 
           <h2 className="mt-8 text-sm font-bold tracking-wide text-ink uppercase">อื่น ๆ</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
+            <li>
+              <Link href="/answers" className="text-ink-soft hover:text-brand-700 hover:underline">
+                คำตอบราคาและบริการจากช่าง
+              </Link>
+            </li>
             <li>
               <Link href="/blog" className="text-ink-soft hover:text-brand-700 hover:underline">
                 คลังความรู้เรื่องแอร์
@@ -105,25 +115,37 @@ export default function Footer() {
             <li>
               <a href={`tel:${site.phoneTel}`} className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconPhone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-                {site.phone}
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">เบอร์หลัก</span>
+                  {site.phone}
+                </span>
               </a>
             </li>
             <li>
               <a href={`tel:${site.phone2Tel}`} className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconPhone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-                {site.phone2}
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">เบอร์สำรอง</span>
+                  {site.phone2}
+                </span>
               </a>
             </li>
             <li>
               <a href={site.lineUrl} target="_blank" rel="noopener" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
-                LINE {site.lineId}
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">LINE จองคิวงานแอร์</span>
+                  {site.lineId}
+                </span>
               </a>
             </li>
             <li>
               <a href={site.lineUrl2} target="_blank" rel="noopener" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
-                LINE {site.lineId2}
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">LINE จองคิวล้างถังซักผ้า</span>
+                  {site.lineId2}
+                </span>
               </a>
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">

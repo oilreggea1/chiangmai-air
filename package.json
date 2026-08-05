@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/check-prices.mjs && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:prices": "node scripts/check-prices.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

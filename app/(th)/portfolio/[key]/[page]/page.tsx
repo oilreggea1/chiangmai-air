@@ -49,6 +49,7 @@ export default async function PortfolioCategoryPagedPage({
 
   const photos = pageSlice(c.photos, n);
   const pages = pageCount(c.photos.length);
+  const isWasherCategory = c.key === "wm-top" || c.key === "wm-front";
   const trail = [
     { name: "หน้าแรก", path: "/" },
     { name: "ผลงานที่ผมทำ", path: "/portfolio" },
@@ -101,6 +102,8 @@ export default async function PortfolioCategoryPagedPage({
       <CtaBand
         title="ต้องการให้เครื่องที่บ้านของคุณอยู่ในสภาพนี้"
         subtitle="ติดต่อจองคิวเข้ามาได้ครับ ผมแจ้งราคาให้ครบถ้วนก่อนเริ่มงานเสมอ"
+        lineUrl={isWasherCategory ? site.lineUrl2 : site.lineUrl}
+        lineId={isWasherCategory ? site.lineId2 : site.lineId}
       />
     </>
   );

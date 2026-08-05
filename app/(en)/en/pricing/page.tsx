@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons"
 
 const title = "Aircon Cleaning Prices in Chiang Mai | Pro Fresh Care";
 const description =
-  "Published aircon prices in Chiang Mai. Wall units 500 THB, 450 THB each for three or more, deep clean 2,000 THB, cassette units from 1,500 THB.";
+  "Published aircon prices in Chiang Mai. Wall units 500 THB, 450 THB each for three or more, deep clean 2,300–2,500 THB, cassette units from 1,500 THB.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย

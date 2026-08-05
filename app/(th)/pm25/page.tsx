@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, heroPhotos, areas } from "@/lib/site";
+import { site, heroPhotos, areas, p } from "@/lib/site";
 import { getArticle } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import {
@@ -11,7 +11,7 @@ import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่ | แพ็กเกจรับมือฝุ่นก่อนฤดูหมอกควัน";
 const description =
-  "แพ็กเกจรับมือฝุ่น PM2.5 เชียงใหม่ เริ่ม 2,000 บาท โทร 065-365-7673 ล้างแอร์ถอดชิ้นส่วนและอุดรอยรั่วของห้อง ก่อนฤดูหมอกควัน ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด";
+  `แพ็กเกจรับมือฝุ่น PM2.5 เชียงใหม่ เริ่ม ${p.pm25} บาท โทร 065-365-7673 ล้างแอร์ถอดชิ้นส่วนและอุดรอยรั่วของห้อง ก่อนฤดูหมอกควัน ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด`;
 
 export const metadata: Metadata = {
   title,
@@ -260,8 +260,8 @@ export default function Pm25Page() {
               </span>
               <h3 className="mt-4 text-lg font-bold">ล้างใหญ่ก่อนเข้าฤดูหมอกควัน</h3>
               <p className="mt-2 flex items-baseline gap-1.5">
-                <span className="text-3xl font-extrabold text-brand-700">600</span>
-                <span className="text-sm text-ink-soft">บาท / เครื่อง · 3 เครื่องขึ้นไป 450.-</span>
+                <span className="text-3xl font-extrabold text-brand-700">{p.wash.std}</span>
+                <span className="text-sm text-ink-soft">บาท / เครื่อง · 3 เครื่องขึ้นไป {p.wash.stdBulk}.-</span>
               </p>
               <ul className="mt-5 flex-1 space-y-2.5">
                 {[
@@ -287,8 +287,8 @@ export default function Pm25Page() {
               </span>
               <h3 className="mt-4 text-lg font-bold">Premium Full Wash ถอดล้าง 100%</h3>
               <p className="mt-2 flex items-baseline gap-1.5">
-                <span className="text-3xl font-extrabold text-brand-700">2,000</span>
-                <span className="text-sm text-ink-soft">บาท / เครื่อง</span>
+                <span className="text-3xl font-extrabold text-brand-700">{p.wash.premium}</span>
+                <span className="text-sm text-ink-soft">บาท / เครื่อง · {p.wash.premiumNote}</span>
               </p>
               <ul className="mt-5 flex-1 space-y-2.5">
                 {[
@@ -313,8 +313,8 @@ export default function Pm25Page() {
                 แพ็กเกจรับมือฝุ่น PM2.5
               </h3>
               <p className="mt-3 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold text-white">2,000</span>
-                <span className="text-brand-100">บาท เริ่มต้น / ห้อง</span>
+                <span className="text-4xl font-extrabold text-white">{p.pm25}</span>
+                <span className="text-brand-100">บาท / ห้อง · {p.wash.premiumNote}</span>
               </p>
               <p className="mt-3 max-w-2xl text-[15px] leading-8 text-brand-100">
                 การล้างแอร์เพียงอย่างเดียวยังไม่เพียงพอหากห้องยังมีรอยรั่วให้ฝุ่นเข้าได้
@@ -340,7 +340,7 @@ export default function Pm25Page() {
               </ul>
 
               <p className="mt-6 text-sm leading-7 text-ink-soft">
-                ราคาเริ่มต้นครอบคลุมห้องมาตรฐาน 1 ห้อง พร้อมแอร์ 1 เครื่อง
+                ราคานี้ครอบคลุมห้องมาตรฐาน 1 ห้อง พร้อมแอร์ 1 เครื่อง โดยคิดตามขนาด BTU ของเครื่อง
                 กรณีห้องมีขนาดใหญ่กว่าปกติ มีแอร์หลายเครื่อง หรือมีรอยรั่วที่ต้องแก้ไขจำนวนมาก
                 ผมแจ้งค่าใช้จ่ายเพิ่มเติมให้ทราบก่อนเริ่มงานเสมอ
               </p>

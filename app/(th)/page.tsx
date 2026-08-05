@@ -1,14 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, services, areas, values, reviews, faqs, washCompare, gallery, edges, heroPhotos } from "@/lib/site";
+import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, p } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
-  serviceIcons, IconPhone, IconLine, IconCheck, IconX, IconPin, IconChevron, IconClock, IconShield,
+  serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield,
 } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
-import { BrandStrip } from "@/components/BrandStrip";
+import { ReelsShowcase } from "@/components/ReelsShowcase";
+
+const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
+  .map((slug) => services.find((service) => service.slug === slug))
+  .filter((service): service is (typeof services)[number] => Boolean(service));
+const featuredAreaSlugs = ["san-kamphaeng", "ton-pao", "mueang-chiang-mai", "saraphi", "doi-saket", "san-phra-net"];
+const featuredAreas = featuredAreaSlugs
+  .map((slug) => areas.find((area) => area.slug === slug))
+  .filter((area): area is (typeof areas)[number] => Boolean(area));
+const homeFaqs = faqs.slice(0, 6);
+const homeEdges = edges.map((edge, index) => ({
+  ...edge,
+  detail: [
+    `ตรวจวัดให้ดูก่อนเติม และคิด R32/R22 ปอนด์ละ ${p.repair.refrigerantPerLb} บาทเท่ากัน`,
+    `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท และหักคืนเมื่อตัดสินใจซ่อม ดูราคาก่อนได้`,
+    "นัดเร่งด่วนนอกเวลาได้ โดยแจ้งค่าบริการเพิ่มก่อนยืนยันคิว",
+    "ออกใบเสร็จในนามบริษัท รองรับบ้าน ร้านค้า โรงแรม และสำนักงาน",
+  ][index],
+}));
 
 export const metadata: Metadata = {
   // ต้องใส่ languages ซ้ำตรงนี้ด้วย เพราะ Next merge alternates แบบตื้น
@@ -27,7 +45,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema(faqs))} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema(homeFaqs))} />
 
       {/* ---------- HERO ---------- */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
@@ -72,10 +90,10 @@ export default function Home() {
 
             <dl className="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4">
               {[
-                { k: "500.-", v: "ล้างแอร์ติดผนัง · 3 เครื่องขึ้นไป 450.-" },
+                { k: `${p.wash.std}.-`, v: `ล้างแอร์ติดผนัง · 3 เครื่องขึ้นไป ${p.wash.stdBulk}.-` },
                 { k: "24 ชม.", v: "ปกติเข้าหน้างานได้ใน 24 ชม. ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด" },
                 { k: "30 วัน", v: "รับประกันงานล้าง" },
-                { k: "29 ยี่ห้อ", v: "รับงานทุกแบรนด์ที่ขายในไทย" },
+                { k: "ทุกยี่ห้อหลัก", v: "รับล้างและซ่อมแบรนด์ที่จำหน่ายในไทย" },
               ].map((s) => (
                 <div key={s.v}>
                   <dt className="text-2xl font-extrabold text-brand-700 sm:text-[1.6rem]">{s.k}</dt>
@@ -92,7 +110,8 @@ export default function Home() {
                 alt="ช่างแอร์เชียงใหม่กำลังล้างแอร์ถึงบ้านลูกค้า พร้อมปูผ้าใบคลุมพื้นที่โดยรอบ"
                 width={900}
                 height={1200}
-                priority
+                loading="lazy"
+                fetchPriority="low"
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="h-[24rem] w-full object-cover sm:h-[30rem]"
               />
@@ -123,7 +142,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => {
+            {featuredServices.map((s) => {
               const Icon = serviceIcons[s.icon as keyof typeof serviceIcons];
               return (
                 <Link
@@ -144,76 +163,68 @@ export default function Home() {
               );
             })}
           </div>
+          <div className="mt-8">
+            <Link href="/price" className="btn-ghost">
+              ดูบริการและราคาทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ---------- คุณค่า ---------- */}
-      <section className="section band-dark">
+      {/* ---------- รีวิว ---------- */}
+      <section className="section bg-sand">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">มาตรฐานการทำงาน</p>
-            <h2 className="h2 mt-4">หลักการที่ผมยึดในทุกงาน</h2>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((v) => {
-              const Icon = serviceIcons[v.icon as keyof typeof serviceIcons];
-              return (
-                <div key={v.title} className="card p-6">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-white/10 text-ice">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 text-base font-bold sm:text-lg">{v.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-brand-200">{v.detail}</p>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="mt-14">
-            <BrandStrip />
-            <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-brand-200">
-              ผมใช้อะไหล่แท้เป็นหลัก กรณีที่หาอะไหล่แท้ไม่ได้ หรือลูกค้าเลือกใช้อะไหล่เทียบ
-              ผมแจ้งให้ทราบพร้อมราคาก่อนเสมอ
+            <p className="eyebrow">ลูกค้าใช้บริการจริง</p>
+            <h2 className="h2 mt-4">ความเห็นจากลูกค้าในเชียงใหม่</h2>
+            <p className="lead mt-3">
+              รีวิวจากลูกค้าที่เรียกช่างอาร์มไปดูแลแอร์ถึงบ้าน พร้อมภาพและวิดีโอผลงานจริงให้ตรวจสอบก่อนจอง
             </p>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
+            {reviews.map((r) => (
+              <ReviewCard key={r.name} {...r} />
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <a href={site.facebook} target="_blank" rel="noopener" className="btn-ghost">
+              ดูผลงานจริงบน Facebook
+              <IconChevron className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ---------- แบนเนอร์ PM2.5 ---------- */}
-      <section className="section pb-0">
+      {/* ---------- ผลงาน ---------- */}
+      <section className="section band-dark" id="portfolio">
         <div className="wrap">
-          <Link
-            href="/pm25"
-            className="group grid gap-6 overflow-hidden rounded-3xl border-2 border-amber-300 bg-gradient-to-br from-amber-50 to-white p-7 transition-all hover:shadow-lift sm:p-9 lg:grid-cols-[1.5fr_1fr] lg:items-center"
-          >
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3.5 py-1.5 text-sm font-semibold text-amber-900 ring-1 ring-amber-200">
-                <IconPin className="h-4 w-4" />
-                เรื่องที่คนเชียงใหม่ควรทราบ
-              </span>
-              <h2 className="mt-4 text-xl font-extrabold group-hover:text-brand-700 sm:text-2xl">
-                ฤดูหมอกควัน ก.พ.–เม.ย. ทำให้แอร์อุดตันเร็วกว่าปกติหลายเท่า
-              </h2>
-              <p className="mt-3 text-[15px] leading-8 text-ink-soft">
-                แผ่นกรองที่ติดมากับแอร์กรอง PM2.5 ไม่ได้ แต่แอร์ยังจำเป็นเพราะทำให้ปิดห้องได้สนิท
-                ผมสรุปไว้ครบว่าควรล้างเมื่อใด ล้างแบบใด และลดฝุ่นที่เข้าห้องได้ด้วยวิธีใดบ้าง
-              </p>
-              <span className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700">
-                อ่านคู่มือสู้ฝุ่นฉบับเต็ม
-                <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </div>
-            <dl className="grid grid-cols-2 gap-4 rounded-2xl bg-white/70 p-5 ring-1 ring-amber-200">
-              <div>
-                <dt className="text-2xl font-extrabold text-amber-700">6,676</dt>
-                <dd className="mt-0.5 text-xs leading-6 text-ink-soft">จุดความร้อนภาคเหนือ ต้นปี 2569</dd>
-              </div>
-              <div>
-                <dt className="text-2xl font-extrabold text-amber-700">+67%</dt>
-                <dd className="mt-0.5 text-xs leading-6 text-ink-soft">เพิ่มขึ้นจากช่วงเดียวกันปีก่อน</dd>
-              </div>
-            </dl>
-          </Link>
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow">ผลงานจริง</p>
+            <h2 className="h2 mt-4">ดูงานก่อนตัดสินใจ</h2>
+            <p className="lead mt-3">ภาพจากหน้างานจริงในเชียงใหม่ ตั้งแต่ปูผ้าใบจนถึงชิ้นส่วนที่ถอดล้าง</p>
+          </div>
+          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {gallery.slice(0, 6).map((g) => (
+              <li key={g.src} className="overflow-hidden rounded-xl bg-brand-800 ring-1 ring-white/15">
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 text-center">
+            <Link href="/portfolio" className="btn-ghost">
+              ดูผลงานทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -225,7 +236,7 @@ export default function Home() {
             <h2 className="h2 mt-4">4 เรื่องที่ผมให้ความสำคัญเป็นพิเศษ</h2>
           </div>
           <div className="mt-9 grid gap-5 sm:grid-cols-2">
-            {edges.map((e) => {
+            {homeEdges.map((e) => {
               const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
               return (
                 <div key={e.title} className="card flex gap-4 p-6">
@@ -249,60 +260,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- เปรียบเทียบการล้าง ---------- */}
-      <section className="section" id="compare">
-        <div className="wrap">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">จุดที่แตกต่าง</p>
-            <h2 className="h2 mt-4">เปรียบเทียบ ล้างธรรมดา vs Premium Full Wash</h2>
-            <p className="lead mt-3">
-              จุดที่การล้างแบบมาตรฐานเข้าไม่ถึงคือใบพัดกรงกระรอก ซึ่งเป็นบริเวณที่เชื้อราสะสมมากที่สุด
-              และเป็นต้นเหตุของกลิ่นอับ หากเครื่องของคุณยังไม่มีกลิ่น ผมแนะนำการล้างแบบมาตรฐานซึ่งเพียงพอครับ
-            </p>
-          </div>
-
-          <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-2xl border border-slate-200 shadow-card">
-            <table className="w-full border-collapse text-left">
-              <caption className="sr-only">
-                ตารางเปรียบเทียบขั้นตอนและราคาระหว่างการล้างแอร์แบบธรรมดาและแบบพรีเมี่ยม
-              </caption>
-              <thead>
-                <tr className="bg-slate-50">
-                  <th scope="col" className="px-4 py-4 text-sm font-bold sm:px-6">ขั้นตอนการล้าง</th>
-                  <th scope="col" className="px-3 py-4 text-center text-sm font-bold sm:px-6">ล้างธรรมดา</th>
-                  <th scope="col" className="bg-brand-600 px-3 py-4 text-center text-sm font-bold text-white sm:px-6">
-                    Premium Full Wash
-                    <span className="mt-0.5 block text-[11px] font-medium text-brand-100">
-                      ถอดชิ้นส่วนล้าง 100%
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                {washCompare.map((row) => (
-                  <tr key={row.step} className="bg-white">
-                    <th scope="row" className="px-4 py-4 text-[15px] font-medium sm:px-6">{row.step}</th>
-                    <td className="px-3 py-4 text-center text-sm sm:px-6">
-                      <Cell value={row.normal} />
-                    </td>
-                    <td className="bg-brand-50/60 px-3 py-4 text-center text-sm font-semibold sm:px-6">
-                      <Cell value={row.premium} highlight />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link href="/service/lang-air" className="btn-ghost">
-              ดูรายละเอียดบริการล้างแอร์ทั้งหมด
-              <IconChevron className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ---------- ราคา ---------- */}
       <section className="section bg-sand" id="price">
         <div className="wrap">
@@ -319,7 +276,7 @@ export default function Home() {
               {
                 name: "ล้างแอร์ธรรมดา", price: "500", unit: "บาท / เครื่อง",
                 note: "9,000–18,000 BTU · รับประกัน 30 วัน",
-                feats: ["ล้างฟิลเตอร์และหน้ากาก", "ล้างคอยล์เย็น–คอยล์ร้อน", "ฉีดล้างใบพัดกรงกระรอก", "3 เครื่องขึ้นไป เครื่องละ 450.-"],
+                feats: ["ล้างฟิลเตอร์และหน้ากาก", "ล้างคอยล์เย็น–คอยล์ร้อน", "ฉีดล้างใบพัดกรงกระรอก", `3 เครื่องขึ้นไป เครื่องละ ${p.wash.stdBulk}.-`],
               },
               {
                 name: "Premium Full Wash", price: "2,000", unit: "บาท / เครื่อง",
@@ -335,7 +292,7 @@ export default function Home() {
               {
                 name: "ติดตั้งแอร์ใหม่", price: "3,000", unit: "บาท เริ่มต้น",
                 note: "9k–12k BTU · รับประกันสูงสุด 1 ปี",
-                feats: ["แวคคั่มระบบเต็มขั้นตอน", "ขาแขวน ท่อ และรางครอบ", "ตั้งระดับกันน้ำหยด", "18k–24k BTU ราคา 3,500.-"],
+                feats: ["แวคคั่มระบบเต็มขั้นตอน", "ขาแขวน ท่อ และรางครอบ", "ตั้งระดับกันน้ำหยด", `18k–24k BTU ราคา ${p.install.large}.-`],
               },
             ].map((p) => (
               <div
@@ -365,9 +322,13 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/price" className="btn-ghost">
               ดูตารางราคาทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/answers" className="btn-ghost">
+              ดูคำตอบราคาและเงื่อนไขจากช่าง
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>
@@ -384,14 +345,14 @@ export default function Home() {
             </p>
             <h2 className="h2 mt-4">พื้นที่ให้บริการ</h2>
             <p className="lead mt-3">
-              ผมรับงานในอำเภอสันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด และ ต.สันพระเนตร อ.สันทราย โดยไม่คิดค่าเดินทางเพิ่ม สำหรับอำเภอเมืองเชียงใหม่ผมรับทุกตำบล
-              อำเภอเมืองเชียงใหม่รับทุกตำบล ส่วนอำเภออื่นรับเฉพาะตำบลที่อยู่ในระยะให้บริการ
-              โดยคิดราคาเดียวกันทุกพื้นที่ ไม่มีค่าเดินทางเพิ่ม
+              รับงานสันกำแพง สารภี เมืองเชียงใหม่ ดอยสะเก็ด และ ต.สันพระเนตร อ.สันทราย
+              โดยอำเภอเมืองเชียงใหม่รับทุกตำบล ส่วนอำเภออื่นรับเฉพาะพื้นที่ในระยะบริการ
+              ราคาเดียวกันและไม่มีค่าเดินทางเพิ่ม
             </p>
           </div>
 
           <ul className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {areas.map((a) => (
+            {featuredAreas.map((a) => (
               <li key={a.slug}>
                 <Link
                   href={`/area/${a.slug}`}
@@ -408,59 +369,16 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* ---------- รีวิว ---------- */}
-      <section className="section bg-sand">
-        <div className="wrap">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">รีวิว</p>
-            <h2 className="h2 mt-4">ความเห็นจากลูกค้า</h2>
-          </div>
-          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
-            {reviews.map((r) => (
-              <ReviewCard key={r.name} {...r} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- ผลงาน ---------- */}
-      <section className="section band-dark" id="portfolio">
-        <div className="wrap">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">ผลงานจริง</p>
-            <h2 className="h2 mt-4">ตัวอย่างผลงาน</h2>
-            <p className="lead mt-3">
-              งานที่ผมทำในเชียงใหม่ ตั้งแต่ขั้นตอนปูผ้าใบก่อนเริ่ม ไปจนถึงสภาพชิ้นส่วนที่ถอดออกมาล้าง
-            </p>
-          </div>
-
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {gallery.slice(0, 8).map((g) => (
-              <li key={g.src} className="overflow-hidden rounded-xl bg-brand-800 ring-1 ring-white/15">
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  width={600}
-                  height={600}
-                  loading="lazy"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 text-center">
-            <Link href="/portfolio" className="btn-ghost">
-              ดูผลงานทั้งหมด
+          <div className="mt-8">
+            <Link href="/area" className="btn-ghost">
+              ดูพื้นที่ให้บริการทั้งหมด
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
+
+      <ReelsShowcase limit={3} />
 
       {/* ---------- เนื้อหา SEO ---------- */}
       <section className="section bg-sand">
@@ -474,11 +392,6 @@ export default function Home() {
               และหมู่บ้านซีรีนพาร์คได้รวดเร็ว คุณจึงไม่ต้องรอช่างเดินทางข้ามเมือง
             </p>
             <p>
-              งานที่ผมชำนาญที่สุดคือ <strong className="text-ink">Premium Full Wash 2,000 บาท</strong>{" "}
-              ซึ่งถอดชิ้นส่วนออกมาล้างแยกทีละชิ้น รวมถึงใบพัดกรงกระรอกที่เป็นจุดสะสมเชื้อรามากที่สุด
-              และเป็นต้นเหตุของกลิ่นอับ ซึ่งการฉีดล้างจากภายนอกเข้าไม่ถึงจุดดังกล่าว
-            </p>
-            <p>
               นอกจากพื้นที่นี้ ผมยังรับงาน{" "}
               <Link href="/area/mueang-chiang-mai" className="font-semibold text-brand-700 hover:underline">
                 ล้างแอร์อำเภอเมืองเชียงใหม่
@@ -488,12 +401,6 @@ export default function Home() {
                 คอนโดย่านนิมมาน
               </Link>{" "}
               โดยคิดอัตราเดียวกันทุกพื้นที่ ไม่มีค่าเดินทางเพิ่ม
-            </p>
-            <p>
-              ทุกงานผมแจ้งราคาก่อนเริ่มเสมอ หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อนทุกครั้ง
-              และไม่บวกเพิ่มเงียบ ๆ ตอนเก็บเงิน
-              หากตรวจแล้วพบว่ายังไม่จำเป็นต้องซ่อมหรือไม่ต้องเติมน้ำยา ผมจะแจ้งตามจริง
-              เพราะลูกค้าที่ไว้วางใจและกลับมาใช้บริการซ้ำมีค่ามากกว่ารายได้จากงานครั้งเดียว
             </p>
           </div>
 
@@ -526,7 +433,7 @@ export default function Home() {
             </p>
           </div>
           <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {articles.slice(0, 6).map((a) => (
+            {articles.slice(0, 3).map((a) => (
               <li key={a.slug}>
                 <Link
                   href={`/blog/${a.slug}`}
@@ -552,28 +459,8 @@ export default function Home() {
         </div>
       </section>
 
-      <FaqList items={faqs} title="คำถามที่พบบ่อย" />
+      <FaqList items={homeFaqs} title="คำถามที่พบบ่อย" />
       <CtaBand />
     </>
   );
-}
-
-function Cell({ value, highlight }: { value: boolean | string; highlight?: boolean }) {
-  if (value === true) {
-    return (
-      <>
-        <IconCheck className={`mx-auto h-5 w-5 ${highlight ? "text-brand-600" : "text-mint"}`} />
-        <span className="sr-only">มีให้</span>
-      </>
-    );
-  }
-  if (value === false) {
-    return (
-      <>
-        <IconX className="mx-auto h-5 w-5 text-slate-300" />
-        <span className="sr-only">ไม่มี</span>
-      </>
-    );
-  }
-  return <span className={highlight ? "text-brand-800" : "text-ink-soft"}>{value}</span>;
 }

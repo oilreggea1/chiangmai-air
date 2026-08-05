@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site, services, areas, portfolio, heroPhotos } from "@/lib/site";
 import { articles } from "@/content/articles";
+import { repairGuides } from "@/lib/repair-guides";
+import { workCases } from "@/lib/work-cases";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -14,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/area", priority: 0.8, freq: "monthly" as const },
     { path: "/about", priority: 0.7, freq: "monthly" as const },
     { path: "/portfolio", priority: 0.7, freq: "monthly" as const },
+    { path: "/videos", priority: 0.7, freq: "monthly" as const },
+    { path: "/answers", priority: 0.9, freq: "monthly" as const },
+    { path: "/case-study", priority: 0.8, freq: "monthly" as const },
     { path: "/contact", priority: 0.8, freq: "monthly" as const },
     { path: "/en", priority: 0.7, freq: "monthly" as const },
     { path: "/en/pricing", priority: 0.7, freq: "monthly" as const },
@@ -36,6 +41,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
       images: heroPhotos.service[s.slug] ? [`${site.url}${heroPhotos.service[s.slug].src}`] : undefined,
+    })),
+    ...repairGuides.map((guide) => ({
+      url: `${site.url}/repair/${guide.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+    ...workCases.map((item) => ({
+      url: `${site.url}/case-study/${item.slug}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+      images: item.images.map((image) => `${site.url}${image.src}`),
     })),
     // หน้าหมวดผลงาน ประกาศรูปในหน้าให้ Google Images เก็บ index ได้ตรงหน้า
     // หน้าแรกของหมวดแสดง 96 ภาพ จึงประกาศเท่าที่แสดงจริง ไม่ประกาศเกินสิ่งที่อยู่บนหน้า

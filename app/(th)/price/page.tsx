@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, pricing, washCompare, faqs } from "@/lib/site";
+import { site, pricing, washCompare, faqs, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconCheck, IconX, IconChevron, IconShield } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 500 บาท · 3 เครื่องขึ้นไป 450 บาท";
+const title = `ราคาช่างแอร์เชียงใหม่ ล้างแอร์ ${p.wash.std} บาท · 3 เครื่องขึ้นไป ${p.wash.stdBulk} บาท`;
 const description =
-  "ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 450-800 บาท Premium Full Wash 2,000 บาท ติดตั้ง 3,000-3,500 บาท ย้ายแอร์ 3,500 บาท ไม่มีค่าเดินทางเพิ่ม โทร 065-365-7673";
+  `ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 450-${p.wash.big} บาท Premium Full Wash ${p.wash.premium} บาท ติดตั้ง 3,000-${p.install.relocate} บาท ย้ายแอร์ ${p.install.relocate} บาท ไม่มีค่าเดินทางเพิ่ม โทร 065-365-7673`;
 
 export const metadata: Metadata = {
   title,
@@ -82,7 +82,7 @@ export default function PricePage() {
 
       <section className="section bg-sand">
         <div className="wrap max-w-4xl">
-          <h2 className="h2 text-center">ล้างธรรมดา 500.- กับ Premium 2,000.- ต่างกันอย่างไร</h2>
+          <h2 className="h2 text-center">ล้างธรรมดา {p.wash.std}.- กับ Premium {p.wash.premium}.- ต่างกันอย่างไร</h2>
           <p className="lead mt-3 text-center">
             ส่วนต่างของราคามาจากจำนวนขั้นตอนและเวลาที่ใช้ต่อเครื่อง
           </p>
@@ -128,8 +128,8 @@ export default function PricePage() {
           <ul className="mt-6 space-y-4">
             {[
               "ราคาล้างแอร์ติดผนังกับแอร์แขวนและสี่ทิศทางแยกกันคนละตาราง เนื่องจากขั้นตอนและเวลาที่ใช้ต่างกันมาก",
-              "ค่าตรวจเช็ค 500 บาท หักคืนให้จากค่าซ่อมเมื่อตัดสินใจซ่อม",
-              "เติมน้ำยาคิดตามจริงปอนด์ละ 25 บาท โดยตรวจวัดให้ลูกค้าดูก่อน และไม่เติมหากไม่พร่อง",
+              `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้จากค่าซ่อมเมื่อตัดสินใจซ่อม`,
+              `เติมน้ำยาคิดตามจริงปอนด์ละ ${p.repair.refrigerantPerLb} บาท โดยตรวจวัดให้ลูกค้าดูก่อน และไม่เติมหากไม่พร่อง`,
               "ค่าติดตั้งครอบคลุมอุปกรณ์ระยะมาตรฐาน หากต้องเดินท่อยาวกว่ามาตรฐาน ผมแจ้งค่าส่วนเกินก่อนเริ่มงาน",
               "รับประกันงานล้าง 30 วัน ทุกแบบ (ธรรมดาและพรีเมี่ยม) งานติดตั้งรับประกันสูงสุด 1 ปี",
               "ชำระหลังงานเสร็จและลูกค้าตรวจรับเรียบร้อยแล้ว รับทั้งเงินสดและโอน ไม่มีการเก็บมัดจำล่วงหน้า",

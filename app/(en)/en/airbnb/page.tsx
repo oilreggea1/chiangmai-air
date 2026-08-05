@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What does it cost for a whole property?",
-    a: "Wall units are 500 THB each, dropping to 450 THB each from three units up, which covers most apartments and villas. Larger 18,001 to 38,000 BTU units are 800 THB, or 700 THB each from two up. Send me the number of units and I will confirm the total before I come.",
+    a: "Wall units are 500 THB each, dropping to 450 THB each from three units up, which covers most apartments and villas. Larger 18,001 to 36,000 BTU units are 650 THB, or 600 THB each from two up. Send me the number of units and I will confirm the total before I come.",
   },
   {
     q: "Can I get paperwork for my accounts?",

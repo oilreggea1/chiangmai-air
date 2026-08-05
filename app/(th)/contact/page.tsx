@@ -7,7 +7,7 @@ import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ติดต่อช่างแอร์เชียงใหม่ โทร 065-365-7673";
 const description =
-  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 LINE @794xvrnm จันทร์-เสาร์ 08:00-18:00 น. ที่ตั้ง 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง";
+  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 LINE งานแอร์ @iu3333 และ LINE ล้างถังซักผ้า @794xvrnm จันทร์-เสาร์ 08:00-18:00 น.";
 
 export const metadata: Metadata = {
   title,
@@ -44,7 +44,7 @@ export default function Contact() {
       </div>
 
       <section className="section pt-4">
-        <div className="wrap grid gap-6 lg:grid-cols-2">
+        <div className="wrap grid gap-6 lg:grid-cols-3">
           <a
             href={`tel:${site.phoneTel}`}
             className="card group flex flex-col items-center p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lift"
@@ -70,11 +70,27 @@ export default function Contact() {
             <span className="grid h-16 w-16 place-items-center rounded-2xl bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25">
               <IconLine className="h-8 w-8" />
             </span>
-            <h2 className="mt-5 text-lg font-bold">ติดต่อทาง LINE</h2>
+            <h2 className="mt-5 text-lg font-bold">LINE จองคิวงานแอร์</h2>
             <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId}</p>
-            <p className="mt-1 text-lg font-bold text-[#06C755]">หรือ {site.lineId2}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
-              ส่งภาพเครื่องหรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในข้อความ
+              ส่งภาพแอร์หรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในข้อความ
+            </p>
+          </a>
+
+          <a
+            href={site.lineUrl2}
+            target="_blank"
+            rel="noopener"
+            className="card group flex flex-col items-center p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lift"
+            data-cta="contact-washer-line"
+          >
+            <span className="grid h-16 w-16 place-items-center rounded-2xl bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25">
+              <IconLine className="h-8 w-8" />
+            </span>
+            <h2 className="mt-5 text-lg font-bold">LINE จองคิวล้างถังซักผ้า</h2>
+            <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId2}</p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              ส่งภาพเครื่องซักผ้า รุ่น และความจุถัง เพื่อประเมินราคาและเวลาที่ใช้ก่อนจองคิว
             </p>
           </a>
         </div>
@@ -116,9 +132,9 @@ export default function Contact() {
                     <br />
                     โทร {site.phone2}
                     <br />
-                    LINE {site.lineId}
+                    LINE งานแอร์ {site.lineId}
                     <br />
-                    LINE {site.lineId2}
+                    LINE ล้างถังซักผ้า {site.lineId2}
                     <br />
                     <a href={site.facebook} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">
                       Facebook

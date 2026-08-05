@@ -21,7 +21,15 @@ export function headingsOf(blocks: Block[]) {
     .filter((x): x is { id: string; text: string } => x !== null);
 }
 
-export default function ArticleBody({ blocks }: { blocks: Block[] }) {
+export default function ArticleBody({
+  blocks,
+  lineUrl = site.lineUrl,
+  lineId = site.lineId,
+}: {
+  blocks: Block[];
+  lineUrl?: string;
+  lineId?: string;
+}) {
   return (
     <div className="space-y-6">
       {blocks.map((b, i) => {
@@ -147,6 +155,27 @@ export default function ArticleBody({ blocks }: { blocks: Block[] }) {
               </blockquote>
             );
 
+          case "sources":
+            return (
+              <aside key={i} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
+                <h2 className="text-lg font-bold">แหล่งอ้างอิงทางการ</h2>
+                <ol className="mt-4 space-y-3">
+                  {b.items.map((source) => (
+                    <li key={source.url} className="text-[15px] leading-7 text-ink-soft">
+                      <a href={source.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-700 hover:underline">
+                        {source.title}
+                      </a>
+                      <span> — {source.publisher}</span>
+                      {source.note && <span className="block text-sm">{source.note}</span>}
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-4 text-xs leading-6 text-ink-soft">
+                  ลิงก์เหล่านี้ใช้รองรับข้อเท็จจริงทางสุขภาพและเทคนิค ส่วนคำแนะนำหน้างานเป็นประสบการณ์ของช่างอาร์มและระบุแยกจากกัน
+                </p>
+              </aside>
+            );
+
           case "image":
             return (
               <figure key={i}>
@@ -174,9 +203,9 @@ export default function ArticleBody({ blocks }: { blocks: Block[] }) {
                     <IconPhone className="h-5 w-5" />
                     โทร {site.phone}
                   </a>
-                  <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="article-line">
+                  <a href={lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="article-line">
                     <IconLine className="h-5 w-5" />
-                    ทัก LINE
+                    LINE {lineId}
                   </a>
                 </div>
               </div>

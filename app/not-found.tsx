@@ -1,10 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import "./globals.css";
 import { site, services, areas } from "@/lib/site";
 import { IconPhone, IconChevron } from "@/components/Icons";
 import { Shell } from "@/components/Shell";
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: "ไม่พบหน้าที่คุณค้นหา",
   robots: { index: false, follow: true },
 };

@@ -7,9 +7,13 @@ import { IconPhone, IconLine, IconChevron, IconStar, IconCheck } from "./Icons";
 export function CtaBand({
   title = "ต้องการช่างแอร์ในเชียงใหม่",
   subtitle = "แจ้งอาการหรือรายละเอียดงานเข้ามาได้ ผมประเมินเบื้องต้นให้โดยไม่คิดค่าใช้จ่าย และแจ้งราคาให้ครบถ้วนก่อนเริ่มงานเสมอ",
+  lineUrl = site.lineUrl,
+  lineId = site.lineId,
 }: {
   title?: string;
   subtitle?: string;
+  lineUrl?: string;
+  lineId?: string;
 }) {
   return (
     <section className="section">
@@ -32,19 +36,18 @@ export function CtaBand({
                 โทร {site.phone}
               </a>
               <a
-                href={site.lineUrl}
+                href={lineUrl}
                 target="_blank"
                 rel="noopener"
                 className="btn-line px-7 py-4 text-lg"
                 data-cta="band-line"
               >
                 <IconLine className="h-5 w-5" />
-                LINE {site.lineId}
+                LINE {lineId}
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">
-              {site.daysLabel} {site.hours} · ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง
-              ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด
+              {site.daysLabel} {site.hours} · เช็คคิวจริงก่อนนัดทุกครั้ง
             </p>
           </div>
         </div>

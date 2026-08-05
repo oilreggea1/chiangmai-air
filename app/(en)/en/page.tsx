@@ -36,7 +36,7 @@ const servicesEn = [
     icon: IconSnow,
     name: "Aircon cleaning",
     price: "500 THB · 450 for 3+",
-    desc: "Standard clean 500 THB per wall unit, or 450 THB each for three or more. The full strip-down clean is 2,000 THB — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
+    desc: "Standard clean 500 THB per wall unit, or 450 THB each for three or more. The full strip-down clean is 2,300–2,500 THB depending on size — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
   },
   {
     icon: IconWrench,
@@ -48,7 +48,7 @@ const servicesEn = [
     icon: IconInstall,
     name: "New installation",
     price: "from 3,000 THB",
-    desc: "3,000 THB for 9,000–12,000 BTU, 3,500 THB for 18,000–24,000 BTU. I vacuum the line set properly every time — it is the step nobody can see and the one that kills compressors when it gets skipped. Warranty up to 1 year.",
+    desc: "3,000 THB for 9,000–12,000 BTU, 3,500 THB for 13,000–24,000 BTU. I vacuum the line set properly every time — it is the step nobody can see and the one that kills compressors when it gets skipped. Warranty up to 1 year.",
   },
   {
     icon: IconMove,
@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "How much does aircon cleaning cost in Chiang Mai?",
-    a: "My standard clean is 500 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 450 THB each when you have three or more. Larger units at 18,001–38,000 BTU are 800 THB. The full strip-down clean is 2,000 THB per unit.",
+    a: "My standard clean is 500 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 450 THB each when you have three or more. Larger units at 18,001–36,000 BTU are 650 THB, or 600 THB each from two up. The full strip-down clean is 2,300–2,500 THB per unit depending on size.",
   },
   {
     q: "How often should I clean my aircon in Chiang Mai?",
@@ -142,7 +142,7 @@ export default function EnglishPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              LINE ID {site.lineId} or {site.lineId2} · Mon–Sat 8:00–18:00 · usually on site within 24 hours
+              AC service LINE {site.lineId} · washing machine cleaning LINE {site.lineId2} · Mon–Sat 8:00–18:00
             </p>
           </div>
 

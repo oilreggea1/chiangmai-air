@@ -3,8 +3,9 @@ import { Noto_Sans_Thai } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCta from "@/components/StickyCta";
+import ConversionTracker from "@/components/ConversionTracker";
 import { site } from "@/lib/site";
-import { localBusinessSchema, websiteSchema, jsonLd } from "@/lib/schema";
+import { localBusinessSchema, personSchema, websiteSchema, jsonLd } from "@/lib/schema";
 // Vercel Analytics ไม่ใช้คุกกี้และไม่เก็บข้อมูลระบุตัวตน จึงไม่ต้องมีแบนเนอร์ขอความยินยอมตาม PDPA
 import { Analytics } from "@vercel/analytics/next";
 
@@ -18,10 +19,13 @@ import { Analytics } from "@vercel/analytics/next";
  * ส่วนที่เหมือนกันทุกภาษาอยู่ในไฟล์นี้ที่เดียว เพื่อไม่ให้ทั้งสามชุดค่อย ๆ เพี้ยนออกจากกัน
  */
 const thai = Noto_Sans_Thai({
-  subsets: ["thai", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  // Preload เฉพาะชุดอักษรไทยซึ่งเป็นเนื้อหาหลัก เพื่อลดการแย่งแบนด์วิดท์ช่วงแรก
+  subsets: ["thai"],
+  // Variable font ใช้ไฟล์ชุดเดียวครอบคลุมน้ำหนักทั้งหมด ลดคำขอฟอนต์ช่วงเรนเดอร์แรก
+  weight: "variable",
   variable: "--font-thai",
-  display: "swap",
+  // ไม่สลับฟอนต์ช้าหลังข้อความแสดงแล้ว ช่วยป้องกันข้อความ Hero กลายเป็น LCP รอบใหม่
+  display: "optional",
 });
 
 /** เมตาที่เหมือนกันทุกภาษา ภาษาแต่ละชุดเอาไปกระจายต่อแล้วเติมส่วนของตัวเอง */
@@ -65,11 +69,10 @@ const SKIP: Record<string, string> = {
 export function Shell({ lang, children }: { lang: "th" | "en" | "zh-CN"; children: React.ReactNode }) {
   return (
     <html lang={lang} className={thai.variable}>
-      <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(localBusinessSchema())} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(websiteSchema())} />
-      </head>
       <body className="font-sans antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(localBusinessSchema())} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(personSchema())} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(websiteSchema())} />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-brand-700 focus:px-4 focus:py-2 focus:text-white"
@@ -82,6 +85,7 @@ export function Shell({ lang, children }: { lang: "th" | "en" | "zh-CN"; childre
         </main>
         <Footer />
         <StickyCta />
+        <ConversionTracker />
         <Analytics />
       </body>
     </html>

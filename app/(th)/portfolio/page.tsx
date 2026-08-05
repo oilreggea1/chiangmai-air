@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description,
     url: `${site.url}/portfolio`,
     type: "article",
-    images: [{ url: portfolio[0].photos[0].src }],
+    images: [{ url: `${site.url}${portfolio[0].photos[0].src}` }],
   },
 };
 
@@ -58,6 +58,12 @@ export default function Portfolio() {
             งานล้างแอร์ ติดตั้ง ย้ายแอร์ แอร์แขวน แอร์ฝังฝ้า และล้างถังเครื่องซักผ้า รวม {portfolioTotal} ภาพ
             เลือกหมวดที่ตรงกับเครื่องที่บ้านคุณได้จากด้านล่าง
           </p>
+          <Link
+            href="/case-study"
+            className="mt-7 inline-flex rounded-xl bg-brand-700 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-800"
+          >
+            อ่านรายงานงานจริงแบบก่อน–ระหว่าง–หลัง
+          </Link>
         </section>
       </div>
 

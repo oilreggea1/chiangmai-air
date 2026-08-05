@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons"
 
 const title = "清迈空调清洗价格表 | Pro Fresh Care";
 const description =
-  "清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 500 泰铢，三台以上每台 450 泰铢，深度拆洗 2,000 泰铢，吊顶机 1,300 泰铢起。中国客户与泰国客户同价，开工前先报价。";
+  "清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 500 泰铢，三台以上每台 450 泰铢，深度拆洗 2,300–2,500 泰铢，吊顶机 1,300 泰铢起。中国客户与泰国客户同价，开工前先报价。";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย

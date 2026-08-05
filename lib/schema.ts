@@ -1,6 +1,24 @@
 import { site, services, areas } from "./site";
 
 const ID = `${site.url}/#business`;
+export const PERSON_ID = `${site.url}/about#chang-arm`;
+
+/** ตัวตนผู้ให้ความรู้และผู้รับผิดชอบงาน ช่วยเชื่อมประสบการณ์จริงกับบทความและธุรกิจ */
+export function personSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: site.leadTech,
+    alternateName: "ช่างอาร์ม โปรเฟรชแคร์",
+    jobTitle: "ช่างเครื่องปรับอากาศ",
+    description: `ช่างผู้รับผิดชอบงานของ${site.name} มีประสบการณ์งานล้าง ซ่อม ติดตั้ง และย้ายแอร์${site.experience}`,
+    url: `${site.url}/about`,
+    image: `${site.url}/work/air-2569-04.jpg`,
+    worksFor: { "@id": ID },
+    knowsAbout: services.map((service) => service.name),
+  };
+}
 
 /**
  * ราคาของบริการเป็นช่วง ไม่ใช่ตัวเลขตายตัว
@@ -83,14 +101,9 @@ export function localBusinessSchema() {
         opens: site.hoursOpen,
         closes: site.hoursClose,
       },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Sunday",
-        opens: "00:00",
-        closes: "00:00",
-      },
     ],
     sameAs: [site.facebook, site.lineUrl, site.lineUrl2],
+    employee: { "@id": PERSON_ID },
     areaServed: areas.map((a) => ({
       "@type": "City",
       name: `${a.full} จ.เชียงใหม่`,
@@ -166,6 +179,23 @@ export function websiteSchema() {
     name: site.name,
     inLanguage: "th-TH",
     publisher: { "@id": ID },
+  };
+}
+
+export function videoSchema(list: { id: string; title: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": list.map((video) => ({
+      "@type": "VideoObject",
+      "@id": `${site.url}/videos#video-${video.id}`,
+      name: video.title,
+      description: `${video.title} ผลงานจริงของช่างอาร์ม โปรเฟรชแคร์ ในจังหวัดเชียงใหม่`,
+      thumbnailUrl: `${site.url}/videos/reels/${video.id}.jpg`,
+      contentUrl: `${site.url}/videos/reels/${video.id}.mp4`,
+      embedUrl: `${site.url}/videos#video-${video.id}`,
+      inLanguage: "th-TH",
+      publisher: { "@id": ID },
+    })),
   };
 }
 

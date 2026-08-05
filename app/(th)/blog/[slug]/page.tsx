@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, services } from "@/lib/site";
 import { articles, getArticle, relatedArticles } from "@/content/articles";
-import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
 import ArticleBody, { TableOfContents } from "@/components/ArticleBody";
 import { IconClock, IconChevron, IconEngineer } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
@@ -42,6 +42,9 @@ export default async function ArticlePage({ params }: Props) {
 
   const related = relatedArticles(a);
   const svc = a.relatedService ? services.find((s) => s.slug === a.relatedService) : undefined;
+  const isWashingMachine = a.relatedService === "lang-washing-machine";
+  const bookingLineUrl = isWashingMachine ? site.lineUrl2 : site.lineUrl;
+  const bookingLineId = isWashingMachine ? site.lineId2 : site.lineId;
   const trail = [
     { name: "หน้าแรก", path: "/" },
     { name: "คลังความรู้", path: "/blog" },
@@ -72,7 +75,7 @@ export default async function ArticlePage({ params }: Props) {
           keywords: a.keywords.join(", "),
           articleSection: a.category,
           ...(a.image ? { image: `${site.url}${a.image.src}` } : {}),
-          author: { "@type": "Organization", name: site.name, "@id": `${site.url}/#business` },
+          author: { "@id": PERSON_ID },
           publisher: { "@id": `${site.url}/#business` },
         })}
       />
@@ -117,29 +120,31 @@ export default async function ArticlePage({ params }: Props) {
         <TableOfContents blocks={a.blocks} />
       </div>
 
-      <article className="wrap max-w-3xl py-8">
-        <ArticleBody blocks={a.blocks} />
-      </article>
-
-      {/* ดันไปหน้าบริการที่เกี่ยวข้อง */}
+      {/* วาง intent box ก่อนเนื้อหายาว เพื่อให้หน้าความรู้ปิดงานได้โดยไม่สร้าง URL ซ้ำมาแย่งคีย์เวิร์ดกัน */}
       {svc && (
-        <section className="wrap max-w-3xl pb-8">
-          <Link
-            href={`/service/${svc.slug}`}
-            className="card group flex flex-col gap-4 p-6 transition-all hover:shadow-lift sm:flex-row sm:items-center sm:justify-between"
-          >
+        <section className="wrap max-w-3xl pt-5">
+          <div className="card flex flex-col gap-5 border-brand-200 bg-brand-50/70 p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-sm font-semibold text-brand-700">บริการที่เกี่ยวข้อง</p>
-              <p className="mt-1 text-lg font-bold group-hover:text-brand-700">{svc.h1}</p>
+              <p className="text-sm font-semibold text-brand-700">ต้องการให้ช่างตรวจอาการนี้?</p>
+              <p className="mt-1 text-lg font-bold">{svc.h1}</p>
               <p className="mt-1 text-sm text-ink-soft">{svc.short}</p>
             </div>
-            <span className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-brand-700">
-              {svc.priceLabel}
-              <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </span>
-          </Link>
+            <div className="flex shrink-0 flex-col gap-2">
+              <Link href={`/service/${svc.slug}`} className="btn-ghost">
+                {svc.priceLabel}
+                <IconChevron className="h-4 w-4" />
+              </Link>
+              <a href={bookingLineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="article-intent-line">
+                LINE {bookingLineId}
+              </a>
+            </div>
+          </div>
         </section>
       )}
+
+      <article className="wrap max-w-3xl py-8">
+        <ArticleBody blocks={a.blocks} lineUrl={bookingLineUrl} lineId={bookingLineId} />
+      </article>
 
       <FaqList items={a.faqs} title="คำถามที่พบบ่อย" />
 
@@ -174,6 +179,8 @@ export default async function ArticlePage({ params }: Props) {
       <CtaBand
         title="มีคำถามที่บทความยังไม่ตอบ?"
         subtitle="สอบถามเข้ามาได้โดยตรง ผมตอบให้โดยไม่คิดค่าใช้จ่าย และหากยังไม่จำเป็นต้องเรียกช่าง ผมจะแจ้งตามจริง"
+        lineUrl={bookingLineUrl}
+        lineId={bookingLineId}
       />
     </>
   );

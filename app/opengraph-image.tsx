@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/lib/site";
+import { site, p } from "@/lib/site";
 
 export const alt = "ช่างแอร์เชียงใหม่ โปรเฟรชแคร์ ล้างแอร์ ซ่อมแอร์ ถึงบ้าน";
 export const size = { width: 1200, height: 630 };
@@ -64,7 +64,7 @@ export default async function OgImage() {
               fontWeight: 600,
             }}
           >
-            ล้าง 500.- · 3 เครื่อง 450.-
+            ล้าง {p.wash.std}.- · 3 เครื่อง {p.wash.stdBulk}.-
           </div>
         </div>
       </div>

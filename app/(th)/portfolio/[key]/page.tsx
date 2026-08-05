@@ -36,7 +36,7 @@ export async function generateMetadata({
       description,
       url: `${site.url}/portfolio/${c.key}`,
       type: "article",
-      images: [{ url: c.photos[0].src }],
+      images: [{ url: `${site.url}${c.photos[0].src}` }],
     },
   };
 }
@@ -52,6 +52,7 @@ export default async function PortfolioCategoryPage({
 
   const photos = pageSlice(c.photos, 1);
   const pages = pageCount(c.photos.length);
+  const isWasherCategory = c.key === "wm-top" || c.key === "wm-front";
   const others = portfolio.filter((x) => x.key !== key);
   const trail = [
     { name: "หน้าแรก", path: "/" },
@@ -137,6 +138,8 @@ export default async function PortfolioCategoryPage({
       <CtaBand
         title="ต้องการให้เครื่องที่บ้านของคุณอยู่ในสภาพนี้"
         subtitle="ติดต่อจองคิวเข้ามาได้ครับ ผมแจ้งราคาให้ครบถ้วนก่อนเริ่มงานเสมอ"
+        lineUrl={isWasherCategory ? site.lineUrl2 : site.lineUrl}
+        lineId={isWasherCategory ? site.lineId2 : site.lineId}
       />
     </>
   );

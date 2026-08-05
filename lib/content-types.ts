@@ -12,6 +12,7 @@ export type Block =
   | { type: "callout"; tone: "info" | "warn" | "tip" | "danger"; title: string; text: string }
   | { type: "table"; caption: string; head: string[]; rows: string[][] }
   | { type: "quote"; text: string; cite?: string }
+  | { type: "sources"; items: { title: string; publisher: string; url: string; note?: string }[] }
   | { type: "steps"; items: { title: string; detail: string }[] }
   | { type: "cta"; text: string }
   | { type: "image"; src: string; alt: string; caption?: string };

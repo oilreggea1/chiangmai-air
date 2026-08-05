@@ -229,10 +229,10 @@ export default function AboutPage() {
               { t: "ที่ตั้ง", d: `${site.legalName} · ${addressLine}`, Icon: IconPin },
               {
                 t: "เวลาทำการ",
-                d: `${site.daysLabel} ${site.hours} · ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด`,
+                d: `${site.daysLabel} ${site.hours} · เช็คคิวจริงตามพื้นที่และประเภทงานก่อนนัด`,
                 Icon: IconClock,
               },
-              { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE ${site.lineId} และ ${site.lineId2}`, Icon: IconPhone },
+              { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE งานแอร์ ${site.lineId} · LINE ล้างถังซักผ้า ${site.lineId2}`, Icon: IconPhone },
               { t: "เอกสาร", d: "ออกใบเสร็จรับเงินในนามบริษัทได้ ยังไม่ได้จดภาษีมูลค่าเพิ่ม จึงยังออกใบกำกับภาษีไม่ได้", Icon: IconCheck },
             ].map((x) => (
               <div key={x.t} className="card flex items-start gap-3 p-5">

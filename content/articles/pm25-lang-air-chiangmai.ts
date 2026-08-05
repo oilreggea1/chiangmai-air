@@ -7,7 +7,7 @@ export const article: Article = {
   description:
     "ฤดูหมอกควันเชียงใหม่ ก.พ.–เม.ย. ทำให้แผ่นกรองแอร์อุดตันเร็วกว่าปกติมาก แอร์กรอง PM2.5 ได้เพียงใด ควรล้างเมื่อใด และลดฝุ่นเข้าห้องอย่างไรให้ได้ผล",
   category: "ฝุ่น PM2.5",
-  updated: "2026-07-29",
+  updated: "2026-08-04",
   readMins: 8,
   image: { src: "/work/air-2569-14.jpg", alt: "แผ่นกรองอากาศสองแผ่นวางบนพื้นก่อนล้าง เห็นชั้นฝุ่นหนาสีเทาดำ" },
   excerpt:
@@ -161,6 +161,14 @@ export const article: Article = {
     {
       type: "cta",
       text: "หากต้องการให้ผมประเมินว่าแอร์ที่บ้านคุณอุดตันในระดับใด และควรเลือกการล้างแบบใดก่อนเข้าฤดูหมอกควัน แจ้งอาการเข้ามาได้ทาง LINE หรือโทรศัพท์ ผมประเมินเบื้องต้นให้โดยไม่มีค่าใช้จ่าย และจะแจ้งตามจริงว่าถึงรอบล้างแล้วหรือยังไม่จำเป็น",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "สคร.1 เชียงใหม่ เตือน PM2.5 และแนวทางจัดสภาพบ้าน", publisher: "กรมควบคุมโรค กระทรวงสาธารณสุข", url: "https://www.ddc.moph.go.th/odpc1/news.php?deptcode=odpc1&news=49790", note: "รองรับคำแนะนำเรื่องปิดช่องอากาศ เช็ดพื้นแบบเปียก เปิดแอร์หมุนเวียนอากาศ และเลือกใช้เครื่องกรองอากาศ" },
+        { title: "What is a HEPA filter?", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/what-hepa-filter", note: "อธิบายมาตรฐาน HEPA และประสิทธิภาพการดักอนุภาค" },
+        { title: "Guide to Air Cleaners in the Home", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home", note: "อธิบายการเลือก HEPA/CADR และข้อจำกัดว่าตัวกรองชนิดเดียวไม่กำจัดมลพิษทุกประเภท" },
+      ],
     },
   ],
   faqs: [

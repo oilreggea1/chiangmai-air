@@ -22,10 +22,12 @@ const mobileNav = [
   ...services.map((s) => ({ href: `/service/${s.slug}`, label: `${s.name}เชียงใหม่` })),
   { href: "/price", label: "ราคาค่าบริการ" },
   { href: "/price/repair", label: "ราคาซ่อมแอร์" },
+  { href: "/answers", label: "คำตอบจากช่าง" },
   { href: "/pm25", label: "ล้างแอร์สู้ฝุ่น PM2.5" },
   { href: "/blog", label: "คลังความรู้" },
   { href: "/area", label: "พื้นที่บริการ" },
   { href: "/portfolio", label: "ผลงาน" },
+  { href: "/case-study", label: "Case Study งานจริง" },
   { href: "/about", label: "รู้จักช่างอาร์ม" },
   { href: "/contact", label: "ติดต่อ" },
   { href: "/en", label: "English" },
@@ -61,10 +63,10 @@ export default function Header() {
           </span>
           <span className="leading-tight">
             <span className="block text-[15px] font-extrabold tracking-tight sm:text-base">
-              ช่างแอร์เชียงใหม่
+              โปรเฟรชแคร์
             </span>
             <span className="block text-[11px] font-medium text-ink-soft sm:text-xs">
-              โปรเฟรชแคร์ · สันกำแพง
+              ช่างแอร์เชียงใหม่ · สันกำแพง
             </span>
           </span>
         </Link>
