@@ -3,6 +3,7 @@ import { site, services, areas, portfolio, heroPhotos } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { workCases } from "@/lib/work-cases";
+import { segments } from "@/lib/segments";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/pm25", priority: 0.9, freq: "monthly" as const },
     { path: "/blog", priority: 0.8, freq: "weekly" as const },
     { path: "/area", priority: 0.8, freq: "monthly" as const },
+    { path: "/customer", priority: 0.9, freq: "monthly" as const },
     { path: "/about", priority: 0.7, freq: "monthly" as const },
     { path: "/portfolio", priority: 0.7, freq: "monthly" as const },
     { path: "/videos", priority: 0.7, freq: "monthly" as const },
@@ -34,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: p.freq,
       priority: p.priority,
+    })),
+    ...segments.map((s) => ({
+      url: `${site.url}/customer/${s.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
     })),
     ...services.map((s) => ({
       url: `${site.url}/service/${s.slug}`,

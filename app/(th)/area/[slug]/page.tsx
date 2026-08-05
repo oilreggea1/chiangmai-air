@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, areas, services, pricing, reviews, workingPhotos } from "@/lib/site";
+import { site, areas, services, pricing, reviews, workingPhotos, p } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, serviceIcons } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
@@ -23,7 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const head = `ช่างแอร์${a.name}${a.name.includes("เชียงใหม่") ? "" : " เชียงใหม่"}`;
   const tails = ["ล้างแอร์ ซ่อมแอร์ ถึงบ้าน", "ล้างแอร์ ซ่อมแอร์", "ล้างแอร์"];
   const title = tails.map((t) => `${head} ${t}`).find((t) => t.length <= 60) ?? head;
-  const description = `ช่างแอร์${a.name} โทร ${site.phone} ล้างแอร์ 500 บาท 3 เครื่องขึ้นไป 450 บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}`;
+  // ราคาต้องดึงจาก p เสมอ ของเดิมพิมพ์ 500/450 ไว้ตรง ๆ ซึ่งจะค้างถ้าเจ้าของปรับราคา
+  // และตัดเบอร์โทรออก เพราะอยู่กลางคำอธิบายแล้วกินที่ โดยไม่ได้ทำให้คนคลิกเพิ่ม
+  // ชื่อตำบลบางแห่งยาว ถ้าใช้ประโยคเดียวกันหมดจะเกิน 160 ตัวอักษรที่ Google แสดง
+  // จึงตัดท่อนท้ายออกเมื่อชื่อยาว แทนที่จะปล่อยให้โดนตัดกลางประโยค
+  const descTail = a.name.length > 14 ? "" : " ไม่คิดค่าเดินทางเพิ่ม";
+  const description = `ช่างแอร์${a.name} ล้างแอร์ ${p.wash.std} บาท 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}${descTail}`;
   return {
     title,
     description,
