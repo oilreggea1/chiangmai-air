@@ -2296,7 +2296,7 @@ export const portfolio: PortfolioCategory[] = [
   },
   {
     key: "wm-top",
-    label: "ล้างถังเครื่องซักผ้าฝาบน",
+    label: "ล้างเครื่องซักผ้าฝาบน",
     photos: [
       { src: "/work/lang-thang-sak-pha-fa-bon-001.jpg", alt: "ช่างยืนถอดน็อตฝาบนเครื่องซักผ้าฝาบนด้วยสว่านไฟฟ้าที่ลานหน้าบ้าน" },
       { src: "/work/lang-thang-sak-pha-fa-bon-002.jpg", alt: "มองลงไปในเครื่องฝาบนที่ถอดถังออกแล้ว เห็นตัวกรองเศษผ้าตาข่ายฟ้าอยู่กลางถัง" },
@@ -2609,7 +2609,7 @@ export const portfolio: PortfolioCategory[] = [
   },
   {
     key: "wm-front",
-    label: "ล้างถังเครื่องซักผ้าฝาหน้า",
+    label: "ล้างเครื่องซักผ้าฝาหน้า",
     photos: [
       { src: "/work/lang-thang-sak-pha-fa-na-001.jpg", alt: "ยางขอบประตูและวงถังที่เต็มไปด้วยคราบเมือกน้ำตาล ถ่ายระยะใกล้ก่อนล้าง" },
       { src: "/work/lang-thang-sak-pha-fa-na-002.jpg", alt: "ชิ้นส่วนเครื่องซักผ้าฝาหน้าที่ถอดออกทั้งหมด วางเรียงครบชุดมองจากด้านบน" },
