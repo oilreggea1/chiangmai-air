@@ -113,7 +113,7 @@ export default function Footer() {
           <h2 className="text-sm font-bold tracking-wide text-ink uppercase">ติดต่อผม</h2>
           <ul className="mt-4 space-y-4 text-sm">
             <li>
-              <a href={`tel:${site.phoneTel}`} className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+              <a href={`tel:${site.phoneTel}`} data-cta="footer-call" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconPhone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
                 <span>
                   <span className="block text-xs font-normal text-ink-soft">เบอร์หลัก</span>
@@ -131,7 +131,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={site.lineUrl} target="_blank" rel="noopener" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+              <a href={site.lineUrl} target="_blank" rel="noopener" data-cta="footer-line" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
                 <span>
                   <span className="block text-xs font-normal text-ink-soft">LINE จองคิวงานแอร์</span>
@@ -140,7 +140,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={site.lineUrl2} target="_blank" rel="noopener" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+              <a href={site.lineUrl2} target="_blank" rel="noopener" data-cta="footer-washer-line" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
                 <span>
                   <span className="block text-xs font-normal text-ink-soft">LINE จองคิวล้างถังซักผ้า</span>

@@ -20,7 +20,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const a = getArticle(slug);
   if (!a) return {};
   return {
-    title: a.title,
+    // หัวข้อบทความยาวและบรรยายครบในตัวอยู่แล้ว ถ้าต่อท้ายแบรนด์อีก 14 ตัวอักษร
+    // Google จะตัดหางทิ้งจนใจความหาย absolute จึงบอกไม่ให้ใช้ template
+    title: { absolute: a.title },
     description: a.description,
     keywords: a.keywords,
     alternates: { canonical: `/blog/${a.slug}` },

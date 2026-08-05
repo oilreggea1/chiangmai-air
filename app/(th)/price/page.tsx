@@ -5,7 +5,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { serviceIcons, IconCheck, IconX, IconChevron, IconShield } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = `ราคาช่างแอร์เชียงใหม่ ล้างแอร์ ${p.wash.std} บาท · 3 เครื่องขึ้นไป ${p.wash.stdBulk} บาท`;
+const title = `ราคาช่างแอร์เชียงใหม่ ทุกบริการ ล้างแอร์ ${p.wash.std}`;
 const description =
   `ราคาช่างแอร์เชียงใหม่ ล้างแอร์ 450-${p.wash.big} บาท Premium Full Wash ${p.wash.premium} บาท ติดตั้ง 3,000-${p.install.relocate} บาท ย้ายแอร์ ${p.install.relocate} บาท ไม่มีค่าเดินทางเพิ่ม โทร 065-365-7673`;
 

@@ -5,7 +5,7 @@ import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
-const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ สันกำแพง เมือง สารภี ดอยสะเก็ด";
+const title = "พื้นที่ให้บริการช่างแอร์เชียงใหม่ 5 อำเภอ";
 const description =
   "ช่างแอร์เชียงใหม่ รับงาน อ.สันกำแพง อ.สารภี อ.เมืองเชียงใหม่ (ทุกตำบล) อ.ดอยสะเก็ด และ ต.สันพระเนตร อ.สันทราย ไม่คิดค่าเดินทางเพิ่ม";
 

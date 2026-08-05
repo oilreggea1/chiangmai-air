@@ -308,7 +308,7 @@ export default function EnglishPage() {
               a price before anyone comes out. LINE is easiest for English.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line px-7 py-4 text-lg">
+              <a href={site.lineUrl} target="_blank" rel="noopener" data-cta="en-band-line" className="btn-line px-7 py-4 text-lg">
                 <IconLine className="h-5 w-5" />
                 LINE {site.lineId}
               </a>

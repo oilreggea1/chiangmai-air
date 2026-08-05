@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { track } from "@vercel/analytics/react";
 import { site } from "@/lib/site";
 
 function channelOf(href: string) {
@@ -14,6 +13,9 @@ function channelOf(href: string) {
 /**
  * เก็บ conversion จาก CTA ทุกปุ่มที่มี data-cta โดยไม่ผูก analytics ไว้กับ UI ทีละจุด
  * เมื่อเพิ่มปุ่มใหม่ แค่ใส่ data-cta ก็ถูกวัดผลอัตโนมัติ
+ *
+ * เดิมส่งเข้า Vercel Analytics ด้วย track() แต่บัญชีอยู่แผน Hobby ซึ่งไม่รองรับ custom event
+ * ข้อมูลจึงถูกทิ้งทั้งหมดโดยไม่มีสัญญาณเตือน ตอนนี้ส่งเข้า /api/lead-click แล้วเก็บลง Neon เอง
  */
 export default function ConversionTracker() {
   useEffect(() => {
@@ -27,10 +29,25 @@ export default function ConversionTracker() {
       const channel = channelOf(link.href);
       if (channel === "other") return;
 
-      track("Lead Click", {
+      const payload = JSON.stringify({
         channel,
         cta: link.dataset.cta ?? "unknown",
         page: window.location.pathname,
+      });
+
+      // sendBeacon ส่งได้แม้เบราว์เซอร์กำลังจะออกจากหน้าไปเปิดแอปโทรศัพท์หรือ LINE
+      // ถ้าใช้ fetch ธรรมดา คำขอมักถูกยกเลิกกลางทางแล้วยอดจะหายไป
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon("/api/lead-click", new Blob([payload], { type: "application/json" }));
+        return;
+      }
+      fetch("/api/lead-click", {
+        method: "POST",
+        body: payload,
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+      }).catch(() => {
+        // เงียบไว้ ห้ามให้การเก็บสถิติไปกระทบการกดปุ่มของลูกค้า
       });
     };
 

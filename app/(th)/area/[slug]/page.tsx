@@ -17,7 +17,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = areas.find((x) => x.slug === slug);
   if (!a) return {};
-  const title = `ช่างแอร์${a.name} ล้างแอร์ ซ่อมแอร์ถึงบ้าน`;
+  // ชื่อตำบลยาวไม่เท่ากัน ถ้าใช้สูตรเดียวกันหมด ตำบลชื่อยาวจะเกินกรอบแล้วโดนตัด
+  // จึงย่อท่อนท้ายอัตโนมัติเมื่อชื่อยาว เพื่อให้ชื่อร้านยังแสดงครบทุกตำบล
+  const tail = a.name.length > 10 ? "ล้างแอร์ ซ่อมแอร์" : "ล้างแอร์ ซ่อมแอร์ ถึงบ้าน";
+  const title = `ช่างแอร์${a.name} ${tail}`;
   const description = `ช่างแอร์${a.name} โทร ${site.phone} ล้างแอร์ 500 บาท 3 เครื่องขึ้นไป 450 บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}`;
   return {
     title,

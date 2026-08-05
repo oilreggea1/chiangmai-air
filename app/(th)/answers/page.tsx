@@ -5,7 +5,7 @@ import { IconCheck, IconChevron, IconPhone } from "@/components/Icons";
 import { site, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd, PERSON_ID } from "@/lib/schema";
 
-const title = "คำตอบจากช่างแอร์เชียงใหม่ ราคา พื้นที่ และเงื่อนไขบริการ";
+const title = "คำตอบจากช่างแอร์เชียงใหม่ ราคาและเงื่อนไข";
 const description =
   "คำตอบสั้นและตรวจสอบได้จากช่างอาร์ม โปรเฟรชแคร์: ราคาล้างแอร์ ซ่อม ติดตั้ง เติมน้ำยา พื้นที่บริการ ระยะเวลานัด และการรับประกัน อัปเดต 4 สิงหาคม 2569";
 
@@ -165,7 +165,7 @@ export default function AnswersPage() {
               {site.name} ดำเนินงานในนาม {site.legalName} เลขประจำตัวผู้เสียภาษี {site.taxId}
               ที่ตั้ง {site.address.subDistrict} {site.address.district} จ.{site.address.province}
             </p>
-            <a href={`tel:${site.phoneTel}`} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:underline">
+            <a href={`tel:${site.phoneTel}`} data-cta="answers-call" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:underline">
               <IconPhone className="h-4 w-4" />โทรตรวจสอบ {site.phone}
             </a>
           </div>

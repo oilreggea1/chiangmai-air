@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getWorkCase((await params).slug);
   if (!item) return {};
   const description = `${item.finding} ดูขั้นตอนการทำงาน ภาพหน้างานจริง และผลหลังดำเนินการโดยช่างอาร์ม`;
-  return { title: `${item.title} | Case Study เชียงใหม่`, description, alternates: { canonical: `/case-study/${item.slug}` }, openGraph: { title: item.title, description, type: "article", url: `${site.url}/case-study/${item.slug}`, images: [item.images[0].src] } };
+  return { title: { absolute: item.title }, description, alternates: { canonical: `/case-study/${item.slug}` }, openGraph: { title: item.title, description, type: "article", url: `${site.url}/case-study/${item.slug}`, images: [item.images[0].src] } };
 }
 
 export default async function WorkCasePage({ params }: Props) {

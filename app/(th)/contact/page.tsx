@@ -81,8 +81,8 @@ export default function Contact() {
             href={site.lineUrl2}
             target="_blank"
             rel="noopener"
-            className="card group flex flex-col items-center p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lift"
             data-cta="contact-washer-line"
+            className="card group flex flex-col items-center p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lift"
           >
             <span className="grid h-16 w-16 place-items-center rounded-2xl bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25">
               <IconLine className="h-8 w-8" />

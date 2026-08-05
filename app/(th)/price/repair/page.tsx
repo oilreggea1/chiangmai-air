@@ -7,7 +7,7 @@ import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { IconPhone, IconLine, IconChevron, IconCheck, IconShield, IconWrench } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ราคาซ่อมแอร์เชียงใหม่ แยกตามอาการ + ค่าตรวจเช็คหักคืนให้";
+const title = "ราคาซ่อมแอร์เชียงใหม่ แยกตามอาการที่เสีย";
 const description =
   `ราคาซ่อมแอร์เชียงใหม่ โทร 065-365-7673 ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้เมื่อตัดสินใจซ่อม เติมน้ำยา R32 และ R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท พร้อมคู่มืออาการเสียแต่ละแบบ`;
 

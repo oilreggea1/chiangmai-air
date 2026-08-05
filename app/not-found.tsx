@@ -25,7 +25,7 @@ export default function NotFound() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={`tel:${site.phoneTel}`} className="btn-call">
+          <a href={`tel:${site.phoneTel}`} data-cta="404-call" className="btn-call">
             <IconPhone className="h-5 w-5" />
             โทร {site.phone}
           </a>

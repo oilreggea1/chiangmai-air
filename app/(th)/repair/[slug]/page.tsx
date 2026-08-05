@@ -18,7 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = repairGuides.find((item) => item.slug === slug);
   if (!guide) return {};
   return {
-    title: guide.title,
+    // หัวข้อคู่มือซ่อมยาวและบรรยายอาการครบในตัว ไม่ต้องต่อท้ายแบรนด์ให้โดนตัด
+    title: { absolute: guide.title },
     description: guide.description,
     alternates: { canonical: `/repair/${guide.slug}` },
     openGraph: { title: guide.title, description: guide.description, url: `${site.url}/repair/${guide.slug}`, type: "article" },
@@ -48,7 +49,7 @@ export default async function RepairGuidePage({ params }: Props) {
           <p className="lead mt-5 max-w-3xl">{guide.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={`tel:${site.phoneTel}`} className="btn-call px-6 py-3.5"><IconPhone className="h-5 w-5" />โทร {site.phone}</a>
-            <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line px-6 py-3.5"><IconLine className="h-5 w-5" />ส่งรูปทาง LINE {site.lineId}</a>
+            <a href={site.lineUrl} target="_blank" rel="noopener" data-cta="repair-photo-line" className="btn-line px-6 py-3.5"><IconLine className="h-5 w-5" />ส่งรูปทาง LINE {site.lineId}</a>
           </div>
         </section>
       </div>
