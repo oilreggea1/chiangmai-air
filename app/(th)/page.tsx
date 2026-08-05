@@ -17,7 +17,11 @@ const featuredAreaSlugs = ["san-kamphaeng", "ton-pao", "mueang-chiang-mai", "sar
 const featuredAreas = featuredAreaSlugs
   .map((slug) => areas.find((area) => area.slug === slug))
   .filter((area): area is (typeof areas)[number] => Boolean(area));
-const homeFaqs = faqs.slice(0, 6);
+// แสดงให้ครบ ไม่ตัดเหลือ 6 ข้อเหมือนเดิม
+// คนที่ค้นคำว่า "ช่างแอร์เชียงใหม่" ยังไม่รู้จักใครเลย สิ่งที่เขาอยากรู้คือ
+// เลือกช่างอย่างไร ราคาเท่าไร รับประกันไหม ซึ่งเป็นข้อที่เคยถูกตัดทิ้ง
+// ชุดนี้ยังไหลเข้า FAQPage schema ที่ AI ดึงไปตอบด้วย
+const homeFaqs = faqs;
 const homeEdges = edges.map((edge, index) => ({
   ...edge,
   detail: [

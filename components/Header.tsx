@@ -18,7 +18,8 @@ const desktopNav = [
 
 /** เมนูมือถือแสดงทุกอย่างแบบแบน กดง่ายกว่าดรอปดาวน์บนจอเล็ก */
 const mobileNav = [
-  { href: "/", label: "หน้าแรก" },
+  // ใช้คำที่หน้านั้นตั้งใจติดแทนคำว่า "หน้าแรก" ซึ่งไม่บอกอะไรทั้งกับคนและกับ Google
+  { href: "/", label: "ช่างแอร์เชียงใหม่" },
   ...services.map((s) => ({ href: `/service/${s.slug}`, label: `${s.name}เชียงใหม่` })),
   { href: "/price", label: "ราคาค่าบริการ" },
   { href: "/price/repair", label: "ราคาซ่อมแอร์" },
