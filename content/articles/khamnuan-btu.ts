@@ -1,5 +1,5 @@
 import type { Article } from "@/lib/content-types";
-import { p } from "@/lib/site";
+import { p, btu } from "@/lib/site";
 
 export const article: Article = {
   slug: "khamnuan-btu",
@@ -170,7 +170,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: `ด้านตัวเครื่อง ผมติดตั้งแอร์ Mitsubishi, Daikin, Samsung, LG, Panasonic, Carrier, Haier, Sharp, Toshiba, Gree, Hitachi และ Trane ราคาเครื่องขึ้นกับรุ่นและโปรโมชั่นในแต่ละช่วง สอบถามเข้ามาได้ครับ ส่วนค่าติดตั้งผมคิดตามขนาดเครื่องโดยตรง คือ 9,000–12,000 BTU ค่าติดตั้ง ${p.install.small} บาท และ 18,000–24,000 BTU ค่าติดตั้ง ${p.install.relocate} บาท หากต้องถอดเครื่องเดิมออกก่อน คิดเพิ่ม ${p.install.removeOnly} บาท ผมแจ้งค่าใช้จ่ายทั้งหมดตั้งแต่ต้น หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อนเสมอ`,
+      text: `ด้านตัวเครื่อง ผมติดตั้งแอร์ Mitsubishi, Daikin, Samsung, LG, Panasonic, Carrier, Haier, Sharp, Toshiba, Gree, Hitachi และ Trane ราคาเครื่องขึ้นกับรุ่นและโปรโมชั่นในแต่ละช่วง สอบถามเข้ามาได้ครับ ส่วนค่าติดตั้งผมคิดตามขนาดเครื่องโดยตรง คือ 9,000–12,000 BTU ค่าติดตั้ง ${p.install.small} บาท และ ${btu.installLarge} BTU ค่าติดตั้ง ${p.install.large} บาท หากต้องถอดเครื่องเดิมออกก่อน คิดเพิ่ม ${p.install.removeOnly} บาท ผมแจ้งค่าใช้จ่ายทั้งหมดตั้งแต่ต้น หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อนเสมอ`,
     },
     {
       type: "table",
@@ -178,7 +178,7 @@ export const article: Article = {
       head: ["รายการ", "ราคา"],
       rows: [
         ["ติดตั้งแอร์ 9,000–12,000 BTU", `${p.install.small} บาท`],
-        ["ติดตั้งแอร์ 18,000–24,000 BTU", `${p.install.large} บาท`],
+        [`ติดตั้งแอร์ ${btu.installLarge} BTU`, `${p.install.large} บาท`],
         ["ถอดแอร์เก่า", `${p.install.removeOnly} บาท`],
         ["ย้ายแอร์ (ถอดและติดตั้งใหม่)", `${p.install.relocate} บาท`],
         ["รับประกันงานติดตั้ง", "1 ปี เมื่อซื้อเครื่องกับผม / 6 เดือน กรณีมีเครื่องเอง"],

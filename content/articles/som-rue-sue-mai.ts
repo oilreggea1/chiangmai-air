@@ -1,5 +1,5 @@
 import type { Article } from "@/lib/content-types";
-import { p } from "@/lib/site";
+import { p, btu } from "@/lib/site";
 
 export const article: Article = {
   slug: "som-rue-sue-mai",
@@ -66,7 +66,7 @@ export const article: Article = {
     },
     {
       type: "p",
-      text: `ราคาเครื่องแอร์ขึ้นกับรุ่นและโปรโมชั่นในแต่ละช่วง สอบถามผมได้ครับ ส่วนค่าติดตั้งผมคิด ${p.install.small} บาทสำหรับ 9,000–12,000 BTU และ ${p.install.relocate} บาทสำหรับ 18,000–24,000 BTU หากต้องถอดเครื่องเดิมออกก่อน คิดเพิ่ม ${p.install.removeOnly} บาท ตัวเลขเหล่านี้นำไปใส่ในฝั่งเครื่องใหม่ได้ทันที ผมแจ้งค่าใช้จ่ายให้ครบตั้งแต่ก่อนเริ่มงาน`,
+      text: `ราคาเครื่องแอร์ขึ้นกับรุ่นและโปรโมชั่นในแต่ละช่วง สอบถามผมได้ครับ ส่วนค่าติดตั้งผมคิด ${p.install.small} บาทสำหรับ 9,000–12,000 BTU และ ${p.install.large} บาทสำหรับ ${btu.installLarge} BTU หากต้องถอดเครื่องเดิมออกก่อน คิดเพิ่ม ${p.install.removeOnly} บาท ตัวเลขเหล่านี้นำไปใส่ในฝั่งเครื่องใหม่ได้ทันที ผมแจ้งค่าใช้จ่ายให้ครบตั้งแต่ก่อนเริ่มงาน`,
     },
     {
       type: "callout",
