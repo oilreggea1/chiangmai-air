@@ -79,7 +79,7 @@ const servicesEn = [
 const faqs = [
   {
     q: "Do you speak English?",
-    a: "I handle bookings, quotes and job details in written English over LINE. It is the clearest way for both of us and it keeps a record of what was agreed. If you are not comfortable in Thai, please message me on LINE rather than calling.",
+    a: "Not fluently, so I work in written English over LINE with a translation app. It works well for bookings, quotes and job details, and it keeps a record of what was agreed. Short, plain sentences translate most accurately — if anything I reply looks odd, say so and I will rephrase it. Please message me on LINE rather than calling, because a phone call in English is where I would struggle.",
   },
   {
     q: "How much does aircon cleaning cost in Chiang Mai?",

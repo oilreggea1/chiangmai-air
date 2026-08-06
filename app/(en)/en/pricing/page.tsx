@@ -109,7 +109,7 @@ export default function EnPricingPage() {
           <p className="text-sm leading-7 text-ink-soft">
             Item labels stay in Thai because those are the exact terms I use when quoting,
             so you can match them line by line against the Thai price list.
-            If any line is unclear, message me on LINE and I will explain it in English.
+            If any line is unclear, message me on LINE and I will explain it in English. I use a translation app, so short plain sentences work best.
           </p>
         </div>
       </section>
