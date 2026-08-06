@@ -186,6 +186,19 @@ for (const dir of SCAN_DIRS) {
         }
       }
 
+      // ฟิลด์ราคาที่หน่วยอยู่คนละบรรทัด เช่น price: "2,000" กับ unit: "บาท / เครื่อง"
+      //
+      // เคยหลุดมาแล้ว 6 ส.ค. 2569: การ์ดราคาหน้าแรกเขียน price: "2,000" ไว้ตรง ๆ
+      // แล้วค้างเมื่อเจ้าของปรับราคาถอดล้างเป็น 2,300-2,500
+      // เงื่อนไขด้านบนจับไม่ได้เพราะคำว่า "บาท" ไม่ได้อยู่ติดกับตัวเลข
+      // เจ้าของเป็นคนทักเองว่าราคาไม่ตรง ซึ่งแปลว่าตัวดักพลาดไปหนึ่งรอบเต็ม
+      for (const m of line.matchAll(/\bprice:\s*["`']([\d,]+)["`']/g)) {
+        const n = m[1];
+        const inRange = [...prices].some((v) => v.split(/[–-]/).map((x) => x.trim()).includes(n));
+        if (prices.has(n) || inRange || ALLOW.has(n)) continue;
+        problems.push(`${rel}:${i + 1}  ราคา "${n}" ในฟิลด์ price ไม่ตรงกับค่าใดใน p — ${line.trim().slice(0, 90)}`);
+      }
+
       // ช่วง BTU ที่พิมพ์เป็นข้อความ
       for (const m of line.matchAll(/([\d,]+\s*[–-]\s*[\d,]+)\s*BTU/g)) {
         const range = m[1].replace(/\s/g, "").replace("-", "–");
