@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, areas, heroPhotos } from "@/lib/site";
+import { site, areas, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconShield,
@@ -9,7 +9,7 @@ import {
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon cleaning and AC repair in Chiang Mai by Arm, a local technician. 500 THB per wall unit, 450 THB each for three or more. Open Mon-Sat 8am-6pm.";
+  `Aircon cleaning and AC repair in Chiang Mai by Arm, a local technician. ${p.wash.std} THB per wall unit, ${p.wash.stdBulk} THB each for three or more. Open Mon-Sat 8am-6pm.`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -35,32 +35,32 @@ const servicesEn = [
   {
     icon: IconSnow,
     name: "Aircon cleaning",
-    price: "500 THB · 450 for 3+",
-    desc: "Standard clean 500 THB per wall unit, or 450 THB each for three or more. The full strip-down clean is 2,300–2,500 THB depending on size — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.",
+    price: `${p.wash.std} THB · ${p.wash.stdBulk} for 3+`,
+    desc: `Standard clean ${p.wash.std} THB per wall unit, or ${p.wash.stdBulk} THB each for three or more. The full strip-down clean is ${p.wash.premium} THB depending on size — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.`,
   },
   {
     icon: IconWrench,
     name: "AC repair",
-    price: "500 THB diagnostic",
-    desc: "Not cooling, water dripping, strange noises, unit cutting out. I charge 500 THB to diagnose it, and I take that off the bill if you go ahead with the repair. I quote you before I touch anything.",
+    price: `${p.repair.diagnostic} THB diagnostic`,
+    desc: `Not cooling, water dripping, strange noises, unit cutting out. I charge ${p.repair.diagnostic} THB to diagnose it, and I take that off the bill if you go ahead with the repair. I quote you before I touch anything.`,
   },
   {
     icon: IconInstall,
     name: "New installation",
-    price: "from 3,000 THB",
-    desc: "3,000 THB for 9,000–12,000 BTU, 3,500 THB for 13,000–24,000 BTU. I vacuum the line set properly every time — it is the step nobody can see and the one that kills compressors when it gets skipped. Warranty up to 1 year.",
+    price: `from ${p.install.small} THB`,
+    desc: `${p.install.small} THB for ${btu.installSmall} BTU, ${p.install.large} THB for ${btu.installLarge} BTU. I vacuum the line set properly every time — it is the step nobody can see and the one that kills compressors when it gets skipped. Warranty up to 1 year.`,
   },
   {
     icon: IconMove,
     name: "Relocation",
-    price: "3,500 THB",
-    desc: "Moving house or changing rooms. I pump the refrigerant back into the condenser before disconnecting, so you are not paying for a full recharge afterwards. Removal only is 700 THB.",
+    price: `${p.install.relocate} THB`,
+    desc: `Moving house or changing rooms. I pump the refrigerant back into the condenser before disconnecting, so you are not paying for a full recharge afterwards. Removal only is ${p.install.removeOnly} THB.`,
   },
   {
     icon: IconSnow,
     name: "Suspended and ceiling units",
-    price: "from 1,300 THB",
-    desc: "Restaurants, cafés and offices usually have units suspended below the ceiling or recessed into it. They sit high up and everything below has to be sheeted off first, so they take longer than a wall unit. Suspended units from 1,300 THB, ceiling-recessed from 1,500 THB. The final price depends on the size of the unit and how high the ceiling is, and I tell you before I start.",
+    price: `from ${p.wash.suspended} THB`,
+    desc: `Restaurants, cafés and offices usually have units suspended below the ceiling or recessed into it. They sit high up and everything below has to be sheeted off first, so they take longer than a wall unit. Suspended units from ${p.wash.suspended} THB, ceiling-recessed from ${p.wash.cassette} THB. The final price depends on the size of the unit and how high the ceiling is, and I tell you before I start.`,
   },
   {
     icon: IconInstall,
@@ -71,8 +71,8 @@ const servicesEn = [
   {
     icon: IconWasher,
     name: "Washing machine drum clean",
-    price: "from 999 THB",
-    desc: "I take the drum out and wash every removable part, rather than pouring cleaner in and running a cycle — the build-up sits on the outside of the drum where a cycle cannot reach. Top loaders start at 999 THB and go by capacity; front loaders start at 1,299 THB because they are more involved to strip down. Around three hours per machine, 30-day warranty.",
+    price: `from ${p.washer.topLoad} THB`,
+    desc: `I take the drum out and wash every removable part, rather than pouring cleaner in and running a cycle — the build-up sits on the outside of the drum where a cycle cannot reach. Top loaders start at ${p.washer.topLoad} THB and go by capacity; front loaders start at ${p.washer.frontLoad} THB because they are more involved to strip down. Around three hours per machine, 30-day warranty.`,
   },
 ];
 
@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "How much does aircon cleaning cost in Chiang Mai?",
-    a: "My standard clean is 500 THB per wall-mounted unit for 9,000–18,000 BTU, dropping to 450 THB each when you have three or more. Larger units at 18,001–36,000 BTU are 650 THB, or 600 THB each from two up. The full strip-down clean is 2,300–2,500 THB per unit depending on size.",
+    a: `My standard clean is ${p.wash.std} THB per wall-mounted unit for ${btu.washStd} BTU, dropping to ${p.wash.stdBulk} THB each when you have three or more. Larger units at ${btu.washBig} BTU are ${p.wash.big} THB, or ${p.wash.bigBulk} THB each from two up. The full strip-down clean is ${p.wash.premium} THB per unit depending on size.`,
   },
   {
     q: "How often should I clean my aircon in Chiang Mai?",
@@ -176,7 +176,7 @@ export default function EnglishPage() {
             ))}
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
-            Refrigerant top-up is 25 THB per pound for both R32 and R410A, and I check the level free
+            Refrigerant top-up is {p.repair.refrigerantPerLb} THB per pound for both R32 and R410A, and I check the level free
             of charge first. If it is not actually low, I will tell you so rather than sell you a refill.
           </p>
         </div>

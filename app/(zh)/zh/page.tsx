@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, heroPhotos, coverage, coverageTotal } from "@/lib/site";
+import { site, heroPhotos, coverage, coverageTotal, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron,
@@ -18,7 +18,7 @@ const amphoeZh: Record<string, string> = {
 
 const title = "清迈空调清洗维修 | Pro Fresh Care 泰国清迈";
 const description =
-  "清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗每台 500 泰铢，三台以上每台 450 泰铢，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开公司抬头收据。";
+  `清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开公司抬头收据。`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -44,32 +44,32 @@ const servicesZh = [
   {
     icon: IconSnow,
     name: "空调清洗",
-    price: "500 泰铢 · 三台以上 450",
-    desc: "壁挂机常规清洗每台 500 泰铢，三台以上每台 450 泰铢。深度拆洗 2,300–2,500 泰铢，按机型大小计价，会把风轮和所有可拆部件取下单独清洗消毒。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。",
+    price: `${p.wash.std} 泰铢 · 三台以上 ${p.wash.stdBulk}`,
+    desc: `壁挂机常规清洗每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢。深度拆洗 ${p.wash.premium} 泰铢，按机型大小计价，会把风轮和所有可拆部件取下单独清洗消毒。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。`,
   },
   {
     icon: IconWrench,
     name: "空调维修",
-    price: "检测费 500 泰铢",
-    desc: "不制冷、漏水、有异响、频繁停机。检测费 500 泰铢，确定维修后从维修费中扣除。动手之前一定先报价给您确认。",
+    price: `检测费 ${p.repair.diagnostic} 泰铢`,
+    desc: `不制冷、漏水、有异响、频繁停机。检测费 ${p.repair.diagnostic} 泰铢，确定维修后从维修费中扣除。动手之前一定先报价给您确认。`,
   },
   {
     icon: IconInstall,
     name: "新机安装",
-    price: "3,000 泰铢起",
-    desc: "9,000–12,000 BTU 为 3,000 泰铢，13,000–24,000 BTU 为 3,500 泰铢。每次都会完整抽真空，这一步客户看不见，但省略后压缩机会提前损坏。保修最长一年。",
+    price: `${p.install.small} 泰铢起`,
+    desc: `${btu.installSmall} BTU 为 ${p.install.small} 泰铢，${btu.installLarge} BTU 为 ${p.install.large} 泰铢。每次都会完整抽真空，这一步客户看不见，但省略后压缩机会提前损坏。保修最长一年。`,
   },
   {
     icon: IconMove,
     name: "空调移机",
-    price: "3,500 泰铢",
-    desc: "搬家或换房间。拆管前会先把冷媒回收进室外机，所以之后不需要重新加冷媒。只拆不装为 700 泰铢。",
+    price: `${p.install.relocate} 泰铢`,
+    desc: `搬家或换房间。拆管前会先把冷媒回收进室外机，所以之后不需要重新加冷媒。只拆不装为 ${p.install.removeOnly} 泰铢。`,
   },
   {
     icon: IconSnow,
     name: "吊顶机与嵌入机清洗",
-    price: "1,300 泰铢起",
-    desc: "餐厅、咖啡店和办公室多用吊顶机或嵌入天花板的机型。机器位置高，下方的桌椅设备都要先铺布遮好，所以比壁挂机费时。吊顶机 1,300 泰铢起，嵌入机 1,500 泰铢起。实际价格看机器大小和天花板高度，我会在开工前先告诉您。",
+    price: `${p.wash.suspended} 泰铢起`,
+    desc: `餐厅、咖啡店和办公室多用吊顶机或嵌入天花板的机型。机器位置高，下方的桌椅设备都要先铺布遮好，所以比壁挂机费时。吊顶机 ${p.wash.suspended} 泰铢起，嵌入机 ${p.wash.cassette} 泰铢起。实际价格看机器大小和天花板高度，我会在开工前先告诉您。`,
   },
   {
     icon: IconInstall,
@@ -80,7 +80,7 @@ const servicesZh = [
   {
     icon: IconWasher,
     name: "洗衣机内桶清洗",
-    price: "999 泰铢起",
+    price: `${p.washer.topLoad} 泰铢起`,
     desc: "把内桶整个拆下来逐件清洗，而不是倒清洁剂空转。污垢主要积在内桶外壁，空转根本碰不到。上开式 999 泰铢起按容量计价，前开式 1,299 泰铢起，因为拆装更复杂。每台约三小时，保修 30 天。",
   },
 ];
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "清迈空调清洗多少钱？",
-    a: "壁挂机 9,000–18,000 BTU 每台 500 泰铢，三台以上每台 450 泰铢。18,001–36,000 BTU 每台 650 泰铢，两台以上每台 600 泰铢。深度拆洗每台 2,300–2,500 泰铢，按机型大小计价。所有价格都公开在网站上，中国客户和泰国客户价格完全一样。",
+    a: `壁挂机 ${btu.washStd} BTU 每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢。${btu.washBig} BTU 每台 ${p.wash.big} 泰铢，两台以上每台 600 泰铢。深度拆洗每台 2,300–2,500 泰铢，按机型大小计价。所有价格都公开在网站上，中国客户和泰国客户价格完全一样。`,
   },
   {
     q: "对中国客人会不会加价？",

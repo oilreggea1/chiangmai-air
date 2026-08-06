@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { site, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/components/Icons";
 
 const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai";
 const description =
-  "Aircon cleaning between guests for Airbnb hosts and rental owners in Chiang Mai. 500 THB per wall unit, 450 THB each for three or more.";
+  `Aircon cleaning between guests for Airbnb hosts and rental owners in Chiang Mai. ${p.wash.std} THB per wall unit, ${p.wash.stdBulk} THB each for three or more.`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "What does it cost for a whole property?",
-    a: "Wall units are 500 THB each, dropping to 450 THB each from three units up, which covers most apartments and villas. Larger 18,001 to 36,000 BTU units are 650 THB, or 600 THB each from two up. Send me the number of units and I will confirm the total before I come.",
+    a: `Wall units are ${p.wash.std} THB each, dropping to ${p.wash.stdBulk} THB each from three units up, which covers most apartments and villas. Larger 18,001 to 36,000 BTU units are 650 THB, or 600 THB each from two up. Send me the number of units and I will confirm the total before I come.`,
   },
   {
     q: "Can I get paperwork for my accounts?",
@@ -101,7 +101,7 @@ export default function EnAirbnbPage() {
           <div className="mt-9 grid gap-4 sm:grid-cols-3">
             {[
               { k: "45–60 min", v: "per wall unit for a standard clean" },
-              { k: "450 THB", v: "each from three units up" },
+              { k: `${p.wash.stdBulk} THB`, v: "each from three units up" },
               { k: "30 days", v: "warranty on the work" },
             ].map((x) => (
               <div key={x.v} className="card p-5">
