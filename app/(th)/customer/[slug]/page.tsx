@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { site, areas, pricing, reviews, p } from "@/lib/site";
 import { segments } from "@/lib/segments";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: s.title,
     description: s.description,
     alternates: { canonical: `/customer/${s.slug}` },
-    openGraph: { title: s.title, description: s.description, url: `${site.url}/customer/${s.slug}`, type: "article" },
+    ...share({ title: s.title, description: s.description, path: `/customer/${s.slug}` }),
   };
 }
 
@@ -114,7 +115,7 @@ export default async function SegmentPage({ params }: Props) {
               </tbody>
             </table>
           </div>
-          <Link href="/price" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900">
+          <Link href="/price" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900" data-cta="customer-price">
             ดูตารางราคาทั้งหมด
             <IconChevron className="h-4 w-4" />
           </Link>

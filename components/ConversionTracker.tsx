@@ -7,6 +7,15 @@ function channelOf(href: string) {
   if (href.startsWith("tel:")) return "phone";
   if (href.includes(site.lineId2)) return "line_washing_machine";
   if (href.includes(site.lineId)) return "line_air";
+  // ลิงก์ไปหน้าราคา นับแยกเป็นความสนใจ ยังไม่ใช่การติดต่อ (ดู CONTACT_CHANNELS ใน lib/leads.ts)
+  // เทียบจาก pathname เพราะ a.href ที่อ่านจาก DOM เป็น URL เต็มเสมอ
+  // และเพื่อไม่ให้ลิงก์ภายนอกที่บังเอิญมีคำว่า price ในเส้นทางหลุดเข้ามา
+  try {
+    const { origin, pathname } = new URL(href);
+    if (origin === window.location.origin && /^\/price(\/|$)/.test(pathname)) return "price_view";
+  } catch {
+    // href ที่แปลงเป็น URL ไม่ได้ ไม่ต้องนับ ปล่อยให้ตกไป other
+  }
   return "other";
 }
 

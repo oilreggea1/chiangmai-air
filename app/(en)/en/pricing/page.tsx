@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, pricing } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "Aircon Cleaning Prices in Chiang Mai | Pro Fresh Care";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/en/pricing",
     languages: { "th-TH": "/price", "en-US": "/en/pricing", "zh-CN": "/zh/pricing", "x-default": "/price" },
   },
-  openGraph: { title, description, url: `${site.url}/en/pricing`, type: "article", locale: "en_US" },
+  ...share({ title, description, path: `/en/pricing`, locale: "en_US" }),
 };
 
 const trail = [

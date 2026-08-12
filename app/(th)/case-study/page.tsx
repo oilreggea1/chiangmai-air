@@ -4,11 +4,17 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Blocks";
 import { IconChevron } from "@/components/Icons";
 import { workCases } from "@/lib/work-cases";
+import { share } from "@/lib/seo";
+
+const title = "เคสจริงช่างแอร์เชียงใหม่ อาการและวิธีแก้";
+const description =
+  "รวมผลงานจริงของช่างอาร์ม พร้อมสภาพก่อนทำ จุดที่ตรวจพบ ขั้นตอนการทำงาน และภาพผลลัพธ์หลังให้บริการ";
 
 export const metadata: Metadata = {
-  title: "เคสจริงช่างแอร์เชียงใหม่ อาการและวิธีแก้",
-  description: "รวมผลงานจริงของช่างอาร์ม พร้อมสภาพก่อนทำ จุดที่ตรวจพบ ขั้นตอนการทำงาน และภาพผลลัพธ์หลังให้บริการ",
+  title,
+  description,
   alternates: { canonical: "/case-study" },
+  ...share({ title, description, path: "/case-study", image: workCases[0].images[0] }),
 };
 
 const trail = [{ name: "หน้าแรก", path: "/" }, { name: "Case Study", path: "/case-study" }];

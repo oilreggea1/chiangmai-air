@@ -6,6 +6,7 @@ import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu }
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
 
@@ -36,12 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: s.title,
     description: s.description,
     alternates: { canonical: `/service/${s.slug}` },
-    openGraph: {
-      title: s.title,
-      description: s.description,
-      url: `${site.url}/service/${s.slug}`,
-      type: "article",
-    },
+    ...share({ title: s.title, description: s.description, path: `/service/${s.slug}` }),
   };
 }
 
@@ -175,7 +171,7 @@ export default async function ServicePage({ params }: Props) {
               </span>
               <span className="text-base text-ink-soft">บาท เริ่มต้น</span>
             </p>
-            <Link href="/price" className="btn-ghost mt-6 w-full">
+            <Link href="/price" className="btn-ghost mt-6 w-full" data-cta="service-price">
               ดูตารางราคาละเอียดทุกรายการ
               <IconChevron className="h-4 w-4" />
             </Link>

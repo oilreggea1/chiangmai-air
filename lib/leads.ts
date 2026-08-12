@@ -11,15 +11,25 @@ import { neon } from "@neondatabase/serverless";
  * ไม่มีอะไรที่ระบุตัวบุคคลได้ เพราะไม่จำเป็นต่อการนับว่ามีคนกดกี่ครั้ง
  */
 
-export type LeadChannel = "phone" | "line_air" | "line_washing_machine";
+export type LeadChannel = "phone" | "line_air" | "line_washing_machine" | "price_view";
 
 /** ช่องทางที่ยอมรับ กันไม่ให้ยิงค่ามั่วเข้ามาทำให้ตัวเลขเพี้ยน */
-export const CHANNELS: LeadChannel[] = ["phone", "line_air", "line_washing_machine"];
+export const CHANNELS: LeadChannel[] = ["phone", "line_air", "line_washing_machine", "price_view"];
+
+/**
+ * ช่องทางที่นับว่าเป็นการติดต่อจริง
+ *
+ * price_view ไม่อยู่ในชุดนี้ เพราะการกดดูราคาคือความสนใจ ยังไม่ใช่การติดต่อ
+ * ถ้านับรวมเข้าไปในยอด "กดติดต่อทั้งหมด" ตัวเลขที่เจ้าของใช้ตัดสินใจจะพองขึ้นทันที
+ * ทั้งที่จำนวนสายจริงเท่าเดิม ซึ่งทำให้ตัดสินใจผิดได้มากกว่าการไม่มีตัวเลขนั้นเลย
+ */
+export const CONTACT_CHANNELS: LeadChannel[] = ["phone", "line_air", "line_washing_machine"];
 
 export const channelLabel: Record<LeadChannel, string> = {
   phone: "กดโทร",
   line_air: "กด LINE งานแอร์",
   line_washing_machine: "กด LINE ล้างเครื่องซักผ้า",
+  price_view: "กดดูราคา",
 };
 
 function db() {

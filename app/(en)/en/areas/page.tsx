@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, areas, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 const title = "Areas I Cover in Chiang Mai | Pro Fresh Care";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/en/areas",
     languages: { "th-TH": "/area", "en-US": "/en/areas", "x-default": "/area" },
   },
-  openGraph: { title, description, url: `${site.url}/en/areas`, type: "article", locale: "en_US" },
+  ...share({ title, description, path: `/en/areas`, locale: "en_US" }),
 };
 
 const trail = [

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, portfolio, portfolioTotal, caseStudies, reviews } from "@/lib/site";
+import { site, portfolio, portfolioTotal, caseStudies, reviews, thumbOf } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs, ReviewCard, CaseStudies } from "@/components/Blocks";
 
@@ -14,13 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/portfolio" },
-  openGraph: {
-    title,
-    description,
-    url: `${site.url}/portfolio`,
-    type: "article",
-    images: [{ url: `${site.url}${portfolio[0].photos[0].src}` }],
-  },
+  ...share({ title, description, path: "/portfolio", image: portfolio[0].photos[0] }),
 };
 
 /** จำนวนภาพตัวอย่างต่อหมวดบนหน้ารวม */
@@ -97,10 +92,11 @@ export default function Portfolio() {
               {c.photos.slice(0, PREVIEW).map((g, i) => (
                 <li key={g.src} className="overflow-hidden rounded-xl bg-slate-100 ring-1 ring-slate-200">
                   <Image
-                    src={g.src}
+                    // ภาพย่อ 480×480 ที่สร้างไว้ล่วงหน้า ดูเหตุผลใน thumbOf ที่ lib/site.ts
+                    src={thumbOf(g.src)}
                     alt={g.alt}
-                    width={800}
-                    height={800}
+                    width={480}
+                    height={480}
                     priority={ci === 0 && i < 4}
                     loading={ci === 0 && i < 4 ? undefined : "lazy"}
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

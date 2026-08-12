@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/check-prices.mjs && next build",
+    "build": "node scripts/check-prices.mjs && node scripts/check-thumbs.mjs && next build",
     "start": "next start",
     "lint": "eslint",
-    "check:prices": "node scripts/check-prices.mjs"
+    "check:prices": "node scripts/check-prices.mjs",
+    "check:thumbs": "node scripts/check-thumbs.mjs",
+    "make:thumbs": "python3 scripts/make-thumbs.py"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

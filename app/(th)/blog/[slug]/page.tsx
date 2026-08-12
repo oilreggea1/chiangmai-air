@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { site, services } from "@/lib/site";
 import { articles, getArticle, relatedArticles } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import ArticleBody, { TableOfContents } from "@/components/ArticleBody";
 import { IconClock, IconChevron, IconEngineer } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
@@ -26,14 +27,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: a.description,
     keywords: a.keywords,
     alternates: { canonical: `/blog/${a.slug}` },
-    openGraph: {
+    ...share({
       title: a.title,
       description: a.description,
-      url: `${site.url}/blog/${a.slug}`,
-      type: "article",
+      path: `/blog/${a.slug}`,
       publishedTime: a.updated,
       modifiedTime: a.updated,
-    },
+      // บทความที่มีภาพนำของตัวเองให้ใช้ภาพนั้น ที่เหลือใช้การ์ดกลาง
+      image: a.image,
+    }),
   };
 }
 

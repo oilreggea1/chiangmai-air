@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
 import { breadcrumbSchema, jsonLd, videoSchema } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { reels, ReelsShowcase } from "@/components/ReelsShowcase";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/videos" },
-  openGraph: { title, description, url: `${site.url}/videos`, type: "website" },
+  ...share({ title, description, path: `/videos`, type: "website" }),
 };
 
 const trail = [

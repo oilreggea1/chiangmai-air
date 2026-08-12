@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, p } from "@/lib/site";
+import { p } from "@/lib/site";
 import { brands, brandCommon } from "@/lib/brands";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/brand" },
-  openGraph: { title, description, url: `${site.url}/brand`, type: "website" },
+  ...share({ title, description, path: `/brand`, type: "website" }),
 };
 
 export default function BrandIndex() {

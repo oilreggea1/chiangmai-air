@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site, areas, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconShield,
 } from "@/components/Icons";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     canonical: "/en",
     languages: { "th-TH": "/", "en-US": "/en", "zh-CN": "/zh", "x-default": "/" },
   },
-  openGraph: { title, description, url: `${site.url}/en`, type: "website", locale: "en_US" },
+  ...share({ title, description, path: `/en`, type: "website", locale: "en_US" }),
 };
 
 const trail = [

@@ -19,7 +19,7 @@ export const article: Article = {
     "ย้ายแอร์คอนโด เชียงใหม่",
   ],
   relatedService: "yai-air",
-  related: ["nam-ya-r32-r410a-r22", "som-rue-sue-mai", "rakha-som-air"],
+  related: ["kha-tid-tang-air-ruam-arai", "som-rue-sue-mai", "rakha-som-air"],
   blocks: [
     {
       type: "p",

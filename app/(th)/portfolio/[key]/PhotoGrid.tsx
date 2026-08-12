@@ -1,10 +1,14 @@
 import Image from "next/image";
-import type { PortfolioCategory } from "@/lib/site";
+import { thumbOf, type PortfolioCategory } from "@/lib/site";
 
 /**
  * ตารางภาพผลงานพร้อมคำบรรยายใต้ภาพ
  * คำบรรยายที่มองเห็นได้ช่วยทั้งคนอ่านและ Google Images เพราะ Google
  * ใช้ข้อความรอบ ๆ ภาพประกอบการเข้าใจว่าภาพนั้นคืออะไร ไม่ได้ดูแค่ alt
+ *
+ * ใช้ภาพย่อ 480×480 ที่สร้างไว้ล่วงหน้า ไม่ใช่ไฟล์เต็มความละเอียด
+ * กริดนี้ไม่มีการกดขยายภาพ ไฟล์เต็มจึงไม่เคยถูกใช้บนหน้านี้เลย
+ * ส่วนไฟล์เต็มยังประกาศไว้ใน contentUrl ของ ImageObject และไซต์แมปภาพตามเดิม
  */
 export function PhotoGrid({ photos }: { photos: PortfolioCategory["photos"] }) {
   return (
@@ -13,10 +17,11 @@ export function PhotoGrid({ photos }: { photos: PortfolioCategory["photos"] }) {
         <li key={g.src} className="overflow-hidden rounded-xl bg-white ring-1 ring-slate-200">
           <figure>
             <Image
-              src={g.src}
+              src={thumbOf(g.src)}
               alt={g.alt}
-              width={800}
-              height={800}
+              // ประกาศเท่าขนาดไฟล์ภาพย่อจริง เพื่อให้สัดส่วนที่จองพื้นที่ไว้ตรงกับภาพ กัน CLS
+              width={480}
+              height={480}
               priority={i < 4}
               loading={i < 4 ? undefined : "lazy"}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, areas, services, pricing, reviews, workingPhotos, p } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, serviceIcons } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: `/area/${a.slug}` },
-    openGraph: { title, description, url: `${site.url}/area/${a.slug}`, type: "article" },
+    ...share({ title, description, path: `/area/${a.slug}` }),
   };
 }
 
@@ -238,7 +239,7 @@ export default async function AreaPage({ params }: Props) {
             ))}
           </div>
           <div className="mt-6 text-center">
-            <Link href="/price" className="btn-ghost">
+            <Link href="/price" className="btn-ghost" data-cta="area-price">
               ดูเงื่อนไขและรายละเอียดราคาทั้งหมด
               <IconChevron className="h-4 w-4" />
             </Link>

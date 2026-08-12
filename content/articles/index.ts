@@ -25,6 +25,7 @@ import { article as namYa } from "./nam-ya-r32-r410a-r22";
 import { article as pm25 } from "./pm25-lang-air-chiangmai";
 import { article as rakhaLangAir } from "./rakha-lang-air-chiangmai-2569";
 import { article as rakhaSomAir } from "./rakha-som-air";
+import { article as khaTidTangAir } from "./kha-tid-tang-air-ruam-arai";
 import { article as somRueSueMai } from "./som-rue-sue-mai";
 
 /** เรียงตามความสำคัญเชิงกลยุทธ์ ตัวที่เป็นจุดต่างจากคู่แข่งขึ้นก่อน */
@@ -34,6 +35,8 @@ export const articles: Article[] = [
   chekChang,
   rakhaLangAir,
   rakhaSomAir,
+  // วางไว้ต่อจากบทความราคาอีกสองเรื่อง เพราะกลุ่มคำติดตั้งยังอันดับต่ำกว่ากลุ่มล้างอยู่มาก
+  khaTidTangAir,
   namYa,
   langAirVsPremium,
   langAirBoi,

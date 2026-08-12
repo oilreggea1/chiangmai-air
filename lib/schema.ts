@@ -1,4 +1,4 @@
-import { site, services, areas } from "./site";
+import { site, services, areas, heroPhotos } from "./site";
 
 const ID = `${site.url}/#business`;
 export const PERSON_ID = `${site.url}/about#chang-arm`;
@@ -14,7 +14,9 @@ export function personSchema() {
     jobTitle: "ช่างเครื่องปรับอากาศ",
     description: `ช่างผู้รับผิดชอบงานของ${site.name} มีประสบการณ์งานล้าง ซ่อม ติดตั้ง และย้ายแอร์${site.experience}`,
     url: `${site.url}/about`,
-    image: `${site.url}/work/air-2569-04.jpg`,
+    // ดึงจาก heroPhotos.about ที่เดียว เพราะ Person schema ชี้ url ไปหน้า /about
+    // ถ้าภาพใน schema กับภาพที่คนเห็นบนหน้าเป็นคนละใบ Google ถือว่าข้อมูลไม่ตรงกัน
+    image: `${site.url}${heroPhotos.about.src}`,
     worksFor: { "@id": ID },
     knowsAbout: services.map((service) => service.name),
   };
@@ -102,7 +104,9 @@ export function localBusinessSchema() {
         closes: site.hoursClose,
       },
     ],
-    sameAs: [site.facebook, site.lineUrl, site.lineUrl2],
+    // googleBusinessUrl ยังว่างจนกว่าโปรไฟล์จะยืนยันผ่าน จึงกรองออกก่อน
+    // ถ้าปล่อยสตริงว่างเข้าไป Rich Results Test จะฟ้องว่า URL ไม่ถูกต้องทั้งก้อน
+    sameAs: [site.facebook, site.lineUrl, site.lineUrl2, site.googleBusinessUrl].filter(Boolean),
     employee: { "@id": PERSON_ID },
     areaServed: areas.map((a) => ({
       "@type": "City",

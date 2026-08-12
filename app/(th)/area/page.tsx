@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, areas, services, coverage, coverageTotal } from "@/lib/site";
+import { areas, services, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/area",
     languages: { "th-TH": "/area", "en-US": "/en/areas", "x-default": "/area" },
   },
-  openGraph: { title, description, url: `${site.url}/area`, type: "article" },
+  ...share({ title, description, path: `/area` }),
 };
 
 const trail = [

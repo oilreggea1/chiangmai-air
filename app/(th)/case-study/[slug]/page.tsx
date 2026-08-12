@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { IconCheck, IconChevron } from "@/components/Icons";
 import { breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { getWorkCase, workCases } from "@/lib/work-cases";
 
@@ -15,7 +16,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getWorkCase((await params).slug);
   if (!item) return {};
   const description = `${item.finding} ดูขั้นตอนการทำงาน ภาพหน้างานจริง และผลหลังดำเนินการโดยช่างอาร์ม`;
-  return { title: { absolute: item.title }, description, alternates: { canonical: `/case-study/${item.slug}` }, openGraph: { title: item.title, description, type: "article", url: `${site.url}/case-study/${item.slug}`, images: [item.images[0].src] } };
+  return {
+    title: { absolute: item.title },
+    description,
+    alternates: { canonical: `/case-study/${item.slug}` },
+    ...share({ title: item.title, description, path: `/case-study/${item.slug}`, image: item.images[0] }),
+  };
 }
 
 export default async function WorkCasePage({ params }: Props) {

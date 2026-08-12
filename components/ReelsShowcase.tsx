@@ -1,6 +1,7 @@
 import { site } from "@/lib/site";
 import { IconChevron } from "./Icons";
 import Link from "next/link";
+import { ReelCard } from "./ReelCard";
 
 export const reels = [
   { id: "1288260533386347", title: "ติดตั้งแอร์ฝังฝ้าโดยทีมช่าง" },
@@ -15,7 +16,10 @@ export const reels = [
   { id: "1336389494094369", title: "ล้างคอยล์ร้อนโดยทีมช่าง" },
 ];
 
-/** วิดีโอไม่ดาวน์โหลดจนกดเล่น เพื่อลดการใช้ข้อมูลและรักษา Core Web Vitals */
+/**
+ * วิดีโอและภาพปกไม่ดาวน์โหลดจนกว่าจะจำเป็น
+ * ภาพปกเป็น lazy อยู่ใน ReelCard ซึ่งอธิบายเหตุผลไว้ครบในไฟล์นั้น
+ */
 export function ReelsShowcase({ limit = reels.length }: { limit?: number }) {
   const visibleReels = reels.slice(0, limit);
   return (
@@ -31,20 +35,7 @@ export function ReelsShowcase({ limit = reels.length }: { limit?: number }) {
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visibleReels.map((reel) => (
-            <li id={`video-${reel.id}`} key={reel.id} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
-              <video
-                controls
-                playsInline
-                preload="none"
-                poster={`/videos/reels/${reel.id}.jpg`}
-                className="aspect-[9/16] w-full bg-slate-950 object-cover"
-                aria-label={reel.title}
-              >
-                <source src={`/videos/reels/${reel.id}.mp4`} type="video/mp4" />
-                เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
-              </video>
-              <p className="px-4 py-4 font-semibold leading-7">{reel.title}</p>
-            </li>
+            <ReelCard key={reel.id} id={reel.id} title={reel.title} />
           ))}
         </ul>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { createHash, timingSafeEqual } from "node:crypto";
-import { getSummary, channelLabel, type LeadChannel } from "@/lib/leads";
+import { getSummary, channelLabel, CONTACT_CHANNELS, type LeadChannel } from "@/lib/leads";
 
 /**
  * หน้าดูสถิติการกดปุ่มโทรและปุ่ม LINE — สำหรับเจ้าของร้านเท่านั้น
@@ -153,13 +153,21 @@ export default async function LeadsPage({
   const lineTotal = data.byChannel
     .filter((c) => c.channel.startsWith("line"))
     .reduce((n, c) => n + c.clicks, 0);
-  const perDay = data.days > 0 ? (data.total / data.days).toFixed(1) : "0";
+  const priceViews = data.byChannel.find((c) => c.channel === "price_view")?.clicks ?? 0;
+  // นับเฉพาะช่องทางติดต่อจริง ไม่รวมการกดดูราคา ไม่งั้นยอดจะพองขึ้นโดยที่สายจริงเท่าเดิม
+  const contactTotal = data.byChannel
+    .filter((c) => CONTACT_CHANNELS.includes(c.channel as LeadChannel))
+    .reduce((n, c) => n + c.clicks, 0);
+  const perDay = data.days > 0 ? (contactTotal / data.days).toFixed(1) : "0";
 
   return (
     <section className="section">
       <div className="wrap max-w-4xl">
         <h1 className="h2">สถิติการติดต่อ</h1>
-        <p className="lead mt-3">นับเฉพาะการกดปุ่มโทรและปุ่ม LINE บนเว็บ ไม่ใช่จำนวนสายที่รับจริง</p>
+        <p className="lead mt-3">
+          นับจากการกดปุ่มบนเว็บ ไม่ใช่จำนวนสายที่รับจริง ยอดกดติดต่อนับเฉพาะปุ่มโทรและปุ่ม LINE
+          ส่วนการกดดูราคาแยกไว้ต่างหากเพราะเป็นความสนใจ ยังไม่ใช่การติดต่อ
+        </p>
 
         <div className="mt-6 flex gap-2">
           {[7, 30, 90].map((d) => (
@@ -173,11 +181,12 @@ export default async function LeadsPage({
           ))}
         </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { label: "กดติดต่อทั้งหมด", value: data.total },
+            { label: "กดติดต่อทั้งหมด", value: contactTotal },
             { label: "กดโทร", value: phone },
             { label: "กด LINE", value: lineTotal },
+            { label: "กดดูราคา", value: priceViews },
           ].map((s) => (
             <div key={s.label} className="card p-5">
               <p className="text-sm text-ink-soft">{s.label}</p>

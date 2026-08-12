@@ -4,6 +4,7 @@ import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { IconCheck, IconChevron, IconPhone } from "@/components/Icons";
 import { site, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd, PERSON_ID } from "@/lib/schema";
+import { share } from "@/lib/seo";
 
 const title = "คำตอบจากช่างแอร์เชียงใหม่ ราคาและเงื่อนไข";
 const description =
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/answers" },
-  openGraph: { title, description, url: `${site.url}/answers`, type: "article" },
+  ...share({ title, description, path: `/answers` }),
 };
 
 type Answer = {

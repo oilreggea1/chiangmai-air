@@ -18,7 +18,7 @@ export const article: Article = {
     "ค่าซ่อมแผงวงจรแอร์อินเวอร์เตอร์", "น้ำยา R32",
   ],
   relatedService: "tid-tang-air",
-  related: ["khamnuan-btu", "nam-ya-r32-r410a-r22", "som-rue-sue-mai"],
+  related: ["khamnuan-btu", "kha-tid-tang-air-ruam-arai", "nam-ya-r32-r410a-r22"],
   blocks: [
     {
       type: "p",

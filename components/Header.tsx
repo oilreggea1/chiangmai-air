@@ -2,18 +2,66 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site, services } from "@/lib/site";
 import { IconPhone, IconMenu, IconClose, IconSnow, IconChevron } from "./Icons";
 
-/** เมนูบนสุด — บริการทั้ง 4 ยุบเป็นดรอปดาวน์ ไม่งั้นแถบเมนูล้นจอ 1024px */
-const desktopNav = [
-  { href: "/price", label: "ราคา" },
-  { href: "/pm25", label: "สู้ฝุ่น PM2.5" },
-  { href: "/blog", label: "ความรู้" },
-  { href: "/customer", label: "คอนโด หอพัก โรงแรม" },
-  { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
-  { href: "/duan", label: "เรียกด่วน / นอกเวลา" },
+/**
+ * เมนูบนสุดของจอใหญ่
+ *
+ * ที่มาของโครงนี้ (11 ส.ค. 2569): ของเดิมวางลิงก์ระดับบนไว้ 9 รายการเรียงกันทั้งแถบ
+ * พอรวมกับโลโก้และปุ่มโทรแล้วกว้างเกินแถบ ข้อความจึงถูกตัดขึ้นบรรทัดใหม่กลางคำ
+ * เช่น "ความ / รู้" และ "คอนโด / หอพัก / โรงแรม" รวมถึงเบอร์โทรที่ถูกหักเป็นสองบรรทัด
+ * ซึ่งอ่านยากและทำให้ความสูงของแถบเมนูกระโดดไม่เท่ากันในแต่ละหน้า
+ *
+ * โครงใหม่ยุบเหลือ 6 รายการระดับบน โดยจัดของที่เหลือเข้าดรอปดาวน์ตามหมวด
+ * ทุกลิงก์ที่เคยอยู่บนแถบยังเข้าถึงได้เหมือนเดิม ไม่มีหน้าไหนหลุดจากการเชื่อมโยงภายใน
+ * และทุกป้ายถูกบังคับไม่ให้ตัดคำ ปัญหาเดิมจึงเกิดซ้ำไม่ได้แม้จะเพิ่มรายการในอนาคต
+ */
+type NavItem = { href: string; label: string; hint?: string };
+type NavGroup = { id: string; label: string; match: string[]; items: NavItem[] };
+
+const navGroups: NavGroup[] = [
+  {
+    id: "service",
+    label: "บริการ",
+    match: ["/service", "/brand", "/customer", "/duan"],
+    items: [
+      ...services.map((s) => ({
+        href: `/service/${s.slug}`,
+        label: `${s.name}เชียงใหม่`,
+        hint: s.priceLabel,
+      })),
+      { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
+      { href: "/customer", label: "คอนโด หอพัก โรงแรม" },
+      { href: "/duan", label: "เรียกด่วน / นอกเวลา" },
+    ],
+  },
+  {
+    id: "price",
+    label: "ราคา",
+    match: ["/price", "/answers"],
+    items: [
+      { href: "/price", label: "ตารางราคาทั้งหมด" },
+      { href: "/price/repair", label: "ราคาซ่อมแอร์แยกตามอาการ" },
+      { href: "/answers", label: "คำตอบเรื่องราคาจากช่าง" },
+    ],
+  },
+  {
+    id: "knowledge",
+    label: "ความรู้และผลงาน",
+    match: ["/blog", "/pm25", "/portfolio", "/case-study"],
+    items: [
+      { href: "/blog", label: "คลังความรู้เรื่องแอร์" },
+      { href: "/pm25", label: "ล้างแอร์สู้ฝุ่น PM2.5" },
+      { href: "/portfolio", label: "ภาพผลงานจริง" },
+      { href: "/case-study", label: "Case Study งานจริง" },
+    ],
+  },
+];
+
+/** ลิงก์ระดับบนที่ไม่มีเมนูย่อย */
+const navLinks: NavItem[] = [
   { href: "/area", label: "พื้นที่บริการ" },
   { href: "/about", label: "รู้จักช่างอาร์ม" },
   { href: "/contact", label: "ติดต่อ" },
@@ -43,8 +91,10 @@ const mobileNav = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [svcOpen, setSvcOpen] = useState(false);
+  /** id ของดรอปดาวน์ที่เปิดอยู่ เปิดได้ทีละอันเพื่อไม่ให้เมนูซ้อนทับกัน */
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
 
   // ล็อกสกรอลล์พื้นหลังตอนเมนูมือถือเปิด
   useEffect(() => {
@@ -54,11 +104,32 @@ export default function Header() {
     };
   }, [open]);
 
-  const onService = pathname.startsWith("/service");
+  // การปิดเมนูตอนเปลี่ยนหน้าทำที่ onClick ของลิงก์แต่ละตัว ไม่ทำใน effect ที่ผูกกับ pathname
+  // เพราะการ setState ใน effect ทำให้เกิดการเรนเดอร์ซ้อนรอบโดยไม่จำเป็น
+
+  // กด Escape หรือคลิกนอกแถบเมนูแล้วปิด เป็นสิ่งที่คนคาดหวังจากเมนูแบบนี้
+  useEffect(() => {
+    if (!openGroup) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenGroup(null);
+    };
+    const onPointer = (e: PointerEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) setOpenGroup(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("pointerdown", onPointer);
+    };
+  }, [openGroup]);
+
+  const isActive = (href: string) => pathname === href;
+  const groupActive = (g: NavGroup) => g.match.some((m) => pathname.startsWith(m));
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
-      <div className="wrap flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
+      <div className="wrap flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
         <Link
           href="/"
           onClick={() => setOpen(false)}
@@ -69,90 +140,95 @@ export default function Header() {
             <IconSnow className="h-6 w-6" />
           </span>
           <span className="leading-tight">
-            <span className="block text-[15px] font-extrabold tracking-tight sm:text-base">
+            <span className="block text-[15px] font-extrabold tracking-tight whitespace-nowrap sm:text-base">
               โปรเฟรชแคร์
             </span>
-            <span className="block text-[11px] font-medium text-ink-soft sm:text-xs">
+            <span className="block text-[11px] font-medium whitespace-nowrap text-ink-soft sm:text-xs">
               ช่างแอร์เชียงใหม่ · สันกำแพง
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="เมนูหลัก">
-          {/* ดรอปดาวน์บริการ — เปิดด้วย hover และ focus เพื่อให้ใช้คีย์บอร์ดได้ */}
-          <div
-            className="relative"
-            onMouseEnter={() => setSvcOpen(true)}
-            onMouseLeave={() => setSvcOpen(false)}
-          >
-            <button
-              type="button"
-              onClick={() => setSvcOpen((v) => !v)}
-              aria-expanded={svcOpen}
-              aria-haspopup="true"
-              className={`inline-flex items-center gap-1 rounded-lg px-3 py-2 text-[15px] font-medium transition-colors ${
-                onService ? "bg-brand-50 text-brand-700" : "text-ink-soft hover:bg-slate-50 hover:text-ink"
-              }`}
-            >
-              บริการ
-              <IconChevron className={`h-3.5 w-3.5 transition-transform ${svcOpen ? "rotate-90" : ""}`} />
-            </button>
-
-            {svcOpen && (
-              <div className="absolute top-full left-0 w-64 pt-2">
-                <ul className="card overflow-hidden p-1.5 shadow-lift">
-                  {services.map((s) => (
-                    <li key={s.slug}>
-                      <Link
-                        href={`/service/${s.slug}`}
-                        onClick={() => setSvcOpen(false)}
-                        className={`block rounded-lg px-3 py-2.5 transition-colors ${
-                          pathname === `/service/${s.slug}`
-                            ? "bg-brand-50 text-brand-700"
-                            : "hover:bg-slate-50"
-                        }`}
-                      >
-                        <span className="block text-[15px] font-semibold">{s.name}เชียงใหม่</span>
-                        <span className="mt-0.5 block text-xs text-ink-soft">{s.priceLabel}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
-          {desktopNav.map((n) => {
-            const active = pathname === n.href;
+        <nav ref={navRef} className="hidden items-center gap-0.5 lg:flex" aria-label="เมนูหลัก">
+          {navGroups.map((g) => {
+            const active = groupActive(g);
+            const isOpen = openGroup === g.id;
             return (
-              <Link
-                key={n.href}
-                href={n.href}
-                aria-current={active ? "page" : undefined}
-                className={`rounded-lg px-3 py-2 text-[15px] font-medium transition-colors ${
-                  active ? "bg-brand-50 text-brand-700" : "text-ink-soft hover:bg-slate-50 hover:text-ink"
-                }`}
+              <div
+                key={g.id}
+                className="relative"
+                onMouseEnter={() => setOpenGroup(g.id)}
+                onMouseLeave={() => setOpenGroup((cur) => (cur === g.id ? null : cur))}
               >
-                {n.label}
-              </Link>
+                <button
+                  type="button"
+                  onClick={() => setOpenGroup(isOpen ? null : g.id)}
+                  aria-expanded={isOpen}
+                  aria-haspopup="true"
+                  className={`inline-flex items-center gap-1 rounded-lg px-2.5 py-2 text-[15px] font-medium whitespace-nowrap transition-colors xl:px-3 ${
+                    active ? "bg-brand-50 text-brand-700" : "text-ink-soft hover:bg-slate-50 hover:text-ink"
+                  }`}
+                >
+                  {g.label}
+                  <IconChevron className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-90" : ""}`} />
+                </button>
+
+                {isOpen && (
+                  <div className="absolute top-full left-0 w-72 pt-2">
+                    <ul className="card overflow-hidden p-1.5 shadow-lift">
+                      {g.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            onClick={() => setOpenGroup(null)}
+                            aria-current={isActive(item.href) ? "page" : undefined}
+                            className={`block rounded-lg px-3 py-2.5 transition-colors ${
+                              isActive(item.href) ? "bg-brand-50 text-brand-700" : "hover:bg-slate-50"
+                            }`}
+                          >
+                            <span className="block text-[15px] font-semibold">{item.label}</span>
+                            {item.hint && (
+                              <span className="mt-0.5 block text-xs text-ink-soft">{item.hint}</span>
+                            )}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             );
           })}
+
+          {navLinks.map((n) => (
+            <Link
+              key={n.href}
+              href={n.href}
+              onClick={() => setOpenGroup(null)}
+              aria-current={isActive(n.href) ? "page" : undefined}
+              className={`rounded-lg px-2.5 py-2 text-[15px] font-medium whitespace-nowrap transition-colors xl:px-3 ${
+                isActive(n.href) ? "bg-brand-50 text-brand-700" : "text-ink-soft hover:bg-slate-50 hover:text-ink"
+              }`}
+            >
+              {n.label}
+            </Link>
+          ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={`tel:${site.phoneTel}`}
-            className="btn-call hidden px-4 py-2.5 text-[15px] sm:inline-flex"
+            className="btn-call hidden px-3.5 py-2.5 text-[15px] whitespace-nowrap sm:inline-flex xl:px-4"
             data-cta="header-call"
           >
-            <IconPhone className="h-5 w-5" />
+            <IconPhone className="h-5 w-5 shrink-0" />
             {site.phone}
           </a>
 
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-11 w-11 place-items-center rounded-xl border border-slate-200 text-ink lg:hidden"
+            className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-200 text-ink lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "ปิดเมนู" : "เปิดเมนู"}

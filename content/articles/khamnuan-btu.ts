@@ -18,7 +18,7 @@ export const article: Article = {
     "เลือกขนาดแอร์ เชียงใหม่", "ตาราง BTU แอร์",
   ],
   relatedService: "tid-tang-air",
-  related: ["inverter-vs-thammada", "som-rue-sue-mai", "air-mai-yen-sa-het"],
+  related: ["inverter-vs-thammada", "kha-tid-tang-air-ruam-arai", "air-mai-yen-sa-het"],
   blocks: [
     {
       type: "p",

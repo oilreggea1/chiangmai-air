@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { site, p } from "@/lib/site";
 import { repairGuides } from "@/lib/repair-guides";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { Breadcrumbs, CtaBand, FaqList } from "@/components/Blocks";
 import { IconCheck, IconChevron, IconLine, IconPhone, IconShield } from "@/components/Icons";
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: guide.title },
     description: guide.description,
     alternates: { canonical: `/repair/${guide.slug}` },
-    openGraph: { title: guide.title, description: guide.description, url: `${site.url}/repair/${guide.slug}`, type: "article" },
+    ...share({ title: guide.title, description: guide.description, path: `/repair/${guide.slug}` }),
   };
 }
 
@@ -67,7 +68,7 @@ export default async function RepairGuidePage({ params }: Props) {
             <p className="flex items-center gap-2 font-bold"><IconShield className="h-5 w-5 text-brand-600" />เงื่อนไขค่าตรวจ</p>
             <p className="mt-4 text-4xl font-extrabold text-brand-700">{p.repair.diagnostic} บาท</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">หักคืนเต็มจำนวนเมื่อตัดสินใจซ่อม แจ้งราคาอะไหล่และระยะรับประกันก่อนเริ่มงาน</p>
-            <Link href="/price/repair" className="btn-ghost mt-6 w-full">ดูราคาซ่อมแอร์<IconChevron className="h-4 w-4" /></Link>
+            <Link href="/price/repair" className="btn-ghost mt-6 w-full" data-cta="repair-price">ดูราคาซ่อมแอร์<IconChevron className="h-4 w-4" /></Link>
           </aside>
         </div>
       </section>

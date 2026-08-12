@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, pricing, washCompare, faqs, p } from "@/lib/site";
+import { pricing, washCompare, faqs, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { serviceIcons, IconCheck, IconX, IconChevron, IconShield } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/price",
     languages: { "th-TH": "/price", "en-US": "/en/pricing", "zh-CN": "/zh/pricing", "x-default": "/price" },
   },
-  openGraph: { title, description, url: `${site.url}/price`, type: "article" },
+  ...share({ title, description, path: `/price` }),
 };
 
 const trail = [

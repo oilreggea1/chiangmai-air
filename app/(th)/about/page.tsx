@@ -4,6 +4,7 @@ import Image from "next/image";
 import { site, addressLine, edges, values, areas, reviews, heroPhotos } from "@/lib/site";
 import { BrandStrip } from "@/components/BrandStrip";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import {
   serviceIcons, IconPhone, IconLine, IconChevron, IconCheck, IconPin, IconClock, IconEngineer,
 } from "@/components/Icons";
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/about" },
-  openGraph: { title, description, url: `${site.url}/about`, type: "profile" },
+  ...share({ title, description, path: `/about`, type: "profile" }),
 };
 
 const trail = [

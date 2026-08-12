@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, areas, services, faqs } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconPin, IconClock, IconChevron, IconShield } from "@/components/Icons";
 import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/contact" },
-  openGraph: { title, description, url: `${site.url}/contact`, type: "article" },
+  ...share({ title, description, path: `/contact` }),
 };
 
 const trail = [
@@ -166,14 +167,28 @@ export default function Contact() {
             </dl>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
-            <iframe
-              title="แผนที่ที่ตั้งช่างแอร์เชียงใหม่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง"
-              src={`https://maps.google.com/maps?q=${mapQuery}&z=16&output=embed`}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-[22rem] w-full border-0 lg:h-full lg:min-h-[24rem]"
-            />
+          <div className="flex flex-col gap-3">
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
+              <iframe
+                title="แผนที่ที่ตั้งช่างแอร์เชียงใหม่ 168/14 หมู่ 12 ต.สันกำแพง อ.สันกำแพง"
+                src={`https://maps.google.com/maps?q=${mapQuery}&z=16&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[22rem] w-full border-0 lg:h-full lg:min-h-[24rem]"
+              />
+            </div>
+            {/* ขึ้นเมื่อโปรไฟล์ Google ยืนยันผ่านและกรอก googleBusinessUrl ใน lib/site.ts แล้วเท่านั้น */}
+            {site.googleBusinessUrl && (
+              <a
+                href={site.googleBusinessUrl}
+                target="_blank"
+                rel="noopener"
+                className="btn-ghost self-start"
+              >
+                ดูโปรไฟล์และเส้นทางใน Google Maps
+                <IconChevron className="h-4 w-4" />
+              </a>
+            )}
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, pricing } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "清迈空调清洗价格表 | Pro Fresh Care";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/zh/pricing",
     languages: { "th-TH": "/price", "en-US": "/en/pricing", "zh-CN": "/zh/pricing", "x-default": "/price" },
   },
-  openGraph: { title, description, url: `${site.url}/zh/pricing`, type: "article", locale: "zh_CN" },
+  ...share({ title, description, path: `/zh/pricing`, locale: "zh_CN" }),
 };
 
 const trail = [

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { site, portfolio } from "@/lib/site";
+import { site, portfolio, thumbOf } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 import { PhotoGrid } from "./PhotoGrid";
@@ -33,13 +34,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/portfolio/${c.key}` },
-    openGraph: {
-      title,
-      description,
-      url: `${site.url}/portfolio/${c.key}`,
-      type: "article",
-      images: [{ url: `${site.url}${c.photos[0].src}` }],
-    },
+    ...share({ title, description, path: `/portfolio/${c.key}`, image: c.photos[0] }),
   };
 }
 
@@ -72,9 +67,12 @@ export default async function PortfolioCategoryPage({
           "@type": "ImageGallery",
           name: `${c.label} เชียงใหม่ ภาพผลงานจริง`,
           url: `${site.url}/portfolio/${c.key}`,
+          // contentUrl ชี้ไฟล์เต็มความละเอียดเสมอ ส่วน thumbnailUrl คือไฟล์ที่แสดงบนกริดจริง
+          // ประกาศคู่กันเพื่อให้ Google Images ยังเก็บภาพเต็มไปใช้ได้ ไม่ใช่เก็บแค่ภาพย่อ
           image: photos.map((g) => ({
             "@type": "ImageObject",
             contentUrl: `${site.url}${g.src}`,
+            thumbnailUrl: `${site.url}${thumbOf(g.src)}`,
             caption: g.alt,
           })),
         })}

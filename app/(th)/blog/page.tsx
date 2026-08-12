@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { articles, categories, articlesByCategory } from "@/content/articles";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconChevron, IconClock } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/blog" },
-  openGraph: { title, description, url: `${site.url}/blog`, type: "website" },
+  ...share({ title, description, path: `/blog`, type: "website" }),
 };
 
 const trail = [

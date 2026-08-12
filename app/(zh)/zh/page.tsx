@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site, heroPhotos, coverage, coverageTotal, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron,
 } from "@/components/Icons";
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     canonical: "/zh",
     languages: { "th-TH": "/", "en-US": "/en", "zh-CN": "/zh", "x-default": "/" },
   },
-  openGraph: { title, description, url: `${site.url}/zh`, type: "website", locale: "zh_CN" },
+  ...share({ title, description, path: `/zh`, type: "website", locale: "zh_CN" }),
 };
 
 const trail = [

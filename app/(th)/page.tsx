@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, p } from "@/lib/site";
+import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
@@ -170,7 +170,7 @@ export default function Home() {
             })}
           </div>
           <div className="mt-8">
-            <Link href="/price" className="btn-ghost">
+            <Link href="/price" className="btn-ghost" data-cta="home-price-all">
               ดูบริการและราคาทั้งหมด
               <IconChevron className="h-4 w-4" />
             </Link>
@@ -214,10 +214,12 @@ export default function Home() {
             {gallery.slice(0, 6).map((g) => (
               <li key={g.src} className="overflow-hidden rounded-xl bg-brand-800 ring-1 ring-white/15">
                 <Image
-                  src={g.src}
+                  // กริดสี่เหลี่ยมแบบเดียวกับหน้าผลงาน จึงใช้ภาพย่อชุดเดียวกัน
+                  // ดูเหตุผลใน thumbOf ที่ lib/site.ts
+                  src={thumbOf(g.src)}
                   alt={g.alt}
-                  width={600}
-                  height={600}
+                  width={480}
+                  height={480}
                   loading="lazy"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
@@ -258,7 +260,7 @@ export default function Home() {
             })}
           </div>
           <div className="mt-8">
-            <Link href="/price/repair" className="btn-ghost">
+            <Link href="/price/repair" className="btn-ghost" data-cta="home-price-repair">
               ดูตารางราคาซ่อมแอร์แบบเปิดเผย
               <IconChevron className="h-4 w-4" />
             </Link>
@@ -331,7 +333,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link href="/price" className="btn-ghost">
+            <Link href="/price" className="btn-ghost" data-cta="home-price-table">
               ดูตารางราคาทั้งหมด
               <IconChevron className="h-4 w-4" />
             </Link>

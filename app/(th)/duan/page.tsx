@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, p } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/duan" },
-  openGraph: { title, description, url: `${site.url}/duan`, type: "article" },
+  ...share({ title, description, path: `/duan` }),
 };
 
 const faqs = [
@@ -163,7 +164,7 @@ export default function DuanPage() {
               อ่านเรื่องแอร์ไม่เย็น 10 สาเหตุ
               <IconChevron className="h-4 w-4" />
             </Link>
-            <Link href="/price/repair" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900">
+            <Link href="/price/repair" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900" data-cta="duan-price-repair">
               ดูราคาซ่อมแยกตามอาการ
               <IconChevron className="h-4 w-4" />
             </Link>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { site, pricing, p } from "@/lib/site";
 import { brands, brandCommon, brandFaqs } from "@/lib/brands";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: `/brand/${b.slug}` },
-    openGraph: { title, description, url: `${site.url}/brand/${b.slug}`, type: "article" },
+    ...share({ title, description, path: `/brand/${b.slug}` }),
   };
 }
 
@@ -165,7 +166,7 @@ export default async function BrandPage({ params }: Props) {
               </tbody>
             </table>
           </div>
-          <Link href="/price" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900">
+          <Link href="/price" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900" data-cta="brand-price">
             ดูตารางราคาทั้งหมด
             <IconChevron className="h-4 w-4" />
           </Link>

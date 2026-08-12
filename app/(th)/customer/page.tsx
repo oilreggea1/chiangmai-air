@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, areas, p } from "@/lib/site";
+import { areas, p } from "@/lib/site";
 import { segments } from "@/lib/segments";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/customer" },
-  openGraph: { title, description, url: `${site.url}/customer`, type: "website" },
+  ...share({ title, description, path: `/customer`, type: "website" }),
 };
 
 export default function CustomerIndex() {

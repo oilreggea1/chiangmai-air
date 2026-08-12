@@ -4,6 +4,7 @@ import Image from "next/image";
 import { site, heroPhotos, areas, p } from "@/lib/site";
 import { getArticle } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import {
   IconPhone, IconLine, IconChevron, IconCheck, IconSnow, IconShield, IconClock, IconPin,
 } from "@/components/Icons";
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "แอร์กรองฝุ่น PM2.5", "ล้างแอร์ก่อนหน้าเผา เชียงใหม่",
   ],
   alternates: { canonical: "/pm25" },
-  openGraph: { title, description, url: `${site.url}/pm25`, type: "article" },
+  ...share({ title, description, path: `/pm25` }),
 };
 
 const trail = [

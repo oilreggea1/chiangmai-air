@@ -4,6 +4,7 @@ import { site, p } from "@/lib/site";
 import { repairPricing, symptoms } from "@/lib/repair";
 import { getArticle } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconChevron, IconCheck, IconShield, IconWrench } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     "เติมน้ำยาแอร์ R32 ราคา", "ค่าตรวจเช็คแอร์",
   ],
   alternates: { canonical: "/price/repair" },
-  openGraph: { title, description, url: `${site.url}/price/repair`, type: "article" },
+  ...share({ title, description, path: `/price/repair` }),
 };
 
 const trail = [

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
+import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/components/Icons";
 
 const title = "Aircon Cleaning for Airbnb & Rentals in Chiang Mai";
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     canonical: "/en/airbnb",
     languages: { "en-US": "/en/airbnb", "x-default": "/en/airbnb" },
   },
-  openGraph: { title, description, url: `${site.url}/en/airbnb`, type: "article", locale: "en_US" },
+  ...share({ title, description, path: `/en/airbnb`, locale: "en_US" }),
 };
 
 const trail = [
