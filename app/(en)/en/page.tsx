@@ -80,7 +80,7 @@ const servicesEn = [
 const faqs = [
   {
     q: "Do you speak English?",
-    a: "Not fluently, so I work in written English over LINE with a translation app. It works well for bookings, quotes and job details, and it keeps a record of what was agreed. Short, plain sentences translate most accurately — if anything I reply looks odd, say so and I will rephrase it. Please message me on LINE rather than calling, because a phone call in English is where I would struggle.",
+    a: "I work in written English on LINE, using a translation app. Bookings, quotes and job details all go through smoothly that way, and you keep a written record of what was agreed. Short, plain sentences come through most accurately — if a reply reads oddly, say so and I will put it another way. LINE works far better than a phone call, so please message rather than ring.",
   },
   {
     q: "How much does aircon cleaning cost in Chiang Mai?",
@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     q: "Can you give me a receipt for my accounts?",
-    a: "I issue receipts in the company name, Cher Solutions Co., Ltd., which work as proof of payment for cafés, restaurants, hotels, guesthouses and offices. To be straight with you: the company is not yet VAT registered, so I cannot issue a full VAT tax invoice. If your business needs one to reclaim input VAT, please tell me before booking.",
+    a: "Yes. Receipts are issued in the company name, Cher Solutions Co., Ltd., and serve as proof of payment for cafés, restaurants, hotels, guesthouses and offices. The company is not VAT registered, so a full VAT tax invoice is not available. If your business needs one to reclaim input VAT, please tell me before booking so you are not caught out.",
   },
   {
     q: "Do you work on condos and rental properties?",
@@ -121,9 +121,9 @@ export default function EnglishPage() {
               Aircon cleaning &amp; AC repair in Chiang Mai
             </h1>
             <p className="lead mt-5">
-              I am Arm, and I do the work myself. My prices are published up front,
-              I tell you the cost before I start, I do not top up refrigerant that is not actually low,
-              and I sheet the room so your floor and furniture stay exactly as they were.
+              I am Arm, and I do the work myself. Every rate is published, you get the full cost
+              before I start, and the floor and furniture are sheeted before anything comes apart.
+              Send me a photo on LINE and you will have a price the same day.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -177,8 +177,8 @@ export default function EnglishPage() {
             ))}
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
-            Refrigerant top-up is {p.repair.refrigerantPerLb} THB per pound for both R32 and R410A, and I check the level free
-            of charge first. If it is not actually low, I will tell you so rather than sell you a refill.
+            Refrigerant is {p.repair.refrigerantPerLb} THB per pound for both R32 and R410A. The level is measured in front of you
+            at no charge first, so you can see whether a top-up is needed before you pay for one.
           </p>
         </div>
       </section>
@@ -216,12 +216,12 @@ export default function EnglishPage() {
           <h2 className="h2">Why people call me back</h2>
           <ul className="mt-7 space-y-4">
             {[
-              "Prices are published on this site. You know roughly what it costs before you call, and I confirm the exact figure before I start.",
-              "I do not top up refrigerant unless it is genuinely low. Overcharging a system shortens compressor life, and it is the easiest way for a dishonest technician to pad a bill.",
-              "I show you the old parts I removed and explain what failed and why. And if a repair is not worth the money, I say so — even though I earn more if you let me do it.",
-              "Two layers of drop sheets on every cleaning job. Your floor and furniture stay as they were.",
+              "Every rate is published, so you know the cost before you call. I confirm the exact figure with you before I start, and it does not change afterwards.",
+              "Refrigerant is measured in front of you. A system that is not low does not get topped up, because overcharging one shortens the life of the compressor.",
+              "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I will tell you that and leave the decision with you.",
+              "Two layers of drop sheets on every cleaning job. Floor and furniture stay as they were.",
               "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
-              "Receipts issued in the company name. Not VAT registered, so no VAT tax invoice yet.",
+              "Receipts issued in the company name, Cher Solutions Co., Ltd. The company is not VAT registered, so a VAT tax invoice is not available.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint/12 text-mint">
@@ -234,6 +234,45 @@ export default function EnglishPage() {
         </div>
       </section>
 
+      <section className="section" lang="en">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">What happens when you book</h2>
+          <p className="lead mt-3">
+            Four steps, no deposit, and nothing is charged until the work is finished and you have seen it.
+          </p>
+          <ol className="mt-8 space-y-4">
+            {[
+              {
+                t: "Send a photo and your area",
+                d: "On LINE, in English. A photo of the indoor unit, roughly how many you have, and the district you are in is enough for me to work from.",
+              },
+              {
+                t: "You get a price and a time",
+                d: "Usually within a few hours during working hours. The figure covers the whole job, travel included, and it is what you pay at the end.",
+              },
+              {
+                t: "I come and lay the sheets first",
+                d: "Two layers over floor and furniture before anything is opened. If I find something the photo did not show, I stop and ask you before carrying on.",
+              },
+              {
+                t: "Pay when it is done",
+                d: "Cash or Thai bank transfer once you have seen the finished work. Receipt in the company name on request.",
+              },
+            ].map((x, i) => (
+              <li key={x.t} className="card flex items-start gap-4 p-5">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-700 text-base font-bold text-white">
+                  {i + 1}
+                </span>
+                <span>
+                  <span className="block font-bold">{x.t}</span>
+                  <span className="mt-1 block text-[15px] leading-8 text-ink-soft">{x.d}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <section className="section bg-sand" lang="en">
         <div className="wrap">
           <h2 className="h2">Areas I cover</h2>
@@ -242,22 +281,36 @@ export default function EnglishPage() {
             I cover every sub-district of Mueang Chiang Mai — the old city, Nimman, Santitham and
             the airport side — plus San Kamphaeng, Saraphi, Doi Saket and San Phra Net.
           </p>
+          {/*
+            การ์ดพื้นที่เคยลิงก์ไป /area/[slug] ซึ่งเป็นหน้าภาษาไทยล้วน (แก้ 19 ส.ค. 2569)
+            คนอ่านภาษาอังกฤษกดจากหน้านี้แล้วตกไปอยู่หน้าไทยโดยไม่มีอะไรเตือน
+            จึงเปลี่ยนเป็นรายการที่กดไม่ได้ แล้วส่งต่อไป /en/areas ซึ่งเป็นภาษาอังกฤษ
+            และมีบล็อกลิงก์หน้าโซนภาษาไทยกำกับไว้ให้เลือกเองอยู่แล้ว
+          */}
+          {/*
+            ชื่อพื้นที่บนหน้านี้ต้องเป็นอักษรละติน ไม่ใช่อักษรไทย
+            ของเดิมดึง a.name ซึ่งเป็นภาษาไทย คนอ่านอังกฤษจึงเห็นเป็นตัวอักษรที่อ่านไม่ออก
+            slug เป็นคำอ่านแบบละตินอยู่แล้ว จึงแปลงเป็นชื่อที่อ่านออกได้โดยไม่ต้องเก็บข้อมูลซ้ำ
+            ถ้าวันไหนอยากได้ชื่อที่สะกดเป๊ะกว่านี้ ให้เพิ่มฟิลด์ nameEn ใน areas แล้วใช้แทน
+          */}
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {areas.map((a) => (
-              <li key={a.slug}>
-                <Link
-                  href={`/area/${a.slug}`}
-                  className="card flex h-full items-start gap-3 p-5 transition-all hover:shadow-lift"
-                >
-                  <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
-                  <span className="text-sm">
-                    <span className="block font-bold">{a.name}</span>
-                    <span className="mt-0.5 block text-xs text-ink-soft">{a.landmarks[0]}</span>
+              <li key={a.slug} className="card flex h-full items-start gap-3 p-5">
+                <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
+                <span className="text-sm">
+                  <span className="block font-bold">
+                    {a.slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ")}
                   </span>
-                </Link>
+                  <span className="mt-0.5 block text-xs text-ink-soft" lang="th">{a.name}</span>
+                </span>
               </li>
             ))}
           </ul>
+          <div className="mt-7">
+            <Link href="/en/areas" className="btn-ghost" data-cta="en-areas">
+              See the full list of districts and sub-districts
+            </Link>
+          </div>
         </div>
       </section>
 

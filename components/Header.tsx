@@ -89,7 +89,43 @@ const mobileNav = [
   { href: "/zh", label: "中文" },
 ];
 
-export default function Header() {
+/**
+ * เมนูของหน้าภาษาอังกฤษและจีน (19 ส.ค. 2569)
+ *
+ * ก่อนหน้านี้ทั้งสามภาษาใช้เมนูไทยชุดเดียวกัน คนอ่านอังกฤษหรือจีนจึงเห็นแถบเมนู
+ * เป็นภาษาไทยล้วน และฟุตเตอร์มีลิงก์ไทยอีก 36 อัน ซึ่งกดไปแล้วก็อ่านไม่ออก
+ *
+ * ชุดนี้จึงมีเฉพาะหน้าที่มีอยู่จริงในภาษานั้น ไม่ใช่การแปลเมนูไทยทั้งชุด
+ * เพราะหน้าไทยส่วนใหญ่ยังไม่มีฉบับแปล การลิงก์ไปจะพาไปเจอหน้าที่อ่านไม่ออก
+ */
+const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; menuLabel: string; closeLabel: string }> = {
+  en: {
+    links: [
+      { href: "/en", label: "Home" },
+      { href: "/en/pricing", label: "Prices" },
+      { href: "/en/areas", label: "Areas" },
+      { href: "/en/airbnb", label: "Airbnb & rentals" },
+      { href: "/zh", label: "中文" },
+      { href: "/", label: "ไทย" },
+    ],
+    callLabel: "Call",
+    menuLabel: "Open menu",
+    closeLabel: "Close menu",
+  },
+  "zh-CN": {
+    links: [
+      { href: "/zh", label: "首页" },
+      { href: "/zh/pricing", label: "价目表" },
+      { href: "/en", label: "English" },
+      { href: "/", label: "ไทย" },
+    ],
+    callLabel: "电话",
+    menuLabel: "打开菜单",
+    closeLabel: "关闭菜单",
+  },
+};
+
+export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }) {
   const [open, setOpen] = useState(false);
   /** id ของดรอปดาวน์ที่เปิดอยู่ เปิดได้ทีละอันเพื่อไม่ให้เมนูซ้อนทับกัน */
   const [openGroup, setOpenGroup] = useState<string | null>(null);
@@ -126,6 +162,88 @@ export default function Header() {
 
   const isActive = (href: string) => pathname === href;
   const groupActive = (g: NavGroup) => g.match.some((m) => pathname.startsWith(m));
+
+  // แถบเมนูของหน้าอังกฤษและจีน ใช้โครงเดียวกันแต่รายการสั้นกว่า
+  // แยกออกมาเป็นก้อนของตัวเองเพื่อไม่ให้ต้องใส่เงื่อนไขแทรกในเมนูไทยทีละจุด
+  // ซึ่งเป็นวิธีที่ทำให้เมนูไทยพังโดยไม่ตั้งใจได้ง่ายที่สุด
+  if (lang !== "th") {
+    const t = intlNav[lang];
+    return (
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+        <div className="wrap flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
+          <Link href={lang === "en" ? "/en" : "/zh"} onClick={() => setOpen(false)} className="flex shrink-0 items-center gap-2.5">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-md shadow-brand-500/30">
+              <IconSnow className="h-6 w-6" />
+            </span>
+            <span className="leading-tight">
+              <span className="block text-[15px] font-extrabold tracking-tight whitespace-nowrap sm:text-base">
+                Pro Fresh Care
+              </span>
+              <span className="block text-[11px] font-medium whitespace-nowrap text-ink-soft sm:text-xs">
+                {lang === "en" ? "Aircon service · Chiang Mai" : "清迈空调服务"}
+              </span>
+            </span>
+          </Link>
+
+          <nav className="hidden items-center gap-0.5 lg:flex" aria-label={lang === "en" ? "Main menu" : "主菜单"}>
+            {t.links.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                aria-current={isActive(n.href) ? "page" : undefined}
+                className={`rounded-lg px-3 py-2 text-[15px] font-medium whitespace-nowrap transition-colors ${
+                  isActive(n.href) ? "bg-brand-50 text-brand-700" : "text-ink-soft hover:bg-slate-50 hover:text-ink"
+                }`}
+              >
+                {n.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex shrink-0 items-center gap-2">
+            <a href={`tel:${site.phoneTel}`} className="btn-call hidden px-3.5 py-2.5 text-[15px] whitespace-nowrap sm:inline-flex xl:px-4" data-cta="intl-header-call">
+              <IconPhone className="h-5 w-5 shrink-0" />
+              {site.phone}
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-200 text-ink lg:hidden"
+              aria-expanded={open}
+              aria-controls="intl-nav"
+              aria-label={open ? t.closeLabel : t.menuLabel}
+            >
+              {open ? <IconClose /> : <IconMenu />}
+            </button>
+          </div>
+        </div>
+
+        {open && (
+          <div id="intl-nav" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden">
+            <nav className="wrap grid gap-1 py-4" aria-label={lang === "en" ? "Mobile menu" : "移动菜单"}>
+              {t.links.map((n) => (
+                <Link
+                  key={n.href}
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive(n.href) ? "page" : undefined}
+                  className={`rounded-xl px-4 py-3 text-base font-medium ${
+                    isActive(n.href) ? "bg-brand-50 text-brand-700" : "text-ink"
+                  }`}
+                >
+                  {n.label}
+                </Link>
+              ))}
+              <a href={`tel:${site.phoneTel}`} className="btn-call mt-2" data-cta="intl-mobile-call">
+                <IconPhone className="h-5 w-5" />
+                {t.callLabel} {site.phone}
+              </a>
+            </nav>
+          </div>
+        )}
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">

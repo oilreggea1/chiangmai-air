@@ -79,12 +79,12 @@ export function Shell({ lang, children }: { lang: "th" | "en" | "zh-CN"; childre
         >
           {SKIP[lang]}
         </a>
-        <Header />
+        <Header lang={lang} />
         <main id="main" className="pb-24 lg:pb-0">
           {children}
         </main>
-        <Footer />
-        <StickyCta />
+        <Footer lang={lang} />
+        <StickyCta lang={lang} />
         <ConversionTracker />
         <Analytics />
       </body>

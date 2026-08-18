@@ -2,8 +2,135 @@ import Link from "next/link";
 import { site, services, areas } from "@/lib/site";
 import { IconPhone, IconLine, IconPin, IconClock, IconSnow } from "./Icons";
 
-export default function Footer() {
+/**
+ * ฟุตเตอร์ของหน้าอังกฤษและจีน (19 ส.ค. 2569)
+ *
+ * ของเดิมทุกภาษาใช้ฟุตเตอร์ไทยชุดเดียว คนอ่านอังกฤษหรือจีนจึงเจอลิงก์ไทย 50 กว่าอัน
+ * รวมชื่อตำบล 36 ตำบลเป็นอักษรไทย ซึ่งอ่านไม่ออกและกดไปก็เจอหน้าไทยอีก
+ *
+ * ชุดนี้เหลือเฉพาะสิ่งที่ใช้ได้จริง: หน้าในภาษานั้น ช่องทางติดต่อ เวลาทำการ
+ * และข้อมูลนิติบุคคลซึ่งลูกค้าองค์กรต้องใช้ตอนตั้งเบิก
+ */
+function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
+  const en = lang === "en";
+  const links = en
+    ? [
+        { href: "/en", label: "Home" },
+        { href: "/en/pricing", label: "Full price list" },
+        { href: "/en/areas", label: "Areas I cover" },
+        { href: "/en/airbnb", label: "Airbnb and rentals" },
+      ]
+    : [
+        { href: "/zh", label: "首页" },
+        { href: "/zh/pricing", label: "完整价目表" },
+      ];
+
+  return (
+    <footer className="mt-4 border-t border-slate-200 bg-sand" lang={lang}>
+      <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white">
+              <IconSnow className="h-6 w-6" />
+            </span>
+            <span className="text-base font-extrabold">Pro Fresh Care</span>
+          </div>
+          <p className="mt-4 text-sm leading-7 text-ink-soft">
+            {en
+              ? "Aircon cleaning, repair, installation and relocation across Chiang Mai, plus washing machine drum cleaning. Arm does the work himself and quotes before starting."
+              : "清迈空调清洗、维修、安装、移机，以及洗衣机内桶清洗。由 Arm 本人上门施工，开工前先报价。"}
+          </p>
+          <a href={site.facebook} target="_blank" rel="noopener" className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline">
+            {en ? "See more work on Facebook →" : "在 Facebook 查看更多实拍 →"}
+          </a>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">{en ? "Pages" : "页面"}</h2>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-ink-soft hover:text-brand-700 hover:underline">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link href={en ? "/zh" : "/en"} className="text-ink-soft hover:text-brand-700 hover:underline" hrefLang={en ? "zh-CN" : "en"}>
+                {en ? "中文" : "English"}
+              </Link>
+            </li>
+            <li>
+              <Link href="/" className="text-ink-soft hover:text-brand-700 hover:underline" hrefLang="th">
+                {en ? "Thai site" : "泰文版"}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">{en ? "Contact" : "联系方式"}</h2>
+          <ul className="mt-4 space-y-4 text-sm">
+            <li>
+              <a href={`tel:${site.phoneTel}`} data-cta="intl-footer-call" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+                <IconPhone className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">{en ? "Phone" : "电话"}</span>
+                  {site.phone}
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href={site.lineUrl} target="_blank" rel="noopener" data-cta="intl-footer-line" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+                <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">{en ? "LINE · aircon" : "LINE · 空调"}</span>
+                  {site.lineId}
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href={site.lineUrl2} target="_blank" rel="noopener" data-cta="intl-footer-washer-line" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
+                <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
+                <span>
+                  <span className="block text-xs font-normal text-ink-soft">{en ? "LINE · washing machines" : "LINE · 洗衣机"}</span>
+                  {site.lineId2}
+                </span>
+              </a>
+            </li>
+            <li className="flex items-start gap-2.5 text-ink-soft">
+              <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+              {en ? "Mon–Sat 08:00–18:00 · closed Sunday" : "周一至周六 08:00–18:00 · 周日休息"}
+            </li>
+            <li className="flex items-start gap-2.5 text-ink-soft">
+              <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+              <span>
+                {en
+                  ? "Based in San Kamphaeng, Chiang Mai 50130"
+                  : "位于清迈 San Kamphaeng 县 50130"}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-slate-200">
+        <div className="wrap flex flex-col gap-2 py-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} {site.legalNameEn}
+            {site.taxId && <> · {en ? "Tax ID" : "税号"} {site.taxId}</>}
+          </p>
+          <p>{en ? "Aircon cleaning · repair · installation · relocation · washing machine cleaning" : "空调清洗 · 维修 · 安装 · 移机 · 洗衣机清洗"}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }) {
   const year = new Date().getFullYear() + 543; // พ.ศ.
+  // ปีคริสต์ศักราชสำหรับหน้าต่างประเทศ ลูกค้าต่างชาติไม่ได้ใช้ พ.ศ.
+  if (lang !== "th") return <IntlFooter lang={lang} year={year - 543} />;
 
   return (
     <footer className="mt-4 border-t border-slate-200 bg-sand">
