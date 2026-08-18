@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, areas, heroPhotos, p, btu } from "@/lib/site";
+import { site, areas, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import {
@@ -101,6 +101,51 @@ const faqs = [
   {
     q: "How quickly can you come?",
     a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 6pm, and can take bookings outside those hours for an additional fee. The one exception is April, when the whole city wants a technician at once — book ahead if you can.",
+  },
+];
+
+/**
+ * แถบรูปผลงานของหน้าอังกฤษ (19 ส.ค. 2569)
+ *
+ * เดิมหน้านี้มีรูปเดียวคือรูปหัว ลูกค้าต่างชาติจึงไม่มีอะไรให้ดูก่อนตัดสินใจเลย
+ * ทั้งที่ฝั่งไทยมีคลังภาพงานจริงอยู่แล้ว
+ *
+ * alt ทุกใบเขียนขึ้นใหม่จากการเปิดดูภาพจริงทีละใบ ไม่ได้แปลจาก alt ภาษาไทย
+ * เพราะเป็นคนละภาษาและต้องบรรยายสิ่งที่เห็นจริงเท่านั้น ห้ามเติมสิ่งที่ไม่มีในภาพ
+ *
+ * ลำดับเรียงเป็นเรื่อง: ปูผ้า -> คลุมกันน้ำ -> สภาพก่อน -> ถอดชิ้นส่วน -> ผลหลังล้าง
+ * ไม่จับคู่เป็นภาพก่อน-หลังของเครื่องเดียวกัน เพราะยังไม่มีคู่ที่ยืนยันได้
+ */
+const workPhotos = [
+  {
+    src: "/work/air-2569-02.jpg",
+    alt: "Technician in the Pro Fresh Care team shirt opening the front cover of a wall-mounted unit, with a striped tarpaulin already spread over the furniture below",
+    cap: "Sheets go down before anything is opened",
+  },
+  {
+    src: "/work/air-2569-04.jpg",
+    alt: "Technician with a tool belt holding a large blue catch sheet up around a high indoor unit before any rinsing starts",
+    cap: "A catch sheet around the unit keeps water off the wall",
+  },
+  {
+    src: "/work/air-2569-05.jpg",
+    alt: "Close-up inside an indoor unit before cleaning, showing black grime built up in long streaks across the surface",
+    cap: "What the inside usually looks like before a clean",
+  },
+  {
+    src: "/work/air-2569-14.jpg",
+    alt: "Two aircon filter screens lifted out and set down on a tiled floor, with grey dust visible across the mesh",
+    cap: "Filters come out first",
+  },
+  {
+    src: "/work/air-2569-22.jpg",
+    alt: "Removed white plastic front panel and air grille laid out on a striped tarpaulin ready to be washed separately",
+    cap: "Every removable part is washed on its own",
+  },
+  {
+    src: "/work/air-2569-16.jpg",
+    alt: "A washed filter screen held up against the light, clear enough to see straight through the mesh",
+    cap: "The same mesh once it is clean",
   },
 ];
 
@@ -228,6 +273,31 @@ export default function EnglishPage() {
                   <IconCheck className="h-4 w-4" />
                 </span>
                 <span className="text-[15px] leading-8 text-ink-soft">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="en">
+        <div className="wrap">
+          <h2 className="h2">What the work looks like</h2>
+          <p className="lead mt-3 max-w-2xl">
+            Photographs from jobs in Chiang Mai, in the order the work happens.
+          </p>
+          <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {workPhotos.map((ph) => (
+              <li key={ph.src} className="card overflow-hidden">
+                <Image
+                  src={thumbOf(ph.src)}
+                  alt={ph.alt}
+                  width={480}
+                  height={480}
+                  loading="lazy"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="aspect-square w-full bg-slate-100 object-cover"
+                />
+                <p className="px-4 py-3 text-sm leading-6 text-ink-soft">{ph.cap}</p>
               </li>
             ))}
           </ul>

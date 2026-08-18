@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, heroPhotos, coverage, coverageTotal, p, btu } from "@/lib/site";
+import { site, heroPhotos, coverage, coverageTotal, thumbOf, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import {
@@ -113,6 +113,43 @@ const faqs = [
   },
 ];
 
+/**
+ * แถบรูปผลงานของหน้าจีน — alt เขียนจากภาพจริงทีละใบเช่นเดียวกับหน้าอังกฤษ
+ * เป็นคนละข้อความกับฝั่งอังกฤษ ไม่ใช่การแปลต่อกันมา
+ */
+const workPhotosZh = [
+  {
+    src: "/work/air-2569-02.jpg",
+    alt: "身穿 Pro Fresh Care 工作服的师傅正在打开壁挂式空调面板，下方家具已经铺好条纹防尘布",
+    cap: "动手之前先铺防尘布",
+  },
+  {
+    src: "/work/air-2569-04.jpg",
+    alt: "师傅腰挂工具带，把蓝色接水布撑开围住位置较高的室内机，然后才开始冲洗",
+    cap: "围上接水布，水不会溅到墙面",
+  },
+  {
+    src: "/work/air-2569-05.jpg",
+    alt: "清洗前的室内机内部特写，表面积着一道道发黑的污垢",
+    cap: "清洗前内部通常是这个样子",
+  },
+  {
+    src: "/work/air-2569-14.jpg",
+    alt: "拆下来的两片空调滤网放在瓷砖地面上，网面上可以看到一层灰色积尘",
+    cap: "先把滤网取下来",
+  },
+  {
+    src: "/work/air-2569-22.jpg",
+    alt: "拆下的白色塑料面板和出风格栅摆在条纹防尘布上，准备逐件单独清洗",
+    cap: "可拆的部件逐件单独清洗",
+  },
+  {
+    src: "/work/air-2569-16.jpg",
+    alt: "洗净后的滤网举起对着光，网眼透亮可以直接看穿",
+    cap: "同一张滤网洗完之后",
+  },
+];
+
 export default function ChinesePage() {
   return (
     <>
@@ -218,6 +255,31 @@ export default function ChinesePage() {
               <li key={t} className="flex items-start gap-3">
                 <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />
                 <span className="text-[15px] leading-8 text-ink-soft">{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="zh-CN">
+        <div className="wrap">
+          <h2 className="h2">实际施工照片</h2>
+          <p className="lead mt-3 max-w-2xl">
+            清迈本地实拍，按施工顺序排列。
+          </p>
+          <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {workPhotosZh.map((ph) => (
+              <li key={ph.src} className="card overflow-hidden">
+                <Image
+                  src={thumbOf(ph.src)}
+                  alt={ph.alt}
+                  width={480}
+                  height={480}
+                  loading="lazy"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="aspect-square w-full bg-slate-100 object-cover"
+                />
+                <p className="px-4 py-3 text-sm leading-6 text-ink-soft">{ph.cap}</p>
               </li>
             ))}
           </ul>
