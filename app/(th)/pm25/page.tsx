@@ -222,7 +222,7 @@ export default function Pm25Page() {
                   <span className="mt-1 block text-sm leading-7 text-ink-soft">{c.why}</span>
                 </span>
                 {c.tone === "best" && (
-                  <span className="shrink-0 self-start rounded-full bg-mint px-3 py-1 text-xs font-bold text-white sm:self-center">
+                  <span className="shrink-0 self-start rounded-full bg-mint-deep px-3 py-1 text-xs font-bold text-white sm:self-center">
                     ช่วงที่ดีที่สุด
                   </span>
                 )}

@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: Props) {
 
           <div className="relative overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             {isWashingMachine && washerPhotoStage[hero.src] && (
-              <span className="absolute z-10 m-4 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-bold text-white shadow">
+              <span className="absolute z-10 m-4 rounded-full bg-emerald-700 px-3 py-1.5 text-xs font-bold text-white shadow">
                 {washerPhotoStage[hero.src]}
               </span>
             )}
@@ -299,7 +299,7 @@ export default async function ServicePage({ params }: Props) {
               {photos.slice(1).map((g) => {
                 const stage = isWashingMachine ? washerPhotoStage[g.src] : undefined;
                 const stageColor = stage === "หลังล้างสะอาด"
-                  ? "bg-emerald-600"
+                  ? "bg-emerald-700"
                   : stage === "ก่อนล้าง"
                     ? "bg-amber-700"
                     : "bg-brand-700";

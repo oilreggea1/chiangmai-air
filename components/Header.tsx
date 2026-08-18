@@ -130,11 +130,21 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
       <div className="wrap flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
+        {/*
+          ไม่ใส่ aria-label ที่ลิงก์นี้ (18 ส.ค. 2569)
+
+          เดิมใส่ `${site.name} หน้าแรก` ซึ่งไม่ครอบข้อความที่มองเห็นจริง
+          ("โปรเฟรชแคร์" + "ช่างแอร์เชียงใหม่ · สันกำแพง") ผิดเกณฑ์ WCAG 2.5.3
+          Label in Name — Lighthouse จับเป็น label-content-name-mismatch
+          ผลจริงคือคนที่สั่งงานด้วยเสียงพูดตามที่เห็นบนจอแล้วสั่งไม่ติด
+
+          ปล่อยให้ชื่อที่เข้าถึงได้มาจากข้อความในลิงก์เองจึงตรงกันเสมอ
+          ถ้าจะใส่กลับ ต้องให้ค่ามีข้อความที่มองเห็นครบทุกคำ ไม่ใช่แค่ชื่อร้าน
+        */}
         <Link
           href="/"
           onClick={() => setOpen(false)}
           className="flex shrink-0 items-center gap-2.5"
-          aria-label={`${site.name} หน้าแรก`}
         >
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-md shadow-brand-500/30">
             <IconSnow className="h-6 w-6" />

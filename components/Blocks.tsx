@@ -221,7 +221,7 @@ export function CaseStudies({
                       />
                       <span
                         className={`absolute top-3 left-3 rounded-full px-3 py-1 text-sm font-bold text-white ${
-                          col.bad ? "bg-accent" : "bg-mint"
+                          col.bad ? "bg-accent" : "bg-mint-deep"
                         }`}
                       >
                         {col.k}
