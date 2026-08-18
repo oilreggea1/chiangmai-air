@@ -169,9 +169,13 @@ export default function Home() {
               );
             })}
           </div>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/price" className="btn-ghost" data-cta="home-price-all">
               ดูบริการและราคาทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/duan" className="btn-ghost" data-cta="home-duan">
+              ต้องการช่างด่วนหรือนอกเวลา
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>

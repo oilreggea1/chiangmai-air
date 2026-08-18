@@ -13,16 +13,16 @@ import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/
 type Props = { params: Promise<{ slug: string }> };
 
 const washerPhotoStage: Record<string, "ก่อนล้าง" | "ระหว่างถอดล้าง" | "หลังล้างสะอาด"> = {
-  "/work/washer-front-deep-clean-01.jpg": "หลังล้างสะอาด",
-  "/work/washer-front-deep-clean-02.jpg": "ระหว่างถอดล้าง",
-  "/work/washer-front-deep-clean-03.jpg": "ก่อนล้าง",
-  "/work/washer-front-deep-clean-04.jpg": "ก่อนล้าง",
-  "/work/washer-front-deep-clean-05.jpg": "ระหว่างถอดล้าง",
-  "/work/washer-top-deep-clean-01.jpg": "หลังล้างสะอาด",
-  "/work/washer-top-deep-clean-02.jpg": "หลังล้างสะอาด",
-  "/work/washer-top-deep-clean-03.jpg": "ก่อนล้าง",
-  "/work/washer-top-deep-clean-04.jpg": "ก่อนล้าง",
-  "/work/washer-top-deep-clean-05.jpg": "หลังล้างสะอาด",
+  "/work/washer-front-deep-clean-01.webp": "หลังล้างสะอาด",
+  "/work/washer-front-deep-clean-02.webp": "ระหว่างถอดล้าง",
+  "/work/washer-front-deep-clean-03.webp": "ก่อนล้าง",
+  "/work/washer-front-deep-clean-04.webp": "ก่อนล้าง",
+  "/work/washer-front-deep-clean-05.webp": "ระหว่างถอดล้าง",
+  "/work/washer-top-deep-clean-01.webp": "หลังล้างสะอาด",
+  "/work/washer-top-deep-clean-02.webp": "หลังล้างสะอาด",
+  "/work/washer-top-deep-clean-03.webp": "ก่อนล้าง",
+  "/work/washer-top-deep-clean-04.webp": "ก่อนล้าง",
+  "/work/washer-top-deep-clean-05.webp": "หลังล้างสะอาด",
 };
 
 export function generateStaticParams() {
@@ -212,6 +212,10 @@ export default async function ServicePage({ params }: Props) {
             <h2 className="h2">คู่มือซ่อมแอร์อินเวอร์เตอร์และ Error Code แยกยี่ห้อ</h2>
             <p className="lead mt-3 max-w-3xl">
               เลือกประเภทเครื่องหรือยี่ห้อเพื่อดูข้อมูลที่ควรเตรียมก่อนเรียกช่าง การส่งรหัสพร้อมรุ่นเต็มช่วยลดเวลาตรวจและลดการเดาเปลี่ยนอะไหล่
+              ถ้าแอร์เสียแบบรอไม่ได้ ดูเงื่อนไขการเข้าหน้างานเร่งด่วนและนอกเวลาทำการได้ที่
+              <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
+                หน้าเรียกช่างด่วน
+              </Link>
             </p>
             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {repairGuides.map((guide) => (

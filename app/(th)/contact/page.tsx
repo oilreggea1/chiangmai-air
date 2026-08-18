@@ -121,6 +121,11 @@ export default function Contact() {
                     {site.daysLabel} {site.hours}
                     <br />
                     ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด
+                    <br />
+                    ถ้าเป็นเรื่องเร่งด่วนหรือต้องการนัดนอกเวลาทำการ ดูเงื่อนไขได้ที่
+                    <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
+                      หน้าเรียกช่างด่วน
+                    </Link>
                   </dd>
                 </div>
               </div>

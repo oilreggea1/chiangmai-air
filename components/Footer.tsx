@@ -50,6 +50,22 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              {/*
+                ลิงก์นี้ต้องอยู่ในฟุตเตอร์ ห้ามย้ายไปไว้ในเมนูอย่างเดียว (18 ส.ค. 2569)
+
+                หน้า /duan เคยถูกวางไว้แค่ในดรอปดาวน์ "บริการ" กับเมนูมือถือของ Header
+                ซึ่งทั้งสองที่เรนเดอร์ต่อเมื่อผู้ใช้กดเปิดเมนูแล้วเท่านั้น ลิงก์จึงไม่เคย
+                ติดไปกับ HTML ที่เซิร์ฟเวอร์ส่งออก ตรวจ HTML จริงทั้ง 137 หน้าแล้วพบคำว่า
+                duan ศูนย์ครั้ง แปลว่า Googlebot ไม่เคยเห็นหน้านี้จากการไล่ลิงก์เลยสักครั้ง
+                ทั้งที่หน้าอยู่ในไซต์แมปและตั้ง index ไว้
+
+                ฟุตเตอร์เป็น Server Component จึงติดไปกับ HTML ทุกหน้าโดยไม่ต้องรอ JS
+              */}
+              <Link href="/duan" className="text-ink-soft hover:text-brand-700 hover:underline">
+                เรียกช่างด่วน นอกเวลา
+              </Link>
+            </li>
+            <li>
               <Link href="/pm25" className="text-ink-soft hover:text-brand-700 hover:underline">
                 ล้างแอร์สู้ฝุ่น PM2.5
               </Link>

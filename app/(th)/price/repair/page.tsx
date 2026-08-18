@@ -307,6 +307,14 @@ export default function RepairPricePage() {
               ส่งคลิปอาการทาง LINE
             </a>
           </div>
+
+          <p className="mt-6 text-sm leading-7 text-ink-soft">
+            ถ้าเป็นอาการที่รอถึงวันทำการไม่ไหว เช่น มีกลิ่นไหม้ มีควัน หรือน้ำหยดลงจุดที่มีไฟ
+            อ่านวิธีรับมือระหว่างรอช่างและเงื่อนไขการเข้าหน้างานนอกเวลาได้ที่
+            <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
+              หน้าเรียกช่างด่วน
+            </Link>
+          </p>
         </div>
       </section>
 
