@@ -236,12 +236,13 @@ export default function AboutPage() {
               { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE งานแอร์ ${site.lineId} · LINE ล้างถังซักผ้า ${site.lineId2}`, Icon: IconPhone },
               { t: "เอกสาร", d: "ออกใบเสร็จรับเงินในนามบริษัทได้ ยังไม่ได้จดภาษีมูลค่าเพิ่ม จึงยังออกใบกำกับภาษีไม่ได้", Icon: IconCheck },
             ].map((x) => (
-              <div key={x.t} className="card flex items-start gap-3 p-5">
-                <x.Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-                <div>
-                  <dt className="font-bold">{x.t}</dt>
-                  <dd className="mt-1 text-sm leading-7 text-ink-soft">{x.d}</dd>
-                </div>
+              // ห้ามห่อ dt/dd ด้วย div ซ้อนอีกชั้น โครงที่ถูกคือ dl > div > dt/dd
+              // ของเดิมเป็น dl > div.card > div > dt ทำให้ axe ฟ้อง definition-list
+              // และ dlitem พร้อมกัน จึงใช้ grid วางไอคอนคร่อมสองแถวแทนการซ้อน div
+              <div key={x.t} className="card grid grid-cols-[auto_1fr] items-start gap-x-3 p-5">
+                <x.Icon className="row-span-2 mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+                <dt className="font-bold">{x.t}</dt>
+                <dd className="mt-1 text-sm leading-7 text-ink-soft">{x.d}</dd>
               </div>
             ))}
           </dl>

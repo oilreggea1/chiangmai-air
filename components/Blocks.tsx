@@ -118,7 +118,7 @@ export function ReviewCard({
 }) {
   return (
     <figure className="card flex h-full flex-col p-6">
-      <div className="flex gap-0.5 text-amber-400" aria-label={`ให้คะแนน ${rating} จาก 5 ดาว`}>
+      <div role="img" className="flex gap-0.5 text-amber-400" aria-label={`ให้คะแนน ${rating} จาก 5 ดาว`}>
         {Array.from({ length: rating }, (_, i) => (
           <IconStar key={i} className="h-5 w-5" />
         ))}

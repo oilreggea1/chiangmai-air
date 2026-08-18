@@ -227,7 +227,7 @@ export default function Pm25Page() {
                   </span>
                 )}
                 {c.tone === "peak" && (
-                  <span className="shrink-0 self-start rounded-full bg-amber-500 px-3 py-1 text-xs font-bold text-white sm:self-center">
+                  <span className="shrink-0 self-start rounded-full bg-amber-700 px-3 py-1 text-xs font-bold text-white sm:self-center">
                     ช่วงวิกฤต
                   </span>
                 )}

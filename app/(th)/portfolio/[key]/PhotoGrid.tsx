@@ -27,7 +27,7 @@ export function PhotoGrid({ photos }: { photos: PortfolioCategory["photos"] }) {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="aspect-square w-full bg-slate-100 object-cover"
             />
-            <figcaption className="px-3 py-2.5 text-xs leading-5 text-ink-soft">
+            <figcaption aria-hidden="true" className="px-3 py-2.5 text-xs leading-5 text-ink-soft">
               {g.alt}
             </figcaption>
           </figure>

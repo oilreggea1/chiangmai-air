@@ -72,7 +72,7 @@ export default function Contact() {
               <IconLine className="h-8 w-8" />
             </span>
             <h2 className="mt-5 text-lg font-bold">LINE จองคิวงานแอร์</h2>
-            <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId}</p>
+            <p className="mt-2 text-3xl font-extrabold text-[#047a35]">{site.lineId}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
               ส่งภาพแอร์หรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในข้อความ
             </p>
@@ -89,7 +89,7 @@ export default function Contact() {
               <IconLine className="h-8 w-8" />
             </span>
             <h2 className="mt-5 text-lg font-bold">LINE จองคิวล้างถังซักผ้า</h2>
-            <p className="mt-2 text-3xl font-extrabold text-[#06C755]">{site.lineId2}</p>
+            <p className="mt-2 text-3xl font-extrabold text-[#047a35]">{site.lineId2}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
               ส่งภาพเครื่องซักผ้า รุ่น และความจุถัง เพื่อประเมินราคาและเวลาที่ใช้ก่อนจองคิว
             </p>
@@ -102,72 +102,64 @@ export default function Contact() {
           <div>
             <h2 className="h2">ข้อมูลการติดต่อ</h2>
             <dl className="mt-6 space-y-5">
-              <div className="flex items-start gap-3">
-                <IconPin className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
-                <div>
-                  <dt className="font-bold">ที่ตั้ง</dt>
-                  <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                    {site.address.street} {site.address.subDistrict}
-                    <br />
-                    {site.address.district} จ.{site.address.province} {site.address.postalCode}
-                  </dd>
-                </div>
+              <div className="grid grid-cols-[auto_1fr] items-start gap-x-3">
+                <IconPin className="row-span-2 mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
+                <dt className="font-bold">ที่ตั้ง</dt>
+                <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
+                  {site.address.street} {site.address.subDistrict}
+                  <br />
+                  {site.address.district} จ.{site.address.province} {site.address.postalCode}
+                </dd>
               </div>
-              <div className="flex items-start gap-3">
-                <IconClock className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
-                <div>
-                  <dt className="font-bold">เวลาทำการ</dt>
-                  <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                    {site.daysLabel} {site.hours}
-                    <br />
-                    ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด
-                    <br />
-                    ถ้าเป็นเรื่องเร่งด่วนหรือต้องการนัดนอกเวลาทำการ ดูเงื่อนไขได้ที่
-                    <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
-                      หน้าเรียกช่างด่วน
-                    </Link>
-                  </dd>
-                </div>
+              <div className="grid grid-cols-[auto_1fr] items-start gap-x-3">
+                <IconClock className="row-span-2 mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
+                <dt className="font-bold">เวลาทำการ</dt>
+                <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
+                  {site.daysLabel} {site.hours}
+                  <br />
+                  ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด
+                  <br />
+                  ถ้าเป็นเรื่องเร่งด่วนหรือต้องการนัดนอกเวลาทำการ ดูเงื่อนไขได้ที่
+                  <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
+                    หน้าเรียกช่างด่วน
+                  </Link>
+                </dd>
               </div>
-              <div className="flex items-start gap-3">
-                <IconPhone className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
-                <div>
-                  <dt className="font-bold">ช่องทางติดต่อ</dt>
-                  <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                    โทร {site.phone}
-                    <br />
-                    โทร {site.phone2}
-                    <br />
-                    LINE งานแอร์ {site.lineId}
-                    <br />
-                    LINE ล้างถังซักผ้า {site.lineId2}
-                    <br />
-                    <a href={site.facebook} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">
-                      Facebook
-                    </a>
-                  </dd>
-                </div>
+              <div className="grid grid-cols-[auto_1fr] items-start gap-x-3">
+                <IconPhone className="row-span-2 mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
+                <dt className="font-bold">ช่องทางติดต่อ</dt>
+                <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
+                  โทร {site.phone}
+                  <br />
+                  โทร {site.phone2}
+                  <br />
+                  LINE งานแอร์ {site.lineId}
+                  <br />
+                  LINE ล้างถังซักผ้า {site.lineId2}
+                  <br />
+                  <a href={site.facebook} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">
+                    Facebook
+                  </a>
+                </dd>
               </div>
-              <div className="flex items-start gap-3">
-                <IconShield className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
-                <div>
-                  <dt className="font-bold">ข้อมูลนิติบุคคล</dt>
-                  <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                    {site.legalName}
-                    <br />
-                    {site.legalNameEn}
-                    {site.taxId && (
-                      <>
-                        <br />
-                        เลขประจำตัวผู้เสียภาษี {site.taxId}
-                      </>
-                    )}
-                    <br />
-                    ออกใบเสร็จรับเงินในนามบริษัทได้
-                    <br />
-                    ยังไม่ได้จดภาษีมูลค่าเพิ่ม จึงยังออกใบกำกับภาษีไม่ได้
-                  </dd>
-                </div>
+              <div className="grid grid-cols-[auto_1fr] items-start gap-x-3">
+                <IconShield className="row-span-2 mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
+                <dt className="font-bold">ข้อมูลนิติบุคคล</dt>
+                <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
+                  {site.legalName}
+                  <br />
+                  {site.legalNameEn}
+                  {site.taxId && (
+                    <>
+                      <br />
+                      เลขประจำตัวผู้เสียภาษี {site.taxId}
+                    </>
+                  )}
+                  <br />
+                  ออกใบเสร็จรับเงินในนามบริษัทได้
+                  <br />
+                  ยังไม่ได้จดภาษีมูลค่าเพิ่ม จึงยังออกใบกำกับภาษีไม่ได้
+                </dd>
               </div>
             </dl>
           </div>

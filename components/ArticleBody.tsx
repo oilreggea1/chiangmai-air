@@ -6,9 +6,15 @@ import { IconPhone, IconLine, IconCheck, IconShield, IconClock, IconSnow } from 
 
 const toneStyle = {
   info: { box: "border-brand-200 bg-brand-50", icon: "text-brand-600", Icon: IconSnow },
-  tip: { box: "border-mint/30 bg-mint/8", icon: "text-mint", Icon: IconCheck },
-  warn: { box: "border-amber-300 bg-amber-50", icon: "text-amber-600", Icon: IconClock },
-  danger: { box: "border-red-300 bg-red-50", icon: "text-red-600", Icon: IconShield },
+  // สีในชุดนี้ถูกใช้กับ <p> หัวกล่องซึ่งเป็น "ข้อความ" ไม่ใช่แค่ไอคอน
+  // เกณฑ์จึงเป็น 4.5:1 ของตัวอักษร ไม่ใช่ 3:1 ของกราฟิก (วัดใหม่ 19 ส.ค. 2569)
+  //   tip    text-mint      บน mint/8    3.40:1 ตก -> mint-deep 4.97:1
+  //   warn   text-amber-600 บน amber-50  3.07:1 ตก -> amber-700 4.84:1
+  //   danger text-red-600   บน red-50    4.36:1 ตก -> red-700   5.87:1
+  // info (brand-600 บน brand-50) ได้ 7.17:1 อยู่แล้ว ไม่ต้องแก้
+  tip: { box: "border-mint/30 bg-mint/8", icon: "text-mint-deep", Icon: IconCheck },
+  warn: { box: "border-amber-300 bg-amber-50", icon: "text-amber-700", Icon: IconClock },
+  danger: { box: "border-red-300 bg-red-50", icon: "text-red-700", Icon: IconShield },
 } as const;
 
 function slugifyHeading(text: string, i: number) {

@@ -34,7 +34,7 @@ export function BrandStrip({
 
   return (
     <div>
-      <h3 className="text-center text-sm font-semibold tracking-wide uppercase opacity-70">{title}</h3>
+      <h3 className="text-center text-sm font-semibold tracking-wide text-ink-soft uppercase">{title}</h3>
 
       {/*
         มือถือไหลเป็น 2 แถวเลื่อนแนวนอน เพราะเรียงเป็นตารางแล้วสูงถึง 730px
@@ -68,9 +68,9 @@ export function BrandStrip({
         ))}
       </ul>
 
-      <p className="mt-3 text-center text-xs opacity-50 sm:hidden">เลื่อนดูยี่ห้อทั้งหมดได้</p>
+      <p className="mt-3 text-center text-xs text-ink-soft sm:hidden">เลื่อนดูยี่ห้อทั้งหมดได้</p>
 
-      <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-6 opacity-60">{note}</p>
+      <p className="mx-auto mt-5 max-w-2xl text-center text-xs leading-6 text-ink-soft">{note}</p>
     </div>
   );
 }

@@ -73,7 +73,7 @@ export default function Portfolio() {
                 className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-ink-soft transition-colors hover:border-brand-300 hover:text-brand-700"
               >
                 {c.label}
-                <span className="ml-1.5 text-xs text-ink-soft/70">{c.photos.length}</span>
+                <span className="ml-1.5 text-xs text-ink-soft">{c.photos.length}</span>
               </Link>
             ))}
           </nav>
