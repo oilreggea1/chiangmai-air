@@ -6,7 +6,7 @@ import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconPin, IconClock, IconChevron, IconShield } from "@/components/Icons";
 import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ติดต่อช่างแอร์เชียงใหม่ สันกำแพง | โปรเฟรชแคร์";
+const title = "ติดต่อช่างแอร์เชียงใหม่ | โปรเฟรชแคร์";
 const description =
   "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 LINE งานแอร์ @iu3333 และ LINE ล้างถังซักผ้า @794xvrnm จันทร์-เสาร์ 08:00-18:00 น.";
 

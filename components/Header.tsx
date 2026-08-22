@@ -252,7 +252,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
           ไม่ใส่ aria-label ที่ลิงก์นี้ (18 ส.ค. 2569)
 
           เดิมใส่ `${site.name} หน้าแรก` ซึ่งไม่ครอบข้อความที่มองเห็นจริง
-          ("โปรเฟรชแคร์" + "ช่างแอร์เชียงใหม่ · สันกำแพง") ผิดเกณฑ์ WCAG 2.5.3
+          ("โปรเฟรชแคร์" + "ช่างแอร์เชียงใหม่ ถึงบ้าน") ผิดเกณฑ์ WCAG 2.5.3
           Label in Name — Lighthouse จับเป็น label-content-name-mismatch
           ผลจริงคือคนที่สั่งงานด้วยเสียงพูดตามที่เห็นบนจอแล้วสั่งไม่ติด
 
@@ -272,7 +272,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               โปรเฟรชแคร์
             </span>
             <span className="block text-[11px] font-medium whitespace-nowrap text-ink-soft sm:text-xs">
-              ช่างแอร์เชียงใหม่ · สันกำแพง
+              ช่างแอร์เชียงใหม่ ถึงบ้าน
             </span>
           </span>
         </Link>

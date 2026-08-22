@@ -317,7 +317,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             © {year} {site.legalName} · {site.displayUrl}
             {site.taxId && <> · เลขประจำตัวผู้เสียภาษี {site.taxId}</>}
           </p>
-          <p>{site.legalNameEn} · ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ ล้างเครื่องซักผ้า · สันกำแพง เชียงใหม่</p>
+          <p>{site.legalNameEn} · ล้างแอร์ ซ่อมแอร์ ติดตั้งแอร์ ย้ายแอร์ ล้างเครื่องซักผ้า · เชียงใหม่</p>
         </div>
       </div>
     </footer>
