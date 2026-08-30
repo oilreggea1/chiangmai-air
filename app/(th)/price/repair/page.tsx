@@ -8,16 +8,17 @@ import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconChevron, IconCheck, IconShield, IconWrench } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ราคาซ่อมแอร์เชียงใหม่ แยกตามอาการที่เสีย";
+const title = `ราคาซ่อมแอร์เชียงใหม่ เติมน้ำยาแอร์ R32 R410A ปอนด์ละ ${p.repair.refrigerantPerLb} ถึงบ้าน`;
 const description =
-  `ราคาซ่อมแอร์เชียงใหม่ โทร 065-365-7673 ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้เมื่อตัดสินใจซ่อม เติมน้ำยา R32 และ R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท พร้อมคู่มืออาการเสียแต่ละแบบ`;
+  `ราคาซ่อมแอร์เชียงใหม่ โทร 065-365-7673 ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้เมื่อตัดสินใจซ่อม เติมน้ำยาแอร์ R32 และ R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท ถึงบ้านทุกตำบลในเขตบริการ 5 อำเภอ วัดแรงดันให้ดูก่อนเติมทุกครั้ง`;
 
 export const metadata: Metadata = {
   title,
   description,
   keywords: [
     "ราคาซ่อมแอร์เชียงใหม่", "ค่าซ่อมแอร์ เท่าไหร่", "ซ่อมแอร์ราคา",
-    "เติมน้ำยาแอร์ R32 ราคา", "ค่าตรวจเช็คแอร์",
+    "เติมน้ำยาแอร์ R32 ราคา", "ค่าตรวจเช็คแอร์", "เติมน้ำยาแอร์ใกล้ฉัน",
+    "ร้านเติมน้ำยาแอร์ใกล้ฉัน", "เติมน้ำยาแอร์ เชียงใหม่",
   ],
   alternates: { canonical: "/price/repair" },
   ...share({ title, description, path: `/price/repair` }),
@@ -101,11 +102,12 @@ export default function RepairPricePage() {
             รู้ค่าใช้จ่ายก่อนตัดสินใจ
           </p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
-            ราคาซ่อมแอร์เชียงใหม่ แยกตามอาการ
+            ราคาซ่อมแอร์และเติมน้ำยาแอร์เชียงใหม่ แยกตามอาการ
           </h1>
           <p className="lead mt-5">
             ค่าซ่อมแอร์แต่ละอาการอยู่ในช่วงเท่าใด ดูได้ก่อนตัดสินใจ
             ค่าตรวจเช็ค {p.repair.diagnostic} บาท และหักคืนให้เมื่อตัดสินใจซ่อม
+            เติมน้ำยาแอร์ถึงบ้านทุกตำบลใน<Link href="/area" className="underline underline-offset-2">เขตบริการ 5 อำเภอ</Link> วัดแรงดันให้ดูก่อนเสมอ
           </p>
         </section>
       </div>
