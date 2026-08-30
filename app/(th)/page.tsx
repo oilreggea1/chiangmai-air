@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p } from "@/lib/site";
+import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
@@ -45,6 +45,13 @@ export const metadata: Metadata = {
     },
   },
 };
+
+
+/** ราคารวมแบบแยกรายการของโปรจับคู่ 9.9: ล้างถัง + ล้างแอร์ 1 เครื่อง (ใช้ราคากลางจาก p ไม่พิมพ์เลขซ้ำ) */
+function bundleNormal(washerPrice: string) {
+  const n = Number(washerPrice.replaceAll(",", "")) + Number(p.wash.std.replaceAll(",", ""));
+  return n.toLocaleString("th-TH");
+}
 
 export default function Home() {
   return (
@@ -149,6 +156,78 @@ export default function Home() {
                 <strong className="block text-ink">แจ้งราคาก่อนเริ่มงาน</strong>
                 <span className="text-ink-soft">หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อน</span>
               </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- แบนเนอร์รับแคมเปญ 9.9 (ตามฤดูกาล — ทบทวน/ถอดออกหลัง 15 ก.ย. 2569
+           หรือปรับเป็น 10.10 / 11.11 ตามรอบแคมเปญถัดไป เปลี่ยนเฉพาะเลขแคมเปญ) ---------- */}
+      <section className="section pt-0" id="campaign-99">
+        <div className="wrap">
+          <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="eyebrow">ช่วงแคมเปญ 9.9 เดือนกันยายนนี้</p>
+                <h2 className="mt-3 text-xl font-extrabold sm:text-2xl">
+                  กดสั่งแอร์จาก Shopee, Lazada หรือ TikTok แล้ว จองคิวติดตั้งล่วงหน้าได้
+                </h2>
+                <p className="mt-3 text-[15px] leading-8 text-ink-soft">
+                  แจ้งรุ่นเครื่องและวันที่ของจะมาถึงเข้ามาก่อน ผมจองคิวให้ตรงช่วงที่ของถึง
+                  ค่าติดตั้ง {btu.installSmall} BTU จุดละ {p.install.small} บาท
+                  รวมขาแขวน ท่อไม่เกิน 4 เมตร และรางครอบ พร้อมแวคคั่มระบบเต็มขั้นตอน
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
+                <a
+                  href={site.lineUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="btn-line"
+                  data-cta="home-99-line"
+                >
+                  <IconLine className="h-5 w-5" />
+                  แจ้งวันของถึงทาง LINE
+                </a>
+                <Link
+                  href="/customer/sue-air-online"
+                  className="btn-ghost"
+                  data-cta="home-99-page"
+                >
+                  ดูรายละเอียดการติดตั้ง
+                  <IconChevron className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* โปรจับคู่ 9.9 — ราคาโปรอยู่ใน p.promo99 ราคาปกติคำนวณจากราคาแยกรายการ ไม่พิมพ์เลขซ้ำ */}
+            <div className="mt-6 rounded-2xl border border-brand-200 bg-white/80 p-5 sm:p-6">
+              <p className="font-bold text-brand-800">
+                โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง ({btu.washStd} BTU)
+              </p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl bg-brand-50 px-4 py-3.5">
+                  <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาบน + ล้างแอร์</p>
+                  <p className="mt-1 text-xl font-extrabold text-brand-800">
+                    {p.promo99.topLoadBundle} บาท
+                    <span className="ml-2 text-sm font-normal text-ink-soft">
+                      จากราคาแยกรายการ {bundleNormal(p.washer.topLoad)} บาท
+                    </span>
+                  </p>
+                </div>
+                <div className="rounded-xl bg-brand-50 px-4 py-3.5">
+                  <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาหน้า + ล้างแอร์</p>
+                  <p className="mt-1 text-xl font-extrabold text-brand-800">
+                    {p.promo99.frontLoadBundle} บาท
+                    <span className="ml-2 text-sm font-normal text-ink-soft">
+                      จากราคาแยกรายการ {bundleNormal(p.washer.frontLoad)} บาท
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <p className="mt-3 text-sm leading-7 text-ink-soft">
+                นัดทำทั้งสองรายการในเที่ยวเดียว จองคิวช่วงแคมเปญ 9.9 ทาง LINE หรือโทร {site.phone}
+              </p>
             </div>
           </div>
         </div>
