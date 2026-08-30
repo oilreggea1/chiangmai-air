@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import PromoWindow from "@/components/PromoWindow";
+import PromoCountdown from "@/components/PromoCountdown";
 import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
@@ -203,6 +204,10 @@ export default function Home() {
               type="application/ld+json"
               dangerouslySetInnerHTML={jsonLd(promo99Offers())}
             />
+
+            <div className="mt-4">
+              <PromoCountdown until="2026-09-10T23:59:59+07:00" />
+            </div>
 
             {/* สองบล็อกแยกโปร — ราคาอยู่ใน p.promo99 รายละเอียดพิมพ์ตามขอบเขตงานบนโปสเตอร์ */}
             <div className="mt-5 grid gap-4 lg:grid-cols-2">
