@@ -49,6 +49,30 @@ export const metadata: Metadata = {
 
 
 
+
+/** Offer schema ของโปร 9.9 — ตัวเลขแปลงจาก p.promo99 เท่านั้น หมดอายุตาม validThrough */
+function promo99Offers() {
+  const baht = (v: string) => Number(v.replaceAll(",", ""));
+  const offer = (name: string, promo: string) => ({
+    "@type": "Offer",
+    name,
+    price: baht(promo),
+    priceCurrency: "THB",
+    validFrom: "2026-09-06",
+    validThrough: "2026-09-10",
+    availability: "https://schema.org/InStock",
+    areaServed: "เชียงใหม่",
+    seller: { "@id": `${site.url}/#business` },
+  });
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      offer("โปร 9.9 ล้างถังเครื่องซักผ้าฝาบน + ล้างแอร์ 1 เครื่อง", p.promo99.topLoadBundle),
+      offer("โปร 9.9 ล้างถังเครื่องซักผ้าฝาหน้า + ล้างแอร์ 1 เครื่อง", p.promo99.frontLoadBundle),
+    ],
+  };
+}
+
 export default function Home() {
   return (
     <>
@@ -164,15 +188,21 @@ export default function Home() {
 
           {/* การ์ดที่ 1: โปร 9.9 (โทนร้อน + สายฟ้า) — ซ่อนอัตโนมัติหลังหมดเขต และมีงานถอดโค้ดตามกำหนด 11 ก.ย. */}
           <PromoWindow until="2026-09-10T23:59:59+07:00">
-          <div className="card overflow-hidden border-2 border-orange-300 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 sm:p-8">
-            <p className="inline-flex items-center gap-1.5 rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">
+          <div className="promo-live card overflow-hidden border-2 border-orange-300 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 sm:p-8">
+            <p className="promo-chip inline-flex items-center gap-1.5 rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">
               <IconBolt className="h-3.5 w-3.5" />
               แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569
             </p>
             <h2 className="mt-4 flex items-start gap-2.5 text-xl font-extrabold text-orange-700 sm:text-2xl">
-              <IconBolt className="mt-1 h-6 w-6 shrink-0 text-orange-500" />
+              <IconBolt className="bolt-pulse mt-1 h-6 w-6 shrink-0 text-orange-500" />
               <span>โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง</span>
             </h2>
+
+            {/* Offer schema ช่วงแคมเปญ — ตัวเลขแปลงจาก p.promo99 มี validThrough กำกับ */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={jsonLd(promo99Offers())}
+            />
 
             {/* สองบล็อกแยกโปร — ราคาอยู่ใน p.promo99 รายละเอียดพิมพ์ตามขอบเขตงานบนโปสเตอร์ */}
             <div className="mt-5 grid gap-4 lg:grid-cols-2">
@@ -191,7 +221,7 @@ export default function Home() {
                   </a>
                   <div>
                     <p className="font-bold">เครื่องซักผ้าฝาบน + ล้างแอร์ 1 เครื่อง</p>
-                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600">{p.promo99.topLoadBundle} <span className="text-base font-bold">บาท</span></p>
+                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600"><span className="price-beat">{p.promo99.topLoadBundle} <span className="text-base font-bold">บาท</span></span></p>
                     <p className="mt-1 text-sm text-ink-soft">
                       จากราคาปกติ <s className="decoration-ink-soft/60">{p.promo99.topLoadNormal} บาท</s>
                     </p>
@@ -218,7 +248,7 @@ export default function Home() {
                   </a>
                   <div>
                     <p className="font-bold">เครื่องซักผ้าฝาหน้า + ล้างแอร์ 1 เครื่อง</p>
-                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600">{p.promo99.frontLoadBundle} <span className="text-base font-bold">บาท</span></p>
+                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600"><span className="price-beat">{p.promo99.frontLoadBundle} <span className="text-base font-bold">บาท</span></span></p>
                     <p className="mt-1 text-sm text-ink-soft">
                       จากราคาปกติ <s className="decoration-ink-soft/60">{p.promo99.frontLoadNormal} บาท</s>
                     </p>
@@ -238,7 +268,7 @@ export default function Home() {
                 href={site.lineUrl}
                 target="_blank"
                 rel="noopener"
-                className="btn-line"
+                className="btn-line btn-shimmer"
                 data-cta="home-99-promo-line"
               >
                 <IconLine className="h-5 w-5" />

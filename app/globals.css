@@ -182,3 +182,44 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- ชุดแอนิเมชันการ์ดโปรตามแคมเปญ (ใช้ซ้ำได้กับ 10.10 / 11.11) ----------
+   ทุกตัวถูกปิดอัตโนมัติโดยบล็อก prefers-reduced-motion ด้านบน */
+@keyframes promoBg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.promo-live {
+  background-size: 180% 180%;
+  animation: promoBg 9s ease-in-out infinite;
+}
+@keyframes chipGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.45); }
+  55% { box-shadow: 0 0 0 9px rgba(234, 88, 12, 0); }
+}
+.promo-chip { animation: chipGlow 2.4s ease-out infinite; }
+@keyframes boltPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.18); opacity: 0.75; }
+}
+.bolt-pulse { animation: boltPulse 1.8s ease-in-out infinite; transform-origin: center; }
+.btn-shimmer { position: relative; overflow: hidden; isolation: isolate; }
+@keyframes shimmerSweep {
+  0% { transform: translateX(-130%) skewX(-18deg); }
+  55%, 100% { transform: translateX(230%) skewX(-18deg); }
+}
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: shimmerSweep 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes priceBeat {
+  0%, 88%, 100% { transform: scale(1); }
+  92% { transform: scale(1.045); }
+  96% { transform: scale(0.995); }
+}
+.price-beat { display: inline-block; animation: priceBeat 3.6s ease-in-out infinite; transform-origin: left center; }
