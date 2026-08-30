@@ -59,7 +59,7 @@ export function BrandStrip({
               />
             ) : (
               <span
-                className={`text-center text-[0.72rem] leading-tight font-bold tracking-wide sm:text-[0.68rem] ${label}`}
+                className={`text-center text-xs leading-tight font-bold tracking-wide ${label}`}
               >
                 {b.name}
               </span>

@@ -93,7 +93,7 @@ export default async function SegmentPage({ params }: Props) {
             ใช้อัตราเดียวกับงานทั่วไปทุกตำบลที่รับงาน ไม่มีค่าเดินทางเพิ่ม
           </p>
           <div className="mt-8 overflow-x-auto">
-            <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
+            <table className="w-full sm:min-w-[34rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-slate-300">
                   <th className="py-3 pr-4 font-bold">รายการ</th>

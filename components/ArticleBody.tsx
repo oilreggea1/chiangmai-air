@@ -121,8 +121,27 @@ export default function ArticleBody({
 
           case "table":
             return (
-              <div key={i} className="overflow-x-auto rounded-2xl border border-slate-200 shadow-card">
-                <table className="w-full min-w-[32rem] border-collapse text-left">
+              <div key={i} className="overflow-hidden rounded-2xl border border-slate-200 shadow-card">
+                {/* มือถือ: แถวละการ์ด มีป้ายหัวคอลัมน์กำกับทุกค่า อ่านครบโดยไม่ต้องปัดข้าง */}
+                <ul className="divide-y divide-slate-100 bg-white sm:hidden">
+                  {b.rows.map((r, n) => (
+                    <li key={n} className="px-4 py-3.5">
+                      <span className="block text-xs text-ink-soft">{b.head[0]}</span>
+                      <span className="mt-0.5 block text-[15px] leading-7 font-medium text-ink">{r[0]}</span>
+                      <dl className="mt-2 space-y-1.5">
+                        {r.slice(1).map((c, m) => (
+                          <div key={m}>
+                            <dt className="text-xs text-ink-soft">{b.head[m + 1]}</dt>
+                            <dd className="text-[15px] leading-7 text-ink-soft">{c}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="hidden overflow-x-auto sm:block">
+                <table className="w-full sm:min-w-[32rem] border-collapse text-left">
                   <caption className="sr-only">{b.caption}</caption>
                   <thead>
                     <tr className="bg-slate-50">
@@ -150,6 +169,7 @@ export default function ArticleBody({
                     ))}
                   </tbody>
                 </table>
+                </div>
               </div>
             );
 

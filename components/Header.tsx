@@ -179,7 +179,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               <span className="block text-[15px] font-extrabold tracking-tight whitespace-nowrap sm:text-base">
                 Pro Fresh Care
               </span>
-              <span className="block text-[11px] font-medium whitespace-nowrap text-ink-soft sm:text-xs">
+              <span className="block text-xs font-medium whitespace-nowrap text-ink-soft">
                 {lang === "en" ? "Aircon service · Chiang Mai" : "清迈空调服务"}
               </span>
             </span>
@@ -271,7 +271,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             <span className="block text-[15px] font-extrabold tracking-tight whitespace-nowrap sm:text-base">
               โปรเฟรชแคร์
             </span>
-            <span className="block text-[11px] font-medium whitespace-nowrap text-ink-soft sm:text-xs">
+            <span className="block text-xs font-medium whitespace-nowrap text-ink-soft">
               ช่างแอร์เชียงใหม่ ถึงบ้าน
             </span>
           </span>

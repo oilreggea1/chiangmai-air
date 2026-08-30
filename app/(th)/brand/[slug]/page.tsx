@@ -144,7 +144,7 @@ export default async function BrandPage({ params }: Props) {
             ราคาคิดตามชนิดและขนาดของแอร์ ไม่ใช่ตามยี่ห้อ เพราะขั้นตอนการทำงานเท่ากัน
           </p>
           <div className="mt-8 overflow-x-auto">
-            <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
+            <table className="w-full sm:min-w-[34rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-slate-300">
                   <th className="py-3 pr-4 font-bold">รายการ</th>

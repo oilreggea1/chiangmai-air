@@ -149,8 +149,30 @@ export default function RepairPricePage() {
                   )}
                 </div>
 
-                <div className="overflow-x-auto">
-                  <table className="w-full min-w-[34rem] border-collapse text-left">
+                {/* มือถือ: แถวละการ์ด เห็นราคาเต็มโดยไม่ต้องปัดข้าง */}
+                <ul className="divide-y divide-slate-100 sm:hidden">
+                  {g.items.map((it) => (
+                    <li key={it.job} className="px-5 py-4">
+                      <span className="block text-[15px] leading-7 font-medium text-ink">{it.job}</span>
+                      {it.note && (
+                        <span className="mt-0.5 block text-xs leading-6 text-ink-soft">{it.note}</span>
+                      )}
+                      <dl className="mt-2 grid grid-cols-2 gap-x-3">
+                        <div>
+                          <dt className="text-xs text-ink-soft">แอร์ธรรมดา</dt>
+                          <dd className="mt-0.5"><PriceCell value={it.std} /></dd>
+                        </div>
+                        <div>
+                          <dt className="text-xs text-ink-soft">แอร์อินเวอร์เตอร์</dt>
+                          <dd className="mt-0.5"><PriceCell value={it.inv} /></dd>
+                        </div>
+                      </dl>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="hidden overflow-x-auto sm:block">
+                  <table className="w-full sm:min-w-[34rem] border-collapse text-left">
                     <caption className="sr-only">ช่วงราคาประเมินของ{g.group}</caption>
                     <thead>
                       <tr className="border-b border-slate-100 text-xs">
@@ -211,7 +233,7 @@ export default function RepairPricePage() {
                   <span>
                     <span className="flex flex-wrap items-center gap-2.5">
                       <span className="text-base font-bold sm:text-lg">{s.name}</span>
-                      <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${urgencyStyle[s.urgency]}`}>
+                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${urgencyStyle[s.urgency]}`}>
                         {s.urgency}
                       </span>
                     </span>
@@ -226,7 +248,7 @@ export default function RepairPricePage() {
                     {s.causes.map((c) => (
                       <li key={c.cause} className="flex items-start gap-3">
                         <span
-                          className={`mt-0.5 shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${
+                          className={`mt-0.5 shrink-0 rounded-full px-2 py-0.5 text-xs font-bold ${
                             c.diy ? "bg-mint/15 text-emerald-800" : "bg-brand-50 text-brand-700"
                           }`}
                         >

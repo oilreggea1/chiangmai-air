@@ -118,7 +118,7 @@ export default function BlogIndex() {
                       href={`/blog/${a.slug}`}
                       className="card group flex h-full flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
                     >
-                      <span className={`self-start rounded-full px-2.5 py-1 text-[11px] font-bold ${catColor[a.category]}`}>
+                      <span className={`self-start rounded-full px-2.5 py-1 text-xs font-bold ${catColor[a.category]}`}>
                         {a.category}
                       </span>
                       <h3 className="mt-3.5 text-base font-bold group-hover:text-brand-700 sm:text-lg">
