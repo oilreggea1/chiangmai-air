@@ -171,25 +171,68 @@ export default function Home() {
             </p>
             <h2 className="mt-4 flex items-start gap-2.5 text-xl font-extrabold text-orange-700 sm:text-2xl">
               <IconBolt className="mt-1 h-6 w-6 shrink-0 text-orange-500" />
-              <span>โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง ({btu.washStd} BTU)</span>
+              <span>โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง</span>
             </h2>
-            {/* ราคาโปรอยู่ใน p.promo99 — เงื่อนไขตามโปสเตอร์ (ทุกรุ่น ทุกยี่ห้อ) */}
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-orange-200 bg-white/85 px-4 py-3.5">
-                <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาบน + ล้างแอร์</p>
-                <p className="mt-1 text-2xl font-extrabold text-orange-600">
-                  {p.promo99.topLoadBundle} บาท
-                  <span className="ml-2 text-sm font-normal text-ink-soft">ฝาบนทุกรุ่น ทุกยี่ห้อ</span>
-                </p>
+
+            {/* สองบล็อกแยกโปร — ราคาอยู่ใน p.promo99 รายละเอียดพิมพ์ตามขอบเขตงานบนโปสเตอร์ */}
+            <div className="mt-5 grid gap-4 lg:grid-cols-2">
+
+              {/* ฝาบน */}
+              <div className="rounded-2xl border border-orange-200 bg-white/90 p-5">
+                <div className="flex items-start gap-4">
+                  <a href="/promo/promo-99-topload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-top" className="block w-24 shrink-0 sm:w-28">
+                    <Image
+                      src="/promo/promo-99-topload.jpg"
+                      alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาบน กดดูภาพเต็ม"
+                      width={720}
+                      height={1080}
+                      className="w-full rounded-lg border border-orange-200 shadow-sm"
+                    />
+                  </a>
+                  <div>
+                    <p className="font-bold">เครื่องซักผ้าฝาบน + ล้างแอร์ 1 เครื่อง</p>
+                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600">{p.promo99.topLoadBundle} <span className="text-base font-bold">บาท</span></p>
+                    <p className="mt-1 text-sm text-ink-soft">
+                      จากราคาปกติ <s className="decoration-ink-soft/60">{p.promo99.topLoadNormal} บาท</s>
+                    </p>
+                  </div>
+                </div>
+                <ul className="mt-4 space-y-1.5 text-sm leading-6 text-ink-soft">
+                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ถอดล้างถังฝาบนด้านใน–ด้านนอก ขจัดคราบตะกรัน เชื้อรา กลิ่นอับ (ทุกรุ่น ทุกยี่ห้อ)</li>
+                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ล้างแอร์ติดผนัง {btu.washStd} BTU ล้างคอยล์เย็น ฟินคอยล์ ฉีดน้ำยาทำความสะอาด เป่าลมฆ่าเชื้อ</li>
+                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ช่างเข้าครั้งเดียว จบทั้งสองรายการ รับประกันงานหลังบริการ 30 วัน</li>
+                </ul>
               </div>
-              <div className="rounded-xl border border-orange-200 bg-white/85 px-4 py-3.5">
-                <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาหน้า + ล้างแอร์</p>
-                <p className="mt-1 text-2xl font-extrabold text-orange-600">
-                  {p.promo99.frontLoadBundle} บาท
-                  <span className="ml-2 text-sm font-normal text-ink-soft">ฝาหน้าทุกยี่ห้อ</span>
-                </p>
+
+              {/* ฝาหน้า */}
+              <div className="rounded-2xl border border-orange-200 bg-white/90 p-5">
+                <div className="flex items-start gap-4">
+                  <a href="/promo/promo-99-frontload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-front" className="block w-24 shrink-0 sm:w-28">
+                    <Image
+                      src="/promo/promo-99-frontload.jpg"
+                      alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาหน้า กดดูภาพเต็ม"
+                      width={720}
+                      height={1080}
+                      className="w-full rounded-lg border border-orange-200 shadow-sm"
+                    />
+                  </a>
+                  <div>
+                    <p className="font-bold">เครื่องซักผ้าฝาหน้า + ล้างแอร์ 1 เครื่อง</p>
+                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600">{p.promo99.frontLoadBundle} <span className="text-base font-bold">บาท</span></p>
+                    <p className="mt-1 text-sm text-ink-soft">
+                      จากราคาปกติ <s className="decoration-ink-soft/60">{p.promo99.frontLoadNormal} บาท</s>
+                    </p>
+                  </div>
+                </div>
+                <ul className="mt-4 space-y-1.5 text-sm leading-6 text-ink-soft">
+                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ถอดล้างถังฝาหน้าด้านใน–ด้านนอก ขจัดคราบตะกรัน เชื้อรา กลิ่นอับ (ทุกยี่ห้อ)</li>
+                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ล้างแอร์ติดผนัง {btu.washStd} BTU ล้างคอยล์เย็น ฟินคอยล์ ฉีดน้ำยาทำความสะอาด เป่าลมฆ่าเชื้อ</li>
+                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ช่างเข้าครั้งเดียว จบทั้งสองรายการ รับประกันงานหลังบริการ 30 วัน</li>
+                </ul>
               </div>
+
             </div>
+
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href={site.lineUrl}
@@ -202,31 +245,8 @@ export default function Home() {
                 จองโปร 9.9 ทาง LINE
               </a>
               <p className="text-sm leading-7 text-ink-soft">
-                โปรนี้เฉพาะช่วงแคมเปญ 6–10 กันยายน 2569 นัดทำทั้งสองรายการในเที่ยวเดียว
-                จองคิวล่วงหน้าได้ตั้งแต่วันนี้ หรือโทร {site.phone}
+                โปรนี้เฉพาะช่วงแคมเปญ 6–10 กันยายน 2569 จองคิวล่วงหน้าได้ตั้งแต่วันนี้ หรือโทร {site.phone}
               </p>
-            </div>
-            {/* โปสเตอร์แบบภาพย่อ กดดูเต็มได้ (ชั่วคราว ลบพร้อมการ์ด) */}
-            <div className="mt-4 flex items-center gap-3">
-              <a href="/promo/promo-99-topload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-top" className="block w-24 shrink-0 sm:w-28">
-                <Image
-                  src="/promo/promo-99-topload.jpg"
-                  alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาบน 1,399 บาท กดดูภาพเต็ม"
-                  width={720}
-                  height={1080}
-                  className="w-full rounded-lg border border-orange-200 shadow-sm"
-                />
-              </a>
-              <a href="/promo/promo-99-frontload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-front" className="block w-24 shrink-0 sm:w-28">
-                <Image
-                  src="/promo/promo-99-frontload.jpg"
-                  alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาหน้า 1,699 บาท กดดูภาพเต็ม"
-                  width={720}
-                  height={1080}
-                  className="w-full rounded-lg border border-orange-200 shadow-sm"
-                />
-              </a>
-              <p className="text-sm text-ink-soft">กดที่ภาพเพื่อดูโปสเตอร์ขนาดเต็ม บันทึกไว้ส่งต่อให้คนที่บ้านได้</p>
             </div>
           </div>
           </PromoWindow>
