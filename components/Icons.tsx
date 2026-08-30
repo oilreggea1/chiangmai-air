@@ -110,6 +110,14 @@ export function IconEngineer({ className = base }: P) {
   );
 }
 
+export function IconBolt({ className = base }: P) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
+      <path d="M13.2 2.2 4.6 13.4c-.3.4 0 .9.5.9h4.7l-1.9 7.1c-.1.6.6.9 1 .5l8.6-11.2c.3-.4 0-.9-.5-.9h-4.7l1.9-7.1c.1-.6-.6-.9-1-.5Z" />
+    </svg>
+  );
+}
+
 export function IconClock({ className = base }: P) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true"

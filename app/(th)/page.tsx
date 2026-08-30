@@ -5,7 +5,7 @@ import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumb
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
-  serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield,
+  serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, IconBolt,
 } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
@@ -47,11 +47,6 @@ export const metadata: Metadata = {
 };
 
 
-/** ราคารวมแบบแยกรายการของโปรจับคู่ 9.9: ล้างถัง + ล้างแอร์ 1 เครื่อง (ใช้ราคากลางจาก p ไม่พิมพ์เลขซ้ำ) */
-function bundleNormal(washerPrice: string) {
-  const n = Number(washerPrice.replaceAll(",", "")) + Number(p.wash.std.replaceAll(",", ""));
-  return n.toLocaleString("th-TH");
-}
 
 export default function Home() {
   return (
@@ -161,14 +156,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- แบนเนอร์รับแคมเปญ 9.9 (ตามฤดูกาล — ทบทวน/ถอดออกหลัง 15 ก.ย. 2569
-           หรือปรับเป็น 10.10 / 11.11 ตามรอบแคมเปญถัดไป เปลี่ยนเฉพาะเลขแคมเปญ) ---------- */}
+      {/* ---------- แบนเนอร์รับแคมเปญ 9.9 (ตามฤดูกาล — ถอดออกหลัง 10 ก.ย. 2569
+           หรือปรับเป็น 10.10 / 11.11 ตามรอบแคมเปญถัดไป เปลี่ยนเลขแคมเปญ วันที่ และราคาใน p.promo99) ---------- */}
       <section className="section pt-0" id="campaign-99">
-        <div className="wrap">
+        <div className="wrap space-y-5">
+
+          {/* การ์ดที่ 1: โปร 9.9 (โทนร้อน + สายฟ้า) */}
           <div className="card overflow-hidden border-2 border-orange-300 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 sm:p-8">
+            <p className="inline-flex items-center gap-1.5 rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">
+              <IconBolt className="h-3.5 w-3.5" />
+              แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569
+            </p>
+            <h2 className="mt-4 flex items-start gap-2.5 text-xl font-extrabold text-orange-700 sm:text-2xl">
+              <IconBolt className="mt-1 h-6 w-6 shrink-0 text-orange-500" />
+              <span>โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง ({btu.washStd} BTU)</span>
+            </h2>
+            {/* โปสเตอร์โปรจากเจ้าของ (ชั่วคราว ลบพร้อมแบนเนอร์หลังจบแคมเปญ) — คลิกเปิดไฟล์เต็ม */}
+            <div className="mt-5 grid grid-cols-2 gap-3">
+              <a href="/promo/promo-99-topload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-top">
+                <Image
+                  src="/promo/promo-99-topload.jpg"
+                  alt="โปสเตอร์โปร 9.9 ล้างแอร์คู่ล้างถังเครื่องซักผ้าฝาบน แพ็กคู่ 1,399 บาท"
+                  width={720}
+                  height={1080}
+                  className="w-full rounded-xl border border-orange-200 shadow-sm"
+                />
+              </a>
+              <a href="/promo/promo-99-frontload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-front">
+                <Image
+                  src="/promo/promo-99-frontload.jpg"
+                  alt="โปสเตอร์โปร 9.9 ล้างแอร์คู่ล้างถังเครื่องซักผ้าฝาหน้า แพ็กคู่ 1,699 บาท"
+                  width={720}
+                  height={1080}
+                  className="w-full rounded-xl border border-orange-200 shadow-sm"
+                />
+              </a>
+            </div>
+
+            {/* ราคาโปรอยู่ใน p.promo99 — ช่วงราคาปล่อยให้โปสเตอร์เป็นตัวเทียบ ข้อความเว็บยึดตามเงื่อนไขบนโปสเตอร์ (ทุกรุ่น ทุกยี่ห้อ) */}
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-orange-200 bg-white/85 px-4 py-3.5">
+                <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาบน + ล้างแอร์</p>
+                <p className="mt-1 text-2xl font-extrabold text-orange-600">
+                  {p.promo99.topLoadBundle} บาท
+                  <span className="ml-2 text-sm font-normal text-ink-soft">ฝาบนทุกรุ่น ทุกยี่ห้อ</span>
+                </p>
+              </div>
+              <div className="rounded-xl border border-orange-200 bg-white/85 px-4 py-3.5">
+                <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาหน้า + ล้างแอร์</p>
+                <p className="mt-1 text-2xl font-extrabold text-orange-600">
+                  {p.promo99.frontLoadBundle} บาท
+                  <span className="ml-2 text-sm font-normal text-ink-soft">ฝาหน้าทุกยี่ห้อ</span>
+                </p>
+              </div>
+            </div>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={site.lineUrl}
+                target="_blank"
+                rel="noopener"
+                className="btn-line"
+                data-cta="home-99-promo-line"
+              >
+                <IconLine className="h-5 w-5" />
+                จองโปร 9.9 ทาง LINE
+              </a>
+              <p className="text-sm leading-7 text-ink-soft">
+                โปรนี้เฉพาะช่วงแคมเปญ 6–10 กันยายน 2569 นัดทำทั้งสองรายการในเที่ยวเดียว
+                จองคิวล่วงหน้าได้ตั้งแต่วันนี้ หรือโทร {site.phone}
+              </p>
+            </div>
+          </div>
+
+          {/* การ์ดที่ 2: จองคิวติดตั้งล่วงหน้า (โทนปกติของเว็บ — เป็นบริการประจำ ไม่ผูกกับวันแคมเปญ) */}
+          <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="inline-flex items-center rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569</p>
+                <p className="eyebrow">สั่งแอร์ออนไลน์ช่วงแคมเปญ</p>
                 <h2 className="mt-3 text-xl font-extrabold sm:text-2xl">
                   กดสั่งแอร์จาก Shopee, Lazada หรือ TikTok แล้ว จองคิวติดตั้งล่วงหน้าได้
                 </h2>
@@ -199,37 +263,8 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
-            {/* โปรจับคู่ 9.9 — ราคาโปรอยู่ใน p.promo99 ราคาปกติคำนวณจากราคาแยกรายการ ไม่พิมพ์เลขซ้ำ */}
-            <div className="mt-6 rounded-2xl border border-orange-200 bg-white/90 p-5 sm:p-6">
-              <p className="font-bold text-orange-700">
-                โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง ({btu.washStd} BTU)
-              </p>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl bg-orange-100/70 px-4 py-3.5">
-                  <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาบน + ล้างแอร์</p>
-                  <p className="mt-1 text-2xl font-extrabold text-orange-600">
-                    {p.promo99.topLoadBundle} บาท
-                    <span className="ml-2 text-sm font-normal text-ink-soft">
-                      จากราคาแยกรายการ <s className="decoration-ink-soft/60">{bundleNormal(p.washer.topLoad)} บาท</s>
-                    </span>
-                  </p>
-                </div>
-                <div className="rounded-xl bg-orange-100/70 px-4 py-3.5">
-                  <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาหน้า + ล้างแอร์</p>
-                  <p className="mt-1 text-2xl font-extrabold text-orange-600">
-                    {p.promo99.frontLoadBundle} บาท
-                    <span className="ml-2 text-sm font-normal text-ink-soft">
-                      จากราคาแยกรายการ <s className="decoration-ink-soft/60">{bundleNormal(p.washer.frontLoad)} บาท</s>
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <p className="mt-3 text-sm leading-7 text-ink-soft">
-                โปรนี้เฉพาะช่วงแคมเปญ 6–10 กันยายน 2569 นัดทำทั้งสองรายการในเที่ยวเดียว จองคิวล่วงหน้าได้ตั้งแต่วันนี้ทาง LINE หรือโทร {site.phone}
-              </p>
-            </div>
           </div>
+
         </div>
       </section>
 
