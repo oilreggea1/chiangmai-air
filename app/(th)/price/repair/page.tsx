@@ -201,6 +201,19 @@ export default function RepairPricePage() {
                     </tbody>
                   </table>
                 </div>
+
+                <div className="border-t border-slate-100 px-5 py-3.5 sm:px-6">
+                  <a
+                    href={site.lineUrl}
+                    target="_blank"
+                    rel="noopener"
+                    data-cta="repair-group-line"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#047a35] hover:text-emerald-900"
+                  >
+                    <IconLine className="h-5 w-5 shrink-0" />
+                    ส่งอาการให้ประเมินทาง LINE
+                  </a>
+                </div>
               </div>
             ))}
           </div>
