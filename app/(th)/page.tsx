@@ -168,7 +168,7 @@ export default function Home() {
           <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="eyebrow">ช่วงแคมเปญ 9.9 เดือนกันยายนนี้</p>
+                <p className="eyebrow">แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569</p>
                 <h2 className="mt-3 text-xl font-extrabold sm:text-2xl">
                   กดสั่งแอร์จาก Shopee, Lazada หรือ TikTok แล้ว จองคิวติดตั้งล่วงหน้าได้
                 </h2>
@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="mt-3 text-sm leading-7 text-ink-soft">
-                นัดทำทั้งสองรายการในเที่ยวเดียว จองคิวช่วงแคมเปญ 9.9 ทาง LINE หรือโทร {site.phone}
+                โปรนี้เฉพาะช่วงแคมเปญ 6–10 กันยายน 2569 นัดทำทั้งสองรายการในเที่ยวเดียว จองคิวล่วงหน้าได้ตั้งแต่วันนี้ทาง LINE หรือโทร {site.phone}
               </p>
             </div>
           </div>
