@@ -12,7 +12,13 @@ function channelOf(href: string) {
   // และเพื่อไม่ให้ลิงก์ภายนอกที่บังเอิญมีคำว่า price ในเส้นทางหลุดเข้ามา
   try {
     const { origin, pathname } = new URL(href);
-    if (origin === window.location.origin && /^\/price(\/|$)/.test(pathname)) return "price_view";
+    if (origin === window.location.origin) {
+      if (/^\/price(\/|$)/.test(pathname)) return "price_view";
+      // หน้ากลุ่มงานติดตั้ง — นับเป็นความสนใจงานติดตั้ง (เจ้าของกำลังดันงานติดตั้ง 30 ส.ค. 2569)
+      if (/^\/(service\/(tid-tang-air|khai-air)|customer\/(ban-mai|sue-air-online))(\/|$)/.test(pathname)) return "install_view";
+      // โปสเตอร์โปรตามแคมเปญ
+      if (pathname.startsWith("/promo/")) return "promo_view";
+    }
   } catch {
     // href ที่แปลงเป็น URL ไม่ได้ ไม่ต้องนับ ปล่อยให้ตกไป other
   }

@@ -27,6 +27,7 @@ import { article as rakhaLangAir } from "./rakha-lang-air-chiangmai-2569";
 import { article as rakhaSomAir } from "./rakha-som-air";
 import { article as khaTidTangAir } from "./kha-tid-tang-air-ruam-arai";
 import { article as somRueSueMai } from "./som-rue-sue-mai";
+import { article as sueAirOnline } from "./sue-air-online-check-arai";
 
 /** เรียงตามความสำคัญเชิงกลยุทธ์ ตัวที่เป็นจุดต่างจากคู่แข่งขึ้นก่อน */
 export const articles: Article[] = [
@@ -37,6 +38,8 @@ export const articles: Article[] = [
   rakhaSomAir,
   // วางไว้ต่อจากบทความราคาอีกสองเรื่อง เพราะกลุ่มคำติดตั้งยังอันดับต่ำกว่ากลุ่มล้างอยู่มาก
   khaTidTangAir,
+  // บทความดักคนก่อนกดสั่งช่วงแคมเปญ วางคู่กลุ่มติดตั้ง (30 ส.ค. 2569)
+  sueAirOnline,
   namYa,
   langAirVsPremium,
   langAirBoi,

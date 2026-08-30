@@ -11,10 +11,10 @@ import { neon } from "@neondatabase/serverless";
  * ไม่มีอะไรที่ระบุตัวบุคคลได้ เพราะไม่จำเป็นต่อการนับว่ามีคนกดกี่ครั้ง
  */
 
-export type LeadChannel = "phone" | "line_air" | "line_washing_machine" | "price_view";
+export type LeadChannel = "phone" | "line_air" | "line_washing_machine" | "price_view" | "install_view" | "promo_view";
 
 /** ช่องทางที่ยอมรับ กันไม่ให้ยิงค่ามั่วเข้ามาทำให้ตัวเลขเพี้ยน */
-export const CHANNELS: LeadChannel[] = ["phone", "line_air", "line_washing_machine", "price_view"];
+export const CHANNELS: LeadChannel[] = ["phone", "line_air", "line_washing_machine", "price_view", "install_view", "promo_view"];
 
 /**
  * ช่องทางที่นับว่าเป็นการติดต่อจริง
@@ -30,6 +30,8 @@ export const channelLabel: Record<LeadChannel, string> = {
   line_air: "กด LINE งานแอร์",
   line_washing_machine: "กด LINE ล้างเครื่องซักผ้า",
   price_view: "กดดูราคา",
+  install_view: "กดดูหน้าติดตั้ง",
+  promo_view: "กดดูโปสเตอร์โปร",
 };
 
 function db() {
