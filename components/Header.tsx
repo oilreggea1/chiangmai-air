@@ -67,26 +67,52 @@ const navLinks: NavItem[] = [
   { href: "/contact", label: "ติดต่อ" },
 ];
 
-/** เมนูมือถือแสดงทุกอย่างแบบแบน กดง่ายกว่าดรอปดาวน์บนจอเล็ก */
-const mobileNav = [
+/** เมนูมือถือ: ลิงก์ด่วน 3 ตัว + หมวดพับได้ (เมนูแบนเดิมยาว 20 รายการ เลื่อนหากันไม่เจอ — 30 ส.ค. 2569)
+ *  หมวดที่มีหน้าปัจจุบันอยู่จะเปิดค้างให้เอง */
+const mobileQuick = [
   // ใช้คำที่หน้านั้นตั้งใจติดแทนคำว่า "หน้าแรก" ซึ่งไม่บอกอะไรทั้งกับคนและกับ Google
   { href: "/", label: "ช่างแอร์เชียงใหม่" },
-  ...services.map((s) => ({ href: `/service/${s.slug}`, label: `${s.name}เชียงใหม่` })),
-  { href: "/price", label: "ราคาค่าบริการ" },
-  { href: "/price/repair", label: "ราคาซ่อมแอร์" },
-  { href: "/answers", label: "คำตอบจากช่าง" },
-  { href: "/pm25", label: "ล้างแอร์สู้ฝุ่น PM2.5" },
-  { href: "/blog", label: "คลังความรู้" },
-  { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
-  { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
   { href: "/duan", label: "เรียกด่วน / นอกเวลา" },
-  { href: "/area", label: "พื้นที่บริการ" },
-  { href: "/portfolio", label: "ผลงาน" },
-  { href: "/case-study", label: "Case Study งานจริง" },
-  { href: "/about", label: "รู้จักช่างอาร์ม" },
   { href: "/contact", label: "ติดต่อ" },
-  { href: "/en", label: "English" },
-  { href: "/zh", label: "中文" },
+];
+const mobileGroups: { heading: string; items: NavItem[] }[] = [
+  {
+    heading: "บริการ",
+    items: services.map((s) => ({ href: `/service/${s.slug}`, label: `${s.name}เชียงใหม่` })),
+  },
+  {
+    heading: "ราคา",
+    items: [
+      { href: "/price", label: "ราคาค่าบริการทั้งหมด" },
+      { href: "/price/repair", label: "ราคาซ่อมแอร์แยกตามอาการ" },
+    ],
+  },
+  {
+    heading: "กลุ่มลูกค้าและพื้นที่",
+    items: [
+      { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
+      { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
+      { href: "/area", label: "พื้นที่บริการ 37 ตำบล" },
+    ],
+  },
+  {
+    heading: "ความรู้และผลงาน",
+    items: [
+      { href: "/blog", label: "คลังความรู้" },
+      { href: "/answers", label: "คำตอบจากช่าง" },
+      { href: "/pm25", label: "ล้างแอร์สู้ฝุ่น PM2.5" },
+      { href: "/portfolio", label: "ผลงาน" },
+      { href: "/case-study", label: "Case Study งานจริง" },
+    ],
+  },
+  {
+    heading: "รู้จักเรา / ภาษา",
+    items: [
+      { href: "/about", label: "รู้จักช่างอาร์ม" },
+      { href: "/en", label: "English" },
+      { href: "/zh", label: "中文" },
+    ],
+  },
 ];
 
 /**
@@ -372,19 +398,46 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
           className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden"
         >
           <nav className="wrap grid gap-1 py-4" aria-label="เมนูมือถือ">
-            {mobileNav.map((n) => (
+            {mobileQuick.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 // ปิดเมนูตอนกดลิงก์ ไม่งั้นเมนูค้างทับหน้าใหม่
                 onClick={() => setOpen(false)}
                 aria-current={pathname === n.href ? "page" : undefined}
-                className={`rounded-xl px-4 py-3 text-base font-medium ${
+                className={`rounded-xl px-4 py-3 text-base font-semibold ${
                   pathname === n.href ? "bg-brand-50 text-brand-700" : "text-ink"
                 }`}
               >
                 {n.label}
               </Link>
+            ))}
+            {mobileGroups.map((g) => (
+              <details
+                key={g.heading}
+                className="group rounded-xl"
+                open={g.items.some((n) => n.href !== "/" && pathname.startsWith(n.href))}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                  {g.heading}
+                  <IconChevron className="h-4 w-4 text-ink-soft transition-transform group-open:rotate-90" />
+                </summary>
+                <div className="grid gap-0.5 pb-1 pl-3">
+                  {g.items.map((n) => (
+                    <Link
+                      key={n.href}
+                      href={n.href}
+                      onClick={() => setOpen(false)}
+                      aria-current={pathname === n.href ? "page" : undefined}
+                      className={`rounded-lg px-4 py-2.5 text-[15px] font-medium ${
+                        pathname === n.href ? "bg-brand-50 text-brand-700" : "text-ink-soft"
+                      }`}
+                    >
+                      {n.label}
+                    </Link>
+                  ))}
+                </div>
+              </details>
             ))}
             <a href={`tel:${site.phoneTel}`} className="btn-call mt-2" data-cta="mobile-menu-call">
               <IconPhone className="h-5 w-5" />
