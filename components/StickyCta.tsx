@@ -12,7 +12,7 @@ export default function StickyCta({ lang = "th" }: { lang?: "th" | "en" | "zh-CN
   const pathname = usePathname();
   // ป้ายปุ่มตามภาษาของหน้า ของเดิมเป็นภาษาไทยทุกภาษา (19 ส.ค. 2569)
   const label = {
-    th: { call: "โทรเรียกช่าง", air: "LINE งานแอร์", washer: "LINE ล้างถังซัก" },
+    th: { call: "โทรถามคิว", air: "LINE ประเมินฟรี", washer: "LINE ประเมินฟรี" },
     en: { call: "Call now", air: "LINE · aircon", washer: "LINE · washer" },
     "zh-CN": { call: "立即致电", air: "LINE 空调", washer: "LINE 洗衣机" },
   }[lang];

@@ -277,7 +277,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               <a href={site.lineUrl} target="_blank" rel="noopener" data-cta="footer-line" className="flex items-start gap-2.5 font-semibold text-ink hover:text-brand-700">
                 <IconLine className="mt-0.5 h-5 w-5 shrink-0 text-[#06C755]" />
                 <span>
-                  <span className="block text-xs font-normal text-ink-soft">LINE จองคิวงานแอร์</span>
+                  <span className="block text-xs font-normal text-ink-soft">LINE ส่งรูปประเมินงานแอร์ฟรี</span>
                   {site.lineId}
                 </span>
               </a>

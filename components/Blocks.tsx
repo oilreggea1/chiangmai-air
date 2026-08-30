@@ -33,17 +33,18 @@ export function CtaBand({
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a href={`tel:${site.phoneTel}`} className="btn-call px-7 py-4 text-lg" data-cta="band-call">
                 <IconPhone className="h-5 w-5" />
-                โทร {site.phone}
+                โทรถามคิววันนี้
               </a>
               <a
                 href={lineUrl}
                 target="_blank"
                 rel="noopener"
+                aria-label={`LINE ${lineId} ส่งรูปประเมินฟรี`}
                 className="btn-line px-7 py-4 text-lg"
                 data-cta="band-line"
               >
                 <IconLine className="h-5 w-5" />
-                LINE {lineId}
+                LINE ส่งรูปประเมินฟรี
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">

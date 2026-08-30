@@ -71,7 +71,7 @@ export default function Contact() {
             <span className="grid h-16 w-16 place-items-center rounded-2xl bg-[#06C755] text-white shadow-lg shadow-[#06C755]/25">
               <IconLine className="h-8 w-8" />
             </span>
-            <h2 className="mt-5 text-lg font-bold">LINE จองคิวงานแอร์</h2>
+            <h2 className="mt-5 text-lg font-bold">LINE ส่งรูปประเมินงานแอร์ฟรี</h2>
             <p className="mt-2 text-3xl font-extrabold text-[#047a35]">{site.lineId}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
               ส่งภาพแอร์หรือคลิปอาการเข้ามาได้ หลายกรณีผมประเมินช่วงราคาให้ได้ตั้งแต่ในข้อความ

@@ -1,7 +1,11 @@
-import { site, services, areas, heroPhotos } from "./site";
+import { site, services, areas, heroPhotos, p } from "./site";
 
 const ID = `${site.url}/#business`;
 export const PERSON_ID = `${site.url}/about#chang-arm`;
+
+function priceNumber(value: string) {
+  return Number.parseInt(value.replaceAll(",", ""), 10);
+}
 
 /** ตัวตนผู้ให้ความรู้และผู้รับผิดชอบงาน ช่วยเชื่อมประสบการณ์จริงกับบทความและธุรกิจ */
 export function personSchema() {
@@ -27,6 +31,41 @@ export function personSchema() {
  * ถ้าประกาศเป็น price เดี่ยว Google จะเข้าใจว่าเป็นราคาสุดท้าย ซึ่งไม่ตรงกับตารางบนหน้าเว็บ
  */
 function offerPrice(s: (typeof services)[number]) {
+  if (s.slug === "lang-air") {
+    return [
+      {
+        "@type": "UnitPriceSpecification",
+        priceCurrency: "THB",
+        price: priceNumber(p.wash.std),
+        eligibleQuantity: {
+          "@type": "QuantitativeValue",
+          minValue: 1,
+          maxValue: 2,
+          unitText: "เครื่อง",
+        },
+        description: `ล้างแอร์ติดผนังเครื่องละ ${p.wash.std} บาท เมื่อใช้บริการ 1–2 เครื่อง`,
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        priceCurrency: "THB",
+        price: priceNumber(p.wash.stdBulk),
+        eligibleQuantity: {
+          "@type": "QuantitativeValue",
+          minValue: 3,
+          unitText: "เครื่อง",
+        },
+        description: `ล้างแอร์ติดผนังเครื่องละ ${p.wash.stdBulk} บาท เมื่อใช้บริการตั้งแต่ 3 เครื่องขึ้นไป`,
+      },
+      {
+        "@type": "PriceSpecification",
+        priceCurrency: "THB",
+        minPrice: priceNumber(p.wash.premium.split("–")[0]),
+        maxPrice: priceNumber(p.wash.premium.split("–")[1]),
+        description: `Premium Full Wash ถอดล้าง 100% ราคา ${p.wash.premium} บาท ขึ้นอยู่กับขนาด BTU`,
+      },
+    ];
+  }
+
   return {
     "@type": "PriceSpecification",
     priceCurrency: "THB",

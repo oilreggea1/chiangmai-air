@@ -78,7 +78,7 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href={`tel:${site.phoneTel}`} className="btn-call px-7 py-4 text-lg" data-cta="hero-call">
                 <IconPhone className="h-5 w-5" />
-                โทร {site.phone}
+                โทรถามคิววันนี้
               </a>
               <a
                 href={site.lineUrl}
@@ -88,13 +88,26 @@ export default function Home() {
                 data-cta="hero-line"
               >
                 <IconLine className="h-5 w-5" />
-                จองคิวทาง LINE
+                ส่งรูปให้ช่างประเมินฟรี
               </a>
             </div>
 
+            <p className="mt-3 max-w-xl text-sm leading-6 text-ink-soft">
+              ส่งรูปแอร์หรือคลิปอาการ พร้อมแจ้งจำนวนเครื่องและพื้นที่ให้บริการ
+              ผมประเมินเบื้องต้นให้ฟรี ยังไม่ต้องจองก็สอบถามได้
+            </p>
+            <ul className="mt-4 flex max-w-xl flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-brand-700">
+              <li>✓ แจ้งราคาก่อนทำ</li>
+              <li>✓ ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ</li>
+              <li>✓ รับประกันงานล้าง 30 วัน</li>
+            </ul>
+
             <dl className="mt-10 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-4">
               {[
-                { k: `${p.wash.std}.-`, v: `ล้างแอร์ติดผนัง · 3 เครื่องขึ้นไป ${p.wash.stdBulk}.-` },
+                {
+                  k: `เริ่ม ${p.wash.stdBulk}.-`,
+                  v: `เมื่อใช้บริการตั้งแต่ 3 เครื่องขึ้นไป · เครื่องเดียว ${p.wash.std}.-`,
+                },
                 { k: "24 ชม.", v: "ปกติเข้าหน้างานได้ใน 24 ชม. ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด" },
                 { k: "30 วัน", v: "รับประกันงานล้าง" },
                 { k: "ทุกยี่ห้อหลัก", v: "รับล้างและซ่อมแบรนด์ที่จำหน่ายในไทย" },
@@ -427,11 +440,11 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a href={`tel:${site.phoneTel}`} className="btn-call" data-cta="seo-call">
               <IconPhone className="h-5 w-5" />
-              โทรจองคิว
+              โทรถามคิววันนี้
             </a>
             <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="seo-line">
               <IconLine className="h-5 w-5" />
-              LINE จองคิว
+              LINE ส่งรูปประเมินฟรี
             </a>
             <span className="inline-flex items-center gap-2 px-2 text-sm text-ink-soft">
               <IconClock className="h-5 w-5 text-brand-600" />
