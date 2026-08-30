@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import PromoWindow from "@/components/PromoWindow";
 import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
@@ -161,7 +162,8 @@ export default function Home() {
       <section className="section pt-0" id="campaign-99">
         <div className="wrap space-y-5">
 
-          {/* การ์ดที่ 1: โปร 9.9 (โทนร้อน + สายฟ้า) */}
+          {/* การ์ดที่ 1: โปร 9.9 (โทนร้อน + สายฟ้า) — ซ่อนอัตโนมัติหลังหมดเขต และมีงานถอดโค้ดตามกำหนด 11 ก.ย. */}
+          <PromoWindow until="2026-09-10T23:59:59+07:00">
           <div className="card overflow-hidden border-2 border-orange-300 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 sm:p-8">
             <p className="inline-flex items-center gap-1.5 rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">
               <IconBolt className="h-3.5 w-3.5" />
@@ -171,30 +173,8 @@ export default function Home() {
               <IconBolt className="mt-1 h-6 w-6 shrink-0 text-orange-500" />
               <span>โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง ({btu.washStd} BTU)</span>
             </h2>
-            {/* โปสเตอร์โปรจากเจ้าของ (ชั่วคราว ลบพร้อมแบนเนอร์หลังจบแคมเปญ) — คลิกเปิดไฟล์เต็ม */}
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              <a href="/promo/promo-99-topload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-top">
-                <Image
-                  src="/promo/promo-99-topload.jpg"
-                  alt="โปสเตอร์โปร 9.9 ล้างแอร์คู่ล้างถังเครื่องซักผ้าฝาบน แพ็กคู่ 1,399 บาท"
-                  width={720}
-                  height={1080}
-                  className="w-full rounded-xl border border-orange-200 shadow-sm"
-                />
-              </a>
-              <a href="/promo/promo-99-frontload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-front">
-                <Image
-                  src="/promo/promo-99-frontload.jpg"
-                  alt="โปสเตอร์โปร 9.9 ล้างแอร์คู่ล้างถังเครื่องซักผ้าฝาหน้า แพ็กคู่ 1,699 บาท"
-                  width={720}
-                  height={1080}
-                  className="w-full rounded-xl border border-orange-200 shadow-sm"
-                />
-              </a>
-            </div>
-
-            {/* ราคาโปรอยู่ใน p.promo99 — ช่วงราคาปล่อยให้โปสเตอร์เป็นตัวเทียบ ข้อความเว็บยึดตามเงื่อนไขบนโปสเตอร์ (ทุกรุ่น ทุกยี่ห้อ) */}
-            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+            {/* ราคาโปรอยู่ใน p.promo99 — เงื่อนไขตามโปสเตอร์ (ทุกรุ่น ทุกยี่ห้อ) */}
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-orange-200 bg-white/85 px-4 py-3.5">
                 <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาบน + ล้างแอร์</p>
                 <p className="mt-1 text-2xl font-extrabold text-orange-600">
@@ -226,13 +206,36 @@ export default function Home() {
                 จองคิวล่วงหน้าได้ตั้งแต่วันนี้ หรือโทร {site.phone}
               </p>
             </div>
+            {/* โปสเตอร์แบบภาพย่อ กดดูเต็มได้ (ชั่วคราว ลบพร้อมการ์ด) */}
+            <div className="mt-4 flex items-center gap-3">
+              <a href="/promo/promo-99-topload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-top" className="block w-24 shrink-0 sm:w-28">
+                <Image
+                  src="/promo/promo-99-topload.jpg"
+                  alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาบน 1,399 บาท กดดูภาพเต็ม"
+                  width={720}
+                  height={1080}
+                  className="w-full rounded-lg border border-orange-200 shadow-sm"
+                />
+              </a>
+              <a href="/promo/promo-99-frontload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-front" className="block w-24 shrink-0 sm:w-28">
+                <Image
+                  src="/promo/promo-99-frontload.jpg"
+                  alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาหน้า 1,699 บาท กดดูภาพเต็ม"
+                  width={720}
+                  height={1080}
+                  className="w-full rounded-lg border border-orange-200 shadow-sm"
+                />
+              </a>
+              <p className="text-sm text-ink-soft">กดที่ภาพเพื่อดูโปสเตอร์ขนาดเต็ม บันทึกไว้ส่งต่อให้คนที่บ้านได้</p>
+            </div>
           </div>
+          </PromoWindow>
 
           {/* การ์ดที่ 2: จองคิวติดตั้งล่วงหน้า (โทนปกติของเว็บ — เป็นบริการประจำ ไม่ผูกกับวันแคมเปญ) */}
           <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="eyebrow">สั่งแอร์ออนไลน์ช่วงแคมเปญ</p>
+                <p className="eyebrow">สั่งแอร์ออนไลน์มาเอง</p>
                 <h2 className="mt-3 text-xl font-extrabold sm:text-2xl">
                   กดสั่งแอร์จาก Shopee, Lazada หรือ TikTok แล้ว จองคิวติดตั้งล่วงหน้าได้
                 </h2>
