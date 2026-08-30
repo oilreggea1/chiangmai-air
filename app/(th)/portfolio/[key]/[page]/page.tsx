@@ -101,7 +101,7 @@ export default async function PortfolioCategoryPagedPage({
 
       <CtaBand
         title="ต้องการให้เครื่องที่บ้านของคุณอยู่ในสภาพนี้"
-        subtitle="ติดต่อจองคิวเข้ามาได้ครับ ผมแจ้งราคาให้ครบถ้วนก่อนเริ่มงานเสมอ"
+        subtitle="ติดต่อจองคิวเข้ามาได้ครับ แจ้งรุ่นเครื่องและพื้นที่ ผมประเมินราคาให้ก่อนนัด"
         lineUrl={isWasherCategory ? site.lineUrl2 : site.lineUrl}
         lineId={isWasherCategory ? site.lineId2 : site.lineId}
       />

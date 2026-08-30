@@ -7,7 +7,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons"
 
 const title = "清迈空调清洗价格表 | Pro Fresh Care";
 const description =
-  `清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢，深度拆洗 ${p.wash.premium} 泰铢，吊顶机 ${p.wash.suspended} 泰铢起。中国客户与泰国客户同价，开工前先报价。`;
+  `清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢，深度拆洗 ${p.wash.premium} 泰铢，吊顶机 ${p.wash.suspended} 泰铢起。开工前先报总价确认，完工后按报价付款。`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -40,8 +40,8 @@ const groupZh: Record<string, string> = {
 
 const faqs = [
   {
-    q: "中国客户的价格和泰国客户一样吗？",
-    a: "完全一样。中文页和泰文页的价格完全一致，不存在两套价格。开工前我会把总价写给您确认。",
+    q: "价格怎么算？",
+    a: "所有客户同一个价格。开工前我会把总价写给您确认，完工后按报价付款。",
   },
   {
     q: "价格里包含上门费吗？",
@@ -70,8 +70,8 @@ export default function ZhPricingPage() {
             清迈空调清洗价格表
           </h1>
           <p className="lead mt-5">
-            下面是我全部的收费标准，和泰文页面上的数字完全一致。
-            中国客户与泰国客户同价，开工前我会把总价告诉您确认。
+            这是我全部的收费标准，所有客户同一个价格。
+            开工前我会把总价告诉您确认。
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line px-6 py-3.5" data-cta="zh-price-line">
@@ -105,7 +105,7 @@ export default function ZhPricingPage() {
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            下面的项目名称就是我报价时使用的说法。
+            这些项目名称就是我报价时使用的说法。
             任何一行看不懂，用 LINE 问我，我会解释清楚。
           </p>
         </div>

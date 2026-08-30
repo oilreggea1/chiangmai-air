@@ -182,7 +182,7 @@ export default async function ArticlePage({ params }: Props) {
 
       <CtaBand
         title="มีคำถามที่บทความยังไม่ตอบ?"
-        subtitle="สอบถามเข้ามาได้โดยตรง ผมตอบให้โดยไม่คิดค่าใช้จ่าย และหากยังไม่จำเป็นต้องเรียกช่าง ผมจะแจ้งตามจริง"
+        subtitle="สอบถามเข้ามาได้โดยตรง ปรึกษาไม่มีค่าใช้จ่าย"
         lineUrl={bookingLineUrl}
         lineId={bookingLineId}
       />

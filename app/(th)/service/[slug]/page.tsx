@@ -15,12 +15,12 @@ type Props = { params: Promise<{ slug: string }> };
 const washerPhotoStage: Record<string, "ก่อนล้าง" | "ระหว่างถอดล้าง" | "หลังล้างสะอาด"> = {
   "/work/washer-front-deep-clean-01.webp": "หลังล้างสะอาด",
   "/work/washer-front-deep-clean-02.webp": "ระหว่างถอดล้าง",
-  "/work/washer-front-deep-clean-03.webp": "ก่อนล้าง",
+  "/work/washer-front-deep-clean-03.webp": "ระหว่างถอดล้าง",
   "/work/washer-front-deep-clean-04.webp": "ก่อนล้าง",
   "/work/washer-front-deep-clean-05.webp": "ระหว่างถอดล้าง",
   "/work/washer-top-deep-clean-01.webp": "หลังล้างสะอาด",
   "/work/washer-top-deep-clean-02.webp": "หลังล้างสะอาด",
-  "/work/washer-top-deep-clean-03.webp": "ก่อนล้าง",
+  "/work/washer-top-deep-clean-03.webp": "ระหว่างถอดล้าง",
   "/work/washer-top-deep-clean-04.webp": "ก่อนล้าง",
   "/work/washer-top-deep-clean-05.webp": "หลังล้างสะอาด",
 };
@@ -123,7 +123,7 @@ export default async function ServicePage({ params }: Props) {
       {s.slug === "lang-air" && (
         <section className="section bg-brand-50/70">
           <div className="wrap max-w-4xl">
-            <h2 className="h2">กำลังหาช่างล้างแอร์ใกล้ฉันในเชียงใหม่?</h2>
+            <h2 className="h2">รับล้างแอร์ถึงบ้านโซนไหนบ้างในเชียงใหม่</h2>
             <p className="lead mt-4">
               ผมรับงานถึงบ้านในอำเภอเมืองเชียงใหม่ สันกำแพง สารภี ดอยสะเก็ด
               และ ต.สันพระเนตร อ.สันทราย เลือกพื้นที่ด้านล่างเพื่อดูรายละเอียดและโซนใกล้เคียง
@@ -211,7 +211,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="wrap">
             <h2 className="h2">คู่มือซ่อมแอร์อินเวอร์เตอร์และ Error Code แยกยี่ห้อ</h2>
             <p className="lead mt-3 max-w-3xl">
-              เลือกประเภทเครื่องหรือยี่ห้อเพื่อดูข้อมูลที่ควรเตรียมก่อนเรียกช่าง การส่งรหัสพร้อมรุ่นเต็มช่วยลดเวลาตรวจและลดการเดาเปลี่ยนอะไหล่
+              เลือกประเภทเครื่องหรือยี่ห้อเพื่อดูข้อมูลที่ควรเตรียมก่อนเรียกช่าง การส่งรหัสพร้อมรุ่นเต็มช่วยให้ผมเตรียมอะไหล่มาตรงรุ่นและตรวจได้เร็วขึ้น
               ถ้าแอร์เสียแบบรอไม่ได้ ดูเงื่อนไขการเข้าหน้างานเร่งด่วนและนอกเวลาทำการได้ที่
               <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
                 หน้าเรียกช่างด่วน
@@ -269,7 +269,7 @@ export default async function ServicePage({ params }: Props) {
         <div className="wrap max-w-3xl">
           <h2 className="h2">ขั้นตอนการทำงาน</h2>
           <p className="lead mt-3">
-            ผมทำตามขั้นตอนเดียวกันในทุกงาน รวมถึงขั้นตอนที่ลูกค้าตรวจสอบได้ยาก เพื่อให้ผลงานคงมาตรฐานเดิมทุกครั้ง
+            ขั้นตอนการทำงานที่ผมใช้กับทุกงาน
           </p>
           <div className="mt-9">
             <Steps steps={s.steps} />
@@ -290,10 +290,9 @@ export default async function ServicePage({ params }: Props) {
       {photos && photos.length > 1 && (
         <section className="section">
           <div className="wrap">
-            <h2 className="h2">ภาพงาน{s.name}จริง</h2>
+            <h2 className="h2">ภาพงาน{s.name}</h2>
             <p className="lead mt-3 max-w-2xl">
               คราบที่เกาะอยู่ในเครื่องส่วนใหญ่อยู่ในจุดที่มองไม่เห็นจนกว่าจะถอดชิ้นส่วนออกมา
-              นี่คือลักษณะที่ผมพบบ่อยที่สุดหน้างาน
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {photos.slice(1).map((g) => {
@@ -319,10 +318,6 @@ export default async function ServicePage({ params }: Props) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="h-72 w-full object-cover"
                   />
-                  <figcaption className="px-4 py-3 text-sm leading-relaxed text-ink-soft">
-                    {stage && <strong className="text-ink">{stage}: </strong>}
-                    {g.alt}
-                  </figcaption>
                 </figure>
                 );
               })}
@@ -364,7 +359,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="wrap">
             <h2 className="h2">อ่านเพิ่มเติมก่อนตัดสินใจเรื่อง{s.name}</h2>
             <p className="lead mt-3 max-w-2xl">
-              บทความที่ผมเขียนอธิบายสาเหตุและวิธีตรวจเบื้องต้นด้วยตัวเอง อ่านก่อนเรียกช่างได้ครับ
+              อาการหลายอย่างตรวจเองได้ก่อนเรียกช่าง อ่านวิธีตรวจเบื้องต้นได้ครับ
             </p>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {guides.map((g) => (

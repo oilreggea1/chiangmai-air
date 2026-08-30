@@ -57,7 +57,7 @@ const answers: Answer[] = [
   },
   {
     q: "ช่างให้บริการพื้นที่ใดในเชียงใหม่?",
-    a: "พื้นที่หลักคือสันกำแพง ต้นเปา บ่อสร้าง สันพระเนตร สารภี ดอยสะเก็ด และอำเภอเมืองเชียงใหม่ พื้นที่ที่ระบุในหน้าเขตบริการใช้ราคาเดียวกันและไม่มีค่าเดินทางเพิ่ม",
+    a: "พื้นที่หลักคือสันกำแพง ต้นเปา บ่อสร้าง สันพระเนตร สารภี ดอยสะเก็ด และอำเภอเมืองเชียงใหม่ ทุกตำบลที่ผมรับงานใช้ราคาเดียวกัน ไม่มีค่าเดินทางเพิ่ม",
     href: "/area",
     link: "ตรวจรายชื่อตำบลและอำเภอ",
   },
@@ -151,23 +151,23 @@ export default function AnswersPage() {
       <section className="section bg-sand">
         <div className="wrap max-w-4xl grid gap-6 md:grid-cols-2">
           <div className="card p-6 sm:p-8">
-            <h2 className="text-xl font-bold">วิธีประเมินที่ใช้กับข้อมูลนี้</h2>
+            <h2 className="text-xl font-bold">งานที่ต้องดูเครื่องก่อนจึงแจ้งราคาได้</h2>
             <p className="mt-3 text-[15px] leading-8 text-ink-soft">
-              ราคาแบบตายตัวแสดงเป็นตัวเลข ส่วนงานที่ขึ้นกับรุ่น อะไหล่ หรือสภาพหน้างานจะไม่เดาราคา
-              ผมตรวจเครื่องจริงและแจ้งยอดก่อนเริ่มงาน
+              งานที่ราคาตายตัวผมแจ้งเป็นตัวเลข ส่วนงานที่ขึ้นกับรุ่นและอะไหล่
+              ผมตรวจเครื่องจริงแล้วแจ้งยอดก่อนเริ่มงาน
             </p>
             <Link href="/portfolio" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:underline">
               ตรวจผลงานจริง<IconChevron className="h-4 w-4" />
             </Link>
           </div>
           <div className="card p-6 sm:p-8">
-            <h2 className="text-xl font-bold">ข้อมูลธุรกิจที่ตรวจสอบได้</h2>
+            <h2 className="text-xl font-bold">ข้อมูลผู้ให้บริการ</h2>
             <p className="mt-3 text-[15px] leading-8 text-ink-soft">
               {site.name} ดำเนินงานในนาม {site.legalName} เลขประจำตัวผู้เสียภาษี {site.taxId}
               ที่ตั้ง {site.address.subDistrict} {site.address.district} จ.{site.address.province}
             </p>
             <a href={`tel:${site.phoneTel}`} data-cta="answers-call" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:underline">
-              <IconPhone className="h-4 w-4" />โทรตรวจสอบ {site.phone}
+              <IconPhone className="h-4 w-4" />โทร {site.phone}
             </a>
           </div>
         </div>

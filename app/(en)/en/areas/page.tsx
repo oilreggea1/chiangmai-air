@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "Is there a travel fee for my area?",
-    a: "No. Every area listed below is charged at the same rate. If you are outside the area, message me and I will tell you what is possible and what the travel cost would be.",
+    a: "No. Every area I cover is charged at the same rate. If you are outside the area, message me and I will tell you what is possible and what the travel cost would be.",
   },
   {
     q: "How far in advance should I book?",
@@ -71,7 +71,7 @@ export default function EnAreasPage() {
           </h1>
           <p className="lead mt-5">
             I work across {coverage.length} districts and {coverageTotal} sub-districts around
-            San Kamphaeng, including all of Mueang Chiang Mai. Every area listed below is charged
+            San Kamphaeng, including all of Mueang Chiang Mai. Every area I cover is charged
             at the same rate, with no travel surcharge.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -112,8 +112,7 @@ export default function EnAreasPage() {
             ))}
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
-            Sub-district names are given in Thai so you can match them against your address
-            or show them to a driver. If your address is not on the list, message me — I will
+            Match the Thai sub-district names against your address, or show one to a driver. If your address is not on the list, message me — I will
             tell you what is possible and what the travel cost would be.
           </p>
         </div>
@@ -123,8 +122,8 @@ export default function EnAreasPage() {
         <div className="wrap">
           <h2 className="h2">Zone pages in Thai</h2>
           <p className="lead mt-3 max-w-2xl">
-            Each zone has its own page in Thai with local detail. Useful if you want to send
-            the link to a Thai-speaking landlord, agent or condo office.
+            Send a zone link to a Thai-speaking landlord, agent or condo office —
+            each one carries the local detail in Thai.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (

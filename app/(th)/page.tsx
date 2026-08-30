@@ -162,7 +162,7 @@ export default function Home() {
             <h2 className="h2 mt-4">ดูแลงานแอร์และเครื่องซักผ้าถึงบ้าน</h2>
             <p className="lead mt-3">
               ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย ติดตั้งเครื่องใหม่ ย้ายแอร์
-              ไปจนถึงการถอดล้างถังเครื่องซักผ้า ทุกบริการมีราคาระบุชัดเจน พิจารณาได้ก่อนติดต่อ
+              ไปจนถึงการถอดล้างถังเครื่องซักผ้า ราคาที่แสดงคือราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
             </p>
           </div>
 
@@ -284,7 +284,7 @@ export default function Home() {
           </div>
           <div className="mt-8">
             <Link href="/price/repair" className="btn-ghost" data-cta="home-price-repair">
-              ดูตารางราคาซ่อมแอร์แบบเปิดเผย
+              ดูตารางราคาซ่อมแอร์
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>
@@ -295,7 +295,7 @@ export default function Home() {
       <section className="section bg-sand" id="price">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">ราคาโปร่งใส</p>
+            <p className="eyebrow">อัตราค่าบริการ</p>
             <h2 className="h2 mt-4">อัตราค่าบริการยอดนิยม</h2>
             <p className="lead mt-3">
               ราคาที่แสดงคือราคาที่ชำระจริง หากหน้างานมีค่าใช้จ่ายเพิ่มเติม ผมแจ้งให้ทราบและขอความเห็นชอบก่อนเสมอ
@@ -422,7 +422,7 @@ export default function Home() {
               หากคุณกำลังมองหา <strong className="text-ink">ช่างแอร์สันกำแพง</strong> ที่ตั้งอยู่ในพื้นที่จริง{" "}
               <strong className="text-ink">โปรเฟรชแคร์ (Pro Fresh Care)</strong>{" "}
               คือผมเองครับ ที่ตั้งของผมอยู่ในเขต ต.สันกำแพง จึงเข้าถึงหน้างานโซนสันกำแพง ต้นเปา บ่อสร้าง
-              และหมู่บ้านซีรีนพาร์คได้รวดเร็ว คุณจึงไม่ต้องรอช่างเดินทางข้ามเมือง
+              และหมู่บ้านซีรีนพาร์คได้รวดเร็ว
             </p>
             <p>
               นอกจากพื้นที่นี้ ผมยังรับงาน{" "}
@@ -461,8 +461,7 @@ export default function Home() {
             <p className="eyebrow">คลังความรู้</p>
             <h2 className="h2 mt-4">ความรู้เรื่องแอร์ที่ควรทราบก่อนเรียกช่าง</h2>
             <p className="lead mt-3">
-              ผมเรียบเรียงจากงานที่รับจริงในเชียงใหม่ และระบุไว้ชัดเจนว่าอาการใดที่คุณตรวจสอบหรือแก้ไขเองได้
-              โดยไม่ต้องเรียกช่าง
+              อาการหลายอย่างตรวจสอบหรือแก้ไขเองได้ก่อนเรียกช่าง อ่านวิธีตรวจเบื้องต้นได้ครับ
             </p>
           </div>
           <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

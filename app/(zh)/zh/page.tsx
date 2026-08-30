@@ -58,7 +58,7 @@ const servicesZh = [
     icon: IconInstall,
     name: "新机安装",
     price: `${p.install.small} 泰铢起`,
-    desc: `${btu.installSmall} BTU 为 ${p.install.small} 泰铢，${btu.installLarge} BTU 为 ${p.install.large} 泰铢。每次都会完整抽真空，这一步客户看不见，但省略后压缩机会提前损坏。保修最长一年。`,
+    desc: `${btu.installSmall} BTU 为 ${p.install.small} 泰铢，${btu.installLarge} BTU 为 ${p.install.large} 泰铢。每次安装都会完整抽真空，这一步决定压缩机的使用寿命。保修最长一年。`,
   },
   {
     icon: IconMove,
@@ -76,13 +76,13 @@ const servicesZh = [
     icon: IconInstall,
     name: "销售新机与二手机 · 旧机折抵",
     price: "按机型报价",
-    desc: "新机和检测过的二手机都有，含安装。机器和安装由同一个人负责，日后出问题不用争论是机器的问题还是安装的问题。机器价格随机型和当期促销变动，所以按机型报价。二手机机身保修 1 个月。旧机也可以折抵，但要先看到实机才能定价。",
+    desc: "新机和检测过的二手机都有，含安装。机器和安装由我一人负责，保修同时涵盖机器和安装。机器价格随机型和当期促销变动，所以按机型报价。二手机机身保修 1 个月。旧机也可以折抵，但要先看到实机才能定价。",
   },
   {
     icon: IconWasher,
     name: "洗衣机内桶清洗",
     price: `${p.washer.topLoad} 泰铢起`,
-    desc: `把内桶整个拆下来逐件清洗，而不是倒清洁剂空转。污垢主要积在内桶外壁，空转根本碰不到。上开式 ${p.washer.topLoad} 泰铢起按容量计价，前开式 ${p.washer.frontLoad} 泰铢起，因为拆装更复杂。每台约三小时，保修 30 天。`,
+    desc: `把内桶整个拆下来逐件清洗。污垢主要积在内桶外壁，单靠水流碰不到。上开式 ${p.washer.topLoad} 泰铢起按容量计价，前开式 ${p.washer.frontLoad} 泰铢起，因为拆装更复杂。每台约三小时，保修 30 天。`,
   },
 ];
 
@@ -93,11 +93,11 @@ const faqs = [
   },
   {
     q: "清迈空调清洗多少钱？",
-    a: `壁挂机 ${btu.washStd} BTU 每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢。${btu.washBig} BTU 每台 ${p.wash.big} 泰铢，两台以上每台 ${p.wash.bigBulk} 泰铢。深度拆洗每台 ${p.wash.premium} 泰铢，按机型大小计价。中国客户和泰国客户同价。`,
+    a: `壁挂机 ${btu.washStd} BTU 每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢。${btu.washBig} BTU 每台 ${p.wash.big} 泰铢，两台以上每台 ${p.wash.bigBulk} 泰铢。深度拆洗每台 ${p.wash.premium} 泰铢，按机型大小计价。`,
   },
   {
-    q: "对中国客人会不会加价？",
-    a: "不会。公开标出的价格就是所有人付的价格，中文、英文、泰文三种语言上的数字完全一致。开工前我会把总价报给您确认，完工后不会再加钱。",
+    q: "价格怎么算？",
+    a: "所有客户同一个价格。开工前我会把总价报给您确认，完工后按报价付款。",
   },
   {
     q: "清迈的空调多久洗一次？",

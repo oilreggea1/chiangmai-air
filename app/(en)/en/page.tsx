@@ -37,7 +37,7 @@ const servicesEn = [
     icon: IconSnow,
     name: "Aircon cleaning",
     price: `${p.wash.std} THB · ${p.wash.stdBulk} for 3+`,
-    desc: `Standard clean ${p.wash.std} THB per wall unit, or ${p.wash.stdBulk} THB each for three or more. The full strip-down clean is ${p.wash.premium} THB depending on size — I take out the blower wheel and every removable part, wash them separately and disinfect them. If your unit has no smell and gets cleaned regularly, I will tell you the standard clean is enough.`,
+    desc: `Standard clean ${p.wash.std} THB per wall unit, or ${p.wash.stdBulk} THB each for three or more. The full strip-down clean is ${p.wash.premium} THB depending on size — I take out the blower wheel and every removable part, wash them separately and disinfect them. The standard clean is enough for a unit with no smell that gets cleaned regularly — I recommend the full strip-down only where it is needed.`,
   },
   {
     icon: IconWrench,
@@ -49,7 +49,7 @@ const servicesEn = [
     icon: IconInstall,
     name: "New installation",
     price: `from ${p.install.small} THB`,
-    desc: `${p.install.small} THB for ${btu.installSmall} BTU, ${p.install.large} THB for ${btu.installLarge} BTU. I vacuum the line set properly every time — it is the step nobody can see and the one that kills compressors when it gets skipped. Warranty up to 1 year.`,
+    desc: `${p.install.small} THB for ${btu.installSmall} BTU, ${p.install.large} THB for ${btu.installLarge} BTU. I vacuum the line set fully on every installation — the step that protects the compressor for the long run. Warranty up to 1 year.`,
   },
   {
     icon: IconMove,
@@ -67,13 +67,13 @@ const servicesEn = [
     icon: IconInstall,
     name: "Buying a unit and trade-ins",
     price: "quoted per model",
-    desc: "I sell both new and checked second-hand units, fitted. Buying and fitting from one person means that if something goes wrong later there is no argument about whether it is the unit or the installation. Unit prices depend on the model and the promotion running at the time, so I quote per model. Second-hand units carry a 1 month warranty on the unit itself. I also take your old unit in part-exchange, but I have to see it before I can put a price on it.",
+    desc: "I sell both new and checked second-hand units, fitted. I supply and fit the unit myself, and the warranty covers both the unit and the installation. Unit prices depend on the model and the promotion running at the time, so I quote per model. Second-hand units carry a 1 month warranty on the unit itself. I also take your old unit in part-exchange, but I have to see it before I can put a price on it.",
   },
   {
     icon: IconWasher,
     name: "Washing machine drum clean",
     price: `from ${p.washer.topLoad} THB`,
-    desc: `I take the drum out and wash every removable part, rather than pouring cleaner in and running a cycle — the build-up sits on the outside of the drum where a cycle cannot reach. Top loaders start at ${p.washer.topLoad} THB and go by capacity; front loaders start at ${p.washer.frontLoad} THB because they are more involved to strip down. Around three hours per machine, 30-day warranty.`,
+    desc: `I take the drum out and wash every removable part. The build-up sits on the outside of the drum, where water alone cannot reach. Top loaders start at ${p.washer.topLoad} THB and go by capacity; front loaders start at ${p.washer.frontLoad} THB because they are more involved to strip down. Around three hours per machine, 30-day warranty.`,
   },
 ];
 
@@ -263,7 +263,7 @@ export default function EnglishPage() {
             {[
               "Every rate is published, so you know the cost before you call. I confirm the exact figure with you before I start, and it does not change afterwards.",
               "Refrigerant is measured in front of you. A system that is not low does not get topped up, because overcharging one shortens the life of the compressor.",
-              "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I will tell you that and leave the decision with you.",
+              "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I give you the repair cost and the replacement cost side by side, and the decision stays with you.",
               "Two layers of drop sheets on every cleaning job. Floor and furniture stay as they were.",
               "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
               "Receipts issued in the company name, Cher Solutions Co., Ltd., for business bookings.",

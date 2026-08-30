@@ -52,7 +52,7 @@ export default async function WorkCasePage({ params }: Props) {
           <p className="eyebrow">Case Study · {item.service}</p>
           <h1 className="mt-5 text-[1.8rem] leading-[1.35] font-extrabold sm:text-[2.3rem]">{item.title}</h1>
           <p className="lead mt-5">{item.finding}</p>
-          <p className="mt-4 text-sm leading-7 text-ink-soft">ดำเนินงานและตรวจทานรายละเอียดโดยช่างอาร์ม</p>
+          <p className="mt-4 text-sm leading-7 text-ink-soft">ช่างอาร์มเป็นผู้รับผิดชอบและลงมือทำงานนี้</p>
         </header>
       </div>
       <article className="wrap max-w-4xl py-10">
@@ -70,7 +70,7 @@ export default async function WorkCasePage({ params }: Props) {
           <div><h2 className="h2">ผลหลังดำเนินการ</h2><p className="mt-5 text-[15px] leading-8 text-ink-soft">{item.result}</p><Link href={`/service/${item.serviceSlug}`} className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">ดูมาตรฐานบริการ{item.service}<IconChevron className="h-4 w-4" /></Link></div>
         </section>
       </article>
-      <CtaBand title={`ต้องการสอบถามงาน${item.service}`} subtitle="ส่งภาพ รุ่นเครื่อง และพื้นที่เข้ามาทาง LINE ผมประเมินจากข้อมูลจริงให้ก่อนนัดครับ" lineUrl={item.serviceSlug === "lang-washing-machine" ? site.lineUrl2 : site.lineUrl} lineId={item.serviceSlug === "lang-washing-machine" ? site.lineId2 : site.lineId} />
+      <CtaBand title={`ต้องการสอบถามงาน${item.service}`} subtitle="ส่งภาพ รุ่นเครื่อง และพื้นที่เข้ามาทาง LINE ผมประเมินราคาให้ก่อนนัดครับ" lineUrl={item.serviceSlug === "lang-washing-machine" ? site.lineUrl2 : site.lineUrl} lineId={item.serviceSlug === "lang-washing-machine" ? site.lineId2 : site.lineId} />
     </>
   );
 }

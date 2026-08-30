@@ -176,9 +176,6 @@ export default function ArticleBody({
                     </li>
                   ))}
                 </ol>
-                <p className="mt-4 text-xs leading-6 text-ink-soft">
-                  ลิงก์เหล่านี้ใช้รองรับข้อเท็จจริงทางสุขภาพและเทคนิค ส่วนคำแนะนำหน้างานเป็นประสบการณ์ของช่างอาร์มและระบุแยกจากกัน
-                </p>
               </aside>
             );
 

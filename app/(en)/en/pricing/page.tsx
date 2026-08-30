@@ -40,8 +40,8 @@ const groupEn: Record<string, string> = {
 
 const faqs = [
   {
-    q: "Do you charge foreigners more than Thai customers?",
-    a: "No. The prices below are what everyone pays, and they are the same figures published on the Thai version of this site. I quote the full cost before I start work, and I do not add charges afterwards.",
+    q: "Is the price the same for everyone?",
+    a: "Yes. One price for every customer, quoted in full before I start work. The quoted figure is the final figure.",
   },
   {
     q: "Is travel to my area included?",
@@ -74,8 +74,7 @@ export default function EnPricingPage() {
             Aircon cleaning prices in Chiang Mai
           </h1>
           <p className="lead mt-5">
-            Every rate I charge is published below. It is the same list published on the Thai
-            version of this site, and the same price whether you are Thai or foreign.
+            Every rate I charge is here — one price for every customer.
             I confirm the total with you before I start.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -108,7 +107,7 @@ export default function EnPricingPage() {
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            The item names below are the terms I use when quoting.
+            These item names are the terms I use when quoting.
             If any line is unclear, message me on LINE and I will explain it in English. I use a translation app, so short plain sentences work best.
           </p>
         </div>

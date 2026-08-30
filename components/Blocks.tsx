@@ -6,7 +6,7 @@ import { IconPhone, IconLine, IconChevron, IconStar, IconCheck } from "./Icons";
 /** แถบ CTA ปิดท้ายทุกหน้า */
 export function CtaBand({
   title = "ต้องการช่างแอร์ในเชียงใหม่",
-  subtitle = "แจ้งอาการหรือรายละเอียดงานเข้ามาได้ ผมประเมินเบื้องต้นให้โดยไม่คิดค่าใช้จ่าย และแจ้งราคาให้ครบถ้วนก่อนเริ่มงานเสมอ",
+  subtitle = "แจ้งอาการหรือรายละเอียดงานเข้ามาได้ ผมประเมินเบื้องต้นให้โดยไม่คิดค่าใช้จ่าย และแจ้งราคาให้ครบถ้วนก่อนเริ่มงาน",
   lineUrl = site.lineUrl,
   lineId = site.lineId,
 }: {
@@ -48,7 +48,7 @@ export function CtaBand({
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">
-              {site.daysLabel} {site.hours} · ยืนยันคิวจริงก่อนนัดทุกครั้ง
+              {site.daysLabel} {site.hours} · ยืนยันคิวก่อนนัด
             </p>
           </div>
         </div>

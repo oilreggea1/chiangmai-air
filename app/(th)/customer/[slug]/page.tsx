@@ -90,8 +90,7 @@ export default async function SegmentPage({ params }: Props) {
         <div className="wrap">
           <h2 className="h2">ราคาที่ใช้กับงาน{seg.name}</h2>
           <p className="lead mt-3 max-w-2xl">
-            ราคาเดียวกับงานทั่วไป ไม่มีอัตราพิเศษสำหรับลูกค้าธุรกิจที่แพงกว่า
-            และไม่คิดค่าเดินทางเพิ่มทุกตำบลที่รับงาน
+            ใช้อัตราเดียวกับงานทั่วไปทุกตำบลที่รับงาน ไม่มีค่าเดินทางเพิ่ม
           </p>
           <div className="mt-8 overflow-x-auto">
             <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
