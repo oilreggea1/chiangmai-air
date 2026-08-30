@@ -58,7 +58,7 @@ const servicesZh = [
     icon: IconInstall,
     name: "新机安装",
     price: `${p.install.small} 泰铢起`,
-    desc: `${btu.installSmall} BTU 为 ${p.install.small} 泰铢，${btu.installLarge} BTU 为 ${p.install.large} 泰铢。每次安装都会完整抽真空，这一步决定压缩机的使用寿命。保修最长一年。`,
+    desc: `${btu.installSmall} BTU 为 ${p.install.small} 泰铢，${btu.installLarge} BTU 为 ${p.install.large} 泰铢。每次安装都会完整抽真空，这一步决定压缩机的使用寿命。价格已含支架、4 米以内的铜管和线槽。保修最长一年。`,
   },
   {
     icon: IconMove,

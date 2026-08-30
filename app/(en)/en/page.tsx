@@ -49,7 +49,7 @@ const servicesEn = [
     icon: IconInstall,
     name: "New installation",
     price: `from ${p.install.small} THB`,
-    desc: `${p.install.small} THB for ${btu.installSmall} BTU, ${p.install.large} THB for ${btu.installLarge} BTU. I vacuum the line set fully on every installation — the step that protects the compressor for the long run. Warranty up to 1 year.`,
+    desc: `${p.install.small} THB for ${btu.installSmall} BTU, ${p.install.large} THB for ${btu.installLarge} BTU. I vacuum the line set fully on every installation — the step that protects the compressor for the long run. The price includes the wall bracket, up to 4 m of piping and the trunking. Warranty up to 1 year.`,
   },
   {
     icon: IconMove,
