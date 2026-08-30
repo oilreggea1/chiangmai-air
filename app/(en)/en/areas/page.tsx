@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "Is there a travel fee for my area?",
-    a: "No. Every area listed on this page is charged at the same rate. If you are outside the area, I will tell you honestly rather than accept the job and arrive late.",
+    a: "No. Every area listed below is charged at the same rate. If you are outside the area, message me and I will tell you what is possible and what the travel cost would be.",
   },
   {
     q: "How far in advance should I book?",
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "I am outside these areas. Can you still come?",
-    a: "Message me on LINE with your location. If it is slightly outside I will tell you what is possible, and if it is genuinely too far I will say so rather than waste your time.",
+    a: "Message me on LINE with your location. If it is slightly outside I will tell you what is possible, and if it is too far I will say so right away.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function EnAreasPage() {
           </h1>
           <p className="lead mt-5">
             I work across {coverage.length} districts and {coverageTotal} sub-districts around
-            San Kamphaeng, including all of Mueang Chiang Mai. Every area on this page is charged
+            San Kamphaeng, including all of Mueang Chiang Mai. Every area listed below is charged
             at the same rate, with no travel surcharge.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -96,7 +96,7 @@ export default function EnAreasPage() {
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-lg font-bold">{amphoeEn[c.amphoe] ?? c.amphoe}</h3>
                   <span className="text-sm font-semibold text-brand-700">
-                    {c.tambons.length} sub-districts
+                    {c.tambons.length} sub-district{c.tambons.length === 1 ? "" : "s"}
                   </span>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-ink-soft">
@@ -114,7 +114,7 @@ export default function EnAreasPage() {
           <p className="mt-6 text-sm leading-7 text-ink-soft">
             Sub-district names are given in Thai so you can match them against your address
             or show them to a driver. If your address is not on the list, message me — I will
-            tell you honestly whether I can come and what the travel cost would be.
+            tell you what is possible and what the travel cost would be.
           </p>
         </div>
       </section>

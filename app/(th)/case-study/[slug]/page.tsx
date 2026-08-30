@@ -70,7 +70,7 @@ export default async function WorkCasePage({ params }: Props) {
           <div><h2 className="h2">ผลหลังดำเนินการ</h2><p className="mt-5 text-[15px] leading-8 text-ink-soft">{item.result}</p><Link href={`/service/${item.serviceSlug}`} className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">ดูมาตรฐานบริการ{item.service}<IconChevron className="h-4 w-4" /></Link></div>
         </section>
       </article>
-      <CtaBand title={`ต้องการสอบถามงาน${item.service}`} subtitle="ส่งภาพ รุ่นเครื่อง และพื้นที่ทาง LINE เพื่อให้ช่างประเมินจากข้อมูลจริงก่อนนัด" lineUrl={item.serviceSlug === "lang-washing-machine" ? site.lineUrl2 : site.lineUrl} lineId={item.serviceSlug === "lang-washing-machine" ? site.lineId2 : site.lineId} />
+      <CtaBand title={`ต้องการสอบถามงาน${item.service}`} subtitle="ส่งภาพ รุ่นเครื่อง และพื้นที่เข้ามาทาง LINE ผมประเมินจากข้อมูลจริงให้ก่อนนัดครับ" lineUrl={item.serviceSlug === "lang-washing-machine" ? site.lineUrl2 : site.lineUrl} lineId={item.serviceSlug === "lang-washing-machine" ? site.lineId2 : site.lineId} />
     </>
   );
 }

@@ -41,11 +41,11 @@ const groupEn: Record<string, string> = {
 const faqs = [
   {
     q: "Do you charge foreigners more than Thai customers?",
-    a: "No. The prices on this page are what everyone pays, and they are the same figures published on the Thai version of this site. I quote the full cost before I start work, and I do not add charges afterwards.",
+    a: "No. The prices below are what everyone pays, and they are the same figures published on the Thai version of this site. I quote the full cost before I start work, and I do not add charges afterwards.",
   },
   {
     q: "Is travel to my area included?",
-    a: "Yes, inside my service area there is no separate travel fee. That covers all of Mueang Chiang Mai — Nimman, the old city, Santitham and the airport side — plus San Kamphaeng, Saraphi, Doi Saket and San Phra Net. If you are outside it, message me and I will tell you honestly whether I can come and what the travel cost would be.",
+    a: "Yes, inside my service area there is no separate travel fee. That covers all of Mueang Chiang Mai — Nimman, the old city, Santitham and the airport side — plus San Kamphaeng, Saraphi, Doi Saket and San Phra Net. If you are outside it, message me and I will tell you what is possible and what the travel cost would be.",
   },
   {
     q: "How do I know which type of unit I have?",
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: "Can you give me a receipt for my accounts?",
-    a: "I issue receipts in the company name, Cher Solutions Co., Ltd. To be straight with you: the company is not yet VAT registered, so I cannot issue a full VAT tax invoice. If your business needs one to reclaim input VAT, please tell me before booking.",
+    a: "I issue receipts in the company name, Cher Solutions Co., Ltd. The company is not yet VAT registered, so I cannot issue a full VAT tax invoice. If your business needs one to reclaim input VAT, please tell me before booking.",
   },
   {
     q: "What payment methods do you accept?",
@@ -74,7 +74,7 @@ export default function EnPricingPage() {
             Aircon cleaning prices in Chiang Mai
           </h1>
           <p className="lead mt-5">
-            Every rate I charge is on this page. It is the same list published on the Thai
+            Every rate I charge is published below. It is the same list published on the Thai
             version of this site, and the same price whether you are Thai or foreign.
             I confirm the total with you before I start.
           </p>
@@ -108,8 +108,7 @@ export default function EnPricingPage() {
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            Item labels stay in Thai because those are the exact terms I use when quoting,
-            so you can match them line by line against the Thai price list.
+            The item names below are the terms I use when quoting.
             If any line is unclear, message me on LINE and I will explain it in English. I use a translation app, so short plain sentences work best.
           </p>
         </div>

@@ -45,7 +45,7 @@ export default async function RepairGuidePage({ params }: Props) {
       <div className="bg-gradient-to-b from-brand-50 to-white">
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-4xl pt-8 pb-16">
-          <p className="eyebrow">ตรวจตามรุ่นจริง · ไม่เดาเปลี่ยนอะไหล่</p>
+          <p className="eyebrow">ตรวจตามรุ่นจริง · วัดยืนยันก่อนเสนอเปลี่ยนอะไหล่</p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">{guide.h1}</h1>
           <p className="lead mt-5 max-w-3xl">{guide.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

@@ -266,7 +266,7 @@ export default function EnglishPage() {
               "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I will tell you that and leave the decision with you.",
               "Two layers of drop sheets on every cleaning job. Floor and furniture stay as they were.",
               "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
-              "Receipts issued in the company name, Cher Solutions Co., Ltd. The company is not VAT registered, so a VAT tax invoice is not available.",
+              "Receipts issued in the company name, Cher Solutions Co., Ltd., for business bookings.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint/12 text-mint">
@@ -283,7 +283,7 @@ export default function EnglishPage() {
         <div className="wrap">
           <h2 className="h2">What the work looks like</h2>
           <p className="lead mt-3 max-w-2xl">
-            Photographs from jobs in Chiang Mai, in the order the work happens.
+            Most of the dirt sits where you cannot see it until the parts come out.
           </p>
           <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {workPhotos.map((ph) => (

@@ -29,7 +29,8 @@ export default function VideosPage() {
         <section className="wrap max-w-3xl pt-8 pb-10 text-center">
           <p className="eyebrow">หลักฐานจากหน้างานจริง</p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">วิดีโอผลงานช่างแอร์เชียงใหม่</h1>
-          <p className="lead mt-5">งานติดตั้ง ล้าง และซ่อมแอร์ที่ทีมงานลงมือทำจริง วิดีโอจะโหลดเมื่อกดเล่นเท่านั้น</p>
+          {/* หมายเหตุเชิงเทคนิค: วิดีโอเป็น lazy-load โหลดเมื่อกดเล่นเท่านั้น จึงไม่ถ่วงหน้าเว็บ (ดูรายละเอียดใน ReelCard) — เป็นข้อมูลสำหรับคนแก้โค้ด ห้ามเอาไปเขียนบนหน้าเว็บ */}
+          <p className="lead mt-5">คลิปจากหน้างานจริงในเชียงใหม่ ตั้งแต่ปูผ้าใบจนถึงชิ้นส่วนที่ถอดล้าง</p>
         </section>
       </div>
       <ReelsShowcase />

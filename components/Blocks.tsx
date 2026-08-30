@@ -48,7 +48,7 @@ export function CtaBand({
               </a>
             </div>
             <p className="mt-6 text-sm text-brand-200">
-              {site.daysLabel} {site.hours} · เช็คคิวจริงก่อนนัดทุกครั้ง
+              {site.daysLabel} {site.hours} · ยืนยันคิวจริงก่อนนัดทุกครั้ง
             </p>
           </div>
         </div>

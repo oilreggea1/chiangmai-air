@@ -41,7 +41,7 @@ const groupZh: Record<string, string> = {
 const faqs = [
   {
     q: "中国客户的价格和泰国客户一样吗？",
-    a: "完全一样。这一页的数字和泰文价格页是同一份数据，改一处两边同时变，不存在两套价格。开工前我会把总价写给您确认。",
+    a: "完全一样。中文页和泰文页的价格完全一致，不存在两套价格。开工前我会把总价写给您确认。",
   },
   {
     q: "价格里包含上门费吗？",
@@ -105,8 +105,8 @@ export default function ZhPricingPage() {
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            项目名称保留泰文，是因为这就是我报价时使用的原始说法。
-            任何一行看不懂，用 LINE 拍照或直接问我，我会用中文解释。
+            下面的项目名称就是我报价时使用的说法。
+            任何一行看不懂，用 LINE 问我，我会解释清楚。
           </p>
         </div>
       </section>

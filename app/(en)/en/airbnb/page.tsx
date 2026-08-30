@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "I am not in Chiang Mai. Can you deal with my cleaner or caretaker?",
-    a: "Yes. Many owners I work for are overseas. Give me the contact for whoever holds the keys, and I will arrange access with them directly and send you photos of the work when it is done.",
+    a: "Yes. I also work for owners who live overseas. Give me the contact for whoever holds the keys, and I will arrange access with them directly and send you photos of the work when it is done.",
   },
   {
     q: "How often should rental units be cleaned?",
@@ -66,7 +66,7 @@ export default function EnAirbnbPage() {
           </h1>
           <p className="lead mt-5">
             A guest who walks into a room with a musty smell will mention it in the review,
-            and that review stays visible far longer than the cost of preventing it.
+            and that review stays visible long after the booking ends.
             I clean between guests, work to your changeover window, and send photos when it is done.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

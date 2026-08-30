@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // ชื่อยี่ห้อยาวไม่เท่ากัน ถ้าใช้ประโยคเดียวกันหมด ยี่ห้อชื่อยาวจะเกิน 160 ตัวอักษรแล้วโดนตัด
   // จึงเลือกประโยคที่ยาวที่สุดเท่าที่ยังพอดีกรอบ แทนที่จะปล่อยให้ตัดกลางคำ
   const descs = [
-    `ล้างแอร์และซ่อมแอร์${b.name} (${b.en}) เชียงใหม่ ถึงบ้าน เครื่องละ ${p.wash.std} บาท 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ตรวจให้ดูก่อนเสนอราคา ไม่เชียร์เติมน้ำยาโดยไม่จำเป็น`,
+    `ล้างแอร์และซ่อมแอร์${b.name} (${b.en}) เชียงใหม่ ถึงบ้าน เครื่องละ ${p.wash.std} บาท 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ตรวจวัดให้ดูก่อนเสนอราคา เติมน้ำยาเฉพาะเมื่อวัดแล้วพร่องจริง`,
     `ล้างแอร์และซ่อมแอร์${b.name} (${b.en}) เชียงใหม่ ถึงบ้าน เครื่องละ ${p.wash.std} บาท 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ตรวจให้ดูก่อนเสนอราคา`,
     `ล้างแอร์และซ่อมแอร์${b.name} เชียงใหม่ ถึงบ้าน เครื่องละ ${p.wash.std} บาท 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ตรวจให้ดูก่อนเสนอราคา`,
   ];
@@ -107,7 +107,7 @@ export default async function BrandPage({ params }: Props) {
           <div className="card p-6">
             <h2 className="flex items-start gap-3 text-lg font-bold">
               <IconCheck className="mt-1 h-5 w-5 shrink-0 text-brand-600" />
-              อะไหล่{b.name}หาได้เร็วแค่ไหน
+              ต้องรออะไหล่{b.name}นานหรือไม่
             </h2>
             <p className="mt-3 text-sm leading-7 text-ink-soft">{brandCommon.parts}</p>
           </div>
@@ -141,8 +141,7 @@ export default async function BrandPage({ params }: Props) {
         <div className="wrap">
           <h2 className="h2">ราคาล้างแอร์{b.name} เท่ากับทุกยี่ห้อ</h2>
           <p className="lead mt-3 max-w-2xl">
-            ผมไม่คิดแพงขึ้นเพราะเป็นยี่ห้อนำเข้าหรือรุ่นราคาสูง เพราะงานที่ทำเท่ากัน
-            สิ่งที่ทำให้ราคาต่างคือชนิดของแอร์ ไม่ใช่ยี่ห้อ
+            ราคาคิดตามชนิดและขนาดของแอร์ ไม่ใช่ตามยี่ห้อ เพราะขั้นตอนการทำงานเท่ากัน
           </p>
           <div className="mt-8 overflow-x-auto">
             <table className="w-full min-w-[34rem] border-collapse text-left text-sm">

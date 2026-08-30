@@ -87,7 +87,6 @@ export default async function PortfolioCategoryPage({
           </h1>
           <p className="lead mt-5">
             ภาพหน้างานจริงหมวดนี้ {c.photos.length} ภาพ ทุกภาพมาจากงานที่ผมลงมือทำเอง
-            {pages > 1 && ` แบ่งแสดงหน้าละ ${PER_PAGE} ภาพ`}
           </p>
         </section>
       </div>
