@@ -243,6 +243,16 @@ export default async function AreaPage({ params }: Props) {
               ดูเงื่อนไขและรายละเอียดราคาทั้งหมด
               <IconChevron className="h-4 w-4" />
             </Link>
+            <p className="mt-4 text-sm leading-7 text-ink-soft">
+              ย้ายเข้าบ้านใหม่ หรือซื้อแอร์ออนไลน์มาแล้ว ผมรับติดตั้งในโซนนี้ด้วย —{" "}
+              <Link href="/customer/ban-mai" className="font-semibold text-brand-700 hover:underline" data-cta="area-ban-mai">
+                ติดตั้งแอร์บ้านใหม่ทั้งหลัง
+              </Link>{" "}
+              ·{" "}
+              <Link href="/customer/sue-air-online" className="font-semibold text-brand-700 hover:underline" data-cta="area-air-online">
+                รับติดตั้งแอร์ที่ซื้อมาเอง
+              </Link>
+            </p>
           </div>
         </div>
       </section>
