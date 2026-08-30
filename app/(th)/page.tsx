@@ -165,10 +165,10 @@ export default function Home() {
            หรือปรับเป็น 10.10 / 11.11 ตามรอบแคมเปญถัดไป เปลี่ยนเฉพาะเลขแคมเปญ) ---------- */}
       <section className="section pt-0" id="campaign-99">
         <div className="wrap">
-          <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
+          <div className="card overflow-hidden border-2 border-orange-300 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 sm:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
-                <p className="eyebrow">แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569</p>
+                <p className="inline-flex items-center rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569</p>
                 <h2 className="mt-3 text-xl font-extrabold sm:text-2xl">
                   กดสั่งแอร์จาก Shopee, Lazada หรือ TikTok แล้ว จองคิวติดตั้งล่วงหน้าได้
                 </h2>
@@ -201,26 +201,26 @@ export default function Home() {
             </div>
 
             {/* โปรจับคู่ 9.9 — ราคาโปรอยู่ใน p.promo99 ราคาปกติคำนวณจากราคาแยกรายการ ไม่พิมพ์เลขซ้ำ */}
-            <div className="mt-6 rounded-2xl border border-brand-200 bg-white/80 p-5 sm:p-6">
-              <p className="font-bold text-brand-800">
+            <div className="mt-6 rounded-2xl border border-orange-200 bg-white/90 p-5 sm:p-6">
+              <p className="font-bold text-orange-700">
                 โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง ({btu.washStd} BTU)
               </p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-xl bg-brand-50 px-4 py-3.5">
+                <div className="rounded-xl bg-orange-100/70 px-4 py-3.5">
                   <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาบน + ล้างแอร์</p>
-                  <p className="mt-1 text-xl font-extrabold text-brand-800">
+                  <p className="mt-1 text-2xl font-extrabold text-orange-600">
                     {p.promo99.topLoadBundle} บาท
                     <span className="ml-2 text-sm font-normal text-ink-soft">
-                      จากราคาแยกรายการ {bundleNormal(p.washer.topLoad)} บาท
+                      จากราคาแยกรายการ <s className="decoration-ink-soft/60">{bundleNormal(p.washer.topLoad)} บาท</s>
                     </span>
                   </p>
                 </div>
-                <div className="rounded-xl bg-brand-50 px-4 py-3.5">
+                <div className="rounded-xl bg-orange-100/70 px-4 py-3.5">
                   <p className="text-sm text-ink-soft">เครื่องซักผ้าฝาหน้า + ล้างแอร์</p>
-                  <p className="mt-1 text-xl font-extrabold text-brand-800">
+                  <p className="mt-1 text-2xl font-extrabold text-orange-600">
                     {p.promo99.frontLoadBundle} บาท
                     <span className="ml-2 text-sm font-normal text-ink-soft">
-                      จากราคาแยกรายการ {bundleNormal(p.washer.frontLoad)} บาท
+                      จากราคาแยกรายการ <s className="decoration-ink-soft/60">{bundleNormal(p.washer.frontLoad)} บาท</s>
                     </span>
                   </p>
                 </div>
