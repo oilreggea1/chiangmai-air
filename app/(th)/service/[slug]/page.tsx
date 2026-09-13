@@ -50,6 +50,23 @@ const langAirWashOptions = [
 
 const langAirReelIds = ["3177769309038728", "1284322489799860", "1748747562375875"];
 
+/**
+ * งานเครื่องซักผ้ากรองคลิปจาก topic ที่ติดไว้กับคลิปใน ReelsShowcase
+ * เพื่อไม่ให้หน้าเครื่องฝาบนขึ้นคลิปเครื่องฝาหน้า ซึ่งเป็นคนละโครงสร้างและคนละราคา
+ */
+const reelTopicsByService: Record<string, string[]> = {
+  "lang-washing-machine": ["washer", "washer-top", "washer-front"],
+  "lang-washing-machine-fa-bon": ["washer-top", "washer"],
+  "lang-washing-machine-fa-na": ["washer-front", "washer"],
+};
+
+function reelsFor(slug: string) {
+  if (slug === "lang-air") return reels.filter((r) => langAirReelIds.includes(r.id));
+  const topics = reelTopicsByService[slug];
+  if (!topics) return [];
+  return reels.filter((r) => r.topic && topics.includes(r.topic));
+}
+
 const washerPhotoStage: Record<string, "ก่อนล้าง" | "ระหว่างถอดล้าง" | "หลังล้างสะอาด"> = {
   "/work/washer-front-deep-clean-01.webp": "หลังล้างสะอาด",
   "/work/washer-front-deep-clean-02.webp": "ระหว่างถอดล้าง",
@@ -85,7 +102,7 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const others = services.filter((x) => x.slug !== s.slug);
-  const langAirReels = reels.filter((r) => langAirReelIds.includes(r.id));
+  const serviceReels = reelsFor(s.slug);
   // บทความที่ผูกกับบริการนี้ไว้ หน้าบริการเป็นหน้าที่แข็งที่สุดของเว็บ
   // ถ้าไม่ลิงก์ออกไป บทความจะได้ลิงก์ภายในจากหน้ารวมบทความอย่างเดียว
   const guides = articles.filter((x) => x.relatedService === s.slug).slice(0, 4);
@@ -280,25 +297,27 @@ export default async function ServicePage({ params }: Props) {
         </section>
       )}
 
-      {/* คลิปหน้างานล้างแอร์ — หน้าอื่นไม่มีชุดนี้ จึงเป็นเนื้อหาเฉพาะของหน้านี้ */}
-      {s.slug === "lang-air" && langAirReels.length > 0 && (
+      {/* คลิปหน้างานของบริการนี้ — หน้าอื่นไม่มีชุดเดียวกัน จึงเป็นเนื้อหาเฉพาะของหน้านี้ */}
+      {serviceReels.length > 0 && (
         <section className="section bg-sand">
-          <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(videoSchema(langAirReels))} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(videoSchema(serviceReels))} />
           <div className="wrap">
             <div className="mx-auto max-w-2xl text-center">
               <p className="eyebrow">คลิปจากหน้างาน</p>
-              <h2 className="h2 mt-4">ดูขั้นตอนล้างแอร์จากงานจริงในเชียงใหม่</h2>
+              <h2 className="h2 mt-4">ดูขั้นตอน{s.name}จากงานจริงในเชียงใหม่</h2>
               <p className="lead mt-3">
-                ตั้งแต่การฉีดล้างคอยล์ไปจนถึงชิ้นส่วนที่ถอดลงมาล้างแยกในแบบถอดล้างทั้งชุด
+                {s.slug === "lang-air"
+                  ? "ตั้งแต่การฉีดล้างคอยล์ไปจนถึงชิ้นส่วนที่ถอดลงมาล้างแยกในแบบถอดล้างทั้งชุด"
+                  : "ตั้งแต่ตอนถอดถังออกจากเครื่อง ไปจนถึงสภาพชิ้นส่วนที่ล้างเสร็จแล้ว"}
               </p>
             </div>
             <ul className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {langAirReels.map((reel) => (
+              {serviceReels.map((reel) => (
                 <ReelCard key={reel.id} id={reel.id} title={reel.title} />
               ))}
             </ul>
             <div className="mt-8 text-center">
-              <Link href="/videos" className="btn-ghost" data-cta="lang-air-videos">
+              <Link href="/videos" className="btn-ghost" data-cta={`${s.slug}-videos`}>
                 ดูคลิปงานอื่นทั้งหมด
                 <IconChevron className="h-4 w-4" />
               </Link>

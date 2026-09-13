@@ -234,6 +234,15 @@ export function websiteSchema() {
  */
 const REEL_PUBLISHED = "2026-08-05";
 
+/** คลิปที่ขึ้นเว็บคนละวันกับชุดแรก ใส่วันของตัวเองไว้ที่นี่ */
+const REEL_PUBLISHED_BY_ID: Record<string, string> = {
+  "wm-fa-na-thot-lang": "2026-09-13",
+  "wm-rakha-fa-na-vs-fa-bon": "2026-09-13",
+  "wm-fa-bon-samsung": "2026-09-13",
+  "wm-fa-bon-vs-fa-na": "2026-09-13",
+  "wm-lang-thang-chiangmai": "2026-09-13",
+};
+
 /**
  * ความยาวคลิปแบบ ISO 8601 วัดจากไฟล์จริงด้วย ffprobe แล้วปัดขึ้นเป็นวินาที
  * Google ใช้ค่านี้แสดงความยาวใต้ผลการค้นหา ไม่ใส่ก็ไม่ผิด แต่ใส่แล้วผลดูสมบูรณ์กว่า
@@ -250,6 +259,11 @@ const REEL_DURATION: Record<string, string> = {
   "1748747562375875": "PT44S",
   "3177769309038728": "PT38S",
   "3663347230638937": "PT35S",
+  "wm-fa-na-thot-lang": "PT30S",
+  "wm-rakha-fa-na-vs-fa-bon": "PT2M11S",
+  "wm-fa-bon-samsung": "PT1M29S",
+  "wm-fa-bon-vs-fa-na": "PT1M6S",
+  "wm-lang-thang-chiangmai": "PT2M13S",
 };
 
 export function videoSchema(list: { id: string; title: string }[]) {
@@ -263,7 +277,7 @@ export function videoSchema(list: { id: string; title: string }[]) {
       thumbnailUrl: `${site.url}/videos/reels/${video.id}.jpg`,
       contentUrl: `${site.url}/videos/reels/${video.id}.mp4`,
       embedUrl: `${site.url}/videos#video-${video.id}`,
-      uploadDate: REEL_PUBLISHED,
+      uploadDate: REEL_PUBLISHED_BY_ID[video.id] ?? REEL_PUBLISHED,
       ...(REEL_DURATION[video.id] ? { duration: REEL_DURATION[video.id] } : {}),
       inLanguage: "th-TH",
       publisher: { "@id": ID },
