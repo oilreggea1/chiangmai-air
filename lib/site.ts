@@ -1554,6 +1554,9 @@ export const gallery = [
  */
 export type CaseStudy = {
   slug: string;
+  /** ชนิดเครื่องของเคสนี้ ใช้เลือกเคสให้ตรงกับหน้าลูกของงานเครื่องซักผ้า
+   *  เคสงานแอร์ไม่ต้องใส่ */
+  machine?: "ฝาบน" | "ฝาหน้า";
   service: string;
   serviceSlug: string;
   title: string;
@@ -1568,6 +1571,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "wm-pulsator-vane",
+    machine: "ฝาบน",
     service: "ล้างเครื่องซักผ้า",
     serviceSlug: "lang-washing-machine",
     title: "เครื่องซักผ้าฝาบน คราบตะกรันบนจานซักและครีบกวนน้ำ",
@@ -1600,6 +1604,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "wm-drumbase",
+    machine: "ฝาบน",
     service: "ล้างเครื่องซักผ้า",
     serviceSlug: "lang-washing-machine",
     title: "เครื่องซักผ้าฝาบน คราบสะสมใต้จานซัก",
@@ -1632,6 +1637,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "wm-frontload-tub",
+    machine: "ฝาหน้า",
     service: "ล้างเครื่องซักผ้า",
     serviceSlug: "lang-washing-machine",
     title: "เครื่องซักผ้าฝาหน้า คราบในถังชั้นนอก",

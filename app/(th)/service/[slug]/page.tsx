@@ -60,6 +60,23 @@ const reelTopicsByService: Record<string, string[]> = {
   "lang-washing-machine-fa-na": ["washer-front", "washer"],
 };
 
+/**
+ * เคสก่อน–หลังที่หน้านี้ควรแสดง
+ * หน้าลูกของงานเครื่องซักผ้าไม่มีเคสเป็นของตัวเอง จึงหยิบเคสของหน้าแม่
+ * เฉพาะเคสที่เป็นเครื่องชนิดเดียวกัน เพื่อไม่ให้หน้าฝาบนขึ้นเคสเครื่องฝาหน้า
+ */
+function casesFor(slug: string) {
+  const child: Record<string, "ฝาบน" | "ฝาหน้า"> = {
+    "lang-washing-machine-fa-bon": "ฝาบน",
+    "lang-washing-machine-fa-na": "ฝาหน้า",
+  };
+  const machine = child[slug];
+  if (machine) {
+    return caseStudies.filter((c) => c.serviceSlug === "lang-washing-machine" && c.machine === machine);
+  }
+  return caseStudies.filter((c) => c.serviceSlug === slug);
+}
+
 function reelsFor(slug: string) {
   if (slug === "lang-air") return reels.filter((r) => langAirReelIds.includes(r.id));
   const topics = reelTopicsByService[slug];
@@ -103,6 +120,7 @@ export default async function ServicePage({ params }: Props) {
 
   const others = services.filter((x) => x.slug !== s.slug);
   const serviceReels = reelsFor(s.slug);
+  const serviceCases = casesFor(s.slug);
   // บทความที่ผูกกับบริการนี้ไว้ หน้าบริการเป็นหน้าที่แข็งที่สุดของเว็บ
   // ถ้าไม่ลิงก์ออกไป บทความจะได้ลิงก์ภายในจากหน้ารวมบทความอย่างเดียว
   const guides = articles.filter((x) => x.relatedService === s.slug).slice(0, 4);
@@ -454,9 +472,9 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       {/* เทียบก่อน-หลัง เฉพาะบริการที่มีชุดภาพจับคู่ยืนยันแล้ว */}
-      {caseStudies.some((c) => c.serviceSlug === s.slug) && (
+      {serviceCases.length > 0 && (
         <CaseStudies
-          items={caseStudies.filter((c) => c.serviceSlug === s.slug)}
+          items={serviceCases}
           title={`งาน${s.name}ที่ผมทำมา`}
           lead="สภาพเครื่องตอนผมถอดออกมา และสภาพหลังประกอบกลับ"
         />
