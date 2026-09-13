@@ -5,12 +5,50 @@ import { notFound } from "next/navigation";
 import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
-import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, jsonLd } from "@/lib/schema";
+import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, videoSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
+import { reels } from "@/components/ReelsShowcase";
+import { ReelCard } from "@/components/ReelCard";
 
 type Props = { params: Promise<{ slug: string }> };
+
+/**
+ * คลิปหน้างานล้างแอร์ที่หยิบมาแสดงในหน้าบริการล้างแอร์ (13 ก.ย. 2569)
+ *
+ * เลือกด้วยรหัสคลิปตรง ๆ ไม่กรองจากชื่อเรื่อง เพราะชื่อคลิปเปลี่ยนได้
+ * แล้วรายการจะเงียบ ๆ กลายเป็นว่าง โดยไม่มีอะไรเตือน
+ * ถ้าเพิ่มคลิปใหม่ใน ReelsShowcase แล้วอยากให้ขึ้นหน้านี้ ต้องเติมรหัสที่นี่ด้วย
+ */
+/**
+ * สามแบบการล้างที่หน้า /service/lang-air ใช้เทียบให้ลูกค้าเลือก
+ * ราคาอ้างจาก p.wash และช่วง BTU อ้างจาก btu เท่านั้น ห้ามพิมพ์ตัวเลขซ้ำที่นี่
+ * ประกาศไว้ชุดเดียวเพราะต้องแสดงสองแบบ (การ์ดบนมือถือ ตารางบนจอใหญ่)
+ * ถ้าแยกเขียนสองที่ วันหนึ่งจะแก้ที่เดียวแล้วสองฝั่งไม่ตรงกัน
+ */
+const langAirWashOptions = [
+  {
+    name: `ล้างมาตรฐาน ติดผนัง ${btu.washStd} BTU`,
+    price: `${p.wash.std} บาท`,
+    note: `ตั้งแต่ 3 เครื่องขึ้นไป เครื่องละ ${p.wash.stdBulk} บาท`,
+    fit: "เครื่องที่ล้างตามรอบปีและยังไม่มีอาการผิดปกติ ล้างคอยล์เย็น คอยล์ร้อน และใบพัดกรงกระรอกด้วยแรงดันน้ำ",
+  },
+  {
+    name: `ล้างมาตรฐาน เครื่องใหญ่ ${btu.washBig} BTU`,
+    price: `${p.wash.big} บาท`,
+    note: `ตั้งแต่ 2 เครื่องขึ้นไป เครื่องละ ${p.wash.bigBulk} บาท`,
+    fit: "ขอบเขตงานเท่าแบบมาตรฐาน แต่ตัวเครื่องใหญ่กว่า จึงใช้เวลาและปริมาณน้ำมากกว่า พบมากในบ้านโถงสูงและร้านค้า",
+  },
+  {
+    name: "ถอดล้างทั้งชุด Premium Full Wash",
+    price: `${p.wash.premium} บาท`,
+    note: p.wash.premiumNote,
+    fit: "เครื่องที่มีกลิ่นอับ มีน้ำหยด หรือไม่ได้ล้างมานาน ถอดชิ้นส่วนลงมาล้างแยกทุกชิ้น รวมถึงถาดน้ำทิ้งและใบพัดที่แรงดันน้ำเข้าไม่ถึงเมื่อยังติดตั้งอยู่",
+  },
+];
+
+const langAirReelIds = ["3177769309038728", "1284322489799860", "1748747562375875"];
 
 const washerPhotoStage: Record<string, "ก่อนล้าง" | "ระหว่างถอดล้าง" | "หลังล้างสะอาด"> = {
   "/work/washer-front-deep-clean-01.webp": "หลังล้างสะอาด",
@@ -47,6 +85,7 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const others = services.filter((x) => x.slug !== s.slug);
+  const langAirReels = reels.filter((r) => langAirReelIds.includes(r.id));
   // บทความที่ผูกกับบริการนี้ไว้ หน้าบริการเป็นหน้าที่แข็งที่สุดของเว็บ
   // ถ้าไม่ลิงก์ออกไป บทความจะได้ลิงก์ภายในจากหน้ารวมบทความอย่างเดียว
   const guides = articles.filter((x) => x.relatedService === s.slug).slice(0, 4);
@@ -146,6 +185,90 @@ export default async function ServicePage({ params }: Props) {
               <IconLine className="h-5 w-5" />
               ส่งตำแหน่งทาง LINE {site.lineId}
             </a>
+          </div>
+        </section>
+      )}
+
+      {/* ตารางเทียบแบบการล้าง — เฉพาะหน้าล้างแอร์
+          ตัวเลขทุกตัวดึงจาก p.wash และ btu ห้ามพิมพ์ซ้ำ (ตัวดักราคาใน scripts/check-prices.mjs จะจับได้) */}
+      {s.slug === "lang-air" && (
+        <section className="section">
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">เลือกแบบการล้างให้ตรงกับเครื่องที่บ้านคุณ</h2>
+            <p className="lead mt-4">
+              ผมแบ่งงานล้างออกเป็นสามแบบตามขนาดเครื่องและสภาพที่พบหน้างาน
+              หากคุณไม่แน่ใจว่าเครื่องของคุณควรใช้แบบใด ส่งภาพเครื่องมาทาง LINE ได้
+              ผมประเมินให้ก่อนโดยไม่มีค่าใช้จ่าย
+            </p>
+
+            {/* มือถือ: แถวละการ์ด อ่านราคาได้ครบโดยไม่ต้องปัดข้าง */}
+            <ul className="mt-8 space-y-4 sm:hidden">
+              {langAirWashOptions.map((o) => (
+                <li key={o.name} className="card p-5">
+                  <h3 className="text-[15px] font-bold leading-7">{o.name}</h3>
+                  <p className="mt-2 text-2xl font-extrabold text-brand-700">{o.price}</p>
+                  <p className="text-xs leading-6 text-ink-soft">{o.note}</p>
+                  <p className="mt-3 text-sm leading-7 text-ink-soft">{o.fit}</p>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 hidden overflow-x-auto sm:block">
+              <table className="w-full sm:min-w-[34rem] border-collapse text-left text-[15px]">
+                <caption className="sr-only">เปรียบเทียบแบบการล้างแอร์สามแบบและราคา</caption>
+                <thead>
+                  <tr className="border-b-2 border-brand-200 bg-brand-50/60">
+                    <th scope="col" className="p-3 font-bold">แบบการล้าง</th>
+                    <th scope="col" className="p-3 font-bold">ราคา</th>
+                    <th scope="col" className="p-3 font-bold">เหมาะกับเครื่องแบบใด</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 align-top">
+                  {langAirWashOptions.map((o) => (
+                    <tr key={o.name}>
+                      <th scope="row" className="p-3 font-semibold">{o.name}</th>
+                      <td className="p-3 font-bold text-brand-700">
+                        {o.price}
+                        <span className="block text-sm font-normal text-ink-soft">{o.note}</span>
+                      </td>
+                      <td className="p-3 font-normal text-ink-soft">{o.fit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="mt-5 text-sm leading-7 text-ink-soft">
+              ราคาทั้งสามแบบเป็นราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
+              และผมแจ้งราคาก่อนเริ่มงานทุกครั้ง หากพบรายการที่ต้องทำเพิ่มหน้างาน ผมหยุดถามก่อน
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* คลิปหน้างานล้างแอร์ — หน้าอื่นไม่มีชุดนี้ จึงเป็นเนื้อหาเฉพาะของหน้านี้ */}
+      {s.slug === "lang-air" && langAirReels.length > 0 && (
+        <section className="section bg-sand">
+          <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(videoSchema(langAirReels))} />
+          <div className="wrap">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="eyebrow">คลิปจากหน้างาน</p>
+              <h2 className="h2 mt-4">ดูขั้นตอนล้างแอร์จากงานจริงในเชียงใหม่</h2>
+              <p className="lead mt-3">
+                ตั้งแต่การฉีดล้างคอยล์ไปจนถึงชิ้นส่วนที่ถอดลงมาล้างแยกในแบบถอดล้างทั้งชุด
+              </p>
+            </div>
+            <ul className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {langAirReels.map((reel) => (
+                <ReelCard key={reel.id} id={reel.id} title={reel.title} />
+              ))}
+            </ul>
+            <div className="mt-8 text-center">
+              <Link href="/videos" className="btn-ghost" data-cta="lang-air-videos">
+                ดูคลิปงานอื่นทั้งหมด
+                <IconChevron className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
       )}
