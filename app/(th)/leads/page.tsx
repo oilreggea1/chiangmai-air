@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
-import { createHash, timingSafeEqual } from "node:crypto";
+import { cookies, headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import { getSummary, channelLabel, CONTACT_CHANNELS, type LeadChannel } from "@/lib/leads";
 
 /**
@@ -19,32 +20,107 @@ export const metadata: Metadata = {
 
 const COOKIE = "leads_auth";
 
-function tokenFor(password: string) {
-  return createHash("sha256").update(`leads:${password}`).digest("hex");
+/** อายุของการล็อกอินหนึ่งครั้ง — หมดแล้วต้องกรอกรหัสใหม่ */
+const SESSION_DAYS = 14;
+
+/**
+ * คุกกี้เป็น "เวลาออกบัตร + ลายเซ็น" ไม่ใช่ค่าคงที่ (13 ก.ย. 2569)
+ *
+ * ของเดิมเก็บ sha256 ของรหัสผ่านตรง ๆ ซึ่งเป็นค่าเดียวตลอดชีวิตของรหัสนั้น
+ * ถ้าคุกกี้หลุดไป (ยืมเครื่องดู ส่งภาพหน้าจอ ฯลฯ) คนที่ได้ไปใช้ได้ตลอดไป
+ * และเพิกถอนไม่ได้เลยนอกจากเปลี่ยนรหัสผ่าน
+ *
+ * แบบใหม่ลายเซ็นผูกกับเวลาออกบัตร จึงหมดอายุเองใน 14 วัน
+ * และถ้าตั้ง LEADS_COOKIE_SECRET ไว้ การเปลี่ยนค่านั้นคือการเตะทุกเครื่องออกทันที
+ * โดยไม่ต้องเปลี่ยนรหัสผ่านที่เจ้าของจำไว้
+ */
+function secret(password: string) {
+  return process.env.LEADS_COOKIE_SECRET ?? `leads:${password}`;
+}
+
+function signToken(password: string, issuedAt: number) {
+  const sig = createHmac("sha256", secret(password)).update(String(issuedAt)).digest("hex");
+  return `${issuedAt}.${sig}`;
+}
+
+function tokenValid(password: string, token: string | undefined) {
+  if (!token) return false;
+  const [issued, sig] = token.split(".");
+  const issuedAt = Number(issued);
+  if (!Number.isFinite(issuedAt) || !sig) return false;
+  if (Date.now() - issuedAt > SESSION_DAYS * 24 * 60 * 60 * 1000) return false;
+  return safeEqual(token, signToken(password, issuedAt));
 }
 
 function safeEqual(a: string, b: string) {
-  const bufA = Buffer.from(a);
-  const bufB = Buffer.from(b);
-  if (bufA.length !== bufB.length) return false;
-  return timingSafeEqual(bufA, bufB);
+  // แฮชก่อนเทียบ เพื่อให้สองฝั่งยาวเท่ากันเสมอ timingSafeEqual จึงไม่โยน error
+  // เมื่อความยาวไม่เท่ากัน และความยาวของรหัสจริงก็ไม่รั่วออกทางเวลาที่ใช้เทียบ
+  const ha = createHash("sha256").update(a).digest();
+  const hb = createHash("sha256").update(b).digest();
+  return timingSafeEqual(ha, hb);
+}
+
+/**
+ * เพดานการเดารหัสผ่าน (13 ก.ย. 2569)
+ *
+ * หน้านี้เป็นที่เดียวบนเว็บที่มีข้อมูลธุรกิจ และของเดิมกรอกผิดได้ไม่จำกัดครั้ง
+ * เก็บสถิติไว้ในหน่วยความจำของอินสแตนซ์ ไม่ใช่ฐานข้อมูล เพราะไม่อยากให้หน้าล็อกอิน
+ * ต้องพึ่ง Neon (ถ้า DB ล่มต้องยังเข้าได้) และการเดารหัสจริงจะมาจาก IP เดียวรัว ๆ
+ * ซึ่งมักถูกส่งไปที่อินสแตนซ์เดิม ข้อจำกัดคือถ้า Vercel กระจายไปหลายอินสแตนซ์
+ * เพดานจะหย่อนลงตามจำนวนอินสแตนซ์ แต่ยังตัดการยิงรัวแบบอัตโนมัติได้
+ */
+const MAX_TRIES = 5;
+const WINDOW_MS = 15 * 60 * 1000;
+const attempts = new Map<string, { count: number; first: number }>();
+
+function tooManyTries(ip: string) {
+  const now = Date.now();
+  const rec = attempts.get(ip);
+  if (!rec || now - rec.first > WINDOW_MS) return false;
+  return rec.count >= MAX_TRIES;
+}
+
+function noteFailure(ip: string) {
+  const now = Date.now();
+  const rec = attempts.get(ip);
+  if (!rec || now - rec.first > WINDOW_MS) attempts.set(ip, { count: 1, first: now });
+  else rec.count += 1;
+  // กันแมปโตไม่จำกัดเมื่อมีคนยิงจากหลาย IP
+  if (attempts.size > 500) {
+    for (const [k, v] of attempts) if (now - v.first > WINDOW_MS) attempts.delete(k);
+  }
+}
+
+async function clientIp() {
+  const h = await headers();
+  return (h.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
 }
 
 async function login(formData: FormData) {
   "use server";
   const password = process.env.LEADS_PASSWORD;
   if (!password) return;
-  const entered = String(formData.get("password") ?? "");
-  if (!safeEqual(entered, password)) return;
 
+  const ip = await clientIp();
+  if (tooManyTries(ip)) redirect("/leads?e=wait");
+
+  const entered = String(formData.get("password") ?? "");
+  if (!safeEqual(entered, password)) {
+    noteFailure(ip);
+    redirect("/leads?e=bad");
+  }
+
+  attempts.delete(ip);
   const jar = await cookies();
-  jar.set(COOKIE, tokenFor(password), {
+  jar.set(COOKIE, signToken(password, Date.now()), {
     httpOnly: true,
     secure: true,
     sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 30,
+    maxAge: 60 * 60 * 24 * SESSION_DAYS,
     path: "/leads",
   });
+  // กันฟอร์มค้างพารามิเตอร์ ?e= เดิมไว้หลังเข้าสำเร็จ
+  redirect("/leads");
 }
 
 function Bar({ value, max }: { value: number; max: number }) {
@@ -93,11 +169,11 @@ function Table({
 export default async function LeadsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ days?: string }>;
+  searchParams: Promise<{ days?: string; e?: string }>;
 }) {
   const password = process.env.LEADS_PASSWORD;
   const jar = await cookies();
-  const authed = Boolean(password) && jar.get(COOKIE)?.value === tokenFor(password!);
+  const authed = Boolean(password) && tokenValid(password!, jar.get(COOKIE)?.value);
 
   if (!password) {
     return (
@@ -113,10 +189,21 @@ export default async function LeadsPage({
   }
 
   if (!authed) {
+    const error = (await searchParams).e;
     return (
       <section className="section">
         <div className="wrap max-w-sm">
           <h1 className="h2">สถิติการติดต่อ</h1>
+          {error === "bad" && (
+            <p className="mt-4 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">
+              รหัสผ่านไม่ถูกต้อง ถ้ากรอกผิดเกิน {MAX_TRIES} ครั้งในรอบเดียวกัน ระบบจะพักการกรอกไว้ชั่วคราว
+            </p>
+          )}
+          {error === "wait" && (
+            <p className="mt-4 rounded-xl bg-amber-50 px-4 py-3 text-sm text-amber-800">
+              กรอกผิดหลายครั้งเกินไป รอ 15 นาทีแล้วลองใหม่
+            </p>
+          )}
           <form action={login} className="mt-6 space-y-3">
             <input
               type="password"
