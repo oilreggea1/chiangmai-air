@@ -76,6 +76,9 @@ const nextConfig: NextConfig = {
       { source: "/area/san-sai", destination: "/area/san-phra-net", permanent: true },
       { source: "/area/hang-dong", destination: "/area/mae-hia", permanent: true },
       { source: "/area/mae-on", destination: "/area", permanent: true },
+      // แม่ริมอยู่นอกรัศมี 10 กม. เช่นเดียวกับแม่ออน แต่ตอนตัดหน้าออกลืมทำ 301 ไว้
+      // Search Console จึงรายงานเป็น 404 หนึ่งรายการมาตั้งแต่ 17 ส.ค. 2569 (ตรวจพบ 13 ก.ย.)
+      { source: "/area/mae-rim", destination: "/area", permanent: true },
 
       // หมวดผลงานที่ตัดออกเพราะเจ้าของไม่ได้รับซ่อมเครื่องซักผ้า รับเฉพาะงานล้าง
       { source: "/portfolio/wm-repair", destination: "/portfolio/wm-top", permanent: true },
