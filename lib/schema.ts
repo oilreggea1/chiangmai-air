@@ -236,6 +236,7 @@ const REEL_PUBLISHED = "2026-08-05";
 
 /** คลิปที่ขึ้นเว็บคนละวันกับชุดแรก ใส่วันของตัวเองไว้ที่นี่ */
 const REEL_PUBLISHED_BY_ID: Record<string, string> = {
+  "wm-fa-na-khan-ton": "2026-09-13",
   "wm-fa-na-thot-lang": "2026-09-13",
   "wm-rakha-fa-na-vs-fa-bon": "2026-09-13",
   "wm-fa-bon-samsung": "2026-09-13",
@@ -259,6 +260,7 @@ const REEL_DURATION: Record<string, string> = {
   "1748747562375875": "PT44S",
   "3177769309038728": "PT38S",
   "3663347230638937": "PT35S",
+  "wm-fa-na-khan-ton": "PT30S",
   "wm-fa-na-thot-lang": "PT30S",
   "wm-rakha-fa-na-vs-fa-bon": "PT2M11S",
   "wm-fa-bon-samsung": "PT1M29S",

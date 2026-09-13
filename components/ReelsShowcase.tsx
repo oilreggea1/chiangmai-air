@@ -20,6 +20,7 @@ export const reels = [
    * topic ใช้เลือกคลิปให้ตรงกับหน้าที่แสดง หน้าเครื่องฝาบนไม่ควรขึ้นคลิปเครื่องฝาหน้า
    * คลิปงานแอร์ไม่มี topic จึงถือเป็นงานแอร์ทั้งหมด
    */
+  { id: "wm-fa-na-khan-ton", title: "ขั้นตอนทำความสะอาดเครื่องซักผ้าฝาหน้า", topic: "washer-front" },
   { id: "wm-fa-na-thot-lang", title: "ถอดล้างถังเครื่องซักผ้าฝาหน้า", topic: "washer-front" },
   { id: "wm-rakha-fa-na-vs-fa-bon", title: "เหตุใดค่าล้างเครื่องฝาหน้าจึงสูงกว่าฝาบน", topic: "washer-front" },
   { id: "wm-fa-bon-samsung", title: "ถอดล้างเครื่องซักผ้าฝาบนยี่ห้อซัมซุง", topic: "washer-top" },
