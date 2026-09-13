@@ -225,6 +225,33 @@ export function websiteSchema() {
   };
 }
 
+/**
+ * วันที่คลิปทั้งชุดขึ้นเว็บนี้ (วันที่ไฟล์เข้าโปรเจกต์จริง ตรวจจาก git log)
+ * uploadDate เป็นฟิลด์บังคับของ VideoObject ตามเอกสารของ Google
+ * ที่ขาดไปทำให้รายงาน "การเพิ่มประสิทธิภาพ > วิดีโอ" ใน Search Console
+ * ขึ้นว่าไม่ถูกต้องทั้ง 10 รายการ (ตรวจพบ 13 ก.ย. 2569)
+ * ถ้าเพิ่มคลิปชุดใหม่ที่ขึ้นเว็บคนละวัน ต้องแยกวันที่ต่อคลิป ห้ามใช้ค่านี้เหมารวม
+ */
+const REEL_PUBLISHED = "2026-08-05";
+
+/**
+ * ความยาวคลิปแบบ ISO 8601 วัดจากไฟล์จริงด้วย ffprobe แล้วปัดขึ้นเป็นวินาที
+ * Google ใช้ค่านี้แสดงความยาวใต้ผลการค้นหา ไม่ใส่ก็ไม่ผิด แต่ใส่แล้วผลดูสมบูรณ์กว่า
+ * ห้ามเดาค่า ถ้าเพิ่มคลิปใหม่ให้วัดจากไฟล์ก่อน
+ */
+const REEL_DURATION: Record<string, string> = {
+  "1151370080220641": "PT53S",
+  "1232175024939599": "PT24S",
+  "1261789992704152": "PT29S",
+  "1269611208233633": "PT1M33S",
+  "1284322489799860": "PT1M9S",
+  "1288260533386347": "PT27S",
+  "1336389494094369": "PT29S",
+  "1748747562375875": "PT44S",
+  "3177769309038728": "PT38S",
+  "3663347230638937": "PT35S",
+};
+
 export function videoSchema(list: { id: string; title: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -236,6 +263,8 @@ export function videoSchema(list: { id: string; title: string }[]) {
       thumbnailUrl: `${site.url}/videos/reels/${video.id}.jpg`,
       contentUrl: `${site.url}/videos/reels/${video.id}.mp4`,
       embedUrl: `${site.url}/videos#video-${video.id}`,
+      uploadDate: REEL_PUBLISHED,
+      ...(REEL_DURATION[video.id] ? { duration: REEL_DURATION[video.id] } : {}),
       inLanguage: "th-TH",
       publisher: { "@id": ID },
     })),
