@@ -332,8 +332,8 @@ export default async function ServicePage({ params }: Props) {
               </p>
             </div>
             <ul className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {serviceReels.map((reel) => (
-                <ReelCard key={reel.id} id={reel.id} title={reel.title} />
+              {serviceReels.map((reel, i) => (
+                <ReelCard key={reel.id} id={reel.id} title={reel.title} eager={i === 0} />
               ))}
             </ul>
             <div className="mt-8 text-center">

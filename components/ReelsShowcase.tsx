@@ -20,20 +20,20 @@ export const reels = [
    * topic ใช้เลือกคลิปให้ตรงกับหน้าที่แสดง หน้าเครื่องฝาบนไม่ควรขึ้นคลิปเครื่องฝาหน้า
    * คลิปงานแอร์ไม่มี topic จึงถือเป็นงานแอร์ทั้งหมด
    */
-  { id: "wm-fa-na-khan-ton", title: "ขั้นตอนทำความสะอาดเครื่องซักผ้าฝาหน้า", topic: "washer-front" },
-  { id: "wm-fa-na-thot-lang", title: "ถอดล้างถังเครื่องซักผ้าฝาหน้า", topic: "washer-front" },
-  { id: "wm-rakha-fa-na-vs-fa-bon", title: "เหตุใดค่าล้างเครื่องฝาหน้าจึงสูงกว่าฝาบน", topic: "washer-front" },
-  { id: "wm-fa-bon-samsung", title: "ถอดล้างเครื่องซักผ้าฝาบนยี่ห้อซัมซุง", topic: "washer-top" },
-  { id: "wm-fa-bon-vs-fa-na", title: "ความต่างของเครื่องฝาบนกับฝาหน้าเมื่อถอดล้าง", topic: "washer" },
-  { id: "wm-lang-thang-chiangmai", title: "ล้างถังเครื่องซักผ้าถึงบ้านในเชียงใหม่", topic: "washer" },
+  { id: "wm-fa-na-khan-ton", title: "ขั้นตอนทำความสะอาดเครื่องซักผ้าฝาหน้า", desc: "ขั้นตอนทำความสะอาดเครื่องซักผ้าฝาหน้าถึงบ้านในเชียงใหม่ ตั้งแต่ถอดชิ้นส่วนจนล้างเสร็จ", topic: "washer-front" },
+  { id: "wm-fa-na-thot-lang", title: "ถอดล้างถังเครื่องซักผ้าฝาหน้า", desc: "ถอดถังเครื่องซักผ้าฝาหน้าออกมาล้างถึงผิวด้านนอกถัง จากงานจริงในเชียงใหม่", topic: "washer-front" },
+  { id: "wm-rakha-fa-na-vs-fa-bon", title: "เหตุใดค่าล้างเครื่องฝาหน้าจึงสูงกว่าฝาบน", desc: "เหตุใดค่าล้างเครื่องซักผ้าฝาหน้าจึงสูงกว่าฝาบน อธิบายจากขั้นตอนถอดจริงหน้างาน", topic: "washer-front" },
+  { id: "wm-fa-bon-samsung", title: "ถอดล้างเครื่องซักผ้าฝาบนยี่ห้อซัมซุง", desc: "ถอดล้างเครื่องซักผ้าฝาบนยี่ห้อซัมซุงถึงบ้านในเชียงใหม่ ถอดถังในออกมาล้างแยก", topic: "washer-top" },
+  { id: "wm-fa-bon-vs-fa-na", title: "ความต่างของเครื่องฝาบนกับฝาหน้าเมื่อถอดล้าง", desc: "เทียบโครงสร้างเครื่องซักผ้าฝาบนกับฝาหน้าในขั้นตอนถอดล้าง", topic: "washer" },
+  { id: "wm-lang-thang-chiangmai", title: "ล้างถังเครื่องซักผ้าถึงบ้านในเชียงใหม่", desc: "ล้างถังเครื่องซักผ้าถึงบ้านในเชียงใหม่ ถอดถังออกมาล้างทุกชิ้นแล้วประกอบกลับ", topic: "washer" },
 
   /** ชุดที่สองจากคลิป Reels ของเพจเดียวกัน เพิ่ม 13 ก.ย. 2569 */
-  { id: "wm-yot-rian-thot-lang", title: "ถอดล้างเครื่องซักผ้าหยอดเหรียญ", topic: "washer-top" },
-  { id: "wm-fa-na-thot-thang", title: "ถอดถังเครื่องซักผ้าฝาหน้าออกจากตัวเครื่อง", topic: "washer-front" },
-  { id: "wm-thang-stainless-lang-nok", title: "ถังสเตนเลสที่ถอดออกมาล้างนอกตัวเครื่อง", topic: "washer" },
-  { id: "wm-khrap-fang-nae-thang", title: "คราบที่ฝังแน่นอยู่กับผนังถังซัก", topic: "washer" },
-  { id: "wm-khrap-phanang-thang", title: "สภาพผนังถังซักก่อนลงมือล้าง", topic: "washer" },
-  { id: "wm-khat-lang-khrap-thang", title: "ขั้นตอนขัดล้างคราบในถังซัก", topic: "washer" },
+  { id: "wm-yot-rian-thot-lang", title: "ถอดล้างเครื่องซักผ้าหยอดเหรียญ", desc: "ถอดล้างเครื่องซักผ้าหยอดเหรียญ งานจริงในเชียงใหม่", topic: "washer-top" },
+  { id: "wm-fa-na-thot-thang", title: "ถอดถังเครื่องซักผ้าฝาหน้าออกจากตัวเครื่อง", desc: "ถอดถังเครื่องซักผ้าฝาหน้าออกจากตัวเครื่องเพื่อล้างผิวด้านนอกถัง", topic: "washer-front" },
+  { id: "wm-thang-stainless-lang-nok", title: "ถังสเตนเลสที่ถอดออกมาล้างนอกตัวเครื่อง", desc: "ถังสเตนเลสที่ถอดออกมาล้างนอกตัวเครื่อง", topic: "washer" },
+  { id: "wm-khrap-fang-nae-thang", title: "คราบที่ฝังแน่นอยู่กับผนังถังซัก", desc: "คราบที่ฝังแน่นอยู่กับผนังถังซัก เห็นชัดเมื่อถอดถังออกมา", topic: "washer" },
+  { id: "wm-khrap-phanang-thang", title: "สภาพผนังถังซักก่อนลงมือล้าง", desc: "สภาพผนังถังซักก่อนลงมือล้าง", topic: "washer" },
+  { id: "wm-khat-lang-khrap-thang", title: "ขั้นตอนขัดล้างคราบในถังซัก", desc: "ขั้นตอนขัดล้างคราบภายในถังซักเครื่องซักผ้า", topic: "washer" },
 ];
 
 /**
@@ -56,8 +56,8 @@ export function ReelsShowcase({ limit = reels.length }: { limit?: number }) {
         </div>
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {visibleReels.map((reel) => (
-            <ReelCard key={reel.id} id={reel.id} title={reel.title} />
+          {visibleReels.map((reel, i) => (
+            <ReelCard key={reel.id} id={reel.id} title={reel.title} eager={i === 0} />
           ))}
         </ul>
 

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site, p, services } from "@/lib/site";
-import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
+import { faqSchema, breadcrumbSchema, videoSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconChevron, IconCheck, IconShield, IconWasher } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList } from "@/components/Blocks";
+import { reels } from "@/components/ReelsShowcase";
+import { ReelCard } from "@/components/ReelCard";
 
 /**
  * หน้าราคาล้างเครื่องซักผ้าโดยเฉพาะ (13 ก.ย. 2569)
@@ -106,8 +108,17 @@ const faqs = [
   },
 ];
 
+/**
+ * คลิปที่ขึ้นหน้าราคา — เลือกคลิปที่เห็นขั้นตอนถอดล้างจริง
+ * เพราะคำถามที่ตามมาหลังเห็นราคาคือ "ราคานี้ได้อะไรบ้าง"
+ */
+const priceReelIds = ["wm-lang-thang-chiangmai", "wm-fa-na-thot-thang", "wm-yot-rian-thot-lang"];
+
 export default function WashingMachinePricePage() {
   const children = services.filter((s) => s.slug.startsWith("lang-washing-machine-"));
+  const priceReels = priceReelIds
+    .map((id) => reels.find((r) => r.id === id))
+    .filter((r): r is (typeof reels)[number] => Boolean(r));
 
   return (
     <>
@@ -243,6 +254,26 @@ export default function WashingMachinePricePage() {
           </div>
         </div>
       </section>
+
+      {priceReels.length > 0 && (
+        <section className="section">
+          <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(videoSchema(priceReels))} />
+          <div className="wrap">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="eyebrow">คลิปจากหน้างาน</p>
+              <h2 className="h2 mt-4">ค่าบริการนี้ครอบคลุมงานแบบใด</h2>
+              <p className="lead mt-3">
+                คลิปจากงานจริงในเชียงใหม่ ตั้งแต่ตอนถอดถังออกจากเครื่องไปจนถึงสภาพชิ้นส่วนที่ล้างเสร็จ
+              </p>
+            </div>
+            <ul className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {priceReels.map((reel, i) => (
+                <ReelCard key={reel.id} id={reel.id} title={reel.title} eager={i === 0} />
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <section className="section">
         <div className="wrap max-w-3xl">

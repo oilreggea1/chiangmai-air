@@ -280,14 +280,14 @@ const REEL_DURATION: Record<string, string> = {
   "wm-khat-lang-khrap-thang": "PT31S",
 };
 
-export function videoSchema(list: { id: string; title: string }[]) {
+export function videoSchema(list: { id: string; title: string; desc?: string }[]) {
   return {
     "@context": "https://schema.org",
     "@graph": list.map((video) => ({
       "@type": "VideoObject",
       "@id": `${site.url}/videos#video-${video.id}`,
       name: video.title,
-      description: `${video.title} ผลงานจริงของช่างอาร์ม โปรเฟรชแคร์ ในจังหวัดเชียงใหม่`,
+      description: video.desc ?? `${video.title} ผลงานจริงของช่างอาร์ม โปรเฟรชแคร์ ในจังหวัดเชียงใหม่`,
       thumbnailUrl: `${site.url}/videos/reels/${video.id}.jpg`,
       contentUrl: `${site.url}/videos/reels/${video.id}.mp4`,
       embedUrl: `${site.url}/videos#video-${video.id}`,
