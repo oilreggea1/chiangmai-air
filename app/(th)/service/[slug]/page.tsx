@@ -81,7 +81,9 @@ function reelsFor(slug: string) {
   if (slug === "lang-air") return reels.filter((r) => langAirReelIds.includes(r.id));
   const topics = reelTopicsByService[slug];
   if (!topics) return [];
-  return reels.filter((r) => r.topic && topics.includes(r.topic));
+  // จำกัด 6 คลิปต่อหน้า ที่เหลือดูได้ที่ /videos
+  // ถ้าปล่อยขึ้นทั้งหมด หน้าเดียวจะมีการ์ดคลิปสิบกว่าใบและภาพปกโหลดกันยาว
+  return reels.filter((r) => r.topic && topics.includes(r.topic)).slice(0, 6);
 }
 
 const washerPhotoStage: Record<string, "ก่อนล้าง" | "ระหว่างถอดล้าง" | "หลังล้างสะอาด"> = {

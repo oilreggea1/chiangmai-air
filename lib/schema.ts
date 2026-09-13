@@ -242,6 +242,12 @@ const REEL_PUBLISHED_BY_ID: Record<string, string> = {
   "wm-fa-bon-samsung": "2026-09-13",
   "wm-fa-bon-vs-fa-na": "2026-09-13",
   "wm-lang-thang-chiangmai": "2026-09-13",
+  "wm-yot-rian-thot-lang": "2026-09-13",
+  "wm-fa-na-thot-thang": "2026-09-13",
+  "wm-thang-stainless-lang-nok": "2026-09-13",
+  "wm-khrap-fang-nae-thang": "2026-09-13",
+  "wm-khrap-phanang-thang": "2026-09-13",
+  "wm-khat-lang-khrap-thang": "2026-09-13",
 };
 
 /**
@@ -266,6 +272,12 @@ const REEL_DURATION: Record<string, string> = {
   "wm-fa-bon-samsung": "PT1M29S",
   "wm-fa-bon-vs-fa-na": "PT1M6S",
   "wm-lang-thang-chiangmai": "PT2M13S",
+  "wm-yot-rian-thot-lang": "PT53S",
+  "wm-fa-na-thot-thang": "PT25S",
+  "wm-thang-stainless-lang-nok": "PT33S",
+  "wm-khrap-fang-nae-thang": "PT32S",
+  "wm-khrap-phanang-thang": "PT41S",
+  "wm-khat-lang-khrap-thang": "PT31S",
 };
 
 export function videoSchema(list: { id: string; title: string }[]) {
