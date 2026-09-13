@@ -53,6 +53,18 @@ const nextConfig: NextConfig = {
     // URL เก่าจาก WordPress ที่ Google อาจเก็บ index ไว้ ต้อง 301 มาหน้าใหม่
     // ไม่งั้นจะกลายเป็น 404 แล้วเสียอันดับที่มีอยู่
     return [
+      /**
+       * www ตอบ 200 ด้วยเนื้อหาชุดเดียวกับโดเมนหลัก (ตรวจพบ 13 ก.ย. 2569)
+       * canonical ชี้กลับโดเมนหลักอยู่แล้ว แต่ canonical เป็นแค่คำแนะนำ
+       * 301 ตรง ๆ ชัดกว่าและรวมสัญญาณลิงก์มาที่ที่อยู่เดียว
+       */
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.xn--72cahb0jef1en2cxb8ik9a5dn3d.com" }],
+        destination: "https://xn--72cahb0jef1en2cxb8ik9a5dn3d.com/:path*",
+        permanent: true,
+      },
+
       { source: "/xmlrpc.php", destination: "/", permanent: true },
       { source: "/wp-admin/:path*", destination: "/", permanent: true },
       { source: "/wp-login.php", destination: "/", permanent: true },
@@ -78,6 +90,44 @@ const nextConfig: NextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          /**
+           * ปิดสิทธิ์อุปกรณ์ที่เว็บนี้ไม่ได้ใช้เลย (13 ก.ย. 2569)
+           * ถ้ามีสคริปต์แปลกปลอมหลุดเข้ามา จะขอกล้อง ไมค์ หรือตำแหน่งจากผู้ชมไม่ได้
+           */
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
+          },
+          /**
+           * CSP ชั้นพื้นฐาน (13 ก.ย. 2569)
+           *
+           * ตั้งเท่าที่หน้าเว็บจริงใช้อยู่: ทรัพยากรทั้งหมดมาจากโดเมนตัวเอง
+           * ยกเว้นแผนที่ฝังในหน้า /contact ที่มาจาก maps.google.com
+           *
+           * ยังต้องเปิด 'unsafe-inline' ให้ script เพราะ Next วาง inline script
+           * สำหรับ hydration ทุกหน้า ถ้าจะตัดออกต้องเปลี่ยนไปใช้ nonce ซึ่งบังคับให้
+           * ทุกหน้าเป็น dynamic และเสียการ prerender ที่เว็บนี้พึ่งอยู่
+           * ที่ได้จริงจากชุดนี้คือ object-src/base-uri/form-action/frame-src
+           * ซึ่งปิดช่องยัดปลั๊กอิน เปลี่ยนฐาน URL และส่งฟอร์มออกนอกโดเมน
+           */
+          {
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: blob:",
+              "media-src 'self'",
+              "font-src 'self' data:",
+              "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com",
+              "frame-src https://maps.google.com https://www.google.com",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'self'",
+              "upgrade-insecure-requests",
+            ].join("; "),
+          },
         ],
       },
       {

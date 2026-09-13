@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import PromoWindow from "@/components/PromoWindow";
-import PromoCountdown from "@/components/PromoCountdown";
 import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import {
-  serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, IconBolt,
-} from "@/components/Icons";
+  serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
@@ -50,29 +47,6 @@ export const metadata: Metadata = {
 
 
 
-
-/** Offer schema ของโปร 9.9 — ตัวเลขแปลงจาก p.promo99 เท่านั้น หมดอายุตาม validThrough */
-function promo99Offers() {
-  const baht = (v: string) => Number(v.replaceAll(",", ""));
-  const offer = (name: string, promo: string) => ({
-    "@type": "Offer",
-    name,
-    price: baht(promo),
-    priceCurrency: "THB",
-    validFrom: "2026-09-06",
-    validThrough: "2026-09-10",
-    availability: "https://schema.org/InStock",
-    areaServed: "เชียงใหม่",
-    seller: { "@id": `${site.url}/#business` },
-  });
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      offer("โปร 9.9 ล้างถังเครื่องซักผ้าฝาบน + ล้างแอร์ 1 เครื่อง", p.promo99.topLoadBundle),
-      offer("โปร 9.9 ล้างถังเครื่องซักผ้าฝาหน้า + ล้างแอร์ 1 เครื่อง", p.promo99.frontLoadBundle),
-    ],
-  };
-}
 
 export default function Home() {
   return (
@@ -182,111 +156,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- แบนเนอร์รับแคมเปญ 9.9 (ตามฤดูกาล — ถอดออกหลัง 10 ก.ย. 2569
-           หรือปรับเป็น 10.10 / 11.11 ตามรอบแคมเปญถัดไป เปลี่ยนเลขแคมเปญ วันที่ และราคาใน p.promo99) ---------- */}
-      <section className="section pt-0" id="campaign-99">
+      {/* ---------- จองคิวติดตั้งล่วงหน้า (บริการประจำ ไม่ผูกกับวันแคมเปญ)
+           โปรตามฤดูกาล (9.9 / 10.10 / 11.11) ให้ห่อด้วย <PromoWindow until="..."> แล้ววางไว้เหนือการ์ดนี้
+           และต้องถอดโค้ดออกจริงเมื่อจบแคมเปญ เพราะหน้านี้ prerender ไว้ล่วงหน้า
+           ถ้าปล่อยไว้ ตัว HTML ที่ส่งให้ Google ยังมีโปรที่หมดอายุติดอยู่ แม้ผู้ใช้จะไม่เห็น ---------- */}
+      <section className="section pt-0" id="install-booking">
         <div className="wrap space-y-5">
 
-          {/* การ์ดที่ 1: โปร 9.9 (โทนร้อน + สายฟ้า) — ซ่อนอัตโนมัติหลังหมดเขต และมีงานถอดโค้ดตามกำหนด 11 ก.ย. */}
-          <PromoWindow until="2026-09-10T23:59:59+07:00">
-          <div className="promo-live card overflow-hidden border-2 border-orange-300 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 p-6 sm:p-8">
-            <p className="promo-chip inline-flex items-center gap-1.5 rounded-full bg-orange-600 px-3.5 py-1.5 text-xs font-bold tracking-wide text-white">
-              <IconBolt className="h-3.5 w-3.5" />
-              แคมเปญ 9.9 · วันที่ 6–10 กันยายน 2569
-            </p>
-            <h2 className="mt-4 flex items-start gap-2.5 text-xl font-extrabold text-orange-700 sm:text-2xl">
-              <IconBolt className="bolt-pulse mt-1 h-6 w-6 shrink-0 text-orange-500" />
-              <span>โปร 9.9 ล้างถังเครื่องซักผ้าคู่กับล้างแอร์ 1 เครื่อง</span>
-            </h2>
-
-            {/* Offer schema ช่วงแคมเปญ — ตัวเลขแปลงจาก p.promo99 มี validThrough กำกับ */}
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={jsonLd(promo99Offers())}
-            />
-
-            <div className="mt-4">
-              <PromoCountdown until="2026-09-10T23:59:59+07:00" />
-            </div>
-
-            {/* สองบล็อกแยกโปร — ราคาอยู่ใน p.promo99 รายละเอียดพิมพ์ตามขอบเขตงานบนโปสเตอร์ */}
-            <div className="mt-5 grid gap-4 lg:grid-cols-2">
-
-              {/* ฝาบน */}
-              <div className="rounded-2xl border border-orange-200 bg-white/90 p-5">
-                <div className="flex items-start gap-4">
-                  <a href="/promo/promo-99-topload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-top" className="block w-24 shrink-0 sm:w-28">
-                    <Image
-                      src="/promo/promo-99-topload.jpg"
-                      alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาบน กดดูภาพเต็ม"
-                      width={720}
-                      height={1080}
-                      className="w-full rounded-lg border border-orange-200 shadow-sm"
-                    />
-                  </a>
-                  <div>
-                    <p className="font-bold">เครื่องซักผ้าฝาบน + ล้างแอร์ 1 เครื่อง</p>
-                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600"><span className="price-beat">{p.promo99.topLoadBundle} <span className="text-base font-bold">บาท</span></span></p>
-                    <p className="mt-1 text-sm text-ink-soft">
-                      จากราคาปกติ <s className="decoration-ink-soft/60">{p.promo99.topLoadNormal} บาท</s>
-                    </p>
-                  </div>
-                </div>
-                <ul className="mt-4 space-y-1.5 text-sm leading-6 text-ink-soft">
-                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ถอดล้างถังฝาบนด้านใน–ด้านนอก ขจัดคราบตะกรัน เชื้อรา กลิ่นอับ (ทุกรุ่น ทุกยี่ห้อ)</li>
-                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ล้างแอร์ติดผนัง {btu.washStd} BTU ล้างคอยล์เย็น ฟินคอยล์ ฉีดน้ำยาทำความสะอาด เป่าลมฆ่าเชื้อ</li>
-                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ช่างเข้าครั้งเดียว จบทั้งสองรายการ รับประกันงานหลังบริการ 30 วัน</li>
-                </ul>
-              </div>
-
-              {/* ฝาหน้า */}
-              <div className="rounded-2xl border border-orange-200 bg-white/90 p-5">
-                <div className="flex items-start gap-4">
-                  <a href="/promo/promo-99-frontload-full.jpg" target="_blank" rel="noopener" data-cta="home-99-poster-front" className="block w-24 shrink-0 sm:w-28">
-                    <Image
-                      src="/promo/promo-99-frontload.jpg"
-                      alt="โปสเตอร์โปร 9.9 แพ็กคู่ฝาหน้า กดดูภาพเต็ม"
-                      width={720}
-                      height={1080}
-                      className="w-full rounded-lg border border-orange-200 shadow-sm"
-                    />
-                  </a>
-                  <div>
-                    <p className="font-bold">เครื่องซักผ้าฝาหน้า + ล้างแอร์ 1 เครื่อง</p>
-                    <p className="mt-1.5 text-3xl font-extrabold text-orange-600"><span className="price-beat">{p.promo99.frontLoadBundle} <span className="text-base font-bold">บาท</span></span></p>
-                    <p className="mt-1 text-sm text-ink-soft">
-                      จากราคาปกติ <s className="decoration-ink-soft/60">{p.promo99.frontLoadNormal} บาท</s>
-                    </p>
-                  </div>
-                </div>
-                <ul className="mt-4 space-y-1.5 text-sm leading-6 text-ink-soft">
-                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ถอดล้างถังฝาหน้าด้านใน–ด้านนอก ขจัดคราบตะกรัน เชื้อรา กลิ่นอับ (ทุกยี่ห้อ)</li>
-                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ล้างแอร์ติดผนัง {btu.washStd} BTU ล้างคอยล์เย็น ฟินคอยล์ ฉีดน้ำยาทำความสะอาด เป่าลมฆ่าเชื้อ</li>
-                  <li className="flex gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />ช่างเข้าครั้งเดียว จบทั้งสองรายการ รับประกันงานหลังบริการ 30 วัน</li>
-                </ul>
-              </div>
-
-            </div>
-
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href={site.lineUrl}
-                target="_blank"
-                rel="noopener"
-                className="btn-line btn-shimmer"
-                data-cta="home-99-promo-line"
-              >
-                <IconLine className="h-5 w-5" />
-                จองโปร 9.9 ทาง LINE
-              </a>
-              <p className="text-sm leading-7 text-ink-soft">
-                โปรนี้เฉพาะช่วงแคมเปญ 6–10 กันยายน 2569 จองคิวล่วงหน้าได้ตั้งแต่วันนี้ หรือโทร {site.phone}
-              </p>
-            </div>
-          </div>
-          </PromoWindow>
-
-          {/* การ์ดที่ 2: จองคิวติดตั้งล่วงหน้า (โทนปกติของเว็บ — เป็นบริการประจำ ไม่ผูกกับวันแคมเปญ) */}
           <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-2xl">
