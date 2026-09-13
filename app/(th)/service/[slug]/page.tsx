@@ -189,6 +189,40 @@ export default async function ServicePage({ params }: Props) {
         </section>
       )}
 
+      {/* หน้าแม่ล้างเครื่องซักผ้า: แยกทางไปหน้าลูกตามชนิดเครื่อง
+          วางไว้ต้นหน้าเพราะสิ่งแรกที่ลูกค้ารู้คือเครื่องที่บ้านเป็นฝาบนหรือฝาหน้า
+          ราคาและขอบเขตงานของสองชนิดนี้ต่างกันจริง จึงไม่ควรให้อ่านรวมกันทั้งหน้า */}
+      {s.slug === "lang-washing-machine" && (
+        <section className="section bg-brand-50/70">
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">เครื่องที่บ้านคุณเป็นแบบใด</h2>
+            <p className="lead mt-4">
+              เครื่องฝาบนกับฝาหน้าสะสมคราบคนละจุดและถอดล้างคนละวิธี
+              เลือกชนิดที่ตรงกับเครื่องของคุณเพื่อดูขั้นตอนและราคาของแบบนั้นโดยเฉพาะ
+            </p>
+            <div className="mt-7 grid gap-5 sm:grid-cols-2">
+              {services
+                .filter((x) => x.slug.startsWith("lang-washing-machine-"))
+                .map((child) => (
+                  <Link
+                    key={child.slug}
+                    href={`/service/${child.slug}`}
+                    className="card group flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
+                    data-cta={`washer-child-${child.slug}`}
+                  >
+                    <h3 className="text-lg font-bold">{child.name}เชียงใหม่</h3>
+                    <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{child.short}</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+                      ดูขั้นตอนและราคา
+                      <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ตารางเทียบแบบการล้าง — เฉพาะหน้าล้างแอร์
           ตัวเลขทุกตัวดึงจาก p.wash และ btu ห้ามพิมพ์ซ้ำ (ตัวดักราคาใน scripts/check-prices.mjs จะจับได้) */}
       {s.slug === "lang-air" && (
