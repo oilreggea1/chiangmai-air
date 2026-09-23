@@ -8,6 +8,7 @@ import {
   IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconShield,
 } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
+import { RecentJobs } from "@/components/RecentJobs";
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
@@ -319,6 +320,15 @@ export default function EnglishPage() {
         heading="Watch how a clean is done"
         lead="From the sheets going down to the parts coming out, filmed at homes in Chiang Mai."
         moreLabel="More videos on Facebook"
+      />
+
+      <RecentJobs
+        lang="en"
+        slugs={["lang-air", "som-air"]}
+        eyebrow="Recent jobs, photographed on site"
+        heading="Before and after, part by part"
+        lead="Each report follows one machine from the first photo to the last, with the real date and district from the job. The write-ups are in Thai, but the photos speak for themselves."
+        note="Before and after · report in Thai"
       />
 
       <section className="section" lang="en">

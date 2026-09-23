@@ -6,6 +6,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconShield, IconInstall, IconMove } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
+import { RecentJobs } from "@/components/RecentJobs";
 
 /**
  * หน้าติดตั้งแอร์ภาษาจีน (24 ก.ย. 2569) เนื้อหาคู่กับ /en/installation และ /service/tid-tang-air
@@ -219,6 +220,16 @@ export default function ZhInstallationPage() {
           </ul>
         </div>
       </section>
+
+      <RecentJobs
+        lang="zh-CN"
+        slugs={["tid-tang-air", "yai-air"]}
+        eyebrow="近期安装与移机实拍"
+        heading="从拆箱到上墙"
+        lead="2026 年的真实安装与移机案例，注明日期和所在区。报告为泰文，照片展示安装前的墙面和完工后的机器。"
+        note="安装前后对比 · 报告为泰文"
+        tone="sand"
+      />
 
       <section className="section bg-sand" lang="zh-CN">
         <div className="wrap max-w-3xl">

@@ -62,6 +62,7 @@
     "components/Icons.tsx": "2026-08-30",
     "components/PromoCountdown.tsx": "2026-08-30",
     "components/PromoWindow.tsx": "2026-09-13",
+    "components/RecentJobs.tsx": "2026-09-24",
     "components/ReelCard.tsx": "2026-09-24",
     "components/ReelsShowcase.tsx": "2026-09-24",
     "components/Shell.tsx": "2026-08-19",

@@ -515,16 +515,17 @@ export default async function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      {/* รายงานงานจริงจากโพสต์เพจ (24 ก.ย. 2569) เฉพาะกลุ่มเครื่องซักผ้า เรียงวันที่ใหม่สุดก่อน
+      {/* รายงานงานจริงจากโพสต์เพจ (24 ก.ย. 2569) ทุกบริการที่มีเคสวันจริง เรียงวันที่ใหม่สุดก่อน
           แต่ละเคส = หนึ่งโพสต์ = เครื่องเดียวกันตลอด มีวันที่และพื้นที่จริงจากโพสต์ */}
-      {s.slug.startsWith("lang-washing-machine") && (() => {
-        const jobs = workCases.filter((c) => c.serviceSlug === "lang-washing-machine" && c.date).sort((a, b) => b.date!.localeCompare(a.date!)).slice(0, 6);
+      {(() => {
+        const base = s.slug.startsWith("lang-washing-machine") ? "lang-washing-machine" : s.slug;
+        const jobs = workCases.filter((c) => c.serviceSlug === base && c.date).sort((a, b) => b.date!.localeCompare(a.date!)).slice(0, 6);
         return jobs.length > 0 ? (
           <section className="section bg-sand">
             <div className="wrap">
               <p className="eyebrow">งานล่าสุดจากหน้างานจริง</p>
-              <h2 className="h2 mt-4">รายงานถอดล้างทีละเครื่อง พร้อมวันที่และพื้นที่</h2>
-              <p className="lead mt-3 max-w-2xl">ทุกเคสเป็นเครื่องเดียวกันตั้งแต่ก่อนถอดจนประกอบกลับ ผมเขียนเฉพาะสิ่งที่เห็นในรูป ไม่เติมอาการที่ไม่มีบันทึก</p>
+              <h2 className="h2 mt-4">รายงานงาน{s.name}ทีละเครื่อง พร้อมวันที่และพื้นที่</h2>
+              <p className="lead mt-3 max-w-2xl">ทุกเคสเป็นเครื่องเดียวกันตั้งแต่รูปแรกจนรูปสุดท้าย มีภาพก่อนทำและหลังทำเทียบชิ้นต่อชิ้น ผมเขียนเฉพาะสิ่งที่เห็นในรูป ไม่เติมอาการที่ไม่มีบันทึก</p>
               <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {jobs.map((c) => (
                   <li key={c.slug}>

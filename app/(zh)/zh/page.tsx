@@ -8,6 +8,7 @@ import {
   IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron, IconShield,
 } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
+import { RecentJobs } from "@/components/RecentJobs";
 
 /** ชื่ออำเภอภาษาจีน ให้ลูกค้าจีนอ่านออกโดยไม่ต้องแปลเอง */
 const amphoeZh: Record<string, string> = {
@@ -300,6 +301,15 @@ export default function ChinesePage() {
         heading="看看一次清洗是怎么做的"
         lead="从铺防尘布到拆下部件清洗，全部在清迈客户家中实拍。"
         moreLabel="在 Facebook 查看更多视频"
+      />
+
+      <RecentJobs
+        lang="zh-CN"
+        slugs={["lang-air", "som-air"]}
+        eyebrow="近期施工实拍"
+        heading="逐个部件对比清洗前后"
+        lead="每份报告都跟踪同一台机器，从第一张照片到最后一张，并注明施工日期和所在区。报告为泰文，照片一看便知。"
+        note="清洗前后对比 · 报告为泰文"
       />
 
       <section className="section" lang="zh-CN">

@@ -6,6 +6,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconShield, IconInstall, IconMove } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
+import { RecentJobs } from "@/components/RecentJobs";
 
 /**
  * หน้าติดตั้งแอร์ภาษาอังกฤษ (24 ก.ย. 2569)
@@ -237,6 +238,16 @@ export default function EnInstallationPage() {
           </ul>
         </div>
       </section>
+
+      <RecentJobs
+        lang="en"
+        slugs={["tid-tang-air", "yai-air"]}
+        eyebrow="Recent installations and relocations"
+        heading="From the box to the wall"
+        lead="Real installation and relocation jobs from 2026, with the date and district. The write-ups are in Thai, but the photos show the wall before and the finished unit after."
+        note="Before and after · report in Thai"
+        tone="sand"
+      />
 
       <section className="section" lang="en">
         <div className="wrap max-w-3xl">
