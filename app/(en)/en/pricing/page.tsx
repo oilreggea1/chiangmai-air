@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, pricing } from "@/lib/site";
+import { site, pricing, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "Aircon Cleaning Prices in Chiang Mai | Pro Fresh Care";
 const description =
-  "Published aircon prices in Chiang Mai. Wall units 500 THB, 450 THB each for three or more, deep clean 2,300–2,500 THB, cassette units from 1,500 THB.";
+  `Published aircon prices in Chiang Mai. Wall units ${p.wash.std} THB, ${p.wash.stdBulk} THB each for three or more, full strip-down ${p.wash.premium} THB, ceiling cassettes from ${p.wash.cassette} THB, installation from ${p.install.small} THB.`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -26,17 +26,11 @@ const trail = [
   { name: "Prices", path: "/en/pricing" },
 ];
 
-/** ชื่อกลุ่มและรายการเป็นภาษาอังกฤษ เดิมหน้านี้โชว์ภาษาไทยล้วน ลูกค้าต่างชาติอ่านตัวเลขได้แต่ไม่รู้ว่ารายการอะไร */
-const groupEn: Record<string, string> = {
-  "ล้างแอร์ติดผนัง": "Wall-mounted aircon cleaning",
-  "ล้างแอร์แขวนและแอร์ 4 ทิศทาง": "Suspended and ceiling-recessed units",
-  "ติดตั้งแอร์ใหม่": "New aircon installation",
-  "ขายแอร์และรับเทิร์นเครื่องเก่า": "Buying a unit and trading in your old one",
-  "ซ่อมและบริการอื่น ๆ": "Repairs and other services",
-  "แพ็กเกจรับมือฝุ่น PM2.5": "PM2.5 dust-season package",
-  "ล้างเครื่องซักผ้า ฝาบน": "Top-load washing machine cleaning",
-  "ล้างเครื่องซักผ้า ฝาหน้า": "Front-load washing machine cleaning",
-};
+/**
+ * ชื่อกลุ่ม รายการ ราคา และหมายเหตุภาษาอังกฤษ อยู่ในตาราง pricing ของ lib/site.ts (groupEn/labelEn/priceEn/noteEn)
+ * แหล่งเดียวกับราคาไทย — 24 ก.ย. 2569 ก่อนหน้านี้หน้านี้แปลแค่ชื่อกลุ่ม รายการยังเป็นไทย
+ * ลูกค้าต่างชาติจึงเห็นตัวเลขแต่ไม่รู้ว่าแถวไหนคืออะไร
+ */
 
 const faqs = [
   {
@@ -94,21 +88,27 @@ export default function EnPricingPage() {
         <div className="wrap max-w-4xl space-y-6">
           {pricing.map((g) => (
             <div key={g.group} className="card p-6 sm:p-7">
-              <h2 className="text-lg font-bold sm:text-xl">{groupEn[g.group] ?? g.group}</h2>
+              <h2 className="text-lg font-bold sm:text-xl">{g.groupEn}</h2>
               <ul className="mt-5 divide-y divide-slate-100">
                 {g.items.map((it) => (
                   <li key={it.label} className="flex items-baseline justify-between gap-4 py-3">
-                    <span className="text-[15px] leading-7 text-ink-soft">{it.label}</span>
-                    <span className="shrink-0 font-bold text-brand-700">{it.price}</span>
+                    <span className="text-[15px] leading-7 text-ink-soft">{it.labelEn}</span>
+                    <span className="shrink-0 font-bold text-brand-700">{it.priceEn}</span>
                   </li>
                 ))}
               </ul>
-              {g.note && <p className="mt-4 text-sm leading-7 text-ink-soft">{g.note}</p>}
+              {g.noteEn && <p className="mt-4 text-sm leading-7 text-ink-soft">{g.noteEn}</p>}
+              {"hrefEn" in g && g.hrefEn && (
+                <Link href={g.hrefEn} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+                  {g.hrefEnLabel}
+                  <IconChevron className="h-4 w-4" />
+                </Link>
+              )}
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            These item names are the terms I use when quoting.
-            If any line is unclear, message me on LINE and I will explain it in English. I use a translation app, so short plain sentences work best.
+            All prices are in Thai baht and are what you pay, with no travel fee inside my service area.
+            If any line is unclear, message me on LINE and I will explain it. I use a translation app, so short plain sentences work best.
           </p>
         </div>
       </section>

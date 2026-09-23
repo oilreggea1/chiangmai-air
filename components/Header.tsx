@@ -126,11 +126,15 @@ const mobileGroups: { heading: string; items: NavItem[] }[] = [
  */
 const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; menuLabel: string; closeLabel: string }> = {
   en: {
+    // 24 ก.ย. 2569 เพิ่ม Installation / Washing machines / About — โลโก้ลิงก์ไปหน้าแรกอยู่แล้วจึงตัด Home ออก
+    // รายการยาวขึ้น แถบจอใหญ่ของเมนูต่างประเทศจึงแสดงตั้งแต่ xl แทน lg ต่ำกว่านั้นใช้ปุ่มเมนู (กันข้อความตัดกลางคำแบบที่เคยเกิดกับเมนูไทย)
     links: [
-      { href: "/en", label: "Home" },
       { href: "/en/pricing", label: "Prices" },
+      { href: "/en/installation", label: "Installation" },
+      { href: "/en/washing-machine", label: "Washing machines" },
       { href: "/en/areas", label: "Areas" },
       { href: "/en/airbnb", label: "Airbnb & rentals" },
+      { href: "/en/about", label: "About" },
       { href: "/zh", label: "中文" },
       { href: "/", label: "ไทย" },
     ],
@@ -211,7 +215,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-0.5 lg:flex" aria-label={lang === "en" ? "Main menu" : "主菜单"}>
+          <nav className="hidden items-center gap-0.5 xl:flex" aria-label={lang === "en" ? "Main menu" : "主菜单"}>
             {t.links.map((n) => (
               <Link
                 key={n.href}
@@ -234,7 +238,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-200 text-ink lg:hidden"
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-200 text-ink xl:hidden"
               aria-expanded={open}
               aria-controls="intl-nav"
               aria-label={open ? t.closeLabel : t.menuLabel}
@@ -245,7 +249,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
         </div>
 
         {open && (
-          <div id="intl-nav" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white lg:hidden">
+          <div id="intl-nav" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white xl:hidden">
             <nav className="wrap grid gap-1 py-4" aria-label={lang === "en" ? "Mobile menu" : "移动菜单"}>
               {t.links.map((n) => (
                 <Link

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, p } from "@/lib/site";
+import { site, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconClock } from "@/components/Icons";
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "What does it cost for a whole property?",
-    a: `Wall units are ${p.wash.std} THB each, dropping to ${p.wash.stdBulk} THB each from three units up, which covers most apartments and villas. Larger 18,001 to 36,000 BTU units are 650 THB, or 600 THB each from two up. Send me the number of units and I will confirm the total before I come.`,
+    a: `Wall units are ${p.wash.std} THB each, dropping to ${p.wash.stdBulk} THB each from three units up, which covers most apartments and villas. Larger ${btu.washBig} BTU units are ${p.wash.big} THB, or ${p.wash.bigBulk} THB each from two up. Send me the number of units and I will confirm the total before I come.`,
   },
   {
     q: "Can I get paperwork for my accounts?",

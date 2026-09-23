@@ -112,10 +112,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
   if (!s) return {};
+  // หน้าบริการที่มีฉบับอังกฤษ (24 ก.ย. 2569) ประกาศ hreflang คู่กัน ที่เหลือมีแค่ไทย
+  const enPath: Record<string, string> = { "tid-tang-air": "/en/installation", "lang-washing-machine": "/en/washing-machine" };
+  const en = enPath[s.slug];
   return {
     title: s.title,
     description: s.description,
-    alternates: { canonical: `/service/${s.slug}` },
+    alternates: {
+      canonical: `/service/${s.slug}`,
+      ...(en ? { languages: { "th-TH": `/service/${s.slug}`, "en-US": en, "x-default": `/service/${s.slug}` } } : {}),
+    },
     ...share({ title: s.title, description: s.description, path: `/service/${s.slug}` }),
   };
 }

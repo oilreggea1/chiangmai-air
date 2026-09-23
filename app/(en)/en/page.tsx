@@ -143,9 +143,10 @@ const workPhotos = [
     cap: "Every removable part is washed on its own",
   },
   {
-    src: "/work/air-2569-16.jpg",
-    alt: "A washed filter screen held up against the light, clear enough to see straight through the mesh",
-    cap: "The same mesh once it is clean",
+    // เปลี่ยนจาก air-2569-16 (รูปเล็บมือดำ เจ้าของสั่งห้ามใช้ทุกที่ 24 ก.ย. 2569) เป็นรูปแผ่นกรองที่ล้างแล้ว ไม่มีมือในภาพ
+    src: "/work/air-2569-19.jpg",
+    alt: "Two washed filter screens laid on a pale tiled floor, the mesh clear again with no dust left on it",
+    cap: "The same kind of screen once it is clean",
   },
 ];
 
@@ -190,6 +191,12 @@ export default function EnglishPage() {
             <p className="mt-4 text-sm text-ink-soft">
               AC service LINE {site.lineId} · washing machine cleaning LINE {site.lineId2} · Mon–Sat 8:00–18:00
             </p>
+            {/* แถบความน่าเชื่อถือสำหรับลูกค้าต่างชาติ (24 ก.ย. 2569): บริษัทจดทะเบียน + คนที่มาคือใคร + ไม่มีมัดจำ */}
+            <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">
+              <li className="flex items-start gap-2"><IconShield className="mt-0.5 h-4 w-4 shrink-0 text-mint" />Registered company: {site.legalNameEn}</li>
+              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />Arm does the work himself, not a rotating crew</li>
+              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />No deposit, pay after you have seen the work</li>
+            </ul>
           </div>
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
@@ -390,6 +397,9 @@ export default function EnglishPage() {
           <ul className="mt-7 grid gap-3 sm:grid-cols-3">
             {[
               { href: "/en/pricing", t: "Full price list", d: "Every service, published up front" },
+              { href: "/en/installation", t: "Installation and relocation", d: "Units bought online welcome" },
+              { href: "/en/washing-machine", t: "Washing machine deep clean", d: "Drum out, every part washed" },
+              { href: "/en/about", t: "About Arm and the company", d: "Registered company, who comes to your home" },
               { href: "/en/areas", t: "Areas I cover", d: "District and sub-district list" },
               { href: "/en/airbnb", t: "Airbnb and rentals", d: "Cleaning between guests" },
             ].map((x) => (

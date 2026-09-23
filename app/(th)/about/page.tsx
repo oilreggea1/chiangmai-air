@@ -17,7 +17,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "/about", languages: { "th-TH": "/about", "en-US": "/en/about", "x-default": "/about" } },
   ...share({ title, description, path: `/about`, type: "profile" }),
 };
 

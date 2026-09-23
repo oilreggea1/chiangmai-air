@@ -53,6 +53,16 @@ function body() {
 - [${site.leadTech}และข้อมูลบริษัท](${U}/about): ตัวตน ประสบการณ์ และมาตรฐานการทำงาน
 - [ติดต่อ](${U}/contact): โทร LINE เวลาทำการ และที่ตั้ง
 
+## English pages (for international customers)
+
+- [English home](${U}/en): services, prices and how to book in English
+- [Prices in English](${U}/en/pricing)
+- [Installation and relocation](${U}/en/installation): units bought online welcome, warranty terms
+- [Washing machine drum clean](${U}/en/washing-machine)
+- [About Arm and the company](${U}/en/about): registered company details, who does the work
+- [Areas covered](${U}/en/areas) · [Airbnb and rentals](${U}/en/airbnb)
+- 中文: [首页](${U}/zh) · [价目表](${U}/zh/pricing)
+
 ## ราคาที่ประกาศ
 
 - ล้างแอร์ติดผนัง ${btu.washStd} BTU: ${p.wash.std} บาทต่อเครื่อง; 3 เครื่องขึ้นไป ${p.wash.stdBulk} บาทต่อเครื่อง

@@ -1269,104 +1269,128 @@ export const coverageTotal = coverage.reduce((n, c) => n + c.tambons.length, 0);
 export const pricing = [
   {
     group: "ล้างแอร์ติดผนัง",
+    groupEn: "Wall-mounted aircon cleaning",
     icon: "snow",
     href: "/service/lang-air",
     hrefLabel: "รายละเอียดล้างแอร์เชียงใหม่",
     items: [
-      { label: `ขนาด ${btu.washStd} BTU`, price: `${p.wash.std}.-` },
-      { label: `${btu.washStd} BTU ตั้งแต่ 3 เครื่องขึ้นไป`, price: `${p.wash.stdBulk}.- / เครื่อง`, highlight: true },
-      { label: `ขนาด ${btu.washBig} BTU`, price: `${p.wash.big}.-` },
-      { label: `${btu.washBig} BTU ตั้งแต่ 2 เครื่องขึ้นไป`, price: `${p.wash.bigBulk}.- / เครื่อง`, highlight: true },
-      { label: "Premium Full Wash ถอดล้าง 100%", price: `${p.wash.premium}.-` },
+      { label: `ขนาด ${btu.washStd} BTU`, labelEn: `Wall unit, ${btu.washStd} BTU`, price: `${p.wash.std}.-`, priceEn: `${p.wash.std} THB` },
+      { label: `${btu.washStd} BTU ตั้งแต่ 3 เครื่องขึ้นไป`, labelEn: `${btu.washStd} BTU, three or more units`, price: `${p.wash.stdBulk}.- / เครื่อง`, priceEn: `${p.wash.stdBulk} THB each`, highlight: true },
+      { label: `ขนาด ${btu.washBig} BTU`, labelEn: `Large wall unit, ${btu.washBig} BTU`, price: `${p.wash.big}.-`, priceEn: `${p.wash.big} THB` },
+      { label: `${btu.washBig} BTU ตั้งแต่ 2 เครื่องขึ้นไป`, labelEn: `${btu.washBig} BTU, two or more units`, price: `${p.wash.bigBulk}.- / เครื่อง`, priceEn: `${p.wash.bigBulk} THB each`, highlight: true },
+      { label: "Premium Full Wash ถอดล้าง 100%", labelEn: "Premium Full Wash, complete strip-down", price: `${p.wash.premium}.-`, priceEn: `${p.wash.premium} THB` },
     ],
     note: `ราคา Premium Full Wash ${p.wash.premiumNote} ผมแจ้งยอดที่แน่นอนให้ทราบก่อนเริ่มงานทุกครั้ง`,
+    noteEn: "The Premium Full Wash price depends on the size of the unit. I confirm the exact figure before I start.",
   },
   {
     /** เจ้าของยืนยันเรตนี้แล้ว ก.ค. 2569 เป็นราคาเริ่มต้น ค่าจริงประเมินตามหน้างาน */
     group: "ล้างแอร์แขวนและแอร์ 4 ทิศทาง",
+    groupEn: "Suspended and ceiling-recessed units",
     icon: "snow",
     href: "/service/lang-air-khwaen-cassette",
     hrefLabel: "รายละเอียดล้างแอร์แขวนและ 4 ทิศทาง",
     items: [
-      { label: "แอร์แขวนใต้ฝ้า", price: `เริ่ม ${p.wash.suspended}.-` },
-      { label: "แอร์ 4 ทิศทาง (ฝังฝ้า)", price: `เริ่ม ${p.wash.cassette}.-` },
+      { label: "แอร์แขวนใต้ฝ้า", labelEn: "Suspended unit below the ceiling", price: `เริ่ม ${p.wash.suspended}.-`, priceEn: `from ${p.wash.suspended} THB` },
+      { label: "แอร์ 4 ทิศทาง (ฝังฝ้า)", labelEn: "Four-way ceiling cassette", price: `เริ่ม ${p.wash.cassette}.-`, priceEn: `from ${p.wash.cassette} THB` },
     ],
     note: "เป็นราคาเริ่มต้น ค่าบริการจริงขึ้นกับขนาดเครื่องและความสูงของหน้างาน เนื่องจากส่วนใหญ่ต้องตั้งบันไดหรือนั่งร้าน ผมประเมินและแจ้งราคาให้ทราบก่อนเริ่มงานทุกครั้ง",
+    noteEn: "Starting prices. The final figure depends on the size of the unit and the ceiling height, since most of these jobs need a ladder or scaffold. I quote before I start.",
   },
   {
     group: "ติดตั้งแอร์ใหม่",
+    groupEn: "New aircon installation",
+    hrefEn: "/en/installation",
+    hrefEnLabel: "Installation details in English",
     icon: "install",
     href: "/service/tid-tang-air",
     hrefLabel: "รายละเอียดติดตั้งแอร์เชียงใหม่ ขั้นตอนและประกัน",
     items: [
-      { label: `ขนาด ${btu.installSmall} BTU`, price: `${p.install.small}.-` },
-      { label: `ขนาด ${btu.installLarge} BTU`, price: `${p.install.large}.-` },
+      { label: `ขนาด ${btu.installSmall} BTU`, labelEn: `${btu.installSmall} BTU`, price: `${p.install.small}.-`, priceEn: `${p.install.small} THB` },
+      { label: `ขนาด ${btu.installLarge} BTU`, labelEn: `${btu.installLarge} BTU`, price: `${p.install.large}.-`, priceEn: `${p.install.large} THB` },
     ],
     note: "ซื้อเครื่องกับเรารับประกัน 1 ปี / มีเครื่องเองรับประกัน 6 เดือน",
+    noteEn: "Includes the wall bracket, up to 4 m of piping and the trunking. Warranty 1 year when you buy the unit from me, 6 months when you supply your own unit.",
   },
   {
     /** ราคาเครื่องเปลี่ยนตามรุ่นและช่วงโปรโมชั่น จึงไม่ประกาศตัวเลขตายตัว
      *  และการเทิร์นต้องดูเครื่องจริงก่อน ห้ามใส่ตัวเลขประเมินลงตาราง */
     group: "ขายแอร์และรับเทิร์นเครื่องเก่า",
+    groupEn: "Buying a unit and trading in your old one",
     icon: "install",
     href: "/service/khai-air",
     hrefLabel: "ดูแอร์ใหม่และมือสองพร้อมติดตั้ง",
     items: [
-      { label: "แอร์ใหม่ พร้อมติดตั้ง", price: "แจ้งราคาตามรุ่น" },
-      { label: "แอร์มือสองสภาพดี พร้อมติดตั้ง", price: "แจ้งราคาตามเครื่องที่มี" },
-      { label: "รับเทิร์นแอร์เก่า", price: "ตีราคาหลังดูเครื่อง" },
+      { label: "แอร์ใหม่ พร้อมติดตั้ง", labelEn: "New unit, fitted", price: "แจ้งราคาตามรุ่น", priceEn: "quoted per model" },
+      { label: "แอร์มือสองสภาพดี พร้อมติดตั้ง", labelEn: "Checked second-hand unit, fitted", price: "แจ้งราคาตามเครื่องที่มี", priceEn: "quoted per unit in stock" },
+      { label: "รับเทิร์นแอร์เก่า", labelEn: "Trade-in of your old unit", price: "ตีราคาหลังดูเครื่อง", priceEn: "valued after inspection" },
     ],
     note: "ราคาเครื่องขึ้นกับรุ่นและช่วงโปรโมชั่น ผมแจ้งเป็นรายรุ่นก่อนตัดสินใจ ส่วนค่าติดตั้งคิดตามขนาดเครื่องในอัตราปกติ เครื่องมือสองรับประกันตัวเครื่อง 1 เดือน และการรับเทิร์นต้องดูเครื่องจริงก่อนจึงตีราคาได้",
+    noteEn: "Unit prices depend on the model and the promotion running at the time, so I quote per model. Installation is charged at the normal rate by size. Second-hand units carry a 1 month warranty on the unit itself. I have to see your old unit before I can put a price on it.",
   },
   {
     /** กลุ่มนี้มีทั้งเติมน้ำยาและย้ายแอร์ จึงมีสองลิงก์ กันไม่ให้หน้านี้ไปแย่งคำกับหน้าเฉพาะ */
     group: "ซ่อมและบริการอื่น ๆ",
+    groupEn: "Repairs and other services",
+    hrefEn: "/en/installation#relocation",
+    hrefEnLabel: "Relocation and removal details in English",
     icon: "wrench",
     href: "/price/repair",
     hrefLabel: "ราคาซ่อมแอร์และเติมน้ำยาแอร์แยกตามอาการ",
     href2: "/service/yai-air",
     href2Label: "รายละเอียดย้ายแอร์เชียงใหม่",
     items: [
-      { label: "ค่าบริการตรวจเช็ค (กรณีไม่ซ่อม)", price: `${p.repair.diagnostic}.-` },
-      { label: "เติมน้ำยาแอร์ R32 / R410A", price: `${p.repair.refrigerantPerLb}.- / ปอนด์`, highlight: true },
-      { label: "ถอดแอร์เก่า (ไม่ติดตั้งใหม่)", price: `${p.install.removeOnly}.-` },
-      { label: "ย้ายแอร์ (ถอด + ติดตั้งที่ใหม่)", price: `${p.install.relocate}.-` },
+      { label: "ค่าบริการตรวจเช็ค (กรณีไม่ซ่อม)", labelEn: "Diagnostic visit (charged only if no repair goes ahead)", price: `${p.repair.diagnostic}.-`, priceEn: `${p.repair.diagnostic} THB` },
+      { label: "เติมน้ำยาแอร์ R32 / R410A", labelEn: "Refrigerant top-up, R32 or R410A", price: `${p.repair.refrigerantPerLb}.- / ปอนด์`, priceEn: `${p.repair.refrigerantPerLb} THB per pound`, highlight: true },
+      { label: "ถอดแอร์เก่า (ไม่ติดตั้งใหม่)", labelEn: "Removal of an old unit, no reinstallation", price: `${p.install.removeOnly}.-`, priceEn: `${p.install.removeOnly} THB` },
+      { label: "ย้ายแอร์ (ถอด + ติดตั้งที่ใหม่)", labelEn: "Relocation: remove and reinstall in the new spot", price: `${p.install.relocate}.-`, priceEn: `${p.install.relocate} THB` },
     ],
     note: "ค่าอะไหล่และค่าแรงซ่อมแยกตามอาการ ดูตารางเต็มได้ที่หน้าราคาซ่อมแอร์",
+    noteEn: "Parts and labour for repairs depend on the fault and the model, so I quote after diagnosing. The diagnostic fee is deducted from the bill when you go ahead with the repair.",
   },
   {
     group: "แพ็กเกจรับมือฝุ่น PM2.5",
+    groupEn: "PM2.5 burning-season package",
     icon: "shield",
     href: "/pm25",
     hrefLabel: "รายละเอียดแพ็กเกจ PM2.5",
     items: [
-      { label: "ห้องมาตรฐาน 1 ห้อง + แอร์ 1 เครื่อง", price: `${p.pm25}.-`, highlight: true },
+      { label: "ห้องมาตรฐาน 1 ห้อง + แอร์ 1 เครื่อง", labelEn: "One standard room with one unit", price: `${p.pm25}.-`, priceEn: `${p.pm25} THB`, highlight: true },
     ],
     note: `ล้างแอร์ถอดชิ้นส่วน + ฆ่าเชื้อ + ตรวจและอุดรอยรั่วของห้อง + ประเมินแผ่นกรอง เหมาะกับฤดูหมอกควัน ก.พ.–เม.ย. ราคา${p.wash.premiumNote} เท่ากับงานถอดล้างพิเศษ`,
+    noteEn: "Strip-down clean plus disinfection, a check and seal of the gaps that let outdoor air into the room, and an assessment of your filters. Meant for the burning season, February to April. Priced by unit size, the same as the Premium Full Wash.",
   },
   {
     group: "ล้างเครื่องซักผ้า ฝาบน",
+    groupEn: "Top-load washing machine drum clean",
+    hrefEn: "/en/washing-machine",
+    hrefEnLabel: "Washing machine cleaning in English",
     icon: "washer",
     href: "/service/lang-washing-machine-fa-bon",
     hrefLabel: "รายละเอียดล้างเครื่องซักผ้าฝาบน",
     items: [
-      { label: "ความจุไม่เกิน 15 กิโลกรัม", price: `${p.washer.topLoad}.-`, highlight: true },
-      { label: "ความจุ 15.1 – 19 กิโลกรัม", price: `${p.washer.topLoadMid}.-` },
-      { label: "ความจุมากกว่า 19 กิโลกรัม", price: `${p.washer.topLoadBig}.-` },
+      { label: "ความจุไม่เกิน 15 กิโลกรัม", labelEn: "Capacity up to 15 kg", price: `${p.washer.topLoad}.-`, priceEn: `${p.washer.topLoad} THB`, highlight: true },
+      { label: "ความจุ 15.1 – 19 กิโลกรัม", labelEn: "Capacity 15.1 – 19 kg", price: `${p.washer.topLoadMid}.-`, priceEn: `${p.washer.topLoadMid} THB` },
+      { label: "ความจุมากกว่า 19 กิโลกรัม", labelEn: "Capacity over 19 kg", price: `${p.washer.topLoadBig}.-`, priceEn: `${p.washer.topLoadBig} THB` },
     ],
     note: "ถอดถังล้างทุกชิ้น ใช้เวลาประมาณ 3 ชั่วโมงต่อเครื่อง รับประกันงาน 30 วัน",
+    noteEn: "The drum comes out and every removable part is washed. About 3 hours per machine, 30-day warranty on the work.",
   },
   {
     group: "ล้างเครื่องซักผ้า ฝาหน้า",
+    groupEn: "Front-load washing machine drum clean",
+    hrefEn: "/en/washing-machine",
+    hrefEnLabel: "Washing machine cleaning in English",
     icon: "washer",
     href: "/service/lang-washing-machine-fa-na",
     hrefLabel: "รายละเอียดล้างเครื่องซักผ้าฝาหน้า",
     items: [
-      { label: "ราคาเริ่มต้น", price: `${p.washer.frontLoad}.-`, highlight: true },
-      { label: "เครื่องความจุสูง", price: "แจ้งราคาหลังประเมิน" },
-      { label: "กรณีต้องขนเครื่องออกไปล้างนอกสถานที่", price: `+${p.washer.offsiteSurcharge}.-` },
+      { label: "ราคาเริ่มต้น", labelEn: "Starting price", price: `${p.washer.frontLoad}.-`, priceEn: `from ${p.washer.frontLoad} THB`, highlight: true },
+      { label: "เครื่องความจุสูง", labelEn: "Large-capacity machines", price: "แจ้งราคาหลังประเมิน", priceEn: "quoted after I see the machine" },
+      { label: "กรณีต้องขนเครื่องออกไปล้างนอกสถานที่", labelEn: "If the machine has to be taken away to be cleaned off-site", price: `+${p.washer.offsiteSurcharge}.-`, priceEn: `+${p.washer.offsiteSurcharge} THB` },
     ],
     note: "เครื่องฝาหน้าถอดประกอบซับซ้อนกว่าฝาบน จึงคิดคนละเรต ค่าขนออกไปล้างนอกสถานที่ใช้กับทั้งสองแบบ",
+    noteEn: "Front loaders are more involved to strip down than top loaders, so they are priced separately. The off-site surcharge applies to both types when there is no room to work at your place.",
   },
 ];
 
@@ -1529,6 +1553,9 @@ export const servicePhotos: Record<string, typeof washerGallery> = {
  * alt เขียนจากสิ่งที่เห็นในภาพจริงทีละใบ ไม่ใช้ข้อความชุดเดียวไล่เลข
  * เพราะ Google ถือว่า alt ที่ซ้ำกันทั้งชุดไม่มีข้อมูล และเข้าข่ายยัดคีย์เวิร์ด
  * ข้าม air-2569-17 เพราะเป็นไฟล์เดียวกับ -16 ทุกไบต์
+ *
+ * ⚠️ air-2569-16 (= lang-air-thammada-105 = lang-air-thod-lang-314 ไฟล์เดียวกัน) ถูกลบออกจากเว็บถาวร 24 ก.ย. 2569
+ * เจ้าของสั่ง: รูปที่เห็นเล็บมือดำ/มือเปื้อนคราบ ห้ามใช้ทุกที่ ทุกภาษา — ก่อนเลือกรูปใหม่ต้องเปิดดูรูปจริงเสมอ
  */
 export const gallery = [
   { src: "/work/chang-arm-lang-air-01.jpg", alt: "ช่างอาร์มขึ้นบันไดเปิดหน้ากากแอร์ติดผนังข้างหน้าต่างเพื่อเริ่มล้าง" },
@@ -1554,7 +1581,6 @@ export const gallery = [
   { src: "/work/air-2569-13.jpg", alt: "มือช่างใส่ถุงมือถือท่อน้ำทิ้งที่มีตะกอนอุดตันอยู่ภายใน" },
   { src: "/work/air-2569-14.jpg", alt: "แผ่นกรองอากาศสองแผ่นวางบนพื้นก่อนล้าง เห็นชั้นฝุ่นหนาสีเทาดำ" },
   { src: "/work/air-2569-15.jpg", alt: "คอยล์เย็นระยะใกล้ที่ครีบอะลูมิเนียมดำจากฝุ่นที่สะสมมานาน" },
-  { src: "/work/air-2569-16.jpg", alt: "มือช่างยกแผ่นกรองอากาศที่ล้างสะอาดแล้วขึ้นส่องกับแสง" },
   { src: "/work/air-2569-18.jpg", alt: "ตัวเครื่องแอร์ที่เปิดฝาออกจนเห็นคอยล์และชุดใบพัดด้านใน" },
   { src: "/work/air-2569-19.jpg", alt: "หน้ากากแอร์พลาสติกใสที่ล้างสะอาดแล้ววางพิงบนพื้นกระเบื้อง" },
   { src: "/work/air-2569-20.jpg", alt: "แผ่นกรองอากาศที่ยังมีฝุ่นเกาะเต็มผืน วางบนพื้นไม้ก่อนนำไปล้าง" },
@@ -2017,7 +2043,6 @@ export const portfolio: PortfolioCategory[] = [
       { src: "/work/lang-air-thod-lang-311.jpg", alt: "แผ่นกรองสองแผ่นวางต่อกันบนพื้นทราย เห็นฝุ่นเกาะเป็นแถบหนาด้านบน" },
       { src: "/work/lang-air-thod-lang-312.jpg", alt: "ตัวเครื่องแอร์ที่ถอดหน้ากากออกแล้ว เห็นถาดรองน้ำสีเทาเต็มแนว" },
       { src: "/work/lang-air-thod-lang-313.jpg", alt: "โครงหน้ากากแอร์แบะออก ถ่ายจากด้านบนตรง ๆ เห็นทั้งชิ้น" },
-      { src: "/work/lang-air-thod-lang-314.jpg", alt: "มือประคองแผ่นกรองขนาดใหญ่ที่มีฝุ่นเกาะไว้ในบ้าน ก่อนนำออกไปล้าง" },
       { src: "/work/lang-air-thod-lang-315.jpg", alt: "แผ่นกรองที่ฝุ่นจับหนาวางพาดไว้ ด้านหลังมีถังน้ำสเตนเลสสำหรับล้าง" },
       { src: "/work/lang-air-thod-lang-316.jpg", alt: "ระยะใกล้ช่องลมออกและครีบคอยล์เย็นสีเข้ม ถ่ายจากมุมเฉียงด้านล่าง" },
       { src: "/work/lang-air-thod-lang-317.jpg", alt: "ช่องลมด้านข้างตัวเครื่องที่มีคราบสกปรกเกาะอยู่ ถ่ายไว้ก่อนล้าง" },
@@ -2289,7 +2314,6 @@ export const portfolio: PortfolioCategory[] = [
       { src: "/work/lang-air-thammada-102.jpg", alt: "ฝาครอบหน้าผิวเงาวางบนที่นอน มีมือช่างประคองอยู่ริมภาพ" },
       { src: "/work/lang-air-thammada-103.jpg", alt: "โครงหน้ากากยกขึ้นถือกลางห้อง เห็นซี่พลาสติกและช่องใส่แผ่นกรองด้านใน" },
       { src: "/work/lang-air-thammada-104.jpg", alt: "ด้านหลังของฝาครอบหน้าหงายขึ้น วางคู่กับสายฉีดน้ำที่ขดเป็นวง" },
-      { src: "/work/lang-air-thammada-105.jpg", alt: "มือช่างถือแผ่นกรองอากาศยกขึ้นส่องแสง เห็นฝุ่นค้างตามตาข่าย" },
       { src: "/work/lang-air-thammada-106.jpg", alt: "ช่างประคองฝาครอบหน้าที่เพิ่งถอดออกจากเครื่อง ก่อนนำไปล้างทำความสะอาด" },
       { src: "/work/lang-air-thammada-107.jpg", alt: "ชิ้นส่วนแผ่นยาวสีขาววางเหยียดเต็มความยาว รอขั้นตอนฉีดล้างต่อไป" },
       { src: "/work/lang-air-thammada-108.jpg", alt: "ถาดรองน้ำทิ้งสีดำวางเฉียงทับบนหน้ากากสีขาว หลังถอดออกมาทั้งสองชิ้น" },
@@ -2964,9 +2988,26 @@ export const heroPhotos = {
     src: "/work/chang-arm-tid-tang-rang-01.jpg",
     alt: "ช่างอาร์ม โปรเฟรชแคร์ ยิงตะปูยึดรางเข้ากับผนัง โดยวางระดับน้ำไว้บนรางเพื่อตรวจแนวก่อนยึด",
   },
+  /**
+   * รูปหน้าอังกฤษ/จีน เปลี่ยนชุด 24 ก.ย. 2569 (ลูกค้าต่างชาติเข้ามาก เจ้าของขอให้ดูน่าเชื่อถือ)
+   * ของเดิมเป็นรูปถ่ายจากด้านหลังศีรษะที่คอยล์ร้อน ไม่เห็นหน้า ไม่เห็นความเรียบร้อยของงาน
+   * ทุกใบด้านล่างเปิดดูรูปจริงแล้ว: ไม่มีมือ/เล็บที่เห็นคราบ (กติกาเจ้าของ)
+   */
   en: {
-    src: "/work/air-2569-03.jpg",
-    alt: "Arm servicing the outdoor unit of an air conditioner at a customer home in Chiang Mai",
+    src: "/work/chang-arm-lang-air-02.jpg",
+    alt: "Arm in the Pro Fresh Care uniform on a stepladder, opening a wall-mounted unit in a clean bedroom in Chiang Mai",
+  },
+  enAbout: {
+    src: "/work/chang-arm-tid-tang-rang-01.jpg",
+    alt: "Arm, the technician behind Pro Fresh Care, fixing pipe trunking to a wall with a nail gun while the furniture below is covered",
+  },
+  enInstall: {
+    src: "/work/tid-tang-air-021.jpg",
+    alt: "A new boxed Daikin indoor unit being unpacked on a covered floor before installation",
+  },
+  enWasher: {
+    src: "/work/washer-top-deep-clean-01.webp",
+    alt: "Stainless inner drum lifted out of a top-load washing machine and set on the ground for cleaning",
   },
   pm25: {
     src: "/work/air-2569-14.jpg",
