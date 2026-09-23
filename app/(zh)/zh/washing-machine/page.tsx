@@ -6,6 +6,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconWasher, IconClock } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
+import { workCases } from "@/lib/work-cases";
 
 /**
  * หน้าล้างเครื่องซักผ้าภาษาจีน (24 ก.ย. 2569) คู่กับ /en/washing-machine และ /service/lang-washing-machine
@@ -162,7 +163,32 @@ export default function ZhWashingMachinePage() {
         moreLabel="在 Facebook 查看更多视频"
       />
 
+
+      {/* งานจริงจากโพสต์เพจ (24 ก.ย. 2569) ลิงก์ไปรายงานภาษาไทย */}
       <section className="section" lang="zh-CN">
+        <div className="wrap">
+          <h2 className="h2">近期案例，一台机器一份记录</h2>
+          <p className="lead mt-3 max-w-2xl">每份记录从第一张照片到最后一张都是同一台机器，附日期和所在区域。文字为泰文，照片一看就懂。</p>
+          <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {workCases.filter((c) => c.serviceSlug === "lang-washing-machine" && c.date).sort((a, b) => b.date!.localeCompare(a.date!)).slice(0, 6).map((c) => (
+              <li key={c.slug}>
+                <Link href={`/case-study/${c.slug}`} hrefLang="th" className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
+                  <div className="grid grid-cols-2">
+                    <Image src={c.images[1]?.src ?? c.images[0].src} alt={c.images[1]?.alt ?? c.images[0].alt} width={540} height={405} loading="lazy" sizes="(max-width: 640px) 50vw, 17vw" className="aspect-[4/3] w-full object-cover" />
+                    <Image src={c.images[c.images.length - 1].src} alt={c.images[c.images.length - 1].alt} width={540} height={405} loading="lazy" sizes="(max-width: 640px) 50vw, 17vw" className="aspect-[4/3] w-full object-cover" />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs font-bold text-brand-600">{c.date ? new Date(c.date).toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" }) : ""} · {c.equipment.replace(/^เครื่องซักผ้าฝาบน/, "上开式").replace(/^เครื่องซักผ้าฝาหน้า/, "前开式").replace(/ ไม่ปรากฏยี่ห้อชัดเจนในรูป$/, "")}</span>
+                    <span className="mt-1 block text-sm text-ink-soft">清洗前后对比 · 泰文记录</span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="zh-CN">
         <div className="wrap grid gap-12 lg:grid-cols-2">
           <div>
             <h2 className="h2">工作内容</h2>

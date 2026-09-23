@@ -6,6 +6,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconWasher, IconClock } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
+import { workCases } from "@/lib/work-cases";
 
 /**
  * หน้าล้างเครื่องซักผ้าภาษาอังกฤษ (24 ก.ย. 2569)
@@ -210,7 +211,32 @@ export default function EnWashingMachinePage() {
         moreLabel="More videos on Facebook"
       />
 
+
+      {/* งานจริงจากโพสต์เพจ (24 ก.ย. 2569) ลิงก์ไปรายงานภาษาไทย รูปและวันที่พูดแทนได้ */}
       <section className="section" lang="en">
+        <div className="wrap">
+          <h2 className="h2">Recent jobs, one machine per report</h2>
+          <p className="lead mt-3 max-w-2xl">Each report follows a single machine from the first photo to the last, with the date and district. The write-ups are in Thai, but the photos speak for themselves.</p>
+          <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {workCases.filter((c) => c.serviceSlug === "lang-washing-machine" && c.date).sort((a, b) => b.date!.localeCompare(a.date!)).slice(0, 6).map((c) => (
+              <li key={c.slug}>
+                <Link href={`/case-study/${c.slug}`} hrefLang="th" className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
+                  <div className="grid grid-cols-2">
+                    <Image src={c.images[1]?.src ?? c.images[0].src} alt={c.images[1]?.alt ?? c.images[0].alt} width={540} height={405} loading="lazy" sizes="(max-width: 640px) 50vw, 17vw" className="aspect-[4/3] w-full object-cover" />
+                    <Image src={c.images[c.images.length - 1].src} alt={c.images[c.images.length - 1].alt} width={540} height={405} loading="lazy" sizes="(max-width: 640px) 50vw, 17vw" className="aspect-[4/3] w-full object-cover" />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs font-bold text-brand-600">{c.date ? new Date(c.date).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : ""} · {c.equipment.replace(/^เครื่องซักผ้าฝาบน/, "Top loader").replace(/^เครื่องซักผ้าฝาหน้า/, "Front loader").replace(/ ไม่ปรากฏยี่ห้อชัดเจนในรูป$/, "")}</span>
+                    <span className="mt-1 block text-sm text-ink-soft">Before and after · report in Thai</span>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="en">
         <div className="wrap grid gap-12 lg:grid-cols-2">
           <div>
             <h2 className="h2">What the job covers</h2>

@@ -29,7 +29,7 @@ export default async function WorkCasePage({ params }: Props) {
   const item = getWorkCase((await params).slug);
   if (!item) notFound();
   const trail = [{ name: "หน้าแรก", path: "/" }, { name: "Case Study", path: "/case-study" }, { name: item.title, path: `/case-study/${item.slug}` }];
-  const schema = { "@context": "https://schema.org", "@type": "Article", headline: item.title, description: item.finding, url: `${site.url}/case-study/${item.slug}`, inLanguage: "th-TH", dateModified: lastmodIso(SRC.workCases), author: { "@id": PERSON_ID }, publisher: { "@id": `${site.url}/#business` }, image: item.images.map((image) => `${site.url}${image.src}`), about: { "@type": "Service", name: item.service, url: `${site.url}/service/${item.serviceSlug}` } };
+  const schema = { "@context": "https://schema.org", "@type": "Article", headline: item.title, description: item.finding, url: `${site.url}/case-study/${item.slug}`, inLanguage: "th-TH", ...(item.date ? { datePublished: item.date } : {}), dateModified: lastmodIso(SRC.workCases), author: { "@id": PERSON_ID }, publisher: { "@id": `${site.url}/#business` }, image: item.images.map((image) => `${site.url}${image.src}`), about: { "@type": "Service", name: item.service, url: `${site.url}/service/${item.serviceSlug}` } };
   const equipment = item.equipment
     .replace(/ ไม่ปรากฏยี่ห้อและ BTU$/, "")
     .replace(/ ไม่ปรากฏยี่ห้อชัดเจน$/, "")

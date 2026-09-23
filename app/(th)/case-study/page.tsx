@@ -32,12 +32,12 @@ export default function CaseStudyIndex() {
       </div>
       <section className="section pt-5">
         <ul className="wrap grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {workCases.map((item) => (
+          {[...workCases].sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")).map((item) => (
             <li key={item.slug}>
               <Link href={`/case-study/${item.slug}`} className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
                 <Image src={item.images[0].src} alt={item.images[0].alt} width={720} height={540} sizes="(max-width: 640px) 100vw, 33vw" className="aspect-[4/3] w-full object-cover" />
                 <div className="flex flex-1 flex-col p-5">
-                  <span className="text-xs font-bold text-brand-600">{item.service}</span>
+                  <span className="text-xs font-bold text-brand-600">{item.service}{item.date ? ` · ${item.recorded}` : ""}</span>
                   <h2 className="mt-2 font-bold leading-7 group-hover:text-brand-700">{item.title}</h2>
                   <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{item.finding}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">อ่านรายงาน<IconChevron className="h-4 w-4" /></span>
