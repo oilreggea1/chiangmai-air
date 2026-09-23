@@ -144,8 +144,10 @@ const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; men
   },
   "zh-CN": {
     links: [
-      { href: "/zh", label: "首页" },
       { href: "/zh/pricing", label: "价目表" },
+      { href: "/zh/installation", label: "安装" },
+      { href: "/zh/washing-machine", label: "洗衣机" },
+      { href: "/zh/about", label: "关于" },
       { href: "/en", label: "English" },
       { href: "/", label: "ไทย" },
     ],

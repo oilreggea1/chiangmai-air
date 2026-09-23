@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/en/installation",
-    languages: { "th-TH": "/service/tid-tang-air", "en-US": "/en/installation", "x-default": "/service/tid-tang-air" },
+    languages: { "th-TH": "/service/tid-tang-air", "en-US": "/en/installation", "zh-CN": "/zh/installation", "x-default": "/service/tid-tang-air" },
   },
   ...share({ title, description, path: `/en/installation`, locale: "en_US", image: heroPhotos.enInstall }),
 };

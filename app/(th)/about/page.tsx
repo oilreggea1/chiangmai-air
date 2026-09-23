@@ -17,7 +17,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/about", languages: { "th-TH": "/about", "en-US": "/en/about", "x-default": "/about" } },
+  alternates: { canonical: "/about", languages: { "th-TH": "/about", "en-US": "/en/about", "zh-CN": "/zh/about", "x-default": "/about" } },
   ...share({ title, description, path: `/about`, type: "profile" }),
 };
 
@@ -233,7 +233,7 @@ export default function AboutPage() {
                 Icon: IconClock,
               },
               { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE งานแอร์ ${site.lineId} · LINE ล้างถังซักผ้า ${site.lineId2}`, Icon: IconPhone },
-              { t: "เอกสาร", d: "ออกใบเสร็จรับเงินในนามบริษัทได้ ยังไม่ได้จดภาษีมูลค่าเพิ่ม จึงยังออกใบกำกับภาษีไม่ได้", Icon: IconCheck },
+              { t: "เอกสาร", d: "จดทะเบียนภาษีมูลค่าเพิ่มแล้ว ออกใบกำกับภาษีเต็มรูปและใบเสร็จรับเงินในนามบริษัทได้", Icon: IconCheck },
             ].map((x) => (
               // ห้ามห่อ dt/dd ด้วย div ซ้อนอีกชั้น โครงที่ถูกคือ dl > div > dt/dd
               // ของเดิมเป็น dl > div.card > div > dt ทำให้ axe ฟ้อง definition-list

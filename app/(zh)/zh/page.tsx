@@ -106,7 +106,7 @@ const faqs = [
   },
   {
     q: "可以开收据吗？",
-    a: "可以。收据抬头为 Cher Solutions Co., Ltd.，可作为付款凭证，餐厅、咖啡店、酒店、民宿和办公室都适用。公司目前尚未登记增值税，因此无法开具增值税发票（ใบกำกับภาษี）。如果贵司报账必须使用增值税发票，请在下单前先告知，以免耽误。"
+    a: "可以。Cher Solutions Co., Ltd. 已登记增值税，可开具泰国增值税发票（ใบกำกับภาษี）和公司抬头收据，餐厅、咖啡店、酒店、民宿和办公室报账都适用。网站上的价格已含增值税。请在上门前把公司名称和税号发给我，完工时一并交付。"
   },
   {
     q: "公寓和出租房可以做吗？",
@@ -324,7 +324,7 @@ export default function ChinesePage() {
               },
               {
                 t: "完工验收后付款",
-                d: "现金或泰国银行转账均可。需要公司抬头收据请提前说明。",
+                d: "现金或泰国银行转账均可。需要增值税发票或公司抬头收据请提前说明。",
               },
             ].map((x, i) => (
               <li key={x.t} className="card flex items-start gap-4 p-5">
@@ -374,16 +374,15 @@ export default function ChinesePage() {
             ))}
           </div>
 
-          <h3 className="mt-10 text-lg font-bold">更多详细页面（英文）</h3>
-          <p className="mt-2 text-sm leading-7 text-ink-soft">安装、洗衣机清洗和公司资料的详细页面目前提供英文版，中文可直接在 LINE 上询问。</p>
+          <h3 className="mt-10 text-lg font-bold">更多中文页面</h3>
           <ul className="mt-4 grid gap-3 sm:grid-cols-3">
             {[
-              { href: "/en/installation", t: "空调安装与移机", d: "网购机器也可安装 · Installation" },
-              { href: "/en/washing-machine", t: "洗衣机内桶清洗", d: "拆桶清洗 · Washing machines" },
-              { href: "/en/about", t: "关于 Arm 与公司", d: "注册公司资料 · About" },
+              { href: "/zh/installation", t: "空调安装与移机", d: "网购机器也可安装，含支架和线槽" },
+              { href: "/zh/washing-machine", t: "洗衣机内桶清洗", d: "拆出内桶逐件清洗，清洗前后实拍" },
+              { href: "/zh/about", t: "关于 Arm 与公司", d: "注册公司资料、承诺与联系方式" },
             ].map((x) => (
               <li key={x.href}>
-                <Link href={x.href} hrefLang="en" className="card flex h-full flex-col justify-between gap-2 p-5 transition-all hover:shadow-lift">
+                <Link href={x.href} className="card flex h-full flex-col justify-between gap-2 p-5 transition-all hover:shadow-lift">
                   <span className="font-bold">{x.t}</span>
                   <span className="text-sm text-ink-soft">{x.d}</span>
                 </Link>

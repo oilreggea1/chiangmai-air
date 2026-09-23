@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: "/en/about",
-    languages: { "th-TH": "/about", "en-US": "/en/about", "x-default": "/about" },
+    languages: { "th-TH": "/about", "en-US": "/en/about", "zh-CN": "/zh/about", "x-default": "/about" },
   },
   ...share({ title, description, path: `/en/about`, type: "profile", locale: "en_US", image: heroPhotos.enAbout }),
 };
@@ -50,7 +50,7 @@ const facts = [
   { k: "Tax ID", v: site.taxId },
   { k: "Based in", v: addressEn },
   { k: "Hours", v: "Monday to Saturday, 08:00–18:00. Closed Sunday. Out-of-hours visits by arrangement, with a surcharge quoted first." },
-  { k: "Receipts", v: "Issued in the company name on request. The company is not VAT registered, so a full VAT tax invoice is not available." },
+  { k: "Invoices and receipts", v: "VAT registered. Full VAT tax invoices and receipts are issued in the company name on request. Prices on this site already include VAT." },
 ];
 
 const photos = [

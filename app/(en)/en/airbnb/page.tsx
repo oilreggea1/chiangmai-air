@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Can I get paperwork for my accounts?",
-    a: "I issue receipts in the company name, Cher Solutions Co., Ltd., which most owners and management companies accept as proof of payment. The company is not yet VAT registered, so a full VAT tax invoice is not available. If your accountant requires one, please tell me before booking.",
+    a: "Yes. Cher Solutions Co., Ltd. is VAT registered, so you can have a full VAT tax invoice or a receipt in the company name, whichever your accountant prefers. Prices already include VAT. Send me the name and tax ID to put on the document and I bring it with me.",
   },
 ];
 

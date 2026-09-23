@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/en/washing-machine",
-    languages: { "th-TH": "/service/lang-washing-machine", "en-US": "/en/washing-machine", "x-default": "/service/lang-washing-machine" },
+    languages: { "th-TH": "/service/lang-washing-machine", "en-US": "/en/washing-machine", "zh-CN": "/zh/washing-machine", "x-default": "/service/lang-washing-machine" },
   },
   ...share({ title, description, path: `/en/washing-machine`, locale: "en_US", image: heroPhotos.enWasher }),
 };

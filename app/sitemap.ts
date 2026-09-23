@@ -32,6 +32,9 @@ const extraSources: Record<string, string[]> = {
   "/en/pricing": [SRC.site],
   "/en/installation": [SRC.site],
   "/en/washing-machine": [SRC.site],
+  "/zh/pricing": [SRC.site],
+  "/zh/installation": [SRC.site],
+  "/zh/washing-machine": [SRC.site],
 };
 function staticLastmod(path: string) {
   const page = path.startsWith("/en") ? `app/(en)${path}/page.tsx` : path.startsWith("/zh") ? `app/(zh)${path}/page.tsx` : thPage(path);
@@ -67,6 +70,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/about", priority: 0.6, freq: "monthly" as const },
     { path: "/zh", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/pricing", priority: 0.7, freq: "monthly" as const },
+    { path: "/zh/installation", priority: 0.7, freq: "monthly" as const },
+    { path: "/zh/washing-machine", priority: 0.7, freq: "monthly" as const },
+    { path: "/zh/about", priority: 0.6, freq: "monthly" as const },
   ];
 
   return [
