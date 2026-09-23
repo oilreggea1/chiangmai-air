@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/check-prices.mjs && node scripts/check-thumbs.mjs && next build",
+    "build": "node scripts/lastmod.mjs && node scripts/check-prices.mjs && node scripts/check-thumbs.mjs && next build",
+    "lastmod": "node scripts/lastmod.mjs",
     "start": "next start",
     "lint": "eslint",
     "check:prices": "node scripts/check-prices.mjs",

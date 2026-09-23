@@ -75,6 +75,22 @@ export default function PricePage() {
                     {g.note}
                   </p>
                 )}
+                {/* ลิงก์ไปหน้าเฉพาะของกลุ่มนั้น หน้านี้ติดอันดับ 3 คำ "ราคาล้างแอร์ เชียงใหม่"
+                    จึงเป็นหน้าที่ควรส่งน้ำหนักต่อไปยังหน้าติดตั้ง/ย้ายแอร์/ราคาซ่อม ไม่ใช่เก็บคำไว้เอง */}
+                {"href" in g && g.href && (
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 border-t border-slate-100 px-5 py-4 text-sm sm:px-6">
+                    <Link href={g.href} className="inline-flex items-center gap-1 font-semibold text-brand-700 hover:underline">
+                      {g.hrefLabel}
+                      <IconChevron className="h-4 w-4" />
+                    </Link>
+                    {"href2" in g && g.href2 && (
+                      <Link href={g.href2} className="inline-flex items-center gap-1 font-semibold text-brand-700 hover:underline">
+                        {g.href2Label}
+                        <IconChevron className="h-4 w-4" />
+                      </Link>
+                    )}
+                  </div>
+                )}
               </div>
             );
           })}
@@ -131,7 +147,7 @@ export default function PricePage() {
               "แอร์แขวนและสี่ทิศทางคิดคนละอัตรากับแอร์ติดผนัง เพราะขั้นตอนและเวลาที่ใช้ต่างกันมาก",
               `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้จากค่าซ่อมเมื่อตัดสินใจซ่อม`,
               `เติมน้ำยาคิดตามจริงปอนด์ละ ${p.repair.refrigerantPerLb} บาท โดยตรวจวัดให้ลูกค้าดูก่อน และไม่เติมหากไม่พร่อง`,
-              "ค่าติดตั้งครอบคลุมอุปกรณ์ระยะมาตรฐาน หากต้องเดินท่อยาวกว่ามาตรฐาน ผมแจ้งค่าส่วนเกินก่อนเริ่มงาน",
+              "ค่าติดตั้งครอบคลุมขาแขวน ท่อไม่เกิน 4 เมตร และรางครอบ หากต้องเดินท่อยาวกว่านั้น ผมแจ้งค่าส่วนเกินก่อนเริ่มงาน",
               "รับประกันงานล้าง 30 วัน ทุกแบบ (ธรรมดาและพรีเมี่ยม) งานติดตั้งรับประกันสูงสุด 1 ปี",
               "ชำระหลังงานเสร็จและลูกค้าตรวจรับเรียบร้อยแล้ว รับทั้งเงินสดและโอน ไม่มีการเก็บมัดจำล่วงหน้า",
             ].map((t) => (

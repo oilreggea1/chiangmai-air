@@ -4,6 +4,7 @@ import Image from "next/image";
 import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
+import { thaiDate } from "@/lib/lastmod";
 import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
@@ -28,6 +29,13 @@ const homeEdges = edges.map((edge, index) => ({
     `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท และหักคืนเมื่อตัดสินใจซ่อม ดูราคาก่อนได้`,
     "นัดเร่งด่วนนอกเวลาได้ โดยแจ้งค่าบริการเพิ่มก่อนยืนยันคิว",
     "ออกใบเสร็จในนามบริษัท รองรับบ้าน ร้านค้า โรงแรม และสำนักงาน",
+  ][index],
+  // ลิงก์ท้ายการ์ด ใช้คำที่หน้าปลายทางตั้งใจติด (เติมน้ำยาแอร์ → /price/repair ไม่ใช่หน้าแรก)
+  link: [
+    { href: "/price/repair", label: "ราคาเติมน้ำยาแอร์และค่าซ่อมแยกตามอาการ" },
+    { href: "/price/repair", label: "ดูตารางราคาซ่อมแอร์" },
+    { href: "/duan", label: "เงื่อนไขเรียกช่างด่วนนอกเวลา" },
+    { href: "/contact", label: "ขอใบเสร็จในนามบริษัท" },
   ][index],
 }));
 
@@ -83,9 +91,19 @@ export default function Home() {
               <span className="text-accent">ถึงบ้าน</span>
             </h1>
 
+            {/*
+              คำว่า ติดตั้งแอร์ / ย้ายแอร์ / เติมน้ำยาแอร์ เป็นลิงก์ไปหน้าที่ตั้งใจให้ติดคำนั้น (24 ก.ย. 2569)
+              Search Console บอกว่า Google เอาหน้าแรกไปติดคำพวกนี้แทนหน้าเฉพาะ
+              (ติดตั้งแอร์ เชียงใหม่: หน้าแรก 169 แสดงผล vs หน้า tid-tang-air 6 · ย้ายแอร์: หน้าแรก 13 vs yai-air 4
+              · เติมน้ำยาแอร์: หน้าแรก 105 vs price/repair 15) เพราะหน้าแรกพูดถึงคำเหล่านี้เป็นข้อความเฉย ๆ
+              โดยไม่ชี้ไปหน้าเฉพาะเลย ลิงก์พร้อมข้อความตรงคำจึงเป็นการบอก Google ว่าหน้าไหนคือหน้าหลักของคำนั้น
+            */}
             <p className="lead mt-5 max-w-xl">
-              ผมช่างอาร์ม ช่างผู้รับผิดชอบงานของโปรเฟรชแคร์ รับล้างแอร์ ซ่อมแอร์ ติดตั้ง ย้ายแอร์
-              และล้างเครื่องซักผ้าทั่วเชียงใหม่ ผมแจ้งราคาให้ครบก่อนเริ่มงานทุกครั้ง ตรวจวัดน้ำยาให้ดูก่อนเติม
+              ผมช่างอาร์ม ช่างผู้รับผิดชอบงานของโปรเฟรชแคร์ รับล้างแอร์ ซ่อมแอร์{" "}
+              <Link href="/service/tid-tang-air" className="font-semibold text-brand-700 hover:underline">ติดตั้งแอร์</Link>{" "}
+              <Link href="/service/yai-air" className="font-semibold text-brand-700 hover:underline">ย้ายแอร์</Link>{" "}
+              และล้างเครื่องซักผ้าทั่วเชียงใหม่ ผมแจ้งราคาให้ครบก่อนเริ่มงานทุกครั้ง{" "}
+              <Link href="/price/repair" className="font-semibold text-brand-700 hover:underline">ตรวจวัดน้ำยาให้ดูก่อนเติม</Link>{" "}
               และหากการซ่อมไม่คุ้มกับอายุเครื่อง ผมจะแจ้งตามจริง
             </p>
 
@@ -207,6 +225,14 @@ export default function Home() {
                   ดูรายละเอียดการติดตั้ง
                   <IconChevron className="h-4 w-4" />
                 </Link>
+                <Link
+                  href="/service/tid-tang-air"
+                  className="btn-ghost"
+                  data-cta="home-install-service"
+                >
+                  ราคาติดตั้งแอร์ทุกขนาด BTU
+                  <IconChevron className="h-4 w-4" />
+                </Link>
               </div>
             </div>
           </div>
@@ -221,7 +247,9 @@ export default function Home() {
             <p className="eyebrow">งานที่ผมรับ</p>
             <h2 className="h2 mt-4">ดูแลงานแอร์และเครื่องซักผ้าถึงบ้าน</h2>
             <p className="lead mt-3">
-              ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย ติดตั้งเครื่องใหม่ ย้ายแอร์
+              ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย{" "}
+              <Link href="/service/tid-tang-air" className="font-semibold text-brand-700 hover:underline">ติดตั้งเครื่องใหม่</Link>{" "}
+              <Link href="/service/yai-air" className="font-semibold text-brand-700 hover:underline">ย้ายแอร์</Link>{" "}
               ไปจนถึงการถอดล้างถังเครื่องซักผ้า ราคาที่แสดงคือราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
             </p>
           </div>
@@ -337,6 +365,10 @@ export default function Home() {
                   <div>
                     <h3 className="font-bold">{e.title}</h3>
                     <p className="mt-1.5 text-sm leading-7 text-ink-soft">{e.detail}</p>
+                    <Link href={e.link.href} className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+                      {e.link.label}
+                      <IconChevron className="h-4 w-4" />
+                    </Link>
                   </div>
                 </div>
               );
@@ -366,6 +398,7 @@ export default function Home() {
             {[
               {
                 name: "ล้างแอร์ธรรมดา", price: p.wash.std, unit: "บาท / เครื่อง",
+                href: "/service/lang-air", linkLabel: "รายละเอียดล้างแอร์เชียงใหม่",
                 note: "9,000–18,000 BTU · รับประกัน 30 วัน",
                 feats: ["ล้างฟิลเตอร์และหน้ากาก", "ล้างคอยล์เย็น–คอยล์ร้อน", "ฉีดล้างใบพัดกรงกระรอก", `3 เครื่องขึ้นไป เครื่องละ ${p.wash.stdBulk}.-`],
               },
@@ -373,6 +406,7 @@ export default function Home() {
                 // ราคานี้เคยพิมพ์ไว้ตรง ๆ ว่า 2,000 แล้วค้างเมื่อเจ้าของปรับราคา 5 ส.ค. 2569
                 // ตัวดักราคาจับไม่ได้เพราะคำว่า "บาท" อยู่คนละฟิลด์ ตอนนี้ดึงจาก p แล้ว
                 name: "Premium Full Wash", price: p.wash.premium, unit: "บาท / เครื่อง",
+                href: "/service/lang-air", linkLabel: "ล้างธรรมดากับถอดล้างต่างกันอย่างไร",
                 note: `ถอดล้าง 100% · ${p.wash.premiumNote} · รับประกัน 30 วัน`,
                 feats: [
                   "ถอดชิ้นส่วนล้างแยกทุกชิ้น",
@@ -384,6 +418,8 @@ export default function Home() {
               },
               {
                 name: "ติดตั้งแอร์ใหม่", price: p.install.small, unit: "บาท เริ่มต้น",
+                // ลิงก์ไปหน้าติดตั้งโดยตรง เพื่อให้ Google เลิกเอาหน้าแรกไปติดคำ "ติดตั้งแอร์ เชียงใหม่"
+                href: "/service/tid-tang-air", linkLabel: "ติดตั้งแอร์เชียงใหม่ รวมอะไรบ้าง",
                 note: "9k–12k BTU · รับประกันสูงสุด 1 ปี",
                 feats: ["แวคคั่มระบบเต็มขั้นตอน", "ขาแขวน ท่อ และรางครอบ", "ตั้งระดับกันน้ำหยด", `18k–24k BTU ราคา ${p.install.large}.-`],
               },
@@ -411,6 +447,10 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                <Link href={p.href} className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+                  {p.linkLabel}
+                  <IconChevron className="h-4 w-4" />
+                </Link>
               </div>
             ))}
           </div>
@@ -534,9 +574,12 @@ export default function Home() {
                   <span className="text-xs font-bold text-brand-600">{a.category}</span>
                   <h3 className="mt-2 font-bold group-hover:text-brand-700">{a.h1}</h3>
                   <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{a.excerpt}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-ink-soft">
-                    <IconClock className="h-4 w-4" />
-                    อ่าน {a.readMins} นาที
+                  <span className="mt-3 inline-flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-ink-soft">
+                    <span className="inline-flex items-center gap-1.5">
+                      <IconClock className="h-4 w-4" />
+                      อ่าน {a.readMins} นาที
+                    </span>
+                    <time dateTime={a.updated}>อัปเดต {thaiDate(a.updated)}</time>
                   </span>
                 </Link>
               </li>

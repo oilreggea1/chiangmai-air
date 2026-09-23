@@ -41,4 +41,9 @@ export type Article = {
   faqs: { q: string; a: string }[];
   related: string[];      // slug บทความที่เกี่ยวข้อง
   relatedService?: string; // slug บริการที่ควรดันต่อ
+  /**
+   * หน้าราคาที่บทความนี้ควรส่งคนต่อ ใช้เมื่อคำที่บทความติดควรจบที่หน้าราคา ไม่ใช่หน้าบริการ
+   * เช่น บทความน้ำยา R32 → /price/repair (คำ "เติมน้ำยาแอร์" ตั้งใจให้ติดที่หน้านั้น)
+   */
+  relatedPrice?: { href: string; label: string };
 };

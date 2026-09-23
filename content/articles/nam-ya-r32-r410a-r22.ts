@@ -18,6 +18,7 @@ export const article: Article = {
     "น้ำยาแอร์ R22", "เติมน้ำยาแอร์ ปอนด์ละเท่าไหร่", "แอร์บ้านใช้น้ำยาอะไร",
   ],
   relatedService: "som-air",
+  relatedPrice: { href: "/price/repair", label: `ราคาเติมน้ำยาแอร์ R32 R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท` },
   related: ["rakha-som-air", "air-mai-yen-sa-het", "inverter-vs-thammada"],
   blocks: [
     {

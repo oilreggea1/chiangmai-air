@@ -24,6 +24,12 @@ export type Segment = {
   /** เงื่อนไขหน้างานที่ต่างจากบ้านทั่วไป */
   points: { t: string; d: string }[];
   faqs: { q: string; a: string }[];
+  /**
+   * หน้าบริการหลักที่กลุ่มนี้ควรส่งคนต่อไป (24 ก.ย. 2569)
+   * กลุ่มติดตั้ง (ban-mai, sue-air-online) เคยไม่มีลิงก์ไป /service/tid-tang-air เลย
+   * ทั้งที่เป็นหน้าเดียวกันในสายตาลูกค้า Google จึงเอาหน้าแรกไปติดคำ "ติดตั้งแอร์ เชียงใหม่" แทน
+   */
+  relatedService?: { slug: string; label: string };
 };
 
 export const segments: Segment[] = [
@@ -306,6 +312,7 @@ export const segments: Segment[] = [
   {
     slug: "ban-mai",
     name: "บ้านใหม่ในโครงการ",
+    relatedService: { slug: "tid-tang-air", label: "มาตรฐานงานติดตั้งแอร์เชียงใหม่ ขั้นตอนและประกัน" },
     keyword: "ติดตั้งแอร์บ้านใหม่เชียงใหม่",
     h1: `ติดตั้งแอร์บ้านใหม่เชียงใหม่ ทั้งหลังจบในนัดเดียว เริ่มจุดละ ${p.install.small} บาท`,
     title: `ติดตั้งแอร์บ้านใหม่เชียงใหม่ ทั้งหลัง จุดละ ${p.install.small} รวมอุปกรณ์ ประกัน 1 ปี`,
@@ -352,6 +359,7 @@ export const segments: Segment[] = [
   {
     slug: "sue-air-online",
     name: "ซื้อแอร์ออนไลน์มาเอง",
+    relatedService: { slug: "tid-tang-air", label: "มาตรฐานงานติดตั้งแอร์เชียงใหม่ ขั้นตอนและประกัน" },
     keyword: "รับติดตั้งแอร์ที่ซื้อมาเองเชียงใหม่",
     h1: `รับติดตั้งแอร์เชียงใหม่ ซื้อเครื่องจาก Shopee Lazada TikTok มาเองก็ติดตั้งให้ จุดละ ${p.install.small} บาท`,
     title: `รับติดตั้งแอร์ที่ซื้อจาก Shopee Lazada TikTok เชียงใหม่ จุดละ ${p.install.small} รวมอุปกรณ์`,

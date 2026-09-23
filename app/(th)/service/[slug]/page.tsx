@@ -11,6 +11,7 @@ import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/compo
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
 import { reels } from "@/components/ReelsShowcase";
 import { ReelCard } from "@/components/ReelCard";
+import { lastmodIso, thaiDate, SRC } from "@/lib/lastmod";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -49,6 +50,9 @@ const langAirWashOptions = [
 ];
 
 const langAirReelIds = ["3177769309038728", "1284322489799860", "1748747562375875"];
+/** คลิปงานติดตั้ง 3 ตัวจากเพจ ใช้กับหน้า /service/tid-tang-air (24 ก.ย. 2569) — หน้านี้เคยไม่มีคลิปเลย
+ *  ทั้งที่คลิปติดตั้งอยู่บนหน้าแรกและ /videos ซึ่งเป็นส่วนหนึ่งที่ทำให้ Google เลือกหน้าแรกไปติดคำติดตั้งแทน */
+const installReelIds = ["1288260533386347", "1261789992704152", "1269611208233633"];
 
 /**
  * งานเครื่องซักผ้ากรองคลิปจาก topic ที่ติดไว้กับคลิปใน ReelsShowcase
@@ -79,6 +83,7 @@ function casesFor(slug: string) {
 
 function reelsFor(slug: string) {
   if (slug === "lang-air") return reels.filter((r) => langAirReelIds.includes(r.id));
+  if (slug === "tid-tang-air") return reels.filter((r) => installReelIds.includes(r.id));
   const topics = reelTopicsByService[slug];
   if (!topics) return [];
   // จำกัด 6 คลิปต่อหน้า ที่เหลือดูได้ที่ /videos
@@ -174,6 +179,11 @@ export default async function ServicePage({ params }: Props) {
             </div>
             <p className="mt-4 text-sm text-ink-soft">
               {s.priceLabel} · {site.daysLabel} {site.hours}
+            </p>
+            {/* วันที่จริงจาก git ของไฟล์ข้อมูลบริการ ไม่ใช่วันที่ build — ให้ทั้งลูกค้าและ Google เห็นว่าราคายังดูแลอยู่ */}
+            <p className="mt-1.5 text-xs text-ink-soft">
+              ราคาและเงื่อนไขในหน้านี้อัปเดตล่าสุด{" "}
+              <time dateTime={lastmodIso(SRC.site)}>{thaiDate(lastmodIso(SRC.site))}</time>
             </p>
           </div>
 
@@ -328,7 +338,9 @@ export default async function ServicePage({ params }: Props) {
               <p className="lead mt-3">
                 {s.slug === "lang-air"
                   ? "ตั้งแต่การฉีดล้างคอยล์ไปจนถึงชิ้นส่วนที่ถอดลงมาล้างแยกในแบบถอดล้างทั้งชุด"
-                  : "ตั้งแต่ตอนถอดถังออกจากเครื่อง ไปจนถึงสภาพชิ้นส่วนที่ล้างเสร็จแล้ว"}
+                  : s.slug === "tid-tang-air"
+                    ? "ตั้งแต่เจาะยึดขาแขวน เดินท่อในรางครอบ ไปจนถึงงานติดตั้งบนที่สูงและแอร์ฝังฝ้า"
+                    : "ตั้งแต่ตอนถอดถังออกจากเครื่อง ไปจนถึงสภาพชิ้นส่วนที่ล้างเสร็จแล้ว"}
               </p>
             </div>
             <ul className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -398,6 +410,27 @@ export default async function ServicePage({ params }: Props) {
               ทุกงานมีการแวคคั่มระบบ ทดสอบความเย็น ตรวจรอยรั่ว และรับประกันงานติดตั้ง
               6 เดือนสำหรับเครื่องที่ลูกค้ามีเอง หรือ 1 ปีเมื่อซื้อเครื่องกับผม
             </p>
+
+            {/* สามทางเข้าของงานติดตั้ง หน้านี้เป็นหน้าแม่ของกลุ่มคำติดตั้ง จึงต้องเป็นจุดแยกทางเอง
+                ไม่ปล่อยให้หน้าแรกเป็นคนแยกทาง (เหตุผลดูที่ installReelIds ด้านบน) */}
+            <h3 className="mt-8 text-lg font-bold">งานติดตั้งของคุณเป็นแบบไหน</h3>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              <Link href="/customer/sue-air-online" className="card group flex flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta="install-online">
+                <span className="font-bold group-hover:text-brand-700">ซื้อเครื่องจาก Shopee Lazada TikTok มาเอง</span>
+                <span className="mt-2 flex-1 text-sm leading-7 text-ink-soft">แจ้งรุ่นและวันของถึง ผมจองคิวให้ตรงวัน ค่าติดตั้งอัตราเดียวกัน</span>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">ดูเงื่อนไข<IconChevron className="h-4 w-4" /></span>
+              </Link>
+              <Link href="/customer/ban-mai" className="card group flex flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta="install-ban-mai">
+                <span className="font-bold group-hover:text-brand-700">บ้านใหม่ ติดหลายห้องพร้อมกัน</span>
+                <span className="mt-2 flex-1 text-sm leading-7 text-ink-soft">สำรวจทั้งหลังในนัดเดียว วางแนวท่อและตำแหน่งคอยล์ร้อนก่อนย้ายเข้า</span>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">ดูรายละเอียด<IconChevron className="h-4 w-4" /></span>
+              </Link>
+              <Link href="/service/khai-air" className="card group flex flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta="install-khai-air">
+                <span className="font-bold group-hover:text-brand-700">ยังไม่มีเครื่อง ซื้อพร้อมติดตั้ง</span>
+                <span className="mt-2 flex-1 text-sm leading-7 text-ink-soft">เครื่องใหม่และมือสองสภาพดี รับเทิร์นเครื่องเก่า ประกันงานติดตั้ง 1 ปี</span>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">ดูตัวเลือก<IconChevron className="h-4 w-4" /></span>
+              </Link>
+            </div>
           </div>
         </section>
       )}

@@ -114,10 +114,18 @@ export default async function SegmentPage({ params }: Props) {
               </tbody>
             </table>
           </div>
-          <Link href="/price" className="mt-6 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900" data-cta="customer-price">
-            ดูตารางราคาทั้งหมด
-            <IconChevron className="h-4 w-4" />
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+            {seg.relatedService && (
+              <Link href={`/service/${seg.relatedService.slug}`} className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900" data-cta="customer-service">
+                {seg.relatedService.label}
+                <IconChevron className="h-4 w-4" />
+              </Link>
+            )}
+            <Link href="/price" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:text-brand-900" data-cta="customer-price">
+              ดูตารางราคาทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

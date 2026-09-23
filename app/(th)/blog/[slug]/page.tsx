@@ -138,6 +138,12 @@ export default async function ArticlePage({ params }: Props) {
                 {svc.priceLabel}
                 <IconChevron className="h-4 w-4" />
               </Link>
+              {a.relatedPrice && (
+                <Link href={a.relatedPrice.href} className="btn-ghost" data-cta="article-related-price">
+                  {a.relatedPrice.label}
+                  <IconChevron className="h-4 w-4" />
+                </Link>
+              )}
               <a href={bookingLineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="article-intent-line">
                 LINE {bookingLineId}
               </a>

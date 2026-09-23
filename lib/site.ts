@@ -1270,6 +1270,8 @@ export const pricing = [
   {
     group: "ล้างแอร์ติดผนัง",
     icon: "snow",
+    href: "/service/lang-air",
+    hrefLabel: "รายละเอียดล้างแอร์เชียงใหม่",
     items: [
       { label: `ขนาด ${btu.washStd} BTU`, price: `${p.wash.std}.-` },
       { label: `${btu.washStd} BTU ตั้งแต่ 3 เครื่องขึ้นไป`, price: `${p.wash.stdBulk}.- / เครื่อง`, highlight: true },
@@ -1283,6 +1285,8 @@ export const pricing = [
     /** เจ้าของยืนยันเรตนี้แล้ว ก.ค. 2569 เป็นราคาเริ่มต้น ค่าจริงประเมินตามหน้างาน */
     group: "ล้างแอร์แขวนและแอร์ 4 ทิศทาง",
     icon: "snow",
+    href: "/service/lang-air-khwaen-cassette",
+    hrefLabel: "รายละเอียดล้างแอร์แขวนและ 4 ทิศทาง",
     items: [
       { label: "แอร์แขวนใต้ฝ้า", price: `เริ่ม ${p.wash.suspended}.-` },
       { label: "แอร์ 4 ทิศทาง (ฝังฝ้า)", price: `เริ่ม ${p.wash.cassette}.-` },
@@ -1292,6 +1296,8 @@ export const pricing = [
   {
     group: "ติดตั้งแอร์ใหม่",
     icon: "install",
+    href: "/service/tid-tang-air",
+    hrefLabel: "รายละเอียดติดตั้งแอร์เชียงใหม่ ขั้นตอนและประกัน",
     items: [
       { label: `ขนาด ${btu.installSmall} BTU`, price: `${p.install.small}.-` },
       { label: `ขนาด ${btu.installLarge} BTU`, price: `${p.install.large}.-` },
@@ -1303,6 +1309,8 @@ export const pricing = [
      *  และการเทิร์นต้องดูเครื่องจริงก่อน ห้ามใส่ตัวเลขประเมินลงตาราง */
     group: "ขายแอร์และรับเทิร์นเครื่องเก่า",
     icon: "install",
+    href: "/service/khai-air",
+    hrefLabel: "ดูแอร์ใหม่และมือสองพร้อมติดตั้ง",
     items: [
       { label: "แอร์ใหม่ พร้อมติดตั้ง", price: "แจ้งราคาตามรุ่น" },
       { label: "แอร์มือสองสภาพดี พร้อมติดตั้ง", price: "แจ้งราคาตามเครื่องที่มี" },
@@ -1311,8 +1319,13 @@ export const pricing = [
     note: "ราคาเครื่องขึ้นกับรุ่นและช่วงโปรโมชั่น ผมแจ้งเป็นรายรุ่นก่อนตัดสินใจ ส่วนค่าติดตั้งคิดตามขนาดเครื่องในอัตราปกติ เครื่องมือสองรับประกันตัวเครื่อง 1 เดือน และการรับเทิร์นต้องดูเครื่องจริงก่อนจึงตีราคาได้",
   },
   {
+    /** กลุ่มนี้มีทั้งเติมน้ำยาและย้ายแอร์ จึงมีสองลิงก์ กันไม่ให้หน้านี้ไปแย่งคำกับหน้าเฉพาะ */
     group: "ซ่อมและบริการอื่น ๆ",
     icon: "wrench",
+    href: "/price/repair",
+    hrefLabel: "ราคาซ่อมแอร์และเติมน้ำยาแอร์แยกตามอาการ",
+    href2: "/service/yai-air",
+    href2Label: "รายละเอียดย้ายแอร์เชียงใหม่",
     items: [
       { label: "ค่าบริการตรวจเช็ค (กรณีไม่ซ่อม)", price: `${p.repair.diagnostic}.-` },
       { label: "เติมน้ำยาแอร์ R32 / R410A", price: `${p.repair.refrigerantPerLb}.- / ปอนด์`, highlight: true },
@@ -1324,6 +1337,8 @@ export const pricing = [
   {
     group: "แพ็กเกจรับมือฝุ่น PM2.5",
     icon: "shield",
+    href: "/pm25",
+    hrefLabel: "รายละเอียดแพ็กเกจ PM2.5",
     items: [
       { label: "ห้องมาตรฐาน 1 ห้อง + แอร์ 1 เครื่อง", price: `${p.pm25}.-`, highlight: true },
     ],
@@ -1332,6 +1347,8 @@ export const pricing = [
   {
     group: "ล้างเครื่องซักผ้า ฝาบน",
     icon: "washer",
+    href: "/service/lang-washing-machine-fa-bon",
+    hrefLabel: "รายละเอียดล้างเครื่องซักผ้าฝาบน",
     items: [
       { label: "ความจุไม่เกิน 15 กิโลกรัม", price: `${p.washer.topLoad}.-`, highlight: true },
       { label: "ความจุ 15.1 – 19 กิโลกรัม", price: `${p.washer.topLoadMid}.-` },
@@ -1342,6 +1359,8 @@ export const pricing = [
   {
     group: "ล้างเครื่องซักผ้า ฝาหน้า",
     icon: "washer",
+    href: "/service/lang-washing-machine-fa-na",
+    hrefLabel: "รายละเอียดล้างเครื่องซักผ้าฝาหน้า",
     items: [
       { label: "ราคาเริ่มต้น", price: `${p.washer.frontLoad}.-`, highlight: true },
       { label: "เครื่องความจุสูง", price: "แจ้งราคาหลังประเมิน" },
