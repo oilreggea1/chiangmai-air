@@ -5,6 +5,7 @@ import { site, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconShield, IconInstall, IconMove } from "@/components/Icons";
+import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 
 /**
  * หน้าติดตั้งแอร์ภาษาอังกฤษ (24 ก.ย. 2569)
@@ -214,7 +215,16 @@ export default function EnInstallationPage() {
         </div>
       </section>
 
-      <section className="section bg-sand" lang="en">
+      <IntlReels
+        lang="en"
+        items={reelsByIds(intlReelSets.install)}
+        eyebrow="Video from real installations"
+        heading="See an installation from start to finish"
+        lead="Ceiling cassettes, wall units and work at height, filmed on site in Chiang Mai."
+        moreLabel="More videos on Facebook"
+      />
+
+      <section className="section" lang="en">
         <div className="wrap">
           <h2 className="h2">Recent installations</h2>
           <p className="lead mt-3 max-w-2xl">Straight trunking, level units, nothing left for you to tidy.</p>

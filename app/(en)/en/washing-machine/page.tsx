@@ -5,6 +5,7 @@ import { site, heroPhotos, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconWasher, IconClock } from "@/components/Icons";
+import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 
 /**
  * หน้าล้างเครื่องซักผ้าภาษาอังกฤษ (24 ก.ย. 2569)
@@ -199,6 +200,15 @@ export default function EnWashingMachinePage() {
           </div>
         </div>
       </section>
+
+      <IntlReels
+        lang="en"
+        items={reelsByIds(intlReelSets.washer)}
+        eyebrow="Video from real jobs"
+        heading="Watch the drum come out"
+        lead="Six short clips from washing machine jobs in Chiang Mai, from lifting the drum out to the scrubbed result."
+        moreLabel="More videos on Facebook"
+      />
 
       <section className="section" lang="en">
         <div className="wrap grid gap-12 lg:grid-cols-2">

@@ -33,8 +33,16 @@ import { useState } from "react";
  * หนึ่งใบราว 33 KB ซึ่งแลกกับการที่หน้ามีตัวเล่นวิดีโอให้บอตเห็นจริง
  * คลิปที่เหลือยังเป็นการ์ดภาพแบบ lazy เหมือนเดิม
  */
-export function ReelCard({ id, title, eager = false }: { id: string; title: string; eager?: boolean }) {
+/** ข้อความของตัวเล่นตามภาษาของหน้า (24 ก.ย. 2569) — เดิมหน้าอังกฤษ/จีนยังได้ aria-label ภาษาไทย */
+const UI = {
+  th: { play: "เล่นวิดีโอ", unsupported: "เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ" },
+  en: { play: "Play video", unsupported: "Your browser does not support video playback." },
+  "zh-CN": { play: "播放视频", unsupported: "您的浏览器不支持播放视频。" },
+} as const;
+
+export function ReelCard({ id, title, eager = false, lang = "th" }: { id: string; title: string; eager?: boolean; lang?: keyof typeof UI }) {
   const [playing, setPlaying] = useState(false);
+  const ui = UI[lang];
 
   if (eager && !playing) {
     return (
@@ -51,7 +59,7 @@ export function ReelCard({ id, title, eager = false }: { id: string; title: stri
           aria-label={title}
         >
           <source src={`/videos/reels/${id}.mp4`} type="video/mp4" />
-          เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+          {ui.unsupported}
         </video>
         <p className="px-4 py-4 font-semibold leading-7">{title}</p>
       </li>
@@ -72,14 +80,14 @@ export function ReelCard({ id, title, eager = false }: { id: string; title: stri
           aria-label={title}
         >
           <source src={`/videos/reels/${id}.mp4`} type="video/mp4" />
-          เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+          {ui.unsupported}
         </video>
       ) : (
         <button
           type="button"
           onClick={() => setPlaying(true)}
           className="group relative block w-full cursor-pointer"
-          aria-label={`เล่นวิดีโอ ${title}`}
+          aria-label={`${ui.play} ${title}`}
         >
           <Image
             src={`/videos/reels/${id}.webp`}

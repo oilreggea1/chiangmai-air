@@ -5,8 +5,9 @@ import { site, heroPhotos, coverage, coverageTotal, thumbOf, p, btu } from "@/li
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import {
-  IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron,
+  IconPhone, IconLine, IconCheck, IconPin, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconChevron, IconShield,
 } from "@/components/Icons";
+import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 
 /** ชื่ออำเภอภาษาจีน ให้ลูกค้าจีนอ่านออกโดยไม่ต้องแปลเอง */
 const amphoeZh: Record<string, string> = {
@@ -185,12 +186,18 @@ export default function ChinesePage() {
             <p className="mt-4 text-sm text-ink-soft">
               空调服务 LINE {site.lineId} · 洗衣机清洗 LINE {site.lineId2} · 周一至周六 8:00–18:00
             </p>
+            {/* แถบความน่าเชื่อถือ เพิ่มพร้อมหน้าอังกฤษ 24 ก.ย. 2569 */}
+            <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">
+              <li className="flex items-start gap-2"><IconShield className="mt-0.5 h-4 w-4 shrink-0 text-mint" />注册公司：{site.legalNameEn}</li>
+              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />由 Arm 本人上门施工，不外包</li>
+              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />不收订金，验收后再付款</li>
+            </ul>
           </div>
 
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image
               src={heroPhotos.en.src}
-              alt="清迈空调清洗师傅正在客户家中清洗室外机"
+              alt="身穿 Pro Fresh Care 工作服的 Arm 站在梯子上，正在清迈一间整洁卧室里打开壁挂式空调"
               width={900}
               height={1200}
               priority
@@ -286,6 +293,15 @@ export default function ChinesePage() {
         </div>
       </section>
 
+      <IntlReels
+        lang="zh-CN"
+        items={reelsByIds(intlReelSets.cleaning)}
+        eyebrow="施工实拍视频"
+        heading="看看一次清洗是怎么做的"
+        lead="从铺防尘布到拆下部件清洗，全部在清迈客户家中实拍。"
+        moreLabel="在 Facebook 查看更多视频"
+      />
+
       <section className="section" lang="zh-CN">
         <div className="wrap max-w-3xl">
           <h2 className="h2">预约流程</h2>
@@ -357,6 +373,23 @@ export default function ChinesePage() {
               </div>
             ))}
           </div>
+
+          <h3 className="mt-10 text-lg font-bold">更多详细页面（英文）</h3>
+          <p className="mt-2 text-sm leading-7 text-ink-soft">安装、洗衣机清洗和公司资料的详细页面目前提供英文版，中文可直接在 LINE 上询问。</p>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+            {[
+              { href: "/en/installation", t: "空调安装与移机", d: "网购机器也可安装 · Installation" },
+              { href: "/en/washing-machine", t: "洗衣机内桶清洗", d: "拆桶清洗 · Washing machines" },
+              { href: "/en/about", t: "关于 Arm 与公司", d: "注册公司资料 · About" },
+            ].map((x) => (
+              <li key={x.href}>
+                <Link href={x.href} hrefLang="en" className="card flex h-full flex-col justify-between gap-2 p-5 transition-all hover:shadow-lift">
+                  <span className="font-bold">{x.t}</span>
+                  <span className="text-sm text-ink-soft">{x.d}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <a href={site.lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="zh-faq-line">

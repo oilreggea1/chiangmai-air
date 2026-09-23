@@ -26,17 +26,10 @@ const trail = [
   { name: "价格", path: "/zh/pricing" },
 ];
 
-/** ชื่อกลุ่มราคาแปลจีน แผงราคาดึงจาก pricing ตัวเดียวกับหน้าไทย ตัวเลขจึงตรงกันเสมอ */
-const groupZh: Record<string, string> = {
-  "ล้างแอร์ติดผนัง": "壁挂式空调清洗",
-  "ล้างแอร์แขวนและแอร์ 4 ทิศทาง": "吊顶机与四面出风嵌入机清洗",
-  "ติดตั้งแอร์ใหม่": "新机安装",
-  "ขายแอร์และรับเทิร์นเครื่องเก่า": "销售新机与二手机 · 旧机折抵",
-  "ซ่อมและบริการอื่น ๆ": "维修及其他服务",
-  "แพ็กเกจรับมือฝุ่น PM2.5": "PM2.5 防尘套餐",
-  "ล้างเครื่องซักผ้า ฝาบน": "上开式洗衣机清洗",
-  "ล้างเครื่องซักผ้า ฝาหน้า": "前开式洗衣机清洗",
-};
+/**
+ * ชื่อกลุ่ม รายการ ราคา หมายเหตุภาษาจีน อยู่ในตาราง pricing ของ lib/site.ts (groupZh/labelZh/priceZh/noteZh)
+ * 24 ก.ย. 2569 — เดิมแปลแค่ชื่อกลุ่ม รายการยังเป็นไทย ลูกค้าจีนอ่านไม่ออกว่าแถวไหนคืออะไร
+ */
 
 const faqs = [
   {
@@ -91,22 +84,23 @@ export default function ZhPricingPage() {
           {pricing.map((g) => (
             <div key={g.group} className="card p-6 sm:p-7">
               <h2 className="text-lg font-bold sm:text-xl">
-                {groupZh[g.group] ?? g.group}
-                <span className="ml-2 text-sm font-normal text-ink-soft">{g.group}</span>
+                {g.groupZh}
+                <span className="ml-2 text-sm font-normal text-ink-soft" lang="th">{g.group}</span>
               </h2>
               <ul className="mt-5 divide-y divide-slate-100">
                 {g.items.map((it) => (
                   <li key={it.label} className="flex items-baseline justify-between gap-4 py-3">
-                    <span className="text-[15px] leading-7 text-ink-soft">{it.label}</span>
-                    <span className="shrink-0 font-bold text-brand-700">{it.price}</span>
+                    <span className="text-[15px] leading-7 text-ink-soft">{it.labelZh}</span>
+                    <span className="shrink-0 font-bold text-brand-700">{it.priceZh}</span>
                   </li>
                 ))}
               </ul>
+              {g.noteZh && <p className="mt-4 text-sm leading-7 text-ink-soft">{g.noteZh}</p>}
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            这些项目名称就是我报价时使用的说法。
-            任何一行看不懂，用 LINE 问我，我会解释清楚。
+            以上价格均为泰铢，服务范围内不另收车费。每组标题旁保留泰文原名，方便您与本地房东或物业核对。
+            任何一行不清楚，请用 LINE 问我，我会耐心解释。
           </p>
         </div>
       </section>

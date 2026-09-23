@@ -7,6 +7,7 @@ import { share } from "@/lib/seo";
 import {
   IconPhone, IconLine, IconCheck, IconPin, IconClock, IconSnow, IconWrench, IconInstall, IconMove, IconWasher, IconShield,
 } from "@/components/Icons";
+import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
@@ -100,7 +101,7 @@ const faqs = [
   },
   {
     q: "How quickly can you come?",
-    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 6pm, and can take bookings outside those hours for an additional fee. The one exception is April, when the whole city wants a technician at once — book ahead if you can.",
+    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 6pm, and can take bookings outside those hours for an additional fee that I quote first. The exception is February to April, the burning season, when the whole city is booking at once. Booking a week ahead is safer then.",
   },
 ];
 
@@ -253,8 +254,8 @@ export default function EnglishPage() {
             </p>
             <p>
               Second, soot clogs coils fast. A unit that was fine in January can be blowing weakly by
-              March, and April — the hottest month, when every technician in the city is booked out —
-              is a bad time to discover that. Get it cleaned before the season, not during it.
+              March, and April is the hottest month, when every technician in the city is fully booked.
+              A clean before the season starts is far easier to arrange than one during it.
             </p>
           </div>
           <Link href="/pm25" className="btn-ghost mt-7">
@@ -310,6 +311,15 @@ export default function EnglishPage() {
           </ul>
         </div>
       </section>
+
+      <IntlReels
+        lang="en"
+        items={reelsByIds(intlReelSets.cleaning)}
+        eyebrow="Video from real jobs"
+        heading="Watch how a clean is done"
+        lead="From the sheets going down to the parts coming out, filmed at homes in Chiang Mai."
+        moreLabel="More videos on Facebook"
+      />
 
       <section className="section" lang="en">
         <div className="wrap max-w-3xl">
