@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "Can you give me a receipt for my accounts?",
-    a: "Yes. Cher Solutions Co., Ltd. is VAT registered, so I issue full VAT tax invoices as well as receipts in the company name. Every price on this page already includes VAT, so the figure you see is the figure on the invoice."
+    a: "Yes. Cher Solutions Co., Ltd. is VAT registered, so I issue full VAT tax invoices as well as receipts in the company name."
   },
   {
     q: "What payment methods do you accept?",

@@ -148,7 +148,7 @@ export default function ZhInstallationPage() {
           </div>
           <p className="mt-4 flex items-start gap-2.5 text-sm leading-7 text-ink-soft">
             <IconShield className="mt-1 h-5 w-5 shrink-0 text-mint" />
-            安装工作保修：向我购买机器为 1 年，自备机器为 6 个月。机器本身由厂家或卖家保修。价格已含增值税，可开增值税发票。
+            安装工作保修：向我购买机器为 1 年，自备机器为 6 个月。机器本身由厂家或卖家保修。可开具增值税发票。
           </p>
         </div>
       </section>

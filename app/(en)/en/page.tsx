@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     q: "Can you give me a receipt for my accounts?",
-    a: "Yes. Cher Solutions Co., Ltd. is VAT registered, so I can issue a full VAT tax invoice as well as a receipt, in the company name, for cafés, restaurants, hotels, guesthouses and offices. All prices on this site already include VAT. Send me your company name and tax ID before the visit and the paperwork is ready when the job is done.",
+    a: "Yes. Cher Solutions Co., Ltd. is VAT registered, so I can issue a full VAT tax invoice as well as a receipt, in the company name, for cafés, restaurants, hotels, guesthouses and offices. Send me your company name and tax ID before the visit and the paperwork is ready when the job is done.",
   },
   {
     q: "Do you work on condos and rental properties?",
@@ -274,7 +274,7 @@ export default function EnglishPage() {
               "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I give you the repair cost and the replacement cost side by side, and the decision stays with you.",
               "Two layers of drop sheets on every cleaning job. Floor and furniture stay as they were.",
               "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
-              "Full VAT tax invoices and receipts issued in the company name, Cher Solutions Co., Ltd., for business bookings. Prices shown already include VAT.",
+              "Full VAT tax invoices and receipts issued in the company name, Cher Solutions Co., Ltd., for business bookings.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-mint/12 text-mint">

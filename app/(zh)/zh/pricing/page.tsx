@@ -115,7 +115,7 @@ export default function ZhPricingPage() {
               "当着您的面量冷媒，不缺就不加。",
               "更换零件会把旧件拿给您看。",
               "清洗保修 30 天，新机安装保修最长一年。",
-              "已登记增值税，可开具增值税发票和公司抬头收据。表内价格均已含增值税。",
+              "已登记增值税，可开具增值税发票和公司抬头收据。",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />

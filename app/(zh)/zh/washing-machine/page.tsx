@@ -124,7 +124,7 @@ export default function ZhWashingMachinePage() {
           </div>
           <p className="mt-4 inline-flex items-center gap-2 text-sm text-ink-soft">
             <IconClock className="h-5 w-5 text-brand-600" />
-            每台约 3 小时 · 工作保修 30 天 · 价格已含增值税
+            每台约 3 小时 · 工作保修 30 天 · 可开具增值税发票
           </p>
         </div>
       </section>
