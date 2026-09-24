@@ -44,6 +44,7 @@ const navGroups: NavGroup[] = [
     items: [
       { href: "/price", label: "ตารางราคาทั้งหมด" },
       { href: "/price/repair", label: "ราคาซ่อมแอร์แยกตามอาการ" },
+      { href: "/price/washing-machine", label: "ราคาล้างเครื่องซักผ้า" },
       { href: "/answers", label: "คำตอบเรื่องราคาจากช่าง" },
     ],
   },
@@ -85,6 +86,7 @@ const mobileGroups: { heading: string; items: NavItem[] }[] = [
     items: [
       { href: "/price", label: "ราคาค่าบริการทั้งหมด" },
       { href: "/price/repair", label: "ราคาซ่อมแอร์แยกตามอาการ" },
+      { href: "/price/washing-machine", label: "ราคาล้างเครื่องซักผ้า" },
     ],
   },
   {

@@ -24,7 +24,7 @@
     "app/(th)/customer/[slug]/page.tsx": "2026-09-24",
     "app/(th)/customer/page.tsx": "2026-08-30",
     "app/(th)/duan/page.tsx": "2026-08-30",
-    "app/(th)/layout.tsx": "2026-08-30",
+    "app/(th)/layout.tsx": "2026-09-24",
     "app/(th)/leads/page.tsx": "2026-09-13",
     "app/(th)/page.tsx": "2026-09-24",
     "app/(th)/pm25/page.tsx": "2026-08-30",

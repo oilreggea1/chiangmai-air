@@ -187,6 +187,11 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               </Link>
             </li>
             <li>
+              <Link href="/price/washing-machine" className="text-ink-soft hover:text-brand-700 hover:underline">
+                ราคาล้างเครื่องซักผ้า
+              </Link>
+            </li>
+            <li>
               <Link href="/customer/ban-mai" className="text-ink-soft hover:text-brand-700 hover:underline">
                 ติดตั้งแอร์บ้านใหม่ทั้งหลัง
               </Link>

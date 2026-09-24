@@ -133,10 +133,17 @@ export default async function WorkCasePage({ params }: Props) {
         </section>
         {/* เคสใกล้เคียง: บริการเดียวกันก่อน ถ้าไม่พอเติมด้วยเคสล่าสุด ช่วยให้ผู้อ่านเทียบงานหลายเครื่องได้ */}
         {(() => {
-          const same = workCases.filter((c) => c.slug !== item.slug && c.serviceSlug === item.serviceSlug);
-          const other = workCases.filter((c) => c.slug !== item.slug && c.serviceSlug !== item.serviceSlug);
-          const byDate = (a: typeof item, b: typeof item) => (b.date ?? "").localeCompare(a.date ?? "");
-          const related = [...same.sort(byDate), ...other.sort(byDate)].slice(0, 3);
+          /**
+           * หมุนเวียนเคสที่แนะนำตามตำแหน่งของเคสปัจจุบัน (แก้ 24 ก.ย. 2569)
+           * เดิมหยิบสามเคสใหม่สุดเสมอ ผลคือเคสเก่ามีลิงก์เข้าแค่จากหน้ารวมหน้าเดียว
+           * แบบวนรอบทำให้ทุกเคสได้ลิงก์เข้าใกล้เคียงกัน และผู้อ่านเห็นงานหลากหลายขึ้น
+           */
+          const pool = workCases.filter((c) => c.slug !== item.slug);
+          const same = pool.filter((c) => c.serviceSlug === item.serviceSlug);
+          const rest = pool.filter((c) => c.serviceSlug !== item.serviceSlug);
+          const ordered = [...same, ...rest];
+          const start = workCases.findIndex((c) => c.slug === item.slug);
+          const related = ordered.length <= 3 ? ordered : Array.from({ length: 3 }, (_, k) => ordered[(start + 1 + k) % ordered.length]);
           return related.length > 0 ? (
             <section className="mt-12">
               <h2 className="h2">เคสใกล้เคียง</h2>
