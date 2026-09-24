@@ -296,7 +296,9 @@ export default function Home() {
             <p className="eyebrow">ลูกค้าใช้บริการจริง</p>
             <h2 className="h2 mt-4">ความเห็นจากลูกค้าในเชียงใหม่</h2>
             <p className="lead mt-3">
-              ความเห็นจากลูกค้าที่เรียกผมไปดูแลแอร์ถึงบ้านในเชียงใหม่
+              ความเห็นจากลูกค้าที่เรียกผมไปดูแลแอร์ถึงบ้านในเชียงใหม่ รายการที่มีลิงก์กำกับ
+              เปิดดูต้นฉบับบนเพจได้โดยตรง และถ้าอยากเห็นเนื้องานมากกว่าคำพูด
+              ผมเปิดรายงานก่อน–หลังทุกเคสไว้ให้อ่านทั้งหมด
             </p>
           </div>
           <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
@@ -305,7 +307,11 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <a href={site.facebook} target="_blank" rel="noopener" className="btn-ghost">
+            <Link href="/case-study" className="btn-ghost">
+              อ่านรีวิวงานจริง ก่อน–หลัง ทุกเคส
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <a href={site.facebook} target="_blank" rel="noopener" className="btn-ghost sm:ml-3">
               ดูผลงานจริงบน Facebook
               <IconChevron className="h-4 w-4" />
             </a>

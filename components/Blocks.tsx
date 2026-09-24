@@ -111,11 +111,19 @@ export function ReviewCard({
   location,
   rating,
   text,
+  lang,
+  source,
+  sourceUrl,
 }: {
   name: string;
   location: string;
   rating: number;
   text: string;
+  /** ตั้งเมื่อข้อความต้นฉบับไม่ใช่ภาษาไทย เพื่อให้โปรแกรมอ่านหน้าจอออกเสียงถูก */
+  lang?: string;
+  /** ป้ายลิงก์ไปยังรีวิวต้นฉบับ มีเฉพาะรีวิวสาธารณะที่ตรวจย้อนกลับได้ */
+  source?: string;
+  sourceUrl?: string;
 }) {
   return (
     <figure className="card flex h-full flex-col p-6">
@@ -124,12 +132,17 @@ export function ReviewCard({
           <IconStar key={i} className="h-5 w-5" />
         ))}
       </div>
-      <blockquote className="mt-4 flex-1 text-[15px] leading-8 text-ink">
+      <blockquote lang={lang} className="mt-4 flex-1 text-[15px] leading-8 text-ink">
         &ldquo;{text}&rdquo;
       </blockquote>
       <figcaption className="mt-5 border-t border-slate-100 pt-4 text-sm">
         <span className="font-semibold text-ink">{name}</span>
         <span className="block text-ink-soft">{location}</span>
+        {sourceUrl && (
+          <a href={sourceUrl} target="_blank" rel="noopener" className="mt-2 inline-block font-semibold text-brand-700 hover:underline">
+            {source}
+          </a>
+        )}
       </figcaption>
     </figure>
   );

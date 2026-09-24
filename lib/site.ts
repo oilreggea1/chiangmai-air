@@ -1539,7 +1539,21 @@ export const brands: Brand[] = [
   { name: "Aconatic" },
 ];
 
+/**
+ * ความเห็นลูกค้า — ใช้ได้เฉพาะข้อความที่มีต้นฉบับจริงเท่านั้น ห้ามแต่งเพิ่มเด็ดขาด
+ * รายการที่มี source/sourceUrl คือรีวิวสาธารณะที่ตรวจสอบย้อนกลับได้จากต้นทาง
+ * (24 ก.ย. 2569 ตรวจแล้ว เพจงานแอร์มีรีวิวสาธารณะ 1 รายการ เพจเครื่องซักผ้ายังไม่มี)
+ */
 export const reviews = [
+  {
+    name: "Teddy Morreale",
+    location: "รีวิวบนเพจ Facebook ของช่างอาร์ม · 17 พ.ย. 2568",
+    rating: 5,
+    text: "I just used this service. Admin always responded, the staff were polite, professional, fast, effective, and clean, and a very fair cost. They have my complete confidence and appreciation. Thank you",
+    lang: "en",
+    source: "ดูรีวิวต้นฉบับบน Facebook",
+    sourceUrl: "https://www.facebook.com/profile.php?id=61558237094328&sk=reviews",
+  },
   {
     name: "คุณเมย์",
     location: "หมู่บ้านซีรีนพาร์ค (สันกำแพง)",
