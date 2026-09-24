@@ -72,7 +72,7 @@ export default function EnAreasPage() {
           </h1>
           <p className="lead mt-5">
             I work across {coverage.length} districts and {coverageTotal} sub-districts around
-            San Kamphaeng, including all of Mueang Chiang Mai. Every area I cover is charged
+            San Kamphaeng, including every sub-district of Mueang Chiang Mai and Hang Dong. Every area I cover is charged
             at the same rate, with no travel surcharge.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

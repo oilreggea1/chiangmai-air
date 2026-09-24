@@ -358,7 +358,7 @@ export default function ChinesePage() {
           <p className="lead mt-3">
             我以 San Kamphaeng 为据点，覆盖 {coverage.length} 个县共 {coverageTotal} 个乡，
             范围内不加收车费。清迈市区（Mueang Chiang Mai）全部乡都接，包括尼曼路一带、古城、Santitham
-            和机场周边；此外还有 San Kamphaeng、Saraphi、Doi Saket，以及 San Sai 的 San Phra Net 乡。
+            和机场周边；Hang Dong 县也全部乡都接。此外还有 San Kamphaeng、Saraphi、Doi Saket，以及 San Sai 的 San Phra Net 乡。
           </p>
           <ul className="mt-7 grid gap-3 sm:grid-cols-2">
             {coverage.map((c) => (
