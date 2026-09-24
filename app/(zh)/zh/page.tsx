@@ -166,7 +166,7 @@ export default function ChinesePage() {
               <IconPin className="h-4 w-4" />
               位于 San Kamphaeng · 服务清迈市区全部乡及周边
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.35] font-extrabold sm:text-[2.5rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.3rem+2.8vw,3.1rem)] leading-[1.32] font-extrabold">
               清迈空调清洗 · 维修 · 安装
             </h1>
             <p className="lead mt-5">

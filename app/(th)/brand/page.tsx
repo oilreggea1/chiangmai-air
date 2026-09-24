@@ -31,7 +31,7 @@ export default function BrandIndex() {
         <Breadcrumbs trail={trail} />
         <section className="wrap pt-8 pb-14 lg:pb-20">
           <p className="eyebrow">ทุกยี่ห้อ · จ.เชียงใหม่</p>
-          <h1 className="mt-5 max-w-3xl text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 max-w-3xl text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             ล้างแอร์และซ่อมแอร์ทุกยี่ห้อในเชียงใหม่
           </h1>
           <p className="lead mt-5 max-w-3xl">{brandCommon.principle}</p>

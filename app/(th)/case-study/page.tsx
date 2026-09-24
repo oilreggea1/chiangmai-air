@@ -26,7 +26,7 @@ export default function CaseStudyIndex() {
         <Breadcrumbs trail={trail} />
         <header className="wrap max-w-4xl pt-8 pb-14">
           <p className="eyebrow">รวมผลงานจากหน้างานจริง</p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.5rem]">ผลงานจริงจากช่างอาร์ม</h1>
+          <h1 className="mt-5 text-[clamp(2.05rem,1.3rem+2.8vw,3.1rem)] leading-[1.3] font-extrabold">ผลงานจริงจากช่างอาร์ม</h1>
           <p className="lead mt-5">รวมเคสจากหน้างานจริง ทั้งงานล้างแอร์ ซ่อมแอร์ ติดตั้ง และล้างเครื่องซักผ้า ดูสภาพที่พบ ขั้นตอนการทำงาน และผลหลังให้บริการ เลือกหมวดที่ตรงกับเครื่องที่บ้านคุณได้จากด้านล่าง</p>
         </header>
       </div>

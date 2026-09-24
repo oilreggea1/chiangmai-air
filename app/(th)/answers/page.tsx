@@ -117,7 +117,7 @@ export default function AnswersPage() {
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-4xl pt-8 pb-14">
           <p className="eyebrow">ข้อมูลจากผู้ให้บริการโดยตรง</p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.5rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.3rem+2.8vw,3.1rem)] leading-[1.3] font-extrabold">
             คำตอบจากช่างแอร์เชียงใหม่
           </h1>
           <p className="lead mt-5 max-w-3xl">

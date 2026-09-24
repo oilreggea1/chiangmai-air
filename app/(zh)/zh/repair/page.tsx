@@ -80,7 +80,7 @@ export default function ZhRepairPage() {
               <IconWrench className="h-4 w-4" />
               先测量，后报价
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
               清迈空调维修
             </h1>
             <p className="lead mt-5">

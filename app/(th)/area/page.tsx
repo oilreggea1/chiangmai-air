@@ -37,7 +37,7 @@ export default function AreaIndex() {
             <IconPin className="h-4 w-4" />
             ที่ตั้ง ต.สันกำแพง อ.สันกำแพง
           </p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             ช่างแอร์ใกล้บ้านคุณในเชียงใหม่ เช็คเขตบริการได้ที่นี่
           </h1>
           <p className="lead mt-5">

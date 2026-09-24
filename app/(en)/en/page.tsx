@@ -173,7 +173,7 @@ export default function EnglishPage() {
               <IconPin className="h-4 w-4" />
               Arm · based in San Kamphaeng · working across Chiang Mai
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.5rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.3rem+2.8vw,3.1rem)] leading-[1.3] font-extrabold">
               Aircon cleaning &amp; AC repair in Chiang Mai
             </h1>
             <p className="lead mt-5">

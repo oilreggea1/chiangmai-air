@@ -61,7 +61,7 @@ export default function EnAirbnbPage() {
             <IconClock className="h-4 w-4" />
             Scheduled around your turnovers
           </p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             Aircon cleaning for Airbnb and rental properties
           </h1>
           <p className="lead mt-5">

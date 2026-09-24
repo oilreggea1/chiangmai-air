@@ -59,7 +59,7 @@ export default function ZhPricingPage() {
       <div className="bg-gradient-to-b from-brand-50 to-white" lang="zh-CN">
         <section className="wrap max-w-3xl pt-12 pb-14 text-center">
           <p className="eyebrow justify-center">价格全部公开 · 不加价</p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.35] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.32] font-extrabold">
             清迈空调清洗价格表
           </h1>
           <p className="lead mt-5">

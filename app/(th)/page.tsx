@@ -86,7 +86,7 @@ export default function Home() {
               ที่ตั้ง ต.สันกำแพง · รับงานเมืองเชียงใหม่ หางดง สันทราย ครบทุกตำบล · สันกำแพง สารภี ดอยสะเก็ด
             </p>
 
-            <h1 className="mt-5 text-[2rem] leading-[1.25] font-extrabold sm:text-[2.6rem] lg:text-[3.1rem]">
+            <h1 className="mt-5 text-[clamp(2.15rem,1.3rem+3.2vw,3.5rem)] leading-[1.28] font-extrabold">
               ช่างแอร์เชียงใหม่ ล้างแอร์ ซ่อมแอร์{" "}
               <span className="text-accent">ถึงบ้าน</span>
             </h1>
@@ -177,7 +177,7 @@ export default function Home() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-mint/12 text-mint">
                 <IconShield className="h-6 w-6" />
               </span>
-              <span className="text-sm leading-tight">
+              <span className="text-sm leading-snug">
                 <strong className="block text-ink">แจ้งราคาก่อนเริ่มงาน</strong>
                 <span className="text-ink-soft">หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อน</span>
               </span>

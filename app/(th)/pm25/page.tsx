@@ -89,7 +89,7 @@ export default function Pm25Page() {
               <IconPin className="h-4 w-4" />
               เฉพาะคนเชียงใหม่ · ฤดูหมอกควัน ก.พ. – เม.ย.
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.5rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.3rem+2.8vw,3.1rem)] leading-[1.3] font-extrabold">
               ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่
             </h1>
             <p className="lead mt-5">

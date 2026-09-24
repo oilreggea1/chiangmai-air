@@ -101,7 +101,7 @@ export default function ZhInstallationPage() {
               <IconInstall className="h-4 w-4" />
               新机安装 · 移机 · 网购机器安装
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.35] font-extrabold sm:text-[2.4rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.32] font-extrabold">
               清迈空调安装，{p.install.small} 泰铢起全包
             </h1>
             <p className="lead mt-5">

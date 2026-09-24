@@ -28,7 +28,7 @@ export default function VideosPage() {
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-3xl pt-8 pb-10 text-center">
           <p className="eyebrow">คลิปจากหน้างานในเชียงใหม่</p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">วิดีโอผลงานช่างแอร์เชียงใหม่</h1>
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">วิดีโอผลงานช่างแอร์เชียงใหม่</h1>
           {/* หมายเหตุเชิงเทคนิค: วิดีโอเป็น lazy-load โหลดเมื่อกดเล่นเท่านั้น จึงไม่ถ่วงหน้าเว็บ (ดูรายละเอียดใน ReelCard) — เป็นข้อมูลสำหรับคนแก้โค้ด ห้ามเอาไปเขียนบนหน้าเว็บ */}
           <p className="lead mt-5">คลิปจากหน้างานจริงในเชียงใหม่ ตั้งแต่ปูผ้าใบจนถึงชิ้นส่วนที่ถอดล้าง</p>
         </section>

@@ -34,7 +34,7 @@ export default function PricePage() {
       <div className="bg-gradient-to-b from-brand-50 to-white">
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-3xl pt-8 pb-14 text-center">
-          <h1 className="text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             ราคาช่างแอร์เชียงใหม่ ทุกรายการ
           </h1>
           <p className="lead mt-5">

@@ -86,7 +86,7 @@ export default function ZhWashingMachinePage() {
               <IconWasher className="h-4 w-4" />
               拆出内桶，逐件清洗，上门服务
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.35] font-extrabold sm:text-[2.4rem]">清迈洗衣机深度清洗</h1>
+            <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.32] font-extrabold">清迈洗衣机深度清洗</h1>
             <p className="lead mt-5">
               洗涤剂残留、柔顺剂和棉絮都积在内桶外壁，您看不到，清洁片也碰不到。时间久了长霉，洗好的衣服反而有霉味。
               我把内桶拆出来，逐件清洗，再装回去试机。

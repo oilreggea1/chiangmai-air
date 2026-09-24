@@ -213,8 +213,8 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-md shadow-brand-500/30">
               <IconSnow className="h-6 w-6" />
             </span>
-            <span className="leading-tight">
-              <span className="block text-[15px] font-extrabold tracking-tight whitespace-nowrap sm:text-base">
+            <span className="leading-snug">
+              <span className="block text-[15px] font-extrabold tracking-normal whitespace-nowrap sm:text-base">
                 Pro Fresh Care
               </span>
               <span className="block text-xs font-medium whitespace-nowrap text-ink-soft">
@@ -305,8 +305,8 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-md shadow-brand-500/30">
             <IconSnow className="h-6 w-6" />
           </span>
-          <span className="leading-tight">
-            <span className="block text-[15px] font-extrabold tracking-tight whitespace-nowrap sm:text-base">
+          <span className="leading-snug">
+            <span className="block text-[15px] font-extrabold tracking-normal whitespace-nowrap sm:text-base">
               โปรเฟรชแคร์
             </span>
             <span className="block text-xs font-medium whitespace-nowrap text-ink-soft">

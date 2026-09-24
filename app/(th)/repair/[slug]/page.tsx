@@ -46,7 +46,7 @@ export default async function RepairGuidePage({ params }: Props) {
         <Breadcrumbs trail={trail} />
         <section className="wrap max-w-4xl pt-8 pb-16">
           <p className="eyebrow">ตรวจตามรุ่นจริง · วัดยืนยันก่อนเสนอเปลี่ยนอะไหล่</p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">{guide.h1}</h1>
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">{guide.h1}</h1>
           <p className="lead mt-5 max-w-3xl">{guide.intro}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href={`tel:${site.phoneTel}`} className="btn-call px-6 py-3.5"><IconPhone className="h-5 w-5" />โทร {site.phone}</a>

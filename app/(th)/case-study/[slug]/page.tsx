@@ -62,7 +62,7 @@ export default async function WorkCasePage({ params }: Props) {
         <Breadcrumbs trail={trail} />
         <header className="wrap max-w-4xl pt-8 pb-12">
           <p className="eyebrow">รีวิวงานจริง · {item.service}</p>
-          <h1 className="mt-5 text-[1.8rem] leading-[1.35] font-extrabold sm:text-[2.3rem]">{item.title}</h1>
+          <h1 className="mt-5 text-[clamp(1.95rem,1.3rem+2.4vw,2.85rem)] leading-[1.32] font-extrabold">{item.title}</h1>
           <p className="lead mt-5">{item.finding}</p>
           <p className="mt-4 text-sm leading-7 text-ink-soft">ช่างอาร์มเป็นผู้รับผิดชอบและลงมือทำงานนี้</p>
         </header>

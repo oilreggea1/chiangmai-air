@@ -177,7 +177,7 @@ export default async function ServicePage({ params }: Props) {
             <span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-600 text-white shadow-lg shadow-brand-600/25">
               <Icon className="h-7 w-7" />
             </span>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
               {s.h1}
             </h1>
             <p className="lead mt-5">{s.intro}</p>

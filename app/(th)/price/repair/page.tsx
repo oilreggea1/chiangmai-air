@@ -101,7 +101,7 @@ export default function RepairPricePage() {
             <IconWrench className="h-4 w-4" />
             รู้ค่าใช้จ่ายก่อนตัดสินใจ
           </p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             ราคาซ่อมแอร์และเติมน้ำยาแอร์เชียงใหม่ แยกตามอาการ
           </h1>
           <p className="lead mt-5">

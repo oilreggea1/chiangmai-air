@@ -111,7 +111,7 @@ export default function EnWashingMachinePage() {
               <IconWasher className="h-4 w-4" />
               Drum out, every part washed, at your home
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
               Washing machine deep clean in Chiang Mai
             </h1>
             <p className="lead mt-5">

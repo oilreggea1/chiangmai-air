@@ -47,10 +47,12 @@
 
   --font-sans: var(--font-thai), ui-sans-serif, system-ui, sans-serif;
 
-  /* เงาสองชั้น ชั้นบนคมสั้นให้ขอบชัด ชั้นล่างฟุ้งกว้างให้การ์ดลอยขึ้นจากพื้น */
-  --shadow-card: 0 1px 2px rgb(17 26 46 / 0.05), 0 10px 28px -10px rgb(17 26 46 / 0.14);
-  --shadow-lift: 0 2px 6px rgb(17 26 46 / 0.08), 0 22px 46px -14px rgb(17 26 46 / 0.24);
-  --shadow-deep: 0 4px 10px rgb(17 26 46 / 0.12), 0 30px 60px -18px rgb(17 26 46 / 0.34);
+  /* เงาสามชั้น (ปรับ 24 ก.ย. 2569)
+     ชั้นแรกบางมากแทนเส้นขอบ ชั้นกลางให้ความหนา ชั้นล่างฟุ้งกว้างให้การ์ดลอยจากพื้น
+     การใช้เงาแทนเส้นขอบทำให้หน้าดูสะอาดขึ้นโดยที่ขอบการ์ดยังอ่านออก */
+  --shadow-card: 0 0 0 1px rgb(17 26 46 / 0.045), 0 2px 4px -2px rgb(17 26 46 / 0.06), 0 12px 32px -12px rgb(17 26 46 / 0.16);
+  --shadow-lift: 0 0 0 1px rgb(17 26 46 / 0.05), 0 4px 10px -4px rgb(17 26 46 / 0.09), 0 28px 56px -18px rgb(17 26 46 / 0.26);
+  --shadow-deep: 0 0 0 1px rgb(17 26 46 / 0.06), 0 6px 14px -6px rgb(17 26 46 / 0.13), 0 40px 72px -22px rgb(17 26 46 / 0.36);
 }
 
 @layer base {
@@ -75,7 +77,15 @@
 
   h1, h2, h3 {
     text-wrap: balance;
-    letter-spacing: -0.01em;
+    /* ไม่ตั้ง letter-spacing ติดลบกับหัวข้อไทย (แก้ 24 ก.ย. 2569)
+       ฟอนต์ไทยวางวรรณยุกต์ไว้เหนือพยัญชนะ การบีบระยะทำให้รูปวรรณยุกต์ซ้อนตัวข้างเคียง
+       หน้าภาษาอังกฤษกับจีนบีบได้ จึงตั้งเฉพาะสองภาษานั้น */
+    letter-spacing: 0;
+  }
+
+  html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3,
+  html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3 {
+    letter-spacing: -0.018em;
   }
 
   p {
@@ -100,8 +110,8 @@
   .btn-call,
   .btn-line,
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold
-           transition-all duration-150 select-none active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-5.5 py-3.5 text-base font-semibold
+           tracking-[-0.01em] transition-all duration-200 select-none active:scale-[0.985];
   }
 
   /* ปุ่มหลักไล่เฉดอ่อน ๆ แทนสีแบน เพื่อให้มีความหนาโดยไม่ต้องใส่ขอบ
@@ -121,21 +131,25 @@
   }
 
   .btn-ghost {
-    @apply border-2 border-brand-200 bg-white text-brand-800
-           hover:border-brand-400 hover:bg-brand-50 hover:-translate-y-px;
+    @apply bg-white text-brand-800 shadow-[inset_0_0_0_1.5px_var(--color-brand-200)]
+           hover:shadow-[inset_0_0_0_1.5px_var(--color-brand-400)] hover:bg-brand-50 hover:-translate-y-px;
   }
 
+  /* การ์ดเลิกใช้เส้นขอบ ใช้เงาชั้นแรกแทน (24 ก.ย. 2569)
+     เส้นขอบรอบการ์ดทุกใบเป็นภาษาดีไซน์ยุคก่อน พอเอาออกแล้วสายตาไปอยู่ที่เนื้อหาแทนกรอบ
+     มุมมนขึ้นจาก rounded-2xl เป็น rounded-3xl ให้เข้ากับปุ่มที่มนขึ้นด้วย */
   .card {
-    @apply rounded-2xl border border-brand-100 bg-white shadow-card;
+    @apply rounded-3xl bg-white shadow-card transition-shadow duration-200;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-3.5 py-1.5
-           text-sm font-semibold text-brand-700 ring-1 ring-brand-100;
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50/80 px-3.5 py-1.5
+           text-sm font-semibold tracking-[-0.005em] text-brand-700 ring-1 ring-brand-100/80;
   }
 
+  /* ระยะห่างระหว่างส่วนมากขึ้นหนึ่งระดับ ให้หน้าหายใจได้มากกว่าเดิม (24 ก.ย. 2569) */
   .section {
-    @apply py-14 sm:py-20;
+    @apply py-16 sm:py-24;
   }
 
   /* แถบสีเข้มสำหรับคั่นหน้า ใช้สลับกับพื้นขาวเพื่อไม่ให้หน้ายาว ๆ เป็นสีเดียวรวด
@@ -154,8 +168,8 @@
   }
 
   .band-dark .card {
-    @apply border-white/10 bg-white/[0.07] text-white backdrop-blur-sm;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 18px 40px -18px rgb(0 0 0 / 0.5);
+    @apply bg-white/[0.07] text-white backdrop-blur-sm;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1), 0 1px 0 rgb(255 255 255 / 0.07) inset, 0 20px 44px -18px rgb(0 0 0 / 0.55);
   }
 
   .band-dark .eyebrow {
@@ -163,17 +177,50 @@
   }
 
   .band-dark .btn-ghost {
-    @apply border-white/25 bg-white/[0.07] text-white hover:border-ice hover:bg-white/15;
+    @apply bg-white/[0.07] text-white shadow-[inset_0_0_0_1.5px_rgb(255_255_255/0.25)]
+           hover:shadow-[inset_0_0_0_1.5px_var(--color-ice)] hover:bg-white/15;
   }
 
+  /* ไม่บีบระยะตัวอักษรเพิ่มจากฐาน เพราะวรรณยุกต์ไทยจะเบียดพยัญชนะ */
   .h2 {
-    @apply text-2xl font-bold sm:text-3xl lg:text-[2rem];
+    @apply text-[1.55rem] leading-[1.38] font-bold sm:text-[1.95rem] lg:text-[2.25rem];
   }
 
+  /* ข้อความนำ: ไทยอ่านสบายที่ระยะบรรทัดราวสองเท่าของขนาดตัวอักษร ห้ามบีบให้แน่นกว่านี้ */
   .lead {
-    @apply text-base leading-8 text-ink-soft sm:text-lg sm:leading-9;
+    @apply text-[1.02rem] leading-[2] text-ink-soft sm:text-[1.13rem] sm:leading-[1.95];
   }
 }
+
+/* ---------- ค่อย ๆ ปรากฏตอนเลื่อนหน้า (24 ก.ย. 2569) ----------
+   ใช้ animation-timeline ของ CSS ล้วน ไม่มี JavaScript จึงไม่กระทบความเร็วหน้า
+   เบราว์เซอร์ที่ยังไม่รองรับจะข้ามไปเอง เนื้อหาแสดงปกติทุกอย่าง
+   ปิดอัตโนมัติเมื่อผู้ใช้ตั้งค่าลดการเคลื่อนไหว โดยบล็อกด้านล่าง */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (min-width: 640px) {
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(1.25rem); }
+      to { opacity: 1; transform: none; }
+    }
+    .section > .wrap > *,
+    .section > .wrap {
+      animation: riseIn linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 42%;
+    }
+  }
+}
+
+/* หัวเว็บกระจกฝ้าชัดขึ้นเมื่อเลื่อนลง ให้ขอบบนของหน้าไม่ลอยจนอ่านยาก */
+@supports (backdrop-filter: blur(1px)) {
+  header.sticky { -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); }
+}
+
+/* สีตอนลากคลุมข้อความ ให้เข้าชุดกับธีมแทนสีฟ้าเริ่มต้นของเบราว์เซอร์ */
+::selection { background: var(--color-brand-200); color: var(--color-brand-900); }
+
+/* เส้นแบ่งบาง ๆ ที่ใช้ซ้ำได้ ใช้แทน border-slate-200 ที่แข็งเกินไป */
+.rule { height: 1px; background: linear-gradient(90deg, transparent, rgb(17 26 46 / 0.12), transparent); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

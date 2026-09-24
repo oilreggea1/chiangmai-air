@@ -88,7 +88,7 @@ export default async function ArticlePage({ params }: Props) {
         <Breadcrumbs trail={trail} />
         <header className="wrap max-w-3xl pt-8 pb-12">
           <p className="eyebrow">{a.category}</p>
-          <h1 className="mt-5 text-[1.8rem] leading-[1.35] font-extrabold sm:text-[2.3rem]">{a.h1}</h1>
+          <h1 className="mt-5 text-[clamp(1.95rem,1.3rem+2.4vw,2.85rem)] leading-[1.32] font-extrabold">{a.h1}</h1>
           <p className="lead mt-5">{a.excerpt}</p>
           {a.image && (
             <figure className="mt-7 overflow-hidden rounded-2xl ring-1 ring-slate-200">

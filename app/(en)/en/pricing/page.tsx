@@ -64,7 +64,7 @@ export default function EnPricingPage() {
       <div className="bg-gradient-to-b from-brand-50 to-white" lang="en">
         <section className="wrap max-w-3xl pt-12 pb-14 text-center">
           <p className="eyebrow justify-center">Published prices · no hidden fees</p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             Aircon cleaning prices in Chiang Mai
           </h1>
           <p className="lead mt-5">

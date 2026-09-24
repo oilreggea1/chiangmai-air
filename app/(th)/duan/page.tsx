@@ -86,7 +86,7 @@ export default function DuanPage() {
         <Breadcrumbs trail={trail} />
         <section className="wrap pt-8 pb-14 lg:pb-20">
           <p className="eyebrow">งานเร่งด่วน · จ.เชียงใหม่</p>
-          <h1 className="mt-5 max-w-3xl text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 max-w-3xl text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             ช่างแอร์ด่วนเชียงใหม่ โทรถามคิวได้ทันที
           </h1>
           <p className="lead mt-5 max-w-3xl">

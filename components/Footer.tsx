@@ -125,7 +125,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
       </div>
 
       <div className="border-t border-slate-200">
-        <div className="wrap flex flex-col gap-2 py-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
+        <div className="wrap flex flex-col gap-2 py-6 pb-28 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between lg:pb-6">
           <p>
             © {year} {site.legalNameEn}
             {site.taxId && <> · {en ? "Tax ID" : "税号"} {site.taxId}</>}
@@ -337,7 +337,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
       </div>
 
       <div className="border-t border-slate-200">
-        <div className="wrap flex flex-col gap-2 py-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
+        <div className="wrap flex flex-col gap-2 py-6 pb-28 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between lg:pb-6">
           <p>
             © {year} {site.legalName} · {site.displayUrl}
             {site.taxId && <> · เลขประจำตัวผู้เสียภาษี {site.taxId}</>}

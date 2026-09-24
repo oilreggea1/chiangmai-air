@@ -59,7 +59,7 @@ export default function ZhAreasPage() {
             <IconPin className="h-4 w-4" />
             据点在 San Kamphaeng · 清迈东侧
           </p>
-          <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+          <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
             清迈服务范围
           </h1>
           <p className="lead mt-5">

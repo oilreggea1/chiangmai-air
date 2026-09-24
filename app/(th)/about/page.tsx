@@ -83,7 +83,7 @@ export default function AboutPage() {
               <IconPin className="h-4 w-4" />
               {site.address.subDistrict} {site.address.district} จ.{site.address.province}
             </p>
-            <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
+            <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
               ผมช่างอาร์ม ช่างผู้รับผิดชอบงานของโปรเฟรชแคร์
             </h1>
             <p className="lead mt-5">
