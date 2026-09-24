@@ -139,7 +139,13 @@ export default async function ServicePage({ params }: Props) {
   const serviceCases = casesFor(s.slug);
   // บทความที่ผูกกับบริการนี้ไว้ หน้าบริการเป็นหน้าที่แข็งที่สุดของเว็บ
   // ถ้าไม่ลิงก์ออกไป บทความจะได้ลิงก์ภายในจากหน้ารวมบทความอย่างเดียว
-  const guides = articles.filter((x) => x.relatedService === s.slug).slice(0, 4);
+  /**
+   * หน้าฝาบน/ฝาหน้าไม่มีบทความของตัวเอง (บทความเครื่องซักผ้าทุกเรื่องผูกกับ lang-washing-machine)
+   * เดิมจึงไม่มีลิงก์ออกไปบทความเลยสักเส้น ทำให้สองหน้านี้อยู่โดดจากกลุ่มเนื้อหาของตัวเอง
+   * ให้หน้าลูกใช้บทความของหน้าแม่ร่วมกัน (24 ก.ย. 2569)
+   */
+  const guideKey = s.slug.startsWith("lang-washing-machine") ? "lang-washing-machine" : s.slug;
+  const guides = articles.filter((x) => x.relatedService === guideKey).slice(0, 4);
   // บริการที่มีภาพงานของตัวเองใช้ชุดนั้น ที่เหลือหยิบจากคลังภาพงานแอร์
   const photos = servicePhotos[s.slug];
   // ภาพหลักกำหนดไว้ต่อบริการ ไม่สุ่มจาก gallery เพราะเคยได้ภาพที่ไม่ตรงหัวข้อ
@@ -519,7 +525,19 @@ export default async function ServicePage({ params }: Props) {
           แต่ละเคส = หนึ่งโพสต์ = เครื่องเดียวกันตลอด มีวันที่และพื้นที่จริงจากโพสต์ */}
       {(() => {
         const base = s.slug.startsWith("lang-washing-machine") ? "lang-washing-machine" : s.slug;
-        const jobs = workCases.filter((c) => c.serviceSlug === base && c.date).sort((a, b) => b.date!.localeCompare(a.date!)).slice(0, 6);
+        /**
+         * หน้าฝาบน/ฝาหน้าโชว์เฉพาะเคสของชนิดเครื่องนั้น (แก้ 24 ก.ย. 2569)
+         *
+         * เดิมสามหน้าของกลุ่มเครื่องซักผ้าโชว์เคสชุดเดียวกันทั้งหมด เนื้อหาจึงทับกันเอง
+         * Search Console บอกว่าคำ "ล้างเครื่องซักผ้าฝาบน" ถูกส่งไปที่บทความเทียบ (อันดับ 21)
+         * แทนที่จะเป็นหน้าบริการฝาบนที่ทำไว้ตรง ๆ ซึ่งเป็นอาการของการแย่งคำกันเอง
+         * แยกเคสตามชนิดเครื่องจึงทำให้แต่ละหน้ามีหลักฐานเฉพาะของตัวเอง
+         */
+        const only = s.slug.endsWith("fa-bon") ? "ฝาบน" : s.slug.endsWith("fa-na") ? "ฝาหน้า" : null;
+        const jobs = workCases
+          .filter((c) => c.serviceSlug === base && c.date && (!only || c.equipment.includes(only)))
+          .sort((a, b) => b.date!.localeCompare(a.date!))
+          .slice(0, 6);
         return jobs.length > 0 ? (
           <section className="section bg-sand">
             <div className="wrap">
