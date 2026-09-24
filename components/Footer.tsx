@@ -17,6 +17,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
     ? [
         { href: "/en", label: "Home" },
         { href: "/en/pricing", label: "Full price list" },
+        { href: "/en/repair", label: "Air conditioner repair" },
         { href: "/en/installation", label: "Installation and relocation" },
         { href: "/en/washing-machine", label: "Washing machine deep clean" },
         { href: "/en/about", label: "About Arm and the company" },
@@ -26,6 +27,8 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
     : [
         { href: "/zh", label: "首页" },
         { href: "/zh/pricing", label: "完整价目表" },
+        { href: "/zh/repair", label: "空调维修" },
+        { href: "/zh/condo", label: "公寓空调清洗" },
         { href: "/zh/installation", label: "空调安装与移机" },
         { href: "/zh/washing-machine", label: "洗衣机内桶清洗" },
         { href: "/zh/areas", label: "清迈服务范围" },

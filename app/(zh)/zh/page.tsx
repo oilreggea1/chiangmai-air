@@ -370,9 +370,17 @@ export default function ChinesePage() {
               </li>
             ))}
           </ul>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/zh/areas" className="btn-ghost">
               查看完整乡名单与常见问题
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/zh/repair" className="btn-ghost">
+              空调维修
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/zh/condo" className="btn-ghost">
+              公寓空调清洗
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>

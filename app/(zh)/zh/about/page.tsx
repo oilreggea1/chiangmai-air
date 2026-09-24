@@ -166,6 +166,94 @@ export default function ZhAboutPage() {
         </div>
       </section>
 
+      {/* ส่วนที่เติม 24 ก.ย. 2569 เพราะหน้านี้เดิมมีแค่ 196 คำ บางเกินกว่าจะติดผลค้นหาได้
+          เนื้อหาแปลจากหน้าไทย /about และ VOICE.md ห้ามรับปากเกินที่ฝั่งไทยเขียนไว้ */}
+      <section className="section" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">在清迈找空调师傅，中文客人常遇到的问题</h2>
+          <p className="lead mt-3">
+            语言不通的时候，最难的不是叫人来，而是弄清楚对方到底做了什么、为什么收这个钱。
+            下面这几件事，是我在跟中文客人打交道时最常被问到的。
+          </p>
+          <div className="mt-8 space-y-5">
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">价格先说清楚，再动手</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                我的价格都写在网站上，不会看人报价。上门后如果发现要多做什么，我会先停下来用 LINE 把情况和金额发给您，
+                您确认了我才继续。不会做完才告诉您「这里另外算钱」。
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">用 LINE 打中文最稳妥</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                电话只能用泰语，但 LINE 上打中文没问题，我这边会翻译后回复。
+                现场沟通靠照片和仪表读数补足，技术上的事看数据比听解释更清楚，也不会因为翻译走样而误会。
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">施工过程有照片可查</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                每一单我都会拍施工前后的照片。网站上的案例报告就是这么来的，
+                拆下来的零件什么样、洗完什么样，都能对着看。人不在现场也知道做了什么。
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">不该花的钱我会拦着</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                有些情况洗一下就好，不用修；有些机器年头太久，修的钱够买半台新的。
+                这两种我都会直说。少赚一单没关系，说假话把客人留住才是真的亏。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-sand" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">为什么清迈的空调比别的城市脏得快</h2>
+          <p className="lead mt-3">
+            这不是推销话术，是这座城市的实际情况。了解原因，您才知道多久洗一次对自己合适。
+          </p>
+          <div className="mt-8 space-y-5">
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">2 月到 4 月的烧芭季</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                这几个月清迈空气里的细颗粒物明显增多，室内机的过滤网和盘管会比平时脏得快很多。
+                同一台机器，在这段时间用和在雨季用，到该洗的时间差得很远。
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">雨季的潮湿</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                湿度高的时候，排水盘里长期有水，灰尘掉进去就变成黏滑的污垢，这是异味的主要来源。
+                所以雨季里「不冷」的抱怨少，「有味道」的抱怨多。
+              </p>
+            </div>
+            <div className="card p-6">
+              <h3 className="font-bold leading-7">机器几乎全年都在转</h3>
+              <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
+                清迈一年里需要开空调的月份比温带城市多得多，实际运行小时数高，脏得自然快。
+                多久洗一次要看您房间的环境和开机时间，不是照着日历算。我会在现场看过滤网和盘管的实际情况再给建议。
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/zh/repair" className="btn-ghost">
+              空调维修
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/zh/condo" className="btn-ghost">
+              公寓空调清洗
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/zh/areas" className="btn-ghost">
+              服务范围
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-sand" lang="zh-CN">
         <div className="wrap">
           <h2 className="h2">工作中</h2>

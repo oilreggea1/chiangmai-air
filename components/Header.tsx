@@ -130,6 +130,7 @@ const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; men
     // รายการยาวขึ้น แถบจอใหญ่ของเมนูต่างประเทศจึงแสดงตั้งแต่ xl แทน lg ต่ำกว่านั้นใช้ปุ่มเมนู (กันข้อความตัดกลางคำแบบที่เคยเกิดกับเมนูไทย)
     links: [
       { href: "/en/pricing", label: "Prices" },
+      { href: "/en/repair", label: "Repair" },
       { href: "/en/installation", label: "Installation" },
       { href: "/en/washing-machine", label: "Washing machines" },
       { href: "/en/areas", label: "Areas" },
@@ -145,6 +146,8 @@ const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; men
   "zh-CN": {
     links: [
       { href: "/zh/pricing", label: "价目表" },
+      { href: "/zh/repair", label: "维修" },
+      { href: "/zh/condo", label: "公寓清洗" },
       { href: "/zh/installation", label: "安装" },
       { href: "/zh/washing-machine", label: "洗衣机" },
       { href: "/zh/areas", label: "服务范围" },

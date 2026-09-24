@@ -109,10 +109,56 @@ export default async function WorkCasePage({ params }: Props) {
             </>
           );
         })()}
+        {/* สิ่งที่อ่านจากเคสนี้แล้วเอาไปใช้เองได้ (24 ก.ย. 2569)
+            เคสที่มีภาพน้อยจะบางเกินไปถ้ามีแต่คำบรรยายภาพ บล็อกนี้จึงเติมความรู้ช่างที่อธิบายสิ่งที่เห็นในภาพ
+            ไม่ใช่การเติมรายละเอียดงานที่ไม่มีหลักฐาน */}
+        {item.lesson && item.lesson.length > 0 && (
+          <section className="mt-12">
+            <h2 className="h2">สิ่งที่คุณดูเองได้จากเคสนี้</h2>
+            <p className="lead mt-3">ช่างอาร์มอธิบายสิ่งที่เห็นในภาพ เพื่อให้คุณใช้ตัดสินใจกับเครื่องที่บ้านได้เอง</p>
+            <div className="mt-7 space-y-4">
+              {item.lesson.map((l) => (
+                <div key={l.t} className="card p-6">
+                  <h3 className="font-bold leading-7">{l.t}</h3>
+                  <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">{l.d}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section className="mt-12 grid gap-8 md:grid-cols-2">
           <div><h2 className="h2">ขั้นตอนการทำงาน</h2><ol className="mt-5 space-y-3">{item.actions.map((action) => <li key={action} className="flex gap-3 text-[15px] leading-8 text-ink-soft"><IconCheck className="mt-1.5 h-5 w-5 shrink-0 text-mint" />{action}</li>)}</ol></div>
           <div><h2 className="h2">ผลหลังดำเนินการ</h2><p className="mt-5 text-[15px] leading-8 text-ink-soft">{item.result}</p><Link href={`/service/${item.serviceSlug}`} className="mt-5 inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">ดูมาตรฐานบริการ{item.service}<IconChevron className="h-4 w-4" /></Link></div>
         </section>
+        {/* เคสใกล้เคียง: บริการเดียวกันก่อน ถ้าไม่พอเติมด้วยเคสล่าสุด ช่วยให้ผู้อ่านเทียบงานหลายเครื่องได้ */}
+        {(() => {
+          const same = workCases.filter((c) => c.slug !== item.slug && c.serviceSlug === item.serviceSlug);
+          const other = workCases.filter((c) => c.slug !== item.slug && c.serviceSlug !== item.serviceSlug);
+          const byDate = (a: typeof item, b: typeof item) => (b.date ?? "").localeCompare(a.date ?? "");
+          const related = [...same.sort(byDate), ...other.sort(byDate)].slice(0, 3);
+          return related.length > 0 ? (
+            <section className="mt-12">
+              <h2 className="h2">เคสใกล้เคียง</h2>
+              <ul className="mt-6 grid gap-5 sm:grid-cols-3">
+                {related.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={`/case-study/${c.slug}`} className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
+                      <Image src={c.images[0].src} alt={c.images[0].alt} width={540} height={405} loading="lazy" sizes="(max-width: 640px) 100vw, 30vw" className="aspect-[4/3] w-full object-cover" />
+                      <div className="flex flex-1 flex-col p-4">
+                        <span className="text-xs font-bold text-brand-600">{c.service}</span>
+                        <h3 className="mt-1.5 text-sm font-bold leading-6 group-hover:text-brand-700">{c.title.split(":")[0]}</h3>
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Link href="/case-study" className="btn-ghost">ดูรีวิวงานจริงทั้งหมด<IconChevron className="h-4 w-4" /></Link>
+              </div>
+            </section>
+          ) : null;
+        })()}
       </article>
       <CtaBand title={`ต้องการสอบถามงาน${item.service}`} subtitle="ส่งภาพ รุ่นเครื่อง และพื้นที่เข้ามาทาง LINE ผมประเมินราคาให้ก่อนนัดครับ" lineUrl={item.serviceSlug === "lang-washing-machine" ? site.lineUrl2 : site.lineUrl} lineId={item.serviceSlug === "lang-washing-machine" ? site.lineId2 : site.lineId} />
     </>

@@ -425,6 +425,7 @@ export default function EnglishPage() {
           <ul className="mt-7 grid gap-3 sm:grid-cols-3">
             {[
               { href: "/en/pricing", t: "Full price list", d: "Every service, published up front" },
+              { href: "/en/repair", t: "Air conditioner repair", d: "Measured and shown before any quote" },
               { href: "/en/installation", t: "Installation and relocation", d: "Units bought online welcome" },
               { href: "/en/washing-machine", t: "Washing machine deep clean", d: "Drum out, every part washed" },
               { href: "/en/about", t: "About Arm and the company", d: "Registered company, who comes to your home" },
