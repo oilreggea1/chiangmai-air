@@ -23,7 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
    * จึงตัดเอาเฉพาะส่วนหน้าเครื่องหมาย : ซึ่งเป็นใจความหลัก แล้วเติมท้ายเมื่อสั้นเกินไป
    */
   const head = item.title.split(":")[0].trim();
-  const metaTitle = head.length >= 40 ? head : `${head} · รีวิวงานจริงก่อน–หลัง`;
+  /** ส่วนต่อท้ายกันชื่อซ้ำกันเอง เลือกพื้นที่จริงก่อน ถ้าไม่มีค่อยใช้วันที่จากโพสต์ */
+  const zone = item.area.includes("ไม่ระบุ") ? "" : item.area.split(" —")[0].trim();
+  const tail = zone || item.recorded.replace(/^โพสต์เพจ /, "").replace(/ —.*$/, "");
+  const metaTitle = head.length >= 46 ? head : `${head} ${tail}`.slice(0, 60).trim();
   return {
     title: { absolute: metaTitle },
     description,
