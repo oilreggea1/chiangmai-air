@@ -7,7 +7,7 @@ import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 const title = "Areas I Cover in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — plus Saraphi, Doi Saket and San Phra Net. No travel fee.";
+  "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — plus Hang Dong and San Sai in full, Saraphi and Doi Saket. No travel fee.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -32,7 +32,7 @@ const amphoeEn: Record<string, string> = {
   "อ.สารภี": "Saraphi",
   "อ.เมืองเชียงใหม่": "Mueang Chiang Mai (city, Nimman, old town, Santitham)",
   "อ.ดอยสะเก็ด": "Doi Saket",
-  "อ.สันทราย": "San Sai (San Phra Net sub-district only)",
+  "อ.สันทราย": "San Sai (whole district, including the Mae Jo area)",
   "อ.หางดง": "Hang Dong (whole district)",
 };
 
@@ -72,7 +72,7 @@ export default function EnAreasPage() {
           </h1>
           <p className="lead mt-5">
             I work across {coverage.length} districts and {coverageTotal} sub-districts around
-            San Kamphaeng, including every sub-district of Mueang Chiang Mai and Hang Dong. Every area I cover is charged
+            San Kamphaeng, including every sub-district of Mueang Chiang Mai, Hang Dong and San Sai. Every area I cover is charged
             at the same rate, with no travel surcharge.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
