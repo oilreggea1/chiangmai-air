@@ -220,7 +220,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             </li>
             <li>
               <Link href="/case-study" className="text-ink-soft hover:text-brand-700 hover:underline">
-                Case Study รายงานงานจริง
+                รีวิวงานจริง ก่อน–หลัง
               </Link>
             </li>
           </ul>

@@ -541,7 +541,7 @@ export default async function ServicePage({ params }: Props) {
                 ))}
               </ul>
               <div className="mt-8">
-                <Link href="/case-study" className="btn-ghost">ดู Case Study ทั้งหมด<IconChevron className="h-4 w-4" /></Link>
+                <Link href="/case-study" className="btn-ghost">ดูรีวิวงานจริงทั้งหมด<IconChevron className="h-4 w-4" /></Link>
               </div>
             </div>
           </section>

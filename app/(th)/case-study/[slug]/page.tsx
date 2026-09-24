@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function WorkCasePage({ params }: Props) {
   const item = getWorkCase((await params).slug);
   if (!item) notFound();
-  const trail = [{ name: "หน้าแรก", path: "/" }, { name: "Case Study", path: "/case-study" }, { name: item.title, path: `/case-study/${item.slug}` }];
+  const trail = [{ name: "หน้าแรก", path: "/" }, { name: "รีวิวงานจริง", path: "/case-study" }, { name: item.title, path: `/case-study/${item.slug}` }];
   const schema = { "@context": "https://schema.org", "@type": "Article", headline: item.title, description: item.finding, url: `${site.url}/case-study/${item.slug}`, inLanguage: "th-TH", ...(item.date ? { datePublished: item.date } : {}), dateModified: lastmodIso(SRC.workCases), author: { "@id": PERSON_ID }, publisher: { "@id": `${site.url}/#business` }, image: item.images.map((image) => `${site.url}${image.src}`), about: { "@type": "Service", name: item.service, url: `${site.url}/service/${item.serviceSlug}` } };
   const equipment = item.equipment
     .replace(/ ไม่ปรากฏยี่ห้อและ BTU$/, "")
@@ -51,7 +51,7 @@ export default async function WorkCasePage({ params }: Props) {
       <div className="bg-gradient-to-b from-brand-50 to-white">
         <Breadcrumbs trail={trail} />
         <header className="wrap max-w-4xl pt-8 pb-12">
-          <p className="eyebrow">Case Study · {item.service}</p>
+          <p className="eyebrow">รีวิวงานจริง · {item.service}</p>
           <h1 className="mt-5 text-[1.8rem] leading-[1.35] font-extrabold sm:text-[2.3rem]">{item.title}</h1>
           <p className="lead mt-5">{item.finding}</p>
           <p className="mt-4 text-sm leading-7 text-ink-soft">ช่างอาร์มเป็นผู้รับผิดชอบและลงมือทำงานนี้</p>

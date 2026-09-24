@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ...share({ title, description, path: "/case-study", image: workCases[0].images[0] }),
 };
 
-const trail = [{ name: "หน้าแรก", path: "/" }, { name: "Case Study", path: "/case-study" }];
+const trail = [{ name: "หน้าแรก", path: "/" }, { name: "รีวิวงานจริง", path: "/case-study" }];
 
 export default function CaseStudyIndex() {
   return (

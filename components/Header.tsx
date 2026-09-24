@@ -55,7 +55,7 @@ const navGroups: NavGroup[] = [
       { href: "/blog", label: "คลังความรู้เรื่องแอร์" },
       { href: "/pm25", label: "ล้างแอร์สู้ฝุ่น PM2.5" },
       { href: "/portfolio", label: "ภาพผลงานจริง" },
-      { href: "/case-study", label: "Case Study งานจริง" },
+      { href: "/case-study", label: "รีวิวงานจริง ก่อน–หลัง" },
     ],
   },
 ];
@@ -102,7 +102,7 @@ const mobileGroups: { heading: string; items: NavItem[] }[] = [
       { href: "/answers", label: "คำตอบจากช่าง" },
       { href: "/pm25", label: "ล้างแอร์สู้ฝุ่น PM2.5" },
       { href: "/portfolio", label: "ผลงาน" },
-      { href: "/case-study", label: "Case Study งานจริง" },
+      { href: "/case-study", label: "รีวิวงานจริง ก่อน–หลัง" },
     ],
   },
   {
