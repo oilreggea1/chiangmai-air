@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, p, services } from "@/lib/site";
+import { site, p, services, coverage } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, videoSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconChevron, IconCheck, IconShield, IconWasher } from "@/components/Icons";
@@ -139,7 +139,7 @@ export default function WashingMachinePricePage() {
             ผมล้างแบบถอดถังออกมาล้างทุกชิ้น ไม่ใช่การเทน้ำยาลงไปแล้วปั่น
             ค่าบริการจึงคิดตามโครงสร้างเครื่องที่ต้องถอด เครื่องฝาบนเริ่ม {p.washer.topLoad} บาท
             เครื่องฝาหน้าเริ่ม {p.washer.frontLoad} บาท ถึงบ้านทุกตำบลใน
-            <Link href="/area" className="underline underline-offset-2">เขตบริการ 5 อำเภอ</Link>
+            <Link href="/area" className="underline underline-offset-2">เขตบริการ {coverage.length} อำเภอ</Link>
           </p>
         </section>
       </div>

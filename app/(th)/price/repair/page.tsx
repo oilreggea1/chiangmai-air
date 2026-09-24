@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { site, p } from "@/lib/site";
+import { site, p, coverage } from "@/lib/site";
 import { repairPricing, symptoms } from "@/lib/repair";
 import { getArticle } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
@@ -10,7 +10,7 @@ import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = `ราคาซ่อมแอร์เชียงใหม่ เติมน้ำยาแอร์ R32 R410A ปอนด์ละ ${p.repair.refrigerantPerLb} ถึงบ้าน`;
 const description =
-  `ราคาซ่อมแอร์เชียงใหม่ โทร 065-365-7673 ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้เมื่อตัดสินใจซ่อม เติมน้ำยาแอร์ R32 และ R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท ถึงบ้านทุกตำบลในเขตบริการ 5 อำเภอ วัดแรงดันให้ดูก่อนเติมทุกครั้ง`;
+  `ราคาซ่อมแอร์เชียงใหม่ โทร 065-365-7673 ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนให้เมื่อตัดสินใจซ่อม เติมน้ำยาแอร์ R32 และ R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท ถึงบ้านทุกตำบลในเขตบริการ ${coverage.length} อำเภอ วัดแรงดันให้ดูก่อนเติมทุกครั้ง`;
 
 export const metadata: Metadata = {
   title,
@@ -107,7 +107,7 @@ export default function RepairPricePage() {
           <p className="lead mt-5">
             ค่าซ่อมแอร์แต่ละอาการอยู่ในช่วงเท่าใด ดูได้ก่อนตัดสินใจ
             ค่าตรวจเช็ค {p.repair.diagnostic} บาท และหักคืนให้เมื่อตัดสินใจซ่อม
-            เติมน้ำยาแอร์ถึงบ้านทุกตำบลใน<Link href="/area" className="underline underline-offset-2">เขตบริการ 5 อำเภอ</Link> วัดแรงดันให้ดูก่อนเสมอ
+            เติมน้ำยาแอร์ถึงบ้านทุกตำบลใน<Link href="/area" className="underline underline-offset-2">เขตบริการ {coverage.length} อำเภอ</Link> วัดแรงดันให้ดูก่อนเสมอ
           </p>
         </section>
       </div>

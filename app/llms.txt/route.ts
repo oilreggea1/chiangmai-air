@@ -35,7 +35,7 @@ function body() {
 - LINE งานเครื่องซักผ้า: ${site.lineId2}
 - เวลาทำการ: ${site.daysLabel} ${site.hours} ${site.closedNote}
 - ที่ตั้ง: ${site.address.street} ${site.address.subDistrict} ${site.address.district} จ.${site.address.province} ${site.address.postalCode}
-- พื้นที่หลัก: สันกำแพง ต้นเปา บ่อสร้าง สันพระเนตร สารภี ดอยสะเก็ด และอำเภอเมืองเชียงใหม่
+- พื้นที่หลัก: อำเภอเมืองเชียงใหม่ทุกตำบล สันกำแพง ต้นเปา บ่อสร้าง สารภี หางดง ดอยสะเก็ด และสันพระเนตร
 
 ## คำตอบและหน้าหลัก
 

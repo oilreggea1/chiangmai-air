@@ -6,7 +6,7 @@ import { share } from "@/lib/seo";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
-const title = "ช่างแอร์ใกล้ฉันในเชียงใหม่ เช็คเขตบริการ 5 อำเภอ 37 ตำบล";
+const title = `ช่างแอร์ใกล้ฉันในเชียงใหม่ เช็คเขตบริการ ${coverage.length} อำเภอ ${coverageTotal} ตำบล`;
 const description =
   "หาช่างแอร์ใกล้บ้านในเชียงใหม่ เช็คได้ทันทีว่าตำบลของคุณอยู่ในเขตที่ผมไปถึง สันกำแพง สารภี เมืองเชียงใหม่ทุกตำบล ดอยสะเก็ด และสันพระเนตร ราคาเดียวกันทุกพื้นที่ ไม่คิดค่าเดินทางเพิ่ม";
 

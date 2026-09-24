@@ -17,6 +17,7 @@ const amphoeZh: Record<string, string> = {
   "อ.เมืองเชียงใหม่": "清迈市区 Mueang Chiang Mai（全部乡）",
   "อ.ดอยสะเก็ด": "Doi Saket 县",
   "อ.สันทราย": "San Sai 县（仅 San Phra Net 乡）",
+  "อ.หางดง": "Hang Dong 县（全部乡）",
 };
 
 const title = "清迈空调清洗维修 | Pro Fresh Care 泰国清迈";

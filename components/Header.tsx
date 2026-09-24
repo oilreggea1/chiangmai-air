@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { site, services } from "@/lib/site";
+import { site, services, coverageTotal } from "@/lib/site";
 import { IconPhone, IconMenu, IconClose, IconSnow, IconChevron } from "./Icons";
 
 /**
@@ -92,7 +92,7 @@ const mobileGroups: { heading: string; items: NavItem[] }[] = [
     items: [
       { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
       { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
-      { href: "/area", label: "พื้นที่บริการ 37 ตำบล" },
+      { href: "/area", label: `พื้นที่บริการ ${coverageTotal} ตำบล` },
     ],
   },
   {

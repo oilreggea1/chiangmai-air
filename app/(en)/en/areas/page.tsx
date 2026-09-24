@@ -33,6 +33,7 @@ const amphoeEn: Record<string, string> = {
   "อ.เมืองเชียงใหม่": "Mueang Chiang Mai (city, Nimman, old town, Santitham)",
   "อ.ดอยสะเก็ด": "Doi Saket",
   "อ.สันทราย": "San Sai (San Phra Net sub-district only)",
+  "อ.หางดง": "Hang Dong (whole district)",
 };
 
 const faqs = [
