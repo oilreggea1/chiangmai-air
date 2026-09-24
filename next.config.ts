@@ -74,7 +74,8 @@ const nextConfig: NextConfig = {
       // Google เคยเก็บ URL เหล่านี้ไว้แล้ว ถ้าปล่อยเป็น 404 จะเสียสัญญาณที่สะสมมา
       // จึงชี้ไปหน้าที่รับช่วงเนื้อหาต่อจริง ไม่ใช่โยนกลับหน้าแรก
       { source: "/area/san-sai", destination: "/area/san-phra-net", permanent: true },
-      { source: "/area/hang-dong", destination: "/area/mae-hia", permanent: true },
+      // หมายเหตุ: /area/hang-dong เคย 301 ไป /area/mae-hia ตอนย่อเขตบริการ
+      // เจ้าของเปิดรับ อ.หางดง ทั้งอำเภออีกครั้ง 24 ก.ย. 2569 จึงเอา redirect ออกให้หน้าจริงทำงาน
       { source: "/area/mae-on", destination: "/area", permanent: true },
       // แม่ริมอยู่นอกรัศมี 10 กม. เช่นเดียวกับแม่ออน แต่ตอนตัดหน้าออกลืมทำ 301 ไว้
       // Search Console จึงรายงานเป็น 404 หนึ่งรายการมาตั้งแต่ 17 ส.ค. 2569 (ตรวจพบ 13 ก.ย.)
