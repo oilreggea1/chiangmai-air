@@ -28,6 +28,10 @@ import { article as rakhaSomAir } from "./rakha-som-air";
 import { article as khaTidTangAir } from "./kha-tid-tang-air-ruam-arai";
 import { article as somRueSueMai } from "./som-rue-sue-mai";
 import { article as sueAirOnline } from "./sue-air-online-check-arai";
+// สามเรื่องเครื่องซักผ้า เพิ่ม 24 ก.ย. 2569 จากคำค้นจริงใน Search Console 90 วัน
+import { article as rakhaLangThangSakPha } from "./rakha-lang-thang-sak-pha";
+import { article as chekChangSakPha } from "./chek-chang-lang-khrueang-sak-pha";
+import { article as sakPhaThuengBan } from "./lang-khrueang-sak-pha-thueng-ban";
 
 /** เรียงตามความสำคัญเชิงกลยุทธ์ ตัวที่เป็นจุดต่างจากคู่แข่งขึ้นก่อน */
 export const articles: Article[] = [
@@ -45,6 +49,10 @@ export const articles: Article[] = [
   langAirBoi,
   langAirEng,
   langThangSakPha,
+  // กลุ่มคำเครื่องซักผ้าคลิกดีที่สุดของเว็บ (CTR 18.6%) แต่การแสดงผลยังน้อย จึงดันขึ้นก่อน
+  rakhaLangThangSakPha,
+  chekChangSakPha,
+  sakPhaThuengBan,
   sakPhaFaNaVsFaBon,
   sakPhaEng,
   sakPhaBoi,

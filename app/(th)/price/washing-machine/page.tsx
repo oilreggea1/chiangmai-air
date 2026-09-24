@@ -21,7 +21,7 @@ import { ReelCard } from "@/components/ReelCard";
  * ตัวเลขทุกตัวดึงจาก p.washer เท่านั้น ห้ามพิมพ์ซ้ำ (ตัวดักราคาใน scripts/check-prices.mjs จะจับได้)
  */
 
-const title = `ราคาล้างเครื่องซักผ้าเชียงใหม่ ฝาบน ${p.washer.topLoad} ฝาหน้า ${p.washer.frontLoad} บาท`;
+const title = `ราคาล้างถังเครื่องซักผ้า เชียงใหม่ ฝาบน ${p.washer.topLoad} ฝาหน้า ${p.washer.frontLoad} บาท`;
 const description =
   `ราคาล้างถังเครื่องซักผ้าถึงบ้านในเชียงใหม่ ฝาบนเริ่ม ${p.washer.topLoad} บาทตามความจุเครื่อง ฝาหน้าเริ่ม ${p.washer.frontLoad} บาท ถอดถังออกมาล้างทุกชิ้น ใช้เวลาราว 3 ชั่วโมง แจ้งราคาก่อนเริ่มงาน รับประกัน 30 วัน`;
 
@@ -133,7 +133,7 @@ export default function WashingMachinePricePage() {
             รู้ค่าใช้จ่ายก่อนเรียกช่าง
           </p>
           <h1 className="mt-5 text-[1.9rem] leading-[1.3] font-extrabold sm:text-[2.4rem]">
-            ราคาล้างเครื่องซักผ้าเชียงใหม่ คิดตามชนิดเครื่องและความจุ
+            ราคาล้างถังเครื่องซักผ้าเชียงใหม่ คิดตามชนิดเครื่องและความจุ
           </h1>
           <p className="lead mt-5">
             ผมล้างแบบถอดถังออกมาล้างทุกชิ้น ไม่ใช่การเทน้ำยาลงไปแล้วปั่น
