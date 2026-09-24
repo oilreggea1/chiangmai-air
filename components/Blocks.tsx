@@ -28,7 +28,7 @@ export function CtaBand({
             className="pointer-events-none absolute -bottom-28 -left-20 h-80 w-80 rounded-full bg-brand-400/20 blur-3xl"
           />
           <div className="relative">
-            <h2 className="text-2xl font-bold text-white sm:text-3xl">{title}</h2>
+            <h2 className="text-2xl leading-[1.38] font-bold text-white sm:text-3xl">{title}</h2>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-8 text-brand-100">{subtitle}</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <a href={`tel:${site.phoneTel}`} className="btn-call px-7 py-4 text-lg" data-cta="band-call">

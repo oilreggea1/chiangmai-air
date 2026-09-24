@@ -75,6 +75,12 @@
     overflow-wrap: anywhere;
   }
 
+  /* ระยะบรรทัดขั้นต่ำของหัวข้อไทย กันหางสระชนบรรทัดบนในจุดที่ลืมใส่คลาส leading
+     ตัวที่ใส่ leading-* ไว้เองจะทับค่านี้ตามปกติ (Tailwind utility ชนะ base) */
+  h1, h2, h3, h4 {
+    line-height: 1.38;
+  }
+
   h1, h2, h3 {
     text-wrap: balance;
     /* ไม่ตั้ง letter-spacing ติดลบกับหัวข้อไทย (แก้ 24 ก.ย. 2569)
@@ -382,6 +388,40 @@ header.sticky::after {
 
 /* เส้นแบ่งบาง ๆ ที่ใช้ซ้ำได้ ใช้แทน border-slate-200 ที่แข็งเกินไป */
 .rule { height: 1px; background: linear-gradient(90deg, transparent, rgb(17 26 46 / 0.12), transparent); }
+
+/* ============================================================
+   เป้ากดบนมือถือและแท็บเล็ต (25 ก.ย. 2569)
+   ตรวจหน้าจริงที่ 375px พบลิงก์เดี่ยว ๆ 73 จุดสูงแค่ 20–22px ซึ่งกดพลาดง่ายมาก
+   เกณฑ์ที่ Google ใช้คือ 48px ในทางปฏิบัติ 44px คือขั้นต่ำที่นิ้วโป้งกดได้แม่น
+   แก้ที่กฎกลาง ไม่ไล่แก้ทีละหน้า และไม่กระทบจอใหญ่เพราะจำกัดด้วย max-width
+   ============================================================ */
+@media (max-width: 1023px) {
+  /* ลิงก์ในฟุตเตอร์และเมนู เป็นรายการเรียงยาว ต้องกดได้ทีละบรรทัดโดยไม่พลาดไปบรรทัดข้าง */
+  footer li > a,
+  nav li > a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* ลิงก์ชวนอ่านต่อที่ยืนเดี่ยว เช่น "ดูตารางราคา" "รายละเอียด..." มีลูกศรต่อท้าย */
+  a.inline-flex,
+  a.inline-block {
+    min-height: 40px;
+    align-items: center;
+  }
+
+  a.inline-block {
+    display: inline-flex !important;
+  }
+
+  /* ลิงก์ที่อยู่ในเนื้อความย่อหน้าไม่ต้องขยาย เพราะจะดันบรรทัดจนอ่านยาก */
+  p a.inline-flex,
+  p a.inline-block,
+  li a.inline-flex:not(footer a):not(nav a) {
+    min-height: 0;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
