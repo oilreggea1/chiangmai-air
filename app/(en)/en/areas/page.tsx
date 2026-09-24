@@ -97,7 +97,7 @@ export default function EnAreasPage() {
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-lg font-bold">{amphoeEn[c.amphoe] ?? c.amphoe}</h3>
                   <span className="text-sm font-semibold text-brand-700">
-                    {c.tambons.length} sub-district{c.tambons.length === 1 ? "" : "s"}
+                    {c.tambons.length} sub-district{(c.tambons.length as number) === 1 ? "" : "s"}
                   </span>
                 </div>
                 <p className="mt-3 text-sm leading-7 text-ink-soft">
