@@ -138,8 +138,43 @@
   /* การ์ดเลิกใช้เส้นขอบ ใช้เงาชั้นแรกแทน (24 ก.ย. 2569)
      เส้นขอบรอบการ์ดทุกใบเป็นภาษาดีไซน์ยุคก่อน พอเอาออกแล้วสายตาไปอยู่ที่เนื้อหาแทนกรอบ
      มุมมนขึ้นจาก rounded-2xl เป็น rounded-3xl ให้เข้ากับปุ่มที่มนขึ้นด้วย */
+  /* การ์ดทุกใบทั้งเว็บ (25 ก.ย. 2569)
+     ขอบไล่เฉดบาง ๆ แทนเส้นทึบ + ไฟส่องตามเมาส์ ทำที่คลาสเดียวจึงได้ครบทุกหน้าพร้อมกัน */
   .card {
-    @apply rounded-3xl bg-white shadow-card transition-shadow duration-200;
+    @apply relative isolate overflow-hidden rounded-3xl bg-white shadow-card;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(145deg, rgb(255 255 255 / 0.9), rgb(125 211 252 / 0.45) 38%, rgb(17 26 46 / 0.07) 78%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ไฟส่องตามเมาส์ ตัวแปร --mx --my ตั้งจาก components/Spotlight.tsx ที่ห่อไว้ใน Shell */
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(16rem 16rem at var(--mx, 50%) var(--my, 0%), rgb(125 211 252 / 0.22), transparent 60%);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover::after { opacity: 1; }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
   }
 
   .eyebrow {
@@ -167,6 +202,10 @@
     @apply text-brand-200;
   }
 
+  .band-dark .card::before {
+    background: linear-gradient(145deg, rgb(255 255 255 / 0.34), rgb(125 211 252 / 0.3) 45%, rgb(255 255 255 / 0.08));
+  }
+
   .band-dark .card {
     @apply bg-white/[0.07] text-white backdrop-blur-sm;
     box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1), 0 1px 0 rgb(255 255 255 / 0.07) inset, 0 20px 44px -18px rgb(0 0 0 / 0.55);
@@ -190,6 +229,128 @@
   .lead {
     @apply text-[1.02rem] leading-[2] text-ink-soft sm:text-[1.13rem] sm:leading-[1.95];
   }
+}
+
+/* ============================================================
+   ชุดเอฟเฟกต์แบบเว็บยุคปัจจุบัน (25 ก.ย. 2569)
+   เจ้าของบอกว่ารอบขัดผิวยังไม่เห็นความต่าง รอบนี้จึงเพิ่มของที่เห็นทันที
+   ทุกตัวใช้สีชุดเดิม ไม่แตะเนื้อหา ไม่แตะราคา และปิดเองเมื่อผู้ใช้ตั้งค่าลดการเคลื่อนไหว
+   ============================================================ */
+
+/* พื้นหลังแสงเหนือ: วงแสงสามวงเคลื่อนช้ามากใต้เนื้อหา ทำให้พื้นไม่ตายเป็นสีเรียบ */
+/* ห้ามตั้ง position ที่นี่ เพราะกฎนี้อยู่นอก @layer จึงทับคลาส absolute ของ Tailwind
+   แล้วชั้นตกแต่งจะกลายเป็น relative ไปกินที่ในสายเนื้อหาและดันหน้าลงทั้งหน้า (เจอมาแล้ว 25 ก.ย. 2569) */
+.aurora { isolation: isolate; overflow: hidden; }
+.aurora::before,
+.aurora::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.aurora::before {
+  width: 46rem; height: 46rem;
+  top: -20rem; right: -14rem;
+  background: radial-gradient(circle at 30% 30%, #7dd3fc 0%, #38bdf8 35%, transparent 70%);
+  animation: auroraA 22s ease-in-out infinite alternate;
+}
+.aurora::after {
+  width: 38rem; height: 38rem;
+  top: 6rem; left: -16rem;
+  background: radial-gradient(circle at 60% 40%, #6d8ac6 0%, #0e7490 45%, transparent 72%);
+  opacity: 0.32;
+  animation: auroraB 27s ease-in-out infinite alternate;
+}
+@keyframes auroraA {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to   { transform: translate3d(-5rem, 3rem, 0) scale(1.12); }
+}
+@keyframes auroraB {
+  from { transform: translate3d(0,0,0) scale(1.05); }
+  to   { transform: translate3d(4rem, -2.5rem, 0) scale(0.95); }
+}
+
+/* ผิวเนียนแบบฟิล์ม ลดการไล่เฉดเป็นวงบนจอใหญ่ และให้พื้นมีเนื้อ ไม่แบนเกินไป */
+.grain::after {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+/* คำเน้นในหัวเรื่องของทุกหน้า (span.text-accent ใน h1) เป็นตัวอักษรไล่เฉดอัตโนมัติ */
+h1 .text-accent, .text-shine {
+  background: linear-gradient(100deg, var(--color-accent) 0%, #0891b2 28%, var(--color-ice) 52%, #0891b2 74%, var(--color-accent) 100%);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shineMove 7s linear infinite;
+}
+@keyframes shineMove {
+  from { background-position: 0% 50%; }
+  to   { background-position: 260% 50%; }
+}
+
+/* การ์ดกระจก ขอบไล่เฉดบาง ๆ แทนเส้นขอบทึบ */
+.glass {
+  position: relative;
+  background: rgb(255 255 255 / 0.72);
+  -webkit-backdrop-filter: saturate(1.7) blur(16px);
+  backdrop-filter: saturate(1.7) blur(16px);
+  border-radius: var(--radius-3xl);
+}
+.glass::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(140deg, rgb(255 255 255 / 0.95), rgb(125 211 252 / 0.5) 42%, rgb(17 26 46 / 0.08));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ไฟส่องตามเมาส์บนการ์ด ตัวแปร --mx --my ตั้งโดย components/Spotlight.tsx */
+.spot { overflow: hidden; }
+.spot::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(18rem 18rem at var(--mx, 50%) var(--my, 0%), rgb(125 211 252 / 0.28), transparent 62%);
+}
+.spot:hover::after { opacity: 1; }
+
+/* ตัวเลขสถิติแบบเบนโตะ ช่องละกล่อง แทนการวางเป็นแถวเปล่า ๆ */
+.bento {
+  position: relative;
+  border-radius: 1.25rem;
+  padding: 1.1rem 1.15rem;
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.9), rgb(242 245 252 / 0.75));
+  box-shadow: 0 0 0 1px rgb(17 26 46 / 0.06), 0 10px 26px -14px rgb(17 26 46 / 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.bento:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px rgb(14 116 144 / 0.18), 0 18px 38px -16px rgb(17 26 46 / 0.36);
+}
+
+/* เส้นขอบบนของหัวเว็บตอนเลื่อน ไล่เฉดบางแทนเส้นเทาทึบ */
+header.sticky { border-bottom-color: transparent !important; }
+header.sticky::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(14 116 144 / 0.28) 20%, rgb(125 211 252 / 0.5) 50%, rgb(14 116 144 / 0.28) 80%, transparent);
 }
 
 /* ---------- ค่อย ๆ ปรากฏตอนเลื่อนหน้า (24 ก.ย. 2569) ----------
@@ -224,6 +385,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .aurora::before, .aurora::after, .text-shine, h1 .text-accent { animation: none !important; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

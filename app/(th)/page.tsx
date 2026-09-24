@@ -74,11 +74,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(faqSchema(homeFaqs))} />
 
       {/* ---------- HERO ---------- */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-40 -right-32 h-[30rem] w-[30rem] rounded-full bg-brand-200/40 blur-3xl"
-        />
+      <section className="relative overflow-hidden">
         <div className="wrap relative grid gap-12 pt-12 pb-16 sm:pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:pt-20 lg:pb-24">
           <div>
             <p className="eyebrow">
@@ -144,9 +140,9 @@ export default function Home() {
                 { k: "30 วัน", v: "รับประกันงานล้าง" },
                 { k: "ทุกยี่ห้อหลัก", v: "รับล้างและซ่อมแบรนด์ที่จำหน่ายในไทย" },
               ].map((s) => (
-                <div key={s.v}>
+                <div key={s.v} className="bento">
                   <dt className="text-2xl font-extrabold text-brand-700 sm:text-[1.6rem]">{s.k}</dt>
-                  <dd className="mt-0.5 text-sm text-ink-soft">{s.v}</dd>
+                  <dd className="mt-1 text-sm leading-6 text-ink-soft">{s.v}</dd>
                 </div>
               ))}
             </dl>
@@ -173,7 +169,7 @@ export default function Home() {
                 className="h-[24rem] w-full object-cover sm:h-[30rem]"
               />
             </div>
-            <div className="card absolute -bottom-5 left-4 flex items-center gap-3 px-4 py-3 sm:left-6">
+            <div className="card glass absolute -bottom-5 left-4 flex items-center gap-3 px-4 py-3 sm:left-6">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-mint/12 text-mint">
                 <IconShield className="h-6 w-6" />
               </span>

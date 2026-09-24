@@ -3,6 +3,7 @@ import { Noto_Sans_Thai } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCta from "@/components/StickyCta";
+import Spotlight from "@/components/Spotlight";
 import ConversionTracker from "@/components/ConversionTracker";
 import { site } from "@/lib/site";
 import { localBusinessSchema, personSchema, websiteSchema, jsonLd } from "@/lib/schema";
@@ -80,9 +81,18 @@ export function Shell({ lang, children }: { lang: "th" | "en" | "zh-CN"; childre
           {SKIP[lang]}
         </a>
         <Header lang={lang} />
-        <main id="main" className="pb-24 lg:pb-0">
-          {children}
-        </main>
+        {/*
+          ชั้นตกแต่งของทั้งเว็บ (25 ก.ย. 2569)
+          วางที่ Shell ที่เดียว ทุกหน้าจึงได้พื้นหลังแสงเหนือและไฟส่องการ์ดเหมือนกันหมด
+          ไม่ต้องไปแก้ทีละหน้า และถอดออกทีเดียวได้ถ้าเจ้าของไม่ชอบ
+          Spotlight เป็น client component ที่ฟัง pointer เพียงตัวเดียว ไม่กระทบความเร็ว
+        */}
+        <Spotlight className="relative isolate">
+          <div aria-hidden="true" className="aurora grain pointer-events-none absolute inset-x-0 top-0 -z-10 h-[46rem]" />
+          <main id="main" className="relative z-[1] pb-24 lg:pb-0">
+            {children}
+          </main>
+        </Spotlight>
         <Footer lang={lang} />
         <StickyCta lang={lang} />
         <ConversionTracker />

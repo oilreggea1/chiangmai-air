@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-09-25",
   "files": {
     "app/(en)/en/about/page.tsx": "2026-09-24",
     "app/(en)/en/airbnb/page.tsx": "2026-09-24",
@@ -69,7 +69,8 @@
     "components/RecentJobs.tsx": "2026-09-24",
     "components/ReelCard.tsx": "2026-09-24",
     "components/ReelsShowcase.tsx": "2026-09-24",
-    "components/Shell.tsx": "2026-08-19",
+    "components/Shell.tsx": "2026-09-25",
+    "components/Spotlight.tsx": "2026-09-25",
     "components/StickyCta.tsx": "2026-08-30",
     "content/articles/air-mai-yen-sa-het.ts": "2026-08-30",
     "content/articles/air-men-ap-chuea-ra.ts": "2026-08-05",
