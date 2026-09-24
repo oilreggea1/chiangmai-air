@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: "/area",
-    languages: { "th-TH": "/area", "en-US": "/en/areas", "x-default": "/area" },
+    languages: { "th-TH": "/area", "en-US": "/en/areas", "zh-CN": "/zh/areas", "x-default": "/area" },
   },
   ...share({ title, description, path: `/area` }),
 };

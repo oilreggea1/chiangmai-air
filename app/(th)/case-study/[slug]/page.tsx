@@ -17,8 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getWorkCase((await params).slug);
   if (!item) return {};
   const description = `${item.finding} ดูขั้นตอนการทำงาน ภาพหน้างานจริง และผลหลังดำเนินการโดยช่างอาร์ม`;
+  /**
+   * ชื่อบนแท็บ/ผลค้นหาต้องสั้นกว่าหัวเรื่องบนหน้า (24 ก.ย. 2569)
+   * หัวเรื่องเคสเขียนยาวเพื่อบอกรายละเอียดงาน แต่ Google ตัดทิ้งราว 60 ตัวอักษร
+   * จึงตัดเอาเฉพาะส่วนหน้าเครื่องหมาย : ซึ่งเป็นใจความหลัก แล้วเติมท้ายเมื่อสั้นเกินไป
+   */
+  const head = item.title.split(":")[0].trim();
+  const metaTitle = head.length >= 40 ? head : `${head} · รีวิวงานจริงก่อน–หลัง`;
   return {
-    title: { absolute: item.title },
+    title: { absolute: metaTitle },
     description,
     alternates: { canonical: `/case-study/${item.slug}` },
     ...share({ title: item.title, description, path: `/case-study/${item.slug}`, image: item.images[0] }),

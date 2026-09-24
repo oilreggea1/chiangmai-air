@@ -370,6 +370,12 @@ export default function ChinesePage() {
               </li>
             ))}
           </ul>
+          <div className="mt-8">
+            <Link href="/zh/areas" className="btn-ghost">
+              查看完整乡名单与常见问题
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

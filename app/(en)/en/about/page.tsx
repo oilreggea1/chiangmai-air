@@ -13,7 +13,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconPin, IconClock, IconSh
  * คำสัญญา 6 ข้อแปลจาก app/(th)/about/page.tsx ห้ามเพิ่มคำรับปากที่ฝั่งไทยไม่มี
  * รูปทุกใบเปิดดูแล้ว ไม่มีมือ/เล็บที่เห็นคราบ (กติกาเจ้าของ)
  */
-const title = "About Arm and Pro Fresh Care, Chiang Mai | Cher Solutions Co., Ltd.";
+const title = "About Arm and Pro Fresh Care, Chiang Mai";
 const description =
   "Arm is the technician who does every Pro Fresh Care job himself. Registered company Cher Solutions Co., Ltd., based in San Kamphaeng, Chiang Mai. Prices published, quote before work, company receipts.";
 

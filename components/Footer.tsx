@@ -28,6 +28,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
         { href: "/zh/pricing", label: "完整价目表" },
         { href: "/zh/installation", label: "空调安装与移机" },
         { href: "/zh/washing-machine", label: "洗衣机内桶清洗" },
+        { href: "/zh/areas", label: "清迈服务范围" },
         { href: "/zh/about", label: "关于 Arm 与公司" },
       ];
 

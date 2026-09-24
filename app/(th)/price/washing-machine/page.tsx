@@ -21,7 +21,7 @@ import { ReelCard } from "@/components/ReelCard";
  * ตัวเลขทุกตัวดึงจาก p.washer เท่านั้น ห้ามพิมพ์ซ้ำ (ตัวดักราคาใน scripts/check-prices.mjs จะจับได้)
  */
 
-const title = `ราคาล้างเครื่องซักผ้าเชียงใหม่ ฝาบนเริ่ม ${p.washer.topLoad} ฝาหน้าเริ่ม ${p.washer.frontLoad} บาท`;
+const title = `ราคาล้างเครื่องซักผ้าเชียงใหม่ ฝาบน ${p.washer.topLoad} ฝาหน้า ${p.washer.frontLoad} บาท`;
 const description =
   `ราคาล้างถังเครื่องซักผ้าถึงบ้านในเชียงใหม่ ฝาบนเริ่ม ${p.washer.topLoad} บาทตามความจุเครื่อง ฝาหน้าเริ่ม ${p.washer.frontLoad} บาท ถอดถังออกมาล้างทุกชิ้น ใช้เวลาราว 3 ชั่วโมง แจ้งราคาก่อนเริ่มงาน รับประกัน 30 วัน`;
 

@@ -18,9 +18,17 @@ export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
   title: { absolute: title },
   description,
+  /**
+   * คำค้นชุดนี้มาจาก Search Console 28 วัน (ตรวจ 24 ก.ย. 2569) ไม่ได้เดาเอง
+   * หน้านี้ติดคำแบบ "near me" อยู่แล้วแต่ยังไม่มีคลิก เพราะผู้ค้นไม่รู้ว่าเป็นร้านในเชียงใหม่
+   * จึงเติมคำที่คนค้นจริงคู่กับชื่อเมือง เพื่อให้ผลการค้นหาบอกพื้นที่ตั้งแต่บรรทัดแรก
+   */
   keywords: [
     "aircon cleaning Chiang Mai", "AC repair Chiang Mai", "air conditioner service Chiang Mai",
     "aircon service Nimman", "AC cleaning San Kamphaeng", "Airbnb aircon Chiang Mai",
+    "aircon service near me Chiang Mai", "ac cleaning near me Chiang Mai",
+    "air conditioner repair near me Chiang Mai", "hvac repair Chiang Mai",
+    "air conditioner cleaning service Chiang Mai", "aircon repair Hang Dong", "aircon cleaning San Sai",
   ],
   alternates: {
     canonical: "/en",
