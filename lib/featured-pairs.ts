@@ -127,8 +127,7 @@ export const verifiedPairs: Record<string, { before: number; after: number; part
     { before: 2, after: 5, part: "ถังนอกพลาสติกด้านใน" },
   ],
   "hangdong-electrolux-frontload-2569-07": [
-    { before: 3, after: 7, part: "ถังนอกครึ่งหลังด้านใน" },
-    { before: 5, after: 9, part: "ตัวกรองปั๊มน้ำทิ้ง" },
+    { before: 3, after: 6, part: "ถังนอกครึ่งหลังด้านใน" },
   ],
   "mueang-lg-frontload-2569-08": [
     { before: 1, after: 2, part: "ก้นถังสเตนเลสด้านนอกและแขนยึดสามแฉก" },

@@ -65,6 +65,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // เคสนี้มีรูปใบเดียวและเป็นรูปที่เห็นเท้าเปล่า เจ้าของสั่งเอาออก 25 ก.ย. 2569
+      // เมื่อไม่มีรูปเหลือเลยจึงเอารายงานออกทั้งเคส แล้วส่งต่อไปหน้ารวมรายงาน
+      { source: "/case-study/air-capacitor-measurement", destination: "/case-study", permanent: true },
       { source: "/xmlrpc.php", destination: "/", permanent: true },
       { source: "/wp-admin/:path*", destination: "/", permanent: true },
       { source: "/wp-login.php", destination: "/", permanent: true },
