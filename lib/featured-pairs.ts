@@ -96,21 +96,80 @@ export function resolvePair(pair: FeaturedPair) {
  * ชื่อไฟล์ลงท้ายด้วย -01 คือ index 0 เสมอ ระวังสลับ
  */
 export const verifiedPairs: Record<string, { before: number; after: number; part: string }[]> = {
-  "mitsubishi-mr-slim-wash-2569-06": [{ before: 0, after: 4, part: "คอยล์ร้อน" }],
-  "beko-premium-strip-wash-2569-06": [
-    { before: 1, after: 7, part: "คอยล์ร้อน" },
-    { before: 0, after: 6, part: "แผ่นกรองอากาศ" },
+  "top-load-washer-pulsator-deposit": [
+    { before: 0, after: 1, part: "ฐาน/จานซักของเครื่องฝาบน" },
+  ],
+  "front-load-washer-outer-tub-scale": [
+    { before: 0, after: 1, part: "ถังชั้นนอก (ครึ่งหลัง) ของเครื่องฝาหน้า" },
+  ],
+  "sansai-lg-topload-2569-08": [
+    { before: 3, after: 6, part: "ผิวด้านนอกของถังในสเตนเลส" },
+  ],
+  "hangdong-hitachi-topload-2569-08": [
+    { before: 2, after: 5, part: "ด้านหลังจานซัก (ใบเดียวกัน)" },
+  ],
+  "lg-frontload-2569-08": [
+    { before: 1, after: 7, part: "ผิวด้านนอกของถังสเตนเลส" },
+    { before: 4, after: 5, part: "ถังนอกครึ่งหลัง (ผนังในและฮีตเตอร์)" },
+  ],
+  "mueang-haier-topload-2569-08": [
+    { before: 4, after: 7, part: "ถังนอกพลาสติกขาวด้านใน" },
+    { before: 5, after: 9, part: "ชุดกรองเศษผ้าและครีบกั้น" },
+    { before: 1, after: 6, part: "จานซัก (คนละด้านของแผ่นเดียวกัน)" },
+  ],
+  "maejo-samsung-topload-2569-08": [
+    { before: 2, after: 8, part: "ผิวนอกถังสเตนเลส" },
+    { before: 3, after: 7, part: "ขาแมงมุมและก้นถังด้านนอก" },
+    { before: 5, after: 6, part: "ผนังและก้นถังด้านใน" },
+  ],
+  "padaet-topload-2569-08": [
+    { before: 1, after: 4, part: "ผิวนอกถังสเตนเลส" },
+    { before: 2, after: 5, part: "ถังนอกพลาสติกด้านใน" },
+  ],
+  "hangdong-electrolux-frontload-2569-07": [
+    { before: 3, after: 7, part: "ถังนอกครึ่งหลังด้านใน" },
+    { before: 5, after: 9, part: "ตัวกรองปั๊มน้ำทิ้ง" },
   ],
   "mueang-lg-frontload-2569-08": [
-    { before: 6, after: 12, part: "ถังนอกและขอบยางประตู" },
+    { before: 1, after: 2, part: "ก้นถังสเตนเลสด้านนอกและแขนยึดสามแฉก" },
     { before: 3, after: 9, part: "ผิวนอกถังสเตนเลส" },
-    { before: 1, after: 2, part: "ฐานถังและขาแขนยึด" },
+    { before: 6, after: 12, part: "ถังนอกครึ่งหน้าพร้อมขอบยางประตู" },
+    { before: 4, after: 11, part: "โครงช่องใส่น้ำยา" },
   ],
   "maejo-topload-2-2569-08": [
-    { before: 1, after: 5, part: "ด้านในถังชั้นนอก" },
-    { before: 2, after: 6, part: "ขอบปากถัง" },
+    { before: 1, after: 5, part: "ถังนอกด้านใน (ก้นถังนอก)" },
+    { before: 2, after: 6, part: "วงขอบถังพลาสติก" },
   ],
-  "lg-smart-inverter-topload-2569-07": [{ before: 1, after: 7, part: "ด้านในถังชั้นนอก" }],
+  "lg-smart-inverter-topload-2569-07": [
+    { before: 1, after: 7, part: "ถังนอกด้านใน (ก้นถังนอก)" },
+  ],
+  "nong-pa-khrang-ceiling-unit-check-2569-06": [
+    { before: 0, after: 5, part: "คอยล์ร้อนทั้งเครื่องบนหลังคา" },
+    { before: 0, after: 6, part: "แผงตะแกรง/ครีบคอยล์ร้อน" },
+  ],
+  "mueang-sharp-gauge-check-wash-2569-05": [
+    { before: 0, after: 6, part: "ครีบคอยล์ร้อน" },
+    { before: 1, after: 7, part: "โครงตัวเครื่อง/ร่องรับน้ำคอยล์เย็น" },
+  ],
+  "mueang-premium-strip-wash-2569-06": [
+    { before: 0, after: 4, part: "แผ่นกรองอากาศ" },
+  ],
+  "beko-premium-strip-wash-2569-06": [
+    { before: 0, after: 6, part: "แผ่นกรองอากาศ" },
+    { before: 1, after: 7, part: "ครีบคอยล์ร้อนหลังตะแกรงพลาสติกขาว" },
+    { before: 9, after: 3, part: "แผงฐาน/ช่องลมออกพร้อมแถบฉนวนโฟม" },
+  ],
+  "mitsubishi-mr-slim-wash-2569-06": [
+    { before: 0, after: 4, part: "ตะแกรง/ครีบหน้าคอยล์ร้อน (เครื่องเดียวกัน)" },
+    { before: 2, after: 6, part: "คอยล์ร้อน Mitsubishi Mr.Slim เครื่องเดียวกัน" },
+  ],
+  "foam-coil-wash-2569-05": [
+    { before: 0, after: 5, part: "คอยล์ร้อนเครื่องเดียวกัน (จุดติดตั้งเดียวกัน" },
+    { before: 1, after: 6, part: "แผ่นกรองอากาศ (พื้นไม้จุดเดียวกัน)" },
+  ],
+  "shophouse-lg-wash-2569-05": [
+    { before: 4, after: 5, part: "แอร์ผนัง LG เครื่องเดียวกัน (เปิดฝาเห็นคอยล์" },
+  ],
 };
 
 /** คู่แรกที่ยืนยันแล้วของเคสนั้น คืน null ถ้าเคสนี้ยังไม่มีคู่ที่ตรวจแล้ว */
