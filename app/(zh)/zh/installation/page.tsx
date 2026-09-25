@@ -252,7 +252,7 @@ export default function ZhInstallationPage() {
 
       <section className="section pt-0" lang="zh-CN">
         <div className="wrap">
-          <div className="rounded-3xl bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 px-6 py-14 text-center sm:px-12">
+          <div className="rounded-3xl band-dark px-6 py-14 text-center sm:px-12">
             <h2 className="text-2xl font-bold text-white sm:text-3xl">今天就获取安装报价</h2>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-8 text-brand-100">
               发送机型、房间面积和准备安装的墙面照片，我会回复确定的价格和最早可上门的时间。

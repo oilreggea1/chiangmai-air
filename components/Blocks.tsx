@@ -18,7 +18,7 @@ export function CtaBand({
   return (
     <section className="section">
       <div className="wrap">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 px-6 py-14 text-center sm:px-12">
+        <div className="relative overflow-hidden rounded-3xl band-dark px-6 py-14 text-center sm:px-12">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-24 -right-16 h-72 w-72 rounded-full bg-white/10 blur-2xl"
@@ -235,7 +235,7 @@ export function CaseStudies({
                       />
                       <span
                         className={`absolute top-3 left-3 rounded-full px-3 py-1 text-sm font-bold text-white ${
-                          col.bad ? "bg-accent" : "bg-mint-deep"
+                          col.bad ? "bg-brand-700" : "bg-mint-deep"
                         }`}
                       >
                         {col.k}

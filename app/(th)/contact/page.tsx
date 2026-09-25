@@ -51,11 +51,11 @@ export default function Contact() {
             className="card group flex flex-col items-center p-8 text-center transition-all hover:-translate-y-1 hover:shadow-lift"
             data-cta="contact-call"
           >
-            <span className="grid h-16 w-16 place-items-center rounded-2xl bg-accent text-white shadow-lg shadow-accent/25">
+            <span className="grid h-16 w-16 place-items-center rounded-2xl bg-brand-700 text-white shadow-lg shadow-accent/25">
               <IconPhone className="h-8 w-8" />
             </span>
             <h2 className="mt-5 text-lg font-bold">โทรเรียกช่างทันที</h2>
-            <p className="mt-2 text-3xl font-extrabold text-accent">{site.phone}</p>
+            <p className="mt-2 text-3xl font-extrabold text-brand-700">{site.phone}</p>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
               เหมาะกับงานเร่งด่วน หรือกรณีที่ต้องการสอบถามรายละเอียดโดยตรง
             </p>

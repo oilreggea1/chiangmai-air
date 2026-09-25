@@ -239,7 +239,7 @@ export default function ZhWashingMachinePage() {
 
       <section className="section pt-0" lang="zh-CN">
         <div className="wrap">
-          <div className="rounded-3xl bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 px-6 py-14 text-center sm:px-12">
+          <div className="rounded-3xl band-dark px-6 py-14 text-center sm:px-12">
             <h2 className="text-2xl font-bold text-white sm:text-3xl">发一张您洗衣机的照片</h2>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-8 text-brand-100">
               一张机器照片加上容量标签，就足够给您确定的价格。洗衣机预约请使用下面这个 LINE 账号。
