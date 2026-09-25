@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { workCases } from "@/lib/work-cases";
+import { firstVerifiedPair } from "@/lib/featured-pairs";
 
 /**
  * แถบ "งานล่าสุดจากหน้างานจริง" สำหรับหน้าภาษาอังกฤษ/จีน (24 ก.ย. 2569)
  * ดึงเคสจาก lib/work-cases ตาม serviceSlug ที่ส่งมา เฉพาะเคสที่มีวันจริง เรียงใหม่สุดก่อน
- * การ์ดโชว์รูป "ก่อนทำ" ใบแรกคู่กับ "หลังทำ" ใบสุดท้าย รายงานตัวเต็มเป็นภาษาไทย (ลิงก์ hrefLang="th")
+ * รายงานตัวเต็มเป็นภาษาไทย (ลิงก์ hrefLang="th")
+ *
+ * **แก้ 25 ก.ย. 2569** เดิมการ์ดหยิบรูป "ก่อนทำ" ใบแรกมาคู่กับ "หลังทำ" ใบสุดท้ายโดยอัตโนมัติ
+ * ซึ่งให้คู่ที่เป็นคนละชิ้นส่วน และมีเคสหนึ่งที่ได้คอยล์ร้อนคนละเครื่องคนละยี่ห้อมาวางคู่กัน
+ * ตอนนี้ใช้เฉพาะคู่ที่ขึ้นทะเบียนไว้ใน lib/featured-pairs.ts ซึ่งเปิดดูรูปจริงยืนยันแล้วทุกคู่
+ * เคสที่ยังไม่มีคู่ที่ตรวจแล้วจะไม่ถูกนำมาโชว์ ยอมโชว์น้อยเคสดีกว่าโชว์คู่ที่เป็นคนละเครื่อง
  */
 const serviceLabel: Record<"en" | "zh-CN", Record<string, string>> = {
   en: { "lang-air": "Aircon cleaning", "som-air": "Aircon repair", "tid-tang-air": "Installation", "yai-air": "Relocation", "lang-washing-machine": "Washing machine" },
@@ -23,7 +29,12 @@ export function RecentJobs({ lang, slugs, eyebrow, heading, lead, note, limit = 
   limit?: number;
   tone?: "white" | "sand";
 }) {
-  const jobs = workCases.filter((c) => slugs.includes(c.serviceSlug) && c.date).sort((a, b) => b.date!.localeCompare(a.date!)).slice(0, limit);
+  const jobs = workCases
+    .filter((c) => slugs.includes(c.serviceSlug) && c.date)
+    .map((c) => ({ c, pair: firstVerifiedPair(c.slug) }))
+    .filter((x): x is { c: (typeof workCases)[number]; pair: NonNullable<ReturnType<typeof firstVerifiedPair>> } => x.pair !== null)
+    .sort((a, b) => b.c.date!.localeCompare(a.c.date!))
+    .slice(0, limit);
   if (jobs.length === 0) return null;
   const locale = lang === "en" ? "en-GB" : "zh-CN";
   return (
@@ -33,9 +44,8 @@ export function RecentJobs({ lang, slugs, eyebrow, heading, lead, note, limit = 
         <h2 className="h2 mt-4">{heading}</h2>
         <p className="lead mt-3 max-w-2xl">{lead}</p>
         <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {jobs.map((c) => {
-            const before = c.images.find((i) => i.phase === "ก่อนทำ") ?? c.images[0];
-            const after = [...c.images].reverse().find((i) => i.phase === "หลังทำ") ?? c.images[c.images.length - 1];
+          {jobs.map(({ c, pair }) => {
+            const { before, after } = pair;
             return (
               <li key={c.slug}>
                 <Link href={`/case-study/${c.slug}`} hrefLang="th" className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">

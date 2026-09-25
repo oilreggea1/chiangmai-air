@@ -84,3 +84,42 @@ export function resolvePair(pair: FeaturedPair) {
   if (before.phase !== "ก่อนทำ" || after.phase !== "หลังทำ") return null;
   return { ...pair, service: c.service, title: c.title, before, after };
 }
+
+/**
+ * ทะเบียนคู่ภาพที่ยืนยันด้วยตาแล้วว่าเป็นชิ้นเดียวกัน แยกตามเคส
+ *
+ * ใช้กับแถบงานล่าสุดของหน้าอังกฤษและจีน ซึ่งเดิมให้โค้ดเดาคู่เอง
+ * เคสที่ไม่มีชื่ออยู่ในทะเบียนนี้จะไม่ถูกนำไปโชว์เป็นคู่ก่อน–หลังที่ไหนทั้งสิ้น
+ * ยอมโชว์น้อยเคส ดีกว่าโชว์คู่ที่เป็นคนละเครื่อง
+ *
+ * ตัวเลขคือ index ในอาร์เรย์ images ของเคสนั้น เริ่มที่ 0
+ * ชื่อไฟล์ลงท้ายด้วย -01 คือ index 0 เสมอ ระวังสลับ
+ */
+export const verifiedPairs: Record<string, { before: number; after: number; part: string }[]> = {
+  "mitsubishi-mr-slim-wash-2569-06": [{ before: 0, after: 4, part: "คอยล์ร้อน" }],
+  "beko-premium-strip-wash-2569-06": [
+    { before: 1, after: 7, part: "คอยล์ร้อน" },
+    { before: 0, after: 6, part: "แผ่นกรองอากาศ" },
+  ],
+  "mueang-lg-frontload-2569-08": [
+    { before: 6, after: 12, part: "ถังนอกและขอบยางประตู" },
+    { before: 3, after: 9, part: "ผิวนอกถังสเตนเลส" },
+    { before: 1, after: 2, part: "ฐานถังและขาแขนยึด" },
+  ],
+  "maejo-topload-2-2569-08": [
+    { before: 1, after: 5, part: "ด้านในถังชั้นนอก" },
+    { before: 2, after: 6, part: "ขอบปากถัง" },
+  ],
+  "lg-smart-inverter-topload-2569-07": [{ before: 1, after: 7, part: "ด้านในถังชั้นนอก" }],
+};
+
+/** คู่แรกที่ยืนยันแล้วของเคสนั้น คืน null ถ้าเคสนี้ยังไม่มีคู่ที่ตรวจแล้ว */
+export function firstVerifiedPair(slug: string) {
+  const list = verifiedPairs[slug];
+  if (!list || list.length === 0) return null;
+  const c = workCases.find((w) => w.slug === slug);
+  const before = c?.images[list[0].before];
+  const after = c?.images[list[0].after];
+  if (!before || !after) return null;
+  return { before, after, part: list[0].part };
+}
