@@ -118,7 +118,7 @@ export default function ZhInstallationPage() {
                 {site.phone}
               </a>
             </div>
-            <p className="mt-4 text-sm text-ink-soft">请用 LINE 文字联系，我用翻译软件回复 · 周一至周六 8:00–18:00</p>
+            <p className="mt-4 text-sm text-ink-soft">请用 LINE 文字联系，我用翻译软件回复 · 周一至周六 8:00–20:00，周日需提前预约</p>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image src={heroPhotos.enInstall.src} alt="拆封中的全新 Daikin 室内机放在铺好防尘布的地面上，准备安装" width={900} height={1200} priority sizes="(max-width: 1024px) 100vw, 45vw" className="h-[22rem] w-full object-cover sm:h-[27rem]" />

@@ -199,7 +199,7 @@ export default function EnglishPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              AC service LINE {site.lineId} · washing machine cleaning LINE {site.lineId2} · Mon–Sat 8:00–18:00
+              AC service LINE {site.lineId} · washing machine cleaning LINE {site.lineId2} · Mon–Sat 8:00–20:00, Sunday by advance booking
             </p>
             {/* แถบความน่าเชื่อถือสำหรับลูกค้าต่างชาติ (24 ก.ย. 2569): บริษัทจดทะเบียน + คนที่มาคือใคร + ไม่มีมัดจำ */}
             <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">
@@ -482,7 +482,7 @@ export default function EnglishPage() {
             </div>
             <p className="mt-6 inline-flex items-center gap-2 text-sm text-brand-200">
               <IconClock className="h-4 w-4" />
-              Mon–Sat 8:00–18:00 · closed Sunday
+              Mon–Sat 8:00–20:00, Sunday by advance booking
               <IconShield className="ml-3 h-4 w-4" />
               VAT tax invoice available
             </p>

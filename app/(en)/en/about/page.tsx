@@ -49,7 +49,7 @@ const facts = [
   { k: "Registered company", v: site.legalNameEn },
   { k: "Tax ID", v: site.taxId },
   { k: "Based in", v: addressEn },
-  { k: "Hours", v: "Monday to Saturday, 08:00–18:00. Closed Sunday. Out-of-hours visits by arrangement, with a surcharge quoted first." },
+  { k: "Hours", v: "Monday to Saturday, 08:00–20:00, so an evening slot after work is easy to get. Sunday is for jobs booked in advance. Same price at every hour, no out-of-hours surcharge." },
   { k: "Invoices and receipts", v: "VAT registered. Full VAT tax invoices and receipts are issued in the company name on request." },
 ];
 
@@ -222,8 +222,8 @@ export default function EnAboutPage() {
             <li className="card flex items-start gap-4 p-5">
               <IconClock className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
               <span>
-                <span className="block font-bold">Monday to Saturday, 08:00–18:00</span>
-                <span className="mt-1 block text-sm leading-7 text-ink-soft">Closed Sunday. Usually on site within 24 hours, except February to April when the whole city is booking at once.</span>
+                <span className="block font-bold">Monday to Saturday, 08:00–20:00</span>
+                <span className="mt-1 block text-sm leading-7 text-ink-soft">Sunday is for jobs booked in advance, at the same price. Usually on site within 24 hours, except February to April when the whole city is booking at once.</span>
               </span>
             </li>
           </ul>

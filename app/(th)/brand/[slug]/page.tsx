@@ -83,7 +83,7 @@ export default async function BrandPage({ params }: Props) {
           </div>
           <p className="mt-4 inline-flex items-center gap-2 text-sm text-ink-soft">
             <IconClock className="h-5 w-5 text-brand-600" />
-            {site.daysLabel} {site.hours} · {site.closedNote}
+            {site.daysLabel} {site.hours} · {site.sundayNote}
           </p>
         </section>
       </div>

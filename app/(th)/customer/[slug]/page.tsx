@@ -62,7 +62,7 @@ export default async function SegmentPage({ params }: Props) {
           </div>
           <p className="mt-4 inline-flex items-center gap-2 text-sm text-ink-soft">
             <IconClock className="h-5 w-5 text-brand-600" />
-            {site.daysLabel} {site.hours}
+            {site.daysLabel} {site.hours} · {site.sundayShort}
           </p>
         </section>
       </div>

@@ -101,7 +101,7 @@ export default function ZhWashingMachinePage() {
                 {site.phone}
               </a>
             </div>
-            <p className="mt-4 text-sm text-ink-soft">上开式 {p.washer.topLoad} 泰铢起 · 前开式 {p.washer.frontLoad} 泰铢起 · 周一至周六 8:00–18:00</p>
+            <p className="mt-4 text-sm text-ink-soft">上开式 {p.washer.topLoad} 泰铢起 · 前开式 {p.washer.frontLoad} 泰铢起 · 周一至周六 8:00–20:00，周日需提前预约</p>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
             <Image src={heroPhotos.enWasher.src} alt="从上开式洗衣机取出的不锈钢内桶放在地上准备清洗" width={900} height={1200} priority sizes="(max-width: 1024px) 100vw, 45vw" className="h-[22rem] w-full object-cover sm:h-[27rem]" />

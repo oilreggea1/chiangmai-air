@@ -186,7 +186,7 @@ export default function ChinesePage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              空调服务 LINE {site.lineId} · 洗衣机清洗 LINE {site.lineId2} · 周一至周六 8:00–18:00
+              空调服务 LINE {site.lineId} · 洗衣机清洗 LINE {site.lineId2} · 周一至周六 8:00–20:00，周日需提前预约
             </p>
             {/* แถบความน่าเชื่อถือ เพิ่มพร้อมหน้าอังกฤษ 24 ก.ย. 2569 */}
             <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">

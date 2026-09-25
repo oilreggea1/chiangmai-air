@@ -14,7 +14,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "清迈空调维修 | Pro Fresh Care 上门检测报价";
 const description =
-  `清迈空调维修，技师 Arm 本人上门。检测费 ${p.repair.diagnostic} 泰铢，确认维修后从维修费里扣除。先测压力和电流并给您看数据，再报价。周一至周六 8:00-18:00。`;
+  `清迈空调维修，技师 Arm 本人上门。检测费 ${p.repair.diagnostic} 泰铢，确认维修后从维修费里扣除。先测压力和电流并给您看数据，再报价。周一至周六 8:00-20:00，周日需提前预约。`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -99,7 +99,7 @@ export default function ZhRepairPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              检测费 {p.repair.diagnostic} 泰铢（确认维修后扣除）· R32 与 R410A 每磅 {p.repair.refrigerantPerLb} 泰铢 · 周一至周六 8:00–18:00
+              检测费 {p.repair.diagnostic} 泰铢（确认维修后扣除）· R32 与 R410A 每磅 {p.repair.refrigerantPerLb} 泰铢 · 周一至周六 8:00–20:00，周日需提前预约
             </p>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">

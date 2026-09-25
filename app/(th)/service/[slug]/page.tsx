@@ -193,7 +193,7 @@ export default async function ServicePage({ params }: Props) {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              {s.priceLabel} · {site.daysLabel} {site.hours}
+              {s.priceLabel} · {site.daysLabel} {site.hours} · {site.sundayShort}
             </p>
             {/* วันที่จริงจาก git ของไฟล์ข้อมูลบริการ ไม่ใช่วันที่ build — ให้ทั้งลูกค้าและ Google เห็นว่าราคายังดูแลอยู่ */}
             <p className="mt-1.5 text-xs text-ink-soft">
@@ -456,7 +456,7 @@ export default async function ServicePage({ params }: Props) {
             <h2 className="h2">คู่มือซ่อมแอร์อินเวอร์เตอร์และ Error Code แยกยี่ห้อ</h2>
             <p className="lead mt-3 max-w-3xl">
               เลือกประเภทเครื่องหรือยี่ห้อเพื่อดูข้อมูลที่ควรเตรียมก่อนเรียกช่าง การส่งรหัสพร้อมรุ่นเต็มช่วยให้ผมเตรียมอะไหล่มาตรงรุ่นและตรวจได้เร็วขึ้น
-              ถ้าแอร์เสียแบบรอไม่ได้ ดูเงื่อนไขการเข้าหน้างานเร่งด่วนและนอกเวลาทำการได้ที่
+              ถ้าว่างเฉพาะช่วงเย็นหรือวันอาทิตย์ ดูรายละเอียดการนัดนอกเวลางานได้ที่
               <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
                 หน้าเรียกช่างด่วน
               </Link>

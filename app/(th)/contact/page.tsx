@@ -8,7 +8,7 @@ import { FaqList, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ติดต่อช่างแอร์เชียงใหม่ | โปรเฟรชแคร์";
 const description =
-  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 LINE งานแอร์ @iu3333 และ LINE ล้างถังซักผ้า @794xvrnm จันทร์-เสาร์ 08:00-18:00 น.";
+  "ติดต่อช่างแอร์เชียงใหม่ โปรเฟรชแคร์ โทร 065-365-7673 LINE งานแอร์ @iu3333 และ LINE ล้างถังซักผ้า @794xvrnm จันทร์-เสาร์ 08:00-20:00 น. วันอาทิตย์รับงานที่จองล่วงหน้า";
 
 export const metadata: Metadata = {
   title,
@@ -115,13 +115,13 @@ export default function Contact() {
                 <IconClock className="row-span-2 mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
                 <dt className="font-bold">เวลาทำการ</dt>
                 <dd className="mt-1 text-[15px] leading-7 text-ink-soft">
-                  {site.daysLabel} {site.hours}
+                  {site.daysLabel} {site.hours} · {site.sundayNote}
                   <br />
                   ปกติเข้าหน้างานได้ภายใน 24 ชั่วโมง ยกเว้นช่วง ก.พ.–เม.ย. ที่คิวแน่นทั้งจังหวัด
                   <br />
-                  ถ้าเป็นเรื่องเร่งด่วนหรือต้องการนัดนอกเวลาทำการ ดูเงื่อนไขได้ที่
+                  ถ้าต้องการนัดช่วงเย็นหลังเลิกงานหรือวันอาทิตย์ ดูรายละเอียดได้ที่
                   <Link href="/duan" className="ml-1 font-semibold text-brand-700 hover:underline">
-                    หน้าเรียกช่างด่วน
+                    หน้านัดเย็นและวันอาทิตย์
                   </Link>
                 </dd>
               </div>

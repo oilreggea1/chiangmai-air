@@ -34,7 +34,7 @@ const navGroups: NavGroup[] = [
       })),
       { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
       { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
-      { href: "/duan", label: "เรียกด่วน / นอกเวลา" },
+      { href: "/duan", label: "นัดเย็น / วันอาทิตย์" },
     ],
   },
   {
@@ -73,7 +73,7 @@ const navLinks: NavItem[] = [
 const mobileQuick = [
   // ใช้คำที่หน้านั้นตั้งใจติดแทนคำว่า "หน้าแรก" ซึ่งไม่บอกอะไรทั้งกับคนและกับ Google
   { href: "/", label: "ช่างแอร์เชียงใหม่" },
-  { href: "/duan", label: "เรียกด่วน / นอกเวลา" },
+  { href: "/duan", label: "นัดเย็น / วันอาทิตย์" },
   { href: "/contact", label: "ติดต่อ" },
 ];
 const mobileGroups: { heading: string; items: NavItem[] }[] = [

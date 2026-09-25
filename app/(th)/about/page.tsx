@@ -229,7 +229,7 @@ export default function AboutPage() {
               { t: "ที่ตั้ง", d: `${site.legalName} · ${addressLine}`, Icon: IconPin },
               {
                 t: "เวลาทำการ",
-                d: `${site.daysLabel} ${site.hours} · เช็คคิวจริงตามพื้นที่และประเภทงานก่อนนัด`,
+                d: `${site.daysLabel} ${site.hours} · ${site.sundayNote} เช็คคิวจริงตามพื้นที่และประเภทงานก่อนนัด`,
                 Icon: IconClock,
               },
               { t: "ติดต่อ", d: `โทร ${site.phone} / ${site.phone2} · LINE งานแอร์ ${site.lineId} · LINE ล้างถังซักผ้า ${site.lineId2}`, Icon: IconPhone },

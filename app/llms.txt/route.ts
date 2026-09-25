@@ -33,7 +33,7 @@ function body() {
 - โทร: ${site.phone}, ${site.phone2}
 - LINE งานแอร์: ${site.lineId}
 - LINE งานเครื่องซักผ้า: ${site.lineId2}
-- เวลาทำการ: ${site.daysLabel} ${site.hours} ${site.closedNote}
+- เวลาทำการ: ${site.daysLabel} ${site.hours} ${site.sundayNote}
 - ที่ตั้ง: ${site.address.street} ${site.address.subDistrict} ${site.address.district} จ.${site.address.province} ${site.address.postalCode}
 - พื้นที่หลัก: อำเภอเมืองเชียงใหม่ หางดง และสันทราย ครบทุกตำบล รวมถึงสันกำแพง ต้นเปา บ่อสร้าง สารภี และดอยสะเก็ด
 

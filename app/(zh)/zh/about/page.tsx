@@ -47,7 +47,7 @@ const facts = [
   { k: "注册公司", v: site.legalNameEn },
   { k: "税号", v: site.taxId },
   { k: "地址", v: addressEn },
-  { k: "营业时间", v: "周一至周六 08:00–18:00，周日休息。非营业时间可另约，加收费用会先报价。" },
+  { k: "营业时间", v: "周一至周六 08:00–20:00，下班后也能约。周日只接提前预约的工作。所有时段同价，不加收非营业时间费用。" },
   { k: "发票与收据", v: "已登记增值税，可按需开具增值税发票和公司抬头收据。" },
 ];
 
@@ -296,8 +296,8 @@ export default function ZhAboutPage() {
             <li className="card flex items-start gap-4 p-5">
               <IconClock className="mt-0.5 h-6 w-6 shrink-0 text-brand-600" />
               <span>
-                <span className="block font-bold">周一至周六 08:00–18:00</span>
-                <span className="mt-1 block text-sm leading-7 text-ink-soft">周日休息。通常 24 小时内可上门，二月至四月烧芭季节全城预约集中，请提前预约。</span>
+                <span className="block font-bold">周一至周六 08:00–20:00</span>
+                <span className="mt-1 block text-sm leading-7 text-ink-soft">周日只接提前预约的工作，价格与平日相同。通常 24 小时内可上门，二月至四月烧芭季节全城预约集中，请提前预约。</span>
               </span>
             </li>
           </ul>

@@ -27,14 +27,14 @@ const homeEdges = edges.map((edge, index) => ({
   detail: [
     `ตรวจวัดให้ดูก่อนเติม และคิด R32/R22 ปอนด์ละ ${p.repair.refrigerantPerLb} บาทเท่ากัน`,
     `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท และหักคืนเมื่อตัดสินใจซ่อม ดูราคาก่อนได้`,
-    "นัดเร่งด่วนนอกเวลาได้ โดยแจ้งค่าบริการเพิ่มก่อนยืนยันคิว",
+    "นัดหลังเลิกงานถึง 20:00 น. และวันอาทิตย์ที่จองล่วงหน้า ราคาเท่ากัน",
     "ออกใบกำกับภาษีเต็มรูปในนามบริษัทได้ รองรับบ้าน ร้านค้า โรงแรม และสำนักงาน",
   ][index],
   // ลิงก์ท้ายการ์ด ใช้คำที่หน้าปลายทางตั้งใจติด (เติมน้ำยาแอร์ → /price/repair ไม่ใช่หน้าแรก)
   link: [
     { href: "/price/repair", label: "ราคาเติมน้ำยาแอร์และค่าซ่อมแยกตามอาการ" },
     { href: "/price/repair", label: "ดูตารางราคาซ่อมแอร์" },
-    { href: "/duan", label: "เงื่อนไขเรียกช่างด่วนนอกเวลา" },
+    { href: "/duan", label: "นัดหลังเลิกงานและวันอาทิตย์" },
     { href: "/contact", label: "ขอใบกำกับภาษีในนามบริษัท" },
   ][index],
 }));
@@ -278,7 +278,7 @@ export default function Home() {
               <IconChevron className="h-4 w-4" />
             </Link>
             <Link href="/duan" className="btn-ghost" data-cta="home-duan">
-              ต้องการช่างด่วนหรือนอกเวลา
+              ต้องการนัดช่วงเย็นหรือวันอาทิตย์
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>
@@ -550,7 +550,7 @@ export default function Home() {
             </a>
             <span className="inline-flex items-center gap-2 px-2 text-sm text-ink-soft">
               <IconClock className="h-5 w-5 text-brand-600" />
-              {site.daysLabel} {site.hours} · {site.closedNote}
+              {site.daysLabel} {site.hours} · {site.sundayNote}
             </span>
           </div>
         </div>

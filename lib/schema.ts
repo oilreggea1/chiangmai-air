@@ -135,13 +135,22 @@ export function localBusinessSchema() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        // จันทร์–เสาร์เท่านั้น วันอาทิตย์หยุด จึงไม่อยู่ในรายการ
+        // จันทร์–เสาร์ 08:00–20:00 ขยายถึงสองทุ่มเมื่อ 25 ก.ย. 2569
         dayOfWeek: [
           "Monday", "Tuesday", "Wednesday",
           "Thursday", "Friday", "Saturday",
         ],
         opens: site.hoursOpen,
         closes: site.hoursClose,
+      },
+      {
+        // วันอาทิตย์รับเฉพาะงานที่จองล่วงหน้า จึงประกาศเป็นช่วงเวลาที่รับนัดได้
+        // ไม่ใช่การเปิดหน้าร้านปกติ แต่ schema ไม่มีสถานะ "นัดล่วงหน้าเท่านั้น"
+        // การไม่ประกาศเลยจะทำให้ Google แสดงว่าปิด ซึ่งผิดจากความจริงมากกว่า
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Sunday"],
+        opens: site.hoursOpen,
+        closes: "18:00",
       },
     ],
     // googleBusinessUrl ยังว่างจนกว่าโปรไฟล์จะยืนยันผ่าน จึงกรองออกก่อน

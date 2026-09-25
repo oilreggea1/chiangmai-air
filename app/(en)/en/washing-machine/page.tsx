@@ -130,7 +130,7 @@ export default function EnWashingMachinePage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              Top loaders from {p.washer.topLoad} THB · front loaders from {p.washer.frontLoad} THB · Mon–Sat 8:00–18:00
+              Top loaders from {p.washer.topLoad} THB · front loaders from {p.washer.frontLoad} THB · Mon–Sat 8:00–20:00, Sunday by advance booking
             </p>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">

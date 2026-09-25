@@ -110,7 +110,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-              {en ? "Mon–Sat 08:00–18:00 · closed Sunday" : "周一至周六 08:00–18:00 · 周日休息"}
+              {en ? "Mon–Sat 08:00–20:00 · Sunday by advance booking" : "周一至周六 08:00–20:00 · 周日需提前预约"}
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
@@ -214,7 +214,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
                 ฟุตเตอร์เป็น Server Component จึงติดไปกับ HTML ทุกหน้าโดยไม่ต้องรอ JS
               */}
               <Link href="/duan" className="text-ink-soft hover:text-brand-700 hover:underline">
-                เรียกช่างด่วน นอกเวลา
+                นัดเย็น / วันอาทิตย์
               </Link>
             </li>
             <li>
@@ -320,7 +320,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
               {site.daysLabel} {site.hours}
               <br />
-              {site.closedNote}
+              {site.sundayNote}
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
