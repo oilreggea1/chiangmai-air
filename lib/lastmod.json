@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-25",
   "files": {
-    "app/(en)/en/about/page.tsx": "2026-09-24",
+    "app/(en)/en/about/page.tsx": "2026-09-25",
     "app/(en)/en/airbnb/page.tsx": "2026-09-24",
     "app/(en)/en/areas/page.tsx": "2026-09-24",
     "app/(en)/en/installation/page.tsx": "2026-09-25",
@@ -70,6 +70,7 @@
     "components/ReelCard.tsx": "2026-09-24",
     "components/ReelsShowcase.tsx": "2026-09-24",
     "components/Shell.tsx": "2026-09-25",
+    "components/SlotBooking.tsx": "2026-09-25",
     "components/Spotlight.tsx": "2026-09-25",
     "components/StickyCta.tsx": "2026-08-30",
     "content/articles/air-mai-yen-sa-het.ts": "2026-08-30",
@@ -108,6 +109,7 @@
     "lib/content-types.ts": "2026-09-24",
     "lib/lastmod.ts": "2026-09-24",
     "lib/leads.ts": "2026-08-30",
+    "lib/line-book.ts": "2026-09-25",
     "lib/repair-guides.ts": "2026-08-05",
     "lib/repair.ts": "2026-08-30",
     "lib/schema.ts": "2026-09-25",

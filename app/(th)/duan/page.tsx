@@ -5,6 +5,7 @@ import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
+import { SlotBooking } from "@/components/SlotBooking";
 
 /**
  * หน้าสำหรับคำค้นตอนร้อนใจ เช่น ช่างแอร์ด่วนเชียงใหม่ ช่างแอร์วันอาทิตย์ ช่างแอร์หลังเลิกงาน
@@ -112,6 +113,8 @@ export default function DuanPage() {
             <IconClock className="h-5 w-5 text-brand-600" />
             เวลาทำการ {site.daysLabel} {site.hours} · {site.sundayNote}
           </p>
+
+          <SlotBooking className="mt-9 max-w-2xl" />
         </section>
       </div>
 

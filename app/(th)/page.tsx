@@ -8,6 +8,7 @@ import { thaiDate } from "@/lib/lastmod";
 import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
+import { SlotBooking } from "@/components/SlotBooking";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
 const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
@@ -553,6 +554,8 @@ export default function Home() {
               {site.daysLabel} {site.hours} · {site.sundayNote}
             </span>
           </div>
+
+          <SlotBooking className="mt-8 max-w-2xl" />
         </div>
       </section>
 

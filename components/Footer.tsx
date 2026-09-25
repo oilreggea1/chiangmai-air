@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { bookEveningUrl, bookSundayUrl, bookEveningUrlEn, bookSundayUrlEn, bookEveningUrlZh, bookSundayUrlZh } from "@/lib/line-book";
 import { site, services, areas } from "@/lib/site";
 import { IconPhone, IconLine, IconPin, IconClock, IconSnow } from "./Icons";
 
@@ -110,7 +111,29 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-              {en ? "Mon–Sat 08:00–20:00 · Sunday by advance booking" : "周一至周六 08:00–20:00 · 周日需提前预约"}
+              <span>
+                {en ? "Mon–Sat 08:00–20:00 · Sunday by advance booking" : "周一至周六 08:00–20:00 · 周日需提前预约"}
+                <span className="mt-2 flex flex-col gap-1.5">
+                  <a
+                    href={en ? bookEveningUrlEn : bookEveningUrlZh}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex font-semibold text-brand-700 hover:underline"
+                    data-cta="intl-footer-book-evening"
+                  >
+                    {en ? "Book an evening slot" : "预约下班后时段"}
+                  </a>
+                  <a
+                    href={en ? bookSundayUrlEn : bookSundayUrlZh}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex font-semibold text-brand-700 hover:underline"
+                    data-cta="intl-footer-book-sunday"
+                  >
+                    {en ? "Book a Sunday slot" : "提前预约周日"}
+                  </a>
+                </span>
+              </span>
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
@@ -318,9 +341,31 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
-              {site.daysLabel} {site.hours}
-              <br />
-              {site.sundayNote}
+              <span>
+                {site.daysLabel} {site.hours}
+                <br />
+                {site.sundayNote}
+                <span className="mt-2 flex flex-col gap-1.5">
+                  <a
+                    href={bookEveningUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex font-semibold text-brand-700 hover:underline"
+                    data-cta="footer-book-evening"
+                  >
+                    จองคิวเย็นหลังเลิกงาน
+                  </a>
+                  <a
+                    href={bookSundayUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex font-semibold text-brand-700 hover:underline"
+                    data-cta="footer-book-sunday"
+                  >
+                    จองคิววันอาทิตย์ล่วงหน้า
+                  </a>
+                </span>
+              </span>
             </li>
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />

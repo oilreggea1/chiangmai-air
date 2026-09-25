@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { IconPhone, IconLine, IconChevron, IconStar, IconCheck } from "./Icons";
+import { SlotBookingLinks } from "./SlotBooking";
 
 /** แถบ CTA ปิดท้ายทุกหน้า */
 export function CtaBand({
@@ -50,6 +51,7 @@ export function CtaBand({
             <p className="mt-6 text-sm text-brand-200">
               {site.daysLabel} {site.hours} · {site.sundayShort}
             </p>
+            <SlotBookingLinks />
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconPhone, IconLine, IconPin, IconClock, IconChevron, IconShield } from "@/components/Icons";
 import { FaqList, Breadcrumbs } from "@/components/Blocks";
+import { SlotBooking } from "@/components/SlotBooking";
 
 const title = "ติดต่อช่างแอร์เชียงใหม่ | โปรเฟรชแคร์";
 const description =
@@ -162,6 +163,8 @@ export default function Contact() {
                 </dd>
               </div>
             </dl>
+
+            <SlotBooking className="mt-6" />
           </div>
 
           <div className="flex flex-col gap-3">
