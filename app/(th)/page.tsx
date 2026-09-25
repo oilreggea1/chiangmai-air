@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, services, areas, reviews, faqs, gallery, edges, heroPhotos, thumbOf, p, btu } from "@/lib/site";
+import { site, services, areas, reviews, faqs, edges, heroPhotos, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import { thaiDate } from "@/lib/lastmod";
@@ -9,6 +9,8 @@ import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
+import { BeforeAfterPairs } from "@/components/BeforeAfterPairs";
+import { topPairs, portfolioPairs } from "@/lib/featured-pairs";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
 const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
@@ -286,69 +288,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- รีวิว ---------- */}
-      <section className="section bg-sand">
-        <div className="wrap">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">ลูกค้าใช้บริการจริง</p>
-            <h2 className="h2 mt-4">ความเห็นจากลูกค้าในเชียงใหม่</h2>
-            <p className="lead mt-3">
-              ความเห็นจากลูกค้าที่เรียกผมไปดูแลแอร์ถึงบ้านในเชียงใหม่ รายการที่มีลิงก์กำกับ
-              เปิดดูต้นฉบับบนเพจได้โดยตรง และถ้าอยากเห็นเนื้องานมากกว่าคำพูด
-              ผมเปิดรายงานก่อน–หลังทุกเคสไว้ให้อ่านทั้งหมด
-            </p>
-          </div>
-          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
-            {reviews.map((r) => (
-              <ReviewCard key={r.name} {...r} />
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/case-study" className="btn-ghost">
-              อ่านรีวิวงานจริง ก่อน–หลัง ทุกเคส
-              <IconChevron className="h-4 w-4" />
-            </Link>
-            <a href={site.facebook} target="_blank" rel="noopener" className="btn-ghost sm:ml-3">
-              ดูผลงานจริงบน Facebook
-              <IconChevron className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* ---------- คู่ภาพก่อน–หลัง วางสูงเพราะเป็นหลักฐานที่แข็งที่สุดที่มี ---------- */}
+      <BeforeAfterPairs
+        pairs={topPairs}
+        tone="sand"
+        eyebrow="หลักฐานจากหน้างาน"
+        heading="ชิ้นเดียวกัน ก่อนล้างและหลังล้าง"
+        lead="ภาพสองใบในแต่ละการ์ดคือชิ้นส่วนเดียวกัน ถ่ายในงานเดียวกัน กดเข้าไปอ่านได้ว่าเจออะไรและทำอะไรไปบ้าง"
+      />
 
-      {/* ---------- ผลงาน ---------- */}
-      <section className="section band-dark" id="portfolio">
-        <div className="wrap">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">ผลงานจริง</p>
-            <h2 className="h2 mt-4">ดูงานก่อนตัดสินใจ</h2>
-            <p className="lead mt-3">ภาพจากหน้างานจริงในเชียงใหม่ ตั้งแต่ปูผ้าใบจนถึงชิ้นส่วนที่ถอดล้าง</p>
-          </div>
-          <ul className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {gallery.slice(0, 6).map((g) => (
-              <li key={g.src} className="overflow-hidden rounded-xl bg-brand-800 ring-1 ring-white/15">
-                <Image
-                  // กริดสี่เหลี่ยมแบบเดียวกับหน้าผลงาน จึงใช้ภาพย่อชุดเดียวกัน
-                  // ดูเหตุผลใน thumbOf ที่ lib/site.ts
-                  src={thumbOf(g.src)}
-                  alt={g.alt}
-                  width={480}
-                  height={480}
-                  loading="lazy"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="aspect-square w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 text-center">
-            <Link href="/portfolio" className="btn-ghost">
-              ดูผลงานทั้งหมด
-              <IconChevron className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* ---------- ผลงาน: คู่ภาพก่อน–หลังที่ตรวจด้วยตาแล้วว่าเป็นชิ้นเดียวกัน ---------- */}
+      <div id="portfolio">
+        <BeforeAfterPairs
+          pairs={portfolioPairs}
+          tone="dark"
+          columns={3}
+          eyebrow="ผลงานจริง"
+          heading="ดูงานก่อนตัดสินใจ"
+          lead="ทุกคู่ด้านล่างเป็นชิ้นส่วนเดียวกัน ถ่ายก่อนล้างและหลังล้างในงานเดียวกัน ไม่ได้จับคู่ข้ามงาน"
+          ctaHref="/portfolio"
+          ctaLabel="ดูผลงานทั้งหมด"
+        />
+      </div>
 
       {/* ---------- จุดต่างจากคู่แข่ง ---------- */}
       <section className="section">
@@ -467,6 +428,36 @@ export default function Home() {
               ดูคำตอบราคาและเงื่อนไขจากช่าง
               <IconChevron className="h-4 w-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- รีวิว ---------- */}
+      <section className="section bg-sand">
+        <div className="wrap">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="eyebrow">ลูกค้าใช้บริการจริง</p>
+            <h2 className="h2 mt-4">ความเห็นจากลูกค้าในเชียงใหม่</h2>
+            <p className="lead mt-3">
+              ความเห็นจากลูกค้าที่เรียกผมไปดูแลแอร์ถึงบ้านในเชียงใหม่ รายการที่มีลิงก์กำกับ
+              เปิดดูต้นฉบับบนเพจได้โดยตรง และถ้าอยากเห็นเนื้องานมากกว่าคำพูด
+              ผมเปิดรายงานก่อน–หลังทุกเคสไว้ให้อ่านทั้งหมด
+            </p>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
+            {reviews.map((r) => (
+              <ReviewCard key={r.name} {...r} />
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/case-study" className="btn-ghost">
+              อ่านรีวิวงานจริง ก่อน–หลัง ทุกเคส
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <a href={site.facebook} target="_blank" rel="noopener" className="btn-ghost sm:ml-3">
+              ดูผลงานจริงบน Facebook
+              <IconChevron className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
