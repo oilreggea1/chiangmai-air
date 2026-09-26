@@ -64,9 +64,10 @@ export function JobGallery({ job }: { job: Job }) {
       </p>
       {job.summary && <p className="mt-2 text-[15px] leading-8 text-ink-soft">{job.summary}</p>}
       <div className="mt-6 space-y-6">
-        <Row label="ก่อนล้าง" tone="before" photos={job.before} />
-        <Row label="ระหว่างล้าง" tone="during" photos={job.during} />
-        <Row label="หลังล้าง" tone="after" photos={job.after} />
+        {/* ป้ายกองใช้คำกริยาของงานนั้น งานติดตั้งจะได้ไม่ถูกเขียนว่าก่อนล้าง */}
+        <Row label={`ก่อน${job.verb}`} tone="before" photos={job.before} />
+        <Row label={`ระหว่าง${job.verb}`} tone="during" photos={job.during} />
+        <Row label={`หลัง${job.verb}`} tone="after" photos={job.after} />
       </div>
     </article>
   );

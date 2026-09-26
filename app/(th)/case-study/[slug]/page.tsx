@@ -82,16 +82,18 @@ export default async function WorkCasePage({ params }: Props) {
           /* ถ้าเคสนี้ผูกกับโพสต์ต้นทางได้ ให้ใช้รูปทั้งงานจากโพสต์นั้น ซึ่งมีหลายสิบรูป
              เพราะรูปชุดเดิมในเคสมีแค่ไม่กี่ใบ ทำให้ดูไม่ออกว่าถอดล้างทุกชิ้นส่วนจริง */
           const job = jobs.find((j) => j.id === caseToJob[item.slug]);
+          /* คำกริยาของงานต้องตรงชนิดงาน งานติดตั้งห้ามเขียนว่าก่อนล้าง */
+          const verb = job ? job.verb : item.service.replace(/แอร์|เครื่องซักผ้า/g, "").trim() || "ทำ";
           const groups = job
             ? [
-                { key: "ก่อนทำ", label: "ก่อนล้าง", chip: "bg-brand-600 text-white", photos: job.before },
-                { key: "ระหว่างทำ", label: "ระหว่างล้าง", chip: "bg-brand-200 text-brand-900", photos: job.during },
-                { key: "หลังทำ", label: "หลังล้าง", chip: "bg-gradient-to-b from-ice to-accent text-[#04121F]", photos: job.after },
+                { key: "ก่อนทำ", label: `ก่อน${verb}`, chip: "bg-brand-600 text-white", photos: job.before },
+                { key: "ระหว่างทำ", label: `ระหว่าง${verb}`, chip: "bg-brand-200 text-brand-900", photos: job.during },
+                { key: "หลังทำ", label: `หลัง${verb}`, chip: "bg-gradient-to-b from-ice to-accent text-[#04121F]", photos: job.after },
               ].filter((g) => g.photos.length > 0)
             : [
-                { key: "ก่อนทำ" as const, label: "ก่อนล้าง", chip: "bg-brand-600 text-white" },
-                { key: "ระหว่างทำ" as const, label: "ระหว่างล้าง", chip: "bg-brand-200 text-brand-900" },
-                { key: "หลังทำ" as const, label: "หลังล้าง", chip: "bg-gradient-to-b from-ice to-accent text-[#04121F]" },
+                { key: "ก่อนทำ" as const, label: `ก่อน${verb}`, chip: "bg-brand-600 text-white" },
+                { key: "ระหว่างทำ" as const, label: `ระหว่าง${verb}`, chip: "bg-brand-200 text-brand-900" },
+                { key: "หลังทำ" as const, label: `หลัง${verb}`, chip: "bg-gradient-to-b from-ice to-accent text-[#04121F]" },
               ].map((g) => ({ ...g, photos: item.images.filter((i) => i.phase === g.key) }))
                .filter((g) => g.photos.length > 0);
           const total = groups.reduce((n, g) => n + g.photos.length, 0);

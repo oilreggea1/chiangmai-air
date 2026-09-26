@@ -31,8 +31,12 @@ export default function KonLangPage() {
     { name: "หน้าแรก", path: "/" },
     { name: "รูปงานก่อน–หลัง", path: "/kon-lang" },
   ];
-  const ac = jobs.filter((j) => j.serviceSlug === "lang-air");
-  const wm = jobs.filter((j) => j.serviceSlug === "lang-washing-machine");
+  // จัดกลุ่มตามชนิดงานจริง ไม่ผูกกับรายการตายตัว เผื่อมีงานซ่อมหรืองานย้ายเพิ่มมา
+  const bySvc = jobs.reduce<Record<string, typeof jobs>>((acc, j) => {
+    (acc[j.service] ||= []).push(j);
+    return acc;
+  }, {});
+  const order = Object.entries(bySvc).sort((a, b) => b[1].length - a[1].length);
 
   return (
     <>
@@ -63,32 +67,23 @@ export default function KonLangPage() {
         </section>
       </div>
 
-      <section className="section">
-        <div className="wrap">
-          <h2 className="h2">งานล้างแอร์ {ac.length} งาน</h2>
-          <p className="lead mt-3 max-w-2xl">คอยล์ร้อน คอยล์เย็น แผ่นกรอง ถาดรับน้ำ บานสวิง และชิ้นส่วนที่ถอดออกมาล้างทีละชิ้น</p>
-          <div className="mt-9 space-y-6">
-            {ac.map((j) => (
-              <JobGallery key={j.id} job={j} />
-            ))}
+      {order.map(([svc, list], idx) => (
+        <section key={svc} className={idx % 2 === 1 ? "section bg-sand" : "section"}>
+          <div className="wrap">
+            <h2 className="h2">
+              {svc} {list.length} งาน
+            </h2>
+            <p className="lead mt-3 max-w-2xl">
+              รวม {list.reduce((n, j) => n + jobPhotoCount(j), 0)} รูป ลงครบทุกใบที่ถ่ายไว้ในแต่ละงาน
+            </p>
+            <div className="mt-9 space-y-6">
+              {list.map((j) => (
+                <JobGallery key={j.id} job={j} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section bg-sand">
-        <div className="wrap">
-          <h2 className="h2">งานถอดล้างเครื่องซักผ้า {wm.length} งาน</h2>
-          <p className="lead mt-3 max-w-2xl">
-            ถังชั้นใน ถังชั้นนอก ใต้จานซัก และโครงหลังถังปั่น ซึ่งเป็นจุดที่โปรแกรมล้างถังในตัวเครื่องไปไม่ถึง
-            เพราะน้ำเข้าไม่ถึงด้านที่มองไม่เห็น
-          </p>
-          <div className="mt-9 space-y-6">
-            {wm.map((j) => (
-              <JobGallery key={j.id} job={j} />
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <CtaBand
         title="อยากให้เครื่องที่บ้านเป็นแบบกองล่าง"
