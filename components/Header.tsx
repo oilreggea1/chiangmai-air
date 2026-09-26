@@ -34,6 +34,7 @@ const navGroups: NavGroup[] = [
       })),
       { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
       { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
+      { href: "/kon-lang", label: "รูปก่อน–หลัง" },
       { href: "/duan", label: "นัดเย็น / วันอาทิตย์" },
     ],
   },

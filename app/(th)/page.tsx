@@ -10,6 +10,8 @@ import {
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
 import { BeforeAfterPairs } from "@/components/BeforeAfterPairs";
+import { BeforeAfterGrid } from "@/components/BeforeAfterGrid";
+import { beforeAfter } from "@/lib/before-after";
 import { topPairs, portfolioPairs } from "@/lib/featured-pairs";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
@@ -186,13 +188,27 @@ export default function Home() {
       </section>
 
       {/* ---------- คู่ภาพก่อน–หลัง วางสูงเพราะเป็นหลักฐานที่แข็งที่สุดที่มี ---------- */}
-      <BeforeAfterPairs
-        pairs={topPairs}
-        tone="sand"
-        eyebrow="หลักฐานจากหน้างาน"
-        heading="ชิ้นเดียวกัน ก่อนล้างและหลังล้าง"
-        lead="ภาพสองใบในแต่ละการ์ดคือชิ้นส่วนเดียวกัน ถ่ายในงานเดียวกัน กดเข้าไปอ่านได้ว่าเจออะไรและทำอะไรไปบ้าง"
-      />
+      <section className="section bg-sand">
+        <div className="wrap">
+          <div className="max-w-2xl">
+            <p className="eyebrow">หลักฐานจากหน้างาน</p>
+            <h2 className="h2 mt-4">ชิ้นเดียวกัน ก่อนล้างและหลังล้าง</h2>
+            <p className="lead mt-3">
+              ภาพสองใบในแต่ละการ์ดคือชิ้นส่วนเดียวกัน ถ่ายในงานเดียวกัน
+              ผมเปิดดูรูปทีละใบเพื่อยืนยันก่อนนำขึ้น คู่ไหนพิสูจน์ไม่ได้ก็ไม่เอาขึ้น
+            </p>
+          </div>
+          <div className="mt-9">
+            <BeforeAfterGrid items={beforeAfter.slice(0, 4)} />
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/kon-lang" className="btn-ghost">
+              ดูรูปก่อน–หลังทั้ง {beforeAfter.length} คู่
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ---------- จองคิวติดตั้งล่วงหน้า (บริการประจำ ไม่ผูกกับวันแคมเปญ)
            โปรตามฤดูกาล (9.9 / 10.10 / 11.11) ให้ห่อด้วย <PromoWindow until="..."> แล้ววางไว้เหนือการ์ดนี้

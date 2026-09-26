@@ -19,6 +19,7 @@ export const SRC = {
   repair: "lib/repair.ts",
   repairGuides: "lib/repair-guides.ts",
   workCases: "lib/work-cases.ts",
+  beforeAfter: "lib/before-after.ts",
 } as const;
 
 /** วันที่ล่าสุดในบรรดาไฟล์ที่ให้มา (ISO YYYY-MM-DD) ถ้าไม่รู้จักไฟล์เลย ใช้วันที่สร้าง JSON */
