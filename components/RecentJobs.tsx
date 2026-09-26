@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { jobs } from "@/lib/jobs";
+import { jobs, jobPhotoCount } from "@/lib/jobs";
 
 /**
  * แถบงานล่าสุดสำหรับหน้าภาษาอังกฤษและจีน
@@ -50,7 +50,7 @@ export function RecentJobs({
           {list.map((j) => (
             <article key={j.id} className="card p-5 sm:p-7">
               <p className="text-xs font-bold text-accent">
-                {new Date(j.date).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {t.note}
+                {new Date(j.date).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {jobPhotoCount(j)} {t.photos} · {t.note}
               </p>
               {(
                 [
@@ -73,8 +73,8 @@ export function RecentJobs({
                       {row.photos.length} {t.photos}
                     </span>
                   </p>
-                  <ul className="mt-3 grid grid-cols-4 gap-2">
-                    {row.photos.slice(0, 4).map((p) => (
+                  <ul className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6">
+                    {row.photos.slice(0, 6).map((p) => (
                       <li key={p.src} className="overflow-hidden rounded-xl bg-slate-100">
                         <Image
                           src={p.src}

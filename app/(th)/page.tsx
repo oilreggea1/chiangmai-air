@@ -10,7 +10,7 @@ import {
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
 import { JobGallery } from "@/components/JobGallery";
-import { jobs } from "@/lib/jobs";
+import { jobs, jobPhotoCount } from "@/lib/jobs";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
 const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
@@ -192,12 +192,14 @@ export default function Home() {
             <p className="eyebrow">รูปจากหน้างานจริง</p>
             <h2 className="h2 mt-4">ก่อนล้าง กับ หลังล้าง ของงานเดียวกัน</h2>
             <p className="lead mt-3">
-              แต่ละงานแยกให้ดูสองกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ
-              เป็นงานเดียวกันทั้งสองกอง ถ่ายจากหน้างานจริง
+              นี่คืองานหนึ่งงาน ลงรูปให้ครบทุกใบที่ถ่ายไว้ แยกเป็นกองก่อนล้าง ระหว่างล้าง และหลังล้าง
+              จะได้เห็นว่าถอดล้างกันทุกชิ้นส่วนจริง ไม่ได้ฉีดน้ำผ่าน ๆ แล้วจบ
             </p>
           </div>
           <div className="mt-9 space-y-6">
-            {jobs.slice(0, 2).map((j) => (
+            {/* โชว์งานเดียวแต่ครบทุกรูป ดีกว่าโชว์หลายงานแบบตัดรูป
+                เพราะสิ่งที่ต้องพิสูจน์คือความละเอียดของงาน ไม่ใช่จำนวนงาน */}
+            {[[...jobs].sort((a, b) => jobPhotoCount(b) - jobPhotoCount(a))[0]].map((j) => (
               <JobGallery key={j.id} job={j} />
             ))}
           </div>

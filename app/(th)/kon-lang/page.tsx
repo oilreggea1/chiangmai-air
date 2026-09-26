@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { jobs } from "@/lib/jobs";
+import { jobs, jobPhotoCount } from "@/lib/jobs";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
@@ -15,7 +15,7 @@ import { JobGallery } from "@/components/JobGallery";
  * จึงเปลี่ยนมาโชว์เป็นสองกองต่อหนึ่งงาน 26 ก.ย. 2569
  * ห้ามกลับไปทำเป็นคู่ชิ้นต่อชิ้นอีก เว้นแต่เจ้าของสั่งเอง
  */
-const totalPhotos = jobs.reduce((n, j) => n + j.before.length + j.after.length, 0);
+const totalPhotos = jobs.reduce((n, j) => n + jobPhotoCount(j), 0);
 const title = "รูปงานจริง ก่อนล้างและหลังล้าง ทุกงานถ่ายจากหน้างาน";
 const description = `รวมรูปจากหน้างานจริงในเชียงใหม่ ${jobs.length} งาน ${totalPhotos} รูป แยกให้ดูชัดว่าก่อนล้างเป็นอย่างไรและหลังล้างเป็นอย่างไร ทั้งงานล้างแอร์และถอดล้างเครื่องซักผ้า`;
 
@@ -46,8 +46,9 @@ export default function KonLangPage() {
             งานจริง {jobs.length} งาน ดูก่อนล้างและหลังล้าง
           </h1>
           <p className="lead mt-5 max-w-3xl">
-            แต่ละงานแยกให้ดูสองกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ
-            เป็นงานเดียวกันทั้งสองกอง ถ่ายจากหน้างานจริง ไม่ได้เอารูปจากงานอื่นมาปน
+แต่ละงานลงรูปให้ครบทุกใบที่ถ่ายไว้ เฉลี่ยงานละ 30 รูป
+            แยกเป็นกองก่อนล้าง กองระหว่างล้าง และกองหลังล้าง
+            จะได้เห็นว่าถอดล้างกันทุกชิ้นส่วนจริง ไม่ได้ฉีดน้ำผ่าน ๆ แล้วจบ
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
             <Link href="/case-study" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">
@@ -65,7 +66,7 @@ export default function KonLangPage() {
       <section className="section">
         <div className="wrap">
           <h2 className="h2">งานล้างแอร์ {ac.length} งาน</h2>
-          <p className="lead mt-3 max-w-2xl">คอยล์ร้อน คอยล์เย็น แผ่นกรอง ถาดรับน้ำ และชิ้นส่วนที่ถอดออกมาล้าง</p>
+          <p className="lead mt-3 max-w-2xl">คอยล์ร้อน คอยล์เย็น แผ่นกรอง ถาดรับน้ำ บานสวิง และชิ้นส่วนที่ถอดออกมาล้างทีละชิ้น</p>
           <div className="mt-9 space-y-6">
             {ac.map((j) => (
               <JobGallery key={j.id} job={j} />
