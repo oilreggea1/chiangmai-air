@@ -9,10 +9,8 @@ import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
-import { BeforeAfterPairs } from "@/components/BeforeAfterPairs";
-import { BeforeAfterGrid } from "@/components/BeforeAfterGrid";
-import { beforeAfter } from "@/lib/before-after";
-import { topPairs, portfolioPairs } from "@/lib/featured-pairs";
+import { JobGallery } from "@/components/JobGallery";
+import { jobs } from "@/lib/jobs";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
 const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
@@ -187,23 +185,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- คู่ภาพก่อน–หลัง วางสูงเพราะเป็นหลักฐานที่แข็งที่สุดที่มี ---------- */}
+      {/* ---------- รูปงานจริง แยกกองก่อนล้าง/หลังล้าง วางสูงเพราะเป็นหลักฐานที่แข็งที่สุด ---------- */}
       <section className="section bg-sand">
         <div className="wrap">
           <div className="max-w-2xl">
-            <p className="eyebrow">หลักฐานจากหน้างาน</p>
-            <h2 className="h2 mt-4">ชิ้นเดียวกัน ก่อนล้างและหลังล้าง</h2>
+            <p className="eyebrow">รูปจากหน้างานจริง</p>
+            <h2 className="h2 mt-4">ก่อนล้าง กับ หลังล้าง ของงานเดียวกัน</h2>
             <p className="lead mt-3">
-              ภาพสองใบในแต่ละการ์ดคือชิ้นส่วนเดียวกัน ถ่ายในงานเดียวกัน
-              ผมเปิดดูรูปทีละใบเพื่อยืนยันก่อนนำขึ้น คู่ไหนพิสูจน์ไม่ได้ก็ไม่เอาขึ้น
+              แต่ละงานแยกให้ดูสองกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ
+              เป็นงานเดียวกันทั้งสองกอง ถ่ายจากหน้างานจริง
             </p>
           </div>
-          <div className="mt-9">
-            <BeforeAfterGrid items={beforeAfter.slice(0, 4)} />
+          <div className="mt-9 space-y-6">
+            {jobs.slice(0, 2).map((j) => (
+              <JobGallery key={j.id} job={j} />
+            ))}
           </div>
           <div className="mt-8 text-center">
             <Link href="/kon-lang" className="btn-ghost">
-              ดูรูปก่อน–หลังทั้ง {beforeAfter.length} คู่
+              ดูรูปงานจริงทั้ง {jobs.length} งาน
               <IconChevron className="h-4 w-4" />
             </Link>
           </div>
@@ -313,19 +313,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- ผลงาน: คู่ภาพก่อน–หลังที่ตรวจด้วยตาแล้วว่าเป็นชิ้นเดียวกัน ---------- */}
-      <div id="portfolio">
-        <BeforeAfterPairs
-          pairs={portfolioPairs}
-          tone="dark"
-          columns={3}
-          eyebrow="ผลงานจริง"
-          heading="ดูงานก่อนตัดสินใจ"
-          lead="ทุกคู่ด้านล่างเป็นชิ้นส่วนเดียวกัน ถ่ายก่อนล้างและหลังล้างในงานเดียวกัน ไม่ได้จับคู่ข้ามงาน"
-          ctaHref="/portfolio"
-          ctaLabel="ดูผลงานทั้งหมด"
-        />
-      </div>
+      {/* ---------- ผลงาน: ลิงก์ไปหน้ารวมรูปงานจริง ---------- */}
+      <section className="section band-dark" id="portfolio">
+        <div className="wrap text-center">
+          <p className="eyebrow">ผลงานจริง</p>
+          <h2 className="h2 mt-4 text-white">ดูงานก่อนตัดสินใจ</h2>
+          <p className="lead mx-auto mt-3 max-w-2xl text-brand-100">
+            รูปทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ แยกให้ดูว่าก่อนล้างเป็นอย่างไร และหลังล้างเป็นอย่างไร
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link href="/kon-lang" className="btn-call px-6 py-3.5">
+              รูปงานจริง {jobs.length} งาน
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/portfolio" className="btn-ghost px-6 py-3.5">
+              คลังรูปผลงานทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ---------- จุดต่างจากคู่แข่ง ---------- */}
       <section className="section">

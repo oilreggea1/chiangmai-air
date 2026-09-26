@@ -28,7 +28,7 @@ const extraSources: Record<string, string[]> = {
   "/portfolio": [SRC.site],
   "/videos": [SRC.reels],
   "/case-study": [SRC.workCases],
-  "/kon-lang": [SRC.beforeAfter],
+  "/kon-lang": [SRC.jobs],
   "/answers": [SRC.site],
   "/en/pricing": [SRC.site],
   "/en/installation": [SRC.site],

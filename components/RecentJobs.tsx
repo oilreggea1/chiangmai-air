@@ -1,67 +1,105 @@
 import Image from "next/image";
 import Link from "next/link";
-import { workCases } from "@/lib/work-cases";
-import { firstVerifiedPair } from "@/lib/featured-pairs";
+import { jobs } from "@/lib/jobs";
 
 /**
- * แถบ "งานล่าสุดจากหน้างานจริง" สำหรับหน้าภาษาอังกฤษ/จีน (24 ก.ย. 2569)
- * ดึงเคสจาก lib/work-cases ตาม serviceSlug ที่ส่งมา เฉพาะเคสที่มีวันจริง เรียงใหม่สุดก่อน
- * รายงานตัวเต็มเป็นภาษาไทย (ลิงก์ hrefLang="th")
+ * แถบงานล่าสุดสำหรับหน้าภาษาอังกฤษและจีน
  *
- * **แก้ 25 ก.ย. 2569** เดิมการ์ดหยิบรูป "ก่อนทำ" ใบแรกมาคู่กับ "หลังทำ" ใบสุดท้ายโดยอัตโนมัติ
- * ซึ่งให้คู่ที่เป็นคนละชิ้นส่วน และมีเคสหนึ่งที่ได้คอยล์ร้อนคนละเครื่องคนละยี่ห้อมาวางคู่กัน
- * ตอนนี้ใช้เฉพาะคู่ที่ขึ้นทะเบียนไว้ใน lib/featured-pairs.ts ซึ่งเปิดดูรูปจริงยืนยันแล้วทุกคู่
- * เคสที่ยังไม่มีคู่ที่ตรวจแล้วจะไม่ถูกนำมาโชว์ ยอมโชว์น้อยเคสดีกว่าโชว์คู่ที่เป็นคนละเครื่อง
+ * **แก้ 26 ก.ย. 2569** เดิมโชว์เป็นคู่ก่อน–หลังชิ้นต่อชิ้น
+ * เจ้าของตรวจเองแล้วพบว่าจับคู่ผิดเยอะ จึงเลิกจับคู่ทั้งหมด
+ * ตอนนี้โชว์เป็นสองแถวต่อหนึ่งงาน แถวบนก่อนล้าง แถวล่างหลังล้าง
+ * ไม่ได้อ้างว่ารูปไหนคู่กับรูปไหน จึงไม่มีโอกาสผิด
  */
-const serviceLabel: Record<"en" | "zh-CN", Record<string, string>> = {
-  en: { "lang-air": "Aircon cleaning", "som-air": "Aircon repair", "tid-tang-air": "Installation", "yai-air": "Relocation", "lang-washing-machine": "Washing machine" },
-  "zh-CN": { "lang-air": "空调清洗", "som-air": "空调维修", "tid-tang-air": "空调安装", "yai-air": "空调移机", "lang-washing-machine": "洗衣机清洗" },
-};
+const L = {
+  en: { before: "Before", after: "After", note: "Same job, report in Thai", photos: "photos" },
+  "zh-CN": { before: "清洗前", after: "清洗后", note: "同一单工作，泰文记录", photos: "张" },
+} as const;
 
-export function RecentJobs({ lang, slugs, eyebrow, heading, lead, note, limit = 6, tone = "white" }: {
+export function RecentJobs({
+  lang,
+  slugs,
+  eyebrow,
+  heading,
+  lead,
+  limit = 3,
+  tone = "white",
+}: {
   lang: "en" | "zh-CN";
   slugs: string[];
   eyebrow: string;
   heading: string;
   lead: string;
-  /** ข้อความใต้การ์ด เช่น "Before and after · report in Thai" */
-  note: string;
+  /** ไม่ได้ใช้แล้ว เก็บไว้ให้หน้าเดิมที่ส่งมาไม่พัง */
+  note?: string;
   limit?: number;
   tone?: "white" | "sand";
 }) {
-  const jobs = workCases
-    .filter((c) => slugs.includes(c.serviceSlug) && c.date)
-    .map((c) => ({ c, pair: firstVerifiedPair(c.slug) }))
-    .filter((x): x is { c: (typeof workCases)[number]; pair: NonNullable<ReturnType<typeof firstVerifiedPair>> } => x.pair !== null)
-    .sort((a, b) => b.c.date!.localeCompare(a.c.date!))
-    .slice(0, limit);
-  if (jobs.length === 0) return null;
+  const list = jobs.filter((j) => slugs.includes(j.serviceSlug)).slice(-limit).reverse();
+  if (list.length === 0) return null;
+  const t = L[lang];
   const locale = lang === "en" ? "en-GB" : "zh-CN";
+
   return (
     <section className={`section ${tone === "sand" ? "bg-sand" : ""}`} lang={lang}>
       <div className="wrap">
         <p className="eyebrow">{eyebrow}</p>
         <h2 className="h2 mt-4">{heading}</h2>
         <p className="lead mt-3 max-w-2xl">{lead}</p>
-        <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {jobs.map(({ c, pair }) => {
-            const { before, after } = pair;
-            return (
-              <li key={c.slug}>
-                <Link href={`/case-study/${c.slug}`} hrefLang="th" className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
-                  <div className="grid grid-cols-2 gap-0.5 bg-slate-200">
-                    <Image src={before.src} alt={before.alt} width={540} height={540} loading="lazy" sizes="(max-width: 640px) 50vw, 17vw" className="aspect-square w-full object-cover" />
-                    <Image src={after.src} alt={after.alt} width={540} height={540} loading="lazy" sizes="(max-width: 640px) 50vw, 17vw" className="aspect-square w-full object-cover" />
-                  </div>
-                  <div className="p-4">
-                    <span className="text-xs font-bold text-brand-600">{new Date(c.date!).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {serviceLabel[lang][c.serviceSlug] ?? c.service}</span>
-                    <span className="mt-1 block text-sm text-ink-soft">{note}</span>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+
+        <div className="mt-9 space-y-6">
+          {list.map((j) => (
+            <article key={j.id} className="card p-5 sm:p-7">
+              <p className="text-xs font-bold text-accent">
+                {new Date(j.date).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {t.note}
+              </p>
+              {(
+                [
+                  { label: t.before, photos: j.before, dark: true },
+                  { label: t.after, photos: j.after, dark: false },
+                ] as const
+              ).map((row) => (
+                <div key={row.label} className="mt-5">
+                  <p className="flex items-center gap-2 text-sm font-bold">
+                    <span
+                      className={
+                        row.dark
+                          ? "inline-block rounded-lg bg-brand-600 px-2.5 py-1 text-xs text-white"
+                          : "inline-block rounded-lg bg-gradient-to-b from-ice to-accent px-2.5 py-1 text-xs text-[#04121F]"
+                      }
+                    >
+                      {row.label}
+                    </span>
+                    <span className="text-ink-soft">
+                      {row.photos.length} {t.photos}
+                    </span>
+                  </p>
+                  <ul className="mt-3 grid grid-cols-4 gap-2">
+                    {row.photos.slice(0, 4).map((p) => (
+                      <li key={p.src} className="overflow-hidden rounded-xl bg-slate-100">
+                        <Image
+                          src={p.src}
+                          alt={p.alt}
+                          width={480}
+                          height={480}
+                          loading="lazy"
+                          sizes="(max-width: 640px) 25vw, 14vw"
+                          className="aspect-square w-full object-cover"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <Link
+                href="/kon-lang"
+                hrefLang="th"
+                className="mt-5 inline-flex text-sm font-semibold text-brand-700 hover:underline"
+              >
+                {lang === "en" ? "See all jobs" : "查看全部案例"}
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

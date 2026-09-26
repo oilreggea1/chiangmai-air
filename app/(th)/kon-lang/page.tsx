@@ -1,24 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { beforeAfter } from "@/lib/before-after";
+import { jobs } from "@/lib/jobs";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
-import { BeforeAfterGrid } from "@/components/BeforeAfterGrid";
+import { JobGallery } from "@/components/JobGallery";
 
 /**
- * หน้ารวมคู่ภาพก่อน–หลังที่ตรวจแล้วว่าเป็นชิ้นเดียวกันทุกคู่ (26 ก.ย. 2569)
+ * หน้ารวมรูปงานจริง แยกกองก่อนล้างกับกองหลังล้างของแต่ละงาน
  *
- * เหตุผลที่แยกเป็นหน้าของตัวเอง
- * รายงานเคสเล่าเรื่องทั้งงาน ส่วนหน้านี้ตอบคำถามเดียวคือ "ล้างแล้วต่างกันแค่ไหน"
- * คนที่ยังไม่เคยใช้บริการมักอยากเห็นข้อนี้ก่อนอ่านอย่างอื่น
- *
- * ห้ามเพิ่มคู่ใหม่โดยไม่เปิดดูรูปจริง กติกาเต็มอยู่หัวไฟล์ lib/before-after.ts
+ * เดิมหน้านี้โชว์เป็นคู่ก่อน–หลังชิ้นต่อชิ้น เจ้าของตรวจแล้วพบว่าจับคู่ผิดเยอะ
+ * จึงเปลี่ยนมาโชว์เป็นสองกองต่อหนึ่งงาน 26 ก.ย. 2569
+ * ห้ามกลับไปทำเป็นคู่ชิ้นต่อชิ้นอีก เว้นแต่เจ้าของสั่งเอง
  */
-const title = "รูปก่อน–หลังของจริง ล้างแอร์และถอดล้างเครื่องซักผ้า";
-const description = `รวมภาพเทียบก่อนและหลังจากหน้างานจริงในเชียงใหม่ ${beforeAfter.length} คู่ ทั้งงานล้างแอร์และถอดล้างเครื่องซักผ้า ทุกคู่เป็นชิ้นส่วนเดียวกันถ่ายในงานเดียวกัน ไม่ได้จับคู่ข้ามเครื่อง`;
+const totalPhotos = jobs.reduce((n, j) => n + j.before.length + j.after.length, 0);
+const title = "รูปงานจริง ก่อนล้างและหลังล้าง ทุกงานถ่ายจากหน้างาน";
+const description = `รวมรูปจากหน้างานจริงในเชียงใหม่ ${jobs.length} งาน ${totalPhotos} รูป แยกให้ดูชัดว่าก่อนล้างเป็นอย่างไรและหลังล้างเป็นอย่างไร ทั้งงานล้างแอร์และถอดล้างเครื่องซักผ้า`;
 
 export const metadata: Metadata = {
   title,
@@ -30,11 +29,10 @@ export const metadata: Metadata = {
 export default function KonLangPage() {
   const trail = [
     { name: "หน้าแรก", path: "/" },
-    { name: "รูปก่อน–หลัง", path: "/kon-lang" },
+    { name: "รูปงานก่อน–หลัง", path: "/kon-lang" },
   ];
-  const ac = beforeAfter.filter((b) => b.serviceSlug === "lang-air");
-  const wm = beforeAfter.filter((b) => b.serviceSlug === "lang-washing-machine");
-  const other = beforeAfter.filter((b) => !["lang-air", "lang-washing-machine"].includes(b.serviceSlug));
+  const ac = jobs.filter((j) => j.serviceSlug === "lang-air");
+  const wm = jobs.filter((j) => j.serviceSlug === "lang-washing-machine");
 
   return (
     <>
@@ -43,15 +41,13 @@ export default function KonLangPage() {
       <div className="bg-gradient-to-b from-brand-50 to-white">
         <Breadcrumbs trail={trail} />
         <section className="wrap pt-8 pb-12">
-          <p className="eyebrow">หลักฐานจากหน้างาน</p>
+          <p className="eyebrow">รูปจากหน้างานจริง</p>
           <h1 className="mt-5 max-w-3xl text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
-            รูปก่อน–หลังของจริง {beforeAfter.length} คู่
+            งานจริง {jobs.length} งาน ดูก่อนล้างและหลังล้าง
           </h1>
           <p className="lead mt-5 max-w-3xl">
-ทุกคู่ในหน้านี้เป็นชิ้นส่วนเดียวกัน ถ่ายก่อนล้างและหลังล้างในงานเดียวกัน
-            ผมไล่เปิดดูรูปทีละใบเพื่อยืนยันว่าเป็นชิ้นเดียวกันจริงก่อนนำขึ้น
-            บ้านหลังเดียวมักมีหลายเครื่อง ผมจึงไม่จับคู่ข้ามเครื่องเด็ดขาด
-            คู่ไหนที่พิสูจน์ไม่ได้ ผมไม่เอาขึ้นเลย
+            แต่ละงานแยกให้ดูสองกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ
+            เป็นงานเดียวกันทั้งสองกอง ถ่ายจากหน้างานจริง ไม่ได้เอารูปจากงานอื่นมาปน
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
             <Link href="/case-study" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">
@@ -68,41 +64,34 @@ export default function KonLangPage() {
 
       <section className="section">
         <div className="wrap">
-          <h2 className="h2">งานล้างแอร์ {ac.length} คู่</h2>
-          <p className="lead mt-3 max-w-2xl">คอยล์ร้อน คอยล์เย็น แผ่นกรอง ถาดรับน้ำ และบานสวิง ถ่ายมุมเดิมก่อนและหลังล้าง</p>
-          <div className="mt-9">
-            <BeforeAfterGrid items={ac} />
+          <h2 className="h2">งานล้างแอร์ {ac.length} งาน</h2>
+          <p className="lead mt-3 max-w-2xl">คอยล์ร้อน คอยล์เย็น แผ่นกรอง ถาดรับน้ำ และชิ้นส่วนที่ถอดออกมาล้าง</p>
+          <div className="mt-9 space-y-6">
+            {ac.map((j) => (
+              <JobGallery key={j.id} job={j} />
+            ))}
           </div>
         </div>
       </section>
 
-      {wm.length > 0 && (
-        <section className="section bg-sand">
-          <div className="wrap">
-            <h2 className="h2">งานถอดล้างเครื่องซักผ้า {wm.length} คู่</h2>
-            <p className="lead mt-3 max-w-2xl">ถังชั้นใน ถังชั้นนอก ใต้จานซัก และโครงหลังถังปั่น ซึ่งเป็นจุดที่โปรแกรมล้างถังในตัวเครื่องไปไม่ถึง เพราะน้ำเข้าไม่ถึงด้านที่มองไม่เห็น</p>
-            <div className="mt-9">
-              <BeforeAfterGrid items={wm} />
-            </div>
+      <section className="section bg-sand">
+        <div className="wrap">
+          <h2 className="h2">งานถอดล้างเครื่องซักผ้า {wm.length} งาน</h2>
+          <p className="lead mt-3 max-w-2xl">
+            ถังชั้นใน ถังชั้นนอก ใต้จานซัก และโครงหลังถังปั่น ซึ่งเป็นจุดที่โปรแกรมล้างถังในตัวเครื่องไปไม่ถึง
+            เพราะน้ำเข้าไม่ถึงด้านที่มองไม่เห็น
+          </p>
+          <div className="mt-9 space-y-6">
+            {wm.map((j) => (
+              <JobGallery key={j.id} job={j} />
+            ))}
           </div>
-        </section>
-      )}
-
-      {other.length > 0 && (
-        <section className="section">
-          <div className="wrap">
-            <h2 className="h2">งานติดตั้งและย้ายแอร์ {other.length} คู่</h2>
-            <p className="lead mt-3 max-w-2xl">จุดเดิมก่อนลงมือ เทียบกับจุดเดียวกันหลังติดตั้งเสร็จ</p>
-            <div className="mt-9">
-              <BeforeAfterGrid items={other} />
-            </div>
-          </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <CtaBand
-        title="อยากให้แอร์ที่บ้านเป็นแบบภาพขวา"
-        subtitle="ส่งรูปแอร์ที่บ้านมาทาง LINE ได้เลย ผมประเมินให้ก่อนโดยไม่คิดค่าใช้จ่าย และแจ้งราคาครบก่อนเริ่มงาน"
+        title="อยากให้เครื่องที่บ้านเป็นแบบกองล่าง"
+        subtitle="ส่งรูปเครื่องที่บ้านมาทาง LINE ได้เลย ผมประเมินให้ก่อนโดยไม่คิดค่าใช้จ่าย และแจ้งราคาครบก่อนเริ่มงาน"
       />
     </>
   );
