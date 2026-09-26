@@ -65,6 +65,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // สองเคสนี้มีรูปเครื่องของงานอื่นปนอยู่ (เคส Haier มีรูปเครื่อง Toshiba 3 ใบ
+      // เคส Toshiba มีรูปเครื่อง Haier 1 ใบ) พอเอารูปที่ไม่ใช่เครื่องเดียวกันออก
+      // ก็ไม่เหลือคู่ก่อน-หลังที่พิสูจน์ได้ตามที่ชื่อเรื่องรับปากไว้ จึงเอารายงานออกทั้งเคส
+      { source: "/case-study/haier-outdoor-coil-wash-2569-05", destination: "/kon-lang", permanent: true },
+      { source: "/case-study/toshiba-inverter-deep-wash-2569-05", destination: "/kon-lang", permanent: true },
       // เคสนี้มีรูปใบเดียวและเป็นรูปที่เห็นเท้าเปล่า เจ้าของสั่งเอาออก 25 ก.ย. 2569
       // เมื่อไม่มีรูปเหลือเลยจึงเอารายงานออกทั้งเคส แล้วส่งต่อไปหน้ารวมรายงาน
       { source: "/case-study/air-capacitor-measurement", destination: "/case-study", permanent: true },
