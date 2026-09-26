@@ -17,8 +17,8 @@ import { BeforeAfterGrid } from "@/components/BeforeAfterGrid";
  *
  * ห้ามเพิ่มคู่ใหม่โดยไม่เปิดดูรูปจริง กติกาเต็มอยู่หัวไฟล์ lib/before-after.ts
  */
-const title = "รูปก่อน–หลังล้างแอร์ของจริง ทุกคู่เป็นชิ้นเดียวกัน";
-const description = `รวมภาพเทียบก่อนล้างและหลังล้างจากหน้างานจริงในเชียงใหม่ ${beforeAfter.length} คู่ ทุกคู่เป็นชิ้นส่วนเดียวกันถ่ายในงานเดียวกัน ไม่ได้จับคู่ข้ามงาน`;
+const title = "รูปก่อน–หลังของจริง ล้างแอร์และถอดล้างเครื่องซักผ้า";
+const description = `รวมภาพเทียบก่อนและหลังจากหน้างานจริงในเชียงใหม่ ${beforeAfter.length} คู่ ทั้งงานล้างแอร์และถอดล้างเครื่องซักผ้า ทุกคู่เป็นชิ้นส่วนเดียวกันถ่ายในงานเดียวกัน ไม่ได้จับคู่ข้ามเครื่อง`;
 
 export const metadata: Metadata = {
   title,
@@ -48,9 +48,10 @@ export default function KonLangPage() {
             รูปก่อน–หลังของจริง {beforeAfter.length} คู่
           </h1>
           <p className="lead mt-5 max-w-3xl">
-            ทุกคู่ในหน้านี้เป็นชิ้นส่วนเดียวกัน ถ่ายก่อนล้างและหลังล้างในงานเดียวกัน
+ทุกคู่ในหน้านี้เป็นชิ้นส่วนเดียวกัน ถ่ายก่อนล้างและหลังล้างในงานเดียวกัน
             ผมไล่เปิดดูรูปทีละใบเพื่อยืนยันว่าเป็นชิ้นเดียวกันจริงก่อนนำขึ้น
-            คู่ไหนที่พิสูจน์ไม่ได้ว่าเป็นชิ้นเดียวกัน ผมไม่เอาขึ้นเลย
+            บ้านหลังเดียวมักมีหลายเครื่อง ผมจึงไม่จับคู่ข้ามเครื่องเด็ดขาด
+            คู่ไหนที่พิสูจน์ไม่ได้ ผมไม่เอาขึ้นเลย
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
             <Link href="/case-study" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">
@@ -79,7 +80,7 @@ export default function KonLangPage() {
         <section className="section bg-sand">
           <div className="wrap">
             <h2 className="h2">งานถอดล้างเครื่องซักผ้า {wm.length} คู่</h2>
-            <p className="lead mt-3 max-w-2xl">ถังชั้นใน ถังชั้นนอก และโครงหลังถังปั่น ซึ่งเป็นจุดที่โปรแกรมล้างถังในตัวเครื่องไปไม่ถึง</p>
+            <p className="lead mt-3 max-w-2xl">ถังชั้นใน ถังชั้นนอก ใต้จานซัก และโครงหลังถังปั่น ซึ่งเป็นจุดที่โปรแกรมล้างถังในตัวเครื่องไปไม่ถึง เพราะน้ำเข้าไม่ถึงด้านที่มองไม่เห็น</p>
             <div className="mt-9">
               <BeforeAfterGrid items={wm} />
             </div>
