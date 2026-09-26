@@ -9,6 +9,8 @@ import { lastmodIso, SRC } from "@/lib/lastmod";
 import { share } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { getWorkCase, workCases } from "@/lib/work-cases";
+import { jobs } from "@/lib/jobs";
+import { caseToJob } from "@/lib/case-to-job";
 
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return workCases.map((item) => ({ slug: item.slug })); }
@@ -71,42 +73,61 @@ export default async function WorkCasePage({ params }: Props) {
         <dl className="grid gap-4 sm:grid-cols-2">
           {facts.map(([label, value]) => <div key={label} className="card p-5"><dt className="text-sm font-bold text-brand-700">{label}</dt><dd className="mt-2 text-[15px] leading-7 text-ink-soft">{value}</dd></div>)}
         </dl>
-        {/* เทียบก่อน–หลังเป็นคู่ (24 ก.ย. 2569 เจ้าของขอให้เห็นชัด): จับคู่รูป "ก่อนทำ" กับ "หลังทำ" ตามลำดับที่เขียนไว้ใน work-cases
-            ผู้เขียนเคสต้องเรียงรูปก่อน/หลังให้ตำแหน่ง i ตรงกัน (เช่น ถังนอกก่อน ↔ ถังนอกหลัง) รูปที่เหลือแสดงในแกลเลอรีด้านล่าง */}
+        {/* รูปหน้างานแยกเป็นกอง ก่อนล้าง ระหว่างล้าง หลังล้าง (แก้ 26 ก.ย. 2569)
+            เดิมจับคู่รูป "ก่อนทำ" กับ "หลังทำ" ตามลำดับ แล้วเขียนว่าเป็นชิ้นเดียวกัน
+            เจ้าของตรวจเองแล้วพบว่าจับคู่ผิดเยอะ เพราะลำดับรูปในเคสไม่ได้เรียงให้ตรงกันจริง
+            เลิกจับคู่ถาวร เปลี่ยนเป็นโชว์เป็นกอง ซึ่งไม่ต้องอ้างว่ารูปไหนคู่กับรูปไหน
+            ห้ามกลับไปจับคู่ชิ้นต่อชิ้นอีก เว้นแต่เจ้าของสั่งเอง */}
         {(() => {
-          const before = item.images.filter((i) => i.phase === "ก่อนทำ");
-          const after = item.images.filter((i) => i.phase === "หลังทำ");
-          const pairs = Array.from({ length: Math.min(before.length, after.length) }, (_, i) => [before[i], after[i]] as const);
-          const paired = new Set(pairs.flat().map((i) => i.src));
-          const rest = item.images.filter((i) => !paired.has(i.src));
+          /* ถ้าเคสนี้ผูกกับโพสต์ต้นทางได้ ให้ใช้รูปทั้งงานจากโพสต์นั้น ซึ่งมีหลายสิบรูป
+             เพราะรูปชุดเดิมในเคสมีแค่ไม่กี่ใบ ทำให้ดูไม่ออกว่าถอดล้างทุกชิ้นส่วนจริง */
+          const job = jobs.find((j) => j.id === caseToJob[item.slug]);
+          const groups = job
+            ? [
+                { key: "ก่อนทำ", label: "ก่อนล้าง", chip: "bg-brand-600 text-white", photos: job.before },
+                { key: "ระหว่างทำ", label: "ระหว่างล้าง", chip: "bg-brand-200 text-brand-900", photos: job.during },
+                { key: "หลังทำ", label: "หลังล้าง", chip: "bg-gradient-to-b from-ice to-accent text-[#04121F]", photos: job.after },
+              ].filter((g) => g.photos.length > 0)
+            : [
+                { key: "ก่อนทำ" as const, label: "ก่อนล้าง", chip: "bg-brand-600 text-white" },
+                { key: "ระหว่างทำ" as const, label: "ระหว่างล้าง", chip: "bg-brand-200 text-brand-900" },
+                { key: "หลังทำ" as const, label: "หลังล้าง", chip: "bg-gradient-to-b from-ice to-accent text-[#04121F]" },
+              ].map((g) => ({ ...g, photos: item.images.filter((i) => i.phase === g.key) }))
+               .filter((g) => g.photos.length > 0);
+          const total = groups.reduce((n, g) => n + g.photos.length, 0);
+          if (groups.length === 0) return null;
           return (
-            <>
-              {pairs.length > 0 && (
-                <section className="mt-12">
-                  <h2 className="h2">เทียบก่อน–หลัง จุดต่อจุด</h2>
-                  <p className="lead mt-3">ซ้ายคือสภาพตอนถอดออกมา ขวาคือชิ้นเดียวกันหลังล้างเสร็จ</p>
-                  <div className="mt-6 grid gap-6 lg:grid-cols-2">
-                    {pairs.map(([b, a], i) => (
-                      <figure key={b.src} className="card overflow-hidden">
-                        <div className="grid grid-cols-2 gap-0.5 bg-slate-200">
-                          <div className="relative bg-white"><Image src={b.src} alt={b.alt} width={800} height={800} sizes="(max-width: 1024px) 50vw, 25vw" className="aspect-square w-full object-cover" /><span className="absolute top-3 left-3 rounded-full bg-amber-700/90 px-3 py-1 text-xs font-bold text-white">ก่อน</span></div>
-                          <div className="relative bg-white"><Image src={a.src} alt={a.alt} width={800} height={800} sizes="(max-width: 1024px) 50vw, 25vw" className="aspect-square w-full object-cover" /><span className="absolute top-3 left-3 rounded-full bg-emerald-700/90 px-3 py-1 text-xs font-bold text-white">หลัง</span></div>
-                        </div>
-                        <figcaption className="grid grid-cols-2 gap-3 p-4 text-xs leading-6 text-ink-soft"><span>{i + 1}. {b.alt}</span><span>{a.alt}</span></figcaption>
-                      </figure>
-                    ))}
+            <section className="mt-12">
+              <h2 className="h2">รูปจากหน้างานจริง {total} รูป</h2>
+              <p className="lead mt-3">
+                แยกให้ดูเป็นกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ เป็นงานเดียวกันทั้งหมด
+              </p>
+              <div className="mt-7 space-y-8">
+                {groups.map((g) => (
+                  <div key={g.key}>
+                    <p className="flex flex-wrap items-center gap-2 text-sm font-bold">
+                      <span className={`inline-block rounded-lg px-2.5 py-1 text-xs ${g.chip}`}>{g.label}</span>
+                      <span className="text-ink-soft">{g.photos.length} รูป</span>
+                    </p>
+                    <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                      {g.photos.map((image) => (
+                        <li key={image.src} className="card overflow-hidden">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={640}
+                            height={640}
+                            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 22vw"
+                            className="aspect-square w-full object-cover"
+                          />
+                          <p className="p-3 text-xs leading-6 text-ink-soft">{image.alt}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </section>
-              )}
-              {rest.length > 0 && (
-                <section className="mt-12">
-                  <h2 className="h2">{pairs.length > 0 ? "ภาพอื่นจากหน้างาน" : "ภาพจากหน้างานจริง"}</h2>
-                  <div className={`mt-6 grid gap-6 ${rest.length > 1 ? "sm:grid-cols-2" : "max-w-2xl"}`}>
-                    {rest.map((image) => <figure key={image.src} className="card overflow-hidden"><div className="relative"><Image src={image.src} alt={image.alt} width={1000} height={750} sizes="(max-width: 768px) 100vw, 50vw" className="aspect-[4/3] w-full object-cover" /><span className="absolute top-3 left-3 rounded-full bg-brand-800/90 px-3 py-1 text-xs font-bold text-white">{image.phase}</span></div><figcaption className="p-4 text-sm leading-7 text-ink-soft">{image.alt}</figcaption></figure>)}
-                  </div>
-                </section>
-              )}
-            </>
+                ))}
+              </div>
+            </section>
           );
         })()}
         {/* สิ่งที่อ่านจากเคสนี้แล้วเอาไปใช้เองได้ (24 ก.ย. 2569)

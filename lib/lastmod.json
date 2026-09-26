@@ -108,6 +108,7 @@
     "content/articles/sue-air-online-check-arai.ts": "2026-08-30",
     "content/articles/yai-air-tong-ru-arai.ts": "2026-08-30",
     "lib/brands.ts": "2026-08-30",
+    "lib/case-to-job.ts": "2026-09-26",
     "lib/content-types.ts": "2026-09-24",
     "lib/jobs.ts": "2026-09-26",
     "lib/lastmod.ts": "2026-09-26",
