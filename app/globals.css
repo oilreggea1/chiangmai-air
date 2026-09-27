@@ -83,11 +83,19 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ภาษาไทยไม่มีเว้นวรรคระหว่างคำ ต้องช่วยเบราว์เซอร์ตัดบรรทัด */
-  h1, h2, h3, h4, p, li, td, th, summary {
-    word-break: break-word;
-    line-break: loose;
-    overflow-wrap: anywhere;
+  /* ภาษาไทยไม่มีเว้นวรรคระหว่างคำ เบราว์เซอร์ตัดบรรทัดเองด้วยพจนานุกรมอยู่แล้ว
+     กติกาเดิมใช้ overflow-wrap: anywhere กับ line-break: loose ซึ่งแรงเกินไป
+     Chrome ยังตัดตามคำให้ แต่ Safari บน iPhone จะตัดกลางคำ กลายเป็นตัวอักษรตกบรรทัด
+     (แก้ 27 ก.ย. 2569 หลังเจ้าของแจ้งว่าตัวอักษรตกบรรทัดบนมือถือ)
+
+     ค่าที่ใช้ตอนนี้
+     - word-break: normal ปล่อยให้ตัวตัดคำไทยของเบราว์เซอร์ทำงานเต็มที่
+     - ไม่ตั้ง line-break เลย ใช้ auto ซึ่งเคารพกฎอักขระไทยที่ห้ามขึ้นต้นบรรทัด
+     - overflow-wrap: break-word ตัดเฉพาะตอนที่คำเดียวยาวจนล้นกล่องจริง ๆ
+       เช่น URL หรือรหัสรุ่นยาว ๆ ไม่ได้ตัดพร่ำเพรื่อทุกตัวอักษร */
+  h1, h2, h3, h4, p, li, td, th, summary, dt, dd, figcaption, span, a, button {
+    word-break: normal;
+    overflow-wrap: break-word;
   }
 
   /* ระยะบรรทัดขั้นต่ำของหัวข้อไทย กันหางสระชนบรรทัดบนในจุดที่ลืมใส่คลาส leading
