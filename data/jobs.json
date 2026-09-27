@@ -4516,11 +4516,11 @@
  },
  {
   "id": "38",
-  "date": "2026-07-10",
+  "date": "2026-06-26",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน Samsung (ป้าย Water Jet ถังสเตนเลสลายเพชร) ถอดล้างบนลานกระเบื้องเก่าหน้าบ้าน ตัวเครื่องตั้งอยู่ในบ้านข้างตู้เย็นและตู้โชว์ไม้",
+  "summary": "เครื่องซักผ้าฝาบนตัวถังขาว ถอดล้างบนลานแผ่นหินปูมีตะไคร่ ข้างรั้วไม้และสนามหญ้า",
   "before": [
    {
     "src": "/work/job/job-38-before-01.jpg",
@@ -4553,18 +4553,9 @@
    {
     "src": "/work/job/job-38-before-08.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-38-before-09.jpg",
-    "alt": ""
    }
   ],
-  "during": [
-   {
-    "src": "/work/job/job-38-during-01.jpg",
-    "alt": ""
-   }
-  ],
+  "during": [],
   "after": [
    {
     "src": "/work/job/job-38-after-01.jpg",
@@ -4585,32 +4576,16 @@
    {
     "src": "/work/job/job-38-after-05.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-38-after-06.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-38-after-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-38-after-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-38-after-09.jpg",
-    "alt": ""
    }
   ]
  },
  {
   "id": "39",
-  "date": "2026-07-10",
+  "date": "2026-06-26",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาหน้า LG 6 Motion DD Inverter Direct Drive 8 กก. ถอดล้างบนลานปูนหยาบข้างบ้านที่มีหญ้าขึ้น ตัวเครื่องตั้งบนแท่นในห้องซักล้างพื้นหินขัด",
+  "summary": "เครื่องซักผ้าฝาบน Panasonic 16.0 กก. TURBOBASKET ถอดล้างบนลานปูนพิมพ์ลายหิน ปูผ้าใบลายฟ้า-ขาว ติดพื้นกระเบื้องลายหินสีอิฐ",
   "before": [
    {
     "src": "/work/job/job-39-before-01.jpg",
@@ -4646,6 +4621,14 @@
    },
    {
     "src": "/work/job/job-39-before-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-39-before-10.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-39-before-11.jpg",
     "alt": ""
    }
   ],
@@ -4686,16 +4669,28 @@
    {
     "src": "/work/job/job-39-after-09.jpg",
     "alt": ""
+   },
+   {
+    "src": "/work/job/job-39-after-10.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-39-after-11.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-39-after-12.jpg",
+    "alt": ""
    }
   ]
  },
  {
   "id": "40",
-  "date": "2026-07-11",
+  "date": "2026-06-26",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาหน้า Electrolux (UltimateCare 700) ถอดล้างที่ลานปูนหน้าบ้าน มีระเบียงกระเบื้องสีส้มและทางเดินหินกรวด ตัวเครื่องตั้งในห้องซักล้างกระเบื้องดำพื้นลายไม้",
+  "summary": "เครื่องซักผ้าฝาหน้า LG ThinQ DirectDrive 15/8 กก. ตั้งในห้องพื้นหินอ่อนดำ ชิ้นส่วนล้างบนลานปูนข้างผนังขาว",
   "before": [
    {
     "src": "/work/job/job-40-before-01.jpg",
@@ -4703,34 +4698,6 @@
    },
    {
     "src": "/work/job/job-40-before-02.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-03.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-04.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-05.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-06.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-before-09.jpg",
     "alt": ""
    }
   ],
@@ -4751,40 +4718,16 @@
    {
     "src": "/work/job/job-40-after-04.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-after-05.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-after-06.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-after-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-after-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-after-09.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-40-after-10.jpg",
-    "alt": ""
    }
   ]
  },
  {
   "id": "41",
-  "date": "2026-07-11",
+  "date": "2026-06-26",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน LG TurboDrum Smart Inverter 10.5 กก. สีขาว ถอดล้างที่ลานปูนข้างบ้าน ผนังปูนเปลือยมีตะไคร่และท่อ PVC สีฟ้า",
+  "summary": "เครื่องซักผ้าฝาหน้า ถังนอกพลาสติกสีครีม (ไม่เห็นป้ายยี่ห้อ) ถอดล้างบนลานปูนพิมพ์ลายไม้ ข้างลานจอดรถ",
   "before": [
    {
     "src": "/work/job/job-41-before-01.jpg",
@@ -4844,52 +4787,16 @@
    {
     "src": "/work/job/job-41-after-05.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-06.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-09.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-10.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-11.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-12.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-13.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-41-after-14.jpg",
-    "alt": ""
    }
   ]
  },
  {
   "id": "42",
-  "date": "2026-07-11",
+  "date": "2026-06-26",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน LG TurboDrum สีเงิน ถอดล้างที่ระเบียงกระเบื้องสีน้ำตาลริมสนามหญ้า ข้างหน้าต่างเหล็กดัดสีฟ้า",
+  "summary": "เครื่องซักผ้าฝาหน้า Electrolux UltimateCare 900 AutoDose 11 กก. ถอดล้างบนลานกระเบื้องเทาเกล็ดหินข้างสนามหญ้า",
   "before": [
    {
     "src": "/work/job/job-42-before-01.jpg",
@@ -4917,18 +4824,6 @@
    },
    {
     "src": "/work/job/job-42-before-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-42-before-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-42-before-09.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-42-before-10.jpg",
     "alt": ""
    }
   ],
@@ -4973,28 +4868,16 @@
    {
     "src": "/work/job/job-42-after-10.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-42-after-11.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-42-after-12.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-42-after-13.jpg",
-    "alt": ""
    }
   ]
  },
  {
   "id": "43",
-  "date": "2026-08-24",
+  "date": "2026-06-26",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน LG 12 กก. (TurboDrum) ถอดล้างที่ลานปูนหินหน้าบ้าน ปูผ้าใบลายทางฟ้า",
+  "summary": "เครื่องซักผ้าฝาบน SAMSUNG Digital Inverter Water Jet ถังสแตนเลสลายเพชร ถอดล้างบนลานกระเบื้องขาวและพื้นปูนข้างสนามหญ้า",
   "before": [
    {
     "src": "/work/job/job-43-before-01.jpg",
@@ -5029,12 +4912,7 @@
     "alt": ""
    }
   ],
-  "during": [
-   {
-    "src": "/work/job/job-43-during-01.jpg",
-    "alt": ""
-   }
-  ],
+  "during": [],
   "after": [
    {
     "src": "/work/job/job-43-after-01.jpg",
@@ -5055,16 +4933,32 @@
    {
     "src": "/work/job/job-43-after-05.jpg",
     "alt": ""
+   },
+   {
+    "src": "/work/job/job-43-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-43-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-43-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-43-after-09.jpg",
+    "alt": ""
    }
   ]
  },
  {
   "id": "44",
-  "date": "2026-08-24",
+  "date": "2026-06-27",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาหน้า ไม่เห็นยี่ห้อ ถอดล้างที่ลานปูนเก่าสีลอกข้างกำแพงอิฐ",
+  "summary": "เครื่องซักผ้าฝาบน ถังในสแตนเลส ชิ้นส่วนพลาสติกสีเทา ถอดล้างที่ลานปูนมีตะไคร่ข้างบ้าน มีต้นกล้วยและเก้าอี้เหล็กสีชมพู",
   "before": [
    {
     "src": "/work/job/job-44-before-01.jpg",
@@ -5089,9 +4983,22 @@
    {
     "src": "/work/job/job-44-before-06.jpg",
     "alt": ""
+   },
+   {
+    "src": "/work/job/job-44-before-07.jpg",
+    "alt": ""
    }
   ],
-  "during": [],
+  "during": [
+   {
+    "src": "/work/job/job-44-during-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-44-during-02.jpg",
+    "alt": ""
+   }
+  ],
   "after": [
    {
     "src": "/work/job/job-44-after-01.jpg",
@@ -5116,16 +5023,32 @@
    {
     "src": "/work/job/job-44-after-06.jpg",
     "alt": ""
+   },
+   {
+    "src": "/work/job/job-44-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-44-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-44-after-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-44-after-10.jpg",
+    "alt": ""
    }
   ]
  },
  {
   "id": "45",
-  "date": "2026-08-24",
+  "date": "2026-06-27",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาหน้า ไม่เห็นยี่ห้อ ถอดล้างบนลานปูกระเบื้องสีครีม-ส้ม ปูผ้าใบลายทางฟ้า",
+  "summary": "เครื่องซักผ้าฝาบน TOSHIBA 16 กก. สีเทาเข้ม ตั้งอยู่ในห้องในบ้าน ชิ้นส่วนและแผ่นกรองตาข่ายสีน้ำเงินล้างบนลานปูน",
   "before": [
    {
     "src": "/work/job/job-45-before-01.jpg",
@@ -5138,6 +5061,10 @@
    {
     "src": "/work/job/job-45-before-03.jpg",
     "alt": ""
+   },
+   {
+    "src": "/work/job/job-45-before-04.jpg",
+    "alt": ""
    }
   ],
   "during": [],
@@ -5149,44 +5076,16 @@
    {
     "src": "/work/job/job-45-after-02.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-03.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-04.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-05.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-06.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-45-after-09.jpg",
-    "alt": ""
    }
   ]
  },
  {
   "id": "46",
-  "date": "2026-08-24",
+  "date": "2026-06-27",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน Haier 18 กก. ถอดล้างที่ลานกระเบื้องขาวริมสนามหญ้า",
+  "summary": "เครื่องซักผ้าฝาบนชิ้นส่วนพลาสติกสีขาว ใบพัดแบบ 6 แฉก ถอดล้างบนลานปูนข้างผนังสีขาว (ไม่เห็นป้ายยี่ห้อ)",
   "before": [
    {
     "src": "/work/job/job-46-before-01.jpg",
@@ -5198,22 +5097,6 @@
    },
    {
     "src": "/work/job/job-46-before-03.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-46-before-04.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-46-before-05.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-46-before-06.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-46-before-07.jpg",
     "alt": ""
    }
   ],
@@ -5234,24 +5117,16 @@
    {
     "src": "/work/job/job-46-after-04.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-46-after-05.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-46-after-06.jpg",
-    "alt": ""
    }
   ]
  },
  {
   "id": "47",
-  "date": "2026-08-24",
+  "date": "2026-07-09",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน Samsung ฝาดำ ถอดล้างที่ลานดินในบริเวณบ้าน",
+  "summary": "เครื่องซักผ้าฝาบน SAMSUNG (เห็นป้ายชื่อบนแผงควบคุม) ใบพัดสีเขียวมิ้นต์ ถอดล้างบนลานกระเบื้องลายหินสีเทาและสนามหญ้าข้างบ้าน",
   "before": [
    {
     "src": "/work/job/job-47-before-01.jpg",
@@ -5276,31 +5151,11 @@
    {
     "src": "/work/job/job-47-before-06.jpg",
     "alt": ""
-   },
-   {
-    "src": "/work/job/job-47-before-07.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-47-before-08.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-47-before-09.jpg",
-    "alt": ""
    }
   ],
   "during": [
    {
     "src": "/work/job/job-47-during-01.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-47-during-02.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-47-during-03.jpg",
     "alt": ""
    }
   ],
@@ -5353,11 +5208,11 @@
  },
  {
   "id": "48",
-  "date": "2026-08-24",
+  "date": "2026-07-09",
   "service": "ล้างเครื่องซักผ้า",
   "serviceSlug": "lang-washing-machine",
   "verb": "ล้าง",
-  "summary": "เครื่องซักผ้าฝาบน TOSHIBA 14 กก. ถอดล้างที่ลานจอดรถหน้าบ้านที่ปูหญ้าเทียมสีเขียว",
+  "summary": "เครื่องซักผ้าฝาบน LG Smart Inverter 10.0 กก. TurboDrum สีดำ ถอดล้างบนลานปูนข้างสนามหญ้าที่มีทางเดินอิฐแดง",
   "before": [
    {
     "src": "/work/job/job-48-before-01.jpg",
@@ -5386,26 +5241,17 @@
    {
     "src": "/work/job/job-48-before-07.jpg",
     "alt": ""
-   }
-  ],
-  "during": [
+   },
    {
-    "src": "/work/job/job-48-during-01.jpg",
+    "src": "/work/job/job-48-before-08.jpg",
     "alt": ""
    },
    {
-    "src": "/work/job/job-48-during-02.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-48-during-03.jpg",
-    "alt": ""
-   },
-   {
-    "src": "/work/job/job-48-during-04.jpg",
+    "src": "/work/job/job-48-before-09.jpg",
     "alt": ""
    }
   ],
+  "during": [],
   "after": [
    {
     "src": "/work/job/job-48-after-01.jpg",
@@ -5441,6 +5287,1027 @@
    },
    {
     "src": "/work/job/job-48-after-09.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "49",
+  "date": "2026-07-09",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาหน้า Haier 8 กก. (ถังนอกพลาสติกสีครีม) ถอดล้างบนลานปูนข้างสนามหญ้าแห่งเดียวกัน",
+  "before": [
+   {
+    "src": "/work/job/job-49-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-before-06.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [
+   {
+    "src": "/work/job/job-49-during-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-during-02.jpg",
+    "alt": ""
+   }
+  ],
+  "after": [
+   {
+    "src": "/work/job/job-49-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-10.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-49-after-11.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "50",
+  "date": "2026-07-10",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน Samsung (ป้าย Water Jet ถังสเตนเลสลายเพชร) ถอดล้างบนลานกระเบื้องเก่าหน้าบ้าน ตัวเครื่องตั้งอยู่ในบ้านข้างตู้เย็นและตู้โชว์ไม้",
+  "before": [
+   {
+    "src": "/work/job/job-50-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-before-09.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [
+   {
+    "src": "/work/job/job-50-during-01.jpg",
+    "alt": ""
+   }
+  ],
+  "after": [
+   {
+    "src": "/work/job/job-50-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-50-after-09.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "51",
+  "date": "2026-07-10",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาหน้า LG 6 Motion DD Inverter Direct Drive 8 กก. ถอดล้างบนลานปูนหยาบข้างบ้านที่มีหญ้าขึ้น ตัวเครื่องตั้งบนแท่นในห้องซักล้างพื้นหินขัด",
+  "before": [
+   {
+    "src": "/work/job/job-51-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-before-09.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-51-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-51-after-09.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "52",
+  "date": "2026-07-11",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาหน้า Electrolux (UltimateCare 700) ถอดล้างที่ลานปูนหน้าบ้าน มีระเบียงกระเบื้องสีส้มและทางเดินหินกรวด ตัวเครื่องตั้งในห้องซักล้างกระเบื้องดำพื้นลายไม้",
+  "before": [
+   {
+    "src": "/work/job/job-52-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-before-09.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-52-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-52-after-10.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "53",
+  "date": "2026-07-11",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน LG TurboDrum Smart Inverter 10.5 กก. สีขาว ถอดล้างที่ลานปูนข้างบ้าน ผนังปูนเปลือยมีตะไคร่และท่อ PVC สีฟ้า",
+  "before": [
+   {
+    "src": "/work/job/job-53-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-before-09.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-53-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-10.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-11.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-12.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-13.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-53-after-14.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "54",
+  "date": "2026-07-11",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน LG TurboDrum สีเงิน ถอดล้างที่ระเบียงกระเบื้องสีน้ำตาลริมสนามหญ้า ข้างหน้าต่างเหล็กดัดสีฟ้า",
+  "before": [
+   {
+    "src": "/work/job/job-54-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-before-10.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-54-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-10.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-11.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-12.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-54-after-13.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "55",
+  "date": "2026-08-24",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน LG 12 กก. (TurboDrum) ถอดล้างที่ลานปูนหินหน้าบ้าน ปูผ้าใบลายทางฟ้า",
+  "before": [
+   {
+    "src": "/work/job/job-55-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-before-08.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [
+   {
+    "src": "/work/job/job-55-during-01.jpg",
+    "alt": ""
+   }
+  ],
+  "after": [
+   {
+    "src": "/work/job/job-55-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-55-after-05.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "56",
+  "date": "2026-08-24",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาหน้า ไม่เห็นยี่ห้อ ถอดล้างที่ลานปูนเก่าสีลอกข้างกำแพงอิฐ",
+  "before": [
+   {
+    "src": "/work/job/job-56-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-before-06.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-56-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-56-after-06.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "57",
+  "date": "2026-08-24",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาหน้า ไม่เห็นยี่ห้อ ถอดล้างบนลานปูกระเบื้องสีครีม-ส้ม ปูผ้าใบลายทางฟ้า",
+  "before": [
+   {
+    "src": "/work/job/job-57-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-before-03.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-57-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-57-after-09.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "58",
+  "date": "2026-08-24",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน Haier 18 กก. ถอดล้างที่ลานกระเบื้องขาวริมสนามหญ้า",
+  "before": [
+   {
+    "src": "/work/job/job-58-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-before-07.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [],
+  "after": [
+   {
+    "src": "/work/job/job-58-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-58-after-06.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "59",
+  "date": "2026-08-24",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน Samsung ฝาดำ ถอดล้างที่ลานดินในบริเวณบ้าน",
+  "before": [
+   {
+    "src": "/work/job/job-59-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-before-09.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [
+   {
+    "src": "/work/job/job-59-during-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-during-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-during-03.jpg",
+    "alt": ""
+   }
+  ],
+  "after": [
+   {
+    "src": "/work/job/job-59-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-09.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-10.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-59-after-11.jpg",
+    "alt": ""
+   }
+  ]
+ },
+ {
+  "id": "60",
+  "date": "2026-08-24",
+  "service": "ล้างเครื่องซักผ้า",
+  "serviceSlug": "lang-washing-machine",
+  "verb": "ล้าง",
+  "summary": "เครื่องซักผ้าฝาบน TOSHIBA 14 กก. ถอดล้างที่ลานจอดรถหน้าบ้านที่ปูหญ้าเทียมสีเขียว",
+  "before": [
+   {
+    "src": "/work/job/job-60-before-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-before-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-before-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-before-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-before-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-before-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-before-07.jpg",
+    "alt": ""
+   }
+  ],
+  "during": [
+   {
+    "src": "/work/job/job-60-during-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-during-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-during-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-during-04.jpg",
+    "alt": ""
+   }
+  ],
+  "after": [
+   {
+    "src": "/work/job/job-60-after-01.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-02.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-03.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-04.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-05.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-06.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-07.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-08.jpg",
+    "alt": ""
+   },
+   {
+    "src": "/work/job/job-60-after-09.jpg",
     "alt": ""
    }
   ]
