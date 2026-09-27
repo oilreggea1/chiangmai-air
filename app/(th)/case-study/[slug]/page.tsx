@@ -104,6 +104,7 @@ export default async function WorkCasePage({ params }: Props) {
               <p className="lead mt-3">
                 แยกให้ดูเป็นกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ เป็นงานเดียวกันทั้งหมด
               </p>
+              {/* ไม่มีคำบรรยายใต้รูป คำบรรยายชิ้นส่วนที่เคยใส่ไว้ผิดเยอะ เจ้าของสั่งเอาออก 27 ก.ย. 2569 */}
               <div className="mt-7 space-y-8">
                 {groups.map((g) => (
                   <div key={g.key}>
@@ -122,7 +123,6 @@ export default async function WorkCasePage({ params }: Props) {
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 22vw"
                             className="aspect-square w-full object-cover"
                           />
-                          <p className="p-3 text-xs leading-6 text-ink-soft">{image.alt}</p>
                         </li>
                       ))}
                     </ul>
