@@ -28,7 +28,7 @@ function body() {
 ## ข้อมูลหลัก
 
 - ชื่อธุรกิจ: ${site.name}
-- ผู้รับผิดชอบงานและเนื้อหา: ${site.leadTech} ประสบการณ์มากกว่า 5 ปี
+- ผู้รับผิดชอบงานและเนื้อหา: ${site.leadTech} ช่าง${site.experience}
 - นิติบุคคล: ${site.legalName} เลขประจำตัวผู้เสียภาษี ${site.taxId}
 - โทร: ${site.phone}, ${site.phone2}
 - LINE งานแอร์: ${site.lineId}

@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "Is there a warranty on the repair?",
-    a: "Yes. If the same fault comes back I return and look at it again. I can also issue a receipt in the company name, Cher Solutions Co., Ltd., if you need it for an expense claim.",
+    a: "Yes. If the same fault comes back I return and look at it again. I can also issue a full tax invoice in the company name, Cher Solutions Co., Ltd., if you need it for an expense claim.",
   },
   {
     q: "Do you repair washing machines too?",

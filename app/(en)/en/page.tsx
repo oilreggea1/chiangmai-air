@@ -101,7 +101,7 @@ const faqs = [
     a: "More often than in most places, unfortunately. During the burning season from February to April the air here carries far more soot than usual and filters clog fast. I suggest a full clean in January before the season starts, rinsing the filters yourself every 2–4 weeks through it, and a second full clean around May or June.",
   },
   {
-    q: "Can you give me a receipt for my accounts?",
+    q: "Can you issue a tax invoice for my accounts?",
     a: "Yes. Cher Solutions Co., Ltd. is VAT registered, so I can issue a full VAT tax invoice as well as a receipt, in the company name, for cafés, restaurants, hotels, guesthouses and offices. Send me your company name and tax ID before the visit and the paperwork is ready when the job is done.",
   },
   {

@@ -123,7 +123,7 @@ export default function EnAirbnbPage() {
               "I confirm the total price and the time slot before anything is booked.",
               "I coordinate access directly with your cleaner, caretaker or condo office.",
               "Sheeting goes down before I start, and the room is left as I found it.",
-              "You get photos of the work and a receipt in the company name for your records.",
+              "You get photos of the work and a tax invoice in the company name for your records.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />

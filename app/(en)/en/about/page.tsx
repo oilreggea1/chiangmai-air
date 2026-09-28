@@ -15,7 +15,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconPin, IconClock, IconSh
  */
 const title = "About Arm and Pro Fresh Care, Chiang Mai";
 const description =
-  "Arm is the technician who does every Pro Fresh Care job himself. Registered company Cher Solutions Co., Ltd., based in San Kamphaeng, Chiang Mai. Prices published, quote before work, company receipts.";
+  "Arm is the technician who does every Pro Fresh Care job himself. Registered company Cher Solutions Co., Ltd., based in San Kamphaeng, Chiang Mai. Prices published, quote before work, full tax invoices available.";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -143,7 +143,7 @@ export default function EnAboutPage() {
               </span>
               <div>
                 <p className="text-lg font-bold">Arm</p>
-                <p className="text-sm font-medium text-brand-700">Technician in charge of every job · more than 5 years in the trade</p>
+                <p className="text-sm font-medium text-brand-700">Technician in charge of every job · highly experienced</p>
               </div>
             </div>
             <p className="mt-5 text-[15px] leading-8 text-ink-soft">

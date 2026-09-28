@@ -12,7 +12,7 @@ import { CtaBand, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
 const title = "รู้จักช่างอาร์ม ช่างแอร์เชียงใหม่ | โปรเฟรชแคร์";
 const description =
-  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด ที่ตั้ง ต.สันกำแพง อ.สันกำแพง แจ้งราคาก่อนเริ่มงาน ตรวจน้ำยาก่อนเติม ออกใบเสร็จในนามบริษัทได้";
+  "ช่างอาร์ม ช่างแอร์เชียงใหม่ ในนามบริษัท เฌอร์ โซลูชั่น จำกัด ที่ตั้ง ต.สันกำแพง อ.สันกำแพง แจ้งราคาก่อนเริ่มงาน ตรวจน้ำยาก่อนเติม ออกใบกำกับภาษีในนามบริษัทได้";
 
 export const metadata: Metadata = {
   title,
@@ -130,7 +130,7 @@ export default function AboutPage() {
               <div>
                 <p className="text-lg font-bold">{site.leadTech}</p>
                 <p className="text-sm font-medium text-brand-700">
-                  ช่างผู้รับผิดชอบหน้างาน · ประสบการณ์{site.experience}
+                  ช่างผู้รับผิดชอบหน้างาน · {site.experience}
                 </p>
               </div>
             </div>

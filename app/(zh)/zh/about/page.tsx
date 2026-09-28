@@ -132,7 +132,7 @@ export default function ZhAboutPage() {
               </span>
               <div>
                 <p className="text-lg font-bold">Arm</p>
-                <p className="text-sm font-medium text-brand-700">每一单的负责技师 · 从业超过 5 年</p>
+                <p className="text-sm font-medium text-brand-700">每一单的负责技师 · 经验丰富</p>
               </div>
             </div>
             <p className="mt-5 text-[15px] leading-8 text-ink-soft">
