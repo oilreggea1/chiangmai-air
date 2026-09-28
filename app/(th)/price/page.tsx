@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { calcRows } from "@/lib/calc-rows";
 import Link from "next/link";
-import { pricing, washCompare, faqs, p } from "@/lib/site";
+import { pricing, washCompare, faqs, p, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { serviceIcons, IconCheck, IconX, IconChevron, IconShield } from "@/components/Icons";
@@ -43,6 +45,13 @@ export default function PricePage() {
           </p>
         </section>
       </div>
+
+      {/* เครื่องคิดค่าบริการ วางก่อนตาราง เพราะคนที่เข้าหน้านี้ส่วนใหญ่อยากรู้ยอดรวมของบ้านตัวเอง */}
+      <section className="pt-2 pb-4">
+        <div className="wrap max-w-4xl">
+          <PriceCalculator rows={calcRows()} lineAir={site.lineId} lineWasher={site.lineId2} />
+        </div>
+      </section>
 
       <section className="section pt-4">
         <div className="wrap max-w-4xl space-y-8">

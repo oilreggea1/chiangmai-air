@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Block } from "@/lib/content-types";
 import { site } from "@/lib/site";
 import { IconPhone, IconLine, IconCheck, IconShield, IconClock, IconSnow } from "./Icons";
+import { BtuCalculator } from "./BtuCalculator";
 
 const toneStyle = {
   info: { box: "border-brand-200 bg-brand-50", icon: "text-brand-600", Icon: IconSnow },
@@ -216,6 +217,9 @@ export default function ArticleBody({
                 )}
               </figure>
             );
+
+          case "btuCalc":
+            return <BtuCalculator key={i} />;
 
           case "cta":
             return (

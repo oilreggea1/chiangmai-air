@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { calcRows } from "@/lib/calc-rows";
 import Link from "next/link";
 import Image from "next/image";
 import { site, services, areas, reviews, faqs, edges, heroPhotos, p, btu } from "@/lib/site";
@@ -441,6 +443,11 @@ export default function Home() {
                 </Link>
               </div>
             ))}
+          </div>
+
+          {/* เครื่องคิดค่าบริการ ลูกค้าหลายเครื่องเห็นยอดรวมทันทีและส่งรายการเข้า LINE ได้ */}
+          <div className="mx-auto mt-10 max-w-3xl">
+            <PriceCalculator rows={calcRows()} lineAir={site.lineId} lineWasher={site.lineId2} />
           </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

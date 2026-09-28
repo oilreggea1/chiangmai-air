@@ -7,7 +7,7 @@ import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, videoSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
-import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin } from "@/components/Icons";
+import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin, IconCheck } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
 import { reels } from "@/components/ReelsShowcase";
 import { ReelCard } from "@/components/ReelCard";
@@ -195,6 +195,21 @@ export default async function ServicePage({ params }: Props) {
             <p className="mt-4 text-sm text-ink-soft">
               {s.priceLabel} · {site.daysLabel} {site.hours} · {site.sundayShort}
             </p>
+            {/* ป้ายเด่นหน้าซ่อม: สามเรื่องที่คนแอร์เสียถามก่อนเสมอ คือ มาเมื่อไร ค่าตรวจเท่าไร น้ำยาคิดอย่างไร */}
+            {s.slug === "som-air" && (
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {[
+                  "ปกติเข้าหน้างานภายใน 24 ชม.",
+                  `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนเมื่อซ่อม`,
+                  `น้ำยา R32 / R410A ปอนด์ละ ${p.repair.refrigerantPerLb} บาท`,
+                  "วัดแรงดันให้ดูก่อน ไม่พร่องไม่เติม",
+                ].map((x) => (
+                  <li key={x} className="rounded-full border border-brand-100 bg-white px-3.5 py-1.5 text-sm font-semibold text-brand-800">
+                    {x}
+                  </li>
+                ))}
+              </ul>
+            )}
             {/* วันที่จริงจาก git ของไฟล์ข้อมูลบริการ ไม่ใช่วันที่ build — ให้ทั้งลูกค้าและ Google เห็นว่าราคายังดูแลอยู่ */}
             <p className="mt-1.5 text-xs text-ink-soft">
               ราคาและเงื่อนไขอัปเดตล่าสุด{" "}
@@ -425,6 +440,29 @@ export default async function ServicePage({ params }: Props) {
               ทุกงานมีการแวคคั่มระบบ ทดสอบความเย็น ตรวจรอยรั่ว และรับประกันงานติดตั้ง
               6 เดือนสำหรับเครื่องที่ลูกค้ามีเอง หรือ 1 ปีเมื่อซื้อเครื่องกับผม
             </p>
+
+            {/* รายการที่รวมในค่าติดตั้ง (29 ก.ย. 2569) ใช้เฉพาะข้อที่ร้านประกาศไว้แล้ว ห้ามเติมรายการที่ไม่ได้รวมจริง */}
+            <div className="card mt-6 p-6">
+              <h3 className="text-lg font-bold">รวมอยู่ในค่าติดตั้งแล้ว</h3>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {[
+                  "ขาแขวนคอยล์ร้อน",
+                  "ท่อน้ำยาหุ้มฉนวน ยาวไม่เกิน 4 เมตร",
+                  "รางครอบท่อ",
+                  "แวคคั่มไล่อากาศและความชื้นออกจากระบบ",
+                  "ตั้งระดับเครื่องให้น้ำไหลลงท่อทิ้งได้สะดวก",
+                  "ทดสอบความเย็นและตรวจรอยรั่วก่อนส่งมอบ",
+                ].map((x) => (
+                  <li key={x} className="flex items-start gap-2.5 text-[15px] leading-7 text-ink-soft">
+                    <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />
+                    {x}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm leading-7 text-ink-soft">
+                หากหน้างานต้องใช้ท่อยาวกว่า 4 เมตรหรืออุปกรณ์เพิ่มเติม ผมสำรวจและแจ้งราคาส่วนเกินให้ทราบก่อนเริ่มงาน
+              </p>
+            </div>
 
             {/* สามทางเข้าของงานติดตั้ง หน้านี้เป็นหน้าแม่ของกลุ่มคำติดตั้ง จึงต้องเป็นจุดแยกทางเอง
                 ไม่ปล่อยให้หน้าแรกเป็นคนแยกทาง (เหตุผลดูที่ installReelIds ด้านบน) */}

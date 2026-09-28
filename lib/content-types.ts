@@ -15,7 +15,9 @@ export type Block =
   | { type: "sources"; items: { title: string; publisher: string; url: string; note?: string }[] }
   | { type: "steps"; items: { title: string; detail: string }[] }
   | { type: "cta"; text: string }
-  | { type: "image"; src: string; alt: string; caption?: string };
+  | { type: "image"; src: string; alt: string; caption?: string }
+  /** เครื่องคำนวณ BTU แบบกดได้ ใช้ในบทความคำนวณ BTU */
+  | { type: "btuCalc" };
 
 export type ArticleCategory =
   | "ปัญหาแอร์"

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { calcRows } from "@/lib/calc-rows";
 import Link from "next/link";
-import { areas, p } from "@/lib/site";
+import { areas, p, site } from "@/lib/site";
 import { segments } from "@/lib/segments";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
@@ -41,6 +43,12 @@ export default function CustomerIndex() {
           </p>
         </section>
       </div>
+
+      <section className="pt-2 pb-4">
+        <div className="wrap max-w-4xl">
+          <PriceCalculator rows={calcRows()} lineAir={site.lineId} lineWasher={site.lineId2} />
+        </div>
+      </section>
 
       <section className="section">
         <div className="wrap">

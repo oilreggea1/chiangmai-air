@@ -7,6 +7,7 @@ import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, serviceIcons } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
+import { workCases } from "@/lib/work-cases";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -44,6 +45,19 @@ export default async function AreaPage({ params }: Props) {
   if (!a) notFound();
 
   const others = areas.filter((x) => x.slug !== a.slug);
+  /**
+   * งานจริงในพื้นที่นี้ (29 ก.ย. 2569) ดึงเฉพาะเคสที่ช่อง area ระบุชื่อตำบลหรืออำเภอของหน้านี้จริง
+   * พื้นที่ของเคสมาจากแท็กสถานที่ในโพสต์ส่งงาน ห้ามยืมเคสจากพื้นที่อื่นมาใส่ ตำบลที่ยังไม่มีงานให้ซ่อนกล่อง
+   */
+  // หน้าตำบลใช้เฉพาะชื่อตำบล (ห้ามใช้ชื่ออำเภอ ไม่งั้นเคสที่ระบุแค่อำเภอจะถูกเข้าใจว่าเป็นงานในตำบลนี้)
+  // หน้าอำเภอใช้ชื่ออำเภอ
+  const places = a.full.startsWith("อ.")
+    ? [a.full.replace(/^อ\./, "").trim()]
+    : [...a.full.matchAll(/ต\.([^\s/]+)/g)].map((m) => m[1]);
+  const localCases = workCases
+    .filter((c) => c.date && c.area !== "เชียงใหม่" && places.some((pl) => c.area.includes(pl)))
+    .sort((x, y) => y.date!.localeCompare(x.date!))
+    .slice(0, 4);
   const idx = areas.findIndex((x) => x.slug === a.slug);
   // หน้าอำเภอบ้านตัวเอง ห้ามเขียนว่า "อยู่ไม่ไกลจาก" เพราะร้านตั้งอยู่ในอำเภอนั้นเอง
   const isHomeArea = a.slug === "san-kamphaeng";
@@ -165,7 +179,7 @@ export default async function AreaPage({ params }: Props) {
               {isHomeArea
                 ? "ซึ่งอยู่ในอำเภอเดียวกับพื้นที่นี้ ผมจึงเข้าถึงหน้างานได้เร็วที่สุด"
                 : `และรับงานใน ${a.full} เป็นประจำ`}
-              {" "}จุดที่ผมเข้าไปทำงานบ่อยในพื้นที่นี้ ได้แก่ {a.landmarks.join(" · ")}
+              {" "}จุดสังเกตในพื้นที่นี้ ได้แก่ {a.landmarks.join(" · ")}
             </p>
             <p>
               ผม<strong className="text-ink">แจ้งราคาก่อนเริ่มงานทุกครั้ง</strong>{" "}
@@ -209,6 +223,32 @@ export default async function AreaPage({ params }: Props) {
                   <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">{pt.d}</p>
                 </li>
               ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {localCases.length > 0 && (
+        <section className="section bg-sand">
+          <div className="wrap">
+            <h2 className="h2">งานจริงใน{a.name}</h2>
+            <p className="lead mt-3 max-w-2xl">สภาพเครื่องตอนผมไปถึงและตอนทำเสร็จ จากงานในพื้นที่นี้</p>
+            <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {localCases.map((c) => {
+                const img = c.images.find((i) => i.phase === "หลังทำ") ?? c.images[0];
+                return (
+                  <li key={c.slug}>
+                    <Link href={`/case-study/${c.slug}`} className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
+                      <Image src={img.src} alt={img.alt} width={600} height={450} loading="lazy" sizes="(max-width: 640px) 100vw, 25vw" className="aspect-[4/3] w-full object-cover" />
+                      <div className="flex flex-1 flex-col p-5">
+                        <span className="text-xs font-bold text-brand-600">{c.service} · {c.recorded}</span>
+                        <h3 className="mt-2 font-bold leading-7 group-hover:text-brand-700">{c.title.split(":")[0]}</h3>
+                        <span className="mt-auto inline-flex items-center gap-1 pt-3 text-sm font-semibold text-brand-700">อ่านรายงาน<IconChevron className="h-4 w-4" /></span>
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
