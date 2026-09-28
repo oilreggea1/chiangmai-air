@@ -135,7 +135,7 @@ export function localBusinessSchema() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        // จันทร์–เสาร์ 08:00–20:00 ขยายถึงสองทุ่มเมื่อ 25 ก.ย. 2569
+        // จันทร์–เสาร์ 08:00–18:00 (เจ้าของยืนยัน 29 ก.ย. 2569) นอกเวลานัดได้แต่มีค่าบริการเพิ่ม
         dayOfWeek: [
           "Monday", "Tuesday", "Wednesday",
           "Thursday", "Friday", "Saturday",
@@ -143,15 +143,7 @@ export function localBusinessSchema() {
         opens: site.hoursOpen,
         closes: site.hoursClose,
       },
-      {
-        // วันอาทิตย์รับเฉพาะงานที่จองล่วงหน้า จึงประกาศเป็นช่วงเวลาที่รับนัดได้
-        // ไม่ใช่การเปิดหน้าร้านปกติ แต่ schema ไม่มีสถานะ "นัดล่วงหน้าเท่านั้น"
-        // การไม่ประกาศเลยจะทำให้ Google แสดงว่าปิด ซึ่งผิดจากความจริงมากกว่า
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Sunday"],
-        opens: site.hoursOpen,
-        closes: "18:00",
-      },
+      // วันอาทิตย์ไม่ใช่เวลาทำการ (นัดนอกเวลาได้โดยมีค่าบริการเพิ่ม) จึงไม่ประกาศใน schema
     ],
     // googleBusinessUrl ยังว่างจนกว่าโปรไฟล์จะยืนยันผ่าน จึงกรองออกก่อน
     // ถ้าปล่อยสตริงว่างเข้าไป Rich Results Test จะฟ้องว่า URL ไม่ถูกต้องทั้งก้อน

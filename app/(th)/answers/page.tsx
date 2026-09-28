@@ -69,7 +69,7 @@ const answers: Answer[] = [
   },
   {
     q: "โปรเฟรชแคร์เปิดวันและเวลาใด?",
-    a: `เปิดวัน${site.daysLabel} เวลา ${site.hours} จึงนัดช่วงเย็นหลังเลิกงานได้ ส่วน${site.sundayNote} ${site.afterHours}`,
+    a: `เปิดวัน${site.daysLabel} เวลา ${site.hours} ${site.afterHours}`,
     href: "/contact",
     link: "ดูช่องทางติดต่อ",
   },

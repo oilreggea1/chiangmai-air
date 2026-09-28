@@ -112,7 +112,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
             <li className="flex items-start gap-2.5 text-ink-soft">
               <IconClock className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
               <span>
-                {en ? "Mon–Sat 08:00–20:00 · Sunday by advance booking" : "周一至周六 08:00–20:00 · 周日需提前预约"}
+                {en ? "Mon–Sat 08:00–18:00 · other times by appointment, extra charge" : "周一至周六 08:00–18:00 · 其他时间可预约，另收费"}
                 <span className="mt-2 flex flex-col gap-1.5">
                   <a
                     href={en ? bookEveningUrlEn : bookEveningUrlZh}
@@ -237,7 +237,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
                 ฟุตเตอร์เป็น Server Component จึงติดไปกับ HTML ทุกหน้าโดยไม่ต้องรอ JS
               */}
               <Link href="/duan" className="text-ink-soft hover:text-brand-700 hover:underline">
-                นัดเย็น / วันอาทิตย์
+                นัดนอกเวลาทำการ
               </Link>
             </li>
             <li>

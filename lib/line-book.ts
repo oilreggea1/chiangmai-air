@@ -16,7 +16,7 @@ export function lineBookUrl(message: string, lineId: string = site.lineId) {
 
 const tail = "งานที่ต้องการ (ล้าง / ซ่อม / ติดตั้ง / ย้าย):\nจำนวนเครื่อง:\nพื้นที่ / หมู่บ้าน:";
 
-export const bookEveningMessage = `ขอจองคิวช่วงเย็นหลังเลิกงาน\nวันที่สะดวก:\nช่วงเวลา: 17:00 – 20:00 น.\n${tail}`;
+export const bookEveningMessage = `ขอจองคิวช่วงเย็นหลังเลิกงาน\nวันที่สะดวก:\nช่วงเวลาที่สะดวก:\n${tail}`;
 
 export const bookSundayMessage = `ขอจองคิววันอาทิตย์ล่วงหน้า\nวันอาทิตย์ที่สะดวก:\nช่วงเวลา:\n${tail}`;
 
@@ -35,13 +35,13 @@ const tailEn = "Job (clean / repair / install / move):\nNumber of units:\nArea o
 const tailZh = "服务项目（清洗 / 维修 / 安装 / 移机）：\n台数：\n地址或小区：";
 
 export const bookEveningUrlEn = lineBookUrl(
-  `I would like to book an evening slot after work\nPreferred date:\nTime: 17:00 - 20:00\n${tailEn}`,
+  `I would like to book an evening slot after work\nPreferred date:\nPreferred time:\n${tailEn}`,
 );
 export const bookSundayUrlEn = lineBookUrl(
   `I would like to book a Sunday slot in advance\nPreferred Sunday:\nTime:\n${tailEn}`,
 );
 export const bookEveningUrlZh = lineBookUrl(
-  `我想预约下班后的时段\n希望日期：\n时间：17:00 - 20:00\n${tailZh}`,
+  `我想预约下班后的时段\n希望日期：\n希望时间：\n${tailZh}`,
 );
 export const bookSundayUrlZh = lineBookUrl(
   `我想提前预约周日的时段\n希望的周日：\n时间：\n${tailZh}`,

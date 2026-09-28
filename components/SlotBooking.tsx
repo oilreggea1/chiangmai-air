@@ -21,7 +21,7 @@ export function SlotBooking({ className = "" }: { className?: string }) {
       </h3>
       <p className="mt-3 text-[15px] leading-8 text-ink-soft">
         เลือกช่วงเวลาที่คุณสะดวก แล้วแจ้งวันและงานที่ต้องการ
-        ผมตอบกลับพร้อมคิวที่ว่างจริง และคิดราคาเท่ากับเวลาปกติทุกช่วง
+        ผมตอบกลับพร้อมคิวที่ว่างจริง งานนอกเวลาทำการมีค่าบริการเพิ่มเติม ผมแจ้งยอดให้ทราบก่อนยืนยันคิว
       </p>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -33,7 +33,7 @@ export function SlotBooking({ className = "" }: { className?: string }) {
           data-cta="book-evening"
         >
           <IconLine className="h-5 w-5" />
-          จองคิวเย็น 17:00 – 20:00
+          จองคิวช่วงเย็น
         </a>
         <a
           href={bookSundayUrl}
@@ -52,7 +52,7 @@ export function SlotBooking({ className = "" }: { className?: string }) {
         <a href={`tel:${site.phoneTel}`} className="font-semibold text-brand-700 hover:underline" data-cta="book-call">
           {site.phone}
         </a>{" "}
-        ในเวลา {site.daysLabel} {site.hours} · {site.sundayNote} จึงควรจองไว้ก่อนอย่างน้อยสองถึงสามวัน
+        ในเวลาทำการ {site.daysLabel} {site.hours} งานนอกเวลาควรจองไว้ก่อนอย่างน้อยสองถึงสามวัน
       </p>
     </div>
   );

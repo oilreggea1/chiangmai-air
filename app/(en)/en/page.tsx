@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: "How quickly can you come?",
-    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 8pm, and take Sunday jobs by advance booking, at the same rates with no out-of-hours fee. The exception is February to April, the burning season, when the whole city is booking at once. Booking a week ahead is safer then.",
+    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 6pm, and can take bookings outside those hours for an additional fee that I quote first. The exception is February to April, the burning season, when the whole city is booking at once. Booking a week ahead is safer then.",
   },
 ];
 
@@ -199,7 +199,7 @@ export default function EnglishPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              AC service LINE {site.lineId} · washing machine cleaning LINE {site.lineId2} · Mon–Sat 8:00–20:00, Sunday by advance booking
+              AC service LINE {site.lineId} · washing machine cleaning LINE {site.lineId2} · Mon–Sat 8:00–18:00, other times by appointment at an extra charge
             </p>
             {/* แถบความน่าเชื่อถือสำหรับลูกค้าต่างชาติ (24 ก.ย. 2569): บริษัทจดทะเบียน + คนที่มาคือใคร + ไม่มีมัดจำ */}
             <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">
@@ -483,7 +483,7 @@ export default function EnglishPage() {
             </div>
             <p className="mt-6 inline-flex items-center gap-2 text-sm text-brand-200">
               <IconClock className="h-4 w-4" />
-              Mon–Sat 8:00–20:00, Sunday by advance booking
+              Mon–Sat 8:00–18:00, other times by appointment at an extra charge
               <IconShield className="ml-3 h-4 w-4" />
               VAT tax invoice available
             </p>
