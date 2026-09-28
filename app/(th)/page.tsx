@@ -397,7 +397,7 @@ export default function Home() {
                 // ตัวดักราคาจับไม่ได้เพราะคำว่า "บาท" อยู่คนละฟิลด์ ตอนนี้ดึงจาก p แล้ว
                 name: "Premium Full Wash", price: p.wash.premium, unit: "บาท / เครื่อง",
                 href: "/service/lang-air", linkLabel: "ล้างธรรมดากับถอดล้างต่างกันอย่างไร",
-                note: `ถอดล้าง 100% · ${p.wash.premiumNote} · รับประกัน 30 วัน`,
+                note: `ถอดล้าง 100% · ${p.wash.premiumNote} · รับประกัน 60 วัน`,
                 feats: [
                   "ถอดชิ้นส่วนล้างแยกทุกชิ้น",
                   "ถอดใบพัดกรงกระรอกออกมาล้าง",

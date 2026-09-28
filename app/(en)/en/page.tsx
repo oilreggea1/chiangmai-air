@@ -282,7 +282,7 @@ export default function EnglishPage() {
               "Refrigerant is measured in front of you. A system that is not low does not get topped up, because overcharging one shortens the life of the compressor.",
               "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I give you the repair cost and the replacement cost side by side, and the decision stays with you.",
               "Two layers of drop sheets on every cleaning job. Floor and furniture stay as they were.",
-              "Warranty: 30 days on any clean, standard or full strip-down, and up to 1 year on installation.",
+              "Every clean includes a disinfectant spray. Warranty against drips: 30 days after a standard clean, 60 days after a full strip-down clean. Installation: up to 1 year.",
               "Full VAT tax invoices and receipts issued in the company name, Cher Solutions Co., Ltd., for business bookings.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
