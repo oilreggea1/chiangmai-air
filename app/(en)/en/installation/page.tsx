@@ -4,6 +4,7 @@ import Image from "next/image";
 import { site, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
+import { BtuCalculator } from "@/components/BtuCalculator";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconShield, IconInstall, IconMove } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 import { RecentJobs } from "@/components/RecentJobs";
@@ -17,7 +18,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "Aircon Installation in Chiang Mai | Pro Fresh Care";
 const description =
-  `Air conditioner installation in Chiang Mai from ${p.install.small} THB, including the wall bracket, up to 4 m of piping and trunking. Units bought on Lazada, Shopee or in-store are welcome. Relocation ${p.install.relocate} THB.`;
+  `Aircon installation in Chiang Mai from ${p.install.small} THB with bracket, 4 m of piping and trunking. Units bought online welcome. Relocation ${p.install.relocate} THB.`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -195,6 +196,17 @@ export default function EnInstallationPage() {
               <IconLine className="h-5 w-5" />
               LINE {site.lineId}
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ตัวคำนวณ BTU เดียวกับบทความไทย /blog/khamnuan-btu (29 ก.ย. 2569) */}
+      <section className="section" lang="en">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">Which size do you need?</h2>
+          <p className="lead mt-3">Enter your room and the calculator suggests the BTU size, using the same sizing formula I use on site.</p>
+          <div className="mt-7">
+            <BtuCalculator lang="en" />
           </div>
         </div>
       </section>

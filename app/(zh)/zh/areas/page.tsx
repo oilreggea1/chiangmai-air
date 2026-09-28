@@ -3,6 +3,8 @@ import Link from "next/link";
 import { site, areas, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
+import { IntlCoverage } from "@/components/IntlCoverage";
+import { areaRoman } from "@/lib/intl";
 import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 /**
@@ -12,7 +14,7 @@ import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
  */
 const title = "清迈服务范围 | Pro Fresh Care 空调清洗维修";
 const description =
-  "以 San Kamphaeng 为据点，覆盖清迈市区（Mueang Chiang Mai）全部乡，包括尼曼路、古城、Santitham，以及 San Sai 县全部乡，另有 Hang Dong 县北部、Mae On 县平原地区、Saraphi 和 Doi Saket。范围内不加收车费。";
+  "覆盖清迈市区与 San Sai 县全部乡，以及 Hang Dong 北部、Mae On 平原、San Kamphaeng、Saraphi、Doi Saket，范围内不收车费。";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -30,16 +32,6 @@ const trail = [
   { name: "服务范围", path: "/zh/areas" },
 ];
 
-/** ชื่ออำเภอภาษาจีน ให้ตรงกับที่ใช้ในหน้า /zh */
-const amphoeZh: Record<string, string> = {
-  "อ.สันกำแพง": "San Kamphaeng 县",
-  "อ.สารภี": "Saraphi 县",
-  "อ.เมืองเชียงใหม่": "清迈市区 Mueang Chiang Mai（全部乡）",
-  "อ.ดอยสะเก็ด": "Doi Saket 县",
-  "อ.แม่ออน": "Mae On 县（平原地区）",
-  "อ.สันทราย": "San Sai 县（全部乡，含 Mae Jo 湄州一带）",
-  "อ.หางดง": "Hang Dong 县（北部靠近市区的乡）",
-};
 
 const faqs = [
   { q: "尼曼路和古城在服务范围内吗？", a: "在。两处都属于清迈市区 Mueang Chiang Mai，整个市区我都接，范围内不加收车费。" },
@@ -82,28 +74,14 @@ export default function ZhAreasPage() {
       </div>
 
       <section className="section pt-4" lang="zh-CN">
-        <div className="wrap max-w-4xl">
+        <div className="wrap">
           <h2 className="h2">覆盖的县与乡</h2>
           <p className="lead mt-3">
             泰国地址里的「乡」写作 ตำบล，「县」写作 อำเภอ。
             下面按泰文原名列出，方便您对照自己的地址，或直接把名字给司机看。
           </p>
-          <div className="mt-7 space-y-4">
-            {coverage.map((c) => (
-              <div key={c.amphoe} className="card p-6">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-lg font-bold">{amphoeZh[c.amphoe] ?? c.amphoe}</h3>
-                  <span className="text-sm font-semibold text-brand-700">{c.tambons.length} 个乡</span>
-                </div>
-                <p className="mt-3 text-sm leading-7 text-ink-soft">
-                  <span className="font-semibold text-ink">覆盖的乡：</span>{" "}
-                  {c.tambons.join(" · ")}
-                </p>
-                {"all" in c && c.all && (
-                  <p className="mt-2 text-sm leading-7 text-ink-soft">这个县的所有乡我都接。</p>
-                )}
-              </div>
-            ))}
+          <div className="mt-7">
+            <IntlCoverage lang="zh-CN" withThai />
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
             地址不在名单上也可以先问。请用 LINE 把定位发给我，我会直接回复能不能去，以及要不要另外算车费。
@@ -125,7 +103,7 @@ export default function ZhAreasPage() {
                   hrefLang="th"
                   className="card flex items-center justify-between gap-3 px-5 py-4 transition-all hover:shadow-lift"
                 >
-                  <span className="text-sm font-semibold">{a.name}</span>
+                  <span className="text-sm font-semibold">{areaRoman(a.name)} <span className="ml-1 text-xs font-normal text-ink-soft" lang="th">{a.name}</span></span>
                 </Link>
               </li>
             ))}

@@ -14,7 +14,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "清迈空调维修 | Pro Fresh Care 上门检测报价";
 const description =
-  `清迈空调维修，技师 Arm 本人上门。检测费 ${p.repair.diagnostic} 泰铢，确认维修后从维修费里扣除。先测压力和电流并给您看数据，再报价。周一至周六 8:00-18:00，其他时间可预约，另收附加费。`;
+  `清迈空调维修，Arm 本人上门。检测费 ${p.repair.diagnostic} 泰铢，决定维修则抵扣。先测压力和电流给您看再报价。`;
 
 export const metadata: Metadata = {
   title: { absolute: title },

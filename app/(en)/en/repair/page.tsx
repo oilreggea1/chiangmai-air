@@ -18,7 +18,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "Air Conditioner Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  `AC repair in Chiang Mai by Arm, a local technician. Diagnostic ${p.repair.diagnostic} THB, refunded if you go ahead with the repair. Gauges and current readings shown to you before any quote. Mon-Sat 8am-6pm.`;
+  `AC repair in Chiang Mai by Arm. ${p.repair.diagnostic} THB diagnostic, credited if you go ahead. Gauge and current readings shown before any quote. Mon–Sat 8am–6pm.`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/en/repair",
-    languages: { "th-TH": "/service/som-air", "en-US": "/en/repair", "x-default": "/service/som-air" },
+    languages: { "th-TH": "/service/som-air", "en-US": "/en/repair", "zh-CN": "/zh/repair", "x-default": "/service/som-air" },
   },
   ...share({ title, description, path: `/en/repair`, locale: "en_US", image: heroPhotos.en }),
 };

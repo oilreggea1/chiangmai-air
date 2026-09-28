@@ -1,5 +1,5 @@
 import { p, btu } from "./site";
-import type { CalcGroup, CalcRow } from "@/components/PriceCalculator";
+import type { CalcGroup, CalcLang, CalcRow } from "@/components/PriceCalculator";
 
 /**
  * ข้อมูลแถวของเครื่องคิดค่าบริการ ดึงตัวเลขจาก `p` ที่เดียว (ห้ามพิมพ์ราคาซ้ำ)
@@ -16,7 +16,7 @@ const range = (s: string): [number, number] => {
 };
 const one = (s: string) => ({ unitLo: num(s), unitHi: num(s) });
 
-export function calcRows(only?: CalcGroup): CalcRow[] {
+export function calcRows(only?: CalcGroup, lang: CalcLang = "th"): CalcRow[] {
   const [premLo, premHi] = range(p.wash.premium);
   const rows: CalcRow[] = [
     // ---- ล้างแอร์
@@ -44,5 +44,47 @@ export function calcRows(only?: CalcGroup): CalcRow[] {
     { key: "topL", group: "washer", label: "ล้างเครื่องซักผ้าฝาบน มากกว่า 19 กก.", short: "ฝาบน มากกว่า 19 กก.", hint: "", ...one(p.washer.topLoadBig) },
     { key: "front", group: "washer", label: "ล้างเครื่องซักผ้าฝาหน้า", short: "ฝาหน้า", hint: "", ...one(p.washer.frontLoad), from: true },
   ];
-  return rows.filter((r) => !only || r.group === only);
+  const tr = lang === "th" ? undefined : INTL[lang];
+  return rows
+    .filter((r) => !only || r.group === only)
+    .map((r) => (tr && tr[r.key] ? { ...r, label: tr[r.key][0], short: tr[r.key][1], hint: tr[r.key][2] ?? "" } : r));
 }
+
+/**
+ * ชื่อแถวภาษาอังกฤษ/จีน [label ที่ส่งเข้า LINE, ชื่อสั้นในแถว, หมายเหตุ]
+ * ขนาด BTU ดึงจาก btu เหมือนฝั่งไทย ห้ามพิมพ์ตัวเลขเอง
+ */
+const INTL: Record<"en" | "zh-CN", Record<string, [string, string, string?]>> = {
+  en: {
+    wallS: [`Aircon clean, wall unit ${btu.washStd} BTU`, `Wall unit ${btu.washStd} BTU`],
+    wallL: [`Aircon clean, wall unit ${btu.washBig} BTU`, `Wall unit ${btu.washBig} BTU`],
+    premium: ["Full strip-down clean (Premium Full Wash)", "Full strip-down clean (Premium)", "depends on BTU size"],
+    suspended: ["Aircon clean, suspended ceiling unit", "Suspended ceiling unit"],
+    cassette: ["Aircon clean, four-way ceiling cassette", "Four-way ceiling cassette"],
+    installS: [`New installation ${btu.installSmall} BTU`, `New install ${btu.installSmall} BTU`, "bracket, 4 m pipe, trunking included"],
+    installL: [`New installation ${btu.installLarge} BTU`, `New install ${btu.installLarge} BTU`, "bracket, 4 m pipe, trunking included"],
+    relocate: ["Relocation, remove and refit elsewhere", "Relocation (remove + refit)"],
+    removeOnly: ["Removal only", "Removal only"],
+    diagnostic: ["Aircon fault diagnosis", "Fault diagnosis", "credited if you go ahead"],
+    topS: ["Washing machine clean, top loader up to 15 kg", "Top loader up to 15 kg"],
+    topM: ["Washing machine clean, top loader 15.1–19 kg", "Top loader 15.1–19 kg"],
+    topL: ["Washing machine clean, top loader over 19 kg", "Top loader over 19 kg"],
+    front: ["Washing machine clean, front loader", "Front loader"],
+  },
+  "zh-CN": {
+    wallS: [`空调清洗，壁挂机 ${btu.washStd} BTU`, `壁挂机 ${btu.washStd} BTU`],
+    wallL: [`空调清洗，壁挂机 ${btu.washBig} BTU`, `壁挂机 ${btu.washBig} BTU`],
+    premium: ["深度拆洗（Premium Full Wash）", "深度拆洗（Premium）", "按 BTU 大小计价"],
+    suspended: ["空调清洗，吊顶机", "吊顶机"],
+    cassette: ["空调清洗，四面出风嵌入机", "四面出风嵌入机"],
+    installS: [`新机安装 ${btu.installSmall} BTU`, `新机安装 ${btu.installSmall} BTU`, "含支架、4 米铜管、线槽"],
+    installL: [`新机安装 ${btu.installLarge} BTU`, `新机安装 ${btu.installLarge} BTU`, "含支架、4 米铜管、线槽"],
+    relocate: ["移机，拆下并在新位置安装", "移机（拆 + 装）"],
+    removeOnly: ["仅拆机", "仅拆机"],
+    diagnostic: ["空调故障检测", "故障检测", "决定维修则抵扣"],
+    topS: ["洗衣机清洗，上开式 15 公斤以下", "上开式 15 公斤以下"],
+    topM: ["洗衣机清洗，上开式 15.1–19 公斤", "上开式 15.1–19 公斤"],
+    topL: ["洗衣机清洗，上开式 19 公斤以上", "上开式 19 公斤以上"],
+    front: ["洗衣机清洗，前开式", "前开式"],
+  },
+};

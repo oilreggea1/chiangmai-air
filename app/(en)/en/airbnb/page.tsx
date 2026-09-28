@@ -103,7 +103,7 @@ export default function EnAirbnbPage() {
             {[
               { k: "45–60 min", v: "per wall unit for a standard clean" },
               { k: `${p.wash.stdBulk} THB`, v: "each from three units up" },
-              { k: "30 days", v: "warranty on the work" },
+              { k: "30 days", v: "drip warranty, 60 for a strip-down" },
             ].map((x) => (
               <div key={x.v} className="card p-5">
                 <p className="text-xl font-extrabold text-brand-700">{x.k}</p>

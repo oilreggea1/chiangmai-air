@@ -3,11 +3,13 @@ import Link from "next/link";
 import { site, pricing, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { calcRows } from "@/lib/calc-rows";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "清迈空调清洗价格表 | Pro Fresh Care";
 const description =
-  `清迈空调清洗、维修、安装、移机及洗衣机清洗完整价目表。壁挂机 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢，深度拆洗 ${p.wash.premium} 泰铢，吊顶机 ${p.wash.suspended} 泰铢起。开工前先报总价确认，完工后按报价付款。`;
+  `清迈空调清洗、安装、维修及洗衣机清洗价目表：壁挂机 ${p.wash.std} 泰铢，三台以上 ${p.wash.stdBulk} 泰铢，深度拆洗 ${p.wash.premium} 泰铢，附费用计算器。`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -102,6 +104,17 @@ export default function ZhPricingPage() {
             以上价格均为泰铢，服务范围内不另收车费。各服务项目附有泰文名称，方便您与本地房东或物业核对。
             任何一行不清楚，请用 LINE 问我，我会耐心解释。
           </p>
+        </div>
+      </section>
+
+      {/* ตัวคิดค่าบริการเดียวกับหน้าไทย (29 ก.ย. 2569) */}
+      <section className="section pt-0" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">计算您家的总费用</h2>
+          <p className="lead mt-3">选择工作类型和机器数量，多台价格自动计算。</p>
+          <div className="mt-7">
+            <PriceCalculator rows={calcRows(undefined, "zh-CN")} lineAir={site.lineId} lineWasher={site.lineId2} lang="zh-CN" />
+          </div>
         </div>
       </section>
 

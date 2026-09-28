@@ -9,21 +9,15 @@ import {
 } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 import { RecentJobs } from "@/components/RecentJobs";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { IntlCoverage } from "@/components/IntlCoverage";
+import { IntlReview } from "@/components/IntlReview";
+import { calcRows } from "@/lib/calc-rows";
 
-/** ชื่ออำเภอภาษาจีน ให้ลูกค้าจีนอ่านออกโดยไม่ต้องแปลเอง */
-const amphoeZh: Record<string, string> = {
-  "อ.สันกำแพง": "San Kamphaeng 县",
-  "อ.สารภี": "Saraphi 县",
-  "อ.เมืองเชียงใหม่": "清迈市区 Mueang Chiang Mai（全部乡）",
-  "อ.ดอยสะเก็ด": "Doi Saket 县",
-  "อ.แม่ออน": "Mae On 县（平原地区）",
-  "อ.สันทราย": "San Sai 县（全部乡，含 Mae Jo 湄州一带）",
-  "อ.หางดง": "Hang Dong 县（北部靠近市区的乡）",
-};
 
 const title = "清迈空调清洗维修 | Pro Fresh Care 泰国清迈";
 const description =
-  `清迈本地空调清洗、维修、安装、移机及洗衣机内桶清洗。壁挂机清洗每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢，价格全部公开，开工前先报价。可用 LINE 文字沟通，可开具增值税发票。`;
+  `清迈空调清洗、维修、安装及洗衣机清洗。壁挂机每台 ${p.wash.std} 泰铢，三台以上 ${p.wash.stdBulk} 泰铢，含消毒喷洒，开工前报价，可开增值税发票。`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -50,7 +44,7 @@ const servicesZh = [
     icon: IconSnow,
     name: "空调清洗",
     price: `${p.wash.std} 泰铢 · 三台以上 ${p.wash.stdBulk}`,
-    desc: `壁挂机常规清洗每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢。深度拆洗 ${p.wash.premium} 泰铢，按机型大小计价，会把风轮和所有可拆部件取下单独清洗消毒。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。`,
+    desc: `壁挂机常规清洗每台 ${p.wash.std} 泰铢，三台以上每台 ${p.wash.stdBulk} 泰铢。深度拆洗 ${p.wash.premium} 泰铢，按机型大小计价，会把风轮和所有可拆部件取下单独清洗。两种清洗最后都会喷洒消毒剂，漏水保修常规清洗 30 天、深度拆洗 60 天。如果您的机器没有异味且定期清洗，我会告诉您常规清洗就够了。`,
   },
   {
     icon: IconWrench,
@@ -242,6 +236,10 @@ export default function ChinesePage() {
               </div>
             ))}
           </div>
+          {/* 与泰文页相同的费用计算器，按工作类型分页 */}
+          <div className="mx-auto mt-10 max-w-3xl">
+            <PriceCalculator rows={calcRows(undefined, "zh-CN")} lineAir={site.lineId} lineWasher={site.lineId2} lang="zh-CN" />
+          </div>
           <div className="mt-8">
             <Link href="/zh/pricing" className="btn-ghost">
               查看完整价目表
@@ -314,6 +312,17 @@ export default function ChinesePage() {
         note="清洗前后对比 · 报告为泰文"
       />
 
+      <RecentJobs
+        lang="zh-CN"
+        slugs={["lang-washing-machine"]}
+        eyebrow="洗衣机施工实拍"
+        heading="内桶拆出，逐件清洗"
+        lead="清迈近期的洗衣机清洗工作，上开式与前开式，施工前后都有照片。"
+        tone="sand"
+      />
+
+      <IntlReview lang="zh-CN" />
+
       <section className="section" lang="zh-CN">
         <div className="wrap max-w-3xl">
           <h2 className="h2">预约流程</h2>
@@ -354,23 +363,16 @@ export default function ChinesePage() {
       </section>
 
       <section className="section" lang="zh-CN">
-        <div className="wrap max-w-3xl">
+        <div className="wrap">
           <h2 className="h2">服务范围</h2>
           <p className="lead mt-3">
             我以 San Kamphaeng 为据点，覆盖 {coverage.length} 个县共 {coverageTotal} 个乡，
             范围内不加收车费。清迈市区（Mueang Chiang Mai）全部乡都接，包括尼曼路一带、古城、Santitham
             和机场周边；San Sai 县（含 Mae Jo 湄州一带）也全部乡都接。此外还有 Hang Dong 县北部靠近市区的乡，以及 San Kamphaeng、Mae On、Saraphi 和 Doi Saket。
           </p>
-          <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-            {coverage.map((c) => (
-              <li key={c.amphoe} className="card flex items-center justify-between gap-3 px-5 py-4">
-                <span className="text-sm font-semibold">
-                  {amphoeZh[c.amphoe] ?? c.amphoe}
-                </span>
-                <span className="shrink-0 text-xs text-ink-soft">{c.tambons.length} 个乡</span>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-7">
+            <IntlCoverage lang="zh-CN" />
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/zh/areas" className="btn-ghost">
               查看完整乡名单与常见问题

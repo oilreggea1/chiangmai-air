@@ -3,11 +3,13 @@ import Link from "next/link";
 import { site, areas, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
+import { IntlCoverage } from "@/components/IntlCoverage";
+import { areaRoman } from "@/lib/intl";
 import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 const title = "Areas I Cover in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — and San Sai in full, plus northern Hang Dong, lowland Mae On, Saraphi and Doi Saket. No travel fee.";
+  "Aircon service across Chiang Mai: every sub-district of Mueang and San Sai, northern Hang Dong, lowland Mae On, Saraphi and Doi Saket. No travel fee.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -26,16 +28,6 @@ const trail = [
   { name: "Areas", path: "/en/areas" },
 ];
 
-/** ชื่ออำเภอภาษาอังกฤษ ใช้คำที่ชาวต่างชาติในเชียงใหม่ใช้กันจริง */
-const amphoeEn: Record<string, string> = {
-  "อ.สันกำแพง": "San Kamphaeng",
-  "อ.สารภี": "Saraphi",
-  "อ.เมืองเชียงใหม่": "Mueang Chiang Mai (city, Nimman, old town, Santitham)",
-  "อ.ดอยสะเก็ด": "Doi Saket",
-  "อ.แม่ออน": "Mae On (lowland sub-districts)",
-  "อ.สันทราย": "San Sai (whole district, including the Mae Jo area)",
-  "อ.หางดง": "Hang Dong (northern sub-districts)",
-};
 
 const faqs = [
   {
@@ -90,28 +82,10 @@ export default function EnAreasPage() {
       </div>
 
       <section className="section pt-4" lang="en">
-        <div className="wrap max-w-4xl">
+        <div className="wrap">
           <h2 className="h2">Districts covered</h2>
-          <div className="mt-7 space-y-4">
-            {coverage.map((c) => (
-              <div key={c.amphoe} className="card p-6">
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="text-lg font-bold">{amphoeEn[c.amphoe] ?? c.amphoe}</h3>
-                  <span className="text-sm font-semibold text-brand-700">
-                    {c.tambons.length} sub-district{(c.tambons.length as number) === 1 ? "" : "s"}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm leading-7 text-ink-soft">
-                  <span className="font-semibold text-ink">Sub-districts covered:</span>{" "}
-                  {c.tambons.join(" · ")}
-                </p>
-                {"all" in c && c.all && (
-                  <p className="mt-2 text-sm leading-7 text-ink-soft">
-                    I cover every sub-district in this district.
-                  </p>
-                )}
-              </div>
-            ))}
+          <div className="mt-7">
+            <IntlCoverage lang="en" withThai />
           </div>
           <p className="mt-6 text-sm leading-7 text-ink-soft">
             Match the Thai sub-district names against your address, or show one to a driver. If your address is not on the list, message me — I will
@@ -135,7 +109,7 @@ export default function EnAreasPage() {
                   hrefLang="th"
                   className="card flex items-center justify-between gap-3 px-5 py-4 transition-all hover:shadow-lift"
                 >
-                  <span className="text-sm font-semibold">{a.name}</span>
+                  <span className="text-sm font-semibold">{areaRoman(a.name)} <span className="ml-1 text-xs font-normal text-ink-soft" lang="th">{a.name}</span></span>
                 </Link>
               </li>
             ))}

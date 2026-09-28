@@ -13,7 +13,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconPin, IconClock, IconSh
  */
 const title = "关于 Arm 与 Pro Fresh Care 清迈 | Cher Solutions Co., Ltd.";
 const description =
-  "Arm 是 Pro Fresh Care 的技师，每一单都由他本人完成。注册公司 Cher Solutions Co., Ltd.，位于清迈 San Kamphaeng。价格公开，开工前报价，可开增值税发票。";
+  "Arm 本人上门完成每一单。注册公司 Cher Solutions Co., Ltd.，价格公开、开工前报价，可开增值税发票。";
 
 export const metadata: Metadata = {
   title: { absolute: title },

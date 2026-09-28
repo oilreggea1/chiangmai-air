@@ -5,9 +5,9 @@ import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { IconCheck, IconChevron } from "@/components/Icons";
 import { JobGallery } from "@/components/JobGallery";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { clipDesc, share } from "@/lib/seo";
 import { jobs, jobPhotoCount } from "@/lib/jobs";
-import { casesForJob, coverOf, getJob, groups, jobGroup, jobsIn } from "@/lib/job-stories";
+import { casesForJob, coverOf, getJob, groups, jobGroup, jobMeta, jobsIn } from "@/lib/job-stories";
 import { thaiDate } from "@/lib/lastmod";
 
 /**
@@ -24,12 +24,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const job = getJob((await params).id);
   if (!job) return {};
-  const title = `${job.summary} ${thaiDate(job.date)}`;
-  const description = `รูปจากหน้างานจริงในเชียงใหม่ ${jobPhotoCount(job)} รูป ${job.summary} ตั้งแต่สภาพเครื่องก่อน${job.verb} ระหว่าง${job.verb} จนถึงหลัง${job.verb}`;
+  const { title, description } = jobMeta(job);
   const cover = coverOf(job);
   return {
-    title,
-    description,
+    title: { absolute: `${title} | รูปงานจริง` },
+    description: clipDesc(description),
     alternates: { canonical: `/kon-lang/${job.id}` },
     ...share({ title, description, path: `/kon-lang/${job.id}`, image: cover }),
   };

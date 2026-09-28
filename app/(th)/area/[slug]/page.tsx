@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { site, areas, services, pricing, reviews, workingPhotos, p } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { clipDesc, share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, serviceIcons } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 import { workCases } from "@/lib/work-cases";
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = `ช่างแอร์${a.name} ล้างแอร์ ${p.wash.std} บาท 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ซ่อม ติดตั้ง ย้ายแอร์ถึงบ้านใน ${a.full}${descTail}`;
   return {
     title,
-    description,
+    description: clipDesc(description),
     alternates: { canonical: `/area/${a.slug}` },
     ...share({ title, description, path: `/area/${a.slug}` }),
   };

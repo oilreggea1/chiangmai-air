@@ -17,7 +17,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "Condo Aircon Cleaning Chiang Mai | Move-out & Rental Units";
 const description =
-  `Aircon cleaning for condos and rental units in Chiang Mai, ${p.wash.std} THB per wall unit, ${p.wash.stdBulk} THB each from three units. No balcony needed, water-catch bag, building rules followed. Full tax invoice available.`;
+  `Condo aircon cleaning in Chiang Mai, ${p.wash.std} THB per wall unit, ${p.wash.stdBulk} THB each from three. No balcony needed, building rules followed.`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     q: "Is there a warranty?",
-    a: "Cleaning comes with a 30-day warranty. If the same problem comes back within that time, I return and look at it again at no charge.",
+    a: "Every clean finishes with a disinfectant spray. The warranty against drips is 30 days after a standard clean and 60 days after a full strip-down clean. If the unit drips within that time, I come back and fix it at no charge.",
   },
   {
     q: "When do you work?",
@@ -119,7 +119,7 @@ export default function EnCondoPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              {p.wash.std} THB per wall unit · {p.wash.stdBulk} THB each from three units · 30-day warranty · tax invoice available
+              {p.wash.std} THB per wall unit · {p.wash.stdBulk} THB each from three units · 30-day drip warranty · tax invoice available
             </p>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
@@ -189,7 +189,7 @@ export default function EnCondoPage() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="card p-5">
                 <IconShield className="h-6 w-6 text-brand-600" />
-                <p className="mt-3 text-sm leading-7 text-ink-soft">30-day warranty. If the same problem comes back, I return at no charge.</p>
+                <p className="mt-3 text-sm leading-7 text-ink-soft">Drip warranty: 30 days for a standard clean, 60 days for a full strip-down. Every clean includes a disinfectant spray.</p>
               </div>
               <div className="card p-5">
                 <IconClock className="h-6 w-6 text-brand-600" />

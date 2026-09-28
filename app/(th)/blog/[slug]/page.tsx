@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { site, services } from "@/lib/site";
 import { articles, getArticle, relatedArticles } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { clipDesc, share } from "@/lib/seo";
 import ArticleBody, { TableOfContents } from "@/components/ArticleBody";
 import { IconClock, IconChevron, IconEngineer } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     // หัวข้อบทความยาวและบรรยายครบในตัวอยู่แล้ว ถ้าต่อท้ายแบรนด์อีก 14 ตัวอักษร
     // Google จะตัดหางทิ้งจนใจความหาย absolute จึงบอกไม่ให้ใช้ template
     title: { absolute: a.title },
-    description: a.description,
+    description: clipDesc(a.description),
     keywords: a.keywords,
     alternates: { canonical: `/blog/${a.slug}` },
     ...share({
       title: a.title,
-      description: a.description,
+      description: clipDesc(a.description),
       path: `/blog/${a.slug}`,
       publishedTime: a.updated,
       modifiedTime: a.updated,
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: Props) {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           headline: a.title,
-          description: a.description,
+          description: clipDesc(a.description),
           url: `${site.url}/blog/${a.slug}`,
           mainEntityOfPage: { "@type": "WebPage", "@id": `${site.url}/blog/${a.slug}` },
           datePublished: a.updated,

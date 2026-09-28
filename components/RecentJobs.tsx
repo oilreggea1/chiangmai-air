@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import { jobs, jobPhotoCount } from "@/lib/jobs";
+import { jobs } from "@/lib/jobs";
+import { JobStoryCard } from "./JobStoryCard";
 
 /**
  * แถบงานล่าสุดสำหรับหน้าภาษาอังกฤษและจีน
@@ -9,12 +9,9 @@ import { jobs, jobPhotoCount } from "@/lib/jobs";
  * เจ้าของตรวจเองแล้วพบว่าจับคู่ผิดเยอะ จึงเลิกจับคู่ทั้งหมด
  * ตอนนี้โชว์เป็นสองแถวต่อหนึ่งงาน แถวบนก่อนล้าง แถวล่างหลังล้าง
  * ไม่ได้อ้างว่ารูปไหนคู่กับรูปไหน จึงไม่มีโอกาสผิด
+ *
+ * **แก้ 29 ก.ย. 2569** เปลี่ยนเป็นการ์ดเรื่องทีละงาน (เหมือนหน้าไทย) ลิงก์ไปหน้า /en/work และ /zh/work
  */
-const L = {
-  en: { before: "Before", after: "After", note: "Same job", photos: "photos" },
-  // ใช้คำกลาง ๆ ว่าก่อน/หลังทำงาน เพราะแถบนี้โชว์งานติดตั้งด้วย ไม่ใช่งานล้างอย่างเดียว
-  "zh-CN": { before: "施工前", after: "施工后", note: "同一单工作", photos: "张" },
-} as const;
 
 export function RecentJobs({
   lang,
@@ -35,10 +32,14 @@ export function RecentJobs({
   limit?: number;
   tone?: "white" | "sand";
 }) {
-  const list = jobs.filter((j) => slugs.includes(j.serviceSlug)).slice(-limit).reverse();
+  // งานล่าสุดก่อน ตามวันที่จริง (เดิมใช้ลำดับในไฟล์ ซึ่งไม่ได้เรียงตามวัน)
+  const list = jobs
+    .filter((j) => slugs.includes(j.serviceSlug))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, limit);
   if (list.length === 0) return null;
-  const t = L[lang];
-  const locale = lang === "en" ? "en-GB" : "zh-CN";
+  const group = slugs.includes("lang-washing-machine") && !slugs.some((x) => x !== "lang-washing-machine") ? "washer" : "air";
+  const base = lang === "en" ? "/en/work" : "/zh/work";
 
   return (
     <section className={`section ${tone === "sand" ? "bg-sand" : ""}`} lang={lang}>
@@ -46,60 +47,15 @@ export function RecentJobs({
         <p className="eyebrow">{eyebrow}</p>
         <h2 className="h2 mt-4">{heading}</h2>
         <p className="lead mt-3 max-w-2xl">{lead}</p>
-
-        <div className="mt-9 space-y-6">
+        <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((j) => (
-            <article key={j.id} className="card p-5 sm:p-7">
-              <p className="text-xs font-bold text-accent">
-                {new Date(j.date).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {jobPhotoCount(j)} {t.photos}
-              </p>
-              {(
-                [
-                  { label: t.before, photos: j.before, dark: true },
-                  { label: t.after, photos: j.after, dark: false },
-                ] as const
-              ).map((row) => (
-                <div key={row.label} className="mt-5">
-                  <p className="flex items-center gap-2 text-sm font-bold">
-                    <span
-                      className={
-                        row.dark
-                          ? "inline-block rounded-lg bg-brand-600 px-2.5 py-1 text-xs text-white"
-                          : "inline-block rounded-lg bg-gradient-to-b from-ice to-accent px-2.5 py-1 text-xs text-[#04121F]"
-                      }
-                    >
-                      {row.label}
-                    </span>
-                    <span className="text-ink-soft">
-                      {row.photos.length} {t.photos}
-                    </span>
-                  </p>
-                  <ul className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6">
-                    {row.photos.slice(0, 6).map((p) => (
-                      <li key={p.src} className="overflow-hidden rounded-xl bg-slate-100">
-                        <Image
-                          src={p.src}
-                          alt={p.alt}
-                          width={480}
-                          height={480}
-                          loading="lazy"
-                          sizes="(max-width: 640px) 25vw, 14vw"
-                          className="aspect-square w-full object-cover"
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-              <Link
-                href="/kon-lang"
-                hrefLang="th"
-                className="mt-5 inline-flex text-sm font-semibold text-brand-700 hover:underline"
-              >
-                {lang === "en" ? "See all jobs" : "查看全部案例"}
-              </Link>
-            </article>
+            <JobStoryCard key={j.id} job={j} lang={lang} />
           ))}
+        </div>
+        <div className="mt-8">
+          <Link href={`${base}#${group}`} className="btn-ghost">
+            {lang === "en" ? "See every job, before and after" : "查看全部施工前后实拍"}
+          </Link>
         </div>
       </div>
     </section>

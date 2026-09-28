@@ -6,7 +6,7 @@ import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu }
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, videoSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { clipDesc, share } from "@/lib/seo";
 import { serviceIcons, IconPhone, IconLine, IconChevron, IconPin, IconCheck } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList, Steps, CaseStudies } from "@/components/Blocks";
 import { reels } from "@/components/ReelsShowcase";
@@ -120,18 +120,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const s = services.find((x) => x.slug === slug);
   if (!s) return {};
   // หน้าบริการที่มีฉบับอังกฤษ (24 ก.ย. 2569) ประกาศ hreflang คู่กัน ที่เหลือมีแค่ไทย
-  const enPath: Record<string, string> = { "tid-tang-air": "/en/installation", "lang-washing-machine": "/en/washing-machine" };
-  const zhPath: Record<string, string> = { "tid-tang-air": "/zh/installation", "lang-washing-machine": "/zh/washing-machine" };
+  const enPath: Record<string, string> = { "tid-tang-air": "/en/installation", "lang-washing-machine": "/en/washing-machine", "som-air": "/en/repair" };
+  const zhPath: Record<string, string> = { "tid-tang-air": "/zh/installation", "lang-washing-machine": "/zh/washing-machine", "som-air": "/zh/repair" };
   const en = enPath[s.slug];
   const zh = zhPath[s.slug];
   return {
     title: s.title,
-    description: s.description,
+    description: clipDesc(s.description),
     alternates: {
       canonical: `/service/${s.slug}`,
       ...(en ? { languages: { "th-TH": `/service/${s.slug}`, "en-US": en, ...(zh ? { "zh-CN": zh } : {}), "x-default": `/service/${s.slug}` } } : {}),
     },
-    ...share({ title: s.title, description: s.description, path: `/service/${s.slug}` }),
+    ...share({ title: s.title, description: clipDesc(s.description), path: `/service/${s.slug}` }),
   };
 }
 

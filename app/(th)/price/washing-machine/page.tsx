@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, p, services, coverage } from "@/lib/site";
 import { faqSchema, breadcrumbSchema, videoSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { share, clipDesc } from "@/lib/seo";
 import { IconChevron, IconCheck, IconShield, IconWasher } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, CheckList } from "@/components/Blocks";
 import { reels } from "@/components/ReelsShowcase";
@@ -27,7 +27,7 @@ const description =
 
 export const metadata: Metadata = {
   title,
-  description,
+  description: clipDesc(description),
   keywords: [
     "ราคาล้างเครื่องซักผ้า", "ราคาล้างถังเครื่องซักผ้า", "ค่าล้างถังเครื่องซักผ้า",
     "ค่าล้างเครื่องซักผ้า", "ล้างเครื่องซักผ้า ราคา", "ล้างถังเครื่องซักผ้า ราคา",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "ล้างเครื่องซักผ้าเชียงใหม่ ราคา",
   ],
   alternates: { canonical: "/price/washing-machine" },
-  ...share({ title, description, path: "/price/washing-machine" }),
+  ...share({ title, description: clipDesc(description), path: "/price/washing-machine" }),
 };
 
 const trail = [

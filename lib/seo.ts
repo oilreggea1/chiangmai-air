@@ -99,3 +99,16 @@ export function share({
     },
   };
 }
+
+/**
+ * ตัดคำอธิบายหน้า (meta description) ให้ไม่เกินราว 155 ตัวอักษร (29 ก.ย. 2569)
+ * ตรวจ HTML จริงพบ 45 หน้ายาวเกิน 170 ตัวอักษร Google จะตัดกลางประโยคเอง
+ * ตัดที่ช่องว่างสุดท้ายก่อนถึงขีดจำกัด ภาษาไทยเว้นวรรคระหว่างวลีอยู่แล้วจึงไม่ขาดกลางคำ
+ */
+export function clipDesc(s: string, max = 155): string {
+  if (s.length <= max) return s;
+  const cut = s.slice(0, max);
+  // ตัดที่ช่องว่างสุดท้ายเสมอ ภาษาไทยถ้าตัดกลางวลีจะอ่านเป็นคำขาด เช่น "เก็บงานก"
+  const at = Math.max(cut.lastIndexOf(" "), cut.lastIndexOf("，"), cut.lastIndexOf(","));
+  return (at > max * 0.4 ? cut.slice(0, at) : cut).replace(/[\s,，、·–-]+$/, "");
+}

@@ -6,7 +6,7 @@ import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { IconCheck, IconChevron } from "@/components/Icons";
 import { breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
 import { lastmodIso, SRC } from "@/lib/lastmod";
-import { share } from "@/lib/seo";
+import { clipDesc, share } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { getWorkCase, workCases } from "@/lib/work-cases";
 import { jobs, jobPhotoCount } from "@/lib/jobs";
@@ -20,7 +20,9 @@ export function generateStaticParams() { return workCases.map((item) => ({ slug:
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = getWorkCase((await params).slug);
   if (!item) return {};
-  const description = `${item.finding} ดูขั้นตอนการทำงาน ภาพหน้างานจริง และผลหลังดำเนินการโดยช่างอาร์ม`;
+  // ต่อท้ายคำชวนดูเฉพาะเมื่อไม่ทำให้คำอธิบายยาวเกิน ไม่งั้นถูกตัดกลางวลี
+  const invite = " ดูขั้นตอนการทำงาน ภาพหน้างานจริง และผลหลังดำเนินการโดยช่างอาร์ม";
+  const description = item.finding.length + invite.length <= 155 ? item.finding + invite : item.finding;
   /**
    * ชื่อบนแท็บ/ผลค้นหาต้องสั้นกว่าหัวเรื่องบนหน้า (24 ก.ย. 2569)
    * หัวเรื่องเคสเขียนยาวเพื่อบอกรายละเอียดงาน แต่ Google ตัดทิ้งราว 60 ตัวอักษร
@@ -35,9 +37,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const metaTitle = head.length >= 46 ? head : `${head} ${tail}`.slice(0, 60).trim();
   return {
     title: { absolute: metaTitle },
-    description,
+    description: clipDesc(description),
     alternates: { canonical: `/case-study/${item.slug}` },
-    ...share({ title: item.title, description, path: `/case-study/${item.slug}`, image: item.images[0] }),
+    ...share({ title: item.title, description: clipDesc(description), path: `/case-study/${item.slug}`, image: item.images[0] }),
   };
 }
 
@@ -118,11 +120,11 @@ export default async function WorkCasePage({ params }: Props) {
                       <span className="text-ink-soft">{g.photos.length} รูป</span>
                     </p>
                     <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                      {g.photos.map((image) => (
+                      {g.photos.map((image, n) => (
                         <li key={image.src} className="card overflow-hidden">
                           <Image
                             src={image.src}
-                            alt={image.alt}
+                            alt={image.alt || `${item.title} ภาพ${g.label} ลำดับที่ ${n + 1}`}
                             width={640}
                             height={640}
                             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 22vw"

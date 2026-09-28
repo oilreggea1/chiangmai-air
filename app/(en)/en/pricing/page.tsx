@@ -3,11 +3,13 @@ import Link from "next/link";
 import { site, pricing, p } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { calcRows } from "@/lib/calc-rows";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "Aircon Cleaning Prices in Chiang Mai | Pro Fresh Care";
 const description =
-  `Published aircon prices in Chiang Mai. Wall units ${p.wash.std} THB, ${p.wash.stdBulk} THB each for three or more, full strip-down ${p.wash.premium} THB, ceiling cassettes from ${p.wash.cassette} THB, installation from ${p.install.small} THB.`;
+  `Published prices in Chiang Mai: wall-unit clean ${p.wash.std} THB (${p.wash.stdBulk} for 3+), strip-down ${p.wash.premium} THB, installation from ${p.install.small} THB.`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -110,6 +112,17 @@ export default function EnPricingPage() {
             All prices are in Thai baht and are what you pay, with no travel fee inside my service area.
             If any line is unclear, message me on LINE and I will explain it. I use a translation app, so short plain sentences work best.
           </p>
+        </div>
+      </section>
+
+      {/* ตัวคิดค่าบริการเดียวกับหน้าไทย (29 ก.ย. 2569) */}
+      <section className="section pt-0" lang="en">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">Work out the total for your home</h2>
+          <p className="lead mt-3">Pick the job type and the number of units. Multi-unit rates are applied automatically.</p>
+          <div className="mt-7">
+            <PriceCalculator rows={calcRows(undefined, "en")} lineAir={site.lineId} lineWasher={site.lineId2} lang="en" />
+          </div>
         </div>
       </section>
 

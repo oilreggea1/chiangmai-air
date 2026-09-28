@@ -15,7 +15,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "清迈洗衣机内桶清洗 | Pro Fresh Care";
 const description =
-  `清迈上门洗衣机深度清洗：内桶整个拆下，逐件清洗。上开式 ${p.washer.topLoad} 泰铢起，前开式 ${p.washer.frontLoad} 泰铢起，每台约 3 小时，保修 30 天。`;
+  `清迈上门洗衣机拆洗：内桶拆出逐件清洗。上开式 ${p.washer.topLoad} 泰铢起，前开式 ${p.washer.frontLoad} 泰铢起，保修 30 天。`;
 
 export const metadata: Metadata = {
   title: { absolute: title },

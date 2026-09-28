@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, areas, heroPhotos, thumbOf, p, btu } from "@/lib/site";
+import { site, heroPhotos, thumbOf, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import {
@@ -9,10 +9,14 @@ import {
 } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 import { RecentJobs } from "@/components/RecentJobs";
+import { PriceCalculator } from "@/components/PriceCalculator";
+import { IntlCoverage } from "@/components/IntlCoverage";
+import { IntlReview } from "@/components/IntlReview";
+import { calcRows } from "@/lib/calc-rows";
 
 const title = "Aircon Cleaning & AC Repair in Chiang Mai | Pro Fresh Care";
 const description =
-  `Aircon cleaning and AC repair in Chiang Mai by Arm, a local technician. ${p.wash.std} THB per wall unit, ${p.wash.stdBulk} THB each for three or more. Open Mon-Sat 8am-6pm.`;
+  `Aircon cleaning and AC repair in Chiang Mai by Arm. ${p.wash.std} THB per wall unit, ${p.wash.stdBulk} THB each for 3+, disinfectant spray included. Mon–Sat 8am–6pm.`;
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -47,7 +51,7 @@ const servicesEn = [
     icon: IconSnow,
     name: "Aircon cleaning",
     price: `${p.wash.std} THB · ${p.wash.stdBulk} for 3+`,
-    desc: `Standard clean ${p.wash.std} THB per wall unit, or ${p.wash.stdBulk} THB each for three or more. The full strip-down clean is ${p.wash.premium} THB depending on size — I take out the blower wheel and every removable part, wash them separately and disinfect them. The standard clean is enough for a unit with no smell that gets cleaned regularly — I recommend the full strip-down only where it is needed.`,
+    desc: `Standard clean ${p.wash.std} THB per wall unit, or ${p.wash.stdBulk} THB each for three or more. The full strip-down clean is ${p.wash.premium} THB depending on size — I take out the blower wheel and every removable part and wash them separately. Both finish with a disinfectant spray. Drip warranty: 30 days for the standard clean, 60 days for the full strip-down. The standard clean is enough for a unit with no smell that gets cleaned regularly — I recommend the full strip-down only where it is needed.`,
   },
   {
     icon: IconWrench,
@@ -242,6 +246,10 @@ export default function EnglishPage() {
             Refrigerant is {p.repair.refrigerantPerLb} THB per pound for both R32 and R410A. The level is measured in front of you
             at no charge first, so you can see whether a top-up is needed before you pay for one.
           </p>
+          {/* ตัวคิดค่าบริการเดียวกับหน้าไทย แยกแท็บ ล้าง / ติดตั้ง–ย้าย / ซ่อม / เครื่องซักผ้า */}
+          <div className="mx-auto mt-10 max-w-3xl">
+            <PriceCalculator rows={calcRows(undefined, "en")} lineAir={site.lineId} lineWasher={site.lineId2} lang="en" />
+          </div>
         </div>
       </section>
 
@@ -339,6 +347,17 @@ export default function EnglishPage() {
         note="Before and after · report in Thai"
       />
 
+      <RecentJobs
+        lang="en"
+        slugs={["lang-washing-machine"]}
+        eyebrow="Washing machine jobs"
+        heading="Drum out, every part washed"
+        lead="Recent washing machine jobs in Chiang Mai, top and front loaders, photographed before and after."
+        tone="sand"
+      />
+
+      <IntlReview lang="en" />
+
       <section className="section" lang="en">
         <div className="wrap max-w-3xl">
           <h2 className="h2">What happens when you book</h2>
@@ -387,31 +406,10 @@ export default function EnglishPage() {
             the airport side — as well as San Sai and northern Hang Dong, plus the parts of San Kamphaeng,
             Mae On, Saraphi and Doi Saket within my service range.
           </p>
-          {/*
-            การ์ดพื้นที่เคยลิงก์ไป /area/[slug] ซึ่งเป็นหน้าภาษาไทยล้วน (แก้ 19 ส.ค. 2569)
-            คนอ่านภาษาอังกฤษกดจากหน้านี้แล้วตกไปอยู่หน้าไทยโดยไม่มีอะไรเตือน
-            จึงเปลี่ยนเป็นรายการที่กดไม่ได้ แล้วส่งต่อไป /en/areas ซึ่งเป็นภาษาอังกฤษ
-            และมีบล็อกลิงก์หน้าโซนภาษาไทยกำกับไว้ให้เลือกเองอยู่แล้ว
-          */}
-          {/*
-            ชื่อพื้นที่บนหน้านี้ต้องเป็นอักษรละติน ไม่ใช่อักษรไทย
-            ของเดิมดึง a.name ซึ่งเป็นภาษาไทย คนอ่านอังกฤษจึงเห็นเป็นตัวอักษรที่อ่านไม่ออก
-            slug เป็นคำอ่านแบบละตินอยู่แล้ว จึงแปลงเป็นชื่อที่อ่านออกได้โดยไม่ต้องเก็บข้อมูลซ้ำ
-            ถ้าวันไหนอยากได้ชื่อที่สะกดเป๊ะกว่านี้ ให้เพิ่มฟิลด์ nameEn ใน areas แล้วใช้แทน
-          */}
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {areas.map((a) => (
-              <li key={a.slug} className="card flex h-full items-start gap-3 p-5">
-                <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
-                <span className="text-sm">
-                  <span className="block font-bold">
-                    {a.slug.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ")}
-                  </span>
-                  <span className="mt-0.5 block text-xs text-ink-soft" lang="th">{a.name}</span>
-                </span>
-              </li>
-            ))}
-          </ul>
+          {/* เขตบริการแยกกลุ่มตามอำเภอ ชื่อตำบลเป็นอักษรโรมัน (29 ก.ย. 2569) เดิมเป็นการ์ด 57 ใบพร้อมชื่อไทย */}
+          <div className="mt-8">
+            <IntlCoverage lang="en" />
+          </div>
           <div className="mt-7">
             <Link href="/en/areas" className="btn-ghost" data-cta="en-areas">
               See the full list of districts and sub-districts
@@ -430,6 +428,7 @@ export default function EnglishPage() {
               { href: "/en/installation", t: "Installation and relocation", d: "Units bought online welcome" },
               { href: "/en/washing-machine", t: "Washing machine deep clean", d: "Drum out, every part washed" },
               { href: "/en/about", t: "About Arm and the company", d: "Registered company, who comes to your home" },
+              { href: "/en/work", t: "Real jobs, before and after", d: "Aircon and washing machine photos" },
               { href: "/en/areas", t: "Areas I cover", d: "District and sub-district list" },
               { href: "/en/condo", t: "Condo aircon cleaning", d: "No balcony needed, move-out cleaning" },
               { href: "/en/airbnb", t: "Airbnb and rentals", d: "Cleaning between guests" },

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { site, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
+import { BtuCalculator } from "@/components/BtuCalculator";
 import { IconPhone, IconLine, IconCheck, IconChevron, IconShield, IconInstall, IconMove } from "@/components/Icons";
 import { IntlReels, intlReelSets, reelsByIds } from "@/components/ReelsShowcase";
 import { RecentJobs } from "@/components/RecentJobs";
@@ -177,6 +178,17 @@ export default function ZhInstallationPage() {
               <IconLine className="h-5 w-5" />
               LINE {site.lineId}
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ตัวคำนวณ BTU เดียวกับบทความไทย /blog/khamnuan-btu (29 ก.ย. 2569) */}
+      <section className="section" lang="zh-CN">
+        <div className="wrap max-w-3xl">
+          <h2 className="h2">需要多大的空调？</h2>
+          <p className="lead mt-3">输入房间尺寸，计算器会按我在现场使用的同一套公式建议 BTU 大小。</p>
+          <div className="mt-7">
+            <BtuCalculator lang="zh-CN" />
           </div>
         </div>
       </section>

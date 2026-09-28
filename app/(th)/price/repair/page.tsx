@@ -4,7 +4,7 @@ import { site, p, coverage } from "@/lib/site";
 import { repairPricing, symptoms } from "@/lib/repair";
 import { getArticle } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { share, clipDesc } from "@/lib/seo";
 import { IconPhone, IconLine, IconChevron, IconCheck, IconShield, IconWrench } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
 
@@ -14,14 +14,14 @@ const description =
 
 export const metadata: Metadata = {
   title,
-  description,
+  description: clipDesc(description),
   keywords: [
     "ราคาซ่อมแอร์เชียงใหม่", "ค่าซ่อมแอร์ เท่าไหร่", "ซ่อมแอร์ราคา",
     "เติมน้ำยาแอร์ R32 ราคา", "ค่าตรวจเช็คแอร์", "เติมน้ำยาแอร์ใกล้ฉัน",
     "ร้านเติมน้ำยาแอร์ใกล้ฉัน", "เติมน้ำยาแอร์ เชียงใหม่",
   ],
   alternates: { canonical: "/price/repair" },
-  ...share({ title, description, path: `/price/repair` }),
+  ...share({ title, description: clipDesc(description), path: `/price/repair` }),
 };
 
 const trail = [

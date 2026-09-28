@@ -2,6 +2,7 @@ import { jobs, type Job } from "./jobs";
 import { workCases, type WorkCase } from "./work-cases";
 import { caseToJob } from "./case-to-job";
 import { caseRelatedJob } from "./case-related-job";
+import { thaiDate } from "./lastmod";
 
 /**
  * รูปงานจริงแยกเป็นเรื่องทีละงาน และแยกหมวดแอร์กับเครื่องซักผ้า (29 ก.ย. 2569)
@@ -61,3 +62,32 @@ export const homeFeatured: Record<JobGroup, string[]> = {
 
 /** รูปปกของการ์ด ใช้รูปแรกของกองก่อนทำ เพื่อเล่าว่าเครื่องอยู่ในสภาพไหนตอนผมไปถึง */
 export const coverOf = (j: Job) => j.before[0] ?? j.after[0] ?? j.during[0];
+
+/**
+ * alt ของรูปงาน (29 ก.ย. 2569) งานเครื่องซักผ้า 912 รูปใน jobs.ts มี alt ว่าง
+ * jobs.ts ห้ามแก้มือ จึงเติมตอนแสดงผลจากข้อมูลที่ยืนยันได้ คือชื่องาน วันที่ และกอง
+ */
+const PHASE = { before: "ก่อน", during: "ระหว่าง", after: "หลัง" } as const;
+export function photoAlt(job: Job, phase: keyof typeof PHASE, i: number, alt?: string): string {
+  return alt || `${job.summary} ${thaiDate(job.date)} ภาพ${PHASE[phase]}${job.verb} ลำดับที่ ${i + 1}`;
+}
+
+const MONTH_SHORT = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+const shortDate = (iso: string) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d} ${MONTH_SHORT[m - 1]} ${String(y + 543).slice(2)}`;
+};
+
+/**
+ * ชื่อหน้าและคำอธิบายของหน้างาน ต้องไม่ซ้ำกันเอง (29 ก.ย. 2569)
+ * งานวันเดียวกันที่ชื่อเหมือนกัน (เช่น ล้างแอร์ 4 เครื่อง 3 งานในวันเดียว) เติม "ชุดที่ n"
+ */
+export function jobMeta(job: Job): { title: string; description: string } {
+  const same = jobs.filter((j) => j.summary === job.summary && j.date === job.date);
+  const nth = same.length > 1 ? ` ชุดที่ ${same.findIndex((j) => j.id === job.id) + 1}` : "";
+  const head = job.summary.length > 44 ? job.summary.slice(0, job.summary.lastIndexOf(" ", 44)) : job.summary;
+  const title = `${head} ${shortDate(job.date)}${nth}`;
+  const counts = [`ก่อน${job.verb} ${job.before.length} รูป`, job.during.length ? `ระหว่าง${job.verb} ${job.during.length} รูป` : "", `หลัง${job.verb} ${job.after.length} รูป`].filter(Boolean).join(" ");
+  const description = `${job.summary} ${thaiDate(job.date)}${nth} รูปจากหน้างานจริงในเชียงใหม่ ${counts}`;
+  return { title, description };
+}

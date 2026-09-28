@@ -63,7 +63,7 @@ const faqs = [
   { q: "物业要提前登记，怎么办？", a: "把楼里的要求发给我，我会配合登记并提供需要的资料。您也可以直接把我的电话给物业，我来跟他们对接施工时间。" },
   { q: "多久洗一次比较合适？", a: "看房间的环境。靠马路、靠工地或全天开机的房间要勤一些；高楼层、开得少的房间可以拉长。我会在现场看过滤网和盘管的实际情况，再告诉您多久一次合适，不会让您洗得比需要的更勤。" },
   { q: "可以开发票吗？", a: "可以。能开具公司抬头（Cher Solutions Co., Ltd.）的增值税发票，需要报销或给房东做账都用得上。" },
-  { q: "洗完有保障吗？", a: "清洗保修 30 天。如果同样的问题在这段时间里回来，我会再上门处理，不另外收费。" },
+  { q: "洗完有保障吗？", a: "每次清洗最后都会喷洒消毒剂。漏水保修：常规清洗 30 天，深度拆洗 60 天。期间如果滴水，我会再上门处理，不另外收费。" },
 ];
 
 export default function ZhCondoPage() {
@@ -98,7 +98,7 @@ export default function ZhCondoPage() {
               </a>
             </div>
             <p className="mt-4 text-sm text-ink-soft">
-              每台 {p.wash.std} 泰铢 · 三台以上每台 {p.wash.stdBulk} 泰铢 · 清洗保修 30 天
+              每台 {p.wash.std} 泰铢 · 三台以上每台 {p.wash.stdBulk} 泰铢 · 漏水保修 30 天
             </p>
           </div>
           <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
@@ -168,7 +168,7 @@ export default function ZhCondoPage() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="card p-5">
                 <IconShield className="h-6 w-6 text-brand-600" />
-                <p className="mt-3 text-sm leading-7 text-ink-soft">清洗保修 30 天，同样的问题回来我再上门。</p>
+                <p className="mt-3 text-sm leading-7 text-ink-soft">漏水保修：常规清洗 30 天，深度拆洗 60 天。每次清洗都包含消毒喷洒。</p>
               </div>
               <div className="card p-5">
                 <IconClock className="h-6 w-6 text-brand-600" />

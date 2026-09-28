@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, areas, services, faqs } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { share, clipDesc } from "@/lib/seo";
 import { IconPhone, IconLine, IconPin, IconClock, IconChevron, IconShield } from "@/components/Icons";
 import { FaqList, Breadcrumbs } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
@@ -13,9 +13,9 @@ const description =
 
 export const metadata: Metadata = {
   title,
-  description,
+  description: clipDesc(description),
   alternates: { canonical: "/contact" },
-  ...share({ title, description, path: `/contact` }),
+  ...share({ title, description: clipDesc(description), path: `/contact` }),
 };
 
 const trail = [

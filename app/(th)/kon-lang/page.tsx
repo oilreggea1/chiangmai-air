@@ -31,7 +31,10 @@ const description = `ภาพจากหน้างานจริงใน�
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/kon-lang" },
+  alternates: {
+    canonical: "/kon-lang",
+    languages: { "th-TH": "/kon-lang", "en-US": "/en/work", "zh-CN": "/zh/work", "x-default": "/kon-lang" },
+  },
   ...share({ title, description, path: "/kon-lang" }),
 };
 

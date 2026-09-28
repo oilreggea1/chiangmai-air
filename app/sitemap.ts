@@ -30,6 +30,8 @@ const extraSources: Record<string, string[]> = {
   "/videos": [SRC.reels],
   "/case-study": [SRC.workCases],
   "/kon-lang": [SRC.jobs],
+  "/en/work": [SRC.jobs],
+  "/zh/work": [SRC.jobs],
   "/answers": [SRC.site],
   "/en/pricing": [SRC.site],
   "/en/installation": [SRC.site],
@@ -77,6 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/washing-machine", priority: 0.7, freq: "monthly" as const },
     { path: "/en/repair", priority: 0.8, freq: "monthly" as const },
     { path: "/en/about", priority: 0.6, freq: "monthly" as const },
+    { path: "/en/work", priority: 0.7, freq: "monthly" as const },
     { path: "/zh", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/pricing", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/installation", priority: 0.7, freq: "monthly" as const },
@@ -85,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/zh/areas", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/repair", priority: 0.8, freq: "monthly" as const },
     { path: "/zh/condo", priority: 0.8, freq: "monthly" as const },
+    { path: "/zh/work", priority: 0.7, freq: "monthly" as const },
   ];
 
   return [

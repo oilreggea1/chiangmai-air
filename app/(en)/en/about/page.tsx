@@ -15,7 +15,7 @@ import { IconPhone, IconLine, IconCheck, IconChevron, IconPin, IconClock, IconSh
  */
 const title = "About Arm and Pro Fresh Care, Chiang Mai";
 const description =
-  "Arm is the technician who does every Pro Fresh Care job himself. Registered company Cher Solutions Co., Ltd., based in San Kamphaeng, Chiang Mai. Prices published, quote before work, full tax invoices available.";
+  "Arm does every Pro Fresh Care job himself. Registered company Cher Solutions Co., Ltd. in Chiang Mai: published prices, a quote before work, VAT invoices.";
 
 export const metadata: Metadata = {
   title: { absolute: title },

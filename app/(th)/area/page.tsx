@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { areas, services, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { share, clipDesc } from "@/lib/seo";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
 const title = `ช่างแอร์ใกล้ฉันในเชียงใหม่ ตรวจสอบเขตบริการ ${coverage.length} อำเภอ ${coverageTotal} ตำบล`;
 const description =
-  "หาช่างแอร์ใกล้บ้านในเชียงใหม่ เช็คได้ทันทีว่าตำบลของคุณอยู่ในเขตที่ผมไปถึง เมืองเชียงใหม่ สันทราย ครบทุกตำบล พร้อมหางดงฝั่งเหนือ สันกำแพง แม่ออน สารภี ดอยสะเก็ด ราคาเดียวกันทุกพื้นที่ ไม่คิดค่าเดินทางเพิ่ม";
+  "เช็คว่าตำบลของคุณอยู่ในเขตบริการหรือไม่ เมืองเชียงใหม่ สันทราย ครบทุกตำบล หางดงฝั่งเหนือ สันกำแพง แม่ออน สารภี ดอยสะเก็ด ราคาเดียวกัน ไม่คิดค่าเดินทาง";
 
 export const metadata: Metadata = {
   title,
-  description,
+  description: clipDesc(description),
   alternates: {
     canonical: "/area",
     languages: { "th-TH": "/area", "en-US": "/en/areas", "zh-CN": "/zh/areas", "x-default": "/area" },
   },
-  ...share({ title, description, path: `/area` }),
+  ...share({ title, description: clipDesc(description), path: `/area` }),
 };
 
 const trail = [

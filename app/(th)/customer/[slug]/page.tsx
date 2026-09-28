@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { site, areas, pricing, reviews, p } from "@/lib/site";
 import { segments } from "@/lib/segments";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
-import { share } from "@/lib/seo";
+import { clipDesc, share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!s) return {};
   return {
     title: s.title,
-    description: s.description,
+    description: clipDesc(s.description),
     alternates: {
       canonical: `/customer/${s.slug}`,
       // หน้าคอนโดมีคู่แปลภาษาอังกฤษและจีน
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? { languages: { "th-TH": "/customer/condo", "en-US": "/en/condo", "zh-CN": "/zh/condo", "x-default": "/customer/condo" } }
         : {}),
     },
-    ...share({ title: s.title, description: s.description, path: `/customer/${s.slug}` }),
+    ...share({ title: s.title, description: clipDesc(s.description), path: `/customer/${s.slug}` }),
   };
 }
 

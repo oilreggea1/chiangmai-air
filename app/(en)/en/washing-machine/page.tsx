@@ -16,7 +16,7 @@ import { RecentJobs } from "@/components/RecentJobs";
  */
 const title = "Washing Machine Drum Cleaning in Chiang Mai | Pro Fresh Care";
 const description =
-  `Washing machine deep clean in Chiang Mai: the drum comes out and every part is washed. Top loaders from ${p.washer.topLoad} THB, front loaders from ${p.washer.frontLoad} THB, about 3 hours, 30-day warranty.`;
+  `Washing machine deep clean in Chiang Mai: drum out, every part washed. Top loaders from ${p.washer.topLoad} THB, front loaders from ${p.washer.frontLoad} THB.`;
 
 export const metadata: Metadata = {
   title: { absolute: title },
