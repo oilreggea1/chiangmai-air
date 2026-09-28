@@ -431,6 +431,7 @@ export default function EnglishPage() {
               { href: "/en/washing-machine", t: "Washing machine deep clean", d: "Drum out, every part washed" },
               { href: "/en/about", t: "About Arm and the company", d: "Registered company, who comes to your home" },
               { href: "/en/areas", t: "Areas I cover", d: "District and sub-district list" },
+              { href: "/en/condo", t: "Condo aircon cleaning", d: "No balcony needed, move-out cleaning" },
               { href: "/en/airbnb", t: "Airbnb and rentals", d: "Cleaning between guests" },
             ].map((x) => (
               <li key={x.href}>

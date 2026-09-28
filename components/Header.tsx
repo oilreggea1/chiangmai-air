@@ -137,6 +137,7 @@ const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; men
       { href: "/en/installation", label: "Installation" },
       { href: "/en/washing-machine", label: "Washing machines" },
       { href: "/en/areas", label: "Areas" },
+      { href: "/en/condo", label: "Condos" },
       { href: "/en/airbnb", label: "Airbnb & rentals" },
       { href: "/en/about", label: "About" },
       { href: "/zh", label: "中文" },

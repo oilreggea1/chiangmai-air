@@ -70,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en", priority: 0.7, freq: "monthly" as const },
     { path: "/en/pricing", priority: 0.7, freq: "monthly" as const },
     { path: "/en/areas", priority: 0.6, freq: "monthly" as const },
+    { path: "/en/condo", priority: 0.7, freq: "monthly" as const },
     { path: "/en/airbnb", priority: 0.7, freq: "monthly" as const },
     { path: "/en/installation", priority: 0.7, freq: "monthly" as const },
     { path: "/en/washing-machine", priority: 0.7, freq: "monthly" as const },

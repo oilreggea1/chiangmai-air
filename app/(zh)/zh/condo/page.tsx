@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description,
   alternates: {
     canonical: "/zh/condo",
-    languages: { "th-TH": "/customer/condo", "en-US": "/en", "zh-CN": "/zh/condo", "x-default": "/customer/condo" },
+    languages: { "th-TH": "/customer/condo", "en-US": "/en/condo", "zh-CN": "/zh/condo", "x-default": "/customer/condo" },
   },
   ...share({ title, description, path: `/zh/condo`, locale: "zh_CN", image: heroPhotos.en }),
 };

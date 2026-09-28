@@ -21,7 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: s.title,
     description: s.description,
-    alternates: { canonical: `/customer/${s.slug}` },
+    alternates: {
+      canonical: `/customer/${s.slug}`,
+      // หน้าคอนโดมีคู่แปลภาษาอังกฤษและจีน
+      ...(s.slug === "condo"
+        ? { languages: { "th-TH": "/customer/condo", "en-US": "/en/condo", "zh-CN": "/zh/condo", "x-default": "/customer/condo" } }
+        : {}),
+    },
     ...share({ title: s.title, description: s.description, path: `/customer/${s.slug}` }),
   };
 }

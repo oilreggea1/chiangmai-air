@@ -23,6 +23,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
         { href: "/en/washing-machine", label: "Washing machine deep clean" },
         { href: "/en/about", label: "About Arm and the company" },
         { href: "/en/areas", label: "Areas I cover" },
+        { href: "/en/condo", label: "Condo aircon cleaning" },
         { href: "/en/airbnb", label: "Airbnb and rentals" },
       ]
     : [
