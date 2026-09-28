@@ -11,8 +11,9 @@ import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
-import { JobGallery } from "@/components/JobGallery";
-import { jobs, jobPhotoCount } from "@/lib/jobs";
+import { JobStoryCard } from "@/components/JobStoryCard";
+import { jobs } from "@/lib/jobs";
+import { groups, homeFeatured, jobsIn } from "@/lib/job-stories";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
 const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
@@ -187,29 +188,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- รูปงานจริง แยกกองก่อนล้าง/หลังล้าง วางสูงเพราะเป็นหลักฐานที่แข็งที่สุด ---------- */}
+      {/* ---------- งานจริง เล่าเป็นเรื่องทีละงาน แยกแอร์กับเครื่องซักผ้า (29 ก.ย. 2569)
+           เดิมวางรูปงานเดียว 74 รูปเรียงติดกัน เจ้าของขอให้เป็นเรื่องของแต่ละงานแทน
+           รูปครบทุกใบอยู่ในหน้าของแต่ละงาน /kon-lang/[id] ---------- */}
       <section className="section bg-sand">
         <div className="wrap">
           <div className="max-w-2xl">
             <p className="eyebrow">รูปจากหน้างานจริง</p>
-            <h2 className="h2 mt-4">ก่อนล้าง กับ หลังล้าง ของงานเดียวกัน</h2>
+            <h2 className="h2 mt-4">งานจริงล่าสุด แยกตามประเภทงาน</h2>
             <p className="lead mt-3">
-              สภาพเครื่องตอนผมไปถึง ระหว่างล้าง และตอนทำเสร็จ จากงานเดียวกันในเชียงใหม่
+              กดดูแต่ละงานได้ครบทุกรูป ตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
             </p>
           </div>
-          <div className="mt-9 space-y-6">
-            {/* โชว์งานเดียวแต่ครบทุกรูป ดีกว่าโชว์หลายงานแบบตัดรูป
-                เพราะสิ่งที่ต้องพิสูจน์คือความละเอียดของงาน ไม่ใช่จำนวนงาน */}
-            {[[...jobs].sort((a, b) => jobPhotoCount(b) - jobPhotoCount(a))[0]].map((j) => (
-              <JobGallery key={j.id} job={j} />
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/kon-lang" className="btn-ghost">
-              ดูรูปงานจริงทั้ง {jobs.length} งาน
-              <IconChevron className="h-4 w-4" />
-            </Link>
-          </div>
+          {(["air", "washer"] as const).map((g) => (
+            <div key={g} className="mt-10">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <h3 className="text-xl font-extrabold text-ink">{groups[g].label}</h3>
+                <Link href={`/kon-lang#${g}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+                  ดู{groups[g].label}ทั้งหมด {jobsIn(g).length} งาน
+                  <IconChevron className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {homeFeatured[g].map((id) => {
+                  const j = jobs.find((x) => x.id === id);
+                  return j ? <JobStoryCard key={id} job={j} /> : null;
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

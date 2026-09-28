@@ -3,6 +3,7 @@ import { site, services, areas, portfolio, heroPhotos } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { workCases } from "@/lib/work-cases";
+import { jobs } from "@/lib/jobs";
 import { segments } from "@/lib/segments";
 import { brands } from "@/lib/brands";
 import { lastmodOf, SRC } from "@/lib/lastmod";
@@ -124,6 +125,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.7,
       images: item.images.map((image) => `${site.url}${image.src}`),
+    })),
+    // หน้าเรื่องของแต่ละงาน รูปครบทุกใบ (29 ก.ย. 2569)
+    ...jobs.map((j) => ({
+      url: `${site.url}/kon-lang/${j.id}`,
+      lastModified: lastmodOf(SRC.jobs, thPage("/kon-lang/[id]")),
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+      images: [...j.before, ...j.during, ...j.after].map((x) => `${site.url}${x.src}`),
     })),
     // หน้าหมวดผลงาน ประกาศรูปในหน้าให้ Google Images เก็บ index ได้ตรงหน้า
     // หน้าแรกของหมวดแสดง 96 ภาพ จึงประกาศเท่าที่แสดงจริง ไม่ประกาศเกินสิ่งที่อยู่บนหน้า

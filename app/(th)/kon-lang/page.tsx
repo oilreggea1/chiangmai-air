@@ -6,10 +6,14 @@ import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
-import { JobGallery } from "@/components/JobGallery";
+import { JobStoryCard } from "@/components/JobStoryCard";
+import { groups, jobsIn, type JobGroup } from "@/lib/job-stories";
 
 /**
- * หน้ารวมรูปงานจริง แยกกองก่อนล้างกับกองหลังล้างของแต่ละงาน
+ * หน้ารวมรูปงานจริง แยกหมวดแอร์กับเครื่องซักผ้า แต่ละงานเป็นการ์ดเล่าเรื่อง (29 ก.ย. 2569)
+ * รูปครบทุกใบของแต่ละงานอยู่ที่ /kon-lang/[id] แอร์ต้องขึ้นก่อนเสมอ ดู lib/job-stories.ts
+ *
+ * ประวัติ: หน้านี้เคยแยกกองก่อนล้างกับกองหลังล้างของทุกงานไว้ในหน้าเดียว
  *
  * เดิมหน้านี้โชว์เป็นคู่ก่อน–หลังชิ้นต่อชิ้น เจ้าของตรวจแล้วพบว่าจับคู่ผิดเยอะ
  * จึงเปลี่ยนมาโชว์เป็นสองกองต่อหนึ่งงาน 26 ก.ย. 2569
@@ -36,12 +40,8 @@ export default function KonLangPage() {
     { name: "หน้าแรก", path: "/" },
     { name: "รูปงานก่อน–หลัง", path: "/kon-lang" },
   ];
-  // จัดกลุ่มตามชนิดงานจริง ไม่ผูกกับรายการตายตัว เผื่อมีงานซ่อมหรืองานย้ายเพิ่มมา
-  const bySvc = jobs.reduce<Record<string, typeof jobs>>((acc, j) => {
-    (acc[j.service] ||= []).push(j);
-    return acc;
-  }, {});
-  const order = Object.entries(bySvc).sort((a, b) => b[1].length - a[1].length);
+  // แอร์ขึ้นก่อนเสมอ ไม่เรียงตามจำนวนงาน (เครื่องซักผ้ามีงานมากกว่าจึงเคยดันแอร์ลงไปท้ายหน้า)
+  const order: JobGroup[] = ["air", "washer"];
 
   return (
     <>
@@ -55,10 +55,26 @@ export default function KonLangPage() {
             งานจริง {jobs.length} งาน สภาพเครื่องก่อนและหลังทำงาน
           </h1>
           <p className="lead mt-5 max-w-3xl">
-ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่
-            แต่ละงานเรียงให้ดูตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
+            ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ เลือกดูตามประเภทงาน
+            แล้วกดเข้าไปดูแต่ละงานได้ครบทุกรูป ตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
           </p>
-          <div className="mt-8 flex flex-wrap gap-4 text-sm">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 sm:max-w-2xl">
+            {order.map((g) => {
+              const list = jobsIn(g);
+              return (
+                <a key={g} href={`#${g}`} className="card group flex items-center justify-between gap-3 p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift">
+                  <span>
+                    <span className="block text-lg font-bold text-ink">{groups[g].label}</span>
+                    <span className="mt-0.5 block text-sm text-ink-soft">
+                      {list.length} งาน · {list.reduce((n, j) => n + jobPhotoCount(j), 0)} รูป
+                    </span>
+                  </span>
+                  <IconChevron className="h-5 w-5 rotate-90 text-brand-700" />
+                </a>
+              );
+            })}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4 text-sm">
             <Link href="/case-study" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">
               อ่านรายงานงานเต็มทุกเคส
               <IconChevron className="h-4 w-4" />
@@ -71,23 +87,24 @@ export default function KonLangPage() {
         </section>
       </div>
 
-      {order.map(([svc, list], idx) => (
-        <section key={svc} className={idx % 2 === 1 ? "section bg-sand" : "section"}>
-          <div className="wrap">
-            <h2 className="h2">
-              {svc} {list.length} งาน
-            </h2>
-            <p className="lead mt-3 max-w-2xl">
-              ภาพจากหน้างานจริง {list.reduce((n, j) => n + jobPhotoCount(j), 0)} รูป
-            </p>
-            <div className="mt-9 space-y-6">
-              {list.map((j) => (
-                <JobGallery key={j.id} job={j} />
-              ))}
+      {order.map((g, idx) => {
+        const list = jobsIn(g);
+        return (
+          <section key={g} id={g} className={idx % 2 === 1 ? "section bg-sand" : "section"}>
+            <div className="wrap">
+              <h2 className="h2">
+                {groups[g].heading} {list.length} งาน
+              </h2>
+              <p className="lead mt-3 max-w-2xl">{groups[g].lead}</p>
+              <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {list.map((j) => (
+                  <JobStoryCard key={j.id} job={j} />
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       <CtaBand
         title="ให้เครื่องที่บ้านกลับมาสะอาดแบบนี้"

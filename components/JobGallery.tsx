@@ -55,10 +55,12 @@ function Row({
   );
 }
 
-export function JobGallery({ job }: { job: Job }) {
+/** bare = ไม่โชว์หัวการ์ด (ใช้ในหน้างานที่มีหัวเรื่องเดียวกันอยู่ด้านบนแล้ว) */
+export function JobGallery({ job, bare = false }: { job: Job; bare?: boolean }) {
   return (
-    // id ใช้เป็นจุดลิงก์จากหน้าเคส (/kon-lang#job-a06) ระยะหัวหน้ากันด้วย scroll-padding-top ใน globals.css
-    <article id={`job-${job.id}`} className="card p-5 sm:p-7">
+    // ใช้ในหน้างาน /kon-lang/[id] ส่วนหน้ารวมใช้การ์ด JobStoryCard ซึ่งถือ id job-xx ไว้แทน กันลิงก์เก่าแบบ #job-xx พัง
+    <article className="card p-5 sm:p-7">
+      {!bare && (<>
       <p className="flex flex-wrap items-center gap-x-2 text-xs font-bold text-accent">
         <span>{job.service}</span>
         <span className="text-ink-soft">·</span>
@@ -68,7 +70,8 @@ export function JobGallery({ job }: { job: Job }) {
       </p>
       {/* ชื่องานมาจากข้อความในโพสต์ส่งงานของร้าน ไม่ใช่ให้ AI เดาจากรูป */}
       {job.summary && <h3 className="mt-2 text-lg leading-[1.5] font-bold text-ink">{job.summary}</h3>}
-      <div className="mt-6 space-y-6">
+      </>)}
+      <div className={bare ? "space-y-6" : "mt-6 space-y-6"}>
         {/* ป้ายกองใช้คำกริยาของงานนั้น งานติดตั้งจะได้ไม่ถูกเขียนว่าก่อนล้าง */}
         <Row label={`ก่อน${job.verb}`} tone="before" photos={job.before} />
         <Row label={`ระหว่าง${job.verb}`} tone="during" photos={job.during} />

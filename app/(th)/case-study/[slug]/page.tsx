@@ -143,7 +143,7 @@ export default async function WorkCasePage({ params }: Props) {
           if (!full) return null;
           const n = jobPhotoCount(full);
           return (
-            <Link href={`/kon-lang#job-${full.id}`} className="card group mt-10 flex flex-wrap items-center justify-between gap-4 p-6 transition-all hover:-translate-y-0.5 hover:shadow-lift">
+            <Link href={`/kon-lang/${full.id}`} className="card group mt-10 flex flex-wrap items-center justify-between gap-4 p-6 transition-all hover:-translate-y-0.5 hover:shadow-lift">
               <span>
                 <span className="block text-xs font-bold text-accent">{thaiDate(full.date)}</span>
                 <span className="mt-1.5 block text-lg leading-[1.5] font-bold text-ink">รูปทั้งหมดจากการเข้าบริการครั้งนี้</span>
