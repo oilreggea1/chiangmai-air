@@ -385,7 +385,7 @@ export default function EnglishPage() {
             I am based in San Kamphaeng, so the eastern side of the city is quickest for me.
             I cover every sub-district of Mueang Chiang Mai — the old city, Nimman, Santitham and
             the airport side — as well as San Sai and northern Hang Dong, plus the parts of San Kamphaeng,
-            Saraphi and Doi Saket within my service range.
+            Mae On, Saraphi and Doi Saket within my service range.
           </p>
           {/*
             การ์ดพื้นที่เคยลิงก์ไป /area/[slug] ซึ่งเป็นหน้าภาษาไทยล้วน (แก้ 19 ส.ค. 2569)

@@ -280,7 +280,8 @@ export default function Pm25Page() {
             </div>
 
             <div className="card relative flex flex-col p-6 shadow-lift ring-2 ring-brand-500 sm:p-7">
-              <span className="absolute -top-3 left-6 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-white">
+              {/* ป้ายอยู่ในการ์ด ไม่ลอยเหนือขอบ เพราะ .card มี overflow-hidden ป้ายที่ลอยจะถูกตัดครึ่ง */}
+              <span className="mb-3 self-start rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-white">
                 แนะนำเมื่อเครื่องเริ่มมีกลิ่นอับ
               </span>
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-brand-600 text-white">

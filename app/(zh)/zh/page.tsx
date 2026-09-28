@@ -16,6 +16,7 @@ const amphoeZh: Record<string, string> = {
   "อ.สารภี": "Saraphi 县",
   "อ.เมืองเชียงใหม่": "清迈市区 Mueang Chiang Mai（全部乡）",
   "อ.ดอยสะเก็ด": "Doi Saket 县",
+  "อ.แม่ออน": "Mae On 县（平原地区）",
   "อ.สันทราย": "San Sai 县（全部乡，含 Mae Jo 湄州一带）",
   "อ.หางดง": "Hang Dong 县（北部靠近市区的乡）",
 };
@@ -358,7 +359,7 @@ export default function ChinesePage() {
           <p className="lead mt-3">
             我以 San Kamphaeng 为据点，覆盖 {coverage.length} 个县共 {coverageTotal} 个乡，
             范围内不加收车费。清迈市区（Mueang Chiang Mai）全部乡都接，包括尼曼路一带、古城、Santitham
-            和机场周边；San Sai 县（含 Mae Jo 湄州一带）也全部乡都接。此外还有 Hang Dong 县北部靠近市区的乡，以及 San Kamphaeng、Saraphi 和 Doi Saket。
+            和机场周边；San Sai 县（含 Mae Jo 湄州一带）也全部乡都接。此外还有 Hang Dong 县北部靠近市区的乡，以及 San Kamphaeng、Mae On、Saraphi 和 Doi Saket。
           </p>
           <ul className="mt-7 grid gap-3 sm:grid-cols-2">
             {coverage.map((c) => (

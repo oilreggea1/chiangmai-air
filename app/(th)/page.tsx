@@ -85,7 +85,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">
               <IconPin className="h-4 w-4" />
-              ที่ตั้ง ต.สันกำแพง · รับงานเมืองเชียงใหม่ สันทราย ครบทุกตำบล · หางดงฝั่งเหนือ สันกำแพง สารภี ดอยสะเก็ด
+              ที่ตั้ง ต.สันกำแพง · รับงานเมืองเชียงใหม่ สันทราย ครบทุกตำบล · หางดงฝั่งเหนือ สันกำแพง แม่ออน สารภี ดอยสะเก็ด
             </p>
 
             <h1 className="mt-5 text-[clamp(2.15rem,1.3rem+3.2vw,3.5rem)] leading-[1.28] font-extrabold">
@@ -188,35 +188,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- งานจริง เล่าเป็นเรื่องทีละงาน แยกแอร์กับเครื่องซักผ้า (29 ก.ย. 2569)
-           เดิมวางรูปงานเดียว 74 รูปเรียงติดกัน เจ้าของขอให้เป็นเรื่องของแต่ละงานแทน
-           รูปครบทุกใบอยู่ในหน้าของแต่ละงาน /kon-lang/[id] ---------- */}
-      <section className="section bg-sand">
+      {/* ลำดับหน้าแรก (29 ก.ย. 2569 เจ้าของสั่ง "เสนอก่อน ตามด้วยรีวิว"):
+          บริการ → จองคิวติดตั้ง → ราคา → จุดต่าง → งานจริง → ความเห็นลูกค้า → ลิงก์ผลงาน
+          ห้ามย้ายรูปงานจริงกลับขึ้นไปไว้ใต้ HERO */}
+      {/* ---------- บริการ ---------- */}
+      <section className="section" id="services">
         <div className="wrap">
           <div className="max-w-2xl">
-            <p className="eyebrow">รูปจากหน้างานจริง</p>
-            <h2 className="h2 mt-4">งานจริงล่าสุด แยกตามประเภทงาน</h2>
+            <p className="eyebrow">งานที่ผมรับ</p>
+            <h2 className="h2 mt-4">ดูแลงานแอร์และเครื่องซักผ้าถึงบ้าน</h2>
             <p className="lead mt-3">
-              กดดูแต่ละงานได้ครบทุกรูป ตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
+              ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย{" "}
+              <Link href="/service/tid-tang-air" className="font-semibold text-brand-700 hover:underline">ติดตั้งเครื่องใหม่</Link>{" "}
+              <Link href="/service/yai-air" className="font-semibold text-brand-700 hover:underline">ย้ายแอร์</Link>{" "}
+              ไปจนถึงการถอดล้างถังเครื่องซักผ้า ราคาที่แสดงคือราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
             </p>
           </div>
-          {(["air", "washer"] as const).map((g) => (
-            <div key={g} className="mt-10">
-              <div className="flex flex-wrap items-end justify-between gap-3">
-                <h3 className="text-xl font-extrabold text-ink">{groups[g].label}</h3>
-                <Link href={`/kon-lang#${g}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
-                  ดู{groups[g].label}ทั้งหมด {jobsIn(g).length} งาน
-                  <IconChevron className="h-4 w-4" />
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredServices.map((s) => {
+              const Icon = serviceIcons[s.icon as keyof typeof serviceIcons];
+              return (
+                <Link
+                  key={s.slug}
+                  href={`/service/${s.slug}`}
+                  className="card group flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
+                >
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70 transition-all group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:ring-brand-700">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold">{s.name}เชียงใหม่</h3>
+                  <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{s.short}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+                    {s.priceLabel}
+                    <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
                 </Link>
-              </div>
-              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {homeFeatured[g].map((id) => {
-                  const j = jobs.find((x) => x.id === id);
-                  return j ? <JobStoryCard key={id} job={j} /> : null;
-                })}
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/price" className="btn-ghost" data-cta="home-price-all">
+              ดูบริการและราคาทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/duan" className="btn-ghost" data-cta="home-duan">
+              ต้องการนัดช่วงเย็นหรือวันอาทิตย์
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -274,112 +294,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- บริการ ---------- */}
-      <section className="section" id="services">
-        <div className="wrap">
-          <div className="max-w-2xl">
-            <p className="eyebrow">งานที่ผมรับ</p>
-            <h2 className="h2 mt-4">ดูแลงานแอร์และเครื่องซักผ้าถึงบ้าน</h2>
-            <p className="lead mt-3">
-              ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย{" "}
-              <Link href="/service/tid-tang-air" className="font-semibold text-brand-700 hover:underline">ติดตั้งเครื่องใหม่</Link>{" "}
-              <Link href="/service/yai-air" className="font-semibold text-brand-700 hover:underline">ย้ายแอร์</Link>{" "}
-              ไปจนถึงการถอดล้างถังเครื่องซักผ้า ราคาที่แสดงคือราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredServices.map((s) => {
-              const Icon = serviceIcons[s.icon as keyof typeof serviceIcons];
-              return (
-                <Link
-                  key={s.slug}
-                  href={`/service/${s.slug}`}
-                  className="card group flex flex-col p-6 transition-all hover:-translate-y-1 hover:shadow-lift"
-                >
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70 transition-all group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:ring-brand-700">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-4 text-lg font-bold">{s.name}เชียงใหม่</h3>
-                  <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{s.short}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
-                    {s.priceLabel}
-                    <IconChevron className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/price" className="btn-ghost" data-cta="home-price-all">
-              ดูบริการและราคาทั้งหมด
-              <IconChevron className="h-4 w-4" />
-            </Link>
-            <Link href="/duan" className="btn-ghost" data-cta="home-duan">
-              ต้องการนัดช่วงเย็นหรือวันอาทิตย์
-              <IconChevron className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- ผลงาน: ลิงก์ไปหน้ารวมรูปงานจริง ---------- */}
-      <section className="section band-dark" id="portfolio">
-        <div className="wrap text-center">
-          <p className="eyebrow">ผลงานจริง</p>
-          <h2 className="h2 mt-4 text-white">ดูงานก่อนตัดสินใจ</h2>
-          <p className="lead mx-auto mt-3 max-w-2xl text-brand-100">
-            รูปทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ ทั้งสภาพเครื่องก่อนล้างและหลังล้าง
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/kon-lang" className="btn-call px-6 py-3.5">
-              รูปงานจริง {jobs.length} งาน
-              <IconChevron className="h-4 w-4" />
-            </Link>
-            <Link href="/portfolio" className="btn-ghost px-6 py-3.5">
-              คลังรูปผลงานทั้งหมด
-              <IconChevron className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- จุดต่างจากคู่แข่ง ---------- */}
-      <section className="section">
-        <div className="wrap">
-          <div className="max-w-2xl">
-            <p className="eyebrow">เทียบแล้วต่างอย่างไร</p>
-            <h2 className="h2 mt-4">4 เรื่องที่ผมให้ความสำคัญเป็นพิเศษ</h2>
-          </div>
-          <div className="mt-9 grid gap-5 sm:grid-cols-2">
-            {homeEdges.map((e) => {
-              const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
-              return (
-                <div key={e.title} className="card flex gap-4 p-6">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <div>
-                    <h3 className="font-bold">{e.title}</h3>
-                    <p className="mt-1.5 text-sm leading-7 text-ink-soft">{e.detail}</p>
-                    <Link href={e.link.href} className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
-                      {e.link.label}
-                      <IconChevron className="h-4 w-4" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="mt-8">
-            <Link href="/price/repair" className="btn-ghost" data-cta="home-price-repair">
-              ดูตารางราคาซ่อมแอร์
-              <IconChevron className="h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ---------- ราคา ---------- */}
       <section className="section bg-sand" id="price">
         <div className="wrap">
@@ -425,9 +339,10 @@ export default function Home() {
                 key={p.name}
                 className={`card relative flex flex-col p-6 ${p.popular ? "shadow-lift ring-2 ring-brand-500" : ""}`}
               >
+                {/* ป้ายอยู่ในการ์ด ไม่ลอยเหนือขอบ เพราะ .card มี overflow-hidden ป้ายที่ลอยจะถูกตัดครึ่ง */}
                 {p.popular && (
-                  <span className="absolute -top-3 left-6 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-white">
-                    ลูกค้าเลือกมากที่สุด
+                  <span className="mb-3 self-start rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-white">
+                    ล้างละเอียดที่สุด
                   </span>
                 )}
                 <h3 className="text-lg font-bold">{p.name}</h3>
@@ -470,19 +385,86 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- รีวิว ---------- */}
+      {/* ---------- จุดต่างจากคู่แข่ง ---------- */}
+      <section className="section">
+        <div className="wrap">
+          <div className="max-w-2xl">
+            <p className="eyebrow">เทียบแล้วต่างอย่างไร</p>
+            <h2 className="h2 mt-4">4 เรื่องที่ผมให้ความสำคัญเป็นพิเศษ</h2>
+          </div>
+          <div className="mt-9 grid gap-5 sm:grid-cols-2">
+            {homeEdges.map((e) => {
+              const Icon = serviceIcons[e.icon as keyof typeof serviceIcons];
+              return (
+                <div key={e.title} className="card flex gap-4 p-6">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-600 text-white">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <h3 className="font-bold">{e.title}</h3>
+                    <p className="mt-1.5 text-sm leading-7 text-ink-soft">{e.detail}</p>
+                    <Link href={e.link.href} className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+                      {e.link.label}
+                      <IconChevron className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-8">
+            <Link href="/price/repair" className="btn-ghost" data-cta="home-price-repair">
+              ดูตารางราคาซ่อมแอร์
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- งานจริง เล่าเป็นเรื่องทีละงาน แยกแอร์กับเครื่องซักผ้า (29 ก.ย. 2569)
+           เดิมวางรูปงานเดียว 74 รูปเรียงติดกัน เจ้าของขอให้เป็นเรื่องของแต่ละงานแทน
+           รูปครบทุกใบอยู่ในหน้าของแต่ละงาน /kon-lang/[id] ---------- */}
       <section className="section bg-sand">
+        <div className="wrap">
+          <div className="max-w-2xl">
+            <p className="eyebrow">รูปจากหน้างานจริง</p>
+            <h2 className="h2 mt-4">งานจริงล่าสุด แยกตามประเภทงาน</h2>
+            <p className="lead mt-3">
+              กดดูแต่ละงานได้ครบทุกรูป ตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
+            </p>
+          </div>
+          {(["air", "washer"] as const).map((g) => (
+            <div key={g} className="mt-10">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <h3 className="text-xl font-extrabold text-ink">{groups[g].label}</h3>
+                <Link href={`/kon-lang#${g}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:underline">
+                  ดู{groups[g].label}ทั้งหมด {jobsIn(g).length} งาน
+                  <IconChevron className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {homeFeatured[g].map((id) => {
+                  const j = jobs.find((x) => x.id === id);
+                  return j ? <JobStoryCard key={id} job={j} /> : null;
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------- รีวิว ---------- */}
+      <section className="section">
         <div className="wrap">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">ลูกค้าใช้บริการจริง</p>
             <h2 className="h2 mt-4">ความเห็นจากลูกค้าในเชียงใหม่</h2>
             <p className="lead mt-3">
-              ความเห็นจากลูกค้าที่เรียกผมไปดูแลแอร์ถึงบ้านในเชียงใหม่ รายการที่มีลิงก์กำกับ
-              เปิดดูต้นฉบับบนเพจได้โดยตรง และถ้าอยากเห็นเนื้องานมากกว่าคำพูด
-              ผมเปิดรายงานก่อน–หลังทุกเคสไว้ให้อ่านทั้งหมด
+              ความเห็นจากลูกค้าที่เรียกผมไปดูแลแอร์ถึงบ้านในเชียงใหม่
+              เปิดดูต้นฉบับบนเพจ Facebook ได้โดยตรง
             </p>
           </div>
-          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
+          <div className={`mx-auto mt-10 grid gap-5 ${reviews.length > 1 ? "max-w-4xl sm:grid-cols-2" : "max-w-2xl"}`}>
             {reviews.map((r) => (
               <ReviewCard key={r.name} {...r} />
             ))}
@@ -500,6 +482,27 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------- ผลงาน: ลิงก์ไปหน้ารวมรูปงานจริง ---------- */}
+      <section className="section band-dark" id="portfolio">
+        <div className="wrap text-center">
+          <p className="eyebrow">ผลงานจริง</p>
+          <h2 className="h2 mt-4 text-white">ดูงานก่อนตัดสินใจ</h2>
+          <p className="lead mx-auto mt-3 max-w-2xl text-brand-100">
+            รูปทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ ทั้งสภาพเครื่องก่อนล้างและหลังล้าง
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link href="/kon-lang" className="btn-call px-6 py-3.5">
+              รูปงานจริง {jobs.length} งาน
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/portfolio" className="btn-ghost px-6 py-3.5">
+              คลังรูปผลงานทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ---------- พื้นที่บริการ ---------- */}
       <section className="section" id="area">
         <div className="wrap">
@@ -510,8 +513,8 @@ export default function Home() {
             </p>
             <h2 className="h2 mt-4">พื้นที่ให้บริการ</h2>
             <p className="lead mt-3">
-              รับงานอำเภอเมืองเชียงใหม่และสันทราย ครบทุกตำบล รวมถึงหางดงฝั่งเหนือที่ติดเมือง สันกำแพง สารภี และดอยสะเก็ด
-              โดยสามอำเภอแรกรับทุกตำบล ส่วนสันกำแพง สารภี ดอยสะเก็ด รับเฉพาะพื้นที่ในระยะบริการ
+              รับงานอำเภอเมืองเชียงใหม่และสันทราย ครบทุกตำบล รวมถึงหางดงฝั่งเหนือที่ติดเมือง
+              ส่วนสันกำแพง แม่ออน สารภี และดอยสะเก็ด รับเฉพาะตำบลในระยะบริการ
               ราคาเดียวกันและไม่มีค่าเดินทางเพิ่ม
             </p>
           </div>

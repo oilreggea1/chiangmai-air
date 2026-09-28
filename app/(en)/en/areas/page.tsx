@@ -7,7 +7,7 @@ import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
 
 const title = "Areas I Cover in Chiang Mai | Pro Fresh Care";
 const description =
-  "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — and San Sai in full, plus northern Hang Dong, Saraphi and Doi Saket. No travel fee.";
+  "Aircon service around San Kamphaeng, covering Mueang Chiang Mai — Nimman, old city, Santitham — and San Sai in full, plus northern Hang Dong, lowland Mae On, Saraphi and Doi Saket. No travel fee.";
 
 export const metadata: Metadata = {
   // absolute กันไม่ให้ template ภาษาไทยจาก layout มาต่อท้าย
@@ -32,6 +32,7 @@ const amphoeEn: Record<string, string> = {
   "อ.สารภี": "Saraphi",
   "อ.เมืองเชียงใหม่": "Mueang Chiang Mai (city, Nimman, old town, Santitham)",
   "อ.ดอยสะเก็ด": "Doi Saket",
+  "อ.แม่ออน": "Mae On (lowland sub-districts)",
   "อ.สันทราย": "San Sai (whole district, including the Mae Jo area)",
   "อ.หางดง": "Hang Dong (northern sub-districts)",
 };
