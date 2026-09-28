@@ -50,7 +50,11 @@ const langAirWashOptions = [
   },
 ];
 
-const langAirReelIds = ["3177769309038728", "1284322489799860", "1748747562375875"];
+const langAirReelIds = ["3177769309038728", "1284322489799860", "1748747562375875", "1336389494094369"];
+/** คลิปงานซ่อมจริง (29 ก.ย. 2569) หน้าซ่อมเดิมไม่มีคลิปเลย */
+const repairReelIds = ["3663347230638937", "1151370080220641"];
+/** คลิปล้างแอร์แขวนในร้านและสำนักงาน */
+const khwaenReelIds = ["1232175024939599"];
 /** คลิปงานติดตั้ง 3 ตัวจากเพจ ใช้กับหน้า /service/tid-tang-air (24 ก.ย. 2569) — หน้านี้เคยไม่มีคลิปเลย
  *  ทั้งที่คลิปติดตั้งอยู่บนหน้าแรกและ /videos ซึ่งเป็นส่วนหนึ่งที่ทำให้ Google เลือกหน้าแรกไปติดคำติดตั้งแทน */
 const installReelIds = ["1288260533386347", "1261789992704152", "1269611208233633"];
@@ -85,6 +89,8 @@ function casesFor(slug: string) {
 function reelsFor(slug: string) {
   if (slug === "lang-air") return reels.filter((r) => langAirReelIds.includes(r.id));
   if (slug === "tid-tang-air") return reels.filter((r) => installReelIds.includes(r.id));
+  if (slug === "som-air") return reels.filter((r) => repairReelIds.includes(r.id));
+  if (slug === "lang-air-khwaen-cassette") return reels.filter((r) => khwaenReelIds.includes(r.id));
   const topics = reelTopicsByService[slug];
   if (!topics) return [];
   // จำกัด 6 คลิปต่อหน้า ที่เหลือดูได้ที่ /videos
@@ -370,7 +376,11 @@ export default async function ServicePage({ params }: Props) {
                   ? "ตั้งแต่การฉีดล้างคอยล์ไปจนถึงชิ้นส่วนที่ถอดลงมาล้างแยกในแบบถอดล้างทั้งชุด"
                   : s.slug === "tid-tang-air"
                     ? "ตั้งแต่เจาะยึดขาแขวน เดินท่อในรางครอบ ไปจนถึงงานติดตั้งบนที่สูงและแอร์ฝังฝ้า"
-                    : "ตั้งแต่ตอนถอดถังออกจากเครื่อง ไปจนถึงสภาพชิ้นส่วนที่ล้างเสร็จแล้ว"}
+                    : s.slug === "som-air"
+                      ? "การตรวจหาสาเหตุหน้างาน ตั้งแต่อาการไฟกระพริบไปจนถึงการตรวจแผงวงจร"
+                      : s.slug === "lang-air-khwaen-cassette"
+                        ? "งานล้างแอร์แขวนในร้านและสำนักงาน ตั้งแต่คลุมพื้นที่จนประกอบกลับ"
+                        : "ตั้งแต่ตอนถอดถังออกจากเครื่อง ไปจนถึงสภาพชิ้นส่วนที่ล้างเสร็จแล้ว"}
               </p>
             </div>
             <ul className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2 lg:grid-cols-3">
