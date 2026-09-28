@@ -542,15 +542,15 @@ export default async function ServicePage({ params }: Props) {
           <section className="section bg-sand">
             <div className="wrap">
               <p className="eyebrow">งานล่าสุดจากหน้างานจริง</p>
-              <h2 className="h2 mt-4">รายงานงาน{s.name}ทีละเครื่อง พร้อมวันที่และพื้นที่</h2>
-              <p className="lead mt-3 max-w-2xl">ทุกเคสเป็นเครื่องเดียวกันตั้งแต่รูปแรกจนรูปสุดท้าย มีภาพก่อนทำและหลังทำเทียบชิ้นต่อชิ้น ผมเขียนเฉพาะสิ่งที่เห็นในรูป ไม่เติมอาการที่ไม่มีบันทึก</p>
+              <h2 className="h2 mt-4">รายงานงาน{s.name} พร้อมวันที่และพื้นที่</h2>
+              <p className="lead mt-3 max-w-2xl">สภาพเครื่องตอนผมไปถึง ขั้นตอนที่ทำ และผลหลังทำเสร็จ จากงานจริงในเชียงใหม่</p>
               <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {jobs.map((c) => (
                   <li key={c.slug}>
                     <Link href={`/case-study/${c.slug}`} className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
                       <Image src={c.images[1]?.src ?? c.images[0].src} alt={c.images[1]?.alt ?? c.images[0].alt} width={720} height={540} loading="lazy" sizes="(max-width: 640px) 100vw, 33vw" className="aspect-[4/3] w-full object-cover" />
                       <div className="flex flex-1 flex-col p-5">
-                        <span className="text-xs font-bold text-brand-600">{c.recorded} · {c.area}</span>
+                        <span className="text-xs font-bold text-brand-600">{c.recorded}{c.area !== "เชียงใหม่" ? ` · ${c.area}` : ""}</span>
                         <h3 className="mt-2 font-bold leading-7 group-hover:text-brand-700">{c.title}</h3>
                         <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">อ่านรายงาน<IconChevron className="h-4 w-4" /></span>
                       </div>
