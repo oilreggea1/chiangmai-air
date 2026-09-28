@@ -161,6 +161,29 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
   );
 }
 
+/**
+ * จัดพื้นที่ให้บริการเป็นกลุ่มตามอำเภอ (29 ก.ย. 2569)
+ * เดิมเรียงเป็นแถวเดียว 56 บรรทัด บนมือถือแต่ละลิงก์สูง 44px ฟุตเตอร์เลยยาวราว 3,000px
+ * ตอนนี้หัวกลุ่มคือหน้าอำเภอ ตำบลเป็นป้ายเรียงต่อกันในกลุ่ม
+ */
+const DISTRICT_ORDER = ["เมืองเชียงใหม่", "สันทราย", "หางดง", "สันกำแพง", "สารภี", "ดอยสะเก็ด"];
+function areaGroups() {
+  const districtOf = (full: string) => {
+    const m = full.match(/อ\.(\S+)\s*$/);
+    const d = m ? m[1] : "";
+    return d === "เมือง" ? "เมืองเชียงใหม่" : d;
+  };
+  return DISTRICT_ORDER.map((d) => ({
+    name: d,
+    page: areas.find((a) => a.full.startsWith("อ.") && districtOf(a.full) === d),
+    // หน้าคู่ตำบล เช่น "วัดเกต–ฟ้าฮ่าม" มีหน้าเดี่ยวของตำบลที่สองแล้ว ป้ายจึงใช้ชื่อแรกกันชื่อซ้ำ
+    items: areas
+      .filter((a) => !a.full.startsWith("อ.") && districtOf(a.full) === d)
+      .map((a) => ({ slug: a.slug, name: a.full.includes("/") ? a.name.split("–")[0] : a.name }))
+      .sort((x, y) => x.name.localeCompare(y.name, "th")),
+  })).filter((g) => g.page || g.items.length);
+}
+
 export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }) {
   const year = new Date().getFullYear() + 543; // พ.ศ.
   // ปีคริสต์ศักราชสำหรับหน้าต่างประเทศ ลูกค้าต่างชาติไม่ได้ใช้ พ.ศ.
@@ -168,7 +191,7 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
 
   return (
     <footer className="mt-4 border-t border-slate-200 bg-sand">
-      <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.8fr_1.2fr]">
         <div>
           <div className="flex items-center gap-2.5">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white">
@@ -192,11 +215,12 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
 
         <div>
           <h2 className="text-sm font-bold tracking-wide text-ink uppercase">งานที่ผมรับ</h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
+          <ul className="mt-3 grid grid-cols-2 gap-x-4 text-sm sm:grid-cols-1 lg:gap-y-2.5">
             {services.map((s) => (
               <li key={s.slug}>
-                <Link href={`/service/${s.slug}`} className="text-ink-soft hover:text-brand-700 hover:underline">
-                  {s.name}เชียงใหม่
+                {/* ตัดคำว่าเชียงใหม่ท้ายชื่อออก ข้อความสั้นลงจึงไม่ตัดบรรทัดในคอลัมน์คู่บนมือถือ */}
+                <Link href={`/service/${s.slug}`} title={`${s.name}เชียงใหม่`} className="text-ink-soft hover:text-brand-700 hover:underline">
+                  {s.name}
                 </Link>
               </li>
             ))}
@@ -258,8 +282,11 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             </li>
           </ul>
 
-          <h2 className="mt-8 text-sm font-bold tracking-wide text-ink uppercase">อื่น ๆ</h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
+        </div>
+
+        <div>
+          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">อื่น ๆ</h2>
+          <ul className="mt-3 grid grid-cols-2 gap-x-4 text-sm sm:grid-cols-1 lg:gap-y-2.5">
             <li>
               <Link href="/answers" className="text-ink-soft hover:text-brand-700 hover:underline">
                 คำตอบราคาและบริการจากช่าง
@@ -285,19 +312,6 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
                 中文
               </Link>
             </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-sm font-bold tracking-wide text-ink uppercase">พื้นที่ให้บริการ</h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            {areas.map((a) => (
-              <li key={a.slug}>
-                <Link href={`/area/${a.slug}`} className="text-ink-soft hover:text-brand-700 hover:underline">
-                  ช่างแอร์{a.name}
-                </Link>
-              </li>
-            ))}
           </ul>
         </div>
 
@@ -379,6 +393,49 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               </span>
             </li>
           </ul>
+        </div>
+      </div>
+
+      {/* พื้นที่ให้บริการ แยกกลุ่มตามอำเภอ หัวกลุ่มลิงก์ไปหน้าอำเภอ ป้ายในกลุ่มลิงก์ไปหน้าตำบล
+          ต้องอยู่ในฟุตเตอร์ (Server Component) เพราะเป็นทางที่ Googlebot ไล่เจอหน้าตำบลทุกหน้า */}
+      <div className="border-t border-slate-200">
+        <div className="wrap py-12">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <h2 className="text-sm font-bold tracking-wide text-ink uppercase">ช่างแอร์ในพื้นที่ให้บริการ</h2>
+            <Link href="/area" className="text-sm font-semibold text-brand-700 hover:underline">
+              ตรวจสอบเขตบริการทั้งหมด →
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+            {areaGroups().map((g) => (
+              <div key={g.name}>
+                <h3 className="text-[15px] font-bold text-ink">
+                  {g.page ? (
+                    <Link href={`/area/${g.page.slug}`} className="hover:text-brand-700 hover:underline">
+                      อ.{g.name}
+                    </Link>
+                  ) : (
+                    <>อ.{g.name}</>
+                  )}
+                </h3>
+                {g.items.length > 0 && (
+                  <ul className="area-chips mt-2.5 flex flex-wrap gap-2">
+                    {g.items.map((a) => (
+                      <li key={a.slug}>
+                        <Link
+                          href={`/area/${a.slug}`}
+                          title={`ช่างแอร์${a.name}`}
+                          className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3.5 py-1 text-[13px] text-ink-soft transition-colors hover:border-brand-300 hover:text-brand-700"
+                        >
+                          {a.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
