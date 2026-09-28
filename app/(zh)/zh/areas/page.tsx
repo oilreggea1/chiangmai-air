@@ -12,7 +12,7 @@ import { IconPhone, IconLine, IconPin, IconChevron } from "@/components/Icons";
  */
 const title = "清迈服务范围 | Pro Fresh Care 空调清洗维修";
 const description =
-  "以 San Kamphaeng 为据点，覆盖清迈市区（Mueang Chiang Mai）全部乡，包括尼曼路、古城、Santitham，以及 Hang Dong 与 San Sai 两县全部乡，另有 Saraphi 和 Doi Saket。范围内不加收车费。";
+  "以 San Kamphaeng 为据点，覆盖清迈市区（Mueang Chiang Mai）全部乡，包括尼曼路、古城、Santitham，以及 San Sai 县全部乡，另有 Hang Dong 县北部、Saraphi 和 Doi Saket。范围内不加收车费。";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -37,7 +37,7 @@ const amphoeZh: Record<string, string> = {
   "อ.เมืองเชียงใหม่": "清迈市区 Mueang Chiang Mai（全部乡）",
   "อ.ดอยสะเก็ด": "Doi Saket 县",
   "อ.สันทราย": "San Sai 县（全部乡，含 Mae Jo 湄州一带）",
-  "อ.หางดง": "Hang Dong 县（全部乡）",
+  "อ.หางดง": "Hang Dong 县（北部靠近市区的乡）",
 };
 
 const faqs = [
@@ -64,7 +64,7 @@ export default function ZhAreasPage() {
           </h1>
           <p className="lead mt-5">
             我以 San Kamphaeng 为据点，覆盖 {coverage.length} 个县共 {coverageTotal} 个乡。
-            清迈市区（Mueang Chiang Mai）、Hang Dong 县和 San Sai 县全部乡都接，
+            清迈市区（Mueang Chiang Mai）和 San Sai 县全部乡都接，Hang Dong 县只接北部靠近市区的乡，
             范围内价格一致，不加收车费。
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

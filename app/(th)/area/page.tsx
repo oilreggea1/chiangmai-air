@@ -8,7 +8,7 @@ import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
 const title = `ช่างแอร์ใกล้ฉันในเชียงใหม่ ตรวจสอบเขตบริการ ${coverage.length} อำเภอ ${coverageTotal} ตำบล`;
 const description =
-  "หาช่างแอร์ใกล้บ้านในเชียงใหม่ เช็คได้ทันทีว่าตำบลของคุณอยู่ในเขตที่ผมไปถึง เมืองเชียงใหม่ หางดง สันทราย ครบทุกตำบล พร้อมสันกำแพง สารภี ดอยสะเก็ด ราคาเดียวกันทุกพื้นที่ ไม่คิดค่าเดินทางเพิ่ม";
+  "หาช่างแอร์ใกล้บ้านในเชียงใหม่ เช็คได้ทันทีว่าตำบลของคุณอยู่ในเขตที่ผมไปถึง เมืองเชียงใหม่ สันทราย ครบทุกตำบล พร้อมหางดงฝั่งเหนือ สันกำแพง สารภี ดอยสะเก็ด ราคาเดียวกันทุกพื้นที่ ไม่คิดค่าเดินทางเพิ่ม";
 
 export const metadata: Metadata = {
   title,
@@ -41,7 +41,7 @@ export default function AreaIndex() {
             ช่างแอร์ใกล้บ้านคุณในเชียงใหม่ ตรวจสอบเขตบริการของคุณ
           </h1>
           <p className="lead mt-5">
-            ผมรับงานในอำเภอเมืองเชียงใหม่ หางดง และสันทราย ครบทุกตำบล รวมถึงสันกำแพง สารภี และดอยสะเก็ด
+            ผมรับงานในอำเภอเมืองเชียงใหม่และสันทราย ครบทุกตำบล รวมถึงหางดงฝั่งเหนือที่ติดเมือง สันกำแพง สารภี และดอยสะเก็ด
             รวม {coverage.length} อำเภอ {coverageTotal} ตำบล โดยไม่คิดค่าเดินทางเพิ่ม
             สามอำเภอแรกผมรับทุกตำบล ส่วนสันกำแพง สารภี และดอยสะเก็ด รับเฉพาะตำบลที่อยู่ในระยะให้บริการ
             เลือกโซนของคุณเพื่อดูรายละเอียด หรือดูรายชื่อตำบลทั้งหมดที่ด้านล่าง
@@ -101,14 +101,26 @@ export default function AreaIndex() {
                 </div>
                 <div className="px-5 py-4 sm:px-6">
                   <ul className="flex flex-wrap gap-2">
-                    {c.tambons.map((t) => (
-                      <li
-                        key={t}
-                        className="rounded-full border border-brand-100 bg-brand-50/60 px-3 py-1 text-sm font-medium text-brand-800"
-                      >
-                        {t}
-                      </li>
-                    ))}
+                    {c.tambons.map((t) => {
+                      /* ชื่อตำบลกดไปหน้าของตำบลนั้นได้ (29 ก.ย. 2569) ใช้หน้าเฉพาะตำบลก่อน
+                         ถ้าไม่มีจึงใช้หน้าที่รวมตำบลนี้ไว้ หรือหน้าอำเภอที่ชื่อเดียวกัน */
+                      const page =
+                        areas.find((x) => x.name === t) ??
+                        areas.find((x) => x.full.includes(`ต.${t} `) || x.full.includes(`ต.${t} /`)) ??
+                        areas.find((x) => x.full === `อ.${t}`);
+                      const cls = "rounded-full border border-brand-100 bg-brand-50/60 px-3 py-1 text-sm font-medium text-brand-800";
+                      return (
+                        <li key={t}>
+                          {page ? (
+                            <Link href={`/area/${page.slug}`} className={`${cls} inline-block hover:border-brand-300 hover:bg-brand-100`}>
+                              {t}
+                            </Link>
+                          ) : (
+                            <span className={`${cls} inline-block`}>{t}</span>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                   {"all" in c && c.all && (
                     <p className="mt-3.5 text-xs leading-6 text-ink-soft">

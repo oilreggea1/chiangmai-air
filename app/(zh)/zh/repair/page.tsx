@@ -187,8 +187,8 @@ export default function ZhRepairPage() {
           <h2 className="h2">服务范围</h2>
           <p className="lead mt-3">
             据点在 San Kamphaeng，覆盖清迈周边 {coverage.length} 个县。
-            清迈市区（Mueang Chiang Mai）、Hang Dong 县和 San Sai 县全部乡都接，
-            包括尼曼路、古城、Santitham 和 Mae Jo 湄州一带。范围内价格一致，不加收车费。
+            清迈市区（Mueang Chiang Mai）和 San Sai 县全部乡都接，包括尼曼路、古城、Santitham 和 Mae Jo 湄州一带；
+            Hang Dong 县只接北部靠近市区的乡。范围内价格一致，不加收车费。
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/zh/areas" className="btn-ghost">

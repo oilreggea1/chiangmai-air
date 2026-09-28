@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Is travel to my area included?",
-    a: "Yes, inside my service area there is no separate travel fee. That covers every sub-district of Mueang Chiang Mai — Nimman, the old city, Santitham and the airport side — as well as Hang Dong and San Sai, plus the parts of San Kamphaeng, Saraphi and Doi Saket within my service range. If you are outside it, message me and I will tell you what is possible and what the travel cost would be.",
+    a: "Yes, inside my service area there is no separate travel fee. That covers every sub-district of Mueang Chiang Mai — Nimman, the old city, Santitham and the airport side — as well as San Sai and northern Hang Dong, plus the parts of San Kamphaeng, Saraphi and Doi Saket within my service range. If you are outside it, message me and I will tell you what is possible and what the travel cost would be.",
   },
   {
     q: "How do I know which type of unit I have?",

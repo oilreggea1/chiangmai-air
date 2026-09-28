@@ -236,8 +236,8 @@ export default function EnRepairPage() {
         <div className="wrap max-w-3xl">
           <h2 className="h2">Where I work</h2>
           <p className="lead mt-3">
-            Based in San Kamphaeng, covering {coverage.length} districts around Chiang Mai. Mueang Chiang Mai,
-            Hang Dong and San Sai are covered in full, including Nimman, the old city, Santitham and the Mae Jo area.
+            Based in San Kamphaeng, covering {coverage.length} districts around Chiang Mai. Mueang Chiang Mai
+            and San Sai are covered in full, including Nimman, the old city, Santitham and the Mae Jo area, plus northern Hang Dong.
             The price is the same everywhere I cover, with no travel surcharge.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
