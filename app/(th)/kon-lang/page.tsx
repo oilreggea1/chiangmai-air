@@ -22,7 +22,7 @@ import { JobGallery } from "@/components/JobGallery";
  */
 const totalPhotos = jobs.reduce((n, j) => n + jobPhotoCount(j), 0);
 const title = "รูปงานจริง ก่อนล้างและหลังล้าง ทุกงานถ่ายจากหน้างาน";
-const description = `รวมรูปจากหน้างานจริงในเชียงใหม่ ${jobs.length} งาน ${totalPhotos} รูป แยกให้ดูชัดว่าก่อนล้างเป็นอย่างไรและหลังล้างเป็นอย่างไร ทั้งงานล้างแอร์และถอดล้างเครื่องซักผ้า`;
+const description = `ภาพจากหน้างานจริงในเชียงใหม่ ${jobs.length} งาน ${totalPhotos} รูป สภาพเครื่องก่อนทำและหลังทำ จากงานล้างแอร์ ติดตั้งแอร์ และถอดล้างเครื่องซักผ้า`;
 
 export const metadata: Metadata = {
   title,
@@ -52,12 +52,11 @@ export default function KonLangPage() {
         <section className="wrap pt-8 pb-12">
           <p className="eyebrow">รูปจากหน้างานจริง</p>
           <h1 className="mt-5 max-w-3xl text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
-            งานจริง {jobs.length} งาน ดูก่อนล้างและหลังล้าง
+            งานจริง {jobs.length} งาน สภาพเครื่องก่อนและหลังทำงาน
           </h1>
           <p className="lead mt-5 max-w-3xl">
-หนึ่งงานคือหนึ่งโพสต์ส่งงานบนเพจ ลงรูปครบทุกใบที่ถ่ายไว้
-            แยกเป็นกองก่อนทำ ระหว่างทำ และหลังทำ
-            ชื่องานและจำนวนเครื่องใช้ตามที่ร้านเขียนไว้ในโพสต์ส่งงานจริง
+ภาพทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่
+            แต่ละงานเรียงให้ดูตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
           </p>
           <div className="mt-8 flex flex-wrap gap-4 text-sm">
             <Link href="/case-study" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">
@@ -65,7 +64,7 @@ export default function KonLangPage() {
               <IconChevron className="h-4 w-4" />
             </Link>
             <a href={site.facebook} target="_blank" rel="noopener" className="inline-flex items-center gap-1.5 font-semibold text-brand-700 hover:underline">
-              ดูรูปต้นฉบับบนเพจ
+              ดูรูปเพิ่มเติมบน Facebook
               <IconChevron className="h-4 w-4" />
             </a>
           </div>
@@ -79,7 +78,7 @@ export default function KonLangPage() {
               {svc} {list.length} งาน
             </h2>
             <p className="lead mt-3 max-w-2xl">
-              รวม {list.reduce((n, j) => n + jobPhotoCount(j), 0)} รูป ลงครบทุกใบที่ถ่ายไว้ในแต่ละงาน
+              ภาพจากหน้างานจริง {list.reduce((n, j) => n + jobPhotoCount(j), 0)} รูป
             </p>
             <div className="mt-9 space-y-6">
               {list.map((j) => (
@@ -91,8 +90,8 @@ export default function KonLangPage() {
       ))}
 
       <CtaBand
-        title="อยากให้เครื่องที่บ้านเป็นแบบกองล่าง"
-        subtitle="ส่งรูปเครื่องที่บ้านมาทาง LINE ได้เลย ผมประเมินให้ก่อนโดยไม่คิดค่าใช้จ่าย และแจ้งราคาครบก่อนเริ่มงาน"
+        title="ให้เครื่องที่บ้านกลับมาสะอาดแบบนี้"
+        subtitle="ส่งรูปเครื่องที่บ้านมาทาง LINE ได้ครับ ผมประเมินให้ก่อนโดยไม่คิดค่าใช้จ่าย และแจ้งราคาครบก่อนเริ่มงาน"
       />
     </>
   );

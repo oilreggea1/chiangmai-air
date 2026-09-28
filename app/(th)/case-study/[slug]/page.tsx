@@ -26,8 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
    */
   const head = item.title.split(":")[0].trim();
   /** ส่วนต่อท้ายกันชื่อซ้ำกันเอง เลือกพื้นที่จริงก่อน ถ้าไม่มีค่อยใช้วันที่จากโพสต์ */
-  const zone = item.area.includes("ไม่ระบุ") ? "" : item.area.split(" —")[0].trim();
-  const tail = zone || item.recorded.replace(/^โพสต์เพจ /, "").replace(/ —.*$/, "");
+  const zone = item.area === "เชียงใหม่" ? "" : item.area;
+  /** ถ้าหัวเรื่องมีชื่อพื้นที่อยู่แล้ว ใช้วันที่แทน กันชื่อซ้ำ เช่น "ที่หางดง หางดง เชียงใหม่" */
+  const place = zone.replace(/^(ต\.|อ\.)/, "").split(" ")[0].replace(/^(ต\.|อ\.)/, "");
+  const tail = zone && !head.includes(place) ? zone : item.recorded;
   const metaTitle = head.length >= 46 ? head : `${head} ${tail}`.slice(0, 60).trim();
   return {
     title: { absolute: metaTitle },
@@ -54,7 +56,7 @@ export default async function WorkCasePage({ params }: Props) {
     ["ประเภทเครื่อง", equipment],
     ["ประเภทงาน", item.service],
     ["ช่วงเวลาผลงาน", item.date ? item.recorded : "ปี 2569"],
-    ...(item.area && !item.area.startsWith("ไม่ระบุ") ? [["พื้นที่หน้างาน", item.area]] : []),
+    ...(item.area && item.area !== "เชียงใหม่" ? [["พื้นที่หน้างาน", item.area]] : []),
   ];
   return (
     <>
@@ -103,7 +105,7 @@ export default async function WorkCasePage({ params }: Props) {
             <section className="mt-12">
               <h2 className="h2">รูปจากหน้างานจริง {total} รูป</h2>
               <p className="lead mt-3">
-                แยกให้ดูเป็นกอง กองบนคือสภาพก่อนลงมือ กองล่างคือหลังทำเสร็จ เป็นงานเดียวกันทั้งหมด
+                สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน และตอนทำเสร็จ
               </p>
               {/* ไม่มีคำบรรยายใต้รูป คำบรรยายชิ้นส่วนที่เคยใส่ไว้ผิดเยอะ เจ้าของสั่งเอาออก 27 ก.ย. 2569 */}
               <div className="mt-7 space-y-8">

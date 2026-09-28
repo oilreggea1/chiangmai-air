@@ -17,7 +17,7 @@ export function SlotBooking({ className = "" }: { className?: string }) {
     <div className={`card p-6 sm:p-7 ${className}`}>
       <h3 className="flex items-start gap-2.5 text-lg leading-8 font-bold">
         <IconClock className="mt-1 h-5 w-5 shrink-0 text-brand-600" />
-        จองคิวนอกเวลางานไว้ล่วงหน้าได้เลย
+        จองคิวนอกเวลางานไว้ล่วงหน้าได้
       </h3>
       <p className="mt-3 text-[15px] leading-8 text-ink-soft">
         กดปุ่มที่ตรงกับช่วงที่คุณสะดวก แล้วเติมวันกับงานที่ต้องการในช่องพิมพ์ที่เตรียมไว้ให้

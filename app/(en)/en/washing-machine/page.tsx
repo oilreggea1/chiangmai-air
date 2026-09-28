@@ -218,7 +218,7 @@ export default function EnWashingMachinePage() {
         slugs={["lang-washing-machine"]}
         eyebrow="Real jobs"
         heading="Recent jobs, every photo from the job"
-        lead="Each card is one job, dated, with every photo grouped into before and after. Every washing machine job is a full strip-down clean."
+        lead="Photos from real washing machine jobs in Chiang Mai, before and after. Every washing machine clean is a full strip-down."
         note="Same part, before and after · report in Thai"
       />
 

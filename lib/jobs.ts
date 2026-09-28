@@ -43,7 +43,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์แบบพรีเมี่ยมตัดล้างพิเศษ 1 เครื่อง ลูกค้าแจ้งว่าแอร์มีน้ำหยดทั้งที่เพิ่งล้างมาได้ไม่นาน",
+    summary: "ล้างแอร์แบบพรีเมี่ยม ตัดล้างพิเศษ 1 เครื่อง หลังลูกค้าแจ้งว่าแอร์มีน้ำหยด",
     before: [
       { src: "/work/job/job-a01-before-01.jpg", alt: "ล้างแอร์ 3 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a01-before-02.jpg", alt: "ล้างแอร์ 3 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -73,7 +73,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์แบบมาตรฐาน 3 เครื่อง 3 หลังคนละหมู่บ้าน หลังละ 1 เครื่อง",
+    summary: "ล้างแอร์แบบมาตรฐาน 3 เครื่อง จาก 3 หลัง",
     before: [
       { src: "/work/job/job-a02-before-01.jpg", alt: "ล้างแอร์ 4 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a02-before-02.jpg", alt: "ล้างแอร์ 4 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -112,7 +112,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์แบบมาตรฐาน 3 เครื่อง",
+    summary: "ล้างแอร์แบบมาตรฐาน 3 เครื่อง",
     before: [
       { src: "/work/job/job-a03-before-01.jpg", alt: "ล้างแอร์ 15 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a03-before-02.jpg", alt: "ล้างแอร์ 15 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -149,7 +149,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ติดผนัง 3 เครื่อง",
+    summary: "ล้างแอร์ติดผนัง 3 เครื่อง",
     before: [
       { src: "/work/job/job-a04-before-01.jpg", alt: "ล้างแอร์ 30 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a04-before-02.jpg", alt: "ล้างแอร์ 30 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -199,7 +199,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ 5 เครื่อง",
+    summary: "ล้างแอร์ 5 เครื่อง",
     before: [
       { src: "/work/job/job-a05-before-01.jpg", alt: "ล้างแอร์ 30 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a05-before-02.jpg", alt: "ล้างแอร์ 30 พฤษภาคม 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -234,7 +234,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ติดผนัง 5 เครื่อง",
+    summary: "ล้างแอร์ติดผนัง 5 เครื่อง",
     before: [
       { src: "/work/job/job-a06-before-01.jpg", alt: "ล้างแอร์ 6 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a06-before-02.jpg", alt: "ล้างแอร์ 6 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -322,7 +322,7 @@ export const jobs: Job[] = [
     service: "ติดตั้งแอร์",
     serviceSlug: "tid-tang-air",
     verb: "ติดตั้ง",
-    summary: "ส่งงานติดตั้งแอร์ใหม่ 1 เครื่อง",
+    summary: "ติดตั้งแอร์ใหม่ 1 เครื่อง",
     before: [
       { src: "/work/job/job-a07-before-01.jpg", alt: "ติดตั้งแอร์ 6 มิถุนายน 2569 ภาพก่อนติดตั้ง ลำดับที่ 1" },
       { src: "/work/job/job-a07-before-02.jpg", alt: "ติดตั้งแอร์ 6 มิถุนายน 2569 ภาพก่อนติดตั้ง ลำดับที่ 2" },
@@ -345,7 +345,7 @@ export const jobs: Job[] = [
     service: "ติดตั้งแอร์",
     serviceSlug: "tid-tang-air",
     verb: "ทำ",
-    summary: "ส่งงานติดตั้งแอร์ใหม่ 1 เครื่อง ล้างแอร์ 1 เครื่อง ถอดแอร์พร้อมเก็บน้ำยา 1 เครื่อง และล้างเครื่องซักผ้าฝาบน 1 เครื่อง",
+    summary: "ติดตั้งแอร์ใหม่ 1 เครื่อง ล้างแอร์ 1 เครื่อง และถอดแอร์พร้อมเก็บน้ำยา 1 เครื่อง ในการเข้าบริการครั้งเดียว",
     before: [
       { src: "/work/job/job-a08-before-01.jpg", alt: "ติดตั้งแอร์ 19 มิถุนายน 2569 ภาพก่อนทำ ลำดับที่ 1" },
       { src: "/work/job/job-a08-before-02.jpg", alt: "ติดตั้งแอร์ 19 มิถุนายน 2569 ภาพก่อนทำ ลำดับที่ 2" },
@@ -385,7 +385,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ 3 เครื่อง",
+    summary: "ล้างแอร์ 3 เครื่อง",
     before: [
       { src: "/work/job/job-a09-before-01.jpg", alt: "ล้างแอร์ 19 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a09-before-02.jpg", alt: "ล้างแอร์ 19 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -443,7 +443,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ 4 เครื่อง",
+    summary: "ล้างแอร์ 4 เครื่อง",
     before: [
       { src: "/work/job/job-a10-before-01.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a10-before-02.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -527,7 +527,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ 4 เครื่อง",
+    summary: "ล้างแอร์ 4 เครื่อง",
     before: [
       { src: "/work/job/job-a11-before-01.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a11-before-02.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -597,7 +597,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ล้าง",
-    summary: "ส่งงานล้างแอร์ 4 เครื่อง",
+    summary: "ล้างแอร์ 4 เครื่อง",
     before: [
       { src: "/work/job/job-a12-before-01.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 1" },
       { src: "/work/job/job-a12-before-02.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนล้าง ลำดับที่ 2" },
@@ -640,7 +640,7 @@ export const jobs: Job[] = [
     service: "ล้างแอร์",
     serviceSlug: "lang-air",
     verb: "ทำ",
-    summary: "ส่งงานตรวจเช็ค ซ่อม และล้างแอร์ จบในรอบเดียว",
+    summary: "ตรวจเช็ค ซ่อม และล้างแอร์ ครบในการเข้าบริการครั้งเดียว",
     before: [
       { src: "/work/job/job-a13-before-01.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนทำ ลำดับที่ 1" },
       { src: "/work/job/job-a13-before-02.jpg", alt: "ล้างแอร์ 26 มิถุนายน 2569 ภาพก่อนทำ ลำดับที่ 2" },

@@ -244,7 +244,7 @@ export default function EnInstallationPage() {
         slugs={["tid-tang-air", "yai-air"]}
         eyebrow="Recent installations and relocations"
         heading="From the box to the wall"
-        lead="Real installation jobs from 2026, dated from each job post. The photos show the wall before and the finished unit after."
+        lead="Real installation jobs in Chiang Mai from 2026. The photos show the wall before and the finished unit after."
         note="Before and after · report in Thai"
         tone="sand"
       />

@@ -184,7 +184,7 @@ export default function ZhCondoPage() {
         slugs={["lang-air"]}
         eyebrow="近期清洗实拍"
         heading="真实案例的清洗前后"
-        lead="每一组都是我们主页上的一篇完工帖，注明日期，照片分为清洗前和清洗后。一篇帖子可能包含多台空调。"
+        lead="照片均拍摄于清迈的真实施工现场，展示清洗前与清洗后的状况。"
         note="清洗前后对比 · 报告为泰文"
       />
 

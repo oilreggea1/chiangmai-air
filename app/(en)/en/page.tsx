@@ -335,7 +335,7 @@ export default function EnglishPage() {
         slugs={["lang-air", "som-air"]}
         eyebrow="Recent jobs, photographed on site"
         heading="Before and after, from real jobs"
-        lead="Each card is one job post from our page, dated, with the photos grouped into before and after. One post can cover several units cleaned on the same visit."
+        lead="Photos from real jobs in Chiang Mai, from the condition I found on arrival to the finished result. A single visit often covers several units."
         note="Before and after · report in Thai"
       />
 

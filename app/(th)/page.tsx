@@ -192,8 +192,7 @@ export default function Home() {
             <p className="eyebrow">รูปจากหน้างานจริง</p>
             <h2 className="h2 mt-4">ก่อนล้าง กับ หลังล้าง ของงานเดียวกัน</h2>
             <p className="lead mt-3">
-              นี่คือโพสต์ส่งงานหนึ่งโพสต์ ลงรูปให้ครบทุกใบที่ถ่ายไว้ แยกเป็นกองก่อนล้าง ระหว่างล้าง และหลังล้าง
-              ชื่องานกับจำนวนเครื่องเป็นไปตามที่ร้านเขียนไว้ในโพสต์ส่งงานจริง
+              สภาพเครื่องตอนผมไปถึง ระหว่างล้าง และตอนทำเสร็จ จากงานเดียวกันในเชียงใหม่
             </p>
           </div>
           <div className="mt-9 space-y-6">
@@ -321,7 +320,7 @@ export default function Home() {
           <p className="eyebrow">ผลงานจริง</p>
           <h2 className="h2 mt-4 text-white">ดูงานก่อนตัดสินใจ</h2>
           <p className="lead mx-auto mt-3 max-w-2xl text-brand-100">
-            รูปทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ แยกให้ดูว่าก่อนล้างเป็นอย่างไร และหลังล้างเป็นอย่างไร
+            รูปทั้งหมดถ่ายจากหน้างานจริงในเชียงใหม่ ทั้งสภาพเครื่องก่อนล้างและหลังล้าง
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/kon-lang" className="btn-call px-6 py-3.5">
