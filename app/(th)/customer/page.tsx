@@ -8,7 +8,7 @@ import { IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
 const title = "ล้างแอร์คอนโด หอพัก โรงแรม ออฟฟิศ เชียงใหม่";
-const description = `รับล้างแอร์คอนโด หอพัก โรงแรม ออฟฟิศ ร้านอาหาร และโรงงานทั่วเชียงใหม่ ตั้งแต่ 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท เข้าทีเดียวจบ สรุปยอดรวมให้ทราบก่อนนัด`;
+const description = `รับล้างแอร์คอนโด หอพัก โรงแรม ออฟฟิศ ร้านอาหาร และโรงงานทั่วเชียงใหม่ ตั้งแต่ 3 เครื่องขึ้นไปเครื่องละ ${p.wash.stdBulk} บาท ทำครบทุกเครื่องในนัดเดียว สรุปยอดรวมให้ทราบก่อนนัด`;
 
 export const metadata: Metadata = {
   title,

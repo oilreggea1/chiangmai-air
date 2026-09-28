@@ -191,7 +191,7 @@ export default function ChinesePage() {
             {/* แถบความน่าเชื่อถือ เพิ่มพร้อมหน้าอังกฤษ 24 ก.ย. 2569 */}
             <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">
               <li className="flex items-start gap-2"><IconShield className="mt-0.5 h-4 w-4 shrink-0 text-mint" />注册公司：{site.legalNameEn}</li>
-              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />由 Arm 本人上门施工，不外包</li>
+              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />由 Arm 本人上门施工</li>
               <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />不收订金，验收后再付款</li>
             </ul>
           </div>
@@ -274,7 +274,7 @@ export default function ChinesePage() {
         <div className="wrap">
           <h2 className="h2">实际施工照片</h2>
           <p className="lead mt-3 max-w-2xl">
-            清迈本地实拍，按施工顺序排列。
+            清迈本地实拍。
           </p>
           <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {workPhotosZh.map((ph) => (

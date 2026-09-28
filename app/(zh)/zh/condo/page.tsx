@@ -84,7 +84,7 @@ export default function ZhCondoPage() {
             </h1>
             <p className="lead mt-5">
               公寓和独栋不一样，要配合物业的时间，进场空间也小得多。
-              我在清迈的公寓做这类活很多年，接水袋、垫布和短梯都是按这种条件准备的，
+              我在清迈长期承接公寓的空调清洗工作，接水袋、垫布和短梯都是按这种条件准备的，
               进门就能开工，做完把现场恢复原样。
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -117,7 +117,7 @@ export default function ZhCondoPage() {
 
       <section className="section" lang="zh-CN">
         <div className="wrap">
-          <h2 className="h2">公寓这类活，难的地方在哪里</h2>
+          <h2 className="h2">公寓清洗与独栋住宅有哪些不同</h2>
           <div className="mt-9 grid gap-5 sm:grid-cols-2">
             {points.map((x) => (
               <div key={x.t} className="card p-6">

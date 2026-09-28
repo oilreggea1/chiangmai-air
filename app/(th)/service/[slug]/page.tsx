@@ -197,7 +197,7 @@ export default async function ServicePage({ params }: Props) {
             </p>
             {/* วันที่จริงจาก git ของไฟล์ข้อมูลบริการ ไม่ใช่วันที่ build — ให้ทั้งลูกค้าและ Google เห็นว่าราคายังดูแลอยู่ */}
             <p className="mt-1.5 text-xs text-ink-soft">
-              ราคาและเงื่อนไขในหน้านี้อัปเดตล่าสุด{" "}
+              ราคาและเงื่อนไขอัปเดตล่าสุด{" "}
               <time dateTime={lastmodIso(SRC.site)}>{thaiDate(lastmodIso(SRC.site))}</time>
             </p>
           </div>
@@ -228,7 +228,7 @@ export default async function ServicePage({ params }: Props) {
             <p className="lead mt-4">
               ผมรับงานถึงบ้านในอำเภอเมืองเชียงใหม่ สันกำแพง สารภี ดอยสะเก็ด
               หางดง และสันทราย เลือกพื้นที่ด้านล่างเพื่อดูรายละเอียดและโซนใกล้เคียง
-              หรือส่งตำแหน่งทาง LINE เพื่อให้ผมเช็กคิวและเวลาเดินทางได้ทันที
+              หรือส่งตำแหน่งทาง LINE เพื่อให้ผมตรวจสอบคิวและเวลาเดินทางได้ทันที
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               {areas.slice(0, 8).map((area) => (
@@ -336,7 +336,7 @@ export default async function ServicePage({ params }: Props) {
 
             <p className="mt-5 text-sm leading-7 text-ink-soft">
               ราคาทั้งสามแบบเป็นราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
-              และผมแจ้งราคาก่อนเริ่มงานทุกครั้ง หากพบรายการที่ต้องทำเพิ่มหน้างาน ผมหยุดถามก่อน
+              และผมแจ้งราคาก่อนเริ่มงานทุกครั้ง หากพบรายการที่ต้องทำเพิ่มหน้างาน ผมจะแจ้งและขอความเห็นชอบก่อนดำเนินการ
             </p>
           </div>
         </section>
@@ -542,7 +542,7 @@ export default async function ServicePage({ params }: Props) {
           <section className="section bg-sand">
             <div className="wrap">
               <p className="eyebrow">งานล่าสุดจากหน้างานจริง</p>
-              <h2 className="h2 mt-4">รายงานงาน{s.name} พร้อมวันที่และพื้นที่</h2>
+              <h2 className="h2 mt-4">งาน{s.name}ล่าสุดในเชียงใหม่</h2>
               <p className="lead mt-3 max-w-2xl">สภาพเครื่องตอนผมไปถึง ขั้นตอนที่ทำ และผลหลังทำเสร็จ จากงานจริงในเชียงใหม่</p>
               <ul className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {jobs.map((c) => (

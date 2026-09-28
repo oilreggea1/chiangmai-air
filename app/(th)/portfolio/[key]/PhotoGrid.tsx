@@ -2,9 +2,9 @@ import Image from "next/image";
 import { thumbOf, type PortfolioCategory } from "@/lib/site";
 
 /**
- * ตารางภาพผลงานพร้อมคำบรรยายใต้ภาพ
- * คำบรรยายที่มองเห็นได้ช่วยทั้งคนอ่านและ Google Images เพราะ Google
- * ใช้ข้อความรอบ ๆ ภาพประกอบการเข้าใจว่าภาพนั้นคืออะไร ไม่ได้ดูแค่ alt
+ * ตารางภาพผลงาน
+ * ไม่มีคำบรรยายใต้ภาพแล้ว (29 ก.ย. 2569) คำบรรยายชิ้นส่วนรายรูปที่ AI เขียนผิดหลายใบ
+ * เจ้าของสั่งห้ามคำบรรยายแบบนี้ ชื่อหมวดของหน้าบอกชนิดงานอยู่แล้ว
  *
  * ใช้ภาพย่อ 480×480 ที่สร้างไว้ล่วงหน้า ไม่ใช่ไฟล์เต็มความละเอียด
  * กริดนี้ไม่มีการกดขยายภาพ ไฟล์เต็มจึงไม่เคยถูกใช้บนหน้านี้เลย
@@ -27,9 +27,6 @@ export function PhotoGrid({ photos }: { photos: PortfolioCategory["photos"] }) {
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="aspect-square w-full bg-slate-100 object-cover"
             />
-            <figcaption aria-hidden="true" className="px-3 py-2.5 text-xs leading-5 text-ink-soft">
-              {g.alt}
-            </figcaption>
           </figure>
         </li>
       ))}

@@ -145,7 +145,7 @@ export default function EnInstallationPage() {
       <section className="section" lang="en">
         <div className="wrap max-w-4xl">
           <h2 className="h2">Installation prices by unit size</h2>
-          <p className="lead mt-3">One price per unit, and it already includes the parts most installers add on afterwards.</p>
+          <p className="lead mt-3">One price per unit, and the standard installation parts are already included.</p>
           <div className="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid grid-cols-2 border-b border-slate-200 bg-brand-50 px-5 py-4 font-bold">
               <span>Unit size</span><span>Installation</span>

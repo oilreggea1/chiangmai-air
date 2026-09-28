@@ -37,9 +37,9 @@ const promises = [
   { t: "每次都先报价再动手", d: "无论工作大小，开工前都会给您确定的金额。现场如果有增加项目，我会先停下来问您，确认后才继续。" },
   { t: "加冷媒之前先测量", d: "冷媒加多了会让压力升高，缩短压缩机寿命。我会当着您的面测量，不缺就不加，并如实告诉您。" },
   { t: "换下的零件都给您看", d: "拆下来的旧零件会拿给您看并说明故障原因，让您清楚钱花在了哪里。" },
-  { t: "即使做不成这单也说实话", d: "维修费超过新机价格一半时，我会告诉您不划算，并列出可选方案。决定权在您。" },
+  { t: "维修不划算时如实说明", d: "维修费超过新机价格一半时，我会告诉您不划算，并列出可选方案。决定权在您。" },
   { t: "家里保持原样", d: "动手前铺两层防尘布，收工前把现场清理干净，您不需要再做任何清洁。" },
-  { t: "保修是真的", d: "保修期内同样的问题再出现，我免费上门处理。" },
+  { t: "保修期内同样故障免费处理", d: "保修期内同样的问题再出现，我免费上门处理。" },
 ];
 
 const facts = [
@@ -172,15 +172,15 @@ export default function ZhAboutPage() {
         <div className="wrap max-w-3xl">
           <h2 className="h2">在清迈找空调师傅，中文客人常遇到的问题</h2>
           <p className="lead mt-3">
-            语言不通的时候，最难的不是叫人来，而是弄清楚对方到底做了什么、为什么收这个钱。
+            语言不通的时候，最需要的是清楚知道做了哪些工作、每一项费用是多少。
             下面这几件事，是我在跟中文客人打交道时最常被问到的。
           </p>
           <div className="mt-8 space-y-5">
             <div className="card p-6">
               <h3 className="font-bold leading-7">价格先说清楚，再动手</h3>
               <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
-                我的价格都写在网站上，不会看人报价。上门后如果发现要多做什么，我会先停下来用 LINE 把情况和金额发给您，
-                您确认了我才继续。不会做完才告诉您「这里另外算钱」。
+                我的价格公开透明，所有客户同一个价格。上门后如果发现要多做什么，我会先停下来用 LINE 把情况和金额发给您，
+                您确认了我才继续。
               </p>
             </div>
             <div className="card p-6">
@@ -193,15 +193,15 @@ export default function ZhAboutPage() {
             <div className="card p-6">
               <h3 className="font-bold leading-7">施工过程有照片可查</h3>
               <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
-                每一单我都会拍施工前后的照片。网站上的案例报告就是这么来的，
-                拆下来的零件什么样、洗完什么样，都能对着看。人不在现场也知道做了什么。
+                每一单我都会拍施工前后的照片。
+                拆下来的零件在清洗前和清洗后的状况，您都能看到。人不在现场也知道做了什么。
               </p>
             </div>
             <div className="card p-6">
               <h3 className="font-bold leading-7">不该花的钱我会拦着</h3>
               <p className="mt-2.5 text-[15px] leading-8 text-ink-soft">
                 有些情况洗一下就好，不用修；有些机器年头太久，修的钱够买半台新的。
-                这两种我都会直说。少赚一单没关系，说假话把客人留住才是真的亏。
+                这两种情况我都会如实说明，并列出可选方案供您决定。
               </p>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function ZhAboutPage() {
         <div className="wrap max-w-3xl">
           <h2 className="h2">为什么清迈的空调比别的城市脏得快</h2>
           <p className="lead mt-3">
-            这不是推销话术，是这座城市的实际情况。了解原因，您才知道多久洗一次对自己合适。
+            这与清迈的气候和空气状况直接相关。了解原因，您才知道多久洗一次对自己合适。
           </p>
           <div className="mt-8 space-y-5">
             <div className="card p-6">

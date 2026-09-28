@@ -6,7 +6,7 @@ import { share } from "@/lib/seo";
 import { IconPin, IconChevron } from "@/components/Icons";
 import { CtaBand, Breadcrumbs } from "@/components/Blocks";
 
-const title = `ช่างแอร์ใกล้ฉันในเชียงใหม่ เช็คเขตบริการ ${coverage.length} อำเภอ ${coverageTotal} ตำบล`;
+const title = `ช่างแอร์ใกล้ฉันในเชียงใหม่ ตรวจสอบเขตบริการ ${coverage.length} อำเภอ ${coverageTotal} ตำบล`;
 const description =
   "หาช่างแอร์ใกล้บ้านในเชียงใหม่ เช็คได้ทันทีว่าตำบลของคุณอยู่ในเขตที่ผมไปถึง เมืองเชียงใหม่ หางดง สันทราย ครบทุกตำบล พร้อมสันกำแพง สารภี ดอยสะเก็ด ราคาเดียวกันทุกพื้นที่ ไม่คิดค่าเดินทางเพิ่ม";
 
@@ -38,7 +38,7 @@ export default function AreaIndex() {
             ที่ตั้ง ต.สันกำแพง อ.สันกำแพง
           </p>
           <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
-            ช่างแอร์ใกล้บ้านคุณในเชียงใหม่ เช็คเขตบริการได้ที่นี่
+            ช่างแอร์ใกล้บ้านคุณในเชียงใหม่ ตรวจสอบเขตบริการของคุณ
           </h1>
           <p className="lead mt-5">
             ผมรับงานในอำเภอเมืองเชียงใหม่ หางดง และสันทราย ครบทุกตำบล รวมถึงสันกำแพง สารภี และดอยสะเก็ด

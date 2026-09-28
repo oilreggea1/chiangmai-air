@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: "How quickly can you come?",
-    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 6pm, and can take bookings outside those hours for an additional fee that I quote first. The exception is February to April, the burning season, when the whole city is booking at once. Booking a week ahead is safer then.",
+    a: "Usually within 24 hours, and the same day if I have a slot free. I work Monday to Saturday, 8am to 8pm, and take Sunday jobs by advance booking, at the same rates with no out-of-hours fee. The exception is February to April, the burning season, when the whole city is booking at once. Booking a week ahead is safer then.",
   },
 ];
 
@@ -204,7 +204,7 @@ export default function EnglishPage() {
             {/* แถบความน่าเชื่อถือสำหรับลูกค้าต่างชาติ (24 ก.ย. 2569): บริษัทจดทะเบียน + คนที่มาคือใคร + ไม่มีมัดจำ */}
             <ul className="mt-6 grid max-w-xl gap-2 text-sm text-ink-soft sm:grid-cols-3">
               <li className="flex items-start gap-2"><IconShield className="mt-0.5 h-4 w-4 shrink-0 text-mint" />Registered company: {site.legalNameEn}</li>
-              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />Arm does the work himself, not a rotating crew</li>
+              <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />Arm does the work himself</li>
               <li className="flex items-start gap-2"><IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-mint" />No deposit, pay after you have seen the work</li>
             </ul>
           </div>
@@ -384,7 +384,8 @@ export default function EnglishPage() {
           <p className="lead mt-3 max-w-2xl">
             I am based in San Kamphaeng, so the eastern side of the city is quickest for me.
             I cover every sub-district of Mueang Chiang Mai — the old city, Nimman, Santitham and
-            the airport side — plus San Kamphaeng, Saraphi, Doi Saket and San Phra Net.
+            the airport side — as well as Hang Dong and San Sai, plus the parts of San Kamphaeng,
+            Saraphi and Doi Saket within my service range.
           </p>
           {/*
             การ์ดพื้นที่เคยลิงก์ไป /area/[slug] ซึ่งเป็นหน้าภาษาไทยล้วน (แก้ 19 ส.ค. 2569)

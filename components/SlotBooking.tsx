@@ -20,7 +20,7 @@ export function SlotBooking({ className = "" }: { className?: string }) {
         จองคิวนอกเวลางานไว้ล่วงหน้าได้
       </h3>
       <p className="mt-3 text-[15px] leading-8 text-ink-soft">
-        กดปุ่มที่ตรงกับช่วงที่คุณสะดวก แล้วเติมวันกับงานที่ต้องการในช่องพิมพ์ที่เตรียมไว้ให้
+        เลือกช่วงเวลาที่คุณสะดวก แล้วแจ้งวันและงานที่ต้องการ
         ผมตอบกลับพร้อมคิวที่ว่างจริง และคิดราคาเท่ากับเวลาปกติทุกช่วง
       </p>
 
@@ -48,7 +48,7 @@ export function SlotBooking({ className = "" }: { className?: string }) {
       </div>
 
       <p className="mt-5 text-sm leading-7 text-ink-soft">
-        สะดวกคุยทางโทรศัพท์มากกว่า โทรได้ที่{" "}
+        หากสะดวกติดต่อทางโทรศัพท์ โทรได้ที่{" "}
         <a href={`tel:${site.phoneTel}`} className="font-semibold text-brand-700 hover:underline" data-cta="book-call">
           {site.phone}
         </a>{" "}

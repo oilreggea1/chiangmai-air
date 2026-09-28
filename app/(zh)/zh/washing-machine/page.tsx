@@ -51,7 +51,7 @@ const steps = [
 ];
 
 const faqs = [
-  { q: "真的会把内桶拆出来吗？", a: "会。内桶和周围部件都拆出来单独清洗，然后装回、调平，并当着您的面试机。本页下方的照片就来自这些工作。" },
+  { q: "真的会把内桶拆出来吗？", a: "会。内桶和周围部件都拆出来单独清洗，然后装回、调平，并当着您的面试机。" },
   { q: "为什么前开式比上开式贵？", a: `结构不同。上开式是竖直的内外桶，可以直接吊出。前开式是横向滚筒，还有门封圈和排水泵滤网，要拆的东西更多。上开式 15 公斤以内 ${p.washer.topLoad} 泰铢，15.1 到 19 公斤 ${p.washer.topLoadMid} 泰铢，更大的 ${p.washer.topLoadBig} 泰铢。前开式 ${p.washer.frontLoad} 泰铢起，大容量机型开工前先确认价格。` },
   { q: "需要多长时间？", a: "每台约 3 小时，因为所有部件都要拆出、清洗、装回，最后还要试机。" },
   { q: "和自己买的洗衣机槽清洁剂有什么区别？", a: "清洁片或清洁液只能接触内桶的内壁。大部分洗涤剂残留和霉菌都在内桶外壁，也就是内桶和外桶之间的缝隙里，只有拆出内桶才能洗干净。" },
@@ -132,8 +132,8 @@ export default function ZhWashingMachinePage() {
 
       <section className="section bg-sand" lang="zh-CN">
         <div className="wrap">
-          <h2 className="h2">同一台机器，清洗前后</h2>
-          <p className="lead mt-3 max-w-2xl">以下每组都是同一台机器同一天拍的。脏的地方正是您平时看不到的部件。</p>
+          <h2 className="h2">清洗前后对比</h2>
+          <p className="lead mt-3 max-w-2xl">大部分污垢都在您平时看不到、需要拆开才能看到的部件上。</p>
           <div className="mt-9 grid gap-8 lg:grid-cols-2">
             {pairs.map((pair) => (
               <figure key={pair.label} className="card overflow-hidden">
@@ -169,7 +169,7 @@ export default function ZhWashingMachinePage() {
         lang="zh-CN"
         slugs={["lang-washing-machine"]}
         eyebrow="真实案例"
-        heading="近期案例，清洗前后全部照片"
+        heading="近期洗衣机清洗案例"
         lead="照片均拍摄于清迈的真实洗衣机清洗现场，展示清洗前与清洗后的状况。洗衣机清洗全部为拆机深度清洗。"
         note="同一部件，清洗前后 · 泰文记录"
       />

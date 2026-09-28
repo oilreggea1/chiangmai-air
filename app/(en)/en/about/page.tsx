@@ -39,9 +39,9 @@ const promises = [
   { t: "The price comes before the work, every time", d: "Whatever the size of the job, you get a firm figure before I start. If something on site adds to it, I stop and ask before carrying on." },
   { t: "Refrigerant is measured before anything is added", d: "Overcharging raises the pressure and shortens the life of the compressor. I check the level in front of you, and if it is not low, I tell you and leave it." },
   { t: "You see the old part whenever one is replaced", d: "The part that came out is shown to you with an explanation of what failed, so you can see what the money went on." },
-  { t: "An honest call even when it costs me the job", d: "When a repair would cost more than half the price of a new unit, I say so and lay out the options. The decision stays with you." },
+  { t: "A clear recommendation when a repair is not worth it", d: "When a repair would cost more than half the price of a new unit, I say so and lay out the options. The decision stays with you." },
   { t: "Your home is left as I found it", d: "Two layers of sheeting go down before I open anything, and I tidy up before I hand over. There is nothing for you to clean afterwards." },
-  { t: "The warranty is real", d: "If the same fault comes back inside the warranty period, I come back and fix it at no charge." },
+  { t: "Repeat faults are covered by the warranty", d: "If the same fault comes back inside the warranty period, I come back and fix it at no charge." },
 ];
 
 const facts = [

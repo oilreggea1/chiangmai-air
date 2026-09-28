@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "价格里包含上门费吗？",
-    a: "包含。服务范围内不另收车费。范围是清迈市区（Mueang Chiang Mai）全部乡，含尼曼路、古城、Santitham 和机场一带，另有 San Kamphaeng、Saraphi、Doi Saket 以及 San Sai 的 San Phra Net 乡。若您在范围之外，请先用 LINE 告诉我地址，我会如实说明能否上门以及车费多少。"
+    a: "包含。服务范围内不另收车费。范围是清迈市区（Mueang Chiang Mai）全部乡，含尼曼路、古城、Santitham 和机场一带，以及 Hang Dong 县和 San Sai 县全部乡，另有 San Kamphaeng、Saraphi、Doi Saket 在服务距离内的地区。若您在范围之外，请先用 LINE 告诉我地址，我会如实说明能否上门以及车费多少。"
   },
   {
     q: "怎么知道我家是哪种机型？",
@@ -99,7 +99,7 @@ export default function ZhPricingPage() {
             </div>
           ))}
           <p className="text-sm leading-7 text-ink-soft">
-            以上价格均为泰铢，服务范围内不另收车费。每组标题旁保留泰文原名，方便您与本地房东或物业核对。
+            以上价格均为泰铢，服务范围内不另收车费。各服务项目附有泰文名称，方便您与本地房东或物业核对。
             任何一行不清楚，请用 LINE 问我，我会耐心解释。
           </p>
         </div>

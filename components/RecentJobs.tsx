@@ -51,7 +51,7 @@ export function RecentJobs({
           {list.map((j) => (
             <article key={j.id} className="card p-5 sm:p-7">
               <p className="text-xs font-bold text-accent">
-                {new Date(j.date).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {jobPhotoCount(j)} {t.photos} · {t.note}
+                {new Date(j.date).toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })} · {jobPhotoCount(j)} {t.photos}
               </p>
               {(
                 [

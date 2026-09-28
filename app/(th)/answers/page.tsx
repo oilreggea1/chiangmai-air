@@ -127,7 +127,7 @@ export default function AnswersPage() {
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft">
             <span className="inline-flex items-center gap-2"><IconCheck className="h-4 w-4 text-mint" />ตรวจทานโดยช่างอาร์ม</span>
             <span>อัปเดตล่าสุด 4 สิงหาคม 2569</span>
-            <Link href="/about" className="font-semibold text-brand-700 hover:underline">ที่มาและผู้รับผิดชอบข้อมูล</Link>
+            <Link href="/about" className="font-semibold text-brand-700 hover:underline">ผู้ให้คำตอบ</Link>
           </div>
         </section>
       </div>

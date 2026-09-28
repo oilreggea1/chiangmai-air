@@ -57,7 +57,7 @@ const steps = [
 const faqs = [
   {
     q: "Do you really take the drum out?",
-    a: "Yes. The drum and the parts around it come out and are washed separately, then the machine is reassembled, levelled and run in front of you. The photos further down this page are from those jobs.",
+    a: "Yes. The drum and the parts around it come out and are washed separately, then the machine is reassembled, levelled and run in front of you.",
   },
   {
     q: "Why is a front loader more expensive than a top loader?",
@@ -180,8 +180,8 @@ export default function EnWashingMachinePage() {
 
       <section className="section bg-sand" lang="en">
         <div className="wrap">
-          <h2 className="h2">Before and after, same machine</h2>
-          <p className="lead mt-3 max-w-2xl">These pairs are from the same machine on the same day. The dirt is on the parts you never see.</p>
+          <h2 className="h2">Before and after</h2>
+          <p className="lead mt-3 max-w-2xl">Most of the dirt sits on parts you never see until the machine is taken apart.</p>
           <div className="mt-9 grid gap-8 lg:grid-cols-2">
             {pairs.map((pair) => (
               <figure key={pair.label} className="card overflow-hidden">
@@ -217,7 +217,7 @@ export default function EnWashingMachinePage() {
         lang="en"
         slugs={["lang-washing-machine"]}
         eyebrow="Real jobs"
-        heading="Recent jobs, every photo from the job"
+        heading="Recent washing machine jobs"
         lead="Photos from real washing machine jobs in Chiang Mai, before and after. Every washing machine clean is a full strip-down."
         note="Same part, before and after · report in Thai"
       />

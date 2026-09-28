@@ -47,7 +47,7 @@ export default function Portfolio() {
         <section className="wrap max-w-3xl pt-8 pb-14 text-center">
           <p className="eyebrow">ภาพจากหน้างานจริง</p>
           <h1 className="mt-5 text-[clamp(2.05rem,1.35rem+2.6vw,3rem)] leading-[1.3] font-extrabold">
-            ภาพผลงานจริง แยกตามประเภทงาน
+            ภาพผลงานจริงจากหน้างานในเชียงใหม่
           </h1>
           <p className="lead mt-5">
             งานล้างแอร์ ติดตั้ง ย้ายแอร์ แอร์แขวน แอร์ฝังฝ้า และล้างถังเครื่องซักผ้า รวม {portfolioTotal} ภาพ

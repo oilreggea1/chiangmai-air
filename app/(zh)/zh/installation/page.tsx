@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: "可以连机器一起买吗？",
-    a: "可以。我销售主流品牌的新机和检测过的二手机，并由我本人安装。机器价格随机型和当月促销变动，所以在 LINE 上按机型报价。机器和安装都由一个人负责，出了问题不用两边扯皮，安装保修也是 1 年。",
+    a: "可以。我销售主流品牌的新机和检测过的二手机，并由我本人安装。机器价格随机型和当月促销变动，所以在 LINE 上按机型报价。机器和安装都由一个人负责，出了问题由同一个人负责，安装保修也是 1 年。",
   },
   {
     q: "安装需要多长时间？",
@@ -129,7 +129,7 @@ export default function ZhInstallationPage() {
       <section className="section" lang="zh-CN">
         <div className="wrap max-w-4xl">
           <h2 className="h2">按机器大小计价</h2>
-          <p className="lead mt-3">每台一个价格，已经包含了别处常常另外加收的配件。</p>
+          <p className="lead mt-3">每台一个价格，常用安装配件已包含在内。</p>
           <div className="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid grid-cols-2 border-b border-slate-200 bg-brand-50 px-5 py-4 font-bold">
               <span>机器大小</span><span>安装费</span>

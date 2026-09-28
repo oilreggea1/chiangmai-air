@@ -178,7 +178,7 @@ export default function Home() {
               </span>
               <span className="text-sm leading-snug">
                 <strong className="block text-ink">แจ้งราคาก่อนเริ่มงาน</strong>
-                <span className="text-ink-soft">หากหน้างานมีรายการเพิ่ม ผมหยุดถามก่อน</span>
+                <span className="text-ink-soft">หากพบรายการเพิ่มเติมที่หน้างาน ผมจะแจ้งและขอความเห็นชอบก่อนดำเนินการ</span>
               </span>
             </div>
           </div>

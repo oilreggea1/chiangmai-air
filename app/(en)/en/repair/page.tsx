@@ -48,7 +48,7 @@ const symptoms = [
   },
   {
     t: "Water dripping from the indoor unit",
-    d: "Usually the drain is blocked by the sludge that builds up in the tray, and the water backs up over the edge. Sometimes the unit is simply not level. Both are fixable without new parts, so be careful with anyone who quotes a part replacement before looking.",
+    d: "Usually the drain is blocked by the sludge that builds up in the tray, and the water backs up over the edge. Sometimes the unit is simply not level. Both are fixable without new parts, so a part replacement should not be needed before the unit has been inspected.",
   },
   {
     t: "Unit runs then stops by itself",
@@ -132,7 +132,7 @@ export default function EnRepairPage() {
               Air conditioner repair in Chiang Mai
             </h1>
             <p className="lead mt-5">
-              If you searched for aircon repair near you and landed here, I am based in San Kamphaeng
+              I am based in San Kamphaeng
               on the east side of Chiang Mai and cover the city and the districts around it. I am Arm,
               the technician who actually does the work. I measure the system and show you the readings
               before I give you a price, and I will tell you when a repair is not worth paying for.
