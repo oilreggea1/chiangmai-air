@@ -9,8 +9,10 @@ import { lastmodIso, SRC } from "@/lib/lastmod";
 import { share } from "@/lib/seo";
 import { site } from "@/lib/site";
 import { getWorkCase, workCases } from "@/lib/work-cases";
-import { jobs } from "@/lib/jobs";
+import { jobs, jobPhotoCount } from "@/lib/jobs";
 import { caseToJob } from "@/lib/case-to-job";
+import { caseRelatedJob } from "@/lib/case-related-job";
+import { thaiDate } from "@/lib/lastmod";
 
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return workCases.map((item) => ({ slug: item.slug })); }
@@ -133,6 +135,25 @@ export default async function WorkCasePage({ params }: Props) {
                 ))}
               </div>
             </section>
+          );
+        })()}
+        {(() => {
+          /* ลิงก์ไปรูปครบทั้งงานของการเข้าบริการครั้งเดียวกัน ชื่องานมาจากโพสต์ส่งงานของร้าน */
+          const full = caseToJob[item.slug] ? undefined : jobs.find((j) => j.id === caseRelatedJob[item.slug]);
+          if (!full) return null;
+          const n = jobPhotoCount(full);
+          return (
+            <Link href={`/kon-lang#job-${full.id}`} className="card group mt-10 flex flex-wrap items-center justify-between gap-4 p-6 transition-all hover:-translate-y-0.5 hover:shadow-lift">
+              <span>
+                <span className="block text-xs font-bold text-accent">{thaiDate(full.date)}</span>
+                <span className="mt-1.5 block text-lg leading-[1.5] font-bold text-ink">รูปทั้งหมดจากการเข้าบริการครั้งนี้</span>
+                <span className="mt-1 block text-[15px] leading-7 text-ink-soft">{full.summary} ถ่ายไว้ทั้งหมด {n} รูป</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 font-semibold text-brand-700 group-hover:underline">
+                ดูครบทั้ง {n} รูป
+                <IconChevron className="h-4 w-4" />
+              </span>
+            </Link>
           );
         })()}
         {/* สิ่งที่อ่านจากเคสนี้แล้วเอาไปใช้เองได้ (24 ก.ย. 2569)

@@ -57,7 +57,8 @@ function Row({
 
 export function JobGallery({ job }: { job: Job }) {
   return (
-    <article className="card p-5 sm:p-7">
+    // id ใช้เป็นจุดลิงก์จากหน้าเคส (/kon-lang#job-a06) ระยะหัวหน้ากันด้วย scroll-padding-top ใน globals.css
+    <article id={`job-${job.id}`} className="card p-5 sm:p-7">
       <p className="flex flex-wrap items-center gap-x-2 text-xs font-bold text-accent">
         <span>{job.service}</span>
         <span className="text-ink-soft">·</span>
