@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27",
+  "generatedAt": "2026-09-28",
   "files": {
     "app/(en)/en/about/page.tsx": "2026-09-25",
     "app/(en)/en/airbnb/page.tsx": "2026-09-24",
@@ -110,7 +110,7 @@
     "lib/brands.ts": "2026-08-30",
     "lib/case-to-job.ts": "2026-09-27",
     "lib/content-types.ts": "2026-09-24",
-    "lib/jobs.ts": "2026-09-27",
+    "lib/jobs.ts": "2026-09-28",
     "lib/lastmod.ts": "2026-09-26",
     "lib/leads.ts": "2026-08-30",
     "lib/line-book.ts": "2026-09-25",
