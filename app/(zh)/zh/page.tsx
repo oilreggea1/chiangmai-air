@@ -308,8 +308,8 @@ export default function ChinesePage() {
         lang="zh-CN"
         slugs={["lang-air", "som-air"]}
         eyebrow="近期施工实拍"
-        heading="逐个部件对比清洗前后"
-        lead="每份报告都跟踪同一台机器，从第一张照片到最后一张，并注明施工日期和所在区。报告为泰文，照片一看便知。"
+        heading="真实案例的清洗前后"
+        lead="每一组都是我们主页上的一篇完工帖，注明日期，照片分为清洗前和清洗后。一篇帖子可能包含同一次上门清洗的多台空调。"
         note="清洗前后对比 · 报告为泰文"
       />
 

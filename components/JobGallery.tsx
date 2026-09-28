@@ -65,7 +65,8 @@ export function JobGallery({ job }: { job: Job }) {
         <span className="text-ink-soft">·</span>
         <span className="text-ink-soft">งานนี้ถ่ายไว้ {jobPhotoCount(job)} รูป</span>
       </p>
-      {job.summary && <p className="mt-2 text-[15px] leading-8 text-ink-soft">{job.summary}</p>}
+      {/* ชื่องานมาจากข้อความในโพสต์ส่งงานของร้าน ไม่ใช่ให้ AI เดาจากรูป */}
+      {job.summary && <h3 className="mt-2 text-lg leading-[1.5] font-bold text-ink">{job.summary}</h3>}
       <div className="mt-6 space-y-6">
         {/* ป้ายกองใช้คำกริยาของงานนั้น งานติดตั้งจะได้ไม่ถูกเขียนว่าก่อนล้าง */}
         <Row label={`ก่อน${job.verb}`} tone="before" photos={job.before} />

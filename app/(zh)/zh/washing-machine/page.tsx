@@ -169,8 +169,8 @@ export default function ZhWashingMachinePage() {
         lang="zh-CN"
         slugs={["lang-washing-machine"]}
         eyebrow="真实案例"
-        heading="近期案例，一台机器一份记录"
-        lead="下面每一组都是同一台机器的同一个部件，清洗前与清洗后各拍一张。文字为泰文，照片一看就懂。"
+        heading="近期案例，清洗前后全部照片"
+        lead="每一组是一次施工，注明日期，所有照片分为清洗前和清洗后。洗衣机清洗全部为拆机深度清洗。"
         note="同一部件，清洗前后 · 泰文记录"
       />
 

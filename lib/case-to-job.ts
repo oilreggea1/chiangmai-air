@@ -16,7 +16,7 @@ export const caseToJob: Record<string, string> = {
   "lg-frontload-2569-08": "56",
   "lg-smart-inverter-topload-2569-07": "53",
   "maejo-samsung-topload-2569-08": "59",
-  "midea-chione-install-2569-06": "07",
+  "midea-chione-install-2569-06": "a07",
   "mueang-haier-topload-2569-08": "58",
   "padaet-topload-2569-08": "60",
   "topload-2569-07": "54",

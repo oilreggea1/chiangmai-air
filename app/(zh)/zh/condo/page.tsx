@@ -183,8 +183,8 @@ export default function ZhCondoPage() {
         lang="zh-CN"
         slugs={["lang-air"]}
         eyebrow="近期清洗实拍"
-        heading="清洗前后，逐个部件对比"
-        lead="每份报告都跟踪同一台机器，注明施工日期和所在区。报告为泰文，照片一看便知。"
+        heading="真实案例的清洗前后"
+        lead="每一组都是我们主页上的一篇完工帖，注明日期，照片分为清洗前和清洗后。一篇帖子可能包含多台空调。"
         note="清洗前后对比 · 报告为泰文"
       />
 

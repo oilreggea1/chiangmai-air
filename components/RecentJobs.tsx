@@ -11,8 +11,9 @@ import { jobs, jobPhotoCount } from "@/lib/jobs";
  * ไม่ได้อ้างว่ารูปไหนคู่กับรูปไหน จึงไม่มีโอกาสผิด
  */
 const L = {
-  en: { before: "Before", after: "After", note: "Same job, report in Thai", photos: "photos" },
-  "zh-CN": { before: "清洗前", after: "清洗后", note: "同一单工作，泰文记录", photos: "张" },
+  en: { before: "Before", after: "After", note: "Same job", photos: "photos" },
+  // ใช้คำกลาง ๆ ว่าก่อน/หลังทำงาน เพราะแถบนี้โชว์งานติดตั้งด้วย ไม่ใช่งานล้างอย่างเดียว
+  "zh-CN": { before: "施工前", after: "施工后", note: "同一单工作", photos: "张" },
 } as const;
 
 export function RecentJobs({

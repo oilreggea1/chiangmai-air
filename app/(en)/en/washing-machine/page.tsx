@@ -217,8 +217,8 @@ export default function EnWashingMachinePage() {
         lang="en"
         slugs={["lang-washing-machine"]}
         eyebrow="Real jobs"
-        heading="Recent jobs, one machine per report"
-        lead="Each pair below is the same part of the same machine, photographed before and after. The write-ups are in Thai, but the photos speak for themselves."
+        heading="Recent jobs, every photo from the job"
+        lead="Each card is one job, dated, with every photo grouped into before and after. Every washing machine job is a full strip-down clean."
         note="Same part, before and after · report in Thai"
       />
 

@@ -68,6 +68,16 @@ const nextConfig: NextConfig = {
       // เคสนี้มีรูปใบเดียวและเป็นรูปที่เห็นเท้าเปล่า เจ้าของสั่งเอาออก 25 ก.ย. 2569
       // เมื่อไม่มีรูปเหลือเลยจึงเอารายงานออกทั้งเคส แล้วส่งต่อไปหน้ารวมรายงาน
       { source: "/case-study/air-capacitor-measurement", destination: "/case-study", permanent: true },
+      /**
+       * เปลี่ยน URL เคสที่ชื่อเดิมบอกระดับงานหรือชนิดเครื่องผิด (29 ก.ย. 2569)
+       * ร้านโพสต์ว่าเป็นล้างแบบมาตรฐาน แต่ URL เดิมเขียนว่า premium-strip-wash
+       * งานติดตั้ง Midea เป็น 1 ชุด ไม่ใช่ 2 ชุด และเคสใบพัดเป็นแอร์ติดผนัง ไม่ใช่แอร์ฝังฝ้า
+       */
+      { source: "/case-study/beko-premium-strip-wash-2569-06", destination: "/case-study/beko-wall-wash-2569-06", permanent: true },
+      { source: "/case-study/mueang-premium-strip-wash-2569-06", destination: "/case-study/mueang-four-units-wash-2569-06", permanent: true },
+      { source: "/case-study/midea-two-units-install-2569-06", destination: "/case-study/midea-new-unit-install-2569-06", permanent: true },
+      { source: "/case-study/toshiba-inverter-deep-wash-2569-05", destination: "/case-study/toshiba-inverter-wash-2569-05", permanent: true },
+      { source: "/case-study/cassette-air-dirty-louver", destination: "/case-study/wall-air-blower-dust", permanent: true },
       { source: "/xmlrpc.php", destination: "/", permanent: true },
       { source: "/wp-admin/:path*", destination: "/", permanent: true },
       { source: "/wp-login.php", destination: "/", permanent: true },

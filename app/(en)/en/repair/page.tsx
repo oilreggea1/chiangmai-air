@@ -228,7 +228,7 @@ export default function EnRepairPage() {
         slugs={["som-air", "lang-air"]}
         eyebrow="Recent repair and service jobs"
         heading="What the work actually looks like"
-        lead="Each report follows one machine from the first photo to the last, with the real date and district. The write-ups are in Thai, but the photos show the condition before and after."
+        lead="Each card is one job post from our page, dated, with the photos grouped into before and after. One post can cover several units on the same visit."
         note="Before and after · report in Thai"
       />
 

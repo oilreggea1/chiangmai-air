@@ -226,7 +226,7 @@ export default function ZhInstallationPage() {
         slugs={["tid-tang-air", "yai-air"]}
         eyebrow="近期安装与移机实拍"
         heading="从拆箱到上墙"
-        lead="2026 年的真实安装与移机案例，注明日期和所在区。报告为泰文，照片展示安装前的墙面和完工后的机器。"
+        lead="2026 年的真实安装案例，日期取自每篇完工帖。照片展示安装前的墙面和完工后的机器。"
         note="安装前后对比 · 报告为泰文"
         tone="sand"
       />
