@@ -56,7 +56,15 @@ export function MarketPrices({ image }: { image?: { src: string; alt: string; cr
                       <span className="min-w-0">
                         <span className="block text-[15px] font-semibold text-ink">{u.brand}</span>
                         <span className="block text-xs text-ink-soft">
-                          {u.model} · {fmt(u.btu)} BTU
+                          {/* ลิงก์หน้าทางการของแบรนด์ให้ลูกค้าดูรูปและสเปกเอง แทนการเอารูปสินค้ามาใช้ (ติดลิขสิทธิ์) */}
+                          {u.url ? (
+                            <a href={u.url} target="_blank" rel="noopener nofollow" className="font-semibold text-brand-700 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-700">
+                              {u.model}
+                            </a>
+                          ) : (
+                            u.model
+                          )}{" "}
+                          · {fmt(u.btu)} BTU
                         </span>
                       </span>
                       <span className="shrink-0 text-[15px] font-bold tabular-nums text-ink">{fmt(u.price)}</span>
@@ -68,6 +76,7 @@ export function MarketPrices({ image }: { image?: { src: string; alt: string; cr
           })}
         </div>
         <p className="mt-6 text-sm leading-7 text-ink-soft">
+          กดที่รหัสรุ่นเพื่อดูรูปและสเปกจากเว็บไซต์ทางการของแต่ละแบรนด์
           ราคากลางรวมค่าติดตั้งมาตรฐานของร้านค้าปลีก ส่วนค่าติดตั้งของผมอยู่ในตารางค่าติดตั้งด้านบน
           หากซื้อเครื่องมาเองจากร้านใดก็ตาม ผมรับติดตั้งในอัตราเดียวกัน
         </p>
