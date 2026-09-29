@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { IconChevron } from "./Icons";
 import { marketPrices, marketPricesAsOf } from "@/lib/market-prices";
 import { thaiDate } from "@/lib/lastmod";
 
@@ -11,7 +13,7 @@ import { thaiDate } from "@/lib/lastmod";
  */
 const fmt = (n: number) => n.toLocaleString("en-US");
 
-export function MarketPrices({ image }: { image?: { src: string; alt: string; credit?: string } }) {
+export function MarketPrices({ image, shopLink = false }: { image?: { src: string; alt: string; credit?: string }; shopLink?: boolean }) {
   const asOf = thaiDate(marketPricesAsOf);
   return (
     <section className="section bg-sand" id="market-price">
@@ -80,6 +82,12 @@ export function MarketPrices({ image }: { image?: { src: string; alt: string; cr
           ราคากลางรวมค่าติดตั้งมาตรฐานของร้านค้าปลีก ส่วนค่าติดตั้งของผมอยู่ในตารางค่าติดตั้งด้านบน
           หากซื้อเครื่องมาเองจากร้านใดก็ตาม ผมรับติดตั้งในอัตราเดียวกัน
         </p>
+        {shopLink && (
+          <Link href="/service/khai-air" className="btn-ghost mt-6" data-cta="market-to-khai-air">
+            ซื้อแอร์พร้อมติดตั้งกับผม ดูรุ่นและเงื่อนไข
+            <IconChevron className="h-4 w-4" />
+          </Link>
+        )}
       </div>
     </section>
   );

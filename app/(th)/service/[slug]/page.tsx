@@ -526,7 +526,10 @@ export default async function ServicePage({ params }: Props) {
       )}
 
       {/* ราคากลางแอร์ (29 ก.ย. 2569) เฉพาะหน้าร้านแอร์ ดู lib/market-prices.ts */}
-      {s.slug === "khai-air" && <MarketPrices image={MARKET_IMAGE} />}
+      {/* หน้าติดตั้งด้วย (29 ก.ย. 2569) ลูกค้าที่หาข้อมูลติดตั้งส่วนใหญ่ยังไม่ได้ซื้อเครื่อง */}
+      {(s.slug === "khai-air" || s.slug === "tid-tang-air") && (
+        <MarketPrices image={MARKET_IMAGE} shopLink={s.slug === "tid-tang-air"} />
+      )}
 
       {s.slug === "som-air" && (
         <section className="section bg-sand">
