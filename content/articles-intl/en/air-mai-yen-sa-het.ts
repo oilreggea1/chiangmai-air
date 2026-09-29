@@ -142,7 +142,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "Another thing worth knowing is that R410A cannot be topped up on top of what is left, because it is a blend whose proportions shift when part of it leaks out. In that case the system has to be emptied and fully recharged, which is worth knowing before any work starts.",
+      text: "Another thing worth knowing is that R410A is a blend that behaves almost like a single refrigerant. It can be topped up once the leak is repaired, but I choose to recover it and weigh in a fresh charge for the whole system, so the amount and the blend are exactly to specification. That is worth knowing before any work starts.",
     },
 
     { type: "h2", text: "The outdoor unit: the part people often overlook" },
@@ -260,6 +260,7 @@ export const article: IntlArticle = {
         { title: "CCDC on Chiang Mai's 2026 smoke season: hotspots up 67%", publisher: "MGR Online, 6 Apr 2026 (in Thai)", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "Data from Chiang Mai University's Climate Change Data Center (CCDC): Chiang Mai province, 1 Jan to 4 Apr 2026 = 6,676 hotspots, against 3,996 in the same period of 2025" },
         { title: "20° ΔT, A Lazy Rule of Thumb", publisher: "HVAC School (5 Apr 2019)", url: "https://www.hvacrschool.com/20-delta-t-a-lazy-rule-of-thumb/", note: "Technicians commonly work with an intake-to-outlet air temperature difference of about 18–22°F (roughly 10–12°C), depending on humidity" },
         { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
+        { title: "Is It OK To Top Off With R410a?", publisher: "HVAC School (5 Aug 2021)", url: "https://www.hvacrschool.com/topping-off-with-r410a/", note: "R410A is a 50/50 blend of R32 and R125 with very little fractionation; it can be topped up after the leak is repaired, charged as a liquid" },
       ],
     },
   ],

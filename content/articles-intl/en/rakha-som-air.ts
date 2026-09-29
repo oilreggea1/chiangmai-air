@@ -52,7 +52,7 @@ export const article: IntlArticle = {
         ["Repair labour", "The time and skill to remove, replace and test", "Always quoted before the repair; depends on the job"],
         ["Parts", "The components actually replaced", "Always quoted before the repair; depends on the model and part"],
         ["R32 refrigerant", "Added only when the system is genuinely short and the leak has been repaired", `${p.repair.refrigerantPerLb} THB per pound`],
-        ["R410A refrigerant", "A blend, so the whole charge must be recovered and refilled", `${p.repair.refrigerantPerLb} THB per pound`],
+        ["R410A refrigerant", "Can be topped up once the leak is repaired, but I choose to recover it and weigh in a fresh charge", `${p.repair.refrigerantPerLb} THB per pound`],
       ],
     },
     {
@@ -164,13 +164,13 @@ export const article: IntlArticle = {
     },
     {
       type: "callout",
-      tone: "danger",
-      title: "R410A cannot be topped up on top of the old charge",
-      text: "R410A is a blend of two refrigerants. When it leaks, the proportion of the two in the system changes, so topping up on top of what is left throws the mix off and reduces performance. The correct method is to recover all the old refrigerant, pull a vacuum, and then weigh in a fresh charge to the amount stated on the unit's label. If you are told it can simply be topped up, that information departs from the standard method.",
+      tone: "info",
+      title: "R410A: I choose to recover it and weigh in a fresh charge",
+      text: "R410A is a 50/50 blend of R32 and R125, but it behaves almost like a single refrigerant. When it leaks, the proportions barely change, which is why technical references say it can be topped up once the leak is repaired. On my own jobs, I choose to recover all the old refrigerant, pull a vacuum, and then weigh in a fresh charge to the amount stated on the unit's label. Once a unit has leaked, there is no way to know for sure how much refrigerant is left or whether moisture got in, and this method makes sure the amount is exactly to specification.",
     },
     {
       type: "p",
-      text: `Another issue aircon owners in Chiang Mai often run into is the price of refrigerant. From my survey of Chiang Mai shops, only two types have published prices: R-22 at 25 THB per pound and R-410A at 75 THB per pound. R32, which almost every new inverter aircon uses, has no reference price yet, so there is nothing to compare the figure you are given on site against. I charge the same ${p.repair.refrigerantPerLb} THB per pound for R32 and R410A, and I show you how many pounds before adding any.`,
+      text: `Another issue aircon owners in Chiang Mai often run into is the price of refrigerant. From my survey of Chiang Mai shops, only two types have published prices: R-22 at 25 THB per pound and R-410A at 75 THB per pound. R32, which major manufacturers have switched to in new inverter models, has no reference price yet, so there is nothing to compare the figure you are given on site against. I charge the same ${p.repair.refrigerantPerLb} THB per pound for R32 and R410A, and I show you how many pounds before adding any.`,
     },
 
     { type: "h2", text: "How an aircon repair should go, from first contact to finished job" },
@@ -198,7 +198,7 @@ export const article: IntlArticle = {
         `I charge ${p.repair.diagnostic} THB for diagnosis and take it off the bill if you repair with me. The diagnostic charge covers the time spent finding the cause, whether or not you decide to repair.`,
         "There is no single parts price because it depends on the model. I quote for your actual model before any repair.",
         "Ask all your questions before agreeing, especially to see the old parts that were removed.",
-        "Low refrigerant means there is a leak, which has to be found before recharging, and R410A has to be recovered and the whole system refilled.",
+        "Low refrigerant means there is a leak, which has to be found before recharging. For R410A, I choose to recover it and weigh in a fresh charge so the amount is exactly to specification.",
         "If the repair costs more than roughly half the price of a new unit and the unit is already old, consider replacing it.",
       ],
     },
@@ -206,6 +206,7 @@ export const article: IntlArticle = {
       type: "sources",
       items: [
         { title: "Home Cooling 101", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "Bent coil fins should be straightened with a fin comb; low refrigerant means there is a leak, which must be repaired before recharging" },
+        { title: "Is It OK To Top Off With R410a?", publisher: "HVAC School (5 Aug 2021)", url: "https://www.hvacrschool.com/topping-off-with-r410a/", note: "R410A is a 50/50 blend of R32 and R125 with very little fractionation; it can be topped up after the leak is repaired, charged as a liquid" },
       ],
     },
   ],

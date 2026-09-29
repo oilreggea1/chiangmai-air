@@ -77,7 +77,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "Criterion three: the refrigerant the unit uses" },
     {
       type: "p",
-      text: "Most homeowners do not know about this, but it matters a lot for older units. Aircons installed a long time ago usually use R22 refrigerant, an older type being phased out worldwide. Newer units use R410A, and most units on sale today use R32.",
+      text: "Most homeowners do not know about this, but it matters a lot for older units. Aircons installed a long time ago usually use R22 refrigerant, an older type being phased out worldwide. Newer units use R410A, and major manufacturers are progressively switching new models to R32.",
     },
     {
       type: "p",
@@ -180,6 +180,7 @@ export const article: IntlArticle = {
         { title: "Department of Industrial Works joins vocational and skills agencies to reduce and phase out HCFC-22 refrigerant (in Thai)", publisher: "MGR Online (9 Jan 2019)", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "Since 2017 Thailand has banned factories making air conditioners under 50,000 BTU from using HCFC-22, moving to HFC-32" },
         { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "Timeline of the HCFC phase-out, including R22, under the Montreal Protocol" },
         { title: "Refrigerant Oil Basics", publisher: "HVAC School (27 Jul 2022)", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "The mineral oil in R22 systems does not mix with HFC refrigerants, and POE oil breaks down into acid when moisture is present" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP (Jun 2019)", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "Models on sale in Thailand in 2019: R410A 61.7%, R32 33.9%, R22 3.9%, compared with 2013 when 79% were still R22 and none used R32" },
       ],
     },
   ],

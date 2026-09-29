@@ -90,7 +90,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "与选购相关的 R32 冷媒" },
     {
       type: "p",
-      text: "目前市面上的新款空调大多使用 R32 冷媒，取代了之前作为标准的 R410A，以及更早的 R22。关键在于不同冷媒不能互相替代，因为系统压力和压缩机润滑油都不一样。",
+      text: "各大厂商正陆续把新款空调改用 R32 冷媒，取代之前作为标准的 R410A，以及更早的 R22。关键在于不同冷媒不能互相替代，因为系统压力和压缩机润滑油都不一样。",
     },
     {
       type: "ul",
@@ -98,7 +98,7 @@ export const article: IntlArticle = {
         "R32 是目前市场上新机的标准，变频机型和许多定频机型都已经使用 R32。",
         "R410A 仍见于较早安装的机器，补充用的冷媒也照常买得到。",
         "R22 是全球正在逐步淘汰的旧冷媒，仍在使用 R22 的机器，零件和冷媒会随着时间越来越难找。",
-        "加错冷媒种类，或者不清理系统就直接混加，会降低效率，还有损坏压缩机的风险。",
+        "加错冷媒种类，或者不修好漏点就直接补加，会降低效率，还有损坏压缩机的风险。",
       ],
     },
     {
@@ -153,7 +153,7 @@ export const article: IntlArticle = {
         "变频更省电，但只有在长时间连续使用时优势才明显。",
         "变频的代价是机器价格更高，控制板的维修费也比一般零件高。",
         "购买前应问清楚在清迈的零件和服务中心情况，因为热季等零件的时间影响很大。",
-        "新机大多使用 R32 冷媒，不能与 R410A 或 R22 互换。",
+        "许多新机型已改用 R32 冷媒，不能与 R410A 或 R22 互换。",
         "无论选哪一种，干净的盘管和与房间匹配的 BTU，对电费的影响都比很多人想象的更大。",
       ],
     },
@@ -174,6 +174,7 @@ export const article: IntlArticle = {
         { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "《蒙特利尔议定书》下淘汰 HCFC（包括 R22）的时间顺序" },
         { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
         { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP（2019 年 6 月）", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "2019 年泰国在售机型：R410A 占 61.7%，R32 占 33.9%，R22 占 3.9%；而 2013 年 R22 仍占 79%，R32 为零" },
       ],
     },
   ],

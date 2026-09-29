@@ -37,7 +37,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "2. Choose R32 refrigerant, today's standard" },
     {
       type: "p",
-      text: `Almost all new aircon models sold in Thailand now use R32 refrigerant, which is the type I recommend, because refrigerant for top-ups and spare parts will be easy to find in the long term. If you come across an unusually cheap model that still uses R22, check the year of manufacture carefully, because it may have sat in stock for several years. For my work, R32 is charged at ${p.repair.refrigerantPerLb} THB per pound, the same as R22; I do not charge more depending on the type of refrigerant.`,
+      text: `Major manufacturers are progressively switching the new aircon models they sell in Thailand to R32 refrigerant, which is the type I recommend, because refrigerant for top-ups and spare parts will be easy to find in the long term. If you come across an unusually cheap model that still uses R22, check the year of manufacture carefully, because it may have sat in stock for several years. For my work, R32 is charged at ${p.repair.refrigerantPerLb} THB per pound, the same as R22; I do not charge more depending on the type of refrigerant.`,
     },
     { type: "h2", text: "3. Read what is in the box before ordering, especially the pipes and brackets" },
     {
@@ -78,6 +78,7 @@ export const article: IntlArticle = {
       items: [
         { title: "How to choose an air conditioner that saves electricity and money (in Thai)", publisher: "Electricity Generating Authority of Thailand (16 Aug 2022)", url: "https://www.egat.co.th/home/save-energy-for-all-20220716/", note: "9,000 BTU suits a normal room of 12–15 sq m or a sunny room of 11–14 sq m; 12,000 BTU suits 16–20 sq m" },
         { title: "How to work out room area in square metres to match aircon BTU (in Thai)", publisher: "Carrier Thailand (2 Mar 2023)", url: "https://carrierthailand.com/carrier-article/how-to-calculate-btu/", note: "Bedrooms: multiply by 700 (800 if the room gets sun); offices or living rooms: multiply by 800 (900 if the room gets sun)" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP (Jun 2019)", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "Models on sale in Thailand in 2019: R410A 61.7%, R32 33.9%, R22 3.9%, compared with 2013 when 79% were still R22 and none used R32" },
       ],
     },
   ],

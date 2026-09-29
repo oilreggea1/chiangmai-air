@@ -72,7 +72,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "标准三：机器使用的冷媒种类" },
     {
       type: "p",
-      text: "这一点大多数屋主都不知道，但对旧机器的决定影响很大。安装很久的空调通常使用 R22 冷媒，这是全球正在逐步淘汰的旧型冷媒；较新的机器使用 R410A，而目前市面上销售的机器大多使用 R32。",
+      text: "这一点大多数屋主都不知道，但对旧机器的决定影响很大。安装很久的空调通常使用 R22 冷媒，这是全球正在逐步淘汰的旧型冷媒；较新的机器使用 R410A，而各大厂商正陆续把新机型改用 R32。",
     },
     {
       type: "p",
@@ -175,6 +175,7 @@ export const article: IntlArticle = {
         { title: "泰国工业工厂厅联合职业教育委员会办公室和技能发展厅，减少并淘汰 HCFC-22 冷媒（泰文）", publisher: "MGR Online（2019 年 1 月 9 日）", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "泰国自 2017 年起禁止工厂生产的 50,000 BTU 以下空调使用 HCFC-22，改用 HFC-32" },
         { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "《蒙特利尔议定书》下淘汰 HCFC（包括 R22）的时间顺序" },
         { title: "Refrigerant Oil Basics", publisher: "HVAC School（2022 年 7 月 27 日）", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "R22 系统使用的矿物油不能与 HFC 类冷媒互溶，POE 油遇到水分会分解成酸" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP（2019 年 6 月）", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "2019 年泰国在售机型：R410A 占 61.7%，R32 占 33.9%，R22 占 3.9%；而 2013 年 R22 仍占 79%，R32 为零" },
       ],
     },
   ],

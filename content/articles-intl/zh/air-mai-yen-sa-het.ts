@@ -134,7 +134,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "另外值得知道的是，R410A 不能在剩余的冷媒上直接补加，因为它是混合冷媒，部分漏出后比例就会改变。这种情况必须把系统里的冷媒全部排掉再重新充注，开工前最好先了解这一点。",
+      text: "另外值得知道的是，R410A 是特性接近单一冷媒的混合冷媒，修好漏点后可以补加，但我选择把冷媒全部回收，再给整个系统重新称重充注，确保用量和成分都符合规格。开工前最好先了解这一点。",
     },
 
     { type: "h2", text: "室外机：常被忽略的地方" },
@@ -252,6 +252,7 @@ export const article: IntlArticle = {
         { title: "CCDC 解析清迈 2026 年烟霾：热点增加 67%", publisher: "MGR Online，2026 年 4 月 6 日（泰文）", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "数据来自清迈大学气候变化数据中心（CCDC）：清迈府 2026 年 1 月 1 日至 4 月 4 日共 6,676 个热点，2025 年同期为 3,996 个" },
         { title: "20° ΔT, A Lazy Rule of Thumb", publisher: "HVAC School（2019 年 4 月 5 日）", url: "https://www.hvacrschool.com/20-delta-t-a-lazy-rule-of-thumb/", note: "技师常用的进风与出风温差约为 18–22°F（约 10–12°C），视湿度而定" },
         { title: "今年抗热，一起清洗空调降低电费（泰文）", publisher: "泰国国家电力局（EGAT）（2023 年 5 月 11 日）", url: "https://www.egat.co.th/home/20230511-art01/", note: "每 6 个月清洗一次空调，最多可节省 10% 电费" },
+        { title: "Is It OK To Top Off With R410a?", publisher: "HVAC School（2021 年 8 月 5 日）", url: "https://www.hvacrschool.com/topping-off-with-r410a/", note: "R410A 是 R32 与 R125 各占一半的混合冷媒，分馏极少；修好漏点后可以补加，须以液态充注" },
       ],
     },
   ],

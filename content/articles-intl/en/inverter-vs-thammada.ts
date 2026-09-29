@@ -95,7 +95,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "R32 refrigerant and what it means for buying" },
     {
       type: "p",
-      text: "Most new aircon models on sale today use R32 refrigerant, which replaced R410A, the previous standard, and the even older R22. The key point is that the different refrigerants cannot be swapped for one another, because the system pressures and the compressor lubricating oil are different.",
+      text: "Major manufacturers are progressively switching new aircon models to R32 refrigerant, which replaces R410A, the previous standard, and the even older R22. The key point is that the different refrigerants cannot be swapped for one another, because the system pressures and the compressor lubricating oil are different.",
     },
     {
       type: "ul",
@@ -103,7 +103,7 @@ export const article: IntlArticle = {
         "R32 is the standard for new units on the market today; many inverter and non-inverter models already use it.",
         "R410A is still found in units installed earlier, and it is still readily available for top-ups.",
         "R22 is an older refrigerant being phased out worldwide. Units still running on R22 will find parts and refrigerant harder to get over time.",
-        "Topping up with the wrong refrigerant, or adding on top without clearing the system, lowers performance and risks damaging the compressor.",
+        "Topping up with the wrong refrigerant, or adding on top without repairing the leak, lowers performance and risks damaging the compressor.",
       ],
     },
     {
@@ -158,7 +158,7 @@ export const article: IntlArticle = {
         "An inverter uses less electricity, but the advantage is only clear when it runs continuously for long periods.",
         "The trade-off with an inverter is a higher unit price and a circuit board that costs more to repair than ordinary parts.",
         "Before buying, ask clearly about parts and service centres in Chiang Mai, because the wait for parts really matters in the hot season.",
-        "Most new units use R32 refrigerant, which cannot be swapped with R410A or R22.",
+        "Many new models have switched to R32 refrigerant, which cannot be swapped with R410A or R22.",
         "Whichever you choose, a clean coil and the right BTU for the room affect your electricity bill more than many people expect.",
       ],
     },
@@ -179,6 +179,7 @@ export const article: IntlArticle = {
         { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "Timeline of the HCFC phase-out, including R22, under the Montreal Protocol" },
         { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
         { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP (Jun 2019)", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "Models on sale in Thailand in 2019: R410A 61.7%, R32 33.9%, R22 3.9%, compared with 2013 when 79% were still R22 and none used R32" },
       ],
     },
   ],

@@ -29,7 +29,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "2. 选择现行标准的 R32 冷媒" },
     {
       type: "p",
-      text: `泰国现在销售的新款空调几乎都已经使用 R32 冷媒，这也是我推荐的类型，因为从长远看，补充用的冷媒和配件都容易买到。如果看到价格低得反常、却仍使用 R22 的型号，要仔细核对生产年份，因为可能是积压了好几年的库存机。在我这里，R32 冷媒每磅 ${p.repair.refrigerantPerLb} 泰铢，和 R22 一样，不会因为冷媒种类不同而加价。`,
+      text: `各大厂商正陆续把在泰国销售的新款空调改用 R32 冷媒，这也是我推荐的类型，因为从长远看，补充用的冷媒和配件都容易买到。如果看到价格低得反常、却仍使用 R22 的型号，要仔细核对生产年份，因为可能是积压了好几年的库存机。在我这里，R32 冷媒每磅 ${p.repair.refrigerantPerLb} 泰铢，和 R22 一样，不会因为冷媒种类不同而加价。`,
     },
     { type: "h2", text: "3. 下单前看清包装内容，尤其是铜管和支架" },
     {
@@ -70,6 +70,7 @@ export const article: IntlArticle = {
       items: [
         { title: "怎样选空调既省电又省钱（泰文）", publisher: "泰国国家电力局（EGAT）（2022 年 8 月 16 日）", url: "https://www.egat.co.th/home/save-energy-for-all-20220716/", note: "9,000 BTU 适合 12–15 平方米的一般房间，或 11–14 平方米的晒太阳房间；12,000 BTU 适合 16–20 平方米" },
         { title: "房间平方米数怎么算才配得上空调 BTU（泰文）", publisher: "Carrier Thailand（2023 年 3 月 2 日）", url: "https://carrierthailand.com/carrier-article/how-to-calculate-btu/", note: "卧室乘以 700（晒太阳的乘以 800），书房或客厅乘以 800（晒太阳的乘以 900）" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP（2019 年 6 月）", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "2019 年泰国在售机型：R410A 占 61.7%，R32 占 33.9%，R22 占 3.9%；而 2013 年 R22 仍占 79%，R32 为零" },
       ],
     },
   ],

@@ -6,13 +6,13 @@ export const article: IntlArticle = {
   title: "R32 vs R410A vs R22 Refrigerant: What to Check Before a Top-Up",
   h1: "R32, R410A and R22 refrigerant: how they differ, and what to check before you agree to a top-up",
   description:
-    "How to check which refrigerant your aircon uses, how R32, R410A and R22 differ in practice, why R410A cannot simply be topped up, and what to ask before agreeing to a recharge in Chiang Mai.",
+    "How to check which refrigerant your aircon uses, how R32, R410A and R22 differ in practice, whether R410A can be topped up or has to be recovered, and what to ask before agreeing to a recharge in Chiang Mai.",
   category: "Prices and costs",
   updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thod-lang-112.jpg", alt: "Close-up of refrigerant pressure gauges connected during a system check" },
   excerpt:
-    "Almost every new inverter aircon uses R32. This guide compares the refrigerants, their prices per pound, and what you should check before agreeing to a top-up.",
+    "Major manufacturers are progressively switching new inverter aircon models to R32. This guide compares the refrigerants, their prices per pound, and what you should check before agreeing to a top-up.",
   keywords: ["R32 refrigerant", "R32 vs R410A", "aircon gas top-up price Chiang Mai", "R22 refrigerant", "which refrigerant does my aircon use"],
   relatedService: "som-air",
   blocks: [
@@ -28,7 +28,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "There is no reference price for R32 yet",
-      text: "From my survey of the prices Chiang Mai aircon shops publish, only two types are listed: R-22 at about 25 THB per pound and R-410A at about 75 THB per pound. R32, which almost every current inverter aircon uses, has no reference price to compare with, so the price you are quoted on site has nothing to be measured against.",
+      text: "From my survey of the prices Chiang Mai aircon shops publish, only two types are listed: R-22 at about 25 THB per pound and R-410A at about 75 THB per pound. R32, which major manufacturers are switching their new inverter models to, has no reference price to compare with, so the price you are quoted on site has nothing to be measured against.",
     },
 
     { type: "h2", text: "First, check which refrigerant your aircon uses" },
@@ -42,7 +42,7 @@ export const article: IntlArticle = {
         { title: "Go to the outdoor unit", detail: "The large unit outside the house or hanging on the wall has a data sticker on the side or back, usually silver or white." },
         { title: "Find the line marked Refrigerant", detail: "Some units print REFRIGERANT, others just R followed by a number. You will see R32, R410A or R22, together with the factory charge weight, for example 0.90 kg." },
         { title: "If the sticker has faded, look at the valve cover", detail: "Many brands print the refrigerant type near the service valves where the pipes connect. The manual and warranty card from when you bought it also say." },
-        { title: "Use the age of the unit as a clue", detail: "Inverter units bought in the last few years almost all use R32. A very old, non-inverter unit is quite likely to be R22." },
+        { title: "Use the age of the unit as a clue", detail: "Most inverter units bought in the last few years use R32, though some models are still R410A. A very old, non-inverter unit is quite likely to be R22." },
         { title: "Save it on your phone", detail: "Photograph the sticker with the refrigerant type, charge weight, model and serial number. Next time you need a technician, one photo gives them everything." },
       ],
     },
@@ -59,13 +59,13 @@ export const article: IntlArticle = {
       caption: "How the three refrigerants found in homes differ",
       head: ["", "R32", "R410A", "R22"],
       rows: [
-        ["Found in", "Almost every new inverter unit", "Mid-generation units from before R32", "Older units, mostly non-inverter"],
+        ["Found in", "Most new inverter units", "Mid-generation units from before R32", "Older units, mostly non-inverter"],
         ["Single or blended", "Single", "Blend of two refrigerants", "Single"],
-        ["Can it be topped up after a leak?", "Yes, once the leak is repaired", "No, it must be recovered and fully recharged", "Yes, once the leak is repaired"],
+        ["Can it be topped up after a leak?", "Yes, once the leak is repaired", "Yes, once the leak is repaired (charged as liquid), but I choose to recover it and weigh in a fresh charge", "Yes, once the leak is repaired"],
         ["Cooling efficiency", "Best of the three; less refrigerant for the same cooling", "Good", "Lower than the other two"],
         ["Ozone layer", "Does not harm it", "Does not harm it", "Harms it, so it is being phased out"],
         ["Global warming impact", "Clearly lower than R410A", "High", "High"],
-        ["Market status today", "The standard for new units", "Still available, no longer used in new units", "Harder to find and getting more expensive"],
+        ["Market status today", "The standard for new units", "Still in existing units and some new models, but manufacturers are progressively switching to R32", "Harder to find and getting more expensive"],
         ["Chiang Mai market price per pound", "No reference price yet", "About 75 THB", `About ${p.repair.refrigerantPerLb} THB`],
         ["Pro Fresh Care price per pound", `${p.repair.refrigerantPerLb} THB`, `${p.repair.refrigerantPerLb} THB`, `${p.repair.refrigerantPerLb} THB`],
       ],
@@ -75,20 +75,20 @@ export const article: IntlArticle = {
       text: `The clearest difference is the price per pound. The market price for R410A is around 75 THB per pound, and R32 has no reference price yet. I charge the same ${p.repair.refrigerantPerLb} THB per pound for all three, without a separate rate for each type.`,
     },
 
-    { type: "h2", text: "Why R410A cannot be topped up on top of what is there" },
+    { type: "h2", text: "Can R410A be topped up, and why I choose to recover it and weigh in a fresh charge" },
     {
       type: "p",
-      text: "This is one of the points that saves you the most money. R410A is not a single substance but a blend of two refrigerants in a precise ratio. When the system leaks, the two escape at different rates, so the ratio of what is left in the system drifts away from what it should be.",
+      text: "R410A is not a single substance but a 50/50 blend of R32 and R125. Even so, this blend behaves almost like a single refrigerant, so when the system leaks, the ratio of what is left drifts only very slightly. That is why technical references say it can be topped up once the leak is repaired, as long as it is charged as a liquid.",
     },
     {
       type: "p",
-      text: "Topping up new R410A on top of a mix that has already drifted leaves the system with a blend that is no longer to specification. Operating pressures are off, cooling falls short, and the compressor works harder than before. The right way is to recover all the old refrigerant, repair the leak, pull a vacuum to remove moisture and air, then weigh in a fresh charge to the amount on the unit's sticker.",
+      text: "On my own jobs, I choose to recover all the old refrigerant, repair the leak, pull a vacuum to remove moisture and air, then weigh in a fresh charge to the amount on the unit's sticker. The reason is that once a unit has leaked, there is no way to know for sure how much refrigerant is left in the system, or whether moisture or air got in. Weighing in a complete fresh charge makes sure the amount and the blend are exactly to specification.",
     },
     {
       type: "callout",
       tone: "danger",
       title: "An offer worth asking more about",
-      text: "If your aircon uses R410A and you are offered a small top-up to get it cold again, with no mention of finding the leak and no recovery of the old refrigerant, ask about the procedure before you decide. Topping up without fixing the leak usually brings the cooling back only for a while, followed by another bill a few months later.",
+      text: "If your aircon uses R410A and you are offered a small top-up to get it cold again, with no mention of finding the leak, ask about the procedure before you decide. Topping up without fixing the leak usually brings the cooling back only for a while, followed by another bill a few months later.",
     },
     {
       type: "p",
@@ -123,7 +123,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "R32 is the new standard, but its price is still an information gap" },
     {
       type: "p",
-      text: "Almost all inverter air conditioners sold in Thailand now use R32. Manufacturers switched because it cools better for the same amount of refrigerant, so systems need less of it, and its global warming impact is clearly lower than R410A.",
+      text: "Major manufacturers are progressively switching new inverter models in Thailand to R32 (CLASP data from 2019 found R32 in about 34% of models on sale, up from none in 2013). Manufacturers switched because it cools better for the same amount of refrigerant, so systems need less of it, and its global warming impact is clearly lower than R410A.",
     },
     {
       type: "p",
@@ -188,7 +188,7 @@ export const article: IntlArticle = {
       items: [
         "You can check the refrigerant type yourself on the sticker on the outdoor unit; keep a photo on your phone.",
         "R32 is the standard for new inverter units, more efficient and with less global warming impact than R410A.",
-        "R410A is a blend: after a leak it must be recovered and fully recharged, not topped up.",
+        "R410A is a blend that behaves almost like a single refrigerant. It can be topped up once the leak is repaired, but I choose to recover it and weigh in a fresh charge so the amount is exactly to specification.",
         "R22 is being phased out. A healthy unit can stay, but repeated leaks are a reason to consider replacing it.",
         `R32 has no reference price yet. I charge the same ${p.repair.refrigerantPerLb} THB per pound for all three.`,
         "Refrigerant does not get used up. If it is low there is a leak, and the leak should be found before every top-up.",
@@ -204,6 +204,8 @@ export const article: IntlArticle = {
         { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "Timeline of the HCFC phase-out, including R22, under the Montreal Protocol" },
         { title: "R-32, The Most Balanced Refrigerant", publisher: "Daikin", url: "https://www.daikin.com/air/daikin_techknowledge/benefits/r-32", note: "R32 has a global warming potential (GWP) of 675, against 2,090 for R410A, and does not deplete the ozone layer" },
         { title: "HFC 冷媒のポイント", publisher: "Japan Refrigeration and Air Conditioning Industry Association (JRAIA)", url: "https://www.jraia.or.jp/product/home_aircon/c_hfc_point.html", note: "R410A runs at about 1.6 times the working pressure of R22" },
+        { title: "Is It OK To Top Off With R410a?", publisher: "HVAC School (5 Aug 2021)", url: "https://www.hvacrschool.com/topping-off-with-r410a/", note: "R410A is a 50/50 blend of R32 and R125 with very little fractionation; it can be topped up after the leak is repaired, charged as a liquid" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP (Jun 2019)", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "Models on sale in Thailand in 2019: R410A 61.7%, R32 33.9%, R22 3.9%, compared with 2013 when 79% were still R22 and none used R32" },
       ],
     },
   ],
@@ -214,7 +216,7 @@ export const article: IntlArticle = {
     },
     {
       q: "How is R32 better than R410A?",
-      a: "Two main ways. R32 cools better for the same amount of refrigerant, so systems use less of it, and its global warming impact is clearly lower than R410A. In practice R32 is also a single refrigerant, so once a leak is repaired it can be topped up, unlike R410A, which is a blend that has to be recovered and fully recharged.",
+      a: "Two main ways. R32 cools better for the same amount of refrigerant, so systems use less of it, and its global warming impact is clearly lower than R410A. In practice R32 is also a single refrigerant, so once a leak is repaired it can be topped up. R410A is a blend; it can also be topped up once the leak is repaired, but I choose to recover it and weigh in a fresh charge.",
     },
     {
       q: "Why are there so many different prices for R32?",

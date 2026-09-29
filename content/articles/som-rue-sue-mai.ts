@@ -78,7 +78,7 @@ export const article: Article = {
     { type: "h2", text: "เกณฑ์ที่สาม ชนิดน้ำยาที่เครื่องใช้" },
     {
       type: "p",
-      text: "เรื่องนี้เจ้าของบ้านส่วนใหญ่ไม่ทราบ แต่มีผลกับการตัดสินใจมากในเครื่องเก่า แอร์ที่ติดตั้งมานานมักใช้น้ำยา R22 ซึ่งเป็นรุ่นเก่าที่ทั่วโลกทยอยเลิกใช้ ส่วนเครื่องที่ใหม่กว่าจะใช้ R410A และเครื่องที่จำหน่ายอยู่ในปัจจุบันส่วนใหญ่ใช้ R32",
+      text: "เรื่องนี้เจ้าของบ้านส่วนใหญ่ไม่ทราบ แต่มีผลกับการตัดสินใจมากในเครื่องเก่า แอร์ที่ติดตั้งมานานมักใช้น้ำยา R22 ซึ่งเป็นรุ่นเก่าที่ทั่วโลกทยอยเลิกใช้ ส่วนเครื่องที่ใหม่กว่าจะใช้ R410A และผู้ผลิตรายใหญ่ทยอยเปลี่ยนเครื่องรุ่นใหม่มาใช้ R32",
     },
     {
       type: "p",
@@ -181,6 +181,7 @@ export const article: Article = {
         { title: "กรอ.จับมือ สอศ. และ กพร. ลดและเลิกใช้สารทำความเย็น HCFC-22", publisher: "ผู้จัดการออนไลน์ (9 ม.ค. 2562)", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "ไทยห้ามโรงงานผลิตแอร์ต่ำกว่า 50,000 BTU ใช้ HCFC-22 ตั้งแต่ปี 2560 และเปลี่ยนไปใช้ HFC-32" },
         { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "ลำดับการเลิกใช้สาร HCFC รวมถึง R22 ตามพิธีสารมอนทรีออล" },
         { title: "Refrigerant Oil Basics", publisher: "HVAC School (27 ก.ค. 2565)", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "น้ำมันแร่ของระบบ R22 ไม่ผสมกับน้ำยากลุ่ม HFC และน้ำมัน POE สลายเป็นกรดเมื่อมีความชื้น" },
+        { title: "Thailand Room Air Conditioner Market Assessment and Policy Options Analysis", publisher: "CLASP (มิ.ย. 2562)", url: "https://www.clasp.ngo/wp-content/uploads/2021/01/2019-Thailand-Room-Air-Conditioner-Market-Assessment-and-Policy-Options-Analysis.pdf", note: "รุ่นที่วางขายในไทยปี 2562: R410A 61.7% R32 33.9% R22 3.9% จากที่ปี 2556 ยังเป็น R22 ถึง 79% และยังไม่มี R32" },
       ],
     },
   ],
