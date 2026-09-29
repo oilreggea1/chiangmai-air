@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "There is no single strip-down cleaning interval that suits every home. This article explains what makes residue build up faster and which signs tell you your washing machine is due.",
   category: "Washing machines",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-004.jpg",
@@ -125,7 +125,7 @@ export const article: IntlArticle = {
         "Use the amount of detergent stated on the label, and do not add extra to be safe.",
         "Clean the lint filter every 1–2 weeks and the detergent drawer once a month.",
         "Wipe the folds of the door seal on a front loader once a week.",
-        "If you use fabric softener regularly, run the drum-clean cycle as described in your machine's manual once a month.",
+        "If you use fabric softener regularly, run the drum-clean cycle as described in your machine's manual about once a month (some brands, such as Samsung, remind you every 40 washes).",
       ],
     },
     {
@@ -153,6 +153,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "Not sure whether your machine is due yet? Send me photos of the inside of the drum and the door seal on LINE. I will take a look first and tell you honestly if it is not time yet. Call +66 65 365 7673 or add LINE @794xvrnm.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics (U.S.)", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "Recommends running the Tub Clean programme once a month and leaving the door open to dry" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "The machine reminds you to clean the drum every 40 washes, and no cleaning agent should be added for this cycle" },
+      ],
     },
   ],
   faqs: [

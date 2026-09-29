@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "衣服洗完仍有霉味，原因多半是洗衣桶外壁的洗衣粉残留。本文说明污垢积在哪里、为什么清洁剂不够，以及拆洗有何不同。",
   category: "洗衣机",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-bon-003.jpg",
@@ -47,7 +47,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "info",
       title: "霉味来自微生物释放的物质",
-      text: "衣服上带着的味道，是霉菌和细菌在生长过程中释放的挥发性物质。机器转动时，水会把这些东西带回正在洗的衣服上。这就是为什么即使用的是普通洗衣粉，也会越洗越有味道。",
+      text: "衣服上带着的味道，是机器里的微生物，尤其是细菌，在生长过程中释放的挥发性物质。机器转动时，水会把这些东西带回正在洗的衣服上。这就是为什么即使用的是普通洗衣粉，也会越洗越有味道。",
     },
 
     { type: "h2", text: "为什么倒入洗衣槽清洁剂运转一轮还不够" },
@@ -171,6 +171,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "不确定家里的洗衣机是否到了该拆洗的时候？可以通过 LINE 发来桶内和胶圈的照片，我先帮您初步评估再做决定。电话 +66 65 365 7673，或 LINE @794xvrnm。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Moraxella species are primarily responsible for generating malodor in laundry", publisher: "Applied and Environmental Microbiology（2012 年）", url: "https://pubmed.ncbi.nlm.nih.gov/22367080/", note: "洗后衣物的霉味主要来自 Moraxella 属细菌产生的物质" },
+        { title: "Microbial Colonization, Biofilm Formation, and Malodour of Washing Machine Surfaces and Fabrics", publisher: "Antibiotics（MDPI）2024 年", url: "https://doi.org/10.3390/antibiotics13121227", note: "洗衣机内的生物膜会产生霉味，微生物会释放挥发性物质" },
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports（2020 年 4 月）", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "霉菌积聚在洗衣内筒与外筒之间无法触及的夹层，以及门封胶圈的凹槽里" },
+      ],
     },
   ],
   faqs: [

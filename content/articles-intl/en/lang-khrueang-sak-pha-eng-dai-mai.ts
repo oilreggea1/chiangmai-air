@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "You can clean parts of a washing machine yourself and save money. Here is what you can do right away, what needs a strip-down, and where the line is.",
   category: "Washing machines",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 8,
   image: {
     src: "/work/lang-thang-sak-pha-fa-bon-003.jpg",
@@ -50,7 +50,7 @@ export const article: IntlArticle = {
         {
           title: "The detergent and fabric softener drawer",
           detail:
-            "Most drawers pull out completely for washing. The spot people tend to forget is the ceiling of the slot the drawer sits in, which often has sticky residue on it and is where mould appears before anywhere else. An old toothbrush will brush it off.",
+            "Most drawers pull out completely for washing. The spot people tend to forget is the ceiling of the slot the drawer sits in, which often has sticky residue on it and is a spot where mould is commonly found. An old toothbrush will brush it off.",
         },
         {
           title: "The door seal on a front loader",
@@ -60,7 +60,7 @@ export const article: IntlArticle = {
         {
           title: "The drum-clean cycle from your machine's manual",
           detail:
-            "Many newer models come with a Tub Clean or Drum Clean programme. Use it with a drum cleaning solution or cleaning tablets as the label directs. Once a month is a suitable frequency, and it helps keep surfaces that are still clean that way.",
+            "Many newer models come with a Tub Clean or Drum Clean programme. Use it with a drum cleaning solution or cleaning tablets only on models whose manual allows them, because some brands, such as Samsung, say to run this cycle without any cleaning agent. About once a month is a suitable frequency (Samsung reminds you every 40 washes), and it helps keep surfaces that are still clean that way.",
         },
       ],
     },
@@ -79,7 +79,7 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "The outside of the inner drum: this is on the opposite side from where the drum cleaner makes contact. The drum has to be lifted out before it can be scrubbed.",
+        "The outside of the inner drum: this is a hidden gap between the drums; drum cleaner flows past but has no scrubbing force to remove firmly stuck grime. The drum has to be lifted out before it can be scrubbed.",
         "Under the wash plate of a top loader: a narrow space where the water does not swirl fast enough to wash the residue away. The wash plate has to be removed from the shaft.",
         "Around the heater in the outer tub of a front loader: the spot where limescale builds up thickest. The front panel and the door seal assembly have to come off first.",
         "The drain pipe and drain hose: sticky residue blocking the inside makes water drain slowly and sends smells back up.",
@@ -151,6 +151,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "Not sure whether your machine is already beyond what you can do yourself? Send photos of the inside of the drum and the rubber seal on LINE and I will assess it first, free of charge. Call +66 65 365 7673 or LINE @794xvrnm.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics (U.S.)", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "Recommends running the Tub Clean programme once a month and leaving the door open to dry" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "The machine reminds you to clean the drum every 40 washes, and no cleaning agent should be added for this cycle" },
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (Apr 2020)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "Mould builds up in the inaccessible gap between the wash drum and the outer tub, and in the folds of the door seal" },
+      ],
     },
   ],
   faqs: [

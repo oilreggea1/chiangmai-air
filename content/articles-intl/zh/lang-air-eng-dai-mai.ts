@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "空调能自己洗吗？5 件真正可以自己做的事，和 4 件做了会弄坏空调的事",
   description: "空调有一部分可以而且应该自己清洗。哪些工作屋主能安全完成，哪些涉及水压、电路和冷媒必须交给技师。",
   category: "空调知识",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/lang-air-thod-lang-046.jpg", alt: "技师在灯光下举起一片仍附着薄薄一层灰尘的空调滤网查看" },
   excerpt: "空调保养大约有一半是屋主可以而且应该自己做的；其余部分涉及水压、电路和冷媒，一旦做错，维修费会比清洗费高出好几倍。",
@@ -33,7 +33,7 @@ export const article: IntlArticle = {
       items: [
         {
           title: "清洗空气滤网",
-          detail: "这是所有工作中回报最高的一项，因为滤网是阻挡灰尘进入盘管的第一道关。建议烟霾季节每 2–4 周一次，其他季节每 1–2 个月一次。",
+          detail: "这是所有工作中回报最高的一项，因为滤网是阻挡灰尘进入盘管的第一道关。按厂家建议每 2 周一次，烟霾季节最迟不超过 4 周；其他季节按泰国卫生厅建议至少每月一次。",
         },
         {
           title: "擦拭面板和出风口",
@@ -86,7 +86,7 @@ export const article: IntlArticle = {
     { type: "h3", text: "1. 自己用水冲洗室内机盘管" },
     {
       type: "p",
-      text: "清洗室内机盘管需要可控的水压：要强到能把污垢从翅片缝隙里冲出来，又不能强到把铝翅片冲倒。翅片倒伏后会永久挡住风道，让制冷能力在整个使用寿命内都下降，而且无法再掰回原样。另一个常被忽略的问题是：如果没有用接水袋把整台机器罩住，所有脏水都会流到墙上和家具上。",
+      text: "清洗室内机盘管需要可控的水压：要强到能把污垢从翅片缝隙里冲出来，又不能强到把铝翅片冲倒。翅片倒伏后会挡住风道，让制冷能力下降，需要技师用梳片器（fin comb）一排排梳直，但根据我的经验，很少能恢复到原来那样平整。另一个常被忽略的问题是：如果没有用接水袋把整台机器罩住，所有脏水都会流到墙上和家具上。",
     },
     { type: "h3", text: "2. 不断电就清洗，或让水进入电路板" },
     {
@@ -107,7 +107,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "danger",
       title: "不要用洗车高压水枪冲空调盘管",
-      text: "这是我见过最多的自行清洗造成的损坏。洗车水枪的压力对盘管上薄薄的铝翅片来说太高了，翅片会成片倒伏，永久挡住风道。结果是盘管虽然干净了，空调的制冷却比清洗前还差，而且这种损坏无法恢复原状。",
+      text: "这是我见过最多的自行清洗造成的损坏。洗车水枪的压力对盘管上薄薄的铝翅片来说太高了，翅片会成片倒伏，挡住风道。结果是盘管虽然干净了，空调的制冷却比清洗前还差。即使技师能用梳片器把翅片梳直，也很少能恢复到原来那样平整。",
     },
 
     { type: "h2", text: "汇总表：哪些工作可以自己做，哪些要交给技师" },
@@ -146,7 +146,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "再和风险对比一下：倒伏后无法修复的盘管翅片、被水损坏的电路板、因为风轮没装正而损坏的电机，这三种情况的零件加人工费都比一整年的清洗费高好几倍。结论是：自己洗滤网非常划算，因为几乎没有风险；而自己洗盘管，考虑到可能造成的损失，并不划算。",
+      text: "再和风险对比一下：倒伏后只能一排排梳直、而且很少恢复平整的盘管翅片、被水损坏的电路板、因为风轮没装正而损坏的电机，这三种情况的零件加人工费都比一整年的清洗费高好几倍。结论是：自己洗滤网非常划算，因为几乎没有风险；而自己洗盘管，考虑到可能造成的损失，并不划算。",
     },
 
     { type: "h2", text: "总结" },
@@ -155,7 +155,7 @@ export const article: IntlArticle = {
       items: [
         "可以自己做、我也建议做的工作是：清洗滤网、擦拭面板、吸净机器周围的灰尘、清空室外机周围的空间，以及记录异常情况。",
         "清洗滤网时要先断电，逆着灰尘方向冲水，完全晾干后再装回。",
-        "不要自己用水冲洗盘管，尤其不能用洗车水枪，因为倒伏的翅片无法修复。",
+        "不要自己用水冲洗盘管，尤其不能用洗车水枪，因为倒伏的翅片只能一排排梳直，而且很少能恢复到原来那样平整。",
         "不要自己加冷媒，因为冷媒不足说明有漏点，必须先查漏再加注。",
         "不要自己拆贯流风轮，因为装回时不对中会损坏电机。",
         "自己做的保养确实能拉长两次清洗之间的间隔，但无法取代每年两次的彻底清洗。",
@@ -164,6 +164,16 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "如果自己洗过滤网后空调还是不如以前凉，或者仍有异味，说明原因在您能自己保养的部位更深处。请通过 LINE 或电话告诉我症状，我会先帮您初步判断可能的原因，以及应该选择哪种清洗，咨询不收任何费用。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
+        { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
+        { title: "泰国卫生厅建议学校和幼儿中心准备无尘房（泰文）", publisher: "泰国卫生厅（2019 年 10 月 24 日）", url: "https://multimedia.anamai.moph.go.th/news/news241062/", note: "每月清洁空调面板和滤网，并至少每 6 个月清洗一次空调" },
+        { title: "Home Cooling 101", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "倒伏的盘管翅片可用梳片器（fin comb）梳直；冷媒不足意味着有泄漏，必须先修好漏点再充注" },
+        { title: "R-32 Safety Data Sheet", publisher: "Daikin Airconditioning (Singapore)（2019 年）", url: "https://www.daikin-solutions.com/resources/ck/files/accessories/DAIKIN%20REFRIGERANT%20R32%20SAFETY%20DATA%20SHEET.pdf", note: "冷媒溅到皮肤或眼睛上可造成冻伤" },
+      ],
     },
   ],
   faqs: [

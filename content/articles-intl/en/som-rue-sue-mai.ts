@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Old aircon keeps breaking down: repair or replace? Decide by age, repair cost vs a new unit, refrigerant type, how often it fails, and running costs.",
   category: "Aircon guides",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/yai-air-009.jpg", alt: "An outdoor unit standing on the ground against a wall, with the full panel of cooling fins visible on its side" },
   excerpt:
@@ -173,6 +173,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: `If you are still not sure whether the unit at home should be repaired or replaced, let me come and check it first. The diagnostic charge is ${p.repair.diagnostic} THB, and I take it off the bill if you go ahead with the repair. I will tell you honestly which cases are worth repairing and which are not.`,
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Department of Industrial Works joins vocational and skills agencies to reduce and phase out HCFC-22 refrigerant (in Thai)", publisher: "MGR Online (9 Jan 2019)", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "Since 2017 Thailand has banned factories making air conditioners under 50,000 BTU from using HCFC-22, moving to HFC-32" },
+        { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "Timeline of the HCFC phase-out, including R22, under the Montreal Protocol" },
+        { title: "Refrigerant Oil Basics", publisher: "HVAC School (27 Jul 2022)", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "The mineral oil in R22 systems does not mix with HFC refrigerants, and POE oil breaks down into acid when moisture is present" },
+      ],
     },
   ],
   faqs: [

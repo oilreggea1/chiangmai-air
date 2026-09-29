@@ -6,7 +6,7 @@ export const article: IntlArticle = {
   h1: "在清迈自己打造 PM2.5 防尘房间：先做哪一步，哪些地方该交给技师",
   description: "防尘房间实操指南：选哪个房间、先封哪些缝隙、按房间大小选空气净化器，以及空调在洁净空气房里的作用。",
   category: "空调知识",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/air-2569-12.jpg", alt: "被灰尘堵得几乎看不见内部网格的空气滤网" },
   excerpt: "防尘房间不只是买一台空气净化器放进去，而是先把灰尘进来的路堵住，再让净化器处理剩下的部分。",
@@ -25,7 +25,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "防尘房间是什么，不是什么" },
     {
       type: "p",
-      text: "卫生部门关于防尘房间的指引，原则很简单：尽可能把房间封闭好，减少外面进来的灰尘，再用空气过滤设备或在封闭的房间内循环空气，处理室内剩下的灰尘。这个思路的核心在于顺序：先封闭，再过滤。",
+      text: "泰国卫生厅关于防尘房间的指引，原则很简单：尽可能把房间封闭好，减少外面进来的灰尘，再用空气过滤设备或在封闭的房间内循环空气，处理室内剩下的灰尘。这个思路的核心在于顺序：先封闭，再过滤。",
     },
     {
       type: "p",
@@ -200,7 +200,7 @@ export const article: IntlArticle = {
         "接着处理窗户、通风口和空调管道孔。",
         "在季节开始前请技师把那个房间的空调洗干净，如果有霉味，应选择拆洗。",
         "然后再按房间大小选净化器，放在房间中央或睡觉位置附近。",
-        "调整一些小习惯：一直关着门、拖地代替扫地，烟霾季节每 2–4 周自己清洗一次空调滤网。",
+        "调整一些小习惯：一直关着门、拖地代替扫地，按厂家建议每 2 周自己清洗一次空调滤网，烟霾季节最迟不超过 4 周。",
       ],
     },
     {
@@ -226,6 +226,16 @@ export const article: IntlArticle = {
       type: "cta",
       text: "如果想打造防尘房间，可以把机器、管道周围的缝隙和房间大小的照片发到空调 LINE 账号 @iu3333。我会帮您看看应该先洗空调，还是先封堵哪些缝隙。",
     },
+    {
+      type: "sources",
+      items: [
+        { title: "泰国卫生厅建议如何布置无尘房和防尘蚊帐（泰文）", publisher: "泰国卫生厅（2024 年 3 月 8 日）", url: "https://multimedia.anamai.moph.go.th/news/080367/", note: "紧闭门窗，使用与房间大小相符的空气净化器；泰国卫生部已在 41 个府开设 2,690 间无尘房" },
+        { title: "无尘房 4 项检查清单（泰文）", publisher: "泰国卫生厅（2025 年 2 月 15 日）", url: "https://anamai.moph.go.th/th/news-anamai/44024", note: "建议选择装有空调的房间，因为空气缝隙或漏风较少，并把风扇、空调和空气滤网清洗干净" },
+        { title: "Sources of Indoor Particulate Matter", publisher: "U.S. Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/sources-indoor-particulate-matter-pm", note: "烹饪会提高室内颗粒物浓度，吸烟、蜡烛和壁炉也一样" },
+        { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
+        { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
+      ],
+    },
   ],
   faqs: [
     {
@@ -246,7 +256,7 @@ export const article: IntlArticle = {
     },
     {
       q: "做好防尘房间后，还需要按原来的周期洗空调吗？",
-      a: "仍然需要，而且我认为比以前更重要。因为在密封房间里，空气整晚一遍又一遍地流过盘管，如果盘管上有污垢或霉菌，上面的东西就会被持续送回房间。我建议在烟霾季节前的一月做一次彻底清洗，季节期间每 2–4 周自己清洗一次滤网。",
+      a: "仍然需要，而且我认为比以前更重要。因为在密封房间里，空气整晚一遍又一遍地流过盘管，如果盘管上有污垢或霉菌，上面的东西就会被持续送回房间。我建议在烟霾季节前的一月做一次彻底清洗，季节期间按厂家建议每 2 周自己清洗一次滤网，最迟不超过 4 周。",
     },
   ],
 };

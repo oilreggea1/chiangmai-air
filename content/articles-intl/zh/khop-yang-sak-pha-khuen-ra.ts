@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "门封胶圈上的黑点是滚筒洗衣机最常见的问题。本文说明黑霉的成因、自己能清除到什么程度，以及什么情况下已经擦不掉了。",
   category: "洗衣机",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-001.jpg",
@@ -41,7 +41,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "info",
       title: "霉味和黑点是同一回事",
-      text: "衣服上沾到的气味，是霉菌和细菌在生长过程中释放出的挥发性物质。所以如果门封上有黑点，衣服又有霉味，两种症状来自同一个原因。只靠香氛或柔顺剂来盖住气味是没有用的。",
+      text: "衣服上沾到的气味，是机器里的微生物，尤其是细菌，在生长过程中释放出的挥发性物质。所以如果门封上有黑点，衣服又有霉味，两种症状来自同一个原因。只靠香氛或柔顺剂来盖住气味是没有用的。",
     },
 
     { type: "h2", text: "自己擦拭的正确方法" },
@@ -112,7 +112,7 @@ export const article: IntlArticle = {
       type: "ul",
       items: [
         "盛水的外筒，尤其是筒底加热管周围，这里水垢积得最厚",
-        "不锈钢内筒的外表面，正好在洗衣机槽清洁剂接触不到的另一侧",
+        "不锈钢内筒的外表面，这是内外筒之间看不见的夹层，洗衣机槽清洁剂能流过，但没有力量刷掉牢牢附着的污垢",
         "前方下角的排水泵过滤器，这里可以自己打开，应该先检查",
         "排水管和排水软管，里面黏稠的积垢堵着，会让气味倒灌回来",
       ],
@@ -130,8 +130,8 @@ export const article: IntlArticle = {
         "每周用干布擦一次门封褶槽，不到一分钟就能完成",
         "洗完立刻把衣服拿出来，不要放过夜",
         "按包装标示的用量放洗衣粉，没溶解完的部分会沉积在橡胶槽里，成为霉菌的养分",
-        "每月按说明书运行一次筒清洁程序",
-        "每一到两个月清洗一次前方下角的排水泵过滤器",
+        "按说明书运行筒清洁程序，大约每月一次（有些品牌，例如 Samsung，每 40 次洗涤会提醒一次）",
+        "按厂家建议，至少每月清洗一次前方下角的排水泵过滤器",
       ],
     },
     {
@@ -143,6 +143,18 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "擦过之后不确定剩下的是污垢还是已经渗进去的霉斑，可以通过 LINE 把门封褶槽的照片发给我。我先帮您看看，并如实告诉您清洗之后能改善到什么程度。联系电话 +66 65 365 7673，或 LINE @794xvrnm。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports（2020 年 4 月）", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "霉菌积聚在洗衣内筒与外筒之间无法触及的夹层，以及门封胶圈的凹槽里" },
+        { title: "Microbial Colonization, Biofilm Formation, and Malodour of Washing Machine Surfaces and Fabrics", publisher: "Antibiotics（MDPI）2024 年", url: "https://doi.org/10.3390/antibiotics13121227", note: "洗衣机内的生物膜会产生霉味，微生物会释放挥发性物质" },
+        { title: "Moraxella species are primarily responsible for generating malodor in laundry", publisher: "Applied and Environmental Microbiology（2012 年）", url: "https://pubmed.ncbi.nlm.nih.gov/22367080/", note: "洗后衣物的霉味主要来自 Moraxella 属细菌产生的物质" },
+        { title: "How do we clean the door seal of front loading washing machine", publisher: "Samsung", url: "https://www.samsung.com/levant/support/home-appliances/how-to-clean-the-door-seal-bellow-of-front-loading-washing-machine/", note: "建议让机门开着，使机器内部干燥" },
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics（美国）", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "建议每月运行一次 Tub Clean 程序，并让机门开着晾干" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "机器每 40 次洗涤会提醒清洗滚筒，并注明这个程序不需要放清洁剂" },
+        { title: "LG Front Load Washer Maintenance", publisher: "LG Electronics（美国）", url: "https://www.lg.com/us/support/help-library/lg-front-load-washer-maintenance-CT00000305-1400786418920", note: "排水泵过滤器至少每月清洗一次；高浓度漂白剂会使门封胶圈老化" },
+      ],
     },
   ],
   faqs: [

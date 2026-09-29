@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "餐厅和咖啡店的空调整天吸入油烟、奶雾和灰尘，堵得比家用快得多。本文介绍合适的清洗周期、吊顶机和天花机价格及排期方法。",
   category: "空调知识",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: {
     src: "/work/lang-air-fang-fa-003.jpg",
@@ -127,6 +127,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "如果想评估整间店的清洗周期和费用，请把机器数量、机型和店里方便的时间段发到空调服务 LINE @iu3333。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Smoke Shrouds Northern Thailand", publisher: "NASA Earth Observatory（2026 年 4 月 23 日）", url: "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/", note: "泰国北部的火点在 2 月至 4 月增加，山地地形造成逆温，把烟霾困住" },
+        { title: "泰国的气候（泰文）", publisher: "泰国气象厅", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "4 月是一年中最炎热的月份" },
+      ],
     },
   ],
   faqs: [

@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "洗衣机的拆洗周期没有一个适用于所有家庭的固定数字。本文说明哪些因素会让污垢积得更快，以及哪些迹象表明已经到了该清洗的时候。",
   category: "洗衣机",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-004.jpg",
@@ -125,7 +125,7 @@ export const article: IntlArticle = {
         "按包装标示的用量放洗衣粉，不要为了保险多放。",
         "每 1–2 周清洗一次过滤网，每月清洗一次洗衣粉盒。",
         "滚筒洗衣机每周擦一次门封胶圈的褶缝。",
-        "如果经常用柔顺剂，每月按说明书运行一次桶自洁程序。",
+        "如果经常用柔顺剂，按说明书运行桶自洁程序，大约每月一次（有些品牌，例如 Samsung，每 40 次洗涤会提醒一次）。",
       ],
     },
     {
@@ -153,6 +153,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "不确定家里的洗衣机是否到了该清洗的时候？可以通过 LINE 把桶内和门封胶圈的照片发给我。我先帮您看，如果还不到时候，我会如实告诉您。电话 +66 65 365 7673，或 LINE @794xvrnm。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics（美国）", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "建议每月运行一次 Tub Clean 程序，并让机门开着晾干" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "机器每 40 次洗涤会提醒清洗滚筒，并注明这个程序不需要放清洁剂" },
+      ],
     },
   ],
   faqs: [

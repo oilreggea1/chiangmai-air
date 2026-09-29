@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "在 9.9、10.10 或 11.11 大促网购空调？下单前先检查这 6 件事，让到手的机器能按您的需要安装和使用",
   description: `大促期间在 Shopee、Lazada、TikTok 买空调前的检查清单：BTU、冷媒、配件、保修，每点 ${p.install.small} 泰铢预约安装。`,
   category: "空调知识",
-  updated: "2026-08-30",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/tid-tang-air-003.jpg",
@@ -24,7 +24,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "1. 按实际房间选 BTU 大小，不要只看最低价" },
     {
       type: "p",
-      text: "大促中降价最多的型号往往是 9,000 BTU，只适合约 12 平方米以下的房间。装在更大的房间里，机器会一直高负荷运转，电费比应有的高，寿命也会缩短。简单的算法是：房间面积（平方米）乘以 750，然后选比结果稍大的最接近的机型。如果还拿不准，可以通过 LINE 把感兴趣的型号链接、房间大小和房间朝哪个方向晒太阳发给我，我会在您下单前帮您看看，不收费用。",
+      text: "大促中降价最多的型号往往是 9,000 BTU，泰国国家电力局（EGAT）指出它适合约 12–15 平方米的一般房间，晒太阳的房间则是 11–14 平方米。装在更大的房间里，机器会一直高负荷运转，电费比应有的高，寿命也会缩短。简单的算法是：房间面积（平方米）一般房间乘以 700，晒太阳的房间乘以 800（也可以用 750 作为中间值），然后选比结果稍大的最接近的机型。如果还拿不准，可以通过 LINE 把感兴趣的型号链接、房间大小和房间朝哪个方向晒太阳发给我，我会在您下单前帮您看看，不收费用。",
     },
     { type: "h2", text: "2. 选择现行标准的 R32 冷媒" },
     {
@@ -64,6 +64,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: `无论已经买好机器还是正准备下单，都可以把机型、所在区域和预计到货日期告诉我。${btu.installSmall} BTU 安装费每点 ${p.install.small} 泰铢，包含支架、4 米以内的管道和管道护槽。`,
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "怎样选空调既省电又省钱（泰文）", publisher: "泰国国家电力局（EGAT）（2022 年 8 月 16 日）", url: "https://www.egat.co.th/home/save-energy-for-all-20220716/", note: "9,000 BTU 适合 12–15 平方米的一般房间，或 11–14 平方米的晒太阳房间；12,000 BTU 适合 16–20 平方米" },
+        { title: "房间平方米数怎么算才配得上空调 BTU（泰文）", publisher: "Carrier Thailand（2023 年 3 月 2 日）", url: "https://carrierthailand.com/carrier-article/how-to-calculate-btu/", note: "卧室乘以 700（晒太阳的乘以 800），书房或客厅乘以 800（晒太阳的乘以 900）" },
+      ],
     },
   ],
   faqs: [

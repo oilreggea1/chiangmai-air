@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "空调频繁停机、开不了机、指示灯闪烁：现场常见原因，以及如何读懂闪灯代码",
   description: "空调频繁自动停机、按了不启动，或前面板指示灯规律闪烁的常见原因，以及如何数闪灯次数、在对应型号的说明书里查故障代码。",
   category: "空调故障",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/air-2569-07.jpg", alt: "从空调上拆下的电容，先测量数值再决定是否更换" },
   excerpt: "空调频繁停机或开不了机，大多数并不代表机器坏了，而是自我保护系统在提示有异常；指示灯闪烁则是机器报出来让您读取的代码。",
@@ -169,6 +169,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "如果空调指示灯在闪却不知道什么意思，拍下闪灯节奏和型号标签，用 LINE 发给我。我会先帮您查代码含义，并说明现场需要检查的地方。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "泰国的气候（泰文）", publisher: "泰国气象厅", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "4 月是一年中最炎热的月份" },
+      ],
     },
   ],
   faqs: [

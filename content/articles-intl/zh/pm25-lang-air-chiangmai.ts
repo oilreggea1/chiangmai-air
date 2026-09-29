@@ -21,13 +21,13 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "为什么今年比往年更严重",
-      text: "清迈大学气候变化数据中心（CCDC）报告，2026 年 1 月 1 日至 4 月 4 日，清迈府共监测到 6,676 个热点，比 2025 年同期的 3,996 个增加了 67%。这意味着进入建筑物、流经空调的灰尘量也随之增加。",
+      text: "清迈大学气候变化数据中心（CCDC）报告，2026 年 1 月 1 日至 4 月 4 日，清迈府共监测到 6,676 个热点，比 2025 年同期的 3,996 个增加了 67%。烟霾季结束后，清迈府公布 2026 年 1 月 1 日至 5 月 31 日累计热点共 11,023 个，大多位于森林地区，比 2025 年同期增加 6,314 个。这意味着进入建筑物、流经空调的灰尘量也随之增加。",
     },
 
     { type: "h2", text: "清迈和别的地方不一样，因为灰尘很难散出去" },
     {
       type: "p",
-      text: "清迈位于四面环山的盆地里。进入旱季后，上层较冷的空气把下层较暖的空气压住，泰国媒体把这种情况称为「锅盖罩城」。结果是本地和邻国焚烧产生的烟升不上去，在城里连续盘旋好几个星期，直到第一场雨到来。",
+      text: "清迈位于四面环山的盆地里。进入旱季后，上层较暖的空气把贴近地面的冷空气压住（逆温），泰国媒体把这种情况称为「锅盖罩城」。结果是本地和邻国焚烧产生的烟升不上去，在城里连续盘旋好几个星期，直到第一场雨到来。",
     },
     {
       type: "p",
@@ -41,7 +41,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "不过，空调还有一个比很多人想象中更重要的间接作用：开空调就得关好门窗，这就切断了室外灰尘进入的主要通道。卫生部门自己发布的防尘房间指引，也把开风扇或空调列为步骤之一，因为它能帮助密封房间内的空气循环。",
+      text: "不过，空调还有一个比很多人想象中更重要的间接作用：开空调就得关好门窗，这就切断了室外灰尘进入的主要通道。泰国疾病控制厅自己的防尘房间指引，也把开风扇或空调列为步骤之一，因为它能帮助密封房间内的空气循环。",
     },
     {
       type: "table",
@@ -91,7 +91,7 @@ export const article: IntlArticle = {
       head: ["时间段", "该做什么", "原因"],
       rows: [
         ["1 月 – 2 月初", "烟霾季前彻底清洗一次", "带着干净的盘管进入烟霾季，而且这时档期还不紧张"],
-        ["2 月 – 4 月", "每 2–4 周自己清洗一次滤网", "粉尘浓度高，滤网堵得比平时快得多"],
+        ["2 月 – 4 月", "按厂家建议每 2 周自己清洗一次滤网，最迟不超过 4 周", "粉尘浓度高，滤网堵得比平时快得多"],
         ["5 月 – 6 月", "第二次彻底清洗", "清除整个季节积下的烟灰，再进入湿度很高的雨季"],
         ["7 月 – 10 月", "留意气味和滴水", "湿度高，霉菌长得快；开始有霉味就应该拆洗"],
         ["11 月 – 12 月", "适合维修或安装的时期", "空调用得少、档期宽松，不用久等"],
@@ -147,7 +147,7 @@ export const article: IntlArticle = {
       items: [
         "空调标准滤网不能过滤 PM2.5，但空调仍然必要，因为它让您可以关着房间。",
         "清迈的烟霾季节会让滤网和盘管明显比其他季节堵得快。",
-        "在季节开始前的一月彻底清洗一次，季节期间每 2–4 周自己清洗一次滤网。",
+        "在季节开始前的一月彻底清洗一次，季节期间按厂家建议每 2 周自己清洗一次滤网，最迟不超过 4 周。",
         "一旦开始有霉味，就需要拆洗，而不是隔着面板喷洗。",
         "防尘房间三样缺一不可：密封的房间、干净的空调和空气净化器。",
       ],
@@ -163,6 +163,15 @@ export const article: IntlArticle = {
         { title: "什么是 HEPA 滤网？", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/what-hepa-filter", note: "说明 HEPA 标准及其拦截颗粒的效率" },
         { title: "家用空气净化器指南", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home", note: "说明如何按 HEPA/CADR 选择，以及单一种类的滤网无法去除所有污染物的局限" },
         { title: "CCDC 解析清迈 2026 年烟霾：热点增加 67%", publisher: "MGR Online，2026 年 4 月 6 日（泰文）", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "数据来自清迈大学气候变化数据中心（CCDC）：清迈府 2026 年 1 月 1 日至 4 月 4 日共 6,676 个热点，2025 年同期为 3,996 个" },
+        { title: "清迈总结 2026 年林火季：热点超过 11,023 个", publisher: "Chiang Mai News，2026 年 6 月 3 日（泰文）", url: "https://www.chiangmainews.co.th/news/3944562/", note: "2026 年 6 月 2 日清迈府林火与 PM2.5 综合治理委员会会议公布：2026 年 1 月 1 日至 5 月 31 日共 11,023 个热点，比 2025 年同期增加 6,314 个" },
+        { title: "锅盖效应源于逆温（泰文）", publisher: "Thai PBS NOW（2025 年 1 月 23 日）", url: "https://www.thaipbs.or.th/now/content/2217", note: "较暖的空气层位于贴近地面的冷空气之上，使粉尘无法上升扩散" },
+        { title: "Smoke Shrouds Northern Thailand", publisher: "NASA Earth Observatory（2026 年 4 月 23 日）", url: "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/", note: "泰国北部的火点在 2 月至 4 月增加，山地地形造成逆温，把烟霾困住" },
+        { title: "污染控制厅指出柴油车是 PM2.5 的主要来源（泰文）", publisher: "Thai PBS（2020 年 11 月 22 日）", url: "https://www.thaipbs.or.th/news/content/298552", note: "曼谷的 PM2.5 主要来自柴油车尾气" },
+        { title: "空气净化器和空调能否防护 PM 2.5（泰文）", publisher: "朱拉隆功大学安全、职业卫生与环境中心（2019 年 2 月 13 日）", url: "https://www.shecu.chula.ac.th/home/content.asp?Cnt=176", note: "一般空调只能减少比 PM2.5 更大的粉尘" },
+        { title: "今年抗热，一起清洗空调降低电费（泰文）", publisher: "泰国国家电力局（EGAT）（2023 年 5 月 11 日）", url: "https://www.egat.co.th/home/20230511-art01/", note: "每 6 个月清洗一次空调，最多可节省 10% 电费" },
+        { title: "泰国的气候（泰文）", publisher: "泰国气象厅", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "4 月是一年中最炎热的月份" },
+        { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
+        { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
       ],
     },
   ],
@@ -173,7 +182,7 @@ export const article: IntlArticle = {
     },
     {
       q: "烟霾季节里，空调应该多久洗一次？",
-      a: "我建议在季节开始前的一月到二月初彻底清洗一次，季节期间每 2–4 周自己把滤网拆下来清洗，这一步不用叫技师。然后在五月到六月再彻底清洗一次，清除整个季节积下的烟灰。",
+      a: "我建议在季节开始前的一月到二月初彻底清洗一次，季节期间按厂家建议每 2 周自己把滤网拆下来清洗一次，最迟不超过 4 周，这一步不用叫技师。然后在五月到六月再彻底清洗一次，清除整个季节积下的烟灰。",
     },
     {
       q: "可以在空调里加装 PM2.5 滤网吗？",

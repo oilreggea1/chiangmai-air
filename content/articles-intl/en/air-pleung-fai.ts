@@ -49,7 +49,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "What temperature setting actually saves power" },
     {
       type: "p",
-      text: "The Provincial Electricity Authority (PEA) recommends setting the aircon at 26–27 °C. The reason is that the lower you set it, the wider the gap between your setting and the air outside, so the compressor has to run longer to reach the target, and once it gets there it is harder to hold that level.",
+      text: "The Provincial Electricity Authority (PEA) recommends setting the aircon at 26–27 °C, a level that is comfortable without being too cold. Technically, the lower you set it, the wider the gap between your setting and the air outside, so the compressor has to run longer to reach the target, and once it gets there it is harder to hold that level.",
     },
     {
       type: "p",
@@ -76,12 +76,12 @@ export const article: IntlArticle = {
     { type: "h2", text: "A fan is the cheapest way to cut the bill" },
     {
       type: "p",
-      text: "A fan does not make the air cooler, but it makes sweat evaporate from your skin faster, so your body feels cooler than the actual air temperature. That is why a room at 27 degrees with air moving through it feels more comfortable than a room at 25 degrees where the air is completely still.",
+      text: "A fan does not make the air cooler, but it makes sweat evaporate from your skin faster, so your body feels cooler than the actual air temperature. That is why a room at 27 degrees with air moving through it feels about as cool as a room at 25–26 degrees where the air is still, because PEA says moving air makes you feel about 1–2 degrees cooler than the actual temperature.",
     },
     {
       type: "ul",
       items: [
-        "Set the aircon at 26–27 degrees and run a fan gently so the air moves over you, and it feels about as comfortable as a much lower setting.",
+        "Set the aircon at 26–27 degrees and run a fan gently so the air moves over you, and it feels about as cool as a setting around 1–2 degrees lower.",
         "A fan uses far less power than the compressor, so adding a fan to take load off the compressor always pays.",
         "Position the fan so the air circulates around the whole room rather than only pointing it at yourself; it also helps spread the cool air from the aircon evenly.",
         "If you have a ceiling fan, it works very well with the aircon, because it helps push the cool air that settles at the bottom of the room back into circulation.",
@@ -122,7 +122,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "For homes in Chiang Mai, every 6 months may not be enough",
-      text: "The smoke-haze season from February to April makes soot and dust build up on coils much faster than normal. For homes in dusty areas or next to a main road, I recommend a thorough clean before the season and another after it ends. In between, take the filters out and wash them yourself every 2–4 weeks, which you can do without calling a technician.",
+      text: "The smoke-haze season from February to April makes soot and dust build up on coils much faster than normal. For homes in dusty areas or next to a main road, I recommend a thorough clean before the season and another after it ends. In between, take the filters out and wash them yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks, which you can do without calling a technician.",
     },
 
     { type: "h2", text: "Does switching off when you leave the room save power?" },
@@ -180,7 +180,7 @@ export const article: IntlArticle = {
       type: "steps",
       items: [
         { title: "Raise the remote setting to 26 degrees", detail: "You can do this straight away at no cost. If it does not feel cool enough, add a fan first rather than lowering the temperature again." },
-        { title: "Take out the filters and wash them", detail: "It takes about ten minutes. Wash them with plain water and let them dry completely before putting them back. You can do this yourself every 2–4 weeks when the dust is heavy, without calling a technician." },
+        { title: "Take out the filters and wash them", detail: "It takes about ten minutes. Wash them with plain water and let them dry completely before putting them back. You can do this yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks when the dust is heavy, without calling a technician." },
         { title: "Check the condition of the outdoor unit", detail: "See whether leaves, plastic bags or other things are blocking the air vents, and whether the unit sits in strong sun all day. If you can shade it without blocking the airflow, that helps quite a bit." },
         { title: "Block the ways hot air gets into the room", detail: "Close the curtains when the sun shines in, seal the gap under the door, and check that the hole where the aircon pipes go through the wall is still fully sealed." },
         { title: "Check when the aircon was last cleaned", detail: "If it has been more than 6 months, or it has just come through the smoke-haze season without a clean, this is the step that gives the best value of all." },
@@ -200,7 +200,7 @@ export const article: IntlArticle = {
         "The Provincial Electricity Authority (PEA) recommends 26–27 degrees, and setting it lower does not cool the room any faster.",
         "A fan uses far less power than the compressor, so using one together with the aircon is the best-value approach.",
         "Dirty coils make the compressor run longer every cycle, so cleaning on schedule brings the bill down, and you can measure it yourself from the meter readings before and after.",
-        "Out of the room for less than half an hour: leave it on. More than one to two hours: switch it off.",
+        "Out of the room for less than half an hour: leave it on. More than one to two hours: switch it off. (Daikin Japan's tests found the break-even point was about 35 minutes in the daytime and about 18 minutes in the evening.)",
         "A No. 5 unit installed at the wrong size or never cleaned can use more power than a standard unit that is looked after regularly.",
       ],
     },
@@ -209,6 +209,12 @@ export const article: IntlArticle = {
       items: [
         { title: "Aircon at 26° plus a fan: does it really save power?", publisher: "Provincial Electricity Authority (PEA), 16 Apr 2026 (in Thai)", url: "https://www.pea.co.th/news/infographic/1836", note: "Recommends setting 26–27°C together with a fan" },
         { title: "Which way of using an aircon saves the most power", publisher: "Electricity Generating Authority of Thailand (EGAT) (in Thai)", url: "https://www.egat.co.th/home/20220819-art01/", note: "Recommends 26–27 degrees with a fan, saving about 10% compared with 23–24 degrees" },
+        { title: "夏のエアコンつけっぱなし検証 (Summer test: leaving the aircon running)", publisher: "Daikin Industries, Japan", url: "https://www.daikin.co.jp/air/life/issue/mission05", note: "Tested in Osaka at 26°C: in the daytime, leaving the aircon on was cheaper for absences of up to about 35 minutes; in the evening the threshold dropped to about 18 minutes" },
+        { title: "Summer Cooling & Energy Savings Tips", publisher: "Delaware Public Service Commission (citing the U.S. Department of Energy)", url: "https://depsc.delaware.gov/?p=18414", note: "Setting the thermostat lower than normal does not cool the home faster and wastes electricity" },
+        { title: "A closer look at the new Label No. 5 energy-efficiency label (in Thai)", publisher: "Electricity Generating Authority of Thailand (30 Jan 2026)", url: "https://www.egat.co.th/home/20260130-art01/", note: "The new label has 6 levels, from no stars to 5 stars, and shows the electricity cost per year" },
+        { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
       ],
     },
   ],

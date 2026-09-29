@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "A musty or sour aircon smell is usually mould in the blower wheel and drain tray. Why it is worse in Chiang Mai's rainy season, and why a strip-down wash works.",
   category: "Aircon problems",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/lang-air-fang-fa-002.jpg", alt: "A removed cream-coloured plastic drain tray with black slime in its grooves, photographed before cleaning" },
   excerpt:
@@ -66,7 +66,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "February to April is the smoke-haze season. Smoke from burning carries soot and fine ash that build up in the coil and blower wheel, which is like stocking up food for mould. Then from July to October, the rainy season, the air is more humid, and the humid air passing over the coil condenses into more water than in other seasons. That completes the conditions mould needs.",
+      text: "February to April is the smoke-haze season. Smoke from burning carries soot and fine ash that build up in the coil and blower wheel, which is like stocking up food for mould. Then from July to October, the middle to late part of the rainy season when rain is heaviest, the air is more humid, and the humid air passing over the coil condenses into more water than in other seasons. That completes the conditions mould needs.",
     },
     {
       type: "p",
@@ -95,7 +95,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "There is another point that people often do not connect. During the smoke-haze season, the advice is to close the room and run the aircon to keep outside dust out, and the dust-free room guidance published by public health agencies also lists running a fan or air conditioner as one of the steps. But if that air conditioner has mould inside, what you get is a sealed room filled with spores instead of dust, which is no safer. Cleaning the aircon is therefore an essential condition for a dust-free room, not an optional extra.",
+      text: "There is another point that people often do not connect. During the smoke-haze season, the advice is to close the room and run the aircon to keep outside dust out, and the Department of Health's dust-free room guidance recommends choosing a room with an air conditioner because it can be sealed more tightly, and also lists cleaning the fan, the air conditioner and the air filters as one of the steps. But if that air conditioner has mould inside, what you get is a sealed room filled with spores instead of dust, which is no safer. Cleaning the aircon is therefore an essential condition for a dust-free room, not an optional extra.",
     },
 
     { type: "h2", text: "Why deodorising sprays and coil cleaner sprays do not work" },
@@ -193,9 +193,9 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "Every time before you switch the aircon off, change to fan mode for about 10–15 minutes to dry the moisture out of the coil. This really works and costs nothing.",
+        "Every time before you switch the aircon off, change to fan mode for at least 10–15 minutes, or longer if you can (Daikin's automatic mould-prevention function blows moisture out for about 1 hour), to dry the moisture out of the coil. This really works and costs nothing.",
         "Many models have a Clean or Self Clean button that does this automatically. Check your manual to see whether your model has it.",
-        "Wash the filters yourself every 2–4 weeks during the smoke-haze season, and always let them dry completely before putting them back, because a damp filter is a direct breeding ground.",
+        "Wash the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the smoke-haze season, and always let them dry completely before putting them back, because a damp filter is a direct breeding ground.",
         "Do not keep the temperature lower than you need all the time, because the lower the temperature, the more water condenses.",
         "If the room is left closed for several weeks, such as over a semester break or while you are away, run the aircon in fan mode once before going back to normal use.",
         "Have a thorough clean in May to June, to clear out the soot from the smoke-haze season before the rainy-season humidity arrives.",
@@ -223,6 +223,18 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If your aircon has started to smell musty, tell me whether the smell comes only when you first switch it on or all the time, and send a photo of the vents on LINE at @iu3333. This helps me tell whether a standard wash or a strip-down wash is the right choice.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "WHO guidelines for indoor air quality: dampness and mould", publisher: "World Health Organization (2009)", url: "https://www.who.int/publications/i/item/9789289041683", note: "Indoor dampness and mould are associated with respiratory symptoms, allergies and asthma" },
+        { title: "4-point dust-free room checklist (in Thai)", publisher: "Department of Health, Thailand (15 Feb 2025)", url: "https://anamai.moph.go.th/th/news-anamai/44024", note: "Recommends choosing a room with an air conditioner because it has fewer gaps and air leaks, and cleaning the fan, air conditioner and air filters" },
+        { title: "Department of Health advises schools and childcare centres to prepare dust-free rooms (in Thai)", publisher: "Department of Health, Thailand (24 Oct 2019)", url: "https://multimedia.anamai.moph.go.th/news/news241062/", note: "Clean the air conditioner front panel and filters every month, and have the air conditioner cleaned at least once every 6 months" },
+        { title: "Seasons of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "The rainy season runs from about mid-May to mid-October, with heavy, continuous rain from late July; the cool season runs from about mid-October to mid-February" },
+        { title: "Mould-reduction mode (MOLD PROOF) (in Thai)", publisher: "Siam Daikin Sales (online manual)", url: "https://web-manual.dit-daikin.com/ra/3P658678-12/th/mold/", note: "After cooling or dry mode is switched off, the unit automatically blows out moisture for about 1 hour" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
+      ],
     },
   ],
   faqs: [

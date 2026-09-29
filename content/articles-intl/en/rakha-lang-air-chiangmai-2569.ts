@@ -12,7 +12,7 @@ export const article: IntlArticle = {
   description:
     "Standard aircon cleaning prices for 2026 for wall-mounted, ceiling-suspended and 4-way cassette units. I set typical Chiang Mai market rates side by side with my own prices, openly, and show you how to check which steps a quote actually includes.",
   category: "Prices and costs",
-  updated: "2026-08-31",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-khwaen-003.jpg", alt: "Looking up into the air outlet of a ceiling-suspended aircon, with black dust clinging to the grille slats across the whole panel" },
   excerpt:
@@ -34,7 +34,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "info",
       title: "The market ranges used for comparison",
-      text: "The market price ranges in this table are the rates commonly advertised in Chiang Mai in 2026.",
+      text: "The market price ranges in this table come from my survey of the prices Chiang Mai shops advertised in 2026.",
     },
 
     { type: "h2", text: "What aircon cleaning costs in Chiang Mai today" },
@@ -99,7 +99,7 @@ export const article: IntlArticle = {
       type: "ol",
       items: [
         "A full-step clean involves removing more than the front cover and filters. If the scope is only washing the filters and spraying water over the face of the coil, it helps to know up front that this is a filter clean, not a clean of the whole unit.",
-        "Ask whether cleaning the outdoor condenser coil is included, because a clogged condenser coil is one of the leading causes of an aircon cutting out often and using more electricity.",
+        "Ask whether cleaning the outdoor condenser coil is included, because in the jobs I take, a clogged condenser coil is one of the leading causes of an aircon cutting out often and using more electricity.",
         "Ask whether cleaning the blower wheel and drain tray is included, because these are the two places where musty smells and mould build up.",
         "Ask whether a waterproof tarp is laid down to cover the area, so dirty water does not run down the walls or onto furniture.",
         "So before you agree, ask what the price includes, and which items might be charged extra on the day, such as refrigerant top-ups or parts.",
@@ -238,6 +238,12 @@ export const article: IntlArticle = {
         "For a clean priced under 400 THB, ask clearly whether it includes the blower wheel, drain tray and outdoor condenser coil, beyond the filters and the face of the coil.",
         "Before agreeing, ask three key questions: is the condenser coil included, is the blower wheel cleaned, and how many days is the warranty?",
         "For installation and relocation, always ask about extra charges for pipe, trunking and wall brackets before the day of the job.",
+      ],
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
       ],
     },
   ],

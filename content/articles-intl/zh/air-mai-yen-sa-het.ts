@@ -250,6 +250,8 @@ export const article: IntlArticle = {
       type: "sources",
       items: [
         { title: "CCDC 解析清迈 2026 年烟霾：热点增加 67%", publisher: "MGR Online，2026 年 4 月 6 日（泰文）", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "数据来自清迈大学气候变化数据中心（CCDC）：清迈府 2026 年 1 月 1 日至 4 月 4 日共 6,676 个热点，2025 年同期为 3,996 个" },
+        { title: "20° ΔT, A Lazy Rule of Thumb", publisher: "HVAC School（2019 年 4 月 5 日）", url: "https://www.hvacrschool.com/20-delta-t-a-lazy-rule-of-thumb/", note: "技师常用的进风与出风温差约为 18–22°F（约 10–12°C），视湿度而定" },
+        { title: "今年抗热，一起清洗空调降低电费（泰文）", publisher: "泰国国家电力局（EGAT）（2023 年 5 月 11 日）", url: "https://www.egat.co.th/home/20230511-art01/", note: "每 6 个月清洗一次空调，最多可节省 10% 电费" },
       ],
     },
   ],

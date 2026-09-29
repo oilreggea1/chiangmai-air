@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "滚筒和波轮洗衣机积垢位置不同，拆洗方法也不同。本文比较要拆的部位、所需时间、实际价格，以及请技师前该知道的局限。",
   category: "洗衣机",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-001.jpg",
@@ -43,7 +43,7 @@ export const article: IntlArticle = {
       type: "ul",
       items: [
         "波轮盘下方和转轴周围：波轮洗衣机污垢粘得最牢的地方。",
-        "内桶外壁：和洗衣槽清洁剂能接触到的是相反的一面。",
+        "内桶外壁：这是内外桶之间看不见的夹层，洗衣槽清洁剂能流过，但没有力量刷掉牢牢附着的污垢。",
         "桶口边缘和盖子下方：肉眼就能看到黑点状霉斑的地方。",
         "线屑过滤网：屋主可以自己定期拆下来清洗。",
       ],
@@ -119,6 +119,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "不确定家里的洗衣机是哪种机型，或是否到了该清洗的时候？可以把机器和门封胶圈凹槽的照片发到洗衣机清洗 LINE @794xvrnm。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports（2020 年 4 月）", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "霉菌积聚在洗衣内筒与外筒之间无法触及的夹层，以及门封胶圈的凹槽里" },
+      ],
     },
   ],
   faqs: [

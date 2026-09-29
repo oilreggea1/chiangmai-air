@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Advertised washing machine cleaning prices differ many times over. Each price means a different job; here are real prices and what to ask first.",
   category: "Prices and costs",
-  updated: "2026-09-24",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-bon-003.jpg",
@@ -63,7 +63,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "Most of the residue that makes laundry smell musty is on the outside of the inner drum, a side the water in a drum-clean programme never touches. That is why many households have poured in drum cleaner many times and the smell is still there.",
+      text: "Most of the residue that makes laundry smell musty is on the outside of the inner drum, a hidden, inaccessible gap between the drums. The water in a drum-clean programme flows past but has no scrubbing force to remove firmly stuck grime. That is why many households have poured in drum cleaner many times and the smell is still there.",
     },
     {
       type: "callout",
@@ -140,6 +140,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "Send me a photo of your machine and its capacity on LINE, and I will tell you the total before we book.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (Apr 2020)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "Mould builds up in the inaccessible gap between the wash drum and the outer tub, and in the folds of the door seal" },
+      ],
     },
   ],
   faqs: [

@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Moving an aircon is more than removal and refitting. The most skipped steps are refrigerant pump-down and vacuuming: what goes wrong, and real Chiang Mai costs.",
   category: "Aircon guides",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/yai-air-008.jpg", alt: "A technician's hand holding a gauge set connected to a refrigerant cylinder, with an outdoor unit fan behind" },
   excerpt:
@@ -25,7 +25,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "The problem is that the damage does not show straight away. The unit cools normally for the first week, then starts cooling less a few months later, or at worst the compressor fails within a year. So I want to explain which steps cannot be skipped, and why.",
+      text: "The problem is that the damage does not show straight away. The unit cools normally for the first week, then starts cooling less a few months later, or at worst the compressor fails, which in jobs I have come across can happen within a year. So I want to explain which steps cannot be skipped, and why.",
     },
 
     { type: "h2", text: "The first step that must be done properly: pumping the refrigerant back into the unit" },
@@ -117,6 +117,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you are about to move house or change where your aircon goes, send the BTU size, the number of units, and photos of the old and new locations to our aircon LINE account @iu3333, so the pipe length and materials can be assessed before booking.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Refrigerant Oil Basics", publisher: "HVAC School (27 Jul 2022)", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "The mineral oil in R22 systems does not mix with HFC refrigerants, and POE oil breaks down into acid when moisture is present" },
+      ],
     },
   ],
   faqs: [

@@ -51,7 +51,7 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "滤网堵塞：第一道防线，也最快堵。屋主可以自己拆下清洗，灰尘多的时期每 2–4 周洗一次。",
+        "滤网堵塞：第一道防线，也最快堵。屋主可以自己拆下清洗，按厂家建议每 2 周洗一次，灰尘多的时期最迟不超过 4 周。",
         "穿过滤网的灰尘堵住盘管翅片：这部分要请技师清洗，自己冲洗容易把翅片冲歪，还可能让水进到电路板。",
         "贯流风轮积垢导致吸风量减少：一般冲洗很难洗到，需要把风轮拆下来清洗。",
         "在原滤网上再加贴细密滤网或 HEPA 滤网，即使机器本身很干净，增加的风阻也可能让盘管结冰。",
@@ -159,7 +159,7 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "烧芭季节每 2–4 周、平时每 1–2 个月自己清洗一次滤网，不用请技师。",
+        "按厂家建议每 2 周自己清洗一次滤网，烧芭季节最迟不超过 4 周，平时按泰国卫生厅建议至少每月一次，不用请技师。",
         "按周期做全面清洗。标准周期是每 6 个月一次，清迈家庭要经历烧芭季节，应该洗得更勤。",
         "按泰国地方电力局（PEA）建议设在 26–27 度，用电风扇辅助，而不是把温度调得很低。",
         "不要未经询问技师就在原滤网上加贴细密滤网，家用空调并非设计来推动那么大的风阻。",
@@ -188,6 +188,11 @@ export const article: IntlArticle = {
       items: [
         { title: "空调开 26° 加风扇，真的省电吗", publisher: "泰国地方电力局（PEA），2026 年 4 月 16 日（泰文）", url: "https://www.pea.co.th/news/infographic/1836", note: "建议设定 26–27°C 并同时开风扇" },
         { title: "怎样用空调最省电", publisher: "泰国国家电力局（EGAT）（泰文）", url: "https://www.egat.co.th/home/20220819-art01/", note: "建议 26–27 度并配合风扇，比设 23–24 度省电约 10%" },
+        { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
+        { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
+        { title: "泰国卫生厅建议学校和幼儿中心准备无尘房（泰文）", publisher: "泰国卫生厅（2019 年 10 月 24 日）", url: "https://multimedia.anamai.moph.go.th/news/news241062/", note: "每月清洁空调面板和滤网，并至少每 6 个月清洗一次空调" },
+        { title: "泰国的季节（泰文）", publisher: "泰国气象厅", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "雨季约为 5 月中旬至 10 月中旬，7 月下旬起持续多雨；凉季约为 10 月中旬至 2 月中旬" },
+        { title: "今年抗热，一起清洗空调降低电费（泰文）", publisher: "泰国国家电力局（EGAT）（2023 年 5 月 11 日）", url: "https://www.egat.co.th/home/20230511-art01/", note: "每 6 个月清洗一次空调，最多可节省 10% 电费" },
       ],
     },
   ],
@@ -210,7 +215,7 @@ export const article: IntlArticle = {
     },
     {
       q: "经历烧芭季节却没有洗空调的家庭，风险大吗？",
-      a: "明显比平常高。燃烧产生的烟灰粘在盘管翅片上，积累得比普通灰尘快。在我接的工作里，盘管结冰多出现在四月底到五月。我建议在季节开始前的一月做一次全面清洗，季节期间每 2–4 周自己洗一次滤网。",
+      a: "明显比平常高。燃烧产生的烟灰粘在盘管翅片上，积累得比普通灰尘快。在我接的工作里，盘管结冰多出现在四月底到五月。我建议在季节开始前的一月做一次全面清洗，季节期间按厂家建议每 2 周自己洗一次滤网，最迟不超过 4 周。",
     },
   ],
 };

@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Water dripping from an aircon onto the floor or furniture: every cause from a blocked drain line and a frozen coil to a unit mounted off level and worn pipe insulation, with checks you can do yourself and how to prevent it.",
   category: "Aircon problems",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/air-2569-13.jpg", alt: "A technician's gloved hand holding an aircon drain pipe with sludge blocking the inside" },
   excerpt:
@@ -152,7 +152,7 @@ export const article: IntlArticle = {
       type: "ol",
       items: [
         "Have the aircon cleaned on schedule rather than waiting for symptoms. A clean covers the coil, the drain tray and the drain line all at once.",
-        "Wash the filters yourself every 2–4 weeks during the burning season, to cut down the dust that falls into the tray and line as sludge.",
+        "Wash the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the burning season, to cut down the dust that falls into the tray and line as sludge.",
         "Check the end of the drain line once a year to make sure it is clear of water and nothing is blocking it. The start of the rainy season is a good time.",
         "If the line has blocked several times in a short period, have a technician check its slope; it may be an installation problem that needs a structural fix.",
         "If there is a musty smell as well as dripping, go for a full strip-down clean, because it means mould has reached the blower wheel and the drain tray.",
@@ -177,6 +177,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If your aircon is dripping right now, send a photo of where the water is coming from on LINE. I will give you a first assessment of whether it is likely a blocked drain line or a frozen coil, and check for an open slot in your area.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Seasons of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "The rainy season runs from about mid-May to mid-October, with heavy, continuous rain from late July; the cool season runs from about mid-October to mid-February" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
+      ],
     },
   ],
   faqs: [

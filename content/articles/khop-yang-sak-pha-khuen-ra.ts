@@ -8,7 +8,7 @@ export const article: Article = {
   description:
     "จุดดำบนขอบยางประตูเครื่องฝาหน้าเป็นปัญหาที่พบบ่อยที่สุดของเครื่องประเภทนี้ บทความนี้อธิบายว่าเกิดจากอะไร ลบเองได้เพียงใด และเมื่อใดที่ลบไม่ออกแล้ว",
   category: "เครื่องซักผ้า",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-001.jpg",
@@ -46,7 +46,7 @@ export const article: Article = {
       type: "callout",
       tone: "info",
       title: "กลิ่นอับกับจุดดำเป็นเรื่องเดียวกัน",
-      text: "กลิ่นที่ติดมากับผ้าคือสารระเหยที่เชื้อราและแบคทีเรียปล่อยออกมาระหว่างเติบโต ดังนั้นหากพบจุดดำที่ขอบยางพร้อมกับกลิ่นอับที่ผ้า ทั้งสองอาการมาจากต้นเหตุเดียวกัน และการแก้เฉพาะกลิ่นด้วยน้ำหอมหรือน้ำยาปรับผ้านุ่มจะไม่ได้ผล",
+      text: "กลิ่นที่ติดมากับผ้าคือสารระเหยที่จุลินทรีย์ในเครื่อง โดยเฉพาะแบคทีเรีย ปล่อยออกมาระหว่างเติบโต ดังนั้นหากพบจุดดำที่ขอบยางพร้อมกับกลิ่นอับที่ผ้า ทั้งสองอาการมาจากต้นเหตุเดียวกัน และการแก้เฉพาะกลิ่นด้วยน้ำหอมหรือน้ำยาปรับผ้านุ่มจะไม่ได้ผล",
     },
 
     { type: "h2", text: "เช็ดเองได้ ทำอย่างไรให้ถูกวิธี" },
@@ -117,7 +117,7 @@ export const article: Article = {
       type: "ul",
       items: [
         "ถังชั้นนอกที่กักน้ำ โดยเฉพาะรอบฮีตเตอร์ที่ก้นถัง ซึ่งเป็นจุดที่ตะกรันจับหนาที่สุด",
-        "ผิวด้านนอกของถังสเตนเลสชั้นใน ซึ่งอยู่คนละฝั่งกับที่น้ำยาล้างถังสัมผัส",
+        "ผิวด้านนอกของถังสเตนเลสชั้นใน ซึ่งเป็นช่องระหว่างถังที่มองไม่เห็น น้ำยาล้างถังไหลผ่านได้แต่ไม่มีแรงขัดคราบที่เกาะแน่นออก",
         "ตัวกรองปั๊มน้ำทิ้งที่มุมล่างด้านหน้า จุดนี้เปิดเองได้ ควรตรวจก่อนเสมอ",
         "ท่อและสายน้ำทิ้ง ที่คราบเหนียวอุดอยู่ภายในทำให้เกิดกลิ่นย้อนกลับ",
       ],
@@ -135,8 +135,8 @@ export const article: Article = {
         "เช็ดร่องขอบยางด้วยผ้าแห้งสัปดาห์ละครั้ง ใช้เวลาไม่ถึงนาที",
         "เอาผ้าออกจากเครื่องทันทีที่ซักจบ ไม่ทิ้งไว้ข้ามคืน",
         "ใช้ผงซักฟอกตามปริมาณที่ระบุ ส่วนที่ละลายไม่หมดจะไปตกค้างในร่องยางเป็นอาหารของเชื้อรา",
-        "เดินรอบทำความสะอาดถังตามคู่มือเครื่องเดือนละครั้ง",
-        "ล้างตัวกรองปั๊มน้ำทิ้งที่มุมล่างด้านหน้าทุกหนึ่งถึงสองเดือน",
+        "เดินรอบทำความสะอาดถังตามคู่มือเครื่อง ประมาณเดือนละครั้ง (บางยี่ห้อ เช่น Samsung เตือนทุก 40 รอบซัก)",
+        "ล้างตัวกรองปั๊มน้ำทิ้งที่มุมล่างด้านหน้าอย่างน้อยเดือนละครั้งตามคำแนะนำของผู้ผลิต",
       ],
     },
     {
@@ -148,6 +148,18 @@ export const article: Article = {
     {
       type: "cta",
       text: "เช็ดแล้วไม่แน่ใจว่าที่เหลือคือคราบหรือเชื้อราที่ฝังแล้ว ถ่ายภาพร่องขอบยางส่งเข้ามาทาง LINE ได้ครับ ผมดูให้ก่อนและแจ้งตามที่เห็นจริงว่าล้างแล้วจะดีขึ้นเพียงใด ติดต่อ 065-365-7673 หรือ LINE @794xvrnm",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (เม.ย. 2563)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "ราสะสมในช่องระหว่างถังซักกับถังชั้นนอกที่เข้าถึงไม่ได้ และในร่องขอบยางประตู" },
+        { title: "Microbial Colonization, Biofilm Formation, and Malodour of Washing Machine Surfaces and Fabrics", publisher: "Antibiotics (MDPI) 2567", url: "https://doi.org/10.3390/antibiotics13121227", note: "ไบโอฟิล์มในเครื่องซักผ้าทำให้เกิดกลิ่นอับ และจุลินทรีย์สร้างสารระเหยได้" },
+        { title: "Moraxella species are primarily responsible for generating malodor in laundry", publisher: "Applied and Environmental Microbiology (2555)", url: "https://pubmed.ncbi.nlm.nih.gov/22367080/", note: "กลิ่นอับในผ้าที่ซักแล้วเกิดจากสารที่แบคทีเรียกลุ่ม Moraxella สร้างขึ้นเป็นหลัก" },
+        { title: "How do we clean the door seal of front loading washing machine", publisher: "Samsung", url: "https://www.samsung.com/levant/support/home-appliances/how-to-clean-the-door-seal-bellow-of-front-loading-washing-machine/", note: "แนะนำเปิดประตูทิ้งไว้ให้ภายในเครื่องแห้ง" },
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics (สหรัฐฯ)", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "แนะนำเดินโปรแกรม Tub Clean เดือนละครั้ง และเปิดประตูทิ้งไว้ให้แห้ง" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "เครื่องเตือนให้ล้างถังทุก 40 รอบซัก และระบุว่าไม่ต้องใส่สารทำความสะอาดในรอบนี้" },
+        { title: "LG Front Load Washer Maintenance", publisher: "LG Electronics (สหรัฐฯ)", url: "https://www.lg.com/us/support/help-library/lg-front-load-washer-maintenance-CT00000305-1400786418920", note: "ควรล้างตัวกรองปั๊มน้ำทิ้งอย่างน้อยเดือนละครั้ง และน้ำยาฟอกขาวเข้มข้นทำให้ขอบยางเสื่อม" },
+      ],
     },
   ],
   faqs: [

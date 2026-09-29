@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "空调滴水的原因与解决方法：从我最常遇到的排水管堵塞说起",
   description: "空调往地板或家具上滴水：从排水管堵塞、盘管结冰、机身安装不水平到铜管保温层老化的所有原因，附自己可以先做的检查和预防方法。",
   category: "空调故障",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/air-2569-13.jpg", alt: "技师戴手套拿着内部被污泥堵塞的空调排水管" },
   excerpt: "空调滴水不能忽视。水会渗进天花板、让墙壁发霉，在老木屋里还可能让木材永久膨胀变形。找到原因对症处理，比拿桶接水有效得多。",
@@ -150,7 +150,7 @@ export const article: IntlArticle = {
       type: "ol",
       items: [
         "按周期清洗空调，不要等出了问题才洗。一次清洗就能同时清洁盘管、接水盘和排水管。",
-        "烧芭季节每 2–4 周自己清洗一次滤网，减少掉进接水盘和排水管变成污泥的灰尘。",
+        "按厂家建议每 2 周自己清洗一次滤网，烧芭季节最迟不超过 4 周，减少掉进接水盘和排水管变成污泥的灰尘。",
         "每年检查一次排水管末端，确认没有泡在水里、没有被堵住。雨季开始时是合适的时间。",
         "如果短时间内堵了好几次，请技师检查管道坡度，可能是安装问题，需要从结构上修正。",
         "如果滴水同时有霉味，应该做一次全面拆洗，因为这说明霉菌已经长到风轮和接水盘了。",
@@ -175,6 +175,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "如果您的空调正在滴水，请用 LINE 发一张出水位置的照片给我。我会先帮您初步判断是排水管堵塞还是盘管结冰，并查看您所在区域的空档时间。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "泰国的季节（泰文）", publisher: "泰国气象厅", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "雨季约为 5 月中旬至 10 月中旬，7 月下旬起持续多雨；凉季约为 10 月中旬至 2 月中旬" },
+        { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
+        { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
+      ],
     },
   ],
   faqs: [

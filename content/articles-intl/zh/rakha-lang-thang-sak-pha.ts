@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "广告上的洗衣机洗桶价格相差好几倍。本文说明不同价格对应的是不同工作，并列出实际收费和谈价前该问的问题。",
   category: "价格与费用",
-  updated: "2026-09-24",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-bon-003.jpg",
@@ -55,7 +55,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "让衣服产生霉味的污垢，大部分在内桶外壁上，洗桶程序里的水根本碰不到那一面。这就是为什么很多家庭倒了好几次洗衣槽清洁剂，味道还是去不掉。",
+      text: "让衣服产生霉味的污垢，大部分在内桶外壁上，那是内外桶之间看不见、也够不到的夹层，洗桶程序里的水能流过，但没有力量刷掉牢牢附着的污垢。这就是为什么很多家庭倒了好几次洗衣槽清洁剂，味道还是去不掉。",
     },
     {
       type: "callout",
@@ -132,6 +132,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "通过 LINE 发来洗衣机照片并告知容量，我会在预约前告诉您总价。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports（2020 年 4 月）", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "霉菌积聚在洗衣内筒与外筒之间无法触及的夹层，以及门封胶圈的凹槽里" },
+      ],
     },
   ],
   faqs: [

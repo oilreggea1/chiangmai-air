@@ -8,7 +8,7 @@ export const article: Article = {
   description:
     "แอร์ร้านอาหารและคาเฟ่รับไอมัน ไอนม และฝุ่นตลอดวัน จึงอุดตันเร็วกว่าแอร์บ้านมาก รอบล้างที่เหมาะสม ราคาแอร์แขวนและ 4 ทิศทาง และการจัดคิวไม่ให้กระทบการขาย",
   category: "ดูแลรักษา",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/lang-air-fang-fa-003.jpg", alt: "ช่างยืนบนเก้าอี้ถอดแผงหน้ากากแอร์ฝังฝ้าในห้องเพดานสูง มีผ้าใบปูรองด้านล่าง" },
   excerpt:
@@ -122,6 +122,13 @@ export const article: Article = {
     {
       type: "cta",
       text: "หากต้องการประเมินรอบล้างและค่าใช้จ่ายทั้งร้าน ส่งจำนวนเครื่อง ประเภทเครื่อง และช่วงเวลาที่ร้านสะดวกเข้ามาทาง LINE งานแอร์ @iu3333 ได้ครับ",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Smoke Shrouds Northern Thailand", publisher: "NASA Earth Observatory (23 เม.ย. 2569)", url: "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/", note: "ไฟในภาคเหนือเพิ่มขึ้นช่วงกุมภาพันธ์ถึงเมษายน และภูเขาทำให้เกิดอุณหภูมิผกผันที่กักหมอกควัน" },
+        { title: "ภูมิอากาศของประเทศไทย", publisher: "กรมอุตุนิยมวิทยา", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "เดือนเมษายนเป็นเดือนที่มีอากาศร้อนจัดที่สุดในรอบปี" },
+      ],
     },
   ],
   faqs: [

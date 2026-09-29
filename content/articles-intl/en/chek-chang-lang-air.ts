@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "An aircon clean is hard to judge, because the dirt sits deep inside the unit where you cannot see it. Here are 7 things you can check yourself to tell a thorough clean from a quick spray-over.",
   category: "Aircon guides",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thammada-002.jpg", alt: "A technician on a stepladder opening the cover of an aircon mounted above a window, starting to take parts off for cleaning" },
   excerpt:
@@ -211,6 +211,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "When I come to work in your home, you are welcome to watch every step and ask about anything. If the refrigerant is checked, I show you the readings before we consider whether a top-up is needed at all.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
+      ],
     },
   ],
   faqs: [

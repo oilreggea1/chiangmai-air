@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     `Before ordering an aircon on Shopee, Lazada or TikTok in a sale, check BTU size, refrigerant, box contents and warranty, and book installation at ${p.install.small} THB.`,
   category: "Aircon guides",
-  updated: "2026-08-30",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/tid-tang-air-003.jpg",
@@ -32,7 +32,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "1. Check the BTU size suits the actual room, not just the lowest price" },
     {
       type: "p",
-      text: "The most heavily discounted models in a sale are often 9,000 BTU units, which only suit rooms of about 12 square metres or less. Put one in a bigger room and it works hard all the time, costs more to run than it should and has a shorter life. A simple way to work it out is to multiply the room area in square metres by 750, then choose the nearest unit size above the result. If you are still unsure, send the link to the model you are interested in, with the room size and which way the room faces the sun, on LINE. I will look it over before you order, free of charge.",
+      text: "The most heavily discounted models in a sale are often 9,000 BTU units, which EGAT says suit a normal room of about 12–15 square metres, or 11–14 square metres if the room gets direct sun. Put one in a bigger room and it works hard all the time, costs more to run than it should and has a shorter life. A simple way to work it out is to multiply the room area in square metres by 700 for an ordinary room, or 800 if the room gets direct sun (750 works as a middle value), then choose the nearest unit size above the result. If you are still unsure, send the link to the model you are interested in, with the room size and which way the room faces the sun, on LINE. I will look it over before you order, free of charge.",
     },
     { type: "h2", text: "2. Choose R32 refrigerant, today's standard" },
     {
@@ -72,6 +72,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: `Whether you have already bought the unit or are about to order, send me the model, your area and the expected delivery date. Installation for ${btu.installSmall} BTU is ${p.install.small} THB per point, including the bracket, piping up to 4 metres and the pipe cover.`,
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to choose an air conditioner that saves electricity and money (in Thai)", publisher: "Electricity Generating Authority of Thailand (16 Aug 2022)", url: "https://www.egat.co.th/home/save-energy-for-all-20220716/", note: "9,000 BTU suits a normal room of 12–15 sq m or a sunny room of 11–14 sq m; 12,000 BTU suits 16–20 sq m" },
+        { title: "How to work out room area in square metres to match aircon BTU (in Thai)", publisher: "Carrier Thailand (2 Mar 2023)", url: "https://carrierthailand.com/carrier-article/how-to-calculate-btu/", note: "Bedrooms: multiply by 700 (800 if the room gets sun); offices or living rooms: multiply by 800 (900 if the room gets sun)" },
+      ],
     },
   ],
   faqs: [

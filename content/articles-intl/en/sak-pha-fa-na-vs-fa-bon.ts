@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Front and top loaders build up residue in different places and are stripped down differently. Compare parts removed, time, prices and limits.",
   category: "Washing machines",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-001.jpg",
@@ -43,7 +43,7 @@ export const article: IntlArticle = {
       type: "ul",
       items: [
         "Under the wash plate and around the drive shaft: the spot where residue sticks hardest in a top loader.",
-        "The outside of the inner drum, which is on the opposite side from where drum cleaner can make contact.",
+        "The outside of the inner drum, a hidden gap between the drums where drum cleaner flows past but has no scrubbing force to remove firmly stuck grime.",
         "The rim of the drum opening and under the lid, where mould can be seen with the naked eye as black spots.",
         "The lint filter, which homeowners can remove and clean themselves regularly.",
       ],
@@ -119,6 +119,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "Not sure which type your machine is, or whether it is due for a clean? Send photos of the machine and the door seal groove to our washing machine cleaning LINE @794xvrnm.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (Apr 2020)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "Mould builds up in the inaccessible gap between the wash drum and the outer tub, and in the folds of the door seal" },
+      ],
     },
   ],
   faqs: [

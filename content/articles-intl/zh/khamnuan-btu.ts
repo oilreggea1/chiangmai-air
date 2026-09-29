@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "计算与房间匹配的空调 BTU：公式、面积对照表，以及我建议在清迈多留余量的房间类型",
   description: "卧室和客厅的 BTU 计算公式、房间面积对照表，以及清迈住宅需要加大的情况，例如西晒房间和顶层房间。",
   category: "空调知识",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/tid-tang-air-005.jpg", alt: "技师把固定墙面的钢板举到墙上比对，确定室内机的安装位置" },
   excerpt: "BTU 选错不只影响凉不凉，因为空调过大和过小造成的问题完全不同。我一步步带您计算，并说明清迈哪些类型的房间应该加大容量。",
@@ -129,7 +129,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "这种\"房间凉但身上黏\"的情况，在清迈七月到十月的雨季特别明显，因为那时空气本来就很潮湿。如果空调过大又总是提前停机，湿气就会一直留在房间里，住得很不舒服。根据我接的工作，屋主常以为是机器功率不够，于是把温度调得更低，结果多花了电费，却没有解决根本问题。",
+      text: "这种\"房间凉但身上黏\"的情况，在清迈七月到十月特别明显，因为那是雨季里雨水最多的时候，空气本来就很潮湿。如果空调过大又总是提前停机，湿气就会一直留在房间里，住得很不舒服。根据我接的工作，屋主常以为是机器功率不够，于是把温度调得更低，结果多花了电费，却没有解决根本问题。",
     },
 
     { type: "h2", text: "选得太小：问题更明显，损失也不小" },
@@ -195,6 +195,16 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "如果不确定您的房间该用多少 BTU，可以通过 LINE 把房间面积、晒太阳的方向和房间照片发给我。我会免费帮您评估，并根据实际现场情况给出建议。不需要加大尺寸的房间，我也会如实告诉您。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "房间平方米数怎么算才配得上空调 BTU（泰文）", publisher: "Carrier Thailand（2023 年 3 月 2 日）", url: "https://carrierthailand.com/carrier-article/how-to-calculate-btu/", note: "卧室乘以 700（晒太阳的乘以 800），书房或客厅乘以 800（晒太阳的乘以 900）" },
+        { title: "Room Air Conditioners", publisher: "ENERGY STAR（美国）", url: "https://www.energystar.gov/products/room_air_conditioners", note: "超过两人时每多一人加 600 BTU；机器过大会在除湿之前就停机，使房间潮湿黏腻" },
+        { title: "怎样选空调既省电又省钱（泰文）", publisher: "泰国国家电力局（EGAT）（2022 年 8 月 16 日）", url: "https://www.egat.co.th/home/save-energy-for-all-20220716/", note: "9,000 BTU 适合 12–15 平方米的一般房间，或 11–14 平方米的晒太阳房间；12,000 BTU 适合 16–20 平方米" },
+        { title: "2024 年 4 月 29 日北部 PM2.5 情况总结（泰文）", publisher: "泰国污染控制厅第一区环境办公室", url: "https://epo01.pcd.go.th/th/news/detail/174424", note: "北部最高气温达 40–44 摄氏度" },
+        { title: "泰国的季节（泰文）", publisher: "泰国气象厅", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "雨季约为 5 月中旬至 10 月中旬，7 月下旬起持续多雨；凉季约为 10 月中旬至 2 月中旬" },
+      ],
     },
   ],
   faqs: [

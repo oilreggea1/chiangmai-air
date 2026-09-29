@@ -46,7 +46,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "Why the middle figure does not work for Chiang Mai" },
     {
       type: "p",
-      text: "Chiang Mai sits in a basin surrounded by mountains. In the dry season, cooler air above presses down on the air below, so smoke from burning cannot escape and stays trapped over the city for weeks at a time. Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. In practice this means the amount of soot and dust passing through the aircon filter in your home each day is clearly higher than in other seasons.",
+      text: "Chiang Mai sits in a basin surrounded by mountains. In the dry season, a layer of warm air above traps the cooler air near the ground (a temperature inversion), so smoke from burning cannot escape and stays trapped over the city for weeks at a time. Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. In practice this means the amount of soot and dust passing through the aircon filter in your home each day is clearly higher than in other seasons.",
     },
     {
       type: "p",
@@ -120,7 +120,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "Between cleans, you can and should wash the filters yourself" },
     {
       type: "p",
-      text: "A thorough clean by a technician twice a year does not mean you cannot look after the unit yourself for the six months in between. The filter is the system's first line of defence, and it is the only part the manufacturer designed for the homeowner to remove and wash. Especially from February to April, when dust levels are high, washing the filters yourself every 2–4 weeks helps keep the unit in good condition. It takes less than ten minutes, and you can do it without calling a technician.",
+      text: "A thorough clean by a technician twice a year does not mean you cannot look after the unit yourself for the six months in between. The filter is the system's first line of defence, and it is the only part the manufacturer designed for the homeowner to remove and wash. Especially from February to April, when dust levels are high, washing the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks helps keep the unit in good condition. It takes less than ten minutes, and you can do it without calling a technician.",
     },
     {
       type: "steps",
@@ -166,7 +166,7 @@ export const article: IntlArticle = {
         "For typical homes in Chiang Mai, twice a year, before and after the smoke-haze season, is the most suitable interval.",
         "Restaurants, cafés and homes with pets should move to every 3–4 months.",
         "Signs you can notice yourself, such as weaker airflow, a musty smell or a higher bill, matter more than counting months.",
-        "Washing the filters yourself every 2–4 weeks during the smoke-haze season helps keep the unit in good condition at no cost.",
+        "Washing the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the smoke-haze season helps keep the unit in good condition at no cost.",
         "Booking your thorough clean from January helps you avoid a long wait in April.",
       ],
     },
@@ -178,6 +178,11 @@ export const article: IntlArticle = {
       type: "sources",
       items: [
         { title: "CCDC on Chiang Mai's 2026 smoke season: hotspots up 67%", publisher: "MGR Online, 6 Apr 2026 (in Thai)", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "Data from Chiang Mai University's Climate Change Data Center (CCDC): Chiang Mai province, 1 Jan to 4 Apr 2026 = 6,676 hotspots, against 3,996 in the same period of 2025" },
+        { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
+        { title: "The northern smoke and forest-fire crisis must be raised to a national disaster (in Thai)", publisher: "Thai PBS Policy Watch (1 Apr 2026)", url: "https://policywatch.thaipbs.or.th/article/environment-179", note: "A Chiang Mai University academic explains that dust builds up in the basin because the air is trapped and does not circulate" },
+        { title: "The 'lid over the city' is caused by a temperature inversion (in Thai)", publisher: "Thai PBS NOW (23 Jan 2025)", url: "https://www.thaipbs.or.th/now/content/2217", note: "A layer of warm air sits above cooler air near the ground, so dust cannot rise" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
       ],
     },
   ],

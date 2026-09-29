@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Restaurant and café aircons take in grease, milk vapour and dust all day. Here are suitable cleaning intervals, ceiling and cassette prices, and scheduling.",
   category: "Aircon guides",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: {
     src: "/work/lang-air-fang-fa-003.jpg",
@@ -128,6 +128,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you would like an assessment of cleaning intervals and costs for the whole shop, send the number of units, the unit types and the times that suit your shop to our aircon LINE @iu3333.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Smoke Shrouds Northern Thailand", publisher: "NASA Earth Observatory (23 Apr 2026)", url: "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/", note: "Fires in the North increase from February to April, and the mountains create temperature inversions that trap the smoke haze" },
+        { title: "Climate of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "April is the hottest month of the year" },
+      ],
     },
   ],
   faqs: [

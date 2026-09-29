@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "如何判断技师清洗空调是否按步骤做全，还是只隔着面板冲一冲：7个值得留意的地方",
   description: "空调清洗的效果很难检查，因为脏污藏在机器深处，从外面看不到。这里整理了7个您自己就能观察的要点，判断清洗是按步骤做全，还是只是随便冲一冲。",
   category: "空调知识",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thammada-002.jpg", alt: "技师站在梯子上打开装在窗户上方的空调面板，开始拆下零件清洗" },
   excerpt: "空调清洗很难用肉眼判断效果，因为真正脏的地方在机器深处。所以我整理了7个检查要点，让您可以自己评估清洗质量。",
@@ -206,6 +206,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "我到您家施工时，您可以在旁边看每一个步骤，任何地方都可以问。如果需要检测冷媒，我会先把测量结果给您看，再考虑是否真的需要加。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "今年抗热，一起清洗空调降低电费（泰文）", publisher: "泰国国家电力局（EGAT）（2023 年 5 月 11 日）", url: "https://www.egat.co.th/home/20230511-art01/", note: "每 6 个月清洗一次空调，最多可节省 10% 电费" },
+      ],
     },
   ],
   faqs: [

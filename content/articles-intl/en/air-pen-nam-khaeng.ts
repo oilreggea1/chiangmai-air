@@ -53,7 +53,7 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "A blocked air filter: the first line of defence and the fastest to clog. You can take it out and wash it yourself every 2–4 weeks when it is dusty.",
+        "A blocked air filter: the first line of defence and the fastest to clog. You can take it out and wash it yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks when it is dusty.",
         "Coil fins clogged by dust that gets past the filter: this needs a technician, because washing it yourself risks bending the fins and getting water into the control board.",
         "Build-up on the blower wheel that reduces how much air it moves: a spray-through clean usually cannot reach it, so the wheel has to come out to be washed.",
         "Adding a fine or HEPA filter on top of the original filter can add enough resistance to freeze the coil, even when the unit itself is clean.",
@@ -161,7 +161,7 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "Wash the filters yourself every 2–4 weeks in the burning season and every 1–2 months the rest of the year. You do not need a technician for this.",
+        "Wash the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks in the burning season, and at least once a month the rest of the year, as Thailand's Department of Health recommends. You do not need a technician for this.",
         "Have a full clean on schedule. The standard is every 6 months, and homes in Chiang Mai that go through the burning season should clean more often.",
         "Set 26–27 degrees as the Provincial Electricity Authority (PEA) recommends, and use a fan rather than a very low temperature.",
         "Do not put a fine filter on top of the original without asking a technician first; home units are not designed to push air through that much resistance.",
@@ -190,6 +190,11 @@ export const article: IntlArticle = {
       items: [
         { title: "Aircon at 26° plus a fan: does it really save power?", publisher: "Provincial Electricity Authority (PEA), 16 Apr 2026 (in Thai)", url: "https://www.pea.co.th/news/infographic/1836", note: "Recommends setting 26–27°C together with a fan" },
         { title: "Which way of using an aircon saves the most power", publisher: "Electricity Generating Authority of Thailand (EGAT) (in Thai)", url: "https://www.egat.co.th/home/20220819-art01/", note: "Recommends 26–27 degrees with a fan, saving about 10% compared with 23–24 degrees" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
+        { title: "Department of Health advises schools and childcare centres to prepare dust-free rooms (in Thai)", publisher: "Department of Health, Thailand (24 Oct 2019)", url: "https://multimedia.anamai.moph.go.th/news/news241062/", note: "Clean the air conditioner front panel and filters every month, and have the air conditioner cleaned at least once every 6 months" },
+        { title: "Seasons of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "The rainy season runs from about mid-May to mid-October, with heavy, continuous rain from late July; the cool season runs from about mid-October to mid-February" },
+        { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
       ],
     },
   ],
@@ -212,7 +217,7 @@ export const article: IntlArticle = {
     },
     {
       q: "Is there much risk for homes that went through the burning season without an aircon clean?",
-      a: "Clearly more than usual. Soot and ash from the burning stick to coil fins and build up faster than ordinary dust. In my jobs, iced coils tend to appear from late April into May. What I recommend is a full clean before the season, in January, and washing the filters yourself every 2–4 weeks during it.",
+      a: "Clearly more than usual. Soot and ash from the burning stick to coil fins and build up faster than ordinary dust. In my jobs, iced coils tend to appear from late April into May. What I recommend is a full clean before the season, in January, and washing the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during it.",
     },
   ],
 };

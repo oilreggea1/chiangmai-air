@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "The BTU formula for bedrooms and living rooms, a room size chart, and Chiang Mai conditions that call for more, such as afternoon sun or a top-floor room.",
   category: "Aircon guides",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/tid-tang-air-005.jpg", alt: "A technician holding a steel wall mounting plate up against the wall to mark where the indoor unit will go" },
   excerpt:
@@ -134,7 +134,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "This cool-but-sticky feeling is especially noticeable in Chiang Mai during the rainy season from July to October, when the air is already very humid. If the aircon is oversized and keeps cutting out early, the moisture stays in the room until it becomes uncomfortable to use. In the jobs I take, homeowners often assume the unit is not powerful enough and turn the temperature down further, which costs more in electricity without fixing the root cause.",
+      text: "This cool-but-sticky feeling is especially noticeable in Chiang Mai from July to October, the heaviest-rain part of the rainy season, when the air is already very humid. If the aircon is oversized and keeps cutting out early, the moisture stays in the room until it becomes uncomfortable to use. In the jobs I take, homeowners often assume the unit is not powerful enough and turn the temperature down further, which costs more in electricity without fixing the root cause.",
     },
 
     { type: "h2", text: "Choosing too small: more obvious, but just as damaging" },
@@ -200,6 +200,16 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you are not sure how many BTU your room needs, send me the room size, which direction gets the sun, and photos of the room on LINE. I will assess it free of charge and advise based on the actual conditions. If a room does not need to be sized up, I will tell you so.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to work out room area in square metres to match aircon BTU (in Thai)", publisher: "Carrier Thailand (2 Mar 2023)", url: "https://carrierthailand.com/carrier-article/how-to-calculate-btu/", note: "Bedrooms: multiply by 700 (800 if the room gets sun); offices or living rooms: multiply by 800 (900 if the room gets sun)" },
+        { title: "Room Air Conditioners", publisher: "ENERGY STAR (U.S.)", url: "https://www.energystar.gov/products/room_air_conditioners", note: "Add 600 BTU for each person beyond two; an oversized unit cycles off before it removes the humidity, leaving the room damp and clammy" },
+        { title: "How to choose an air conditioner that saves electricity and money (in Thai)", publisher: "Electricity Generating Authority of Thailand (16 Aug 2022)", url: "https://www.egat.co.th/home/save-energy-for-all-20220716/", note: "9,000 BTU suits a normal room of 12–15 sq m or a sunny room of 11–14 sq m; 12,000 BTU suits 16–20 sq m" },
+        { title: "Northern Thailand PM2.5 situation summary, 29 Apr 2024 (in Thai)", publisher: "Regional Environment Office 1, Pollution Control Department", url: "https://epo01.pcd.go.th/th/news/detail/174424", note: "Maximum temperatures in the North reached 40–44°C" },
+        { title: "Seasons of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://tmd.go.th/info/ฤดูกาลของประเทศไทย", note: "The rainy season runs from about mid-May to mid-October, with heavy, continuous rain from late July; the cool season runs from about mid-October to mid-February" },
+      ],
     },
   ],
   faqs: [

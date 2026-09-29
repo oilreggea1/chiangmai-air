@@ -38,7 +38,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "为什么清迈不能用中间值" },
     {
       type: "p",
-      text: "清迈位于群山环绕的盆地里。到了旱季，上层较冷的空气把下层空气压住，焚烧产生的烟排不出去，一连几周都在城市上空打转积聚。清迈大学气候变化数据中心（CCDC）报告，2026 年 1 月 1 日至 4 月 4 日，清迈府共监测到 6,676 个热点，比 2025 年同期的 3,996 个增加了 67%。实际上这意味着，每天通过您家空调滤网的烟灰和粉尘，明显比其他季节多。",
+      text: "清迈位于群山环绕的盆地里。到了旱季，上层较暖的空气把贴近地面的冷空气压住（逆温），焚烧产生的烟排不出去，一连几周都在城市上空打转积聚。清迈大学气候变化数据中心（CCDC）报告，2026 年 1 月 1 日至 4 月 4 日，清迈府共监测到 6,676 个热点，比 2025 年同期的 3,996 个增加了 67%。实际上这意味着，每天通过您家空调滤网的烟灰和粉尘，明显比其他季节多。",
     },
     {
       type: "p",
@@ -112,7 +112,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "两次清洗之间，您可以也应该自己洗滤网" },
     {
       type: "p",
-      text: "每年请技师彻底清洗两次，并不代表中间 6 个月您自己什么都不能做。滤网是系统的第一道防线，也是厂家唯一设计给屋主自己拆洗的部件。特别是在粉尘量高的二月到四月，每 2–4 周自己洗一次滤网，有助于保持机器的状况。花不到十分钟，而且不用叫技师，您自己就能做。",
+      text: "每年请技师彻底清洗两次，并不代表中间 6 个月您自己什么都不能做。滤网是系统的第一道防线，也是厂家唯一设计给屋主自己拆洗的部件。特别是在粉尘量高的二月到四月，按厂家建议每 2 周自己洗一次滤网，最迟不超过 4 周，有助于保持机器的状况。花不到十分钟，而且不用叫技师，您自己就能做。",
     },
     {
       type: "steps",
@@ -158,7 +158,7 @@ export const article: IntlArticle = {
         "清迈的一般家庭，每年 2 次，在烟霾季节前后各一次，是最合适的周期。",
         "餐厅、咖啡店和养宠物的家庭，应该改为每 3–4 个月一次。",
         "您自己能察觉的信号，例如风变弱、有霉味、电费变高，比数月份更重要。",
-        "烟霾季节每 2–4 周自己洗一次滤网，有助于保持机器状况，而且不花钱。",
+        "按厂家建议每 2 周自己洗一次滤网，烟霾季节最迟不超过 4 周，有助于保持机器状况，而且不花钱。",
         "从一月就预约彻底清洗，可以避免四月排长队。",
       ],
     },
@@ -170,6 +170,11 @@ export const article: IntlArticle = {
       type: "sources",
       items: [
         { title: "CCDC 解析清迈 2026 年烟霾：热点增加 67%", publisher: "MGR Online，2026 年 4 月 6 日（泰文）", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "数据来自清迈大学气候变化数据中心（CCDC）：清迈府 2026 年 1 月 1 日至 4 月 4 日共 6,676 个热点，2025 年同期为 3,996 个" },
+        { title: "今年抗热，一起清洗空调降低电费（泰文）", publisher: "泰国国家电力局（EGAT）（2023 年 5 月 11 日）", url: "https://www.egat.co.th/home/20230511-art01/", note: "每 6 个月清洗一次空调，最多可节省 10% 电费" },
+        { title: "北部烟霾与林火危机须提升为国家级灾害（泰文）", publisher: "Thai PBS Policy Watch（2026 年 4 月 1 日）", url: "https://policywatch.thaipbs.or.th/article/environment-179", note: "清迈大学学者解释，粉尘在盆地内积聚是因为空气封闭、不流通" },
+        { title: "锅盖效应源于逆温（泰文）", publisher: "Thai PBS NOW（2025 年 1 月 23 日）", url: "https://www.thaipbs.or.th/now/content/2217", note: "较暖的空气层位于贴近地面的冷空气之上，使粉尘无法上升扩散" },
+        { title: "高效使用空调和遥控器（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "建议每 2 周清洁一次滤网" },
+        { title: "空气滤网和 PM 1.0 滤网的清洁方法（泰文）", publisher: "Samsung 泰国", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "建议每两周清洁一次空气滤网" },
       ],
     },
   ],

@@ -8,7 +8,7 @@ export const article: Article = {
   description:
     "เสื้อผ้าซักแล้วยังมีกลิ่นอับ สาเหตุมักอยู่ที่คราบผงซักฟอกด้านนอกถังซัก บทความนี้อธิบายว่าคราบเกิดที่จุดใด เหตุใดน้ำยาล้างถังจึงไม่พอ และการถอดล้างต่างกันอย่างไร",
   category: "เครื่องซักผ้า",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 7,
   image: { src: "/work/lang-thang-sak-pha-fa-bon-003.jpg", alt: "ผิวด้านนอกถังซักชั้นในเต็มไปด้วยคราบราดำเป็นริ้วยาวปนสนิมน้ำตาล ถ่ายระยะใกล้" },
   excerpt:
@@ -43,7 +43,7 @@ export const article: Article = {
       type: "callout",
       tone: "info",
       title: "กลิ่นอับมาจากสิ่งที่จุลินทรีย์ปล่อยออกมา",
-      text: "กลิ่นที่ติดมากับผ้าคือสารระเหยที่เชื้อราและแบคทีเรียปล่อยออกมาระหว่างเติบโต เมื่อเครื่องปั่น น้ำจะพัดพาสิ่งเหล่านี้ย้อนกลับเข้าไปหาผ้าที่กำลังซักอยู่ นี่คือเหตุผลที่ยิ่งซักยิ่งมีกลิ่น ทั้งที่ใช้ผงซักฟอกปกติ",
+      text: "กลิ่นที่ติดมากับผ้าคือสารระเหยที่จุลินทรีย์ในเครื่อง โดยเฉพาะแบคทีเรีย ปล่อยออกมาระหว่างเติบโต เมื่อเครื่องปั่น น้ำจะพัดพาสิ่งเหล่านี้ย้อนกลับเข้าไปหาผ้าที่กำลังซักอยู่ นี่คือเหตุผลที่ยิ่งซักยิ่งมีกลิ่น ทั้งที่ใช้ผงซักฟอกปกติ",
     },
 
     { type: "h2", text: "เหตุใดน้ำยาล้างถังที่เทลงไปแล้วปั่นจึงไม่เพียงพอ" },
@@ -164,6 +164,14 @@ export const article: Article = {
     {
       type: "cta",
       text: "หากไม่แน่ใจว่าเครื่องที่บ้านถึงเวลาถอดล้างหรือยัง ถ่ายภาพภายในถังและขอบยางส่งเข้ามาทาง LINE ได้ครับ ผมประเมินเบื้องต้นให้ก่อนตัดสินใจ ติดต่อ 065-365-7673 หรือ LINE @794xvrnm",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Moraxella species are primarily responsible for generating malodor in laundry", publisher: "Applied and Environmental Microbiology (2555)", url: "https://pubmed.ncbi.nlm.nih.gov/22367080/", note: "กลิ่นอับในผ้าที่ซักแล้วเกิดจากสารที่แบคทีเรียกลุ่ม Moraxella สร้างขึ้นเป็นหลัก" },
+        { title: "Microbial Colonization, Biofilm Formation, and Malodour of Washing Machine Surfaces and Fabrics", publisher: "Antibiotics (MDPI) 2567", url: "https://doi.org/10.3390/antibiotics13121227", note: "ไบโอฟิล์มในเครื่องซักผ้าทำให้เกิดกลิ่นอับ และจุลินทรีย์สร้างสารระเหยได้" },
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (เม.ย. 2563)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "ราสะสมในช่องระหว่างถังซักกับถังชั้นนอกที่เข้าถึงไม่ได้ และในร่องขอบยางประตู" },
+      ],
     },
   ],
   faqs: [

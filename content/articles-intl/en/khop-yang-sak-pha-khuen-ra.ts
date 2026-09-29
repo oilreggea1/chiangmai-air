@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Black spots on the door gasket are the most common problem with front-loading washing machines. This article explains what causes them, how much you can remove yourself, and when they will no longer come off.",
   category: "Washing machines",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-001.jpg",
@@ -47,7 +47,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "info",
       title: "The musty smell and the black spots are the same problem",
-      text: "The smell your laundry picks up comes from volatile compounds released by mould and bacteria as they grow. So if you find black spots on the gasket and your clothes smell musty, both symptoms share one cause, and trying to fix only the smell with fragrance or fabric softener will not work.",
+      text: "The smell your laundry picks up comes from volatile compounds released by microbes in the machine, especially bacteria, as they grow. So if you find black spots on the gasket and your clothes smell musty, both symptoms share one cause, and trying to fix only the smell with fragrance or fabric softener will not work.",
     },
 
     { type: "h2", text: "Cleaning it yourself, the right way" },
@@ -118,7 +118,7 @@ export const article: IntlArticle = {
       type: "ul",
       items: [
         "The outer tub that holds the water, especially around the heater at the bottom of the tub, where limescale builds up thickest",
-        "The outside of the stainless steel inner drum, which is on the opposite side from where drum-cleaning products reach",
+        "The outside of the stainless steel inner drum, a hidden gap between the drums where drum-cleaning solution flows past but has no scrubbing force to remove firmly stuck grime",
         "The drain pump filter in the lower front corner. You can open this yourself, so always check it first",
         "The drain hose and pipework, where sticky buildup inside causes smells to travel back up",
       ],
@@ -136,8 +136,8 @@ export const article: IntlArticle = {
         "Wipe the gasket fold with a dry cloth once a week; it takes less than a minute",
         "Take the laundry out as soon as the wash finishes rather than leaving it overnight",
         "Use the amount of detergent stated on the pack. Whatever does not dissolve settles in the gasket fold and feeds the mould",
-        "Run the drum-clean cycle from your machine's manual once a month",
-        "Clean the drain pump filter in the lower front corner every one to two months",
+        "Run the drum-clean cycle from your machine's manual about once a month (some brands, such as Samsung, remind you every 40 washes)",
+        "Clean the drain pump filter in the lower front corner at least once a month, as manufacturers recommend",
       ],
     },
     {
@@ -149,6 +149,18 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you have wiped it and are not sure whether what is left is grime or embedded mould, send me a photo of the gasket fold on LINE. I will take a look first and tell you honestly how much better it will get with a clean. Call +66 65 365 7673 or LINE @794xvrnm.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (Apr 2020)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "Mould builds up in the inaccessible gap between the wash drum and the outer tub, and in the folds of the door seal" },
+        { title: "Microbial Colonization, Biofilm Formation, and Malodour of Washing Machine Surfaces and Fabrics", publisher: "Antibiotics (MDPI), 2024", url: "https://doi.org/10.3390/antibiotics13121227", note: "Biofilm in washing machines causes malodour, and microbes can produce volatile compounds" },
+        { title: "Moraxella species are primarily responsible for generating malodor in laundry", publisher: "Applied and Environmental Microbiology (2012)", url: "https://pubmed.ncbi.nlm.nih.gov/22367080/", note: "The musty smell in washed laundry comes mainly from compounds produced by Moraxella bacteria" },
+        { title: "How do we clean the door seal of front loading washing machine", publisher: "Samsung", url: "https://www.samsung.com/levant/support/home-appliances/how-to-clean-the-door-seal-bellow-of-front-loading-washing-machine/", note: "Recommends leaving the door open so the inside of the machine dries" },
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics (U.S.)", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "Recommends running the Tub Clean programme once a month and leaving the door open to dry" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "The machine reminds you to clean the drum every 40 washes, and no cleaning agent should be added for this cycle" },
+        { title: "LG Front Load Washer Maintenance", publisher: "LG Electronics (U.S.)", url: "https://www.lg.com/us/support/help-library/lg-front-load-washer-maintenance-CT00000305-1400786418920", note: "The drain pump filter should be cleaned at least once a month, and concentrated bleach degrades the door seal" },
+      ],
     },
   ],
   faqs: [

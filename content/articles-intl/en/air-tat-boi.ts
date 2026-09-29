@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Why an air conditioner keeps stopping, refuses to start, or shows a blinking light, and how to count the blinks to look up the error code in the manual for your model.",
   category: "Aircon problems",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/air-2569-07.jpg", alt: "A capacitor removed from an air conditioner so it can be measured before deciding to replace it" },
   excerpt:
@@ -171,6 +171,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If your aircon light is blinking and you do not know what it means, film the pattern and photograph the model sticker, then send them on LINE. I will help work out the code and what needs checking on site.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Climate of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "April is the hottest month of the year" },
+      ],
     },
   ],
   faqs: [

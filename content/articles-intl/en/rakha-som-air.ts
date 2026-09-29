@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "A detailed breakdown of what goes into an aircon repair bill, from the diagnostic charge to labour and parts, plus the questions to ask a technician before you agree and the signs you may be charged more later.",
   category: "Prices and costs",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thod-lang-135.jpg", alt: "A two-dial manifold gauge set hanging in front of an outdoor coil while refrigerant pressure is being measured" },
   excerpt:
@@ -170,7 +170,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: `Another issue aircon owners in Chiang Mai often run into is the price of refrigerant. Only two types have commonly published prices: R-22 at 25 THB per pound and R-410A at 75 THB per pound. R32, which almost every new inverter aircon uses, has no reference price yet, so there is nothing to compare the figure you are given on site against. I charge the same ${p.repair.refrigerantPerLb} THB per pound for R32 and R410A, and I show you how many pounds before adding any.`,
+      text: `Another issue aircon owners in Chiang Mai often run into is the price of refrigerant. From my survey of Chiang Mai shops, only two types have published prices: R-22 at 25 THB per pound and R-410A at 75 THB per pound. R32, which almost every new inverter aircon uses, has no reference price yet, so there is nothing to compare the figure you are given on site against. I charge the same ${p.repair.refrigerantPerLb} THB per pound for R32 and R410A, and I show you how many pounds before adding any.`,
     },
 
     { type: "h2", text: "How an aircon repair should go, from first contact to finished job" },
@@ -200,6 +200,12 @@ export const article: IntlArticle = {
         "Ask all your questions before agreeing, especially to see the old parts that were removed.",
         "Low refrigerant means there is a leak, which has to be found before recharging, and R410A has to be recovered and the whole system refilled.",
         "If the repair costs more than roughly half the price of a new unit and the unit is already old, consider replacing it.",
+      ],
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Home Cooling 101", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "Bent coil fins should be straightened with a fin comb; low refrigerant means there is a leak, which must be repaired before recharging" },
       ],
     },
   ],

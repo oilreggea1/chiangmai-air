@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "How to check which refrigerant your aircon uses, how R32, R410A and R22 differ in practice, why R410A cannot simply be topped up, and what to ask before agreeing to a recharge in Chiang Mai.",
   category: "Prices and costs",
-  updated: "2026-08-04",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thod-lang-112.jpg", alt: "Close-up of refrigerant pressure gauges connected during a system check" },
   excerpt:
@@ -28,7 +28,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "There is no reference price for R32 yet",
-      text: "The refrigerant prices commonly published in Chiang Mai cover only two types: R-22 at about 25 THB per pound and R-410A at about 75 THB per pound. R32, which almost every current inverter aircon uses, has no reference price to compare with, so the price you are quoted on site has nothing to be measured against.",
+      text: "From my survey of the prices Chiang Mai aircon shops publish, only two types are listed: R-22 at about 25 THB per pound and R-410A at about 75 THB per pound. R32, which almost every current inverter aircon uses, has no reference price to compare with, so the price you are quoted on site has nothing to be measured against.",
     },
 
     { type: "h2", text: "First, check which refrigerant your aircon uses" },
@@ -127,7 +127,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "There is still no published reference price for R32. The prices commonly published cover only R-22 and R-410A, so inverter owners have nothing to compare against before agreeing to a top-up.",
+      text: "There is still no published reference price for R32. The prices I surveyed from Chiang Mai shops cover only R-22 and R-410A, so inverter owners have nothing to compare against before agreeing to a top-up.",
     },
     {
       type: "p",
@@ -200,6 +200,10 @@ export const article: IntlArticle = {
         { title: "Refrigerant FAQ: R32, R410A and R22 (Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/faq", note: "Used to confirm the refrigerant types in residential air conditioners." },
         { title: "Owner's manual for an R32 air conditioner (Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/assets/uploads/product/61/product_manual/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99_FAVF30.pdf", note: "The manual says to use only the refrigerant specified on the unit and not substitute another." },
         { title: "Common Air Conditioner Problems and Maintenance", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "Explains that low refrigerant may come from a leak, and that the leak should be repaired before recharging." },
+        { title: "Department of Industrial Works joins vocational and skills agencies to reduce and phase out HCFC-22 refrigerant (in Thai)", publisher: "MGR Online (9 Jan 2019)", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "Since 2017 Thailand has banned factories making air conditioners under 50,000 BTU from using HCFC-22, moving to HFC-32" },
+        { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "Timeline of the HCFC phase-out, including R22, under the Montreal Protocol" },
+        { title: "R-32, The Most Balanced Refrigerant", publisher: "Daikin", url: "https://www.daikin.com/air/daikin_techknowledge/benefits/r-32", note: "R32 has a global warming potential (GWP) of 675, against 2,090 for R410A, and does not deplete the ozone layer" },
+        { title: "HFC 冷媒のポイント", publisher: "Japan Refrigeration and Air Conditioning Industry Association (JRAIA)", url: "https://www.jraia.or.jp/product/home_aircon/c_hfc_point.html", note: "R410A runs at about 1.6 times the working pressure of R22" },
       ],
     },
   ],
@@ -214,7 +218,7 @@ export const article: IntlArticle = {
     },
     {
       q: "Why are there so many different prices for R32?",
-      a: `Partly because there is still no published reference price for R32. Commonly published prices cover only R-22 at 25 THB per pound and R-410A at 75 THB per pound, so inverter owners have nothing to compare against. I charge ${p.repair.refrigerantPerLb} THB per pound for R32, the same rate the market publishes for R22.`,
+      a: `Partly because there is still no published reference price for R32. The prices I surveyed from Chiang Mai shops cover only R-22 at 25 THB per pound and R-410A at 75 THB per pound, so inverter owners have nothing to compare against. I charge ${p.repair.refrigerantPerLb} THB per pound for R32, the same rate the market publishes for R22.`,
     },
     {
       q: "Why did I need another top-up only a few months after the last one?",

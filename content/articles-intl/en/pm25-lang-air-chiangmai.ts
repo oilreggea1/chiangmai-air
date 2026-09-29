@@ -26,13 +26,13 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "Why this year is worse than usual",
-      text: "Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. That means the amount of dust getting into buildings and passing through aircons has risen as well.",
+      text: "Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. By the end of the season, Chiang Mai province put the total for 1 January to 31 May 2026 at 11,023 hotspots, mostly in forest areas, an increase of 6,314 on the same period of 2025. That means the amount of dust getting into buildings and passing through aircons has risen as well.",
     },
 
     { type: "h2", text: "Chiang Mai is different, because the dust has nowhere to go" },
     {
       type: "p",
-      text: "Chiang Mai sits in a basin surrounded by mountains. In the dry season, cooler air above presses down on warmer air below, a condition the Thai media call a lid over the city. As a result, smoke from burning in the area and in neighbouring countries cannot rise away, and it circulates in the city for weeks until the first rain arrives.",
+      text: "Chiang Mai sits in a basin surrounded by mountains. In the dry season, a layer of warm air above traps the cooler air near the ground (a temperature inversion), a condition the Thai media call a lid over the city. As a result, smoke from burning in the area and in neighbouring countries cannot rise away, and it circulates in the city for weeks until the first rain arrives.",
     },
     {
       type: "p",
@@ -46,7 +46,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "Even so, the aircon plays an indirect role that matters more than many people think, because running it means keeping the doors and windows closed, which cuts off the main way dust gets in from outside. The dust-free room guidance published by the public health authorities itself lists running a fan or aircon as one of the steps, because it helps circulate the air inside a sealed room.",
+      text: "Even so, the aircon plays an indirect role that matters more than many people think, because running it means keeping the doors and windows closed, which cuts off the main way dust gets in from outside. The Department of Disease Control's dust-free room guidance itself lists running a fan or aircon as one of the steps, because it helps circulate the air inside a sealed room.",
     },
     {
       type: "table",
@@ -96,7 +96,7 @@ export const article: IntlArticle = {
       head: ["Period", "What to do", "Why"],
       rows: [
         ["Jan – early Feb", "Thorough clean before the smoke haze season", "Go into the season with a clean coil, while bookings are not yet busy"],
-        ["Feb – Apr", "Wash the filters yourself every 2–4 weeks", "Dust is concentrated and filters clog much faster than usual"],
+        ["Feb – Apr", "Wash the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks", "Dust is concentrated and filters clog much faster than usual"],
         ["May – Jun", "Second thorough clean", "Removes the soot built up over the season, before the very humid rainy season"],
         ["Jul – Oct", "Watch for smells and dripping", "High humidity makes mould grow fast; if a musty smell starts, go for a strip-down clean"],
         ["Nov – Dec", "A good time for repairs or installation", "Aircons are used less and bookings are light, so there is no long wait"],
@@ -152,7 +152,7 @@ export const article: IntlArticle = {
       items: [
         "A standard aircon filter cannot filter PM2.5, but the aircon is still needed because it lets you keep the room closed.",
         "Chiang Mai's smoke haze season clogs filters and coils clearly faster than other seasons.",
-        "Have a thorough clean before the season, in January, then wash the filters yourself every 2–4 weeks during the season.",
+        "Have a thorough clean before the season, in January, then wash the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the season.",
         "Once a musty smell starts, it needs a strip-down clean, not a spray through the front cover.",
         "A dust-free room needs all three: a sealed room, a clean aircon and an air purifier.",
       ],
@@ -168,6 +168,15 @@ export const article: IntlArticle = {
         { title: "What is a HEPA filter?", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/what-hepa-filter", note: "Explains the HEPA standard and how efficiently it traps particles" },
         { title: "Guide to Air Cleaners in the Home", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home", note: "Explains choosing by HEPA/CADR, and the limitation that no single type of filter removes every kind of pollutant" },
         { title: "CCDC on Chiang Mai's 2026 smoke season: hotspots up 67%", publisher: "MGR Online, 6 Apr 2026 (in Thai)", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "Data from Chiang Mai University's Climate Change Data Center (CCDC): Chiang Mai province, 1 Jan to 4 Apr 2026 = 6,676 hotspots, against 3,996 in the same period of 2025" },
+        { title: "Chiang Mai sums up the 2026 fire season: 11,023 hotspots", publisher: "Chiang Mai News, 3 Jun 2026 (in Thai)", url: "https://www.chiangmainews.co.th/news/3944562/", note: "Figures reported to the Chiang Mai provincial forest-fire and PM2.5 committee on 2 Jun 2026: 11,023 hotspots from 1 Jan to 31 May 2026, an increase of 6,314 on the same period of 2025" },
+        { title: "The 'lid over the city' is caused by a temperature inversion (in Thai)", publisher: "Thai PBS NOW (23 Jan 2025)", url: "https://www.thaipbs.or.th/now/content/2217", note: "A layer of warm air sits above cooler air near the ground, so dust cannot rise" },
+        { title: "Smoke Shrouds Northern Thailand", publisher: "NASA Earth Observatory (23 Apr 2026)", url: "https://science.nasa.gov/earth/earth-observatory/smoke-shrouds-northern-thailand/", note: "Fires in the North increase from February to April, and the mountains create temperature inversions that trap the smoke haze" },
+        { title: "Pollution Control Department: diesel vehicles are the main cause of PM2.5 (in Thai)", publisher: "Thai PBS (22 Nov 2020)", url: "https://www.thaipbs.or.th/news/content/298552", note: "PM2.5 in Bangkok comes mainly from diesel exhaust" },
+        { title: "Can air purifiers and air conditioners protect against PM 2.5? (in Thai)", publisher: "Center of Safety, Occupational Health and Environment, Chulalongkorn University (13 Feb 2019)", url: "https://www.shecu.chula.ac.th/home/content.asp?Cnt=176", note: "Ordinary air conditioners only reduce dust particles larger than PM2.5" },
+        { title: "Beat the heat this year: clean your aircon to cut your electricity bill (in Thai)", publisher: "Electricity Generating Authority of Thailand (11 May 2023)", url: "https://www.egat.co.th/home/20230511-art01/", note: "Cleaning the aircon every 6 months can save up to 10% on electricity" },
+        { title: "Climate of Thailand (in Thai)", publisher: "Thai Meteorological Department", url: "https://www.tmd.go.th/info/ภูมิอากาศของประเทศไทย", note: "April is the hottest month of the year" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
       ],
     },
   ],
@@ -178,7 +187,7 @@ export const article: IntlArticle = {
     },
     {
       q: "How often should I clean the aircon during the smoke haze season?",
-      a: "I recommend one thorough clean before the season, between January and early February. Then take the filters out and wash them yourself every 2–4 weeks during the season, which you can do without calling a technician. Then have another thorough clean in May to June to remove the soot built up over the whole season.",
+      a: "I recommend one thorough clean before the season, between January and early February. Then take the filters out and wash them yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the season, which you can do without calling a technician. Then have another thorough clean in May to June to remove the soot built up over the whole season.",
     },
     {
       q: "Can I add a PM2.5 filter to my aircon?",

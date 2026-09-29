@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "You can clean part of your aircon yourself, and should. Which jobs are safe for home owners, and which need a technician: water pressure, power, refrigerant.",
   category: "Aircon guides",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/lang-air-thod-lang-046.jpg", alt: "A technician holding up an air filter with a thin film of dust still on it under the light" },
   excerpt:
@@ -38,7 +38,7 @@ export const article: IntlArticle = {
       items: [
         {
           title: "Wash the air filters",
-          detail: "Of all the jobs, this gives the best return, because the filter is the first line of defence keeping dust off the coil. I recommend every 2–4 weeks in the smoke haze season and every 1–2 months in other seasons.",
+          detail: "Of all the jobs, this gives the best return, because the filter is the first line of defence keeping dust off the coil. I recommend every 2 weeks as manufacturers recommend, and no longer than 4 weeks in the smoke haze season, and at least once a month in other seasons, as Thailand's Department of Health recommends.",
         },
         {
           title: "Wipe the front cover and the air outlet",
@@ -91,7 +91,7 @@ export const article: IntlArticle = {
     { type: "h3", text: "1. Spraying water on the indoor coil yourself" },
     {
       type: "p",
-      text: "Cleaning the indoor coil needs controlled water pressure: strong enough to push the grime out from between the fins, but not so strong that the aluminium fins fold over. Folded fins block the airflow for good, so cooling capacity drops for the rest of the unit's life, and they cannot be bent back the way they were. Another point that is often overlooked: without a water-catching bag covering the whole unit, all the dirty water runs down the wall and onto the furniture.",
+      text: "Cleaning the indoor coil needs controlled water pressure: strong enough to push the grime out from between the fins, but not so strong that the aluminium fins fold over. Folded fins block the airflow and reduce cooling capacity. A technician then has to straighten them row by row with a fin comb, and from the jobs I take, they rarely end up as flat as before. Another point that is often overlooked: without a water-catching bag covering the whole unit, all the dirty water runs down the wall and onto the furniture.",
     },
     { type: "h3", text: "2. Cleaning without cutting the power, or letting water into the circuit board" },
     {
@@ -112,7 +112,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "danger",
       title: "Do not use a car pressure washer on an aircon coil",
-      text: "This is the damage I see most often from DIY cleaning. A car pressure washer is far too powerful for a coil's thin aluminium fins. The fins fold over in strips and block the airflow for good. The result is an aircon that cools less than before the clean, even though the coil is cleaner, and it is damage that cannot be put back the way it was.",
+      text: "This is the damage I see most often from DIY cleaning. A car pressure washer is far too powerful for a coil's thin aluminium fins. The fins fold over in strips and block the airflow. The result is an aircon that cools less than before the clean, even though the coil is cleaner, and even though a technician can straighten the fins with a fin comb, they rarely end up as flat as before.",
     },
 
     { type: "h2", text: "Summary table: which jobs you can do and which need a technician" },
@@ -151,7 +151,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "Compare that with the risks: coil fins folded over beyond repair, a circuit board damaged by water, and a motor ruined because the blower wheel was not refitted dead centre. In all three cases the parts plus labour cost many times more than a whole year of cleaning. The conclusion is that washing the filters yourself is very good value, because there is almost no risk, while cleaning the coil yourself is not worth it once you weigh up the damage it could cause.",
+      text: "Compare that with the risks: coil fins folded over that have to be combed straight row by row and rarely end up as flat as before, a circuit board damaged by water, and a motor ruined because the blower wheel was not refitted dead centre. In all three cases the parts plus labour cost many times more than a whole year of cleaning. The conclusion is that washing the filters yourself is very good value, because there is almost no risk, while cleaning the coil yourself is not worth it once you weigh up the damage it could cause.",
     },
 
     { type: "h2", text: "Summary" },
@@ -160,7 +160,7 @@ export const article: IntlArticle = {
       items: [
         "The jobs you can do yourself, and that I recommend, are washing the filters, wiping the front cover, vacuuming round the unit, keeping the area round the outdoor unit clear, and noting anything unusual.",
         "When washing the filters, cut the power first, spray against the direction of the dust, and let them dry completely before refitting.",
-        "Do not spray water on the coil yourself, especially with a car pressure washer, because folded fins cannot be fixed.",
+        "Do not spray water on the coil yourself, especially with a car pressure washer, because folded fins have to be straightened row by row and rarely end up as flat as before.",
         "Do not top up refrigerant yourself, because low refrigerant means there is a leak, and the leak must be found before topping up.",
         "Do not remove the blower wheel yourself, because refitting it off centre damages the motor.",
         "The work you do yourself genuinely stretches the time between cleans, but it does not replace a thorough clean twice a year.",
@@ -169,6 +169,16 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you have washed the filters yourself and the aircon still does not cool as it used to, or still has a smell, the cause lies deeper than the parts you can look after yourself. Tell me the symptoms on LINE or by phone. I will give you a first assessment of the likely cause and which kind of clean to choose, and there is no charge for asking.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
+        { title: "Department of Health advises schools and childcare centres to prepare dust-free rooms (in Thai)", publisher: "Department of Health, Thailand (24 Oct 2019)", url: "https://multimedia.anamai.moph.go.th/news/news241062/", note: "Clean the air conditioner front panel and filters every month, and have the air conditioner cleaned at least once every 6 months" },
+        { title: "Home Cooling 101", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "Bent coil fins should be straightened with a fin comb; low refrigerant means there is a leak, which must be repaired before recharging" },
+        { title: "R-32 Safety Data Sheet", publisher: "Daikin Airconditioning (Singapore), 2019", url: "https://www.daikin-solutions.com/resources/ck/files/accessories/DAIKIN%20REFRIGERANT%20R32%20SAFETY%20DATA%20SHEET.pdf", note: "Refrigerant splashing onto skin or eyes can cause frostbite injuries" },
+      ],
     },
   ],
   faqs: [

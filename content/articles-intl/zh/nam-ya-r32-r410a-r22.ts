@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "空调冷媒 R32、R410A、R22 的区别，以及同意加冷媒之前应该确认的事项",
   description: "如何自己查看空调用的是哪种冷媒、R32 与 R410A 和 R22 的实际差异、为什么 R410A 不能直接补加，以及在清迈同意加冷媒前该问的问题。",
   category: "价格与费用",
-  updated: "2026-08-04",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thod-lang-112.jpg", alt: "检修时连接的冷媒压力表特写" },
   excerpt: "几乎所有新款变频空调都使用 R32。本文比较各种冷媒及每磅价格，以及同意补加冷媒前应该确认的事项。",
@@ -26,7 +26,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "R32 目前还没有参考价",
-      text: "清迈目前普遍公开的冷媒价格只有两种：R-22 每磅约 25 泰铢，R-410A 每磅约 75 泰铢。而现在几乎所有变频空调使用的 R32 没有参考价可比，所以现场报给您的价格也就没有标准可以衡量。",
+      text: "根据我调查清迈空调店公布的价格，目前只有两种：R-22 每磅约 25 泰铢，R-410A 每磅约 75 泰铢。而现在几乎所有变频空调使用的 R32 没有参考价可比，所以现场报给您的价格也就没有标准可以衡量。",
     },
 
     { type: "h2", text: "先确认您的空调用哪种冷媒" },
@@ -125,7 +125,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "但 R32 至今没有公开的参考价。普遍公开的价格只有 R-22 和 R-410A，所以变频空调的用户在同意补加前没有可以比较的依据。",
+      text: "但 R32 至今没有公开的参考价。我调查清迈店家公布的价格，只有 R-22 和 R-410A，所以变频空调的用户在同意补加前没有可以比较的依据。",
     },
     {
       type: "p",
@@ -198,6 +198,10 @@ export const article: IntlArticle = {
         { title: "冷媒常见问题：R32、R410A 与 R22（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/faq", note: "用于确认家用空调的冷媒种类。" },
         { title: "R32 空调使用说明书（泰文）", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/assets/uploads/product/61/product_manual/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99_FAVF30.pdf", note: "说明书规定只能使用机身标示的冷媒，不得以其他种类替代。" },
         { title: "Common Air Conditioner Problems and Maintenance", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "说明冷媒不足可能来自泄漏，应先修复漏点再充注。" },
+        { title: "泰国工业工厂厅联合职业教育委员会办公室和技能发展厅，减少并淘汰 HCFC-22 冷媒（泰文）", publisher: "MGR Online（2019 年 1 月 9 日）", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "泰国自 2017 年起禁止工厂生产的 50,000 BTU 以下空调使用 HCFC-22，改用 HFC-32" },
+        { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "《蒙特利尔议定书》下淘汰 HCFC（包括 R22）的时间顺序" },
+        { title: "R-32, The Most Balanced Refrigerant", publisher: "Daikin", url: "https://www.daikin.com/air/daikin_techknowledge/benefits/r-32", note: "R32 的全球变暖潜能值（GWP）为 675，R410A 为 2,090，且不破坏臭氧层" },
+        { title: "HFC 冷媒のポイント", publisher: "日本冷冻空调工业会（JRAIA）", url: "https://www.jraia.or.jp/product/home_aircon/c_hfc_point.html", note: "R410A 的工作压力约为 R22 的 1.6 倍" },
       ],
     },
   ],
@@ -212,7 +216,7 @@ export const article: IntlArticle = {
     },
     {
       q: "为什么市场上 R32 的价格差别这么大？",
-      a: `部分原因是 R32 至今没有公开的参考价。普遍公开的价格只有 R-22 每磅 25 泰铢和 R-410A 每磅 75 泰铢，变频空调用户没有可以比较的依据。我对 R32 收每磅 ${p.repair.refrigerantPerLb} 泰铢，与市场公布的 R22 价格相同。`,
+      a: `部分原因是 R32 至今没有公开的参考价。我调查清迈店家公布的价格，只有 R-22 每磅 25 泰铢和 R-410A 每磅 75 泰铢，变频空调用户没有可以比较的依据。我对 R32 收每磅 ${p.repair.refrigerantPerLb} 泰铢，与市场公布的 R22 价格相同。`,
     },
     {
       q: "为什么加完冷媒几个月后又要再加？",

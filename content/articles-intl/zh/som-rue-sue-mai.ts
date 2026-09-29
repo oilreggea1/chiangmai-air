@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "旧空调该修还是换新机：我先帮您算好数字，再做决定",
   description: "旧空调经常坏，该修还是换新？从机龄、维修费与新机价格之比、冷媒种类、故障频率和电费差来判断，附总结表。",
   category: "空调知识",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/yai-air-009.jpg", alt: "靠墙放在地面上的空调室外机，侧面可以看到整片散热翅片" },
   excerpt: "并不是每种情况都该换新机，也不是每种情况都该继续修。我给您五条具体的标准，您可以自己拿来评估家里的机器。",
@@ -168,6 +168,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: `如果还不确定家里的机器该修还是该换，可以先让我上门检查。检测费 ${p.repair.diagnostic} 泰铢，决定由我维修的话可以抵扣。哪些情况修了划算、哪些不划算，我都会如实告诉您。`,
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "泰国工业工厂厅联合职业教育委员会办公室和技能发展厅，减少并淘汰 HCFC-22 冷媒（泰文）", publisher: "MGR Online（2019 年 1 月 9 日）", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "泰国自 2017 年起禁止工厂生产的 50,000 BTU 以下空调使用 HCFC-22，改用 HFC-32" },
+        { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "《蒙特利尔议定书》下淘汰 HCFC（包括 R22）的时间顺序" },
+        { title: "Refrigerant Oil Basics", publisher: "HVAC School（2022 年 7 月 27 日）", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "R22 系统使用的矿物油不能与 HFC 类冷媒互溶，POE 油遇到水分会分解成酸" },
+      ],
     },
   ],
   faqs: [

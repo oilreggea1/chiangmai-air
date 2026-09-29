@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "洗衣机有一部分可以自己清洗，确实能省钱。本文分清哪些部位马上能做、哪些必须拆机，以及界线在哪里。",
   category: "洗衣机",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 8,
   image: {
     src: "/work/lang-thang-sak-pha-fa-bon-003.jpg",
@@ -50,7 +50,7 @@ export const article: IntlArticle = {
         {
           title: "洗衣粉和柔顺剂盒",
           detail:
-            "大多数盒子都可以整个抽出来清洗。最容易被忽略的是盒子插槽的顶部，那里常有黏腻的污垢，也是最先长霉的地方，可以用旧牙刷刷掉。",
+            "大多数盒子都可以整个抽出来清洗。最容易被忽略的是盒子插槽的顶部，那里常有黏腻的污垢，也是常见长霉的地方，可以用旧牙刷刷掉。",
         },
         {
           title: "滚筒洗衣机的门封胶圈",
@@ -60,7 +60,7 @@ export const article: IntlArticle = {
         {
           title: "按说明书运行桶自洁程序",
           detail:
-            "很多新款洗衣机都有 Tub Clean 或 Drum Clean 程序，按标签说明配合洗衣槽清洁剂或清洁泡腾片使用，每月一次比较合适，有助于让还干净的表面继续保持干净。",
+            "很多新款洗衣机都有 Tub Clean 或 Drum Clean 程序，只在说明书允许的机型上配合洗衣槽清洁剂或清洁泡腾片使用，因为有些品牌，例如 Samsung，规定运行这个程序时不要放任何清洁剂。大约每月一次比较合适（Samsung 每 40 次洗涤会提醒一次），有助于让还干净的表面继续保持干净。",
         },
       ],
     },
@@ -79,7 +79,7 @@ export const article: IntlArticle = {
     {
       type: "ul",
       items: [
-        "内桶外壁：和洗衣槽清洁剂接触的是相反的一面，必须把桶抬出来才能刷洗。",
+        "内桶外壁：这是内外桶之间看不见的夹层，洗衣槽清洁剂能流过，但没有力量刷掉牢牢附着的污垢，必须把桶抬出来才能刷洗。",
         "波轮洗衣机的波轮盘下方：这是一个狭窄的空间，水流转不到足以冲掉污垢的速度，必须把波轮盘从轴上拆下来。",
         "滚筒洗衣机外桶里的加热管周围：水垢积得最厚的地方，必须先拆下前面板和门封胶圈组件。",
         "排水管和排水软管：堵在里面的黏腻污垢会让排水变慢，还会让异味倒灌。",
@@ -151,6 +151,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "不确定家里的洗衣机是否已经超出自己能处理的范围？可以通过 LINE 发来桶内和胶圈的照片，我先免费帮您评估。电话 +66 65 365 7673，或 LINE @794xvrnm。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics（美国）", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "建议每月运行一次 Tub Clean 程序，并让机门开着晾干" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "机器每 40 次洗涤会提醒清洗滚筒，并注明这个程序不需要放清洁剂" },
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports（2020 年 4 月）", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "霉菌积聚在洗衣内筒与外筒之间无法触及的夹层，以及门封胶圈的凹槽里" },
+      ],
     },
   ],
   faqs: [

@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "详细拆解空调维修费用的构成，包括检测费、人工费和零件费，并列出谈定价格前应该问技师的问题，以及可能在事后被加收费用的信号。",
   category: "价格与费用",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thod-lang-135.jpg", alt: "测量冷媒压力时，双表压力表组挂在室外机冷凝器前" },
   excerpt:
@@ -164,7 +164,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: `清迈空调用户常遇到的另一个问题是冷媒价格。普遍公布价格的只有两种：R-22 每磅 25 泰铢，R-410A 每磅 75 泰铢。几乎所有新款变频空调使用的 R32，目前还没有参考价，所以您在现场拿到的数字无从比较。我对 R32 和 R410A 一律按每磅 ${p.repair.refrigerantPerLb} 泰铢收费，加注前先告诉您需要几磅。`,
+      text: `清迈空调用户常遇到的另一个问题是冷媒价格。我调查清迈店家公布的价格，只有两种：R-22 每磅 25 泰铢，R-410A 每磅 75 泰铢。几乎所有新款变频空调使用的 R32，目前还没有参考价，所以您在现场拿到的数字无从比较。我对 R32 和 R410A 一律按每磅 ${p.repair.refrigerantPerLb} 泰铢收费，加注前先告诉您需要几磅。`,
     },
 
     { type: "h2", text: "从联系到完工，空调维修应有的流程" },
@@ -194,6 +194,12 @@ export const article: IntlArticle = {
         "谈定之前要问全，尤其是要求看拆下来的旧零件。",
         "冷媒不足说明有漏点，加注前必须先查漏；R410A 必须回收后整个系统重新加注。",
         "如果维修费超过新机价格的一半左右，而机器已经用了很多年，应该考虑换新机。",
+      ],
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Home Cooling 101", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "倒伏的盘管翅片可用梳片器（fin comb）梳直；冷媒不足意味着有泄漏，必须先修好漏点再充注" },
       ],
     },
   ],

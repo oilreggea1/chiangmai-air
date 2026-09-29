@@ -8,7 +8,7 @@ export const article: Article = {
   description:
     "แอร์เก่าเสียบ่อย ควรซ่อมต่อหรือเปลี่ยนใหม่ กรอบตัดสินใจจากอายุเครื่อง ค่าซ่อมเทียบราคาเครื่องใหม่ ชนิดน้ำยา ความถี่ที่เสีย และส่วนต่างค่าไฟ พร้อมตารางสรุป",
   category: "เลือกซื้อแอร์",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/yai-air-009.jpg", alt: "คอยล์ร้อนวางบนพื้นชิดผนัง เห็นครีบระบายความร้อนด้านข้างเต็มแผง" },
   excerpt:
@@ -174,6 +174,14 @@ export const article: Article = {
     {
       type: "cta",
       text: `หากยังไม่แน่ใจว่าเครื่องที่บ้านควรซ่อมหรือเปลี่ยน ให้ผมเข้าไปตรวจก่อนได้ครับ ค่าตรวจเช็ค ${p.repair.diagnostic} บาท และหักคืนให้หากตกลงซ่อม ผมแจ้งตามจริงว่ากรณีใดซ่อมคุ้มและกรณีใดไม่คุ้ม`,
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "กรอ.จับมือ สอศ. และ กพร. ลดและเลิกใช้สารทำความเย็น HCFC-22", publisher: "ผู้จัดการออนไลน์ (9 ม.ค. 2562)", url: "https://mgronline.com/greeninnovation/detail/9620000002721", note: "ไทยห้ามโรงงานผลิตแอร์ต่ำกว่า 50,000 BTU ใช้ HCFC-22 ตั้งแต่ปี 2560 และเปลี่ยนไปใช้ HFC-32" },
+        { title: "Ozone Timeline", publisher: "UNEP Ozone Secretariat", url: "https://ozone.unep.org/ozone-timeline", note: "ลำดับการเลิกใช้สาร HCFC รวมถึง R22 ตามพิธีสารมอนทรีออล" },
+        { title: "Refrigerant Oil Basics", publisher: "HVAC School (27 ก.ค. 2565)", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "น้ำมันแร่ของระบบ R22 ไม่ผสมกับน้ำยากลุ่ม HFC และน้ำมัน POE สลายเป็นกรดเมื่อมีความชื้น" },
+      ],
     },
   ],
   faqs: [

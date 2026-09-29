@@ -8,7 +8,7 @@ export const article: Article = {
   description:
     "รอบถอดล้างเครื่องซักผ้าไม่มีตัวเลขเดียวที่ใช้ได้กับทุกบ้าน บทความนี้อธิบายว่าอะไรทำให้คราบสะสมเร็วขึ้น และมีสัญญาณอะไรบอกว่าถึงรอบแล้ว",
   category: "เครื่องซักผ้า",
-  updated: "2026-08-01",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-na-004.jpg",
@@ -124,7 +124,7 @@ export const article: Article = {
         "ใช้ผงซักฟอกตามปริมาณที่ระบุบนฉลาก ไม่ใส่เผื่อ",
         "ล้างตัวกรองเศษใยผ้าทุก 1–2 สัปดาห์ และล้างช่องใส่ผงซักฟอกเดือนละครั้ง",
         "เช็ดร่องขอบยางประตูของเครื่องฝาหน้าสัปดาห์ละครั้ง",
-        "ถ้าใช้น้ำยาปรับผ้านุ่มเป็นประจำ ให้เดินรอบทำความสะอาดถังตามคู่มือเครื่องเดือนละครั้ง",
+        "ถ้าใช้น้ำยาปรับผ้านุ่มเป็นประจำ ให้เดินรอบทำความสะอาดถังตามคู่มือเครื่อง ประมาณเดือนละครั้ง (บางยี่ห้อ เช่น Samsung เตือนทุก 40 รอบซัก)",
       ],
     },
     {
@@ -152,6 +152,13 @@ export const article: Article = {
     {
       type: "cta",
       text: "ไม่แน่ใจว่าเครื่องที่บ้านถึงรอบหรือยัง ถ่ายภาพภายในถังกับขอบยางส่งเข้ามาทาง LINE ได้ครับ ผมดูให้ก่อนและแจ้งตามจริงหากยังไม่ถึงเวลา ติดต่อ 065-365-7673 หรือ LINE @794xvrnm",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "How to clean the tub of your LG washing machine", publisher: "LG Electronics (สหรัฐฯ)", url: "https://www.lg.com/us/support/help-library/lg-washer-how-to-clean-the-tub-of-your-lg-washing-machine--20150635948425", note: "แนะนำเดินโปรแกรม Tub Clean เดือนละครั้ง และเปิดประตูทิ้งไว้ให้แห้ง" },
+        { title: "How to use the Eco Drum Clean in my Samsung washing machine", publisher: "Samsung", url: "https://www.samsung.com/ae/support/home-appliances/how-to-use-the-eco-drum-clean-in-my-samsung-washing-machine/", note: "เครื่องเตือนให้ล้างถังทุก 40 รอบซัก และระบุว่าไม่ต้องใส่สารทำความสะอาดในรอบนี้" },
+      ],
     },
   ],
   faqs: [

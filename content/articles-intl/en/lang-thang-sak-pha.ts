@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Musty laundry is usually caused by detergent residue on the outside of the drum. Where it forms, why drum cleaner falls short, and what a strip-down does.",
   category: "Washing machines",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 7,
   image: {
     src: "/work/lang-thang-sak-pha-fa-bon-003.jpg",
@@ -47,7 +47,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "info",
       title: "The musty smell comes from what microbes release",
-      text: "The smell that ends up on your laundry is made up of volatile compounds that mould and bacteria release as they grow. When the machine spins, the water carries these back to the clothes being washed. That is why the more you wash, the more it smells, even with normal detergent.",
+      text: "The smell that ends up on your laundry is made up of volatile compounds that microbes in the machine, especially bacteria, release as they grow. When the machine spins, the water carries these back to the clothes being washed. That is why the more you wash, the more it smells, even with normal detergent.",
     },
 
     { type: "h2", text: "Why pouring in drum cleaner and running a cycle is not enough" },
@@ -172,6 +172,14 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you are not sure whether your machine is due for a strip-down clean, send photos of the inside of the drum and the rubber seal on LINE, and I will give you an initial assessment before you decide. Call +66 65 365 7673 or LINE @794xvrnm.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Moraxella species are primarily responsible for generating malodor in laundry", publisher: "Applied and Environmental Microbiology (2012)", url: "https://pubmed.ncbi.nlm.nih.gov/22367080/", note: "The musty smell in washed laundry comes mainly from compounds produced by Moraxella bacteria" },
+        { title: "Microbial Colonization, Biofilm Formation, and Malodour of Washing Machine Surfaces and Fabrics", publisher: "Antibiotics (MDPI), 2024", url: "https://doi.org/10.3390/antibiotics13121227", note: "Biofilm in washing machines causes malodour, and microbes can produce volatile compounds" },
+        { title: "Mold in Your Washing Machine: The Mystery and the Menace", publisher: "Consumer Reports (Apr 2020)", url: "https://www.consumerreports.org/washing-machines/mold-in-your-washing-machine-the-mystery-and-the-menace/", note: "Mould builds up in the inaccessible gap between the wash drum and the outer tub, and in the folds of the door seal" },
+      ],
     },
   ],
   faqs: [

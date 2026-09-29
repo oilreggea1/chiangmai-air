@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   description:
     "A hands-on guide to a dust-free room: which room to pick, which gaps to seal, how to size an air purifier, and where the aircon fits in a clean-air room.",
   category: "Aircon guides",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/air-2569-12.jpg", alt: "An air filter so clogged with dust that the mesh inside is barely visible" },
   excerpt:
@@ -30,7 +30,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "What a dust-free room is, and what it is not" },
     {
       type: "p",
-      text: "The public health guidance on dust-free rooms sets out a simple principle: make the room as airtight as you reasonably can to reduce the dust coming in from outside, then deal with the dust still inside using an air filter or by circulating the air within the closed room. The heart of the idea is the order: seal first, then filter.",
+      text: "The Department of Health's guidance on dust-free rooms sets out a simple principle: make the room as airtight as you reasonably can to reduce the dust coming in from outside, then deal with the dust still inside using an air filter or by circulating the air within the closed room. The heart of the idea is the order: seal first, then filter.",
     },
     {
       type: "p",
@@ -53,7 +53,7 @@ export const article: IntlArticle = {
       items: [
         "The smallest room that is still comfortable to use, because a small room is easier to seal and an air purifier can cover it more thoroughly.",
         "A room with few windows, and windows that close tightly, not louvre windows, which are hard to seal.",
-        "A room not next to the kitchen, because smoke and cooking fumes are the biggest source of indoor dust in the home.",
+        "A room not next to the kitchen, because smoke and cooking fumes are a major source of indoor dust in the home.",
         "A room that does not face directly onto a main road or a car park.",
         "A room that already has an aircon installed, so you do not have to choose between opening the window and putting up with the heat.",
         "A room without carpets and lots of stored items, because these trap dust that can be stirred back up at any time.",
@@ -205,7 +205,7 @@ export const article: IntlArticle = {
         "Then move on to the windows, vents and the aircon pipe hole.",
         "Have a technician clean the aircon in that room before the season starts; if there is a musty smell, choose a strip-down clean.",
         "Only then choose a purifier to suit the room size, and place it in the middle of the room or near where you sleep.",
-        "Adjust a few habits: keep the door closed at all times, wipe the floor instead of sweeping it, and wash the aircon filters yourself every 2–4 weeks during the smoke haze season.",
+        "Adjust a few habits: keep the door closed at all times, wipe the floor instead of sweeping it, and wash the aircon filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the smoke haze season.",
       ],
     },
     {
@@ -231,6 +231,16 @@ export const article: IntlArticle = {
       type: "cta",
       text: "If you want to set up a dust-free room, send photos of the unit, the gap around the pipes and the room size to the aircon LINE account @iu3333. I will help you work out whether to start with an aircon clean or with sealing particular gaps.",
     },
+    {
+      type: "sources",
+      items: [
+        { title: "Department of Health advises how to make a dust-free room and a dust-proof net (in Thai)", publisher: "Department of Health, Thailand (8 Mar 2024)", url: "https://multimedia.anamai.moph.go.th/news/080367/", note: "Close doors and windows tightly and use an air purifier sized for the room; the Ministry of Public Health opened 2,690 dust-free rooms in 41 provinces" },
+        { title: "4-point dust-free room checklist (in Thai)", publisher: "Department of Health, Thailand (15 Feb 2025)", url: "https://anamai.moph.go.th/th/news-anamai/44024", note: "Recommends choosing a room with an air conditioner because it has fewer gaps and air leaks, and cleaning the fan, air conditioner and air filters" },
+        { title: "Sources of Indoor Particulate Matter", publisher: "U.S. Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/sources-indoor-particulate-matter-pm", note: "Cooking raises indoor particle levels, as do cigarettes, candles and fireplaces" },
+        { title: "Using your aircon and remote control efficiently (in Thai)", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/th/article/articleDetail/energysaving", note: "Recommends cleaning the filters every 2 weeks" },
+        { title: "How to clean the air filter and PM 1.0 filter (in Thai)", publisher: "Samsung Thailand", url: "https://www.samsung.com/th/support/home-appliances/how-to-cleaning-process-of-air-filter-and-pm-1-filter/", note: "Recommends cleaning the air filter every two weeks" },
+      ],
+    },
   ],
   faqs: [
     {
@@ -251,7 +261,7 @@ export const article: IntlArticle = {
     },
     {
       q: "After making a dust-free room, do I still need to clean the aircon on the same schedule?",
-      a: "Yes, and I would say it matters even more, because in a sealed room the air passes over the coil again and again all night. If the coil has grime or mould on it, whatever is on the coil is sent back into the room continuously. I recommend a thorough clean before the smoke haze season, in January, then washing the filters yourself every 2–4 weeks during the season.",
+      a: "Yes, and I would say it matters even more, because in a sealed room the air passes over the coil again and again all night. If the coil has grime or mould on it, whatever is on the coil is sent back into the room continuously. I recommend a thorough clean before the smoke haze season, in January, then washing the filters yourself every 2 weeks as manufacturers recommend, and no longer than 4 weeks during the season.",
     },
   ],
 };

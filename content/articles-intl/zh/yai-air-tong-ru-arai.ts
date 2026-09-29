@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   h1: "空调移机：不能省略的步骤，以及导致移机后空调故障的环节",
   description: "空调移机不只是拆下再装回去。最常被跳过的是收冷媒和抽真空，跳过会怎样，以及清迈的实际费用。",
   category: "空调知识",
-  updated: "2026-07-30",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/yai-air-008.jpg", alt: "技师手持连接冷媒瓶的压力表组，背后是室外机风扇" },
   excerpt: "步骤没做全的空调移机，通常不会马上出现症状，而是几个月后变成不凉或压缩机损坏。我来说明哪些步骤不能省略，以及原因。",
@@ -20,7 +20,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "问题在于损坏不会马上显现。机器第一周照常制冷，几个月后才开始变得不太凉，最严重的是一年之内压缩机就坏了。所以我想说明哪些步骤不能省略，以及为什么。",
+      text: "问题在于损坏不会马上显现。机器第一周照常制冷，几个月后才开始变得不太凉，最严重的是压缩机损坏，根据我遇到过的工作，一年之内就可能发生。所以我想说明哪些步骤不能省略，以及为什么。",
     },
 
     { type: "h2", text: "第一个必须做完整的步骤：把冷媒收回机器" },
@@ -112,6 +112,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "如果您快要搬家或想改变空调位置，可以把 BTU 大小、机器数量，以及原位置和新位置的照片发到空调业务的 LINE 账号 @iu3333，以便在预约前评估管道长度和所需材料。",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Refrigerant Oil Basics", publisher: "HVAC School（2022 年 7 月 27 日）", url: "https://www.hvacrschool.com/refrigerant-oil-basics/", note: "R22 系统使用的矿物油不能与 HFC 类冷媒互溶，POE 油遇到水分会分解成酸" },
+      ],
     },
   ],
   faqs: [
