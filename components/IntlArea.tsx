@@ -198,7 +198,7 @@ export function IntlAreaView({ slug, lang }: { slug: string; lang: IntlLang }) {
             <h2 className="h2">{lang === "en" ? `Condos in ${x.name} where I clean aircon in-room` : `${x.name} 我可上门清洗空调的公寓`}</h2>
             <p className="lead mt-3">{lang === "en" ? `${condos.length} condo projects in this area. Same price in every building, no travel fee. Tell me the building and floor before booking.` : `这一带共 ${condos.length} 个公寓项目，各楼同一价格，不收路费。预约前请告诉我楼栋和楼层。`}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
-              {condos.map((c) => <li key={c.en} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm">{c.en}</li>)}
+              {condos.map((c) => <li key={c.en}><Link href={`${lang === "en" ? "/en" : "/zh"}/condo/${c.s}`} className="inline-block rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm hover:border-brand-300 hover:text-brand-700">{c.en}</Link></li>)}
             </ul>
             <Link href={`${lang === "en" ? "/en" : "/zh"}/condo/directory#t-${slug}`} className="btn-ghost mt-6" data-cta={`${lang}-area-condo-dir`}>
               {lang === "en" ? "Search all Chiang Mai condos" : "搜索清迈全部公寓"}

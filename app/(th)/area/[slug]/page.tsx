@@ -245,7 +245,7 @@ export default async function AreaPage({ params }: Props) {
             <p className="lead mt-3">{condos.length} โครงการในพื้นที่นี้ ทุกอาคารราคาเดียวกัน ไม่คิดค่าเดินทาง แจ้งชื่ออาคารและชั้นมาก่อนนัดได้</p>
             <ul className="mt-6 flex flex-wrap gap-2">
               {condos.map((c) => (
-                <li key={c.en} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm">{c.th ?? c.en}</li>
+                <li key={c.en}><Link href={`/condo/${c.s}`} className="inline-block rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm hover:border-brand-300 hover:text-brand-700">{c.th ?? c.en}</Link></li>
               ))}
             </ul>
             <Link href={`/condo#t-${a.slug}`} className="btn-ghost mt-6" data-cta="area-condo-dir">

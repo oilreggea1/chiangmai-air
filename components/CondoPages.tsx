@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, areas, p } from "@/lib/site";
 import { tambonRoman } from "@/lib/intl";
-import { condoDirectory } from "@/lib/condo-directory";
+import { condoDirectory, type CondoEntry } from "@/lib/condo-directory";
 import { condoBrands, type CondoBrand } from "@/lib/condo-brands";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
@@ -22,7 +22,32 @@ export type CondoLang = "th" | "en" | "zh-CN";
 const PRE: Record<CondoLang, string> = { th: "", en: "/en", "zh-CN": "/zh" };
 export const directoryPath = (lang: CondoLang) => (lang === "th" ? "/condo" : `${PRE[lang]}/condo/directory`);
 export const brandPath = (lang: CondoLang, slug: string) => (lang === "th" ? `/condo/${slug}` : `${PRE[lang]}/condo/${slug}`);
-const areaPath = (lang: CondoLang, slug: string) => (lang === "th" ? `/area/${slug}` : `${PRE[lang]}/areas/${slug}`);
+export const condoPath = (lang: CondoLang, s: string) => `${PRE[lang]}/condo/${s}`;
+export const areaPath = (lang: CondoLang, slug: string) => (lang === "th" ? `/area/${slug}` : `${PRE[lang]}/areas/${slug}`);
+export const getCondo = (s: string) => condoDirectory.find((c) => c.s === s);
+
+const norm = (x: string) => x.toLowerCase().replace(/condominium|condo|chiang ?mai|the |[^a-z0-9]/g, "");
+/** โครงการนี้อยู่ในหน้าแบรนด์ไหน (จับคู่ชื่ออังกฤษ) */
+/** ชื่อในทำเนียบที่เขียนต่างจากหน้าแบรนด์ (ตรวจด้วยตาแล้ว) ห้ามจับคู่แบบ "ชื่อคล้าย" เพราะเคยจับ The Infinite ผิดเป็น The Astra Infinite */
+const BRAND_ALIAS: Record<string, string> = {
+  "The Next 3 Ruamchok (3.1/3.2)": "The Next 3 Ruamchok",
+  "The Next Premier": "The Next Premier Ruamchok",
+  "Arise Hill": "Arise Hill San Sai",
+};
+export function brandOf(c: CondoEntry) {
+  const k = norm(BRAND_ALIAS[c.en] ?? c.en);
+  for (const b of condoBrands) for (const x of b.projects) if (norm(x.en) === k) return { b, x };
+  return undefined;
+}
+
+/** ชั้น/ปีที่ใช้แสดง: โครงการของแบรนด์ใช้ตัวเลขที่คัดแล้วใน condo-brands (ตัวที่แหล่งขัดกันเว้นว่าง) กันหน้าเว็บขัดกันเอง */
+export function factsOf(c: CondoEntry): { f: string | null; y: number | null } {
+  const m = brandOf(c);
+  return m ? { f: m.x.floors ? String(m.x.floors) : null, y: m.x.year ?? null } : { f: c.f, y: c.y };
+}
+
+/** หน้าคอนโดของโครงการในหน้าแบรนด์ (ถ้ามีในทำเนียบ) */
+export const condoOfBrandProject = (en: string) => condoDirectory.find((c) => brandOf(c)?.x.en === en);
 
 /** หน้าพื้นที่ของตำบล: หน้าตำบลเดี่ยวก่อน ถ้าไม่มีใช้หน้าที่ครอบตำบลนั้น */
 export function areaOfTambon(t: string) {
@@ -247,12 +272,12 @@ export function CondoDirectoryView({ lang }: { lang: CondoLang }) {
                   {list.map((c) => (
                     <li key={c.en} data-condo={`${c.th ?? ""} ${c.en} ${c.r ?? ""}`} className="px-5 py-3 sm:px-6">
                       <p className="font-semibold text-ink">
-                        {lang === "th" ? c.th ?? c.en : c.en}
+                        <Link href={condoPath(lang, c.s)} className="hover:text-brand-700 hover:underline">{lang === "th" ? c.th ?? c.en : c.en}</Link>
                         {lang === "th" && c.th && c.th !== c.en && <span className="ml-2 text-sm font-normal text-ink-soft" lang="en">{c.en}</span>}
                         {lang !== "th" && c.th && <span className="ml-2 text-sm font-normal text-ink-soft" lang="th">{c.th}</span>}
                       </p>
                       <p className="mt-0.5 text-sm leading-6 text-ink-soft">
-                        {[lang === "th" ? c.r : null, c.f && t.floors(c.f), c.y && t.built(c.y)].filter(Boolean).join(" · ")}
+                        {(() => { const k = factsOf(c); return [lang === "th" ? c.r : null, k.f && t.floors(k.f), k.y && t.built(k.y)].filter(Boolean).join(" · "); })()}
                       </p>
                     </li>
                   ))}
@@ -324,7 +349,7 @@ export function CondoBrandView({ b, lang }: { b: CondoBrand; lang: CondoLang }) 
               const a = areaOfTambon(x.tambon);
               return (
                 <li key={x.en} className="card p-4">
-                  <p className="font-bold">{lang === "th" ? x.th : x.en}</p>
+                  <p className="font-bold">{(() => { const c = condoOfBrandProject(x.en); const label = lang === "th" ? x.th : x.en; return c ? <Link href={condoPath(lang, c.s)} className="hover:text-brand-700 hover:underline">{label}</Link> : label; })()}</p>
                   <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
                     <dt className="text-ink-soft">{t.head[1]}</dt>
                     <dd>{a ? <Link href={areaPath(lang, a.slug)} className="text-brand-700 hover:underline">{tName(lang, x.tambon)}</Link> : tName(lang, x.tambon)}{x.tambonAlt && <span className="text-ink-soft"> ({t.alt(x.tambonAlt)})</span>}</dd>
@@ -346,7 +371,7 @@ export function CondoBrandView({ b, lang }: { b: CondoBrand; lang: CondoLang }) 
                   const a = areaOfTambon(x.tambon);
                   return (
                     <tr key={x.en}>
-                      <td className="px-4 py-3 font-semibold">{lang === "th" ? x.th : x.en}</td>
+                      <td className="px-4 py-3 font-semibold">{(() => { const c = condoOfBrandProject(x.en); const label = lang === "th" ? x.th : x.en; return c ? <Link href={condoPath(lang, c.s)} className="hover:text-brand-700 hover:underline">{label}</Link> : label; })()}</td>
                       <td className="px-4 py-3">{a ? <Link href={areaPath(lang, a.slug)} className="text-brand-700 hover:underline">{tName(lang, x.tambon)}</Link> : tName(lang, x.tambon)}{x.tambonAlt && <span className="block text-xs text-ink-soft">{t.alt(x.tambonAlt)}</span>}</td>
                       <td className="px-4 py-3">{lang === "th" ? x.road : x.roadEn}</td>
                       <td className="px-4 py-3">{t.bld(x.buildings, x.floors, x.units)}</td>
