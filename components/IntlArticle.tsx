@@ -25,7 +25,7 @@ const T = {
     by: "Written by", read: (n: number) => `${n} min read`, updated: "Updated",
     faq: "Frequently asked questions", more: "More guides", intent: "Want a technician to check this?",
     line: "Send a photo or clip on LINE", locale: "en_US", inLang: "en",
-    svc: { "som-air": ["/en/repair", "AC repair in Chiang Mai"], "lang-air": ["/en/pricing", "Aircon cleaning prices"], "lang-washing-machine": ["/en/washing-machine", "Washing machine cleaning"], "tid-tang-air": ["/en/installation", "Aircon installation"], "yai-air": ["/en/installation", "Installation and relocation"] } as Record<string, [string, string]>,
+    svc: { "som-air": ["/en/repair", "AC repair in Chiang Mai"], "lang-air": ["/en/pricing", "Aircon cleaning prices"], "lang-air-khwaen-cassette": ["/en/pricing", "Cassette and suspended aircon cleaning prices"], "lang-washing-machine": ["/en/washing-machine", "Washing machine cleaning"], "tid-tang-air": ["/en/installation", "Aircon installation"], "yai-air": ["/en/installation", "Installation and relocation"] } as Record<string, [string, string]>,
     read_more: "Read the guide",
   },
   "zh-CN": {
@@ -37,7 +37,7 @@ const T = {
     by: "作者", read: (n: number) => `阅读约 ${n} 分钟`, updated: "更新于",
     faq: "常见问题", more: "更多文章", intent: "需要技师上门检查？",
     line: "用 LINE 发照片或视频", locale: "zh_CN", inLang: "zh-CN",
-    svc: { "som-air": ["/zh/repair", "清迈空调维修"], "lang-air": ["/zh/pricing", "空调清洗价格"], "lang-washing-machine": ["/zh/washing-machine", "洗衣机清洗"], "tid-tang-air": ["/zh/installation", "空调安装"], "yai-air": ["/zh/installation", "安装与移机"] } as Record<string, [string, string]>,
+    svc: { "som-air": ["/zh/repair", "清迈空调维修"], "lang-air": ["/zh/pricing", "空调清洗价格"], "lang-air-khwaen-cassette": ["/zh/pricing", "嵌入式与吊顶式空调清洗价格"], "lang-washing-machine": ["/zh/washing-machine", "洗衣机清洗"], "tid-tang-air": ["/zh/installation", "空调安装"], "yai-air": ["/zh/installation", "安装与移机"] } as Record<string, [string, string]>,
     read_more: "阅读全文",
   },
 } as const;
