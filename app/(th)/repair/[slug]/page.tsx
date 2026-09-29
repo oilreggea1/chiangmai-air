@@ -67,7 +67,7 @@ export default async function RepairGuidePage({ params }: Props) {
           <aside className="card bg-sand p-6 sm:p-8">
             <p className="flex items-center gap-2 font-bold"><IconShield className="h-5 w-5 text-brand-600" />เงื่อนไขค่าตรวจ</p>
             <p className="mt-4 text-4xl font-extrabold text-brand-700">{p.repair.diagnostic} บาท</p>
-            <p className="mt-3 text-sm leading-7 text-ink-soft">หักคืนเต็มจำนวนเมื่อตัดสินใจซ่อม แจ้งราคาอะไหล่และระยะรับประกันก่อนเริ่มงาน</p>
+            <p className="mt-3 text-sm leading-7 text-ink-soft">หักคืนเต็มจำนวนเมื่อตัดสินใจซ่อม แจ้งราคาอะไหล่ก่อนเริ่มงาน รับประกันงานซ่อม 30 วัน</p>
             <Link href="/price/repair" className="btn-ghost mt-6 w-full" data-cta="repair-price">ดูราคาซ่อมแอร์<IconChevron className="h-4 w-4" /></Link>
           </aside>
         </div>

@@ -258,7 +258,7 @@ export default function ChinesePage() {
               "地面和家具铺两层防尘布，收工前把现场清理干净。",
               "当着您的面测量冷媒。冷媒不缺就不加，因为加多了会缩短压缩机寿命。",
               "更换任何零件都会把旧件拿给您看。",
-              "每次清洗都包含消毒喷洒。常规清洗漏水保修 30 天，深度拆洗 60 天，新机安装保修最长一年。",
+              "每次清洗都包含消毒喷洒。常规清洗漏水保修 30 天，深度拆洗 60 天，维修保修 30 天，新机安装保修最长一年。",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />

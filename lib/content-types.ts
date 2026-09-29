@@ -49,3 +49,24 @@ export type Article = {
    */
   relatedPrice?: { href: string; label: string };
 };
+
+/**
+ * บทความฉบับแปลอังกฤษ/จีน (29 ก.ย. 2569) ใช้ slug เดียวกับบทความไทยเพื่อจับคู่ hreflang
+ * เนื้อหาแปลจากฉบับไทย ห้ามเพิ่มข้อเท็จจริงที่ฉบับไทยไม่มี ราคาต้องดึงจาก p เหมือนเดิม
+ * relatedService ใช้ slug บริการไทย แล้วหน้าแปลจะแมปไปหน้าบริการภาษาเดียวกันเอง
+ */
+export type IntlArticle = {
+  slug: string;
+  title: string;
+  h1: string;
+  description: string;
+  category: string;
+  updated: string;
+  readMins: number;
+  image?: { src: string; alt: string };
+  excerpt: string;
+  keywords: string[];
+  blocks: Block[];
+  faqs: { q: string; a: string }[];
+  relatedService?: string;
+};

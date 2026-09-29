@@ -14,7 +14,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", languages: { "th-TH": "/blog", "en-US": "/en/blog", "zh-CN": "/zh/blog", "x-default": "/blog" } },
   ...share({ title, description, path: `/blog`, type: "website" }),
 };
 

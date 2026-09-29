@@ -290,7 +290,7 @@ export default function EnglishPage() {
               "Refrigerant is measured in front of you. A system that is not low does not get topped up, because overcharging one shortens the life of the compressor.",
               "Old parts come back to you with an explanation of what failed. Where a repair costs more than the unit is worth, I give you the repair cost and the replacement cost side by side, and the decision stays with you.",
               "Two layers of drop sheets on every cleaning job. Floor and furniture stay as they were.",
-              "Every clean includes a disinfectant spray. Warranty against drips: 30 days after a standard clean, 60 days after a full strip-down clean. Installation: up to 1 year.",
+              "Every clean includes a disinfectant spray. Warranty against drips: 30 days after a standard clean, 60 days after a full strip-down clean. Repairs: 30 days. Installation: up to 1 year.",
               "Full VAT tax invoices and receipts issued in the company name, Cher Solutions Co., Ltd., for business bookings.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
@@ -429,6 +429,7 @@ export default function EnglishPage() {
               { href: "/en/washing-machine", t: "Washing machine deep clean", d: "Drum out, every part washed" },
               { href: "/en/about", t: "About Arm and the company", d: "Registered company, who comes to your home" },
               { href: "/en/work", t: "Real jobs, before and after", d: "Aircon and washing machine photos" },
+              { href: "/en/blog", t: "Aircon guides", d: "Noises, tripping, refrigerant, ice and leaks" },
               { href: "/en/areas", t: "Areas I cover", d: "District and sub-district list" },
               { href: "/en/condo", t: "Condo aircon cleaning", d: "No balcony needed, move-out cleaning" },
               { href: "/en/airbnb", t: "Airbnb and rentals", d: "Cleaning between guests" },

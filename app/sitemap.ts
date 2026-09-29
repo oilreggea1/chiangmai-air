@@ -4,6 +4,7 @@ import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { workCases } from "@/lib/work-cases";
 import { jobs } from "@/lib/jobs";
+import { enArticles, zhArticles } from "@/content/articles-intl";
 import { segments } from "@/lib/segments";
 import { brands } from "@/lib/brands";
 import { lastmodOf, SRC } from "@/lib/lastmod";
@@ -80,6 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/repair", priority: 0.8, freq: "monthly" as const },
     { path: "/en/about", priority: 0.6, freq: "monthly" as const },
     { path: "/en/work", priority: 0.7, freq: "monthly" as const },
+    { path: "/en/blog", priority: 0.6, freq: "monthly" as const },
     { path: "/zh", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/pricing", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/installation", priority: 0.7, freq: "monthly" as const },
@@ -89,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/zh/repair", priority: 0.8, freq: "monthly" as const },
     { path: "/zh/condo", priority: 0.8, freq: "monthly" as const },
     { path: "/zh/work", priority: 0.7, freq: "monthly" as const },
+    { path: "/zh/blog", priority: 0.6, freq: "monthly" as const },
   ];
 
   return [
@@ -129,6 +132,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.7,
       images: item.images.map((image) => `${site.url}${image.src}`),
+    })),
+    // บทความแปลอังกฤษ/จีน (29 ก.ย. 2569)
+    ...[...enArticles.map((a) => ({ a, base: "/en/blog" })), ...zhArticles.map((a) => ({ a, base: "/zh/blog" }))].map(({ a, base }) => ({
+      url: `${site.url}${base}/${a.slug}`,
+      lastModified: new Date(a.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     // หน้าเรื่องของแต่ละงาน รูปครบทุกใบ (29 ก.ย. 2569)
     ...jobs.map((j) => ({

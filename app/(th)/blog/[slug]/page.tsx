@@ -6,6 +6,7 @@ import { site, services } from "@/lib/site";
 import { articles, getArticle, relatedArticles } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
 import { clipDesc, share } from "@/lib/seo";
+import { translationsOf } from "@/content/articles-intl";
 import ArticleBody, { TableOfContents } from "@/components/ArticleBody";
 import { IconClock, IconChevron, IconEngineer } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
@@ -26,7 +27,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: a.title },
     description: clipDesc(a.description),
     keywords: a.keywords,
-    alternates: { canonical: `/blog/${a.slug}` },
+    // ประกาศคู่ภาษาเฉพาะบทความที่มีฉบับแปลแล้ว (29 ก.ย. 2569)
+    alternates: (() => {
+      const tr = translationsOf(a.slug);
+      if (!tr.en && !tr.zh) return { canonical: `/blog/${a.slug}` };
+      return {
+        canonical: `/blog/${a.slug}`,
+        languages: {
+          "th-TH": `/blog/${a.slug}`,
+          ...(tr.en ? { "en-US": `/en/blog/${a.slug}` } : {}),
+          ...(tr.zh ? { "zh-CN": `/zh/blog/${a.slug}` } : {}),
+          "x-default": `/blog/${a.slug}`,
+        },
+      };
+    })(),
     ...share({
       title: a.title,
       description: clipDesc(a.description),

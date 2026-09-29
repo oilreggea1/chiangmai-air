@@ -23,6 +23,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
         { href: "/en/washing-machine", label: "Washing machine deep clean" },
         { href: "/en/about", label: "About Arm and the company" },
         { href: "/en/work", label: "Real jobs, before and after" },
+        { href: "/en/blog", label: "Aircon guides" },
         { href: "/en/areas", label: "Areas I cover" },
         { href: "/en/condo", label: "Condo aircon cleaning" },
         { href: "/en/airbnb", label: "Airbnb and rentals" },
@@ -35,6 +36,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
         { href: "/zh/installation", label: "空调安装与移机" },
         { href: "/zh/washing-machine", label: "洗衣机内桶清洗" },
         { href: "/zh/work", label: "施工前后实拍" },
+        { href: "/zh/blog", label: "空调知识" },
         { href: "/zh/areas", label: "清迈服务范围" },
         { href: "/zh/about", label: "关于 Arm 与公司" },
       ];

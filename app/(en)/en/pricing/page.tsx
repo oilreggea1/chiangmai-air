@@ -135,7 +135,7 @@ export default function EnPricingPage() {
               "Two layers of sheeting over the floor and furniture, and the area cleaned up before I leave.",
               "Refrigerant measured in front of you. If it is not low, I tell you and I do not top it up.",
               "The old part shown to you whenever something is replaced.",
-              "Every clean includes a disinfectant spray. Warranty against drips is 30 days after a standard clean and 60 days after a full strip-down clean, and up to 1 year on a new installation.",
+              "Every clean includes a disinfectant spray. Warranty against drips is 30 days after a standard clean and 60 days after a full strip-down clean, 30 days on repairs, and up to 1 year on a new installation.",
             ].map((t) => (
               <li key={t} className="flex items-start gap-3">
                 <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />

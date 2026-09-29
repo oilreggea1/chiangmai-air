@@ -19,7 +19,8 @@ const toneStyle = {
 } as const;
 
 function slugifyHeading(text: string, i: number) {
-  return `h-${i}-${text.replace(/[^฀-๿a-zA-Z0-9]+/g, "-").slice(0, 40)}`;
+  // รวมอักษรจีนด้วย (บทความภาษาจีน 29 ก.ย. 2569) ไม่งั้นหัวข้อจีนจะได้ id ซ้ำกันเป็นขีดล้วน
+  return `h-${i}-${text.replace(/[^฀-๿a-zA-Z0-9\u4e00-\u9fff]+/g, "-").slice(0, 40)}`;
 }
 
 export function headingsOf(blocks: Block[]) {
@@ -28,15 +29,26 @@ export function headingsOf(blocks: Block[]) {
     .filter((x): x is { id: string; text: string } => x !== null);
 }
 
+/** ป้ายข้อความของบทความตามภาษา (บทความแปลอังกฤษ/จีน 29 ก.ย. 2569) */
+export type ArticleLang = "th" | "en" | "zh-CN";
+const L = {
+  th: { sources: "แหล่งอ้างอิงทางการ", call: "โทร", toc: "ในบทความนี้", tocAria: "สารบัญ" },
+  en: { sources: "Official sources", call: "Call", toc: "In this article", tocAria: "Contents" },
+  "zh-CN": { sources: "官方参考资料", call: "电话", toc: "本文目录", tocAria: "目录" },
+} as const;
+
 export default function ArticleBody({
   blocks,
   lineUrl = site.lineUrl,
   lineId = site.lineId,
+  lang = "th",
 }: {
   blocks: Block[];
   lineUrl?: string;
   lineId?: string;
+  lang?: ArticleLang;
 }) {
+  const t = L[lang];
   return (
     <div className="space-y-6">
       {blocks.map((b, i) => {
@@ -185,7 +197,7 @@ export default function ArticleBody({
           case "sources":
             return (
               <aside key={i} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
-                <h2 className="text-lg font-bold">แหล่งอ้างอิงทางการ</h2>
+                <h2 className="text-lg font-bold">{t.sources}</h2>
                 <ol className="mt-4 space-y-3">
                   {b.items.map((source) => (
                     <li key={source.url} className="text-[15px] leading-7 text-ink-soft">
@@ -219,7 +231,7 @@ export default function ArticleBody({
             );
 
           case "btuCalc":
-            return <BtuCalculator key={i} />;
+            return <BtuCalculator key={i} lang={lang} />;
 
           case "cta":
             return (
@@ -228,7 +240,7 @@ export default function ArticleBody({
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                   <a href={`tel:${site.phoneTel}`} className="btn-call" data-cta="article-call">
                     <IconPhone className="h-5 w-5" />
-                    โทร {site.phone}
+                    {t.call} {site.phone}
                   </a>
                   <a href={lineUrl} target="_blank" rel="noopener" className="btn-line" data-cta="article-line">
                     <IconLine className="h-5 w-5" />
@@ -243,12 +255,13 @@ export default function ArticleBody({
   );
 }
 
-export function TableOfContents({ blocks }: { blocks: Block[] }) {
+export function TableOfContents({ blocks, lang = "th" }: { blocks: Block[]; lang?: ArticleLang }) {
   const heads = headingsOf(blocks);
   if (heads.length < 3) return null;
+  const t = L[lang];
   return (
-    <nav aria-label="สารบัญ" className="card bg-sand p-5 sm:p-6">
-      <p className="font-bold">ในบทความนี้</p>
+    <nav aria-label={t.tocAria} className="card bg-sand p-5 sm:p-6">
+      <p className="font-bold">{t.toc}</p>
       <ol className="mt-3 space-y-2">
         {heads.map((h, i) => (
           <li key={h.id} className="flex gap-2.5 text-[15px] leading-7">
