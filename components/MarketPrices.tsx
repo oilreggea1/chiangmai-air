@@ -32,7 +32,7 @@ export function MarketPrices({ image }: { image?: { src: string; alt: string; cr
           </div>
           {image && (
             <figure className="overflow-hidden rounded-3xl ring-1 ring-slate-200">
-              <Image src={image.src} alt={image.alt} width={900} height={700} sizes="(max-width: 1024px) 100vw, 35vw" className="aspect-[4/3] w-full object-cover" />
+              <Image src={image.src} alt={image.alt} width={1260} height={840} sizes="(max-width: 1024px) 100vw, 35vw" className="aspect-[4/3] w-full object-cover" />
               {image.credit && <figcaption className="bg-white px-4 py-2 text-xs text-ink-soft">{image.credit}</figcaption>}
             </figure>
           )}
