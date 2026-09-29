@@ -247,6 +247,11 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               </Link>
             </li>
             <li>
+              <Link href="/customer/condo" className="text-ink-soft hover:text-brand-700 hover:underline">
+                ล้างแอร์คอนโด
+              </Link>
+            </li>
+            <li>
               <Link href="/customer/sue-air-online" className="text-ink-soft hover:text-brand-700 hover:underline">
                 รับติดตั้งแอร์ที่ซื้อมาเอง
               </Link>

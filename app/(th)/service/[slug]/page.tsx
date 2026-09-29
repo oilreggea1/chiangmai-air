@@ -268,6 +268,24 @@ export default async function ServicePage({ params }: Props) {
               <IconLine className="h-5 w-5" />
               ส่งตำแหน่งทาง LINE {site.lineId}
             </a>
+
+            {/* ทางแยกตามประเภทที่พัก (29 ก.ย. 2569) GSC ชี้ว่าคำ "ล้างแอร์คอนโด" ไปติดที่หน้าแรกแทนหน้าคอนโด
+                เพราะหน้าคอนโดแทบไม่มีลิงก์ภายในชี้เข้า จึงต้องลิงก์จากหน้าแม่ของกลุ่มคำล้างแอร์ */}
+            <h3 className="mt-10 text-lg font-bold">ล้างแอร์ตามประเภทที่พัก</h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { href: "/customer/condo", t: "ล้างแอร์คอนโดเชียงใหม่", d: "ห้องไม่มีระเบียงก็ล้างได้ ประสานนิติบุคคลให้" },
+                { href: "/customer/ho-phak", t: "ล้างแอร์หอพักและห้องเช่า", d: "ล้างทั้งตึก แบ่งทำเป็นชั้นตามที่ผู้เช่าสะดวก" },
+                { href: "/customer/ran-ahan", t: "ล้างแอร์ร้านอาหารและคาเฟ่", d: "นัดก่อนเปิดร้านหรือหลังปิดร้านได้" },
+                { href: "/customer/office", t: "ล้างแอร์สำนักงาน", d: "ออกใบกำกับภาษีเต็มรูปในนามบริษัท" },
+                { href: "/service/lang-air-khwaen-cassette", t: "ล้างแอร์แขวนและ 4 ทิศทาง", d: `แขวนเริ่ม ${p.wash.suspended} บาท ทำทุกขั้นตอนอย่างละเอียด` },
+              ].map((x) => (
+                <Link key={x.href} href={x.href} className="card group flex flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta={`lang-air-seg-${x.href.split("/").pop()}`}>
+                  <span className="font-bold group-hover:text-brand-700">{x.t}</span>
+                  <span className="mt-1.5 text-sm leading-6 text-ink-soft">{x.d}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}

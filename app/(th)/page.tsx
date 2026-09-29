@@ -16,7 +16,7 @@ import { jobs } from "@/lib/jobs";
 import { groups, homeFeatured, jobsIn } from "@/lib/job-stories";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 
-const featuredServices = ["lang-air", "som-air", "tid-tang-air", "lang-washing-machine"]
+const featuredServices = ["lang-air", "som-air", "tid-tang-air", "yai-air", "khai-air", "lang-washing-machine"]
   .map((slug) => services.find((service) => service.slug === slug))
   .filter((service): service is (typeof services)[number] => Boolean(service));
 const featuredAreaSlugs = ["san-kamphaeng", "ton-pao", "mueang-chiang-mai", "saraphi", "doi-saket", "san-phra-net"];
@@ -201,6 +201,9 @@ export default function Home() {
               ตั้งแต่การล้างแอร์ประจำปี ซ่อมอาการเสีย{" "}
               <Link href="/service/tid-tang-air" className="font-semibold text-brand-700 hover:underline">ติดตั้งเครื่องใหม่</Link>{" "}
               <Link href="/service/yai-air" className="font-semibold text-brand-700 hover:underline">ย้ายแอร์</Link>{" "}
+              <Link href="/customer/condo" className="font-semibold text-brand-700 hover:underline">ล้างแอร์คอนโด</Link>{" "}
+              ขายแอร์ใหม่และมือสองแบบ{" "}
+              <Link href="/service/khai-air" className="font-semibold text-brand-700 hover:underline">ร้านแอร์เชียงใหม่</Link>{" "}
               ไปจนถึงการถอดล้างถังเครื่องซักผ้า ราคาที่แสดงคือราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
             </p>
           </div>
