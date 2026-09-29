@@ -5,6 +5,8 @@ import { repairGuides } from "@/lib/repair-guides";
 import { workCases } from "@/lib/work-cases";
 import { jobs } from "@/lib/jobs";
 import { enArticles, zhArticles } from "@/content/articles-intl";
+import { intlAreaSlugs } from "@/components/IntlArea";
+import { intlCaseSlugs } from "@/components/IntlCase";
 import { segments } from "@/lib/segments";
 import { brands } from "@/lib/brands";
 import { lastmodOf, SRC } from "@/lib/lastmod";
@@ -82,6 +84,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/en/about", priority: 0.6, freq: "monthly" as const },
     { path: "/en/work", priority: 0.7, freq: "monthly" as const },
     { path: "/en/blog", priority: 0.6, freq: "monthly" as const },
+    { path: "/en/case-study", priority: 0.6, freq: "monthly" as const },
     { path: "/zh", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/pricing", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/installation", priority: 0.7, freq: "monthly" as const },
@@ -92,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/zh/condo", priority: 0.8, freq: "monthly" as const },
     { path: "/zh/work", priority: 0.7, freq: "monthly" as const },
     { path: "/zh/blog", priority: 0.6, freq: "monthly" as const },
+    { path: "/zh/case-study", priority: 0.6, freq: "monthly" as const },
   ];
 
   return [
@@ -140,6 +144,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
+    // รายงานเคสและหน้าพื้นที่ฉบับอังกฤษ/จีน (29 ก.ย. 2569)
+    ...(["en", "zh-CN"] as const).flatMap((lang) => {
+      const pre = lang === "en" ? "/en" : "/zh";
+      return [
+        ...intlCaseSlugs(lang).map((slug) => ({
+          url: `${site.url}${pre}/case-study/${slug}`,
+          lastModified: lastmodOf(SRC.workCases, thPage("/case-study/[slug]")),
+          changeFrequency: "yearly" as const,
+          priority: 0.5,
+        })),
+        ...intlAreaSlugs(lang).map((slug) => ({
+          url: `${site.url}${pre}/areas/${slug}`,
+          lastModified: lastmodOf(SRC.site, thPage("/area/[slug]")),
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        })),
+      ];
+    }),
     // หน้าเรื่องของแต่ละงาน รูปครบทุกใบ (29 ก.ย. 2569)
     ...jobs.map((j) => ({
       url: `${site.url}/kon-lang/${j.id}`,

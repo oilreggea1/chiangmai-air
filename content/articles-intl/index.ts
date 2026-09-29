@@ -20,6 +20,48 @@ import { article as enLangKhrueangSakPhaBoiKaeNai } from "./en/lang-khrueang-sak
 import { article as zhLangKhrueangSakPhaBoiKaeNai } from "./zh/lang-khrueang-sak-pha-boi-kae-nai";
 import { article as enRakhaSomAir } from "./en/rakha-som-air";
 import { article as zhRakhaSomAir } from "./zh/rakha-som-air";
+import { article as enAirMaiYenSaHet } from "./en/air-mai-yen-sa-het";
+import { article as zhAirMaiYenSaHet } from "./zh/air-mai-yen-sa-het";
+import { article as enSomRueSueMai } from "./en/som-rue-sue-mai";
+import { article as zhSomRueSueMai } from "./zh/som-rue-sue-mai";
+import { article as enSakPhaFaNaVsFaBon } from "./en/sak-pha-fa-na-vs-fa-bon";
+import { article as zhSakPhaFaNaVsFaBon } from "./zh/sak-pha-fa-na-vs-fa-bon";
+import { article as enAirMenApChueaRa } from "./en/air-men-ap-chuea-ra";
+import { article as zhAirMenApChueaRa } from "./zh/air-men-ap-chuea-ra";
+import { article as enAirPleungFai } from "./en/air-pleung-fai";
+import { article as zhAirPleungFai } from "./zh/air-pleung-fai";
+import { article as enChekChangLangKhrueangSakPha } from "./en/chek-chang-lang-khrueang-sak-pha";
+import { article as zhChekChangLangKhrueangSakPha } from "./zh/chek-chang-lang-khrueang-sak-pha";
+import { article as enHongPlodFunChiangmai } from "./en/hong-plod-fun-chiangmai";
+import { article as zhHongPlodFunChiangmai } from "./zh/hong-plod-fun-chiangmai";
+import { article as enInverterVsThammada } from "./en/inverter-vs-thammada";
+import { article as zhInverterVsThammada } from "./zh/inverter-vs-thammada";
+import { article as enKhaTidTangAirRuamArai } from "./en/kha-tid-tang-air-ruam-arai";
+import { article as zhKhaTidTangAirRuamArai } from "./zh/kha-tid-tang-air-ruam-arai";
+import { article as enKhamnuanBtu } from "./en/khamnuan-btu";
+import { article as zhKhamnuanBtu } from "./zh/khamnuan-btu";
+import { article as enLangAirBoiKaeNai } from "./en/lang-air-boi-kae-nai";
+import { article as zhLangAirBoiKaeNai } from "./zh/lang-air-boi-kae-nai";
+import { article as enLangAirEngDaiMai } from "./en/lang-air-eng-dai-mai";
+import { article as zhLangAirEngDaiMai } from "./zh/lang-air-eng-dai-mai";
+import { article as enLangAirRanAhanCafe } from "./en/lang-air-ran-ahan-cafe";
+import { article as zhLangAirRanAhanCafe } from "./zh/lang-air-ran-ahan-cafe";
+import { article as enLangAirThammadaVsPremium } from "./en/lang-air-thammada-vs-premium";
+import { article as zhLangAirThammadaVsPremium } from "./zh/lang-air-thammada-vs-premium";
+import { article as enLangKhrueangSakPhaEngDaiMai } from "./en/lang-khrueang-sak-pha-eng-dai-mai";
+import { article as zhLangKhrueangSakPhaEngDaiMai } from "./zh/lang-khrueang-sak-pha-eng-dai-mai";
+import { article as enLangKhrueangSakPhaThuengBan } from "./en/lang-khrueang-sak-pha-thueng-ban";
+import { article as zhLangKhrueangSakPhaThuengBan } from "./zh/lang-khrueang-sak-pha-thueng-ban";
+import { article as enLangThangSakPha } from "./en/lang-thang-sak-pha";
+import { article as zhLangThangSakPha } from "./zh/lang-thang-sak-pha";
+import { article as enPm25LangAirChiangmai } from "./en/pm25-lang-air-chiangmai";
+import { article as zhPm25LangAirChiangmai } from "./zh/pm25-lang-air-chiangmai";
+import { article as enRakhaLangThangSakPha } from "./en/rakha-lang-thang-sak-pha";
+import { article as zhRakhaLangThangSakPha } from "./zh/rakha-lang-thang-sak-pha";
+import { article as enSueAirOnlineCheckArai } from "./en/sue-air-online-check-arai";
+import { article as zhSueAirOnlineCheckArai } from "./zh/sue-air-online-check-arai";
+import { article as enYaiAirTongRuArai } from "./en/yai-air-tong-ru-arai";
+import { article as zhYaiAirTongRuArai } from "./zh/yai-air-tong-ru-arai";
 
 /**
  * บทความแปลอังกฤษ/จีน (29 ก.ย. 2569) เจ้าของสั่งให้เริ่มจากบทความที่คนค้นเยอะสุดใน Search Console
@@ -39,6 +81,27 @@ export const enArticles: IntlArticle[] = [
   enKhopYangSakPhaKhuenRa,
   enLangKhrueangSakPhaBoiKaeNai,
   enRakhaSomAir,
+  enAirMaiYenSaHet,
+  enSomRueSueMai,
+  enSakPhaFaNaVsFaBon,
+  enAirMenApChueaRa,
+  enAirPleungFai,
+  enChekChangLangKhrueangSakPha,
+  enHongPlodFunChiangmai,
+  enInverterVsThammada,
+  enKhaTidTangAirRuamArai,
+  enKhamnuanBtu,
+  enLangAirBoiKaeNai,
+  enLangAirEngDaiMai,
+  enLangAirRanAhanCafe,
+  enLangAirThammadaVsPremium,
+  enLangKhrueangSakPhaEngDaiMai,
+  enLangKhrueangSakPhaThuengBan,
+  enLangThangSakPha,
+  enPm25LangAirChiangmai,
+  enRakhaLangThangSakPha,
+  enSueAirOnlineCheckArai,
+  enYaiAirTongRuArai,
 ];
 export const zhArticles: IntlArticle[] = [
   zhAirSiangDang,
@@ -51,6 +114,27 @@ export const zhArticles: IntlArticle[] = [
   zhKhopYangSakPhaKhuenRa,
   zhLangKhrueangSakPhaBoiKaeNai,
   zhRakhaSomAir,
+  zhAirMaiYenSaHet,
+  zhSomRueSueMai,
+  zhSakPhaFaNaVsFaBon,
+  zhAirMenApChueaRa,
+  zhAirPleungFai,
+  zhChekChangLangKhrueangSakPha,
+  zhHongPlodFunChiangmai,
+  zhInverterVsThammada,
+  zhKhaTidTangAirRuamArai,
+  zhKhamnuanBtu,
+  zhLangAirBoiKaeNai,
+  zhLangAirEngDaiMai,
+  zhLangAirRanAhanCafe,
+  zhLangAirThammadaVsPremium,
+  zhLangKhrueangSakPhaEngDaiMai,
+  zhLangKhrueangSakPhaThuengBan,
+  zhLangThangSakPha,
+  zhPm25LangAirChiangmai,
+  zhRakhaLangThangSakPha,
+  zhSueAirOnlineCheckArai,
+  zhYaiAirTongRuArai,
 ];
 
 export type IntlLang = "en" | "zh-CN";

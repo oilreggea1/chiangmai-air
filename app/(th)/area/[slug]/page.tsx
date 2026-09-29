@@ -8,6 +8,7 @@ import { clipDesc, share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, serviceIcons } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 import { workCases } from "@/lib/work-cases";
+import { areaTranslated } from "@/content/areas-intl";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,7 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description: clipDesc(description),
-    alternates: { canonical: `/area/${a.slug}` },
+    alternates: {
+      canonical: `/area/${a.slug}`,
+      // ประกาศคู่ภาษาเฉพาะพื้นที่ที่มีคำแปลครบ (content/areas-intl)
+      ...(areaTranslated(a.slug)
+        ? { languages: { "th-TH": `/area/${a.slug}`, "en-US": `/en/areas/${a.slug}`, "zh-CN": `/zh/areas/${a.slug}`, "x-default": `/area/${a.slug}` } }
+        : {}),
+    },
     ...share({ title, description, path: `/area/${a.slug}` }),
   };
 }

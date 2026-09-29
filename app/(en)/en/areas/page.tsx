@@ -96,17 +96,16 @@ export default function EnAreasPage() {
 
       <section className="section bg-sand" lang="en">
         <div className="wrap">
-          <h2 className="h2">Zone pages in Thai</h2>
+          <h2 className="h2">Area pages</h2>
           <p className="lead mt-3 max-w-2xl">
-            Send a zone link to a Thai-speaking landlord, agent or condo office —
-            each one carries the local detail in Thai.
+            What aircon work is like in each area, local questions, and real jobs nearby. Each page
+            also links to its Thai version, handy for a Thai-speaking landlord, agent or condo office.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (
               <li key={a.slug}>
                 <Link
-                  href={`/area/${a.slug}`}
-                  hrefLang="th"
+                  href={`/en/areas/${a.slug}`}
                   className="card flex items-center justify-between gap-3 px-5 py-4 transition-all hover:shadow-lift"
                 >
                   <span className="text-sm font-semibold">{areaRoman(a.name)} <span className="ml-1 text-xs font-normal text-ink-soft" lang="th">{a.name}</span></span>

@@ -429,8 +429,9 @@ export default function EnglishPage() {
               { href: "/en/washing-machine", t: "Washing machine deep clean", d: "Drum out, every part washed" },
               { href: "/en/about", t: "About Arm and the company", d: "Registered company, who comes to your home" },
               { href: "/en/work", t: "Real jobs, before and after", d: "Aircon and washing machine photos" },
-              { href: "/en/blog", t: "Aircon guides", d: "Noises, tripping, refrigerant, ice and leaks" },
-              { href: "/en/areas", t: "Areas I cover", d: "District and sub-district list" },
+              { href: "/en/case-study", t: "Case reports", d: "What I found, what I did, with photos" },
+              { href: "/en/blog", t: "Aircon and washer guides", d: "Problems, prices and care, from a working technician" },
+              { href: "/en/areas", t: "Areas I cover", d: "A page for each area, with local notes" },
               { href: "/en/condo", t: "Condo aircon cleaning", d: "No balcony needed, move-out cleaning" },
               { href: "/en/airbnb", t: "Airbnb and rentals", d: "Cleaning between guests" },
             ].map((x) => (

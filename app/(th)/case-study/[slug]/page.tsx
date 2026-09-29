@@ -13,6 +13,7 @@ import { jobs, jobPhotoCount } from "@/lib/jobs";
 import { caseToJob } from "@/lib/case-to-job";
 import { caseRelatedJob } from "@/lib/case-related-job";
 import { thaiDate } from "@/lib/lastmod";
+import { caseTranslated } from "@/content/cases-intl";
 
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() { return workCases.map((item) => ({ slug: item.slug })); }
@@ -38,7 +39,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: metaTitle },
     description: clipDesc(description),
-    alternates: { canonical: `/case-study/${item.slug}` },
+    alternates: {
+      canonical: `/case-study/${item.slug}`,
+      ...(caseTranslated(item.slug)
+        ? { languages: { "th-TH": `/case-study/${item.slug}`, "en-US": `/en/case-study/${item.slug}`, "zh-CN": `/zh/case-study/${item.slug}`, "x-default": `/case-study/${item.slug}` } }
+        : {}),
+    },
     ...share({ title: item.title, description: clipDesc(description), path: `/case-study/${item.slug}`, image: item.images[0] }),
   };
 }

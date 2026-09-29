@@ -91,16 +91,15 @@ export default function ZhAreasPage() {
 
       <section className="section bg-sand" lang="zh-CN">
         <div className="wrap">
-          <h2 className="h2">泰文分区页面</h2>
+          <h2 className="h2">各区域页面</h2>
           <p className="lead mt-3 max-w-2xl">
-            需要把地址转给房东、中介或公寓前台时，可以直接发下面的泰文分区链接，里面写的是该区域的实际情况。
+            每个区域的空调工作特点、当地常见问题和附近的真实案例。每页都附有泰文版链接，方便转给房东、中介或公寓前台。
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (
               <li key={a.slug}>
                 <Link
-                  href={`/area/${a.slug}`}
-                  hrefLang="th"
+                  href={`/zh/areas/${a.slug}`}
                   className="card flex items-center justify-between gap-3 px-5 py-4 transition-all hover:shadow-lift"
                 >
                   <span className="text-sm font-semibold">{areaRoman(a.name)} <span className="ml-1 text-xs font-normal text-ink-soft" lang="th">{a.name}</span></span>

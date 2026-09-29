@@ -13,7 +13,10 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/case-study" },
+  alternates: {
+    canonical: "/case-study",
+    languages: { "th-TH": "/case-study", "en-US": "/en/case-study", "zh-CN": "/zh/case-study", "x-default": "/case-study" },
+  },
   ...share({ title, description, path: "/case-study", image: workCases[0].images[0] }),
 };
 

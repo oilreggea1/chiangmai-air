@@ -70,3 +70,36 @@ export type IntlArticle = {
   faqs: { q: string; a: string }[];
   relatedService?: string;
 };
+
+/**
+ * ข้อความหน้าพื้นที่ฉบับแปล (29 ก.ย. 2569) คีย์ตาม slug ใน areas ของ lib/site.ts
+ * แปลจากเนื้อหาไทยของพื้นที่นั้นตรง ๆ ห้ามเติมข้อเท็จจริงที่ไม่มีในฉบับไทย
+ */
+export type IntlAreaText = {
+  /** ชื่อที่แสดง เช่น "Ton Pao – Bo Sang" */
+  name: string;
+  /** ตำบล/อำเภอเต็ม เช่น "Ton Pao, San Kamphaeng" */
+  full: string;
+  note: string;
+  landmarks: string[];
+  lead: string;
+  points: { t: string; d: string }[];
+  faqs: { q: string; a: string }[];
+};
+
+/** ข้อความรายงานเคสฉบับแปล คีย์ตาม slug ใน workCases ของ lib/work-cases.ts */
+export type IntlCaseText = {
+  title: string;
+  service: string;
+  area: string;
+  equipment: string;
+  reportedIssue: string;
+  finding: string;
+  actions: string[];
+  result: string;
+  recorded: string;
+  sourceNote: string;
+  lesson?: { t: string; d: string }[];
+  /** alt ของรูปตามลำดับเดียวกับ images ในฉบับไทย */
+  alts: string[];
+};
