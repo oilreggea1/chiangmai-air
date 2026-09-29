@@ -28,6 +28,7 @@ const S = {
     noteFixed: "เป็นราคาที่ชำระจริงในเวลาทำการ ผมยืนยันยอดอีกครั้งก่อนเริ่มงาน",
     noteRepair: "ค่าซ่อมจริงผมแจ้งหลังตรวจเช็คและก่อนเริ่มซ่อม ค่าตรวจหักคืนเมื่อตกลงซ่อม ",
     noteHours: "งานนอกเวลาทำการมีค่าบริการเพิ่มเติม", send: "ส่งรายการนี้ทาง LINE เพื่อจองคิว",
+    sendNote: "",
     msgHead: "สอบถามคิวและยืนยันราคา", msgSymptom: "อาการที่พบ:", msgTotal: "ยอดประมาณ", msgTail: "วันที่สะดวก:\nพื้นที่ / หมู่บ้าน:",
   },
   en: {
@@ -40,6 +41,7 @@ const S = {
     noteFixed: "This is what you pay during working hours. I confirm it again before I start.",
     noteRepair: "The repair itself is quoted after diagnosis and before any work, and the diagnostic fee comes off the bill if you go ahead. ",
     noteHours: "Work outside working hours carries an extra charge.", send: "Send this list on LINE to book",
+    sendNote: "The list is sent in Thai so the booking is handled quickly. Add anything else in English below it.",
     msgHead: "Booking request and price check", msgSymptom: "Problem noticed:", msgTotal: "Estimate", msgTail: "Preferred date:\nArea / building:",
   },
   "zh-CN": {
@@ -52,6 +54,7 @@ const S = {
     noteFixed: "这是工作时间内的实付价格，开工前我会再确认一次。",
     noteRepair: "维修费用在检测后、开修前报价；决定维修的话检测费从账单中扣除。",
     noteHours: "工作时间以外另收附加费。", send: "用 LINE 发送清单预约",
+    sendNote: "清单会以泰文发送，方便尽快安排。其他情况可以在下面用中文补充。",
     msgHead: "预约及确认价格", msgSymptom: "故障情况：", msgTotal: "预估", msgTail: "方便的日期：\n地区 / 楼盘：",
   },
 } as const;
@@ -60,6 +63,8 @@ export type CalcRow = {
   key: string;
   label: string;
   hint: string;
+  /** ชื่อไทยของแถว ใช้ในข้อความ LINE จากหน้าอังกฤษ/จีน (แอดมินอ่านไทย) */
+  labelTh?: string;
   /** ชื่อสั้นที่โชว์ในแถว (แท็บบอกประเภทเครื่องอยู่แล้ว) ส่วน label เต็มใช้ในข้อความ LINE */
   short?: string;
   group: CalcGroup;
@@ -96,16 +101,22 @@ export function PriceCalculator({ rows, lineAir, lineWasher, lang = "th" }: { ro
       const uHi = bulk ? r.bulkUnit! : r.unitHi;
       lo += uLo * q; hi += uHi * q; units += q;
       if (r.from) from = true;
-      lines.push(`- ${r.label} × ${q} ≈ ${r.from ? t.from : ""}${money(uLo * q, uHi * q)}${r.from ? t.fromSuf : ""}`);
+      // ข้อความ LINE เป็นภาษาไทยเสมอ แม้ลูกค้ากดจากหน้าอังกฤษ/จีน (เจ้าของสั่ง 29 ก.ย. 2569 ให้แอดมินอ่านได้ทันที)
+      const th = S.th;
+      const thMoney = uLo === uHi ? `${fmt(uLo * q)} ${th.baht}` : `${fmt(uLo * q)}–${fmt(uHi * q)} ${th.baht}`;
+      lines.push(`- ${r.labelTh ?? r.label} ${q} ${th.unit} ≈ ${r.from ? th.from : ""}${thMoney}`);
     }
     return { lo, hi, from, units, lines };
   }, [qty, rows, t]);
 
   const washerOnly = summary.units > 0 && rows.every((r) => r.group === "washer" || !(qty[r.key] ?? 0));
   const total = money(summary.lo, summary.hi);
+  const th = S.th;
+  const thTotal = summary.lo === summary.hi ? `${fmt(summary.lo)} ${th.baht}` : `${fmt(summary.lo)}–${fmt(summary.hi)} ${th.baht}`;
+  const who = lang === "en" ? " (ลูกค้าจากหน้าภาษาอังกฤษ ตอบเป็นภาษาอังกฤษ)" : lang === "zh-CN" ? " (ลูกค้าจากหน้าภาษาจีน ตอบเป็นภาษาจีน)" : "";
   const message =
-    `${t.msgHead}\n${summary.lines.join("\n")}${countIn("repair") > 0 ? `\n${t.msgSymptom}` : ""}\n${t.msgTotal} ${summary.from ? t.from : ""}${total}${summary.from ? t.fromSuf : ""}\n` +
-    t.msgTail;
+    `${th.msgHead}${who}\n${summary.lines.join("\n")}${countIn("repair") > 0 ? `\n${th.msgSymptom}` : ""}\n${th.msgTotal} ${summary.from ? th.from : ""}${thTotal}\n` +
+    th.msgTail;
 
   return (
     <div className="card p-4 sm:p-7">
@@ -184,6 +195,7 @@ export function PriceCalculator({ rows, lineAir, lineWasher, lang = "th" }: { ro
               <IconLine className="h-5 w-5" />
               {t.send}
             </a>
+            {t.sendNote && <p className="mt-2 text-xs leading-5 text-ink-soft">{t.sendNote}</p>}
           </>
         )}
       </div>

@@ -47,7 +47,7 @@ export function calcRows(only?: CalcGroup, lang: CalcLang = "th"): CalcRow[] {
   const tr = lang === "th" ? undefined : INTL[lang];
   return rows
     .filter((r) => !only || r.group === only)
-    .map((r) => (tr && tr[r.key] ? { ...r, label: tr[r.key][0], short: tr[r.key][1], hint: tr[r.key][2] ?? "" } : r));
+    .map((r) => (tr && tr[r.key] ? { ...r, labelTh: r.label, label: tr[r.key][0], short: tr[r.key][1], hint: tr[r.key][2] ?? "" } : r));
 }
 
 /**
