@@ -7,6 +7,7 @@ import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { areaText, areaTexts, type IntlLang } from "@/content/areas-intl";
 import { caseText } from "@/content/cases-intl";
+import { condosInArea } from "./CondoPages";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin } from "./Icons";
 
 /**
@@ -118,6 +119,7 @@ export function IntlAreaView({ slug, lang }: { slug: string; lang: IntlLang }) {
     .slice(0, 4);
 
   const faqs = [...x.faqs, ...t.faqs(x.name, x.full)];
+  const condos = condosInArea(a.full, a.name);
   const groups = pricing.filter((g) => g.icon === "snow" || g.group.startsWith("ซ่อม"));
   const others = areas.filter((o) => o.slug !== slug && areaTexts(lang)[o.slug]);
   const trail = [
@@ -186,6 +188,22 @@ export function IntlAreaView({ slug, lang }: { slug: string; lang: IntlLang }) {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+      )}
+
+      {condos.length > 0 && (
+        <section className="section" lang={lang}>
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">{lang === "en" ? `Condos in ${x.name} where I clean aircon in-room` : `${x.name} 我可上门清洗空调的公寓`}</h2>
+            <p className="lead mt-3">{lang === "en" ? `${condos.length} condo projects in this area. Same price in every building, no travel fee. Tell me the building and floor before booking.` : `这一带共 ${condos.length} 个公寓项目，各楼同一价格，不收路费。预约前请告诉我楼栋和楼层。`}</p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {condos.map((c) => <li key={c.en} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm">{c.en}</li>)}
+            </ul>
+            <Link href={`${lang === "en" ? "/en" : "/zh"}/condo/directory#t-${slug}`} className="btn-ghost mt-6" data-cta={`${lang}-area-condo-dir`}>
+              {lang === "en" ? "Search all Chiang Mai condos" : "搜索清迈全部公寓"}
+              <IconChevron className="h-4 w-4" />
+            </Link>
           </div>
         </section>
       )}

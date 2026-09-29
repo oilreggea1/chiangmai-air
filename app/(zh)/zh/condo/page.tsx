@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { condoBrands } from "@/lib/condo-brands";
 import Image from "next/image";
 import { site, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
@@ -204,6 +205,16 @@ export default function ZhCondoPage() {
               返回中文首页
               <IconChevron className="h-4 w-4" />
             </Link>
+            <Link href="/zh/condo/directory" className="btn-ghost">
+              清迈公寓名录
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            {condoBrands.map((b) => (
+              <Link key={b.slug} href={`/zh/condo/${b.slug}`} className="btn-ghost">
+                {`${b.en} 公寓`}
+                <IconChevron className="h-4 w-4" />
+              </Link>
+            ))}
             <Link href="/zh/areas" className="btn-ghost">
               服务范围
               <IconChevron className="h-4 w-4" />

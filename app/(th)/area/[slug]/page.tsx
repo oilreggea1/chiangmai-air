@@ -9,6 +9,7 @@ import { IconCheck, IconChevron, IconClock, IconLine, IconPhone, IconPin, servic
 import { CtaBand, FaqList, Breadcrumbs, ReviewCard } from "@/components/Blocks";
 import { workCases } from "@/lib/work-cases";
 import { areaTranslated } from "@/content/areas-intl";
+import { condosInArea } from "@/components/CondoPages";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -66,6 +67,7 @@ export default async function AreaPage({ params }: Props) {
     .sort((x, y) => y.date!.localeCompare(x.date!))
     .slice(0, 4);
   const idx = areas.findIndex((x) => x.slug === a.slug);
+  const condos = condosInArea(a.full, a.name);
   // หน้าอำเภอบ้านตัวเอง ห้ามเขียนว่า "อยู่ไม่ไกลจาก" เพราะร้านตั้งอยู่ในอำเภอนั้นเอง
   const isHomeArea = a.slug === "san-kamphaeng";
   const trail = [
@@ -231,6 +233,25 @@ export default async function AreaPage({ params }: Props) {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+      )}
+
+      {/* คอนโดในตำบลนี้ (29 ก.ย. 2569) รายชื่อจากทำเนียบ lib/condo-directory.ts */}
+      {condos.length > 0 && (
+        <section className="section">
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">คอนโดใน{a.name}ที่ผมรับล้างแอร์ถึงห้อง</h2>
+            <p className="lead mt-3">{condos.length} โครงการในพื้นที่นี้ ทุกอาคารราคาเดียวกัน ไม่คิดค่าเดินทาง แจ้งชื่ออาคารและชั้นมาก่อนนัดได้</p>
+            <ul className="mt-6 flex flex-wrap gap-2">
+              {condos.map((c) => (
+                <li key={c.en} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm">{c.th ?? c.en}</li>
+              ))}
+            </ul>
+            <Link href={`/condo#t-${a.slug}`} className="btn-ghost mt-6" data-cta="area-condo-dir">
+              ค้นชื่อคอนโดทั้งหมดในเชียงใหม่
+              <IconChevron className="h-4 w-4" />
+            </Link>
           </div>
         </section>
       )}

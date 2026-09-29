@@ -27,6 +27,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
         { href: "/en/blog", label: "Aircon guides" },
         { href: "/en/areas", label: "Areas I cover" },
         { href: "/en/condo", label: "Condo aircon cleaning" },
+        { href: "/en/condo/directory", label: "Chiang Mai condo directory" },
         { href: "/en/airbnb", label: "Airbnb and rentals" },
       ]
     : [
@@ -34,6 +35,7 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
         { href: "/zh/pricing", label: "完整价目表" },
         { href: "/zh/repair", label: "空调维修" },
         { href: "/zh/condo", label: "公寓空调清洗" },
+        { href: "/zh/condo/directory", label: "清迈公寓名录" },
         { href: "/zh/installation", label: "空调安装与移机" },
         { href: "/zh/washing-machine", label: "洗衣机内桶清洗" },
         { href: "/zh/work", label: "施工前后实拍" },
@@ -253,6 +255,11 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             <li>
               <Link href="/customer/condo" className="text-ink-soft hover:text-brand-700 hover:underline">
                 ล้างแอร์คอนโด
+              </Link>
+            </li>
+            <li>
+              <Link href="/condo" className="text-ink-soft hover:text-brand-700 hover:underline">
+                ค้นชื่อคอนโดเชียงใหม่
               </Link>
             </li>
             <li>

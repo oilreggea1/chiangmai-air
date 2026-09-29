@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { site, areas, pricing, reviews, p } from "@/lib/site";
 import { segments } from "@/lib/segments";
+import { condoDirectory } from "@/lib/condo-directory";
+import { condoBrands } from "@/lib/condo-brands";
 import { faqSchema, breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { clipDesc, share } from "@/lib/seo";
 import { IconCheck, IconChevron, IconClock, IconLine, IconPhone } from "@/components/Icons";
@@ -169,6 +171,22 @@ export default async function SegmentPage({ params }: Props) {
             <div className="mt-8 grid gap-5 lg:grid-cols-3">
               {reviews.slice(0, 3).map((r) => (
                 <ReviewCard key={r.name} {...r} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* หน้าคอนโด: ลิงก์ไปทำเนียบคอนโดและหน้าแบรนด์ (29 ก.ย. 2569) */}
+      {seg.slug === "condo" && (
+        <section className="section">
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">ค้นชื่อคอนโดของคุณ</h2>
+            <p className="lead mt-3">รวม {condoDirectory.length} โครงการในเขตบริการ แยกตามตำบล และหน้าเฉพาะของคอนโดศุภาลัย อรสิริน และดีคอนโด</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/condo" className="btn-ghost" data-cta="condo-dir">ทำเนียบคอนโดเชียงใหม่<IconChevron className="h-4 w-4" /></Link>
+              {condoBrands.map((b) => (
+                <Link key={b.slug} href={`/condo/${b.slug}`} className="btn-ghost" data-cta={`condo-${b.slug}`}>คอนโด{b.th}<IconChevron className="h-4 w-4" /></Link>
               ))}
             </div>
           </div>

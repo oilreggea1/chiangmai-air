@@ -1,0 +1,3100 @@
+[
+ {
+  "nameTh": "103 คอนโดมิเนียม 1 ซอยจำปี",
+  "nameEn": "103 Condominium 1",
+  "developer": null,
+  "road": "ซ.จำปี ถ.ศิริมังคลาจารย์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1987,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V16176",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18211/103-condominium-1"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "103 คอนโดมิเนียม 2 นิมมาน 12",
+  "nameEn": "103 Condominium 2",
+  "developer": null,
+  "road": "ซ.นิมมานเหมินทร์ 12 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1989,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15683",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "103 คอนโดมิเนียม 3 สุขเกษม",
+  "nameEn": "103 Condominium 3",
+  "developer": null,
+  "road": "ซ.สุขเกษม ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1990,
+  "floors": "11",
+  "source": "https://zmyhome.com/project/V16175",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/40060/103-condo-nimman"
+  ],
+  "notes": [
+   "dotproperty \"103 Condo Nimman\" (11 floors, Soi Suk Kasem area) merged here - verify"
+  ]
+ },
+ {
+  "nameTh": "103 คอนโดมิเนียม 5 สวนดอก",
+  "nameEn": "103 Condominium 5",
+  "developer": null,
+  "road": "ซ.สวนดอก 7 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1992,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V16177",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/26466/103-condominium-5"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "บ้านหอคำ",
+  "nameEn": "Baan Hor Kam",
+  "developer": null,
+  "road": null,
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1997,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15363",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/21187/baan-hor-kum"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "บุญมาศแมนชั่น",
+  "nameEn": "Boonyamas Mansion",
+  "developer": null,
+  "road": "ซ.นิมมานเหมินท์ 15 ถ.นิมมานเหมินท์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2009,
+  "floors": "10",
+  "source": "https://zmyhome.com/project/V12188",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/17459/boonyamas-mansion-nimman"
+  ],
+  "notes": [
+   "name says \"Mansion\" but zmyhome lists it as condominium with Treasury condo-unit appraisal"
+  ]
+ },
+ {
+  "nameTh": "เคย์ลา ไพรเวท เรสซิเดนซ์ เชียงใหม่",
+  "nameEn": "CAYLA Private Residence Chiangmai",
+  "developer": "บริษัท เคย์ลาร์ ไพรเวท เอคควิทิ จำกัด",
+  "road": "ซ.บ้านร่ำเปิง ถ.ชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2019,
+  "floors": "3",
+  "source": "https://zmyhome.com/project/V17627",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "คาซ่า คอนโด แอท สวนดอก",
+  "nameEn": "Casa Condo @Suandok",
+  "developer": "บริษัท คาซ่าวิลล์ จำกัด",
+  "road": "ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15934",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/7506/casa-condo-suandok"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "คาซ่า คอนโด เชียงใหม่ แอท ซีเอ็มยู",
+  "nameEn": "Casa Condo Chiangmai @CMU",
+  "developer": "บริษัท คาซ่าวิลล์ จำกัด",
+  "road": "ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V15359",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18207/casa-condo-at-cmu"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ชญยล บูเลอวาร์ด คอนโดมิเนียม",
+  "nameEn": "Chayayon Boulevard Condominium",
+  "developer": null,
+  "road": "ซ.หมู่บ้านไฮแลนด์วิวเพลส ถ.ชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15747",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3784/chayayon-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เชียงใหม่ทาวเวอร์",
+  "nameEn": "Chiang Mai Tower",
+  "developer": null,
+  "road": "ถ.ชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": null,
+  "floors": "13",
+  "source": "https://zmyhome.com/project/V12197",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "เชียงใหม่คอนโดมิเนียม",
+  "nameEn": "Chiangmai Condominium",
+  "developer": null,
+  "road": "ซ.นิมมานเหมินทร์ 11 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1988,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V15361",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15992/chiang-mai-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1988 vs dotproperty 1990"
+  ]
+ },
+ {
+  "nameTh": "ฟินน์ คอนโด 2 สวนดอก",
+  "nameEn": "Finn Condo 2 Suandok",
+  "developer": "บริษัท แอลดับบลิวเอส เรียลเอสเตท จำกัด",
+  "road": "ซ.สวนดอก 5 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17805",
+  "alsoListed": null,
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "ฟินน์ คอนโด 3 สวนดอก",
+  "nameEn": "Finn Condo 3 Suandok",
+  "developer": "บริษัท แอลดับบลิวเอส เรียลเอสเตท จำกัด",
+  "road": "ซ.หมู่บ้านสวนสุเทพ ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2022,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16807",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/53950/finn-condo-3-at-suandok"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ฟินน์ คอนโด 4 สวนดอก",
+  "nameEn": "Finn Condo 4 Suandok",
+  "developer": "บริษัท แอลดับบลิวเอส เรียลเอสเตท จำกัด",
+  "road": "ซ.สวนดอก 6 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2022,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16809",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/24501/finn-condo-4-at-suandok"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ฟินน์ คอนโด 5 สวนดอก",
+  "nameEn": "Finn Condo 5 Suandok",
+  "developer": "บริษัท แอลดับบลิวเอส เรียลเอสเตท จำกัด",
+  "road": "ซ.สวนดอก 6/3 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2023,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16800",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/29583/finn-condo-5-at-suandok"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ฟินน์ คอนโด 7 สวนดอก",
+  "nameEn": "Finn Condo 7 Suandok",
+  "developer": "บริษัท แอลดับบลิวเอส เรียลเอสเตท จำกัด",
+  "road": "ซ.สวนดอก 7 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2025,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16824",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/42017/finn-condo-7"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ฮิลล์ไซด์ คอนโดมิเนียม 1",
+  "nameEn": "Hillside Condominium 1",
+  "developer": null,
+  "road": "85 ซ.สุเทพ 5 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1989,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V12191",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/14392/hillside-1-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1989 vs dotproperty 2012"
+  ]
+ },
+ {
+  "nameTh": "ฮิลล์ไซด์ คอนโดมิเนียม 2",
+  "nameEn": "Hillside Condominium 2",
+  "developer": null,
+  "road": "ซ.นิมมานเหมินทร์ 8 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1989,
+  "floors": "10",
+  "source": "https://zmyhome.com/project/V15345",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13506/hillside-2-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1989 vs dotproperty 2007"
+  ]
+ },
+ {
+  "nameTh": "ฮิลล์ไซด์ คอนโดมิเนียม 3",
+  "nameEn": "Hillside Condominium 3",
+  "developer": null,
+  "road": "1 ซ.นิมมานเหมินทร์ 8 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": "Nimmanhaemin Soi 8, 100 m from main road per dotproperty",
+  "completed": 1991,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15282",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/12775/hillside-3-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1991 vs dotproperty 2009"
+  ]
+ },
+ {
+  "nameTh": "ห้วยแก้วคอนโดเทล เอ",
+  "nameEn": "Huay Kaew Condotel A",
+  "developer": "บริษัท เอชเคพี พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.คันคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17474",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "เฮือนป้อเลี้ยง คอนโดมีเนียม",
+  "nameEn": "Huen Por Liang Condominium",
+  "developer": null,
+  "road": "ซ.9 หลิ่งห้า ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V12186",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18026/huen-por-liang-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "อิมเพรสทาวน์ คอนโดมิเนียม",
+  "nameEn": "Impress Town Condominium",
+  "developer": null,
+  "road": "243/1-84 ซ.ศิริมังคลาจารย์ 3 ถ.ศิริมังคลาจารย์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2003,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V12190",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15988/impress-town-chiangmai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2003 vs dotproperty 1990"
+  ]
+ },
+ {
+  "nameTh": "เคียงมอคอนโดมิเนียม 1",
+  "nameEn": "Khiang Mor Condominium 1",
+  "developer": "บริษัท เคียงมอคอนโดมิเนียม จำกัด",
+  "road": "ซ.7 บ้านใหม่หลังมอ ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1996,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V14406",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/26147/kiang-mo-condominium",
+   "https://www.dotproperty.co.th/en/condo/40463/kiengmor-condominium-1"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1996 vs dotproperty 2012"
+  ]
+ },
+ {
+  "nameTh": "ลิฟ แอท นิมมาน",
+  "nameEn": "LIV@Nimman",
+  "developer": "บริษัท ลัคกี้ลิฟวิ่ง พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.นิมมานเหมินทร์ 2 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V699",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3829/liv-at-nimman"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ณ ธารา เอ็กซ์คลูซีฟ เรสซิเดนซ์",
+  "nameEn": "Na Tara Exclusive Residence",
+  "developer": null,
+  "road": "ซ.หมู่บ้านเชียงใหม่เลคแลนด์ ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "2",
+  "source": "https://zmyhome.com/project/V12187",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/17558/natara-exclusive-residences"
+  ],
+  "notes": [
+   "completed year from dotproperty"
+  ]
+ },
+ {
+  "nameTh": "นอร์ท คอนโด แอท ซีรีนเลค เชียงใหม่",
+  "nameEn": "North Condo @Serene Lake Chiangmai",
+  "developer": "บริษัท แลนด์ แอนด์ เฮ้าส์ จำกัด (มหาชน)",
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": "Serene Lake; near Mae Hia - Khlong Chonlaprathan intersection (per dotproperty North 2 page)",
+  "completed": 2014,
+  "floors": "6-8",
+  "source": "https://zmyhome.com/project/V14969",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/21799/serene-lake-north-2",
+   "https://www.dotproperty.co.th/en/condo/12447/north-5-condo-chiangmai",
+   "https://www.dotproperty.co.th/en/condo/26345/serene-lake-north-6",
+   "https://www.dotproperty.co.th/en/condo/26354/serene-lake-north-4",
+   "https://www.dotproperty.co.th/en/condo/28494/north-3-condo",
+   "https://www.dotproperty.co.th/en/condo/13475/north-condo-chiang-mai",
+   "https://www.dotproperty.co.th/en/condo/3812/serene-lake-north-8",
+   "https://www.dotproperty.co.th/en/condo/17420/north-condo-serene-lake"
+  ],
+  "notes": [
+   "one Land & Houses project with several buildings; dotproperty lists buildings separately as Serene Lake North 2/3/4/5/6/8, North Condo Chiang Mai, North Condo Serene Lake - merged here. dotproperty places North 8 / \"North Condo Chiang Mai\" / \"North Condo Serene Lake\" under Mae Hia and the others under Suthep (project straddles the Suthep/Mae Hia boundary at Serene Lake)"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด มช. 1",
+  "nameEn": "One Plus Condo CMU 1",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไผ่ล้อม ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15710",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3795/one-plus-cmu-123"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด มช. 2",
+  "nameEn": "One Plus Condo CMU 2",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไผ่ล้อม ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15391",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด มช. 3",
+  "nameEn": "One Plus Condo CMU 3",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไผ่ล้อม ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15368",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด คลองชล",
+  "nameEn": "One Plus Condo Klongchon",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15049",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18338/one-plus-condominium-klongchon",
+   "https://www.dotproperty.co.th/en/condo/22252/one-plus-klong-chon-1"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2012 vs dotproperty 2015"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด คลองชล 2",
+  "nameEn": "One Plus Condo Klongchon 2",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15735",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/10369/one-plus-comdomunium-khlong-chon-2"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด คลองชล 3",
+  "nameEn": "One Plus Condo Klongchon 3",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V14471",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13479/one-plus-condo-klongchon-3"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2015 vs dotproperty 2013"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด คลองชล-สุเทพ",
+  "nameEn": "One Plus Condo Klongchon-Suthep",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.หมู่บ้านไฮแลนด์วิวเพลส ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17800",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 1",
+  "nameEn": "One Plus Condo Suandok 1",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สุเทพ 2 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V16405",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 10",
+  "nameEn": "One Plus Condo Suandok 10",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สิโรรส 5 ถ.สิโรรส",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2023,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17894",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/28202/one-plus-suandok-10"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 11",
+  "nameEn": "One Plus Condo Suandok 11",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไปรวยมารวย ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2023,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17222",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 12",
+  "nameEn": "One Plus Condo Suandok 12",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไปรวยมารวย ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2025,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17217",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/28997/one-plus-suandok-12"
+  ],
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 2",
+  "nameEn": "One Plus Condo Suandok 2",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สุเทพ 2 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V14915",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3791/one-plus-condo-suan-dok"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 3",
+  "nameEn": "One Plus Condo Suandok 3",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สุเทพ 2 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": "300 m from Neurological Hospital (รพ.ประสาทเชียงใหม่) per dotproperty",
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16406",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/4016/one-plus-suandok-3",
+   "https://www.dotproperty.co.th/en/condo/13512/one-plus-suandok-123"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 4",
+  "nameEn": "One Plus Condo Suandok 4",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16407",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/10359/one-plus-suandok-456"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 5",
+  "nameEn": "One Plus Condo Suandok 5",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V14984",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3855/one-plus-suandok-5"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 6",
+  "nameEn": "One Plus Condo Suandok 6",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16408",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 7",
+  "nameEn": "One Plus Condo Suandok 7",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไปรวยมารวย ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17221",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 8",
+  "nameEn": "One Plus Condo Suandok 8",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ไปรวยมารวย ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17223",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/16109/one-plus-suandok-8"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก 9",
+  "nameEn": "One Plus Condo Suandok 9",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สิโรรส 5 ถ.สิโรรส",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17801",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก ไลฟ์",
+  "nameEn": "One Plus Condo Suandok Life",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สวนดอก 6 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2025,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17219",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/41926/one-plus-suandok-life"
+  ],
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด สวนดอก ไลฟ์ 2",
+  "nameEn": "One Plus Condo Suandok Life 2",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สวนดอก 6 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2027,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V18166",
+  "alsoListed": null,
+  "notes": [
+   "zmyhome status: 2570 (ยังสร้างไม่เสร็จ)",
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "ปาล์มสปริงส์ นิมมาน แอริค่า",
+  "nameEn": "Palm Springs Nimman Areca",
+  "developer": "บริษัท ปาล์ม สปริงส์ เพลซ จำกัด",
+  "road": "ซ.นิมมานเหมินทร์ 5 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15506",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/7991/palm-springs-nimman-areca"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2015 vs dotproperty 2017"
+  ]
+ },
+ {
+  "nameTh": "ปาล์มสปริงส์ นิมมาน ฟาวเท็น",
+  "nameEn": "Palm Springs Nimman Fountain",
+  "developer": "บริษัท ปาล์ม สปริงส์ เพลซ จำกัด",
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15507",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13531/palm-springs-nimman-fountain"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2015 vs dotproperty 2018"
+  ]
+ },
+ {
+  "nameTh": "ปาล์มสปริงส์ นิมมาน พาร์เลอร์",
+  "nameEn": "Palm Springs Nimman Parlour",
+  "developer": "บริษัท ปาล์ม สปริงส์ เพลซ จำกัด",
+  "road": "ซ.นิมมานเหมินทร์ 5 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15508",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/24619/palm-springs-nimman-parlor"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปาล์มสปริงส์ นิมมาน ฟีนิกซ์",
+  "nameEn": "Palm Springs Nimman Phoenix",
+  "developer": "บริษัท ปาล์ม สปริงส์ เพลซ จำกัด",
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2018,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16761",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13534/palm-springs-nimman-phoenix"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปาล์มสปริงส์ นิมมาน รอยัล",
+  "nameEn": "Palm Springs Nimman Royal",
+  "developer": "บริษัท ปาล์ม สปริงส์ เพลซ จำกัด",
+  "road": "ซ.นิมมานเหมินทร์ 5 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16545",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13533/palm-springs-nimman-royal"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เพลย์ คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "Play Condominium Chiangmai",
+  "developer": "บริษัท มาลาดา จำกัด",
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15117",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/17608/play-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปันนา เรสซิเด้นซ์ 1 แอท นิมมาน",
+  "nameEn": "Punna Residence 1 @Nimman",
+  "developer": null,
+  "road": "ซ.นิมมานเหมินทร์ 6 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2008,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16023",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "ปันนา เรสซิเด้นซ์ 2 แอท นิมมาน",
+  "nameEn": "Punna Residence 2 @Nimman",
+  "developer": null,
+  "road": "ซ.นิมมานเหมินทร์ 6 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": "next to Choeng Doi Market (ตลาดเชิงดอย) per dotproperty",
+  "completed": 2009,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16024",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/9956/punna-residence-2-at-nimman"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปันนา เรสซิเด้นซ์ 3 แอท ซีเอ็มยู",
+  "nameEn": "Punna Residence 3 @CMU",
+  "developer": null,
+  "road": "ซ.6 บ้านใหม่หลังมอ ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2010,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15246",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/11219/punna-resident-3-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปันนา เรสซิเด้นซ์ 4 แอท ซีเอ็มยู",
+  "nameEn": "Punna Residence 4 @CMU",
+  "developer": null,
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15104",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/11220/punna-residence-4-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปันนา เรสซิเด้นซ์ 5 แอท ซีเอ็มยู",
+  "nameEn": "Punna Residence 5 @CMU",
+  "developer": null,
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15524",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/10785/punna-residence-at-nimman-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2012 vs dotproperty 2009"
+  ]
+ },
+ {
+  "nameTh": "รวี วารี เรสซิเดนซ์ เชียงใหม่",
+  "nameEn": "Rawee Waree Residence Chiangmai",
+  "developer": "บริษัท รวี วารี เรสซิเด้นซ์ จำกัด",
+  "road": "3 ซ.นิมมานเหมินท์ 15 ถ.นิมมานเหมินท์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17154",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/21538/rawee-waree-residence"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2013 vs dotproperty 2009"
+  ]
+ },
+ {
+  "nameTh": "ริมน้ำแมนชั่น คอนโดมิเนียม",
+  "nameEn": "Rimnam Mansion Condominium",
+  "developer": null,
+  "road": "40 ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V12185",
+  "alsoListed": null,
+  "notes": [
+   "name says \"Mansion\" but listed as condominium with Treasury condo-unit appraisal"
+  ]
+ },
+ {
+  "nameTh": "เรือนคำทาวเวอร์",
+  "nameEn": "Ruan Kham Tower",
+  "developer": null,
+  "road": "7/1-127 ซ.นิมมานเหมินทร์ 12 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1989,
+  "floors": "9",
+  "source": "https://zmyhome.com/project/V15079",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18242/rimping-condominium-chiang-mai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1989 vs dotproperty 2012",
+   "dotproperty page titled \"Rimping Condominium Chiang Mai\" (Suthep) actually describes Ruankam Tower"
+  ]
+ },
+ {
+  "nameTh": "เอส คอนโด เชียงใหม่",
+  "nameEn": "S Condo Chiangmai",
+  "developer": null,
+  "road": "ซ.ศิริมังคลาจารย์ 1 ถ.ศิริมังคลาจารย์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V16620",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/41161/s-condo-chiang-mai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2015 vs dotproperty 2017"
+  ]
+ },
+ {
+  "nameTh": "เอส ดี คอนโดมิเนียม",
+  "nameEn": "SD Condominium",
+  "developer": null,
+  "road": "ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2011,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15698",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15985/sd-condo-chiangmai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "สกายบรีซ คอนโดมิเนียม",
+  "nameEn": "Sky Breeze Condominium",
+  "developer": null,
+  "road": "35 ซ.คลองชลประทาน 4 ถ.คลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1992,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14514",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/14744/sky-breeze-condo"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1992 vs dotproperty 1994"
+  ]
+ },
+ {
+  "nameTh": "ศรีธนาคอนโดมิเนียม 1",
+  "nameEn": "Srithana Condominium 1",
+  "developer": null,
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1988,
+  "floors": "9",
+  "source": "https://zmyhome.com/project/V15410",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13696/sritana-condo",
+   "https://www.dotproperty.co.th/en/condo/18311/srithana-condominium-1"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1988 vs dotproperty 2000",
+   "dotproperty \"Sritana Condo\" (Siri Mangkalajarn Soi 1, same coordinates) merged here"
+  ]
+ },
+ {
+  "nameTh": "ศรีธนาคอนโดมิเนียม 2",
+  "nameEn": "Srithana Condominium 2",
+  "developer": null,
+  "road": "ถ.หัวยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1990,
+  "floors": "14",
+  "source": "https://zmyhome.com/project/V15412",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18258/srithana-condominium-2"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1990 vs dotproperty 2000"
+  ]
+ },
+ {
+  "nameTh": "สไตล์ลิช เชียงใหม่",
+  "nameEn": "Stylish Chiangmai",
+  "developer": null,
+  "road": "ถ.คันคลองชลประทาน-นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15228",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/9809/stylish-chiangmai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2016 vs dotproperty 2014"
+  ]
+ },
+ {
+  "nameTh": "สวนดอกพาวีเลี่ยน",
+  "nameEn": "Suan Dok Pavilion",
+  "developer": null,
+  "road": "ถ.สิโรรส",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1991,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V17554",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/16287/suan-dok-pavillion"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1991 vs dotproperty 2012"
+  ]
+ },
+ {
+  "nameTh": "ศุภกิจ คอนโดมิเนียม",
+  "nameEn": "Supakit Condominium",
+  "developer": null,
+  "road": "ซ.สุเทพ 5 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": null,
+  "floors": "9",
+  "source": "https://zmyhome.com/project/V12189",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "สุเทพฮิลล์เฮ้าส์ คอนโดมิเนียม",
+  "nameEn": "Suthep Hill House Condominium",
+  "developer": null,
+  "road": "8 ซ.บ้านใหม่หลังมอ 10 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1997,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V16456",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/21652/suthep-hill-house-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1997 vs dotproperty 2000"
+  ]
+ },
+ {
+  "nameTh": "ธารทิพย์การ์เด้นเพลส",
+  "nameEn": "Thanthip Garden Place",
+  "developer": null,
+  "road": "14 หมู่ 1 ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1996,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15980",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/14559/thanthip-garden-place"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ฟอร์ คอนโดมิเนียม",
+  "nameEn": "The Fore Condominium",
+  "developer": "บริษัท สิริสา พร๊อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สวนดอก 5 ถ.สวนดอก",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17803",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/28953/the-fore-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ลิฟวิ่ง ฮิลล์ 2",
+  "nameEn": "The Living Hills 2",
+  "developer": null,
+  "road": "ถ.เลียบคันคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16262",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/27048/the-living-hills-2"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ นิมมาน บาย ปาล์มสปริงส์",
+  "nameEn": "The Nimman by Palm Springs",
+  "developer": "บริษัท ปาล์ม สปริงส์ เพลซ จำกัด",
+  "road": "ซ.นิมมานเหมินทร์ 9 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V16759",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13489/the-nimman-by-palm-springs",
+   "https://www.dotproperty.co.th/en/condo/4251/palm-springs-nimman"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ นิมมานา",
+  "nameEn": "The Nimmana",
+  "developer": "บริษัท คีย์ สตาร์ พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.นิมมานเหมินทร์ 6 ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14798",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15110/the-nimmana-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ศิริ คอนโดมิเนียม",
+  "nameEn": "The Siri Condominium",
+  "developer": null,
+  "road": "ซ.ศิริมังคลาจารย์ 1 ถ.ศิริมังคลาจารย์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15765",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13497/the-siri-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2014 vs dotproperty 2010"
+  ]
+ },
+ {
+  "nameTh": "เดอะ สตาร์ฮิลล์ คอนโด เชียงใหม่",
+  "nameEn": "The Star Hill Condo Chiangmai",
+  "developer": "บริษัท สตาร์บิลเดอร์ จำกัด",
+  "road": "ถ.เลียบคลองชลประทาน",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16055",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3802/the-star-hill-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ยูนีค แอท นิมมาน",
+  "nameEn": "The Unique @ Nimman",
+  "developer": null,
+  "road": "ซ.สุขเกษม ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14841",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3838/the-unique-at-nimman"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ยูนีค แอท นิมมาน 2",
+  "nameEn": "The Unique @ Nimman 2",
+  "developer": null,
+  "road": "11 ซ.สุขเกษม ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15036",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3833/the-unique-at-nimman-2"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ วิงเพลส คอนโดมิเนียม",
+  "nameEn": "The Wing Place Condominium",
+  "developer": null,
+  "road": "ซ.ไปรวยมารวย ถ.สวนดอก ซอย 6",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15139",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/12295/the-wing-place-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ทรีบูทีค คอนโด แอท นิมมาน",
+  "nameEn": "Tree Boutique Condo @Nimman",
+  "developer": null,
+  "road": "ซ.สุขเกษม ถ.นิมมานเหมินทร์",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15677",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3858/tree-boutique-chiang-mai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2016 vs dotproperty 2014"
+  ]
+ },
+ {
+  "nameTh": "ยูแคมปัส คอนโด เชียงใหม่",
+  "nameEn": "U Campus Condo Chiangmal",
+  "developer": "บริษัท ปัจจัย 4 พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ห้วยแก้ว 3 ถ.ห้วยแก้ว",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17050",
+  "alsoListed": null,
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "ดีคอนโด แคมปัส รีสอร์ท เชียงใหม่",
+  "nameEn": "dCondo Campus Resort Chiangmai",
+  "developer": "บริษัท แสนสิริ จำกัด (มหาชน)",
+  "road": "ซ.บีอเวนิว ถ.สุเทพ",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V15115",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/2607/dcondo-campus-resort-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ชมดอย คอนโดมิเนียม 2",
+  "nameEn": "ตึกกลม) (Chom Doi Condominium 2",
+  "developer": null,
+  "road": "ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1993,
+  "floors": "13",
+  "source": "https://zmyhome.com/project/V16353",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/29165/chomdoi-2-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ชมดอย คอนโดเต็ล 1",
+  "nameEn": "ตึกเหลี่ยม) (Chom Doi Condotel 1",
+  "developer": null,
+  "road": "ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Suthep",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1991,
+  "floors": "13",
+  "source": "https://zmyhome.com/project/V15105",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15570/chom-doi-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1991 vs dotproperty 2009"
+  ]
+ },
+ {
+  "nameTh": "บ้านสวน กรีนเนอร์รี่ฮิลล์",
+  "nameEn": "Baan Suan Greenery Hill",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ชมดอย ถ.เลียบคลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V16659",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/10375/baan-suan-greenery-hill"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2014 vs dotproperty 2009"
+  ]
+ },
+ {
+  "nameTh": "บ้านเอื้ออาทร ป่าตัน 2",
+  "nameEn": "Baan Ua-Athorn Pa Tan 2",
+  "developer": "การเคหะแห่งชาติ",
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15870",
+  "alsoListed": null,
+  "notes": [
+   "National Housing Authority (Baan Eua Arthorn) ownership condo; zmyhome address Chang Phueak despite \"Pa Tan\" name; dotproperty lists a \"Baan Eua Arthorn Patun\" under Pa Tan"
+  ]
+ },
+ {
+  "nameTh": "ไบร์ทฮิลล์ เชียงใหม่",
+  "nameEn": "Bright Hill Condo Chiang Mai",
+  "developer": null,
+  "road": null,
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2026,
+  "floors": "7",
+  "source": "https://www.dotproperty.co.th/en/condo/26146/bright-hill-condo-chiang-mai",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome",
+   "dotproperty lists completion 2026"
+  ]
+ },
+ {
+  "nameTh": "คาซ่า คอนโด ช้างเผือก-เชียงใหม่",
+  "nameEn": "Casa Condo Changpuak-Chiangmai",
+  "developer": "บริษัท คาซ่าวิลล์ จำกัด",
+  "road": "ถ.โชตนา",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15242",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3903/casa-condo-chang-phueak"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2012 vs dotproperty 2015"
+  ]
+ },
+ {
+  "nameTh": "คาซาทิล เชียงใหม่ คอนโดมิเนียม",
+  "nameEn": "Casa Till Chiangmai Condominium",
+  "developer": "บริษัท คาซาทิล จำกัด",
+  "road": "ถ.เคียงดอย",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17218",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/16034/casa-till-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เชียงใหม่กรีนทาวเวอร์",
+  "nameEn": "Chiangmai Green Tower",
+  "developer": null,
+  "road": "ซ.บ้านน้ำแม่ ถ.เลียบคลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1992,
+  "floors": "15",
+  "source": "https://zmyhome.com/project/V16299",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/28495/green-tower-condo"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1992 vs dotproperty 2017"
+  ]
+ },
+ {
+  "nameTh": "เชียงใหม่ วิวเพลส คอนโดมิเนียม",
+  "nameEn": "Chiangmai View Place Condominium",
+  "developer": null,
+  "road": "ถ.ซูเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2011,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15462",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/22098/chiang-mai-view-place-1"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "กรีน ฮิลล์ เพลส เชียงใหม่",
+  "nameEn": "Green Hill Place Chiang Mai",
+  "developer": null,
+  "road": null,
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": null,
+  "floors": null,
+  "source": "https://www.dotproperty.co.th/en/condo/13484/green-hill-place-chiang-mai",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome"
+  ]
+ },
+ {
+  "nameTh": "ฮิลล์พาร์ค คอนโดมิเนียม 2",
+  "nameEn": "Hill Park Condominium 2",
+  "developer": null,
+  "road": "ถ.คลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1996,
+  "floors": "13",
+  "source": "https://zmyhome.com/project/V17059",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "ฮิลล์ไซด์ พลาซ่า แอนด์ คอนโดเทล 4",
+  "nameEn": "Hillside Plaza and Condotel 4",
+  "developer": null,
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1993,
+  "floors": "15",
+  "source": "https://zmyhome.com/project/V15094",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13487/hillside-4-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1993 vs dotproperty 2005"
+  ]
+ },
+ {
+  "nameTh": "ฮิลทาเนีย เชียงใหม่",
+  "nameEn": "Hilltania Chiangmai",
+  "developer": "บริษัท สมศรีวังทองคำ จำกัด",
+  "road": "ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2019,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V17152",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13269/hilltania"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ฮิมมา การ์เด้น คอนโดมิเนียม",
+  "nameEn": "Himma Garden Condominium",
+  "developer": null,
+  "road": "ถ.โชตนา",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "6,8",
+  "source": "https://zmyhome.com/project/V15063",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13493/himma-garden-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ฮิมมา เพรสทีจ ลิฟวิ่ง",
+  "nameEn": "Himma Prestige Living",
+  "developer": null,
+  "road": null,
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2018,
+  "floors": "6",
+  "source": "https://www.dotproperty.co.th/en/condo/3816/himma-prestige-living",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome"
+  ]
+ },
+ {
+  "nameTh": "ฮิโนกิ คอนโด เชียงใหม่",
+  "nameEn": "Hinoki Condo Chiangmai",
+  "developer": "บริษัท ฮิโนกิ คอนโด เชียงใหม่ จำกัด",
+  "road": "ถ.เคียงดอย",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "15",
+  "source": "https://zmyhome.com/project/V14193",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/9822/hinoki-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2015 vs dotproperty 2017"
+  ]
+ },
+ {
+  "nameTh": "เจ.ซี.ฮิลล์เพลส",
+  "nameEn": "J.C. Hill Place",
+  "developer": null,
+  "road": "ถ.เจ็ดยอด-ช่างเคี่ยน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1993,
+  "floors": "16",
+  "source": "https://zmyhome.com/project/V15852",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13694/jc-hill-place-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1993 vs dotproperty 2009"
+  ]
+ },
+ {
+  "nameTh": "กาญจน์กนก คอนโดมิเนียม 3",
+  "nameEn": "Kankanok Condominium 3",
+  "developer": null,
+  "road": "164 หมู่ 2 ซ.เลียบคลองฝั่งขวา 3 ถ.เลียบคลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2007,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16287",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13483/karnkanok-3-condo-jed-yod-greenery-hill"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2007 vs dotproperty 2013"
+  ]
+ },
+ {
+  "nameTh": "โมดา คอนโด รินคำ",
+  "nameEn": "Moda Condo Rinkham",
+  "developer": "บริษัท เดอะคราวน์ จำกัด",
+  "road": "ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V16950",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13474/moda-condominium-chiang-mai"
+  ],
+  "notes": [
+   "dotproperty lists it as \"Moda Condominium Chiang Mai\", 45/36 Chang Phueak Soi 1"
+  ]
+ },
+ {
+  "nameTh": "เมาท์เท่น ฟรอนท์ คอนโดมิเนียม",
+  "nameEn": "Mountain Front Condominium",
+  "developer": null,
+  "road": "ถ.ชมดอย",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2009,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15861",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3794/mountain-front-condo-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เมาท์เท่นพาโน คอนโดมิเนียม",
+  "nameEn": "Mountain Pano Condominium",
+  "developer": null,
+  "road": "ถ.โชตนา",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V15960",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/22059/b2-mountain-pano-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เมาท์เท่น วิว คอนโดมิเนียม",
+  "nameEn": "Mountain View Condominium",
+  "developer": null,
+  "road": "ถ.ชมดอย",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2011,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15862",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13685/mountain-view-condo-chiang-mai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2011 vs dotproperty 2014"
+  ]
+ },
+ {
+  "nameTh": "นครพิงค์ ซิตี้วิว คอนโดมิเนียม",
+  "nameEn": "Nakornping City View Condominium",
+  "developer": "บริษัท เคียงมอคอนโดมิเนียม จำกัด",
+  "road": "ถ.เลียบคลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1996,
+  "floors": "11",
+  "source": "https://zmyhome.com/project/V14407",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15687/nakornping-city-view-condo"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1996 vs dotproperty 2021"
+  ]
+ },
+ {
+  "nameTh": "เนทูร่า กรีน เรสซิเดนซ์",
+  "nameEn": "Natura Green Residence",
+  "developer": "บริษัท เกิดสุขการค้า พร๊อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สุขาภิบาล 5 ถ.ช่างเคี่ยน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2020,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17453",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/24260/natura-green-residence"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 1",
+  "nameEn": "One Plus Condo Ched Yot 1",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.อนุสาวรีย์สิงห์",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15241",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18326/one-plus-condo-jed-yod"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2012 vs dotproperty 2015"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 2",
+  "nameEn": "One Plus Condo Ched Yot 2",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.อนุสาวรีย์สิงห์",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15390",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3866/one-plus-jet-yod-2"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2012 vs dotproperty 2015"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 3",
+  "nameEn": "One Plus Condo Ched Yot 3",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.อนุสาวรีย์สิงห์",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "3",
+  "source": "https://zmyhome.com/project/V16158",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/29521/one-plus-jed-yod-3"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2016 vs dotproperty 2018"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 4",
+  "nameEn": "One Plus Condo Ched Yot 4",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ท่าจีนชมจันทร์ ถ.อนุสาวรีย์สิงห์",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16404",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/41661/one-plus-jed-yod-4"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2017 vs dotproperty 2026"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 5",
+  "nameEn": "One Plus Condo Ched Yot 5",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เลียบคลองส่งน้ำ-เจ็ดยอด",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2022,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16494",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 6",
+  "nameEn": "One Plus Condo Ched Yot 6",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เจ็ดยอด-ช่างเคี่ยน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2025,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V16826",
+  "alsoListed": null,
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด เจ็ดยอด 7",
+  "nameEn": "One Plus Condo Ched Yot 7",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เจ็ดยอด-ช่างเคี่ยน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2026,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V18146",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/55907/one-plus-jed-yod-7"
+  ],
+  "notes": [
+   "zmyhome status: 2569 (เสร็จปีนี้)",
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "วันพลัส คอนโด ห้วยแก้ว",
+  "nameEn": "One Plus Condo Huay Kaew",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.ศรีสุด ถ.ห้วยแก้ว",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15279",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18309/one-plus-condo-huay-kaew"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด คลองชล-ช่างเคี่ยน",
+  "nameEn": "One Plus Condo Klongchon-Chang Khian",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ซ.สุขาภิบาล 12 ถ.คลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2025,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17224",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/55339/one-plus-klong-chon-chang-khian"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปันสุข ควอลิตี้ คอนโด",
+  "nameEn": "Pansook Quality Condo",
+  "developer": "บริษัท ปันสุข คอนโด จำกัด",
+  "road": "ซ.ราชพฤกษ์ ถ.ห้วยแก้ว",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17193",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/20716/pansook-quality-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ปันสุข ดิ เออร์เบิน คอนโด",
+  "nameEn": "Pansook The Urban Condo",
+  "developer": "บริษัท ปันสุข คอนโด จำกัด",
+  "road": "ซ.พลับพลึง ถ.ห้วยแก้ว",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V17191",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13508/pansook-the-urban-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "พิงค์ ไลฟ์ คอนโดมิเนียม",
+  "nameEn": "Ping Live Condominium",
+  "developer": "บริษัท เทพพยอม กรุ๊ป จำกัด",
+  "road": "ซ.ช่างเคี่ยน 6 ถ.ช่างเคี่ยน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16528",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/39913/ping-live-condo"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2021 vs dotproperty 2025"
+  ]
+ },
+ {
+  "nameTh": "พรอมท์ คอนโด เชียงใหม่",
+  "nameEn": "Promt Condo Chiangmai",
+  "developer": null,
+  "road": "ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15745",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "เซเว่นสตาร์ คอนโดมิเนียม",
+  "nameEn": "Seven Stars Condominium",
+  "developer": null,
+  "road": "43 หมู่ 2 ซ.6 ถ.เจ็ดยอด-อยู่เย็น",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1995,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V14924",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/14834/seven-stars-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1995 vs dotproperty 2013"
+  ]
+ },
+ {
+  "nameTh": "ทวีผล ทาวเวอร์ คอนโดมิเนียม",
+  "nameEn": "Thaveephol Tower Condominium",
+  "developer": "บริษัท ทวีพรรณ แมเนจเม้นท์ จำกัด",
+  "road": "109 ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1998,
+  "floors": "14",
+  "source": "https://zmyhome.com/project/V12176",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/26531/thaweephol-tower"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ชิค วิว คอนโด เชียงใหม่",
+  "nameEn": "The Chic View Condo Chiangmai",
+  "developer": "บริษัท ที.จี.เอฟ.ดีเวลลอปเมนท์ จำกัด",
+  "road": "ถ.เคียงดอย",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17220",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3803/the-chic-view-condo-chiangmai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ คอนเวนชั่น คอนโดมิเนียม",
+  "nameEn": "The Convention Condominium",
+  "developer": null,
+  "road": "220 ถ.รอบเมืองเชียงใหม่",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2010,
+  "floors": "11",
+  "source": "https://zmyhome.com/project/V12175",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/17663/the-convention-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ดิ เอท คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "The Eight Condominium Chiangmai",
+  "developer": "บริษัท ดิ เอท เอสเตท จำกัด",
+  "road": "ถ.เทวัญ",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2018,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16942",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/22089/the-8-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ กรีน ซิตี้ คอนโด",
+  "nameEn": "The Green City Condo",
+  "developer": null,
+  "road": "Chiang Mai Outer Ring Road (ถนนรอบเมืองเชียงใหม่)",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1996,
+  "floors": "13",
+  "source": "https://www.dotproperty.co.th/en/condo/18821/the-green-city-condo",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome"
+  ]
+ },
+ {
+  "nameTh": "เดอะ ฮิลล์พาร์ค คอนโดมิเนียม 1",
+  "nameEn": "The Hill Park Condominium 1",
+  "developer": null,
+  "road": "ถ.คลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1990,
+  "floors": "14",
+  "source": "https://zmyhome.com/project/V15812",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/17691/the-hill-park-condominium-1"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1990 vs dotproperty 1998"
+  ]
+ },
+ {
+  "nameTh": "ดิ ไอโวรี่",
+  "nameEn": "The IVORY",
+  "developer": null,
+  "road": null,
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2027,
+  "floors": "8",
+  "source": "https://www.dotproperty.co.th/en/condo/27008/the-ivory",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome",
+   "dotproperty lists completion 2027 (under construction)"
+  ]
+ },
+ {
+  "nameTh": "เดอะ แคนนาส",
+  "nameEn": "The Kannas",
+  "developer": null,
+  "road": null,
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2018,
+  "floors": "8",
+  "source": "https://www.dotproperty.co.th/en/condo/21072/the-kannas",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome"
+  ]
+ },
+ {
+  "nameTh": "เดอะ เน็กซ์ เจ็ดยอด",
+  "nameEn": "The Next Jedyod",
+  "developer": "บริษัท อรสิริน โฮลดิ้ง จำกัด",
+  "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2020,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17344",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/19084/the-next-jedyod"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ เน็กซ์ เจ็ดยอด 2",
+  "nameEn": "The Next Jedyod 2",
+  "developer": "บริษัท อรสิริน โฮลดิ้ง จำกัด",
+  "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2025,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17345",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/28364/the-next-jedyod-2"
+  ],
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "เดอะ เน็กซ์ เจ็ดยอด 3",
+  "nameEn": "The Next Jedyod 3",
+  "developer": "บริษัท อรสิริน โฮลดิ้ง จำกัด",
+  "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2026,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V18135",
+  "alsoListed": null,
+  "notes": [
+   "zmyhome status: 2569 (เสร็จปีนี้)",
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "เดอะ เน็กซ์ เจ็ดยอด 4",
+  "nameEn": "The Next Jedyod 4",
+  "developer": "บริษัท อรสิริน โฮลดิ้ง จำกัด",
+  "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2027,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V18189",
+  "alsoListed": null,
+  "notes": [
+   "zmyhome status: 2570 (ยังสร้างไม่เสร็จ)",
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "เดอะ รีสอร์ท คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "The Resort Condominium Chiangmai",
+  "developer": null,
+  "road": "ถ.ชม.4307",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17782",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3830/the-resort-condominium-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ดิ เอส ทาวเวอร์ คอนโด บาย สมหวัง",
+  "nameEn": "The S Tower Condo by Somwang",
+  "developer": null,
+  "road": "ซ.7 ถ.สุขเกษม",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V12182",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ทรีโอ เชียงใหม่",
+  "nameEn": "The Trio Chiangmai",
+  "developer": null,
+  "road": "ถ.ห้วยแก้ว",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1994,
+  "floors": "16",
+  "source": "https://zmyhome.com/project/V16190",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3790/the-trio-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1994 vs dotproperty 2008"
+  ]
+ },
+ {
+  "nameTh": "เดอะ วีดี้ คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "The Vidi Condominium Chiangmai",
+  "developer": "บริษัท เชียงใหม่ 99 ปาล์ม จำกัด",
+  "road": "ถ.สันติสุข",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15511",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "ธัชฮิลล์ เพลส",
+  "nameEn": "Touch Hill Place",
+  "developer": null,
+  "road": "ถ.เลียบคลองชลประทาน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2009,
+  "floors": "11",
+  "source": "https://zmyhome.com/project/V16415",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/25994/touch-hill-place"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ทัช ฮิลล์ เพลส เอเลแกนท์",
+  "nameEn": "Touch Hill Place Elegant",
+  "developer": "L.P.M. Builder Co., Ltd.",
+  "road": "ถ.เลียบคลองชลประทาน (Leabklongchonprathan Rd)",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2022,
+  "floors": "10",
+  "source": "https://www.dotproperty.co.th/en/condo/3849/touch-hill-place-elegant",
+  "alsoListed": null,
+  "notes": [
+   "dotproperty text says it is the second building of Touch Hill Place (10 floors); not on zmyhome"
+  ]
+ },
+ {
+  "nameTh": "ทรัมส์ คอนโดมิเนียม 1",
+  "nameEn": "Trams Condominium 1",
+  "developer": null,
+  "road": "ถ.เจ็ดยอด-ช่างเคี่ยน",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15070",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3807/trams-condominium-1"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วี เรสซิเดนซ์",
+  "nameEn": "V Residence",
+  "developer": "V Development Co., Ltd.",
+  "road": "10/10 Moo 2, Khlong Chonlaprathan Rd",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "7",
+  "source": "https://www.dotproperty.co.th/en/condo/21465/v-residence",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome"
+  ]
+ },
+ {
+  "nameTh": "เวียงพิงค์แมนชั่น",
+  "nameEn": "Wieng Phing Mansion",
+  "developer": null,
+  "road": "ซ.เทศบาลตำบลช้างเผือก 1 ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1991,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16281",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18044/vieng-ping-condominium"
+  ],
+  "notes": [
+   "dotproperty \"Vieng Ping Condominium\" lists 15 floors; zmyhome 8 floors"
+  ]
+ },
+ {
+  "nameTh": "ดีเวียง สันติธรรม",
+  "nameEn": "d'Vieng Santitham",
+  "developer": null,
+  "road": "ถ.หัสดิเสวี",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14814",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13485/d-vieng-santitham"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ทรัมส์ สแควร์",
+  "nameEn": "ทรัมส์ คอนโดมิเนียม 2) (Trams Square",
+  "developer": null,
+  "road": "ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Chang Phueak",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15125",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3831/touch-hill-place-chiang-mai"
+  ],
+  "notes": [
+   "dotproperty page titled \"Touch Hill Place Chiang Mai\" actually describes Trams Square (137 Chiang Mai-Lampang parallel road, Chang Phueak)"
+  ]
+ },
+ {
+  "nameTh": "เชียงใหม่ ซีวิว คอนโดมิเนียม",
+  "nameEn": "Chiangmai See View Condominium",
+  "developer": null,
+  "road": "ซ.3 ถ.มณีนพรัตน์",
+  "tambon": "Si Phum",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1992,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16541",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/26530/chiangmai-see-view-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1992 vs dotproperty 2002"
+  ]
+ },
+ {
+  "nameTh": "กลอรี่ บูทีค สูท เชียงใหม่",
+  "nameEn": "Glory Boutique Suites Chiangmai",
+  "developer": "บริษัท ซีเอ็น ชัวร์ จำกัด",
+  "road": "59/17 ซ.4 ค ถ.ช้างเผือก",
+  "tambon": "Si Phum",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2020,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V17651",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15856/glory-boutique-suites"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "กลอรี่ คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "Glory Condominium Chiangmai",
+  "developer": "บริษัท ซีเอ็น ชัวร์ จำกัด",
+  "road": "ซ.2 ถ.ช้างเผือก",
+  "tambon": "Si Phum",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V17652",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/21433/glory-condominium-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ ยูนีค แอท คูเมือง เชียงใหม่",
+  "nameEn": "The Unique @ Koomuang Chiangmai",
+  "developer": null,
+  "road": "ถ.มณีนพรัตน์",
+  "tambon": "Si Phum",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15400",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3867/the-unique-at-koomuang"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": null,
+  "nameEn": "Treasure Prime Condo",
+  "developer": "Home Development Group Co., Ltd. (My Hip)",
+  "road": "Chang Phueak Rd Soi 5",
+  "tambon": "Si Phum",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "8",
+  "source": "https://www.asia.villas/projects/thailand/chiang-mai/mueang-chiang-mai/chang-phueak/treasure-prime-condo",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/12773/the-star-hill"
+  ],
+  "notes": [
+   "address text says \"Chang Phueak Road Soi 5, Sripoom\" though URL slug says chang-phueak; nameTh is a transliteration not taken from source"
+  ]
+ },
+ {
+  "nameTh": "มิดทาวน์แมนชั่น",
+  "nameEn": "Midtown Mansion",
+  "developer": null,
+  "road": "85/5-70 ซ.6 ถ.สุริยวงศ์",
+  "tambon": "Hai Ya",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": null,
+  "floors": "6",
+  "source": "https://zmyhome.com/project/V12193",
+  "alsoListed": null,
+  "notes": [
+   "name says \"Mansion\" but listed as condominium with Treasury condo-unit appraisal"
+  ]
+ },
+ {
+  "nameTh": "อะไรซ์ คอนโด มหิดล",
+  "nameEn": "Arise Condo Mahidol",
+  "developer": "บริษัท อรสิริน โฮลดิ้ง จำกัด",
+  "road": "ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2020,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V16635",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15771/arise-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "บ้านเอื้ออาทร เจ้าแม่กวนอิม",
+  "nameEn": "Baan Ua-Athorn Chao Mae Kuan-Im",
+  "developer": "การเคหะแห่งชาติ",
+  "road": "ซ.ตำหนักเจ้าแม่กวนอิม ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15008",
+  "alsoListed": null,
+  "notes": [
+   "National Housing Authority (Baan Eua Arthorn) ownership condo"
+  ]
+ },
+ {
+  "nameTh": "เชียงใหม่ วิวเพลส 2 คอนโดมิเนียม",
+  "nameEn": "Chiangmai View Place 2 Condominium",
+  "developer": null,
+  "road": "ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "6,7",
+  "source": "https://zmyhome.com/project/V15293",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3674/chiangmai-view-place-condominium-2",
+   "https://www.dotproperty.co.th/en/condo/21301/view-place-2"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2013 vs dotproperty 2011"
+  ]
+ },
+ {
+  "nameTh": "ฮาร์โมนีโฮม คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "Harmony Home Condominium Chiangmai",
+  "developer": null,
+  "road": "ซ.วัดป่าแดด ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V12181",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "เลอ ชาโมนิกซ์ ลักซูรี่ คอนโด เชียงใหม่",
+  "nameEn": "Le Chamonix Luxury Condo Chiangmai",
+  "developer": "บริษัท ลักซูรี่ เชียงใหม่ แลนด์ จำกัด",
+  "road": "ซ.วัดป่าแดด ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2023,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V18139",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/23763/le-chamonix"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2023 vs dotproperty 2021"
+  ]
+ },
+ {
+  "nameTh": "เลอ ชาโมนิกซ์ สมาร์ท คอนโด เชียงใหม่",
+  "nameEn": "Le Chamonix Smart Condo Chiangmai",
+  "developer": "บริษัท ลักซูรี่ เชียงใหม่ แลนด์ จำกัด",
+  "road": "ซ.วัดป่าแดด ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2024,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17920",
+  "alsoListed": null,
+  "notes": [
+   "no Treasury appraisal listed on zmyhome (new/under construction)"
+  ]
+ },
+ {
+  "nameTh": "มหิดล คอนโด เชียงใหม่",
+  "nameEn": "Mahidol Condo Chiangmai",
+  "developer": "บริษัท ดิงไทย กรุ๊ป จำกัด",
+  "road": "ซ.บ้านป่าพร้าวนอก ซอย 3 ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2022,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V17842",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18776/mahidol-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "เพลสเซ้นท์ คอนโด",
+  "nameEn": "Pleasant Condo",
+  "developer": null,
+  "road": "168 หมู่ 1 ซ.บ้านแม่ข่าน้อย ไข่มุก ซอย 2 ถ.เชียงใหม่-หางดง",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2021,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V12180",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "ซีรีโน แอร์พอร์ท คอนโด",
+  "nameEn": "Sereno Airport Condo",
+  "developer": null,
+  "road": "16 หมู่ 1 ซ.ชมจันทร์ ถ.เชียงใหม่-หางดง",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V15360",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "เดอะ พริโอ้ ซิกเนเจอร์ คอนโด เชียงใหม่",
+  "nameEn": "The Prio Signature Condo Chiangmai",
+  "developer": "บริษัท เอส.อาร์.ซี. เชียงใหม่ จำกัด",
+  "road": "ถ.มหิดล",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": "next to the Airport Intersection per dotproperty",
+  "completed": 2016,
+  "floors": "15",
+  "source": "https://zmyhome.com/project/V15544",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3845/the-prime-square"
+  ],
+  "notes": [
+   "dotproperty page titled \"The Prime Square\" (Pa Daet) describes this project (Signature Condo, Mahidol Rd, 397 units, S.R.C.); the real Prime Square Condo is in Nong Pa Khrang"
+  ]
+ },
+ {
+  "nameTh": "วีน่าทาวน์ คอนโด เชียงใหม่",
+  "nameEn": "Vina Town Condo Chiangmai",
+  "developer": "บริษัท ล้านนาไทย พร็อพเพอร์ตี้ จำกัด",
+  "road": "299 หมู่ 12 ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Pa Daet",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V17202",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/25871/vina-town-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "แอฟโร คอนโดมิเนียม",
+  "nameEn": "Afro Condominium",
+  "developer": null,
+  "road": "365 ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "3",
+  "source": "https://zmyhome.com/project/V12174",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/55278/afro-condominium"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "แอร์พอร์ต โฮม คอนโดมิเนียม",
+  "nameEn": "Airport Home Condominium",
+  "developer": null,
+  "road": "440/1 หมู่ 10 ซ.วัดตำหนัก ถ.เชียงใหม่-ฮอด",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1996,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V14726",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/9904/airport-home-condo"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1996 vs dotproperty 2014"
+  ]
+ },
+ {
+  "nameTh": "เชียงใหม่ การ์เด้น คอนโดมิเนียม",
+  "nameEn": "Chiangmai Garden Condominium",
+  "developer": null,
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17425",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15710/cm-garden"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "แกรนด์สิริธารา คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "Grand Siritara Condominium Chiangmai",
+  "developer": null,
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V15742",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3820/grand-siritara"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "พาสเทล บายเดอะนิวคอนเซปท์",
+  "nameEn": "Pastel By The New Concept",
+  "developer": null,
+  "road": null,
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": null,
+  "floors": null,
+  "source": "https://www.dotproperty.co.th/en/condo/21732/pastel-by-the-new-concept",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome",
+   "no year/floors on source"
+  ]
+ },
+ {
+  "nameTh": "พูล สวีท",
+  "nameEn": "Pool Suite",
+  "developer": null,
+  "road": null,
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2018,
+  "floors": "3",
+  "source": "https://www.dotproperty.co.th/en/condo/20914/pool-suite",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/39815/the-new-concept-pool-garden"
+  ],
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome",
+   "dotproperty also lists \"The New Concept Pool Garden\" (Thai name พูลสวีท เชียงใหม่, 311 units) - treated as same project"
+  ]
+ },
+ {
+  "nameTh": "ราชพฤกษ์ กรีนเนอร์รี่ฮิลล์",
+  "nameEn": "Rajapruek Greenery Hill",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "หมู่ 3 ซ.วัดป่าจี้ ถ.เลียบคลองชลประทาน",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V14914",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/11303/rajapruek-greenery-hill"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "สิริธารา คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "Siritara Condominium Chiangmai",
+  "developer": null,
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2007,
+  "floors": "7",
+  "source": "https://zmyhome.com/project/V12196",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/21857/siritara-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2007 vs dotproperty 2015"
+  ]
+ },
+ {
+  "nameTh": "เดอะ นิว คอนเซปท์ พูลวิลล่า การ์เด้นวิว",
+  "nameEn": "The New Concept Pool Villa Garden View",
+  "developer": "บริษัท เดอะ นิวคอนเซปท์ พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.เชียงใหม่-หางดง",
+  "tambon": "Mae Hia",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "3",
+  "source": "https://zmyhome.com/project/V16525",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18187/the-new-concept-pool-villa-garden"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "บ้านเอื้ออาทร ป่าตัน 1",
+  "nameEn": "Baan Ua-Athorn Pa Tan 1",
+  "developer": "การเคหะแห่งชาติ",
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "San Phi Suea",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2013,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15869",
+  "alsoListed": null,
+  "notes": [
+   "National Housing Authority (Baan Eua Arthorn) ownership condo; zmyhome address San Phi Suea despite \"Pa Tan\" name"
+  ]
+ },
+ {
+  "nameTh": "บ้านเอื้ออาทร สันผีเสื้อ",
+  "nameEn": "Baan Ua-Athorn San Pheesua",
+  "developer": "การเคหะแห่งชาติ",
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "San Phi Suea",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V15791",
+  "alsoListed": null,
+  "notes": [
+   "National Housing Authority (Baan Eua Arthorn) ownership condo"
+  ]
+ },
+ {
+  "nameTh": "ไลฟ์ คอนโดมิเนียม เชียงใหม่",
+  "nameEn": "Life Condominium Chiangmai",
+  "developer": "บริษัท เชียงใหม่ไลฟ์ คอนโด 2015 จำกัด",
+  "road": "201 หมู่ 5 ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "San Phi Suea",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V13944",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "ไลฟ์ เนเชอรัล คอนโด เชียงใหม่",
+  "nameEn": "Life Natural Condo Chiangmai",
+  "developer": "MCASSET 27",
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "San Phi Suea",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://www.dotproperty.co.th/en/condo/14011/life-natural-condo-chiangmai",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome",
+   "possibly the same project as zmyhome \"Life Condominium Chiangmai\" (also Somphot 700 Pi Rd, San Phi Suea) - names/developers differ, kept separate"
+  ]
+ },
+ {
+  "nameTh": "เดอะ เบเนฟิต คอนโด",
+  "nameEn": "The Benefits Condo",
+  "developer": null,
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "San Phi Suea",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2014,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14934",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3796/the-benefits-condo-chiang-mai"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2014 vs dotproperty 2012"
+  ]
+ },
+ {
+  "nameTh": "เดอะ แกรนด์ เบเนฟิต 2",
+  "nameEn": "The Grand Benefits II",
+  "developer": null,
+  "road": "ถ.สมโภชเชียงใหม่ 700 ปี",
+  "tambon": "San Phi Suea",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2016,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14933",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/13481/supanich-condo-chiang-mai"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "ล้านนา คอนโดมิเนียม",
+  "nameEn": "Lanna Condominium",
+  "developer": null,
+  "road": null,
+  "tambon": "Pa Tan",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2012,
+  "floors": "6",
+  "source": "https://www.dotproperty.co.th/en/condo/13776/lanna-condominium",
+  "alsoListed": null,
+  "notes": [
+   "single source: dotproperty project page (location field); not found on zmyhome",
+   "possible duplicate of Lanna Nakhon Condotown (nearby coordinates) - verify"
+  ]
+ },
+ {
+  "nameTh": "ลานนานครคอนโดทาวน์",
+  "nameEn": "Lanna Nakhon Condotown",
+  "developer": null,
+  "road": "ซ.สุขเกษม 2 ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Pa Tan",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1998,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V16079",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/15991/lanna-nakorn-condotown"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1998 vs dotproperty 2011"
+  ]
+ },
+ {
+  "nameTh": "โมเบียส คอนโด เชียงใหม่",
+  "nameEn": "Mobius Condo Chiangmai",
+  "developer": null,
+  "road": "ซ.สุขเกษม 5 ถ.สุขเกษม",
+  "tambon": "Pa Tan",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2017,
+  "floors": "5",
+  "source": "https://zmyhome.com/project/V16410",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/28374/mobius-condo"
+  ],
+  "notes": null
+ },
+ {
+  "nameTh": "วันพลัส คอนโด คำเที่ยง",
+  "nameEn": "One Plus Condo Kamtieng",
+  "developer": "บริษัท กาญจน์กนก พร็อพเพอร์ตี้ จำกัด",
+  "road": "ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Pa Tan",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 2015,
+  "floors": "8",
+  "source": "https://zmyhome.com/project/V14917",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/3992/one-plus-kamthieng",
+   "https://www.dotproperty.co.th/en/condo/17531/one-plus-condo-kamthieng"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 2015 vs dotproperty 2023"
+  ]
+ },
+ {
+  "nameTh": "วังสิงห์คำแมนชั่น",
+  "nameEn": "Wang Singh Kham Mansion",
+  "developer": null,
+  "road": "ถ.ซุปเปอร์ไฮเวย์เชียงใหม่-ลำปาง",
+  "tambon": "Pa Tan",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1991,
+  "floors": "10",
+  "source": "https://zmyhome.com/project/V15781",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/25935/wang-singh-kham-mansion"
+  ],
+  "notes": [
+   "name says \"Mansion\" but listed as condominium with Treasury condo-unit appraisal"
+  ]
+ },
+ {
+  "nameTh": "ซิตี้วิวทาวเวอร์ คอนโดมิเนียม",
+  "nameEn": "City View Tower Condominium",
+  "developer": null,
+  "road": "ซ.ท่าแพ 2 ถ.ช้างม่อย",
+  "tambon": "Chang Moi",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1990,
+  "floors": "14",
+  "source": "https://zmyhome.com/project/V16544",
+  "alsoListed": [
+   "https://www.dotproperty.co.th/en/condo/18307/city-view-tower-condominium"
+  ],
+  "notes": [
+   "completed year conflict: zmyhome 1990 vs dotproperty 2000"
+  ]
+ },
+ {
+  "nameTh": "ไนท์บาซาร์คอนโดเทล",
+  "nameEn": "Night Bazaar Condotel",
+  "developer": null,
+  "road": "ซ.ท่าแพ 1 ถ.ท่าแพ",
+  "tambon": "Chang Moi",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1994,
+  "floors": "12",
+  "source": "https://zmyhome.com/project/V17472",
+  "alsoListed": null,
+  "notes": null
+ },
+ {
+  "nameTh": "นพวรรณพาเลซ",
+  "nameEn": "Noppawan Palace",
+  "developer": null,
+  "road": "ถ.ช้างม่อยเก่า",
+  "tambon": "Chang Moi",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1997,
+  "floors": "4",
+  "source": "https://zmyhome.com/project/V17109",
+  "alsoListed": null,
+  "notes": [
+   "listed as condominium with Treasury condo-unit appraisal"
+  ]
+ },
+ {
+  "nameTh": "ริมปิงคอนโดมิเนียม",
+  "nameEn": "Rimping Condominium",
+  "developer": "บริษัท ริมปิงคอนโดมิเนียม จำกัด",
+  "road": "ถ.เจริญราษฎร์",
+  "tambon": "Chang Moi",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1992,
+  "floors": "21",
+  "source": "https://zmyhome.com/project/V17655",
+  "alsoListed": null,
+  "notes": [
+   "Charoenrat Rd is on the east bank of the Ping (normally Wat Ket); zmyhome address says Chang Moi - verify"
+  ]
+ },
+ {
+  "nameTh": "ดิ เอ็มบาสซี่ เฮ้าส์ คอนโดมิเนียม",
+  "nameEn": "The Embassy House Condominium",
+  "developer": null,
+  "road": "ถ.เจริญราษฎร์",
+  "tambon": "Chang Moi",
+  "tambonConfidence": "address",
+  "landmark": null,
+  "completed": 1997,
+  "floors": "13",
+  "source": "https://zmyhome.com/project/V12183",
+  "alsoListed": null,
+  "notes": [
+   "Charoenrat Rd is on the east bank of the Ping (normally Wat Ket); zmyhome address says Chang Moi - verify"
+  ]
+ }
+]

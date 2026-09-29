@@ -7,6 +7,7 @@ import { jobs } from "@/lib/jobs";
 import { enArticles, zhArticles } from "@/content/articles-intl";
 import { intlAreaSlugs } from "@/components/IntlArea";
 import { intlCaseSlugs } from "@/components/IntlCase";
+import { condoBrands } from "@/lib/condo-brands";
 import { segments } from "@/lib/segments";
 import { brands } from "@/lib/brands";
 import { lastmodOf, SRC } from "@/lib/lastmod";
@@ -141,6 +142,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...[...enArticles.map((a) => ({ a, base: "/en/blog" })), ...zhArticles.map((a) => ({ a, base: "/zh/blog" }))].map(({ a, base }) => ({
       url: `${site.url}${base}/${a.slug}`,
       lastModified: new Date(a.updated),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    // ทำเนียบคอนโดและหน้าแบรนด์ 3 ภาษา (29 ก.ย. 2569)
+    ...["/condo", "/en/condo/directory", "/zh/condo/directory", ...condoBrands.flatMap((b) => [`/condo/${b.slug}`, `/en/condo/${b.slug}`, `/zh/condo/${b.slug}`])].map((path) => ({
+      url: `${site.url}${path}`,
+      lastModified: new Date("2026-09-29"),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

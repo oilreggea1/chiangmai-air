@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { condoBrands } from "@/lib/condo-brands";
 import Image from "next/image";
 import { site, heroPhotos, p, btu } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
@@ -224,6 +225,16 @@ export default function EnCondoPage() {
               English home
               <IconChevron className="h-4 w-4" />
             </Link>
+            <Link href="/en/condo/directory" className="btn-ghost">
+              Find your condo (directory)
+              <IconChevron className="h-4 w-4" />
+            </Link>
+            {condoBrands.map((b) => (
+              <Link key={b.slug} href={`/en/condo/${b.slug}`} className="btn-ghost">
+                {`${b.en} condos`}
+                <IconChevron className="h-4 w-4" />
+              </Link>
+            ))}
             <Link href="/en/areas" className="btn-ghost">
               Areas I cover
               <IconChevron className="h-4 w-4" />

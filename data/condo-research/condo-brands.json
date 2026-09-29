@@ -1,0 +1,650 @@
+{
+  "supalai": [
+    {
+      "nameTh": "ศุภาลัย มอนเต้ @ เวียง เชียงใหม่",
+      "nameEn": "Supalai Monte @ Viang Chiangmai",
+      "road": "ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง (FazWaz: 18 Chiang Mai-Lampang Frontage Road)",
+      "tambon": "วัดเกต (Wat Ket)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Central Festival Chiang Mai ~250 m (FazWaz: 'only 250 meters from Central Chiangmai'); adjacent to CBP area (Star Avenue, Big C, Theppanya Hospital, Payap Univ.)",
+      "buildings": 1,
+      "floors": 32,
+      "units": 734,
+      "completed": "2017 (FazWaz: Jun 2017; ZmyHome: พ.ศ.2560)",
+      "type": "high-rise condo",
+      "status": "completed / sold out (not on supalai.com current list)",
+      "conflicts": [],
+      "notes": "Hipflat/Lazudi list the same project as 'Supalai Monte 1 Chiang Mai' (same 18 Super Highway, Wat Ket address). Land ~5-3 rai (ZmyHome). Also 4 commercial units per perfecthomes search snippet (not fetched).",
+      "sources": [
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/wat-ket/supalai-monte-at-viang",
+        "https://zmyhome.com/project/V744",
+        "https://propertyhub.in.th/en/condo-for-rent/project-supalai-monte-viang-chiangmai"
+      ]
+    },
+    {
+      "nameTh": "ศุภาลัย มอนเต้ 2 เชียงใหม่",
+      "nameEn": "Supalai Monte 2 Chiangmai",
+      "road": "ถ.เชียงใหม่-ดอยสะเก็ด (Route 118)",
+      "tambon": "หนองป่าครั่ง (Nong Pa Khrang) — disputed, see conflicts",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Central Festival Chiang Mai (chiangmaibaan: adjacent; PropertyHub: 0.77 km); Index Living Mall ~1.06 km (PropertyHub)",
+      "buildings": 1,
+      "floors": 32,
+      "units": 734,
+      "completed": null,
+      "type": "high-rise condo",
+      "status": "completed",
+      "conflicts": [
+        "tambon: FazWaz + chiangmaibaan = หนองป่าครั่ง; ZmyHome = วัดเกต",
+        "completion: FazWaz Aug 2018, PropertyHub 2018, ZmyHome พ.ศ.2562 (2019)",
+        "units: 734 residential + 4 commercial per chiangmaibaan; land 4.1 rai (chiangmaibaan) / 4-1-24.3 rai (ZmyHome)"
+      ],
+      "notes": null,
+      "sources": [
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/nong-pa-khrang/supalai-monte-2",
+        "https://chiangmaibaan.com/supalai-monte-2/",
+        "https://zmyhome.com/project/V15818",
+        "https://propertyhub.in.th/en/condo-for-rent/project-supalai-monte-2-chiangmai"
+      ]
+    },
+    {
+      "nameTh": "ศุภาลัย ธาม เชียงใหม่",
+      "nameEn": "Supalai Tyme Chiang Mai",
+      "road": "ถ.เชียงใหม่-ดอยสะเก็ด (ZmyHome only)",
+      "tambon": "วัดเกต (ZmyHome only)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "ใกล้เซ็นทรัล เฟสติวัล เชียงใหม่ (official page title)",
+      "buildings": 1,
+      "floors": 33,
+      "units": 755,
+      "completed": null,
+      "type": "high-rise condo (condominium per official page)",
+      "status": "new / coming soon (official: 'พบกันเร็วๆนี้'); ZmyHome expected completion พ.ศ.2572",
+      "conflicts": [],
+      "notes": "Official supalai.com page gives no address, floors or units — building/floor/unit/tambon figures come only from ZmyHome (single listing source). Treat as unconfirmed until Supalai publishes specs. Residents: none yet (not built).",
+      "sources": [
+        "https://www.supalai.com/project/condo/supalai-tyme-chiang-mai",
+        "https://zmyhome.com/project/V18193"
+      ]
+    }
+  ],
+  "orsirin": [
+    {
+      "nameTh": "ดิ แอสตร้า (ช้างคลาน)",
+      "nameEn": "The Astra Condo (Changklan)",
+      "road": "ถ.ช้างคลาน (107 Changklan Rd per official map link; FazWaz: 107/302 Chang Klan Road)",
+      "tambon": "ช้างคลาน (Chang Khlan)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official page lists Night Bazaar, Tha Phae Gate, Central Airport, Central Chiang Mai, Maya (minutes not filled in); FazWaz: past Lanna Palace Hotel on Chang Klan Rd",
+      "buildings": 2,
+      "floors": 17,
+      "units": 589,
+      "completed": null,
+      "type": "high-rise condo",
+      "status": "completed",
+      "conflicts": [
+        "tambon: official map + FazWaz = ช้างคลาน; ZmyHome = ป่าแดด",
+        "completion: FazWaz Oct 2017; ZmyHome พ.ศ.2559 (2016)"
+      ],
+      "notes": "Land ~5 rai. Developer entity per FazWaz: North Home (Ornsirin subsidiary). Official brand spelling is 'Ornsirin' (อรสิริน).",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-astra-changklan/",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/chang-khlan/the-astra-condo",
+        "https://zmyhome.com/project/V16108"
+      ]
+    },
+    {
+      "nameTh": "แอสตร้า สกาย ริเวอร์",
+      "nameEn": "The Astra Sky River (Changklan)",
+      "road": "ถ.ช้างคลาน",
+      "tambon": "ช้างคลาน (Chang Khlan)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official: 'ทำเลที่ตั้งใจกลางเมือง'; lists Night Bazaar, Tha Phae Gate, Central Airport, Maya, Nimman",
+      "buildings": 1,
+      "floors": 17,
+      "units": 520,
+      "completed": null,
+      "type": "high-rise condo (rooftop 'Sky River' pool ~156 m per FazWaz)",
+      "status": "completed",
+      "conflicts": [
+        "completion: FazWaz Dec 2021; ZmyHome พ.ศ.2565 (2022)"
+      ],
+      "notes": "FazWaz tags it Leasehold. Land 4-2-68 rai (ZmyHome).",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-astra-sky-river-changklan/",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/chang-khlan/astra-sky-river",
+        "https://zmyhome.com/project/V17563"
+      ]
+    },
+    {
+      "nameTh": "ดิ แอสตร้า อินฟินิท",
+      "nameEn": "The Astra Infinite",
+      "road": "ถ.ระแกง (110 Ragang Rd per official map link)",
+      "tambon": "ช้างคลาน (Chang Khlan)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Maya, One Nimman, Central Chiang Mai, Montfort, Regina Coeli; FazWaz: moments from Night Bazaar",
+      "buildings": 1,
+      "floors": 16,
+      "units": 421,
+      "completed": null,
+      "type": "high-rise condo",
+      "status": "under construction / off-plan (FazWaz: Jul 2028; ZmyHome: พ.ศ.2571)",
+      "conflicts": [
+        "tambon: official map + ZmyHome = ช้างคลาน; FazWaz = หายยา (Hai Ya)"
+      ],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-astra-infinite/",
+        "https://zmyhome.com/project/V860",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/hai-ya/astra-infinite"
+      ]
+    },
+    {
+      "nameTh": "อะไรซ์ (มหิดล)",
+      "nameEn": "Arise Condo At Mahidol",
+      "road": "ถ.มหิดล (Mahidol Road)",
+      "tambon": "ป่าแดด (Pa Daet)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Central Airport, Central Chiang Mai, Maya, Night Bazaar, Tha Phae Gate, Nimman; FazWaz: Central Airport ~1.4 km",
+      "buildings": 10,
+      "floors": 5,
+      "units": 380,
+      "completed": "Jun 2020 (FazWaz)",
+      "type": "low-rise condo (Lanna style, per official page)",
+      "status": "completed",
+      "conflicts": [],
+      "notes": "Only one listing source (FazWaz) for counts; ZmyHome page not found.",
+      "sources": [
+        "https://ornsirin.co.th/property-item/arise-mahidol/",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/pa-daet/arise-condo-at-mahidol"
+      ]
+    },
+    {
+      "nameTh": "อะไรซ์ คอนโด เจริญเมือง",
+      "nameEn": "Arise Charoenmueang",
+      "road": "ถ.เจริญเมือง (ZmyHome); official map text says '79 ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง'",
+      "tambon": "ท่าศาลา (Tha Sala) — see conflicts",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official: 'เพียง 10 นาทีจากเมืองเชียงใหม่'; lists Makro, Big C Donchan, Central Chiang Mai, Payap Univ., Dara Academy, Prince Royal's",
+      "buildings": 1,
+      "floors": 19,
+      "units": null,
+      "completed": null,
+      "type": "high-rise condo (official: 'คอนโดฯ ตึกสูง')",
+      "status": "completed/selling",
+      "conflicts": [
+        "tambon: ZmyHome + FazWaz = ท่าศาลา; the Google Maps link on the official page reads 'Tambon Nong Pa Khrang'",
+        "units: ZmyHome 496 vs FazWaz 469",
+        "completion: FazWaz Sep 2025; ZmyHome พ.ศ.2568 (agree ~2025)"
+      ],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/arise-charoenmueang/",
+        "https://zmyhome.com/project/V16835",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/tha-sala/arise-charoen-mueang"
+      ]
+    },
+    {
+      "nameTh": "อะไรซ์ ฮิลล์ สันทราย",
+      "nameEn": "Arise Hill (Sansai)",
+      "road": "หมู่ 8 ถ.เชียงใหม่-ดอยสะเก็ด (ZmyHome)",
+      "tambon": "สันทรายน้อย (San Sai Noi)",
+      "amphoe": "สันทราย",
+      "landmark": "Official lists Central Chiang Mai, Ruamchok Mall, Maya; Maejo Univ., CMU",
+      "buildings": 2,
+      "floors": 8,
+      "units": 368,
+      "completed": "2026 (FazWaz Aug 2026; ZmyHome พ.ศ.2569)",
+      "type": "low-rise condo (8 floors), pet-friendly ('Pet Allowed*' on official page)",
+      "status": "new / just completed",
+      "conflicts": [],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/arise-hill/",
+        "https://zmyhome.com/project/V18095",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/san-sai/san-sai-noi/arise-hill"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ 1 (รวมโชค)",
+      "nameEn": "The Next 1 (Ruamchok)",
+      "road": "82 หมู่ 6 ถ.เชียงใหม่-แม่โจ้ (กาดรวมโชค) (ZmyHome)",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Ruamchok Mall, Central Chiang Mai, Maya",
+      "buildings": null,
+      "floors": 7,
+      "units": null,
+      "completed": null,
+      "type": "low-rise condo",
+      "status": "completed",
+      "conflicts": [
+        "buildings: ZmyHome 4 vs FazWaz 3",
+        "units: ZmyHome 246 vs FazWaz 201",
+        "completion: ZmyHome พ.ศ.2557 (2014) vs FazWaz Mar 2017"
+      ],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-1-ruamchok/",
+        "https://zmyhome.com/project/V15277",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/the-next-1-condominium"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ 2 (หนองประทีป)",
+      "nameEn": "The Next 2 (Nong Prateep)",
+      "road": "3/17 หมู่ 5 ถ.เชียงใหม่-ลำปาง (แยกหนองประทีป) (ZmyHome)",
+      "tambon": "ท่าศาลา (Tha Sala)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official: 'แยกหนองประทีป'; lists Central Chiang Mai, Ruamchok Mall, Maya, McCormick Hospital",
+      "buildings": 2,
+      "floors": 7,
+      "units": null,
+      "completed": null,
+      "type": "low-rise condo",
+      "status": "completed",
+      "conflicts": [
+        "units: ZmyHome 139 vs FazWaz 134",
+        "completion: ZmyHome พ.ศ.2558 (2015) vs FazWaz Nov 2014",
+        "buildings: only ZmyHome states 2"
+      ],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-2-nong-prateep/",
+        "https://zmyhome.com/project/V15276",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/tha-sala/the-next-2"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ 3 (รวมโชค)",
+      "nameEn": "The Next 3 (Ruamchok)",
+      "road": "ถ.เชียงใหม่-แม่โจ้, หมู่ 6 (official map: 91 Moo 6; ZmyHome: 82 หมู่ 6)",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Ruamchok Mall, Central Chiang Mai, Maya",
+      "buildings": 2,
+      "floors": 7,
+      "units": 117,
+      "completed": "2014 (ZmyHome พ.ศ.2557; FazWaz Jan 2014)",
+      "type": "low-rise condo",
+      "status": "completed",
+      "conflicts": [],
+      "notes": "Official menu labels it 'The Next 3 (รวมโชค)' / English list 'Theppanya (Ruamchok)'. FazWaz lists it as 'The Next 3 Condo 3.1' with no counts; counts from ZmyHome only.",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-3-ruam-chok/",
+        "https://zmyhome.com/project/V15278",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/the-next-3-condo-31"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ พรีเมียร์ (รวมโชค)",
+      "nameEn": "The Next Premier (Ruamchok)",
+      "road": "ถ.เชียงใหม่-แม่โจ้ (กาดรวมโชค) (ZmyHome); official map: ซอย 9",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Ruamchok Mall, Central Chiang Mai, Maya",
+      "buildings": null,
+      "floors": 7,
+      "units": null,
+      "completed": null,
+      "type": "low-rise condo",
+      "status": "completed",
+      "conflicts": [
+        "buildings/units: ZmyHome 1 building/45 units vs FazWaz 201 units (FazWaz figure identical to The Next 1 — likely copy error)",
+        "completion: ZmyHome พ.ศ.2560 (2017) vs FazWaz Dec 2014"
+      ],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-premier-ruam-chok/",
+        "https://zmyhome.com/project/V16633",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/the-next-premier"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ รวมโชค-ซิตี้ฮอลล์",
+      "nameEn": "The Next Ruamchok - City Hall",
+      "road": "ซ.ธนาวัล 1 ถ.สมโภชเชียงใหม่ 700 ปี (ZmyHome)",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Ruamchok Mall, Lotus's Ruamchok, Central Chiang Mai, Payap Univ.",
+      "buildings": 2,
+      "floors": 4,
+      "units": 79,
+      "completed": "2024 (FazWaz Aug 2024; ZmyHome พ.ศ.2567)",
+      "type": "low-rise condo",
+      "status": "completed ('4 ยูนิตสุดท้าย' on official page)",
+      "conflicts": [],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-city-hall/",
+        "https://zmyhome.com/project/V17335",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/the-next-ruamchok-city-hall"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ เจ็ดยอด",
+      "nameEn": "The Next Jedyod",
+      "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง (ZmyHome); FazWaz: Moo 2 via Jetyod Road",
+      "tambon": "ช้างเผือก (Chang Phueak)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Maya, Central Chiang Mai, RMUTL, Rajabhat, CMU; FazWaz: Wat Chet Yot ~0.4 km",
+      "buildings": 1,
+      "floors": 4,
+      "units": 78,
+      "completed": "2020 (FazWaz Nov 2020; ZmyHome พ.ศ.2563)",
+      "type": "low-rise condo (art-deco style)",
+      "status": "completed",
+      "conflicts": [],
+      "notes": null,
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-jedyod/",
+        "https://zmyhome.com/project/V17344",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/chang-phueak/the-next-jedyod"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ เจ็ดยอด 2",
+      "nameEn": "The Next Jedyod 2",
+      "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง (ZmyHome)",
+      "tambon": "ช้างเผือก (Chang Phueak)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Maya, Central Chiang Mai, Central Airport, RMUTL, CMU",
+      "buildings": 1,
+      "floors": 4,
+      "units": 72,
+      "completed": null,
+      "type": "low-rise condo",
+      "status": "SOLD OUT (official page)",
+      "conflicts": [
+        "completion: FazWaz Nov 2024 vs ZmyHome พ.ศ.2568 (2025)",
+        "floors: only ZmyHome states 4"
+      ],
+      "notes": "The Google Maps link on the official page points to The Next City Hall (copy-paste) — not used.",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-jed-yod-2/",
+        "https://zmyhome.com/project/V17345",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/chang-phueak/the-next-jedyod-2"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ เจ็ดยอด 3",
+      "nameEn": "The Next Jedyod 3",
+      "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง (ZmyHome)",
+      "tambon": "ช้างเผือก (Chang Phueak)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official lists Maya, Central Chiang Mai, Central Airport, RMUTL, CMU",
+      "buildings": 1,
+      "floors": 4,
+      "units": 62,
+      "completed": "2026 expected/just completed (ZmyHome พ.ศ.2569)",
+      "type": "low-rise condo",
+      "status": "selling (official)",
+      "conflicts": [],
+      "notes": "Counts from ZmyHome only; not on FazWaz. Official map link is a copy of City Hall — not used.",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-jedyod-3/",
+        "https://zmyhome.com/project/V18135"
+      ]
+    },
+    {
+      "nameTh": "เดอะ เน็กซ์ เจ็ดยอด 4",
+      "nameEn": "The Next Jedyod 4",
+      "road": "ซ.วัดเจ็ดยอด ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง (ZmyHome)",
+      "tambon": "ช้างเผือก (Chang Phueak)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Official hero text: 'มช. / นิมมานฯ'; lists Maya, Central Chiang Mai, CMU",
+      "buildings": 1,
+      "floors": 4,
+      "units": 54,
+      "completed": null,
+      "type": "low-rise condo",
+      "status": "new project, not yet built (ZmyHome expected พ.ศ.2570)",
+      "conflicts": [],
+      "notes": "Counts from ZmyHome only.",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-next-jedyod-4/",
+        "https://zmyhome.com/project/V18189"
+      ]
+    }
+  ],
+  "dcondo": [
+    {
+      "nameTh": "ดีคอนโด ซายน์ เชียงใหม่",
+      "nameEn": "dcondo Sign Chiang Mai",
+      "road": "ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": null,
+      "buildings": null,
+      "floors": 8,
+      "units": 813,
+      "completed": "2014 (FazWaz Dec 2014; ZmyHome พ.ศ.2557)",
+      "type": "low-rise condo (8 floors)",
+      "status": "completed; listed under 'past projects' on sansiri.com/dcondo (พ.ศ.2556 = launch year)",
+      "conflicts": [
+        "buildings: ZmyHome 4 vs FazWaz 2 (a search snippet from baania also said 4 — not fetched)"
+      ],
+      "notes": "Land 11 rai (ZmyHome).",
+      "sources": [
+        "https://www.sansiri.com/dcondo",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/d-condo-sign",
+        "https://zmyhome.com/project/V648"
+      ]
+    },
+    {
+      "nameTh": "ดีคอนโด นิม เชียงใหม่",
+      "nameEn": "dcondo Nim Chiang Mai",
+      "road": "ทางคู่ขนานถนนซูเปอร์ไฮเวย์ (เชียงใหม่-ลำปาง)",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Central Festival ~200 m (condonayoo)",
+      "buildings": 3,
+      "floors": 8,
+      "units": 514,
+      "completed": "2016 (FazWaz Jun 2016; condonayoo มิ.ย. 2559; ZmyHome พ.ศ.2559)",
+      "type": "low-rise condo (8 floors)",
+      "status": "completed; sansiri.com/dcondo past projects (พ.ศ.2559)",
+      "conflicts": [
+        "FazWaz description body says 'located at Pa Tan' while its header, ZmyHome and condonayoo say ฟ้าฮ่าม"
+      ],
+      "notes": "Land 8-2-0 rai.",
+      "sources": [
+        "https://www.sansiri.com/dcondo",
+        "https://www.condonayoo.com/d-condo-nim-chiang-mai/",
+        "https://zmyhome.com/project/V15116",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/d-condo-nim"
+      ]
+    },
+    {
+      "nameTh": "ดีคอนโด พิงค์ เชียงใหม่",
+      "nameEn": "dcondo Ping Chiang Mai",
+      "road": "ถ.ซุปเปอร์ไฮเวย์ (FazWaz: 177 Moo 5)",
+      "tambon": "ฟ้าฮ่าม (Fa Ham)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": "Central Festival 'only five minutes away via a private walkway'; CMU ~10 min drive (Sansiri official news)",
+      "buildings": 4,
+      "floors": 8,
+      "units": 687,
+      "completed": "2018 (FazWaz Sep 2018; ZmyHome พ.ศ.2561)",
+      "type": "low-rise condo (four 8-floor buildings)",
+      "status": "completed; sansiri.com/dcondo past projects (พ.ศ.2560)",
+      "conflicts": [],
+      "notes": "Official Thai spelling is 'พิงค์' (not 'ปิง'). Land 12 rai (ZmyHome).",
+      "sources": [
+        "https://www.sansiri.com/en/news/dcondo-ping-your-next-thailand-property-investment-in-asia-s-up-and-coming-city-chiang-mai-32/",
+        "https://www.sansiri.com/dcondo",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/d-condo-ping",
+        "https://zmyhome.com/project/V15948"
+      ]
+    },
+    {
+      "nameTh": "ดีคอนโด ริน เชียงใหม่",
+      "nameEn": "dcondo Rin Chiang Mai",
+      "road": "Super Highway Road (FazWaz: 91 Super Highway Chiang Mai-Lampang Rd)",
+      "tambon": "ฟ้าฮ่าม (Fahaam, per official Sansiri page)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": null,
+      "buildings": 2,
+      "floors": 8,
+      "units": 411,
+      "completed": null,
+      "type": "low-rise condo (8 floors)",
+      "status": "completed; sansiri.com/dcondo past projects (พ.ศ.2561)",
+      "conflicts": [
+        "completion: FazWaz Dec 2019 vs ZmyHome พ.ศ.2563 (2020)"
+      ],
+      "notes": "Land 4-0-56 rai (ZmyHome).",
+      "sources": [
+        "https://www.sansiri.com/cnt/condominium/dcondo-rin-chiangmai",
+        "https://www.sansiri.com/dcondo",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/fa-ham/dcondo-rin",
+        "https://zmyhome.com/project/V16775"
+      ]
+    },
+    {
+      "nameTh": "ดีคอนโด แคมปัส รีสอร์ท เชียงใหม่",
+      "nameEn": "dcondo Campus Resort Chiang Mai",
+      "road": "ซ.บีอเวนิว ถ.สุเทพ (ZmyHome); FazWaz: Soi Suthep",
+      "tambon": "สุเทพ (Suthep)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": null,
+      "buildings": 3,
+      "floors": 6,
+      "units": 521,
+      "completed": null,
+      "type": "low-rise condo",
+      "status": "completed; sansiri.com/dcondo past projects (พ.ศ.2555)",
+      "conflicts": [
+        "completion: ZmyHome พ.ศ.2557 (2014) vs FazWaz Feb 2015"
+      ],
+      "notes": "Land 8-0-36.75 rai (ZmyHome). Name suggests CMU-area student market but no fetched source states a CMU distance.",
+      "sources": [
+        "https://www.sansiri.com/dcondo",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/suthep/dcondo-campus-resort-chiang-mai",
+        "https://zmyhome.com/project/V15115"
+      ]
+    },
+    {
+      "nameTh": "ดีเวียง สันติธรรม เชียงใหม่",
+      "nameEn": "d'Vieng Santitham",
+      "road": "ถ.หัสดิเสวี (ZmyHome)",
+      "tambon": "ช้างเผือก (Chang Phueak)",
+      "amphoe": "เมืองเชียงใหม่",
+      "landmark": null,
+      "buildings": 2,
+      "floors": null,
+      "units": 264,
+      "completed": "2015 (FazWaz Aug 2015; ZmyHome พ.ศ.2558)",
+      "type": "low-rise condo",
+      "status": "completed; listed on sansiri.com/dcondo past projects (พ.ศ.2555)",
+      "conflicts": [
+        "floors: ZmyHome 8 vs FazWaz 5"
+      ],
+      "notes": "Brand is 'dViang' (d-family, listed on Sansiri's dcondo page) rather than 'dcondo' by name — include only if you treat d-family as dcondo.",
+      "sources": [
+        "https://www.sansiri.com/dcondo",
+        "https://zmyhome.com/project/V14814",
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/chang-phueak/d-vieng-santitham"
+      ]
+    }
+  ],
+  "otherSansiriCondosNotDcondo": [
+    {
+      "name": "เดอะ เบส ไฮท์ - เชียงใหม่ (THE BASE Height Chiang Mai)",
+      "developer": "Sansiri",
+      "note": "High-rise condo, NOT dcondo brand. Official: ถ.แก้วนวรัตน์ อ.เมืองเชียงใหม่, 1 อาคาร 31 ชั้น 630 ยูนิต, 2-3-10 ไร่, 'สร้างเสร็จพร้อมอยู่', 'คอนโดมิเนียมตึกสูงแห่งแรกจากแสนสิริที่เชียงใหม่'. ZmyHome: tambon วัดเกต, completed พ.ศ.2568.",
+      "sources": [
+        "https://www.sansiri.com/condominium/thebase-height-chiangmai/th/",
+        "https://zmyhome.com/project/V17862"
+      ]
+    },
+    {
+      "name": "เมคิน เฮาส์ (Mekin Haus)",
+      "developer": "Sansiri",
+      "note": "Condo, NOT dcondo brand. Official: ถ.ซุปเปอร์ไฮเวย์ เชียงใหม่-ลำปาง ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่; ~3 ไร่, 2 อาคาร 7 ชั้น 250 ยูนิต; pet-friendly; completion not stated.",
+      "sources": [
+        "https://www.sansiri.com/condominium/mekin-haus/th/"
+      ]
+    }
+  ],
+  "notCondos": [
+    {
+      "name": "Supalai Ville Chiang Mai (ศุภาลัย วิลล์ เชียงใหม่)",
+      "developer": "Supalai",
+      "note": "Houses; FazWaz: Chai Sathan, Saraphi; 234 units; Dec 2015.",
+      "sources": [
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/saraphi/chai-sathan/supalai-ville-chiang-mai"
+      ]
+    },
+    {
+      "name": "Supalai Garden Ville Wongwaen-San Kamphaeng",
+      "developer": "Supalai",
+      "note": "House project (supalai.com Chiang Mai zone page).",
+      "sources": [
+        "https://www.supalai.com/en/project/zone/home-and-condo-chiang-mai"
+      ]
+    },
+    {
+      "name": "Supalai Park Ville Hang Dong",
+      "developer": "Supalai",
+      "note": "House project (supalai.com zone page).",
+      "sources": [
+        "https://www.supalai.com/en/project/zone/home-and-condo-chiang-mai"
+      ]
+    },
+    {
+      "name": "Supalai Grand Ville San Kamphaeng (ศุภาลัย แกรนด์วิลล์ สันกำแพง)",
+      "developer": "Supalai",
+      "note": "Single houses, new project (supalai.com Thai zone page).",
+      "sources": [
+        "https://www.supalai.com/project/zone/%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B9%82%E0%B8%94-%E0%B8%88%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88"
+      ]
+    },
+    {
+      "name": "Supalai Monte Biz (ศุภาลัย มอนเต้ บิซ)",
+      "developer": "Supalai",
+      "note": "Townhome/home-office, not condo — despite the 'Monte' name.",
+      "sources": [
+        "https://www.supalai.com/en/project/zone/home-and-condo-chiang-mai"
+      ]
+    },
+    {
+      "name": "Supalai Moda Chiangmai",
+      "developer": "Supalai",
+      "note": "Houses; FazWaz: San Phisuea; 139 units; Dec 2018.",
+      "sources": [
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/san-phisuea/supalai-moda"
+      ]
+    },
+    {
+      "name": "Supalai Primo Mahidol Chiangmai",
+      "developer": "Supalai",
+      "note": "3-storey townhomes; FazWaz: Pa Daet; 67 units; Dec 2018.",
+      "sources": [
+        "https://www.fazwaz.co.th/en/projects/thailand/chiang-mai/mueang-chiang-mai/pa-daet/supalai-primo-mahidol-chiangmai"
+      ]
+    },
+    {
+      "name": "Ornsirin houses/townhomes/shophouses: The Escape (มหิดล), Habitat (วงแหวน-สันกำแพง / รวมโชค / ซุปเปอร์ไฮเวย์ / มหิดล), Belive (วงแหวน-สันกำแพง / สันทราย-แม่โจ้ / รวมโชค), Ornsirin Ville (สันทราย / ท่ารั้ว / ดอนจั่น / โชตนา), Ornsirin 11 (แม่โจ้), Ornsirin 6 (สันกำแพง), Shophouse (รวมโชค / สันทราย), Urban Myx (หางดง / บ้านเด่น-ราชเวช)",
+      "developer": "Ornsirin",
+      "note": "Listed under บ้าน/ทาวน์โฮม/ช็อปเฮ้าส์ in the ornsirin.co.th menu — not condos.",
+      "sources": [
+        "https://ornsirin.co.th/property-item/the-astra-changklan/"
+      ]
+    },
+    {
+      "name": "Arise Vibe (Phuket)",
+      "developer": "Ornsirin",
+      "note": "Condo but in Phuket (Thalang) — outside Chiang Mai.",
+      "sources": [
+        "https://ornsirin.co.th/en/condominium-chiang-mai/"
+      ]
+    }
+  ],
+  "_meta": {
+    "checkedDate": "2026-09-29",
+    "developerSpelling": "The developer is 'Ornsirin' / อรสิริน (Ornsirin Holding PCL, sub-brand North Home), not 'Orsirin'.",
+    "method": "Official pages fetched first (supalai.com, ornsirin.co.th, sansiri.com); counts/tambon from FazWaz (fazwaz.co.th) and ZmyHome project pages. hipflat, ddproperty, home.co.th, thinkofliving, baania returned 403 and were NOT used. Where sources disagree the field is null or labelled and the disagreement is in 'conflicts'.",
+    "juristicRules": "No source fetched stated juristic-office service hours or rules; none recorded."
+  }
+}
