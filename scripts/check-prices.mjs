@@ -116,7 +116,11 @@ const ALLOW_BTU_IF_ROOM_CONTEXT = new Set(["18,000–24,000"]);
  * lib/repair.ts = ราคาค่าซ่อม/อะไหล่แยกตามอาการ เป็นคนละชุดกับราคาบริการหลัก
  * และเป็นแหล่งอ้างอิงเดียวของตัวเองอยู่แล้ว (ไม่ได้ถูกพิมพ์ซ้ำที่อื่น)
  */
-const SKIP_FILES = new Set(["lib/repair.ts", "lib/repair-guides.ts"]);
+const SKIP_FILES = new Set([
+  "lib/repair.ts", "lib/repair-guides.ts",
+  // ราคากลางแอร์จากร้านค้าปลีก ไม่ใช่ราคาที่ร้านคิด (29 ก.ย. 2569)
+  "lib/market-prices.ts",
+]);
 
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {

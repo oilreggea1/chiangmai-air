@@ -13,6 +13,13 @@ import { reels } from "@/components/ReelsShowcase";
 import { ReelCard } from "@/components/ReelCard";
 import { lastmodIso, thaiDate, SRC } from "@/lib/lastmod";
 import { workCases } from "@/lib/work-cases";
+import { MarketPrices } from "@/components/MarketPrices";
+
+/**
+ * รูปประกอบตารางราคากลาง ต้องไม่ติดโลโก้ยี่ห้อ (เจ้าของสั่ง 29 ก.ย. 2569)
+ * ชั่วคราวใช้รูปงานติดตั้งของร้านที่ครอปโลโก้ออกแล้ว รอเจ้าของอนุมัติรูปจากคลังรูปฟรี
+ */
+const MARKET_IMAGE = { src: "/work/khai-air-ref-indoor.jpg", alt: "แอร์ติดผนังพร้อมรางครอบท่อ งานติดตั้งจริงในเชียงใหม่" };
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -515,6 +522,9 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* ราคากลางแอร์ (29 ก.ย. 2569) เฉพาะหน้าร้านแอร์ ดู lib/market-prices.ts */}
+      {s.slug === "khai-air" && <MarketPrices image={MARKET_IMAGE} />}
 
       {s.slug === "som-air" && (
         <section className="section bg-sand">
