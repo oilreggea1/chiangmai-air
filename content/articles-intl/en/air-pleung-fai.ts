@@ -5,9 +5,9 @@ export const article: IntlArticle = {
   title: "Aircon Using Too Much Power? Best Temperature, Does Cleaning Help",
   h1: "Aircon using too much electricity: what temperature saves power, and does cleaning really cut the bill?",
   description:
-    "Where an aircon uses power, why 26–28 degrees is advised, how a fan helps, whether to switch off when you leave, and how dirty coils push up your bill.",
+    "Where an aircon uses power, why 26–27 degrees is advised, how a fan helps, whether to switch off when you leave, and how dirty coils push up your bill.",
   category: "Prices and costs",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/lang-air-thod-lang-015.jpg", alt: "A long aircon air filter so clogged with black dust that the mesh is solid, next to a white front cover" },
   excerpt:
@@ -49,7 +49,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "What temperature setting actually saves power" },
     {
       type: "p",
-      text: "Thailand's electricity authorities recommend setting the aircon at 26–28 °C. The reason is that the lower you set it, the wider the gap between your setting and the air outside, so the compressor has to run longer to reach the target, and once it gets there it is harder to hold that level.",
+      text: "The Provincial Electricity Authority (PEA) recommends setting the aircon at 26–27 °C. The reason is that the lower you set it, the wider the gap between your setting and the air outside, so the compressor has to run longer to reach the target, and once it gets there it is harder to hold that level.",
     },
     {
       type: "p",
@@ -62,7 +62,7 @@ export const article: IntlArticle = {
       rows: [
         ["18–22 °C", "Runs continuously and hardly ever cuts out; in a poorly insulated room it may never reach the setting", "Very cold, but the highest bill, and you often wake up needing a thick blanket"],
         ["23–25 °C", "Cuts out sometimes, but the running cycles are still long", "Clearly cool and comfortable; bill moderate to high"],
-        ["26–28 °C", "Cuts out in regular cycles; running cycles get shorter", "The range the electricity authorities recommend; comfortable enough with some airflow"],
+        ["26–27 °C", "Cuts out in regular cycles; running cycles get shorter", "The range PEA recommends; comfortable enough with some airflow"],
         ["29 °C and above", "Cuts out very often and runs little", "Many people start to feel it is stuffy and rely more on a fan"],
       ],
     },
@@ -197,11 +197,18 @@ export const article: IntlArticle = {
       type: "ul",
       items: [
         "Your aircon's electricity cost equals the total time the compressor runs, not the time you have the aircon switched on.",
-        "The electricity authorities recommend 26–28 degrees, and setting it lower does not cool the room any faster.",
+        "The Provincial Electricity Authority (PEA) recommends 26–27 degrees, and setting it lower does not cool the room any faster.",
         "A fan uses far less power than the compressor, so using one together with the aircon is the best-value approach.",
         "Dirty coils make the compressor run longer every cycle, so cleaning on schedule brings the bill down, and you can measure it yourself from the meter readings before and after.",
         "Out of the room for less than half an hour: leave it on. More than one to two hours: switch it off.",
         "A No. 5 unit installed at the wrong size or never cleaned can use more power than a standard unit that is looked after regularly.",
+      ],
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Aircon at 26° plus a fan: does it really save power?", publisher: "Provincial Electricity Authority (PEA), 16 Apr 2026 (in Thai)", url: "https://www.pea.co.th/news/infographic/1836", note: "Recommends setting 26–27°C together with a fan" },
+        { title: "Which way of using an aircon saves the most power", publisher: "Electricity Generating Authority of Thailand (EGAT) (in Thai)", url: "https://www.egat.co.th/home/20220819-art01/", note: "Recommends 26–27 degrees with a fan, saving about 10% compared with 23–24 degrees" },
       ],
     },
   ],

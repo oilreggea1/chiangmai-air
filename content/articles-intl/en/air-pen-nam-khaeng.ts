@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Why an air conditioner freezes up: too little airflow over the coil, low refrigerant, a weak fan, or a temperature set too low for too long. What to do right now, and why you should not keep running it.",
   category: "Aircon problems",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/lang-air-thod-lang-144.jpg", alt: "Close-up of an air filter caked with fluffy dust along the mesh, photographed before cleaning" },
   excerpt:
@@ -104,7 +104,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "Chiang Mai makes this more likely than most places, because night temperatures drop a lot from November to January. People used to setting 18 degrees in the hot season who keep the same setting in the cool season may find ice on the coil in the morning. The electricity authority recommends 26–28 degrees, which saves power and avoids this problem at the same time. If that does not feel cool enough, I suggest using a fan to move the air rather than lowering the temperature; it works better and costs less.",
+      text: "Chiang Mai makes this more likely than most places, because night temperatures drop a lot from November to January. People used to setting 18 degrees in the hot season who keep the same setting in the cool season may find ice on the coil in the morning. The Provincial Electricity Authority (PEA) recommends 26–27 degrees, which saves power and avoids this problem at the same time. If that does not feel cool enough, I suggest using a fan to move the air rather than lowering the temperature; it works better and costs less.",
     },
 
     { type: "h2", text: "Why running it anyway damages the compressor" },
@@ -139,7 +139,7 @@ export const article: IntlArticle = {
         { title: "Put something down to catch overflow", detail: "A lot of ice melting at once can overflow the drain tray. Put a towel or container under the unit while you wait to keep water off the ceiling." },
         { title: "Take out and wash the filters", detail: "Rinse with plain water and let them dry completely before refitting. If the dust has built up into a mat, that is very likely the cause. You can do this yourself at no cost." },
         { title: "Check for anything blocking the airflow", detail: "Look for furniture, curtains or an extra filter blocking the outlet. If a fine filter has been stuck on top, remove it first." },
-        { title: "Restart at 26–28 degrees", detail: "Set the fan to medium or high and watch it for another 1–2 days. If the ice does not come back and the room cools normally, the cause was dirt or the settings, and that is the end of it." },
+        { title: "Restart at 26–27 degrees", detail: "Set the fan to medium or high and watch it for another 1–2 days. If the ice does not come back and the room cools normally, the cause was dirt or the settings, and that is the end of it." },
         { title: "If it comes back, have me check it", detail: "Ice returning after cleaning usually means a refrigerant leak, a worn fan or a control fault, which needs pressure gauges and proper tools to diagnose." },
       ],
     },
@@ -152,7 +152,7 @@ export const article: IntlArticle = {
         ["Ice in patches, not across the whole coil, and the room cools more slowly", "Low refrigerant from a leak", "Have a technician find the leak; do not top up without finding it"],
         ["Ice on the larger pipe at the outdoor unit", "Low refrigerant, or too little airflow over the indoor coil", "Switch off and call a technician; the pressure has to be measured"],
         ["Just cleaned but the airflow is still weak and the fan sounds different", "Worn fan motor or capacitor", `Have it checked; the diagnostic charge is ${p.repair.diagnostic} THB, credited if you go ahead`],
-        ["Only on cool nights, with the temperature set to 16–18 degrees", "Temperature too low for a light heat load", "Set 26–28 degrees and use a fan as well"],
+        ["Only on cool nights, with the temperature set to 16–18 degrees", "Temperature too low for a light heat load", "Set 26–27 degrees and use a fan as well"],
         ["Started after adding a fine filter", "More air resistance than the unit can handle", "Remove the extra filter and ask a technician what your model can take"],
       ],
     },
@@ -163,7 +163,7 @@ export const article: IntlArticle = {
       items: [
         "Wash the filters yourself every 2–4 weeks in the burning season and every 1–2 months the rest of the year. You do not need a technician for this.",
         "Have a full clean on schedule. The standard is every 6 months, and homes in Chiang Mai that go through the burning season should clean more often.",
-        "Set 26–28 degrees as the electricity authority recommends, and use a fan rather than a very low temperature.",
+        "Set 26–27 degrees as the Provincial Electricity Authority (PEA) recommends, and use a fan rather than a very low temperature.",
         "Do not put a fine filter on top of the original without asking a technician first; home units are not designed to push air through that much resistance.",
         "Keep furniture and other things away from the unit's air outlet and return.",
         "If you have had a top-up and needed another, tell the technician the leak must be found first rather than topping up again.",
@@ -184,6 +184,13 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If your aircon keeps freezing even after cleaning, photograph where the ice forms and the model sticker and send them on LINE. I will help work out what needs checking before we book a visit.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "Aircon at 26° plus a fan: does it really save power?", publisher: "Provincial Electricity Authority (PEA), 16 Apr 2026 (in Thai)", url: "https://www.pea.co.th/news/infographic/1836", note: "Recommends setting 26–27°C together with a fan" },
+        { title: "Which way of using an aircon saves the most power", publisher: "Electricity Generating Authority of Thailand (EGAT) (in Thai)", url: "https://www.egat.co.th/home/20220819-art01/", note: "Recommends 26–27 degrees with a fan, saving about 10% compared with 23–24 degrees" },
+      ],
     },
   ],
   faqs: [

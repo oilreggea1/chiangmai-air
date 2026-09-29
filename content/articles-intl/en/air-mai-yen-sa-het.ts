@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Aircon blows air but will not cool: the 10 most common causes in Chiang Mai, plus a 5-minute check to see if it is the filter, remote, coil or a leak.",
   category: "Aircon problems",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/lang-air-thod-lang-014.jpg", alt: "An indoor aircon coil with sticky black grime covering the fins, laid on a tiled floor before washing" },
   excerpt:
@@ -112,7 +112,7 @@ export const article: IntlArticle = {
     },
     {
       type: "p",
-      text: "The Geo-Informatics and Space Technology Regional Center for the North at Chiang Mai University reported around 6,676 cumulative hotspots in northern Thailand in early 2026, up about 67% from around 3,996 in the same period the year before. That figure reflects how much more soot is passing through the aircon coil in your home every day.",
+      text: "Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. That figure reflects how much more soot is passing through the aircon coil in your home every day.",
     },
     {
       type: "callout",
@@ -253,6 +253,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you are not sure whether your aircon needs cleaning or repair, send a clip of the problem and a photo of the model sticker on LINE. I will help you narrow down the likely cause and check for an open slot in your area.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "CCDC on Chiang Mai's 2026 smoke season: hotspots up 67%", publisher: "MGR Online, 6 Apr 2026 (in Thai)", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "Data from Chiang Mai University's Climate Change Data Center (CCDC): Chiang Mai province, 1 Jan to 4 Apr 2026 = 6,676 hotspots, against 3,996 in the same period of 2025" },
+      ],
     },
   ],
   faqs: [

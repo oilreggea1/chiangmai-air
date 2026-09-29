@@ -7,7 +7,7 @@ export const article: IntlArticle = {
   description:
     "Chiang Mai's smoke haze season, Feb–Apr, clogs aircon filters much faster. How much PM2.5 an aircon filters, when to clean it, and how to keep dust out.",
   category: "Aircon guides",
-  updated: "2026-08-04",
+  updated: "2026-09-29",
   readMins: 8,
   image: { src: "/work/air-2569-14.jpg", alt: "Two air filters on the floor before washing, covered in a thick grey-black layer of dust" },
   excerpt:
@@ -26,7 +26,7 @@ export const article: IntlArticle = {
       type: "callout",
       tone: "warn",
       title: "Why this year is worse than usual",
-      text: "The Geo-Informatics and Space Technology Center (Northern Region) at Chiang Mai University reported around 6,676 cumulative hotspots in the North in early 2026, about 67% more than the roughly 3,996 recorded in the same period the year before. That means the amount of dust getting into buildings and passing through aircons has risen as well.",
+      text: "Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. That means the amount of dust getting into buildings and passing through aircons has risen as well.",
     },
 
     { type: "h2", text: "Chiang Mai is different, because the dust has nowhere to go" },
@@ -167,6 +167,7 @@ export const article: IntlArticle = {
         { title: "Office of Disease Prevention and Control Region 1, Chiang Mai: PM2.5 warning and guidance on preparing the home", publisher: "Department of Disease Control, Ministry of Public Health (Thailand)", url: "https://www.ddc.moph.go.th/odpc1/news.php?deptcode=odpc1&news=49790", note: "Supports the advice on closing off air gaps, wet-wiping floors, running the aircon to circulate air and using an air filter (in Thai)" },
         { title: "What is a HEPA filter?", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/what-hepa-filter", note: "Explains the HEPA standard and how efficiently it traps particles" },
         { title: "Guide to Air Cleaners in the Home", publisher: "United States Environmental Protection Agency", url: "https://www.epa.gov/indoor-air-quality-iaq/guide-air-cleaners-home", note: "Explains choosing by HEPA/CADR, and the limitation that no single type of filter removes every kind of pollutant" },
+        { title: "CCDC on Chiang Mai's 2026 smoke season: hotspots up 67%", publisher: "MGR Online, 6 Apr 2026 (in Thai)", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "Data from Chiang Mai University's Climate Change Data Center (CCDC): Chiang Mai province, 1 Jan to 4 Apr 2026 = 6,676 hotspots, against 3,996 in the same period of 2025" },
       ],
     },
   ],

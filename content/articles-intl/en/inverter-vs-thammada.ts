@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "Inverter vs non-inverter aircon: how each works, electricity use, circuit board repair costs, which usage suits each type, and what R32 refrigerant means.",
   category: "Aircon guides",
-  updated: "2026-08-04",
+  updated: "2026-09-29",
   readMins: 9,
   image: { src: "/work/tid-tang-air-003.jpg", alt: "A newly installed wall-mounted aircon on a smooth wall, with white piping running out to the left" },
   excerpt:
@@ -143,7 +143,7 @@ export const article: IntlArticle = {
       type: "ul",
       items: [
         "Have the aircon cleaned regularly. The standard interval is every 6 months, because a clean coil shortens each compressor cycle, and in Chiang Mai, with its smoky haze season, it should be more often than that.",
-        "Set the temperature to 26–28 degrees as the electricity authority recommends, and use a fan to help circulate the air. It will feel just as cool without setting the temperature any lower.",
+        "Set the temperature to 26–27 degrees as the Provincial Electricity Authority (PEA) recommends, and use a fan to help circulate the air. It will feel just as cool without setting the temperature any lower.",
         "Choose a BTU size that fits the room, because a unit that is too big or too small both use more electricity than they should.",
         "Seal air leaks, and fit curtains or heat-rejection film on the side that gets the afternoon sun, to reduce the heat load at the source.",
         "Wash the filters yourself every 2–4 weeks during the haze season. Homeowners can do this themselves without calling a technician.",
@@ -172,6 +172,8 @@ export const article: IntlArticle = {
         { title: "Home Cooling 101: how air conditioners work and how to maintain them", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/sites/prod/files/HomeCooling101-final.pdf", note: "Supports the principles of heat transfer, the effect of dirty filters, and coil maintenance" },
         { title: "Purchasing Energy-Efficient Residential Central Air Conditioners", publisher: "U.S. Department of Energy", url: "https://www.energy.gov/cmei/femp/purchasing-energy-efficient-residential-central-air-conditioners", note: "Supports the importance of SEER, correct sizing, and the harm done by incorrect installation or refrigerant charging" },
         { title: "Daikin Inverter R32 and SEER ratings", publisher: "Siam Daikin Sales", url: "https://www.daikin.co.th/product/MiddleStaticDuctInverterFBA-CV2S", note: "An example of manufacturer information on R32 inverter systems and SEER efficiency" },
+        { title: "Aircon at 26° plus a fan: does it really save power?", publisher: "Provincial Electricity Authority (PEA), 16 Apr 2026 (in Thai)", url: "https://www.pea.co.th/news/infographic/1836", note: "Recommends setting 26–27°C together with a fan" },
+        { title: "Which way of using an aircon saves the most power", publisher: "Electricity Generating Authority of Thailand (EGAT) (in Thai)", url: "https://www.egat.co.th/home/20220819-art01/", note: "Recommends 26–27 degrees with a fan, saving about 10% compared with 23–24 degrees" },
       ],
     },
   ],

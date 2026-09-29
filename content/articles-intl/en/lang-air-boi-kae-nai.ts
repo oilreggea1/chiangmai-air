@@ -8,7 +8,7 @@ export const article: IntlArticle = {
   description:
     "The standard answer is every 6 months, but Chiang Mai has a full smoke-haze season every year. Cleaning intervals for homes, condos, dorms, cafés and offices.",
   category: "Aircon guides",
-  updated: "2026-07-29",
+  updated: "2026-09-29",
   readMins: 7,
   image: { src: "/work/lang-air-thod-lang-009.jpg", alt: "A still-blackened indoor coil and air filter side by side on a tiled floor, photographed before cleaning" },
   excerpt:
@@ -46,7 +46,7 @@ export const article: IntlArticle = {
     { type: "h2", text: "Why the middle figure does not work for Chiang Mai" },
     {
       type: "p",
-      text: "Chiang Mai sits in a basin surrounded by mountains. In the dry season, cooler air above presses down on the air below, so smoke from burning cannot escape and stays trapped over the city for weeks at a time. The Geo-Informatics and Space Technology Regional Center for the North at Chiang Mai University reported around 6,676 cumulative hotspots in northern Thailand in early 2026, up about 67% from around 3,996 in the same period the year before. In practice this means the amount of soot and dust passing through the aircon filter in your home each day is clearly higher than in other seasons.",
+      text: "Chiang Mai sits in a basin surrounded by mountains. In the dry season, cooler air above presses down on the air below, so smoke from burning cannot escape and stays trapped over the city for weeks at a time. Chiang Mai University's Climate Change Data Center (CCDC) reported 6,676 hotspots in Chiang Mai province between 1 January and 4 April 2026, up 67% from 3,996 in the same period of 2025. In practice this means the amount of soot and dust passing through the aircon filter in your home each day is clearly higher than in other seasons.",
     },
     {
       type: "p",
@@ -173,6 +173,12 @@ export const article: IntlArticle = {
     {
       type: "cta",
       text: "If you are not sure whether your aircon is due for a clean, send a photo of the filter and the vents on LINE. I will take a first look and tell you whether it should be cleaned now or can wait.",
+    },
+    {
+      type: "sources",
+      items: [
+        { title: "CCDC on Chiang Mai's 2026 smoke season: hotspots up 67%", publisher: "MGR Online, 6 Apr 2026 (in Thai)", url: "https://mgronline.com/greeninnovation/detail/9690000032792", note: "Data from Chiang Mai University's Climate Change Data Center (CCDC): Chiang Mai province, 1 Jan to 4 Apr 2026 = 6,676 hotspots, against 3,996 in the same period of 2025" },
+      ],
     },
   ],
   faqs: [
