@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PriceCalculator } from "@/components/PriceCalculator";
 import { calcRows } from "@/lib/calc-rows";
 import Link from "next/link";
+import { condoDirectory } from "@/lib/condo-directory";
 import Image from "next/image";
 import { site, services, areas, reviews, faqs, edges, heroPhotos, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
@@ -206,6 +207,14 @@ export default function Home() {
               <Link href="/service/khai-air" className="font-semibold text-brand-700 hover:underline">ร้านแอร์เชียงใหม่</Link>{" "}
               ไปจนถึงการถอดล้างถังเครื่องซักผ้า ราคาที่แสดงคือราคาที่ชำระจริง ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ
             </p>
+            {/* ทางเข้าหน้าคอนโด (30 ก.ย. 2569) เจ้าของหาหน้าคอนโดไม่เจอ เพราะเดิมมีลิงก์แค่ท้ายเว็บ */}
+            <Link href="/condo" className="card group mt-6 flex items-center justify-between gap-4 p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta="home-condo-dir">
+              <span>
+                <span className="block text-lg font-bold text-ink group-hover:text-brand-700">อยู่คอนโด? ค้นชื่ออาคารของคุณ</span>
+                <span className="mt-1 block text-sm leading-6 text-ink-soft">คอนโด {condoDirectory.length} โครงการในเชียงใหม่ ทุกอาคารมีหน้าของตัวเอง พร้อมข้อมูลอาคารและราคาล้างแอร์ถึงห้อง</span>
+              </span>
+              <IconChevron className="h-5 w-5 shrink-0 text-brand-700" />
+            </Link>
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

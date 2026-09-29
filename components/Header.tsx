@@ -34,6 +34,7 @@ const navGroups: NavGroup[] = [
       })),
       { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
       { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
+      { href: "/condo", label: "ค้นชื่อคอนโดของคุณ" },
       { href: "/kon-lang", label: "รูปก่อน–หลัง" },
       { href: "/duan", label: "นัดนอกเวลาทำการ" },
     ],
@@ -94,6 +95,7 @@ const mobileGroups: { heading: string; items: NavItem[] }[] = [
     heading: "กลุ่มลูกค้าและพื้นที่",
     items: [
       { href: "/customer", label: "บ้านใหม่ คอนโด หอพัก" },
+      { href: "/condo", label: "ค้นชื่อคอนโดของคุณ" },
       { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
       { href: "/area", label: `พื้นที่บริการ ${coverageTotal} ตำบล` },
     ],
