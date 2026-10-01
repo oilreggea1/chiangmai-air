@@ -29,7 +29,7 @@ const navGroups: NavGroup[] = [
     items: [
       ...services.map((s) => ({
         href: `/service/${s.slug}`,
-        label: `${s.name}เชียงใหม่`,
+        label: s.navLabel ?? `${s.name}เชียงใหม่`,
         hint: s.priceLabel,
       })),
       { href: "/brand", label: "ล้าง–ซ่อม ทุกยี่ห้อ" },
@@ -81,7 +81,7 @@ const mobileQuick = [
 const mobileGroups: { heading: string; items: NavItem[] }[] = [
   {
     heading: "บริการ",
-    items: services.map((s) => ({ href: `/service/${s.slug}`, label: `${s.name}เชียงใหม่` })),
+    items: services.map((s) => ({ href: `/service/${s.slug}`, label: s.navLabel ?? `${s.name}เชียงใหม่` })),
   },
   {
     heading: "ราคา",

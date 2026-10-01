@@ -229,7 +229,7 @@ export default function Home() {
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70 transition-all group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:ring-brand-700">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-4 text-lg font-bold">{s.name}เชียงใหม่</h3>
+                  <h3 className="mt-4 text-lg font-bold">{s.navLabel ?? `${s.name}เชียงใหม่`}</h3>
                   <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{s.short}</p>
                   <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
                     {s.priceLabel}
@@ -344,7 +344,7 @@ export default function Home() {
                 // ลิงก์ไปหน้าติดตั้งโดยตรง เพื่อให้ Google เลิกเอาหน้าแรกไปติดคำ "ติดตั้งแอร์ เชียงใหม่"
                 href: "/service/tid-tang-air", linkLabel: "ติดตั้งแอร์เชียงใหม่ รวมอะไรบ้าง",
                 note: "9k–12k BTU · รับประกันสูงสุด 1 ปี",
-                feats: ["แวคคั่มระบบเต็มขั้นตอน", "ขาแขวน ท่อ และรางครอบ", "ตั้งระดับกันน้ำหยด", `18k–24k BTU ราคา ${p.install.large}.-`],
+                feats: ["แวคคั่มระบบเต็มขั้นตอน", "ขาแขวน ท่อ และรางครอบ", "ตั้งระดับกันน้ำหยด", `${btu.installLarge} BTU ราคา ${p.install.large}.-`],
               },
             ].map((p) => (
               <div

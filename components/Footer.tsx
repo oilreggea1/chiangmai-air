@@ -227,8 +227,8 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             {services.map((s) => (
               <li key={s.slug}>
                 {/* ตัดคำว่าเชียงใหม่ท้ายชื่อออก ข้อความสั้นลงจึงไม่ตัดบรรทัดในคอลัมน์คู่บนมือถือ */}
-                <Link href={`/service/${s.slug}`} title={`${s.name}เชียงใหม่`} className="text-ink-soft hover:text-brand-700 hover:underline">
-                  {s.name}
+                <Link href={`/service/${s.slug}`} title={s.navLabel ?? `${s.name}เชียงใหม่`} className="text-ink-soft hover:text-brand-700 hover:underline">
+                  {s.navShort ?? s.name}
                 </Link>
               </li>
             ))}

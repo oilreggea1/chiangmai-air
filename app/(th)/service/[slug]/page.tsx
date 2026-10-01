@@ -68,6 +68,22 @@ const khwaenReelIds = ["1232175024939599"];
  *  ทั้งที่คลิปติดตั้งอยู่บนหน้าแรกและ /videos ซึ่งเป็นส่วนหนึ่งที่ทำให้ Google เลือกหน้าแรกไปติดคำติดตั้งแทน */
 const installReelIds = ["1288260533386347", "1261789992704152", "1269611208233633"];
 
+/** แปลงราคาใน p ("3,000") เป็นตัวเลขเพื่อคำนวณยอดตัวอย่าง ห้ามพิมพ์ยอดรวมเป็นตัวเลขตายตัว */
+const num = (x: string) => Number(x.replace(/,/g, ""));
+const baht = (n: number) => n.toLocaleString("th-TH");
+
+/**
+ * ตัวอย่างยอดค่าติดตั้งตามจำนวนห้อง (2 ต.ค. 2569)
+ * คู่แข่งที่ติดอันดับ 1 คำ "ติดตั้งแอร์ เชียงใหม่" โชว์ราคาเริ่มต้นตัวเดียว ลูกค้าที่ติดหลายห้องต้องคิดเอง
+ * ยอดทุกบรรทัดคำนวณจาก p.install เท่านั้น เปลี่ยนราคาที่ site.ts แล้วตารางนี้เปลี่ยนตาม
+ */
+const installExamples = [
+  { label: "ห้องนอน 1 ห้อง", detail: `1 จุด ${btu.installSmall} BTU`, small: 1, large: 0 },
+  { label: "ห้องนอน 2 ห้อง", detail: `2 จุด ${btu.installSmall} BTU`, small: 2, large: 0 },
+  { label: "ห้องนอน 2 ห้อง และห้องนั่งเล่น", detail: `2 จุด ${btu.installSmall} BTU + 1 จุด ${btu.installLarge} BTU`, small: 2, large: 1 },
+  { label: "บ้านใหม่ 3 ห้องนอน และห้องนั่งเล่น", detail: `3 จุด ${btu.installSmall} BTU + 1 จุด ${btu.installLarge} BTU`, small: 3, large: 1 },
+].map((x) => ({ ...x, total: x.small * num(p.install.small) + x.large * num(p.install.large) }));
+
 /**
  * งานเครื่องซักผ้ากรองคลิปจาก topic ที่ติดไว้กับคลิปใน ReelsShowcase
  * เพื่อไม่ให้หน้าเครื่องฝาบนขึ้นคลิปเครื่องฝาหน้า ซึ่งเป็นคนละโครงสร้างและคนละราคา
@@ -501,6 +517,34 @@ export default async function ServicePage({ params }: Props) {
               </p>
             </div>
 
+            <h3 className="mt-8 text-lg font-bold">ตัวอย่างค่าติดตั้งแอร์ตามจำนวนห้อง</h3>
+            <p className="mt-2 text-[15px] leading-7 text-ink-soft">
+              คิดตามขนาดเครื่องทีละจุด ยอดด้านล่างเป็นค่าติดตั้งอย่างเดียว ยังไม่รวมค่าเครื่อง
+              และคิดที่ท่อไม่เกิน 4 เมตรต่อจุด
+            </p>
+            <ul className="mt-4 divide-y divide-slate-100 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              {installExamples.map((x) => (
+                <li key={x.label} className="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+                  <span>
+                    <span className="block font-semibold">{x.label}</span>
+                    <span className="block text-sm leading-6 text-ink-soft">{x.detail}</span>
+                  </span>
+                  <strong className="shrink-0 text-lg text-brand-700">{baht(x.total)} บาท</strong>
+                </li>
+              ))}
+            </ul>
+
+            {/* แอร์แขวน/ฝังฝ้า (2 ต.ค. 2569) คู่แข่งอันดับ 1 แยกหัวข้อนี้ไว้ ร้านรับงานนี้จริง (คลิปติดตั้งแอร์ฝังฝ้าด้านบน)
+                แต่ยังไม่มีราคาประกาศ จึงเขียนเป็นประเมินหน้างาน ห้ามใส่ตัวเลขจนกว่าเจ้าของให้ราคา */}
+            <div className="card mt-6 p-6">
+              <h3 className="text-lg font-bold">ติดตั้งแอร์แขวนและแอร์ 4 ทิศทาง สำหรับร้านและสำนักงาน</h3>
+              <p className="mt-3 text-[15px] leading-7 text-ink-soft">
+                แอร์แขวนใต้ฝ้าและแอร์ฝังฝ้าต้องดูโครงฝ้า แนวท่อน้ำทิ้ง และตำแหน่งปั๊มน้ำทิ้งก่อนติดตั้ง
+                ผมจึงสำรวจหน้างานและแจ้งราคาที่แน่นอนก่อนเริ่มงาน
+                ออกใบกำกับภาษีเต็มรูปในนามบริษัทได้สำหรับกิจการที่ต้องใช้เอกสารเบิกจ่าย
+              </p>
+            </div>
+
             {/* สามทางเข้าของงานติดตั้ง หน้านี้เป็นหน้าแม่ของกลุ่มคำติดตั้ง จึงต้องเป็นจุดแยกทางเอง
                 ไม่ปล่อยให้หน้าแรกเป็นคนแยกทาง (เหตุผลดูที่ installReelIds ด้านบน) */}
             <h3 className="mt-8 text-lg font-bold">งานติดตั้งของคุณเป็นแบบไหน</h3>
@@ -520,6 +564,90 @@ export default async function ServicePage({ params }: Props) {
                 <span className="mt-2 flex-1 text-sm leading-7 text-ink-soft">เครื่องใหม่และมือสองสภาพดี รับเทิร์นเครื่องเก่า ประกันงานติดตั้ง 1 ปี</span>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">ดูตัวเลือก<IconChevron className="h-4 w-4" /></span>
               </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ราคาย้าย/ถอด และทางแยกตามสถานการณ์ (2 ต.ค. 2569) หน้าย้ายแอร์เดิมมีแค่ราคาในการ์ดด้านข้าง
+          คำ "ถอดแอร์" คู่แข่งรวมไว้ในหน้าเดียวกับย้ายแอร์ จึงใส่ไว้ในหัวข้อตรงนี้ */}
+      {s.slug === "yai-air" && (
+        <section className="section bg-sand">
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">ราคาย้ายแอร์และถอดแอร์เชียงใหม่</h2>
+            <div className="mt-7 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              <div className="grid grid-cols-2 border-b border-slate-200 bg-brand-50 px-5 py-4 font-bold">
+                <span>งาน</span><span>ค่าบริการต่อเครื่อง</span>
+              </div>
+              <div className="grid grid-cols-2 border-b border-slate-100 px-5 py-4">
+                <span>ถอดและติดตั้งที่ใหม่</span><strong>{p.install.relocate} บาท</strong>
+              </div>
+              <div className="grid grid-cols-2 px-5 py-4">
+                <span>ถอดอย่างเดียว พร้อมอุดรูผนัง</span><strong>{p.install.removeOnly} บาท</strong>
+              </div>
+            </div>
+            <div className="card mt-6 p-6">
+              <h3 className="text-lg font-bold">รวมอยู่ในค่าย้ายแอร์แล้ว</h3>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                {[
+                  "เก็บน้ำยากลับเข้าคอยล์ร้อนก่อนถอด",
+                  "ถอดคอยล์เย็นและคอยล์ร้อน",
+                  "อุดรูผนังจุดเดิมให้เรียบร้อย",
+                  "ติดตั้งที่ใหม่ด้วยอุปกรณ์ระยะมาตรฐาน",
+                  "แวคคั่มระบบก่อนปล่อยน้ำยา",
+                  "ทดสอบความเย็นและตรวจรอยรั่วก่อนส่งมอบ",
+                ].map((x) => (
+                  <li key={x} className="flex items-start gap-2.5 text-[15px] leading-7 text-ink-soft">
+                    <IconCheck className="mt-1 h-5 w-5 shrink-0 text-mint" />
+                    {x}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm leading-7 text-ink-soft">
+                หากท่อเดิมชำรุดหรือจุดติดตั้งใหม่ต้องใช้ท่อยาวกว่าเดิม ผมแจ้งค่าอุปกรณ์เพิ่มเติมให้ทราบก่อนเริ่มงาน
+              </p>
+            </div>
+
+            <h3 className="mt-8 text-lg font-bold">งานย้ายแอร์ของคุณเป็นแบบไหน</h3>
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              {[
+                { t: "ย้ายออกจากห้องเช่าหรือคอนโด", d: `ถอดอย่างเดียวพร้อมอุดรูผนัง ${p.install.removeOnly} บาท ส่งคืนห้องได้เรียบร้อย`, href: "/customer/condo", cta: "งานในคอนโด" },
+                { t: "ย้ายบ้าน หรือย้ายตำแหน่งในบ้าน", d: `ถอดและติดตั้งที่ใหม่ ${p.install.relocate} บาท หลายเครื่องแจ้งจำนวนมาได้ ผมสรุปยอดรวมให้ก่อนนัด`, href: "/contact", cta: "แจ้งจำนวนเครื่อง" },
+                { t: "ย้ายพร้อมล้างในรอบเดียว", d: "ตอนถอดเครื่องลงมาเป็นจังหวะที่ล้างได้ทั่วถึงที่สุด", href: "/service/lang-air", cta: "ราคาล้างแอร์" },
+              ].map((x) => (
+                <Link key={x.t} href={x.href} className="card group flex flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta={`yai-air-${x.href.split("/").pop()}`}>
+                  <span className="font-bold group-hover:text-brand-700">{x.t}</span>
+                  <span className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{x.d}</span>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">{x.cta}<IconChevron className="h-4 w-4" /></span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ร้านแอร์ที่ดูแลต่อหลังการขาย (2 ต.ค. 2569) คู่แข่งที่ติดอันดับ 1 คำ "ร้านแอร์ เชียงใหม่" เป็นหน้าแคตตาล็อกสินค้า
+          จุดที่ร้านเรามีจริงคือบริการล้าง ซ่อม ย้าย ครบในที่เดียว ราคาทุกตัวดึงจาก p */}
+      {s.slug === "khai-air" && (
+        <section className="section bg-sand">
+          <div className="wrap max-w-4xl">
+            <h2 className="h2">ซื้อแอร์กับร้านแล้ว ล้าง ซ่อม ย้าย ได้ที่เดียว</h2>
+            <p className="lead mt-3">
+              เมื่อถึงรอบล้าง เครื่องมีอาการ หรือต้องย้ายบ้าน
+              ติดต่อช่องทางเดิมได้เลย ไม่ต้องหาช่างใหม่
+            </p>
+            <div className="mt-7 grid gap-4 sm:grid-cols-3">
+              {[
+                { t: "ล้างแอร์ตามรอบ", d: `${btu.washStd} BTU เครื่องละ ${p.wash.std} บาท ตั้งแต่ 3 เครื่องขึ้นไป เครื่องละ ${p.wash.stdBulk} บาท`, href: "/service/lang-air" },
+                { t: "ซ่อมเมื่อมีอาการ", d: `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนเมื่อซ่อม`, href: "/service/som-air" },
+                { t: "ย้ายเมื่อย้ายบ้าน", d: `ถอดและติดตั้งที่ใหม่ ${p.install.relocate} บาท`, href: "/service/yai-air" },
+              ].map((x) => (
+                <Link key={x.href} href={x.href} className="card group flex flex-col p-5 transition-all hover:-translate-y-0.5 hover:shadow-lift" data-cta={`khai-air-${x.href.split("/").pop()}`}>
+                  <span className="font-bold group-hover:text-brand-700">{x.t}</span>
+                  <span className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{x.d}</span>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">ดูรายละเอียด<IconChevron className="h-4 w-4" /></span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -770,7 +898,7 @@ export default async function ServicePage({ params }: Props) {
                   <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-700 ring-1 ring-brand-200/70 transition-all group-hover:from-brand-600 group-hover:to-brand-800 group-hover:text-white group-hover:ring-brand-700">
                     <OIcon className="h-6 w-6" />
                   </span>
-                  <h3 className="mt-4 font-bold">{o.name}เชียงใหม่</h3>
+                  <h3 className="mt-4 font-bold">{o.navLabel ?? `${o.name}เชียงใหม่`}</h3>
                   <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{o.short}</p>
                   <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
                     อ่านต่อ
