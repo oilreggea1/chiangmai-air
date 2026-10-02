@@ -136,7 +136,18 @@ const T = {
   },
 } as const;
 
-const langs = (s: string) => ({ "th-TH": `/condo/${s}`, "en-US": `/en/condo/${s}`, "zh-CN": `/zh/condo/${s}`, "x-default": `/condo/${s}` });
+
+/**
+ * หน้ารายโครงการที่ให้ Google เก็บ (เจ้าของเลือก 2 ต.ค. 2569)
+ * ตรวจแล้วข้อความเฉพาะของแต่ละหน้ามีราว 15% ที่เหลือเป็นโครงเดียวกัน 316 × 3 ภาษา ≈ 950 หน้า
+ * มากกว่าหน้าจริงทั้งเว็บ เสี่ยงโดนมองเป็นเนื้อหาสร้างจำนวนมากแล้วฉุดอันดับหน้าบริการ
+ * จึงเก็บเฉพาะหน้าไทยที่มีข้อมูลอาคารครบ (ชื่อไทย ถนน ปีที่สร้าง จำนวนชั้น)
+ * ที่เหลือยังเปิดดูได้และลิงก์ไปต่อได้ตามปกติ แค่ตั้ง noindex และไม่อยู่ใน sitemap
+ */
+export function condoIndexable(c: CondoEntry, lang: CondoLang = "th") {
+  const f = factsOf(c);
+  return lang === "th" && !!c.th && !!c.r && !!f.f && !!f.y;
+}
 
 export function condoDetailMetadata(c: CondoEntry, lang: CondoLang): Metadata {
   const t = T[lang];
@@ -144,7 +155,9 @@ export function condoDetailMetadata(c: CondoEntry, lang: CondoLang): Metadata {
   return {
     title: { absolute: title },
     description,
-    alternates: { canonical: condoPath(lang, c.s), languages: langs(c.s) },
+    // ไม่ประกาศ hreflang แล้ว เพราะฉบับอังกฤษ/จีนเป็น noindex ทั้งหมด ประกาศคู่ภาษาไปหาหน้า noindex จะขัดกันเอง
+    alternates: { canonical: condoPath(lang, c.s) },
+    ...(condoIndexable(c, lang) ? {} : { robots: { index: false, follow: true } }),
     ...share({ title, description, path: condoPath(lang, c.s), locale: t.locale }),
   };
 }

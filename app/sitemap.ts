@@ -9,6 +9,7 @@ import { intlAreaSlugs } from "@/components/IntlArea";
 import { intlCaseSlugs } from "@/components/IntlCase";
 import { condoBrands } from "@/lib/condo-brands";
 import { condoDirectory } from "@/lib/condo-directory";
+import { condoIndexable } from "@/components/CondoDetail";
 import { segments } from "@/lib/segments";
 import { brands } from "@/lib/brands";
 import { lastmodOf, SRC } from "@/lib/lastmod";
@@ -147,7 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
     // ทำเนียบคอนโดและหน้าแบรนด์ 3 ภาษา (29 ก.ย. 2569)
-    ...["/condo", "/en/condo/directory", "/zh/condo/directory", ...condoBrands.flatMap((b) => [`/condo/${b.slug}`, `/en/condo/${b.slug}`, `/zh/condo/${b.slug}`]), ...condoDirectory.flatMap((c) => [`/condo/${c.s}`, `/en/condo/${c.s}`, `/zh/condo/${c.s}`])].map((path) => ({
+    ...["/condo", "/en/condo/directory", "/zh/condo/directory", ...condoBrands.flatMap((b) => [`/condo/${b.slug}`, `/en/condo/${b.slug}`, `/zh/condo/${b.slug}`]), ...condoDirectory.filter((c) => condoIndexable(c)).map((c) => `/condo/${c.s}`)].map((path) => ({
       url: `${site.url}${path}`,
       lastModified: new Date("2026-09-29"),
       changeFrequency: "monthly" as const,
