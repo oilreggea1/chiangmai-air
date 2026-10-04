@@ -3,12 +3,12 @@ import { p } from "@/lib/site";
 
 export const article: IntlArticle = {
   slug: "air-siang-dang",
-  title: "Noisy Aircon? 6 Causes, Told Apart by the Sound | Chiang Mai",
+  title: "Aircon Making a Grinding Noise? 6 Causes, Told Apart by the Sound",
   h1: "Aircon making a grinding or whistling noise? 6 causes, and how to tell what can wait and what can't",
   description:
     "Rattling, whistling, clicking or gurgling from your air conditioner: what each sound usually means, when a clean fixes it, and when a part needs replacing before the damage spreads.",
   category: "Aircon problems",
-  updated: "2026-07-29",
+  updated: "2026-10-04",
   readMins: 7,
   image: { src: "/work/lang-air-thod-lang-065.jpg", alt: "A black blower wheel held up outdoors, with its row of blades clearly visible" },
   excerpt:
@@ -23,6 +23,21 @@ export const article: IntlArticle = {
     {
       type: "p",
       text: "The good news is that noise is a clear early warning. Almost every mechanical part makes an abnormal sound before it actually fails. If you identify the sound correctly and deal with it at that stage, the cost is a fraction of waiting until the part stops. Below I go through the main sounds one by one and where each comes from.",
+    },
+
+    { type: "h2", text: "What causes a grinding, rattling noise?" },
+    {
+      type: "p",
+      text: "Most often it is dust building up unevenly on the blower wheel inside the indoor unit. The wheel goes out of balance and shakes on every turn, usually with weaker airflow at the same time, and a clean fixes it. If it is just as loud after a clean, check the fan motor bearing or the unit's mounting next. The other sounds people ask about most often break down like this.",
+    },
+    {
+      type: "ul",
+      items: [
+        "Clicking or clacking in rhythm when the unit starts and stops: usually a loose screw or a cover not clipped in (cause 3).",
+        "A continuous high whistle or whine that stays after a clean: usually a worn motor bearing (cause 2).",
+        "A steady hiss like escaping air: the refrigerant may be low, so have a technician measure the pressure (cause 5).",
+        "Metallic knocking from the outdoor unit: stop using it and have it checked (cause 4).",
+      ],
     },
 
     { type: "h2", text: "First, work out whether the sound is inside or outside" },

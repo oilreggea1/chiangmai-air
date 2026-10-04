@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02",
+  "generatedAt": "2026-10-04",
   "files": {
     "app/(en)/en/about/page.tsx": "2026-09-29",
     "app/(en)/en/airbnb/page.tsx": "2026-09-29",
@@ -122,7 +122,7 @@
     "content/articles-intl/en/air-nam-yot-kae-yang-rai.ts": "2026-09-29",
     "content/articles-intl/en/air-pen-nam-khaeng.ts": "2026-09-29",
     "content/articles-intl/en/air-pleung-fai.ts": "2026-09-29",
-    "content/articles-intl/en/air-siang-dang.ts": "2026-09-29",
+    "content/articles-intl/en/air-siang-dang.ts": "2026-10-04",
     "content/articles-intl/en/air-tat-boi.ts": "2026-09-29",
     "content/articles-intl/en/chek-chang-lang-air.ts": "2026-09-29",
     "content/articles-intl/en/chek-chang-lang-khrueang-sak-pha.ts": "2026-09-29",
@@ -154,7 +154,7 @@
     "content/articles-intl/zh/air-nam-yot-kae-yang-rai.ts": "2026-09-29",
     "content/articles-intl/zh/air-pen-nam-khaeng.ts": "2026-09-29",
     "content/articles-intl/zh/air-pleung-fai.ts": "2026-09-29",
-    "content/articles-intl/zh/air-siang-dang.ts": "2026-09-29",
+    "content/articles-intl/zh/air-siang-dang.ts": "2026-10-04",
     "content/articles-intl/zh/air-tat-boi.ts": "2026-09-29",
     "content/articles-intl/zh/chek-chang-lang-air.ts": "2026-09-29",
     "content/articles-intl/zh/chek-chang-lang-khrueang-sak-pha.ts": "2026-09-29",
@@ -185,7 +185,7 @@
     "content/articles/air-nam-yot-kae-yang-rai.ts": "2026-09-29",
     "content/articles/air-pen-nam-khaeng.ts": "2026-09-29",
     "content/articles/air-pleung-fai.ts": "2026-09-29",
-    "content/articles/air-siang-dang.ts": "2026-09-29",
+    "content/articles/air-siang-dang.ts": "2026-10-04",
     "content/articles/air-tat-boi.ts": "2026-09-29",
     "content/articles/chek-chang-lang-air.ts": "2026-09-29",
     "content/articles/chek-chang-lang-khrueang-sak-pha.ts": "2026-09-29",
