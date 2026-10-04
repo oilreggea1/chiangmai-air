@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs, CtaBand } from "@/components/Blocks";
 import { IconCheck, IconChevron, IconPhone } from "@/components/Icons";
-import { site, p, btu } from "@/lib/site";
+import { site, p, btu, coverage, coverageTotal } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd, PERSON_ID } from "@/lib/schema";
 import { share } from "@/lib/seo";
 
 const title = "คำตอบจากช่างแอร์เชียงใหม่ ราคาและเงื่อนไข";
 const description =
-  "คำตอบสั้นและตรวจสอบได้จากช่างอาร์ม โปรเฟรชแคร์: ราคาล้างแอร์ ซ่อม ติดตั้ง เติมน้ำยา พื้นที่บริการ ระยะเวลานัด และการรับประกัน อัปเดต 4 สิงหาคม 2569";
+  "คำตอบสั้นและตรวจสอบได้จากช่างอาร์ม โปรเฟรชแคร์: ราคาล้างแอร์ ซ่อม ติดตั้ง เติมน้ำยา พื้นที่บริการ ระยะเวลานัด และการรับประกัน อัปเดต 4 ตุลาคม 2569";
 
 export const metadata: Metadata = {
   title,
@@ -57,7 +57,8 @@ const answers: Answer[] = [
   },
   {
     q: "ช่างให้บริการพื้นที่ใดในเชียงใหม่?",
-    a: "พื้นที่หลักคือสันกำแพง ต้นเปา บ่อสร้าง สันพระเนตร สารภี ดอยสะเก็ด และอำเภอเมืองเชียงใหม่ ทุกตำบลที่ผมรับงานใช้ราคาเดียวกัน ไม่มีค่าเดินทางเพิ่ม",
+    // แก้ 4 ต.ค. 2569: ข้อความเดิมยังเป็นพื้นที่ชุดเก่าก่อนขยายเขต จึงดึงจำนวนจาก coverage แทนการพิมพ์รายชื่อ
+    a: `รับงานอำเภอเมืองเชียงใหม่และสันทรายครบทุกตำบล รวมพื้นที่รอบเมืองทั้งหมด ${coverage.length} อำเภอ ${coverageTotal} ตำบล ทุกตำบลที่ผมรับงานใช้ราคาเดียวกัน ไม่มีค่าเดินทางเพิ่ม`,
     href: "/area",
     link: "ตรวจรายชื่อตำบลและอำเภอ",
   },
@@ -100,7 +101,7 @@ const pageSchema = {
   description,
   url: `${site.url}/answers`,
   inLanguage: "th-TH",
-  dateModified: "2026-08-04",
+  dateModified: "2026-10-04",
   author: { "@id": PERSON_ID },
   publisher: { "@id": `${site.url}/#business` },
   about: { "@id": `${site.url}/#business` },
@@ -126,7 +127,7 @@ export default function AnswersPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink-soft">
             <span className="inline-flex items-center gap-2"><IconCheck className="h-4 w-4 text-mint" />ตรวจทานโดยช่างอาร์ม</span>
-            <span>อัปเดตล่าสุด 4 สิงหาคม 2569</span>
+            <span>อัปเดตล่าสุด 4 ตุลาคม 2569</span>
             <Link href="/about" className="font-semibold text-brand-700 hover:underline">ผู้ให้คำตอบ</Link>
           </div>
         </section>
@@ -158,6 +159,9 @@ export default function AnswersPage() {
             </p>
             <Link href="/portfolio" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:underline">
               ตรวจผลงานจริง<IconChevron className="h-4 w-4" />
+            </Link>
+            <Link href="/ngueankhai-borikan" className="mt-2 flex items-center gap-1.5 text-sm font-semibold text-brand-700 hover:underline">
+              ตารางเงื่อนไข: รวมอะไร ประกันกี่วัน<IconChevron className="h-4 w-4" />
             </Link>
           </div>
           <div className="card p-6 sm:p-8">

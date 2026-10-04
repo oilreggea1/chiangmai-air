@@ -163,6 +163,10 @@ export default function EnPricingPage() {
               Back to English home
               <IconChevron className="h-4 w-4" />
             </Link>
+            <Link href="/en/service-terms" className="btn-ghost">
+              What's included and warranty
+              <IconChevron className="h-4 w-4" />
+            </Link>
             <Link href="/en/areas" className="btn-ghost">
               Areas I cover
               <IconChevron className="h-4 w-4" />

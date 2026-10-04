@@ -155,6 +155,10 @@ export default function ZhPricingPage() {
               返回中文首页
               <IconChevron className="h-4 w-4" />
             </Link>
+            <Link href="/zh/service-terms" className="btn-ghost">
+              服务包含内容与保修
+              <IconChevron className="h-4 w-4" />
+            </Link>
             <Link href="/price" className="btn-ghost" hrefLang="th">
               ดูราคาภาษาไทย
               <IconChevron className="h-4 w-4" />

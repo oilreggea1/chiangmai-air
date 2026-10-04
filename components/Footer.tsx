@@ -311,6 +311,11 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               </Link>
             </li>
             <li>
+              <Link href="/ngueankhai-borikan" className="text-ink-soft hover:text-brand-700 hover:underline">
+                รวมอะไรบ้าง ประกันกี่วัน
+              </Link>
+            </li>
+            <li>
               <Link href="/blog" className="text-ink-soft hover:text-brand-700 hover:underline">
                 คลังความรู้เรื่องแอร์
               </Link>
