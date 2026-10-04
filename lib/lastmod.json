@@ -49,7 +49,7 @@
     "app/(th)/portfolio/[key]/PhotoGrid.tsx": "2026-09-29",
     "app/(th)/portfolio/page.tsx": "2026-09-29",
     "app/(th)/price/page.tsx": "2026-09-29",
-    "app/(th)/price/repair/page.tsx": "2026-09-29",
+    "app/(th)/price/repair/page.tsx": "2026-10-04",
     "app/(th)/price/washing-machine/page.tsx": "2026-09-29",
     "app/(th)/repair/[slug]/page.tsx": "2026-09-29",
     "app/(th)/service/[slug]/page.tsx": "2026-10-02",
@@ -64,7 +64,7 @@
     "app/(zh)/zh/case-study/page.tsx": "2026-09-29",
     "app/(zh)/zh/condo/[slug]/page.tsx": "2026-09-30",
     "app/(zh)/zh/condo/page.tsx": "2026-09-29",
-    "app/(zh)/zh/installation/page.tsx": "2026-09-29",
+    "app/(zh)/zh/installation/page.tsx": "2026-10-04",
     "app/(zh)/zh/page.tsx": "2026-09-29",
     "app/(zh)/zh/pricing/page.tsx": "2026-10-04",
     "app/(zh)/zh/repair/page.tsx": "2026-09-29",
@@ -240,7 +240,7 @@
     "lib/schema.ts": "2026-09-29",
     "lib/segments.ts": "2026-09-29",
     "lib/seo.ts": "2026-09-29",
-    "lib/site.ts": "2026-10-02",
+    "lib/site.ts": "2026-10-04",
     "lib/work-cases.ts": "2026-09-29"
   }
 }

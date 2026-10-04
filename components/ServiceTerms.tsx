@@ -16,7 +16,7 @@ import { IconCheck, IconChevron, IconLine, IconPhone } from "./Icons";
  * กติกา:
  * - ราคาดึงจาก p / btu เท่านั้น
  * - ประกันใช้ตามที่เจ้าของกำหนด 29 ก.ย. 2569 ขอบเขตคือ "น้ำหยด" ห้ามขยาย
- * - งานย้ายแอร์และเติมน้ำยา เจ้าของยังไม่ได้กำหนดระยะประกัน จึงเว้นเป็น "—" ห้ามเติมเอง
+ * - งานย้ายแอร์และเติมน้ำยารับประกัน 30 วัน (เจ้าของกำหนด 4 ต.ค. 2569) ไม่ได้ระบุขอบเขต จึงเขียนแค่จำนวนวัน
  * - ห้ามพาดพิงร้านอื่น ส่วน "คำถามก่อนนัด" เขียนเป็นคำถามกลางที่ใช้ถามช่างเจ้าใดก็ได้
  */
 
@@ -38,9 +38,9 @@ function rows(l: TermsLang): Row[] {
       { name: "Premium Full Wash (full strip-down)", price: `${b(p.wash.premium)} per unit, depends on BTU`, includes: "Every part taken off and washed separately, blower wheel removed, coil cleaner and disinfectant spray", warranty: "60 days against water dripping" },
       { name: "Suspended / 4-way cassette clean", price: `From ${b(p.wash.suspended)} / from ${b(p.wash.cassette)}`, includes: "Floor and furniture covered, panels and filters washed separately, coil and drain tray washed, disinfectant spray, drain pump checked", warranty: "30 days against water dripping" },
       { name: "Repair", price: `Diagnostic ${b(p.repair.diagnostic)}, credited back if you go ahead`, includes: "Fault found on site, parts priced before any work starts", warranty: "30 days on the repair" },
-      { name: "Refrigerant top-up (R32 / R410A)", price: `${b(p.repair.refrigerantPerLb)} per lb`, includes: "Pressure measured first, no top-up if the level is fine", warranty: "—" },
+      { name: "Refrigerant top-up (R32 / R410A)", price: `${b(p.repair.refrigerantPerLb)} per lb`, includes: "Pressure measured first, no top-up if the level is fine", warranty: "30 days" },
       { name: "Installation", price: `${btu.installSmall} BTU ${b(p.install.small)} · ${btu.installLarge} BTU ${b(p.install.large)}`, includes: "Mounting bracket, insulated pipe up to 4 m, trunking, full vacuum, cooling and leak test", warranty: "1 year if the unit is bought from us · 6 months for your own unit" },
-      { name: "Relocation / removal", price: `Move ${b(p.install.relocate)} · removal only ${b(p.install.removeOnly)}`, includes: "Refrigerant pumped back first, old wall hole sealed, standard-length parts, vacuum and test at the new spot", warranty: "—" },
+      { name: "Relocation / removal", price: `Move ${b(p.install.relocate)} · removal only ${b(p.install.removeOnly)}`, includes: "Refrigerant pumped back first, old wall hole sealed, standard-length parts, vacuum and test at the new spot", warranty: "30 days" },
       { name: "Washing machine drum clean", price: `Top loader from ${b(p.washer.topLoad)} · front loader from ${b(p.washer.frontLoad)}`, includes: "Drum and parts taken out and washed, about 3 hours per machine", warranty: "30 days" },
       { name: "Used aircon", price: "Quoted per model", includes: "Checked and tested before handover", warranty: "1 month on the unit" },
     ];
@@ -51,9 +51,9 @@ function rows(l: TermsLang): Row[] {
       { name: "深度拆洗 Premium Full Wash", price: `每台 ${b(p.wash.premium)}，视 BTU 而定`, includes: "所有部件拆下分别清洗、拆下风轮、喷盘管清洁剂和消毒剂", warranty: "滴水保修 60 天" },
       { name: "吊顶式 / 四面出风嵌入式清洗", price: `${b(p.wash.suspended)} 起 / ${b(p.wash.cassette)} 起`, includes: "遮盖地面和家具、面板与滤网拆下清洗、清洗盘管和接水盘、喷消毒剂、检查排水泵", warranty: "滴水保修 30 天" },
       { name: "维修", price: `检测费 ${b(p.repair.diagnostic)}，决定维修则全额抵扣`, includes: "现场查找故障，配件开工前报价", warranty: "维修保修 30 天" },
-      { name: "补充冷媒（R32 / R410A）", price: `每磅 ${b(p.repair.refrigerantPerLb)}`, includes: "先测压力，不缺不加", warranty: "—" },
+      { name: "补充冷媒（R32 / R410A）", price: `每磅 ${b(p.repair.refrigerantPerLb)}`, includes: "先测压力，不缺不加", warranty: "30 天" },
       { name: "安装", price: `${btu.installSmall} BTU ${b(p.install.small)} · ${btu.installLarge} BTU ${b(p.install.large)}`, includes: "支架、4 米以内保温铜管、线槽、完整抽真空、制冷与漏点测试", warranty: "在本店购机 1 年 · 自备机 6 个月" },
-      { name: "移机 / 拆机", price: `移机 ${b(p.install.relocate)} · 仅拆机 ${b(p.install.removeOnly)}`, includes: "先回收冷媒、封补旧墙洞、标准长度配件、新位置抽真空并测试", warranty: "—" },
+      { name: "移机 / 拆机", price: `移机 ${b(p.install.relocate)} · 仅拆机 ${b(p.install.removeOnly)}`, includes: "先回收冷媒、封补旧墙洞、标准长度配件、新位置抽真空并测试", warranty: "30 天" },
       { name: "洗衣机拆洗", price: `波轮式 ${b(p.washer.topLoad)} 起 · 滚筒式 ${b(p.washer.frontLoad)} 起`, includes: "拆出内桶和部件清洗，每台约 3 小时", warranty: "30 天" },
       { name: "二手空调", price: "按型号报价", includes: "交付前检查并试机", warranty: "整机保修 1 个月" },
     ];
@@ -63,9 +63,9 @@ function rows(l: TermsLang): Row[] {
     { name: "ถอดล้างทั้งชุด Premium Full Wash", price: `เครื่องละ ${b(p.wash.premium)} ${p.wash.premiumNote}`, includes: "ถอดชิ้นส่วนล้างแยกทุกชิ้น ถอดใบพัดกรงกระรอกออกมาล้าง ฉีดน้ำยาทำความสะอาดคอยล์และน้ำยาฆ่าเชื้อ", warranty: "น้ำหยด 60 วัน" },
     { name: "ล้างแอร์แขวน / แอร์ 4 ทิศทาง", price: `เริ่ม ${b(p.wash.suspended)} / เริ่ม ${b(p.wash.cassette)}`, includes: "คลุมพื้นและเฟอร์นิเจอร์ ถอดหน้ากากและแผ่นกรองล้างแยก ล้างคอยล์และถาดน้ำทิ้ง ฉีดน้ำยาฆ่าเชื้อ ตรวจปั๊มน้ำทิ้ง", warranty: "น้ำหยด 30 วัน" },
     { name: "ซ่อมแอร์", price: `ค่าตรวจเช็ค ${b(p.repair.diagnostic)} หักคืนเมื่อซ่อม`, includes: "ตรวจหาสาเหตุหน้างาน แจ้งราคาอะไหล่ก่อนเริ่มซ่อม", warranty: "งานซ่อม 30 วัน" },
-    { name: "เติมน้ำยาแอร์ R32 / R410A", price: `ปอนด์ละ ${b(p.repair.refrigerantPerLb)}`, includes: "วัดแรงดันให้ดูก่อน ไม่พร่องไม่เติม", warranty: "—" },
+    { name: "เติมน้ำยาแอร์ R32 / R410A", price: `ปอนด์ละ ${b(p.repair.refrigerantPerLb)}`, includes: "วัดแรงดันให้ดูก่อน ไม่พร่องไม่เติม", warranty: "30 วัน" },
     { name: "ติดตั้งแอร์", price: `${btu.installSmall} BTU ${b(p.install.small)} · ${btu.installLarge} BTU ${b(p.install.large)}`, includes: "ขาแขวน ท่อน้ำยาหุ้มฉนวนไม่เกิน 4 เมตร รางครอบ แวคคั่มระบบ ทดสอบความเย็นและรอยรั่ว", warranty: "ซื้อเครื่องกับร้าน 1 ปี · เครื่องของลูกค้า 6 เดือน" },
-    { name: "ย้ายแอร์ / ถอดแอร์", price: `ถอดและติดตั้งที่ใหม่ ${b(p.install.relocate)} · ถอดอย่างเดียว ${b(p.install.removeOnly)}`, includes: "เก็บน้ำยากลับเข้าเครื่องก่อนถอด อุดรูผนังเดิม อุปกรณ์ระยะมาตรฐาน แวคคั่มและทดสอบที่จุดใหม่", warranty: "—" },
+    { name: "ย้ายแอร์ / ถอดแอร์", price: `ถอดและติดตั้งที่ใหม่ ${b(p.install.relocate)} · ถอดอย่างเดียว ${b(p.install.removeOnly)}`, includes: "เก็บน้ำยากลับเข้าเครื่องก่อนถอด อุดรูผนังเดิม อุปกรณ์ระยะมาตรฐาน แวคคั่มและทดสอบที่จุดใหม่", warranty: "30 วัน" },
     { name: "ล้างเครื่องซักผ้า", price: `ฝาบนเริ่ม ${b(p.washer.topLoad)} · ฝาหน้าเริ่ม ${b(p.washer.frontLoad)}`, includes: "ถอดถังและชิ้นส่วนออกมาล้าง ใช้เวลาประมาณ 3 ชั่วโมงต่อเครื่อง", warranty: "30 วัน" },
     { name: "แอร์มือสอง", price: "แจ้งราคาตามรุ่น", includes: "ตรวจสภาพและทดสอบก่อนส่งมอบ", warranty: "ตัวเครื่อง 1 เดือน" },
   ];
@@ -105,7 +105,7 @@ const T = {
     asks: [
       { q: "ราคานี้รวมค่าเดินทางแล้วหรือไม่?", a: `รวมแล้ว ไม่มีค่าเดินทางเพิ่มในพื้นที่บริการ ${area} อำเภอ ${coverageTotal} ตำบล` },
       { q: "ล้างแอร์แบบมาตรฐานรวมการฉีดน้ำยาฆ่าเชื้อหรือไม่?", a: "รวม ฉีดน้ำยาฆ่าเชื้อให้ทุกเครื่อง ทั้งแบบมาตรฐานและแบบถอดล้าง" },
-      { q: "รับประกันกี่วัน ครอบคลุมอะไร?", a: "งานล้างมาตรฐานรับประกันน้ำหยด 30 วัน ถอดล้าง 60 วัน งานซ่อม 30 วัน งานติดตั้ง 1 ปีเมื่อซื้อเครื่องกับร้าน และ 6 เดือนสำหรับเครื่องของลูกค้า" },
+      { q: "รับประกันกี่วัน ครอบคลุมอะไร?", a: "งานล้างมาตรฐานรับประกันน้ำหยด 30 วัน ถอดล้าง 60 วัน งานซ่อม งานย้ายแอร์ และงานเติมน้ำยา 30 วัน งานติดตั้ง 1 ปีเมื่อซื้อเครื่องกับร้าน และ 6 เดือนสำหรับเครื่องของลูกค้า" },
       { q: "ถ้าต้องเติมน้ำยา คิดอย่างไร?", a: `วัดแรงดันให้ดูก่อน หากพร่องจริงคิดปอนด์ละ ${p.repair.refrigerantPerLb} บาท ถ้าไม่พร่องจะไม่เติม` },
       { q: "ค่าตรวจเช็คงานซ่อมคิดอย่างไร?", a: `ค่าตรวจเช็ค ${p.repair.diagnostic} บาท หักคืนเต็มจำนวนเมื่อตัดสินใจซ่อม` },
       { q: "ออกใบกำกับภาษีได้หรือไม่?", a: `ได้ ออกใบกำกับภาษีเต็มรูปในนาม ${site.legalName}` },
@@ -145,7 +145,7 @@ const T = {
     asks: [
       { q: "Is travel included in the price?", a: `Yes. No travel fee inside the service area of ${area} districts and ${coverageTotal} sub-districts.` },
       { q: "Does a standard clean include disinfectant?", a: "Yes, every unit is sprayed with disinfectant, on both the standard clean and the strip-down." },
-      { q: "How long is the warranty and what does it cover?", a: "Standard clean: 30 days against water dripping. Strip-down: 60 days. Repairs: 30 days. Installation: 1 year if you buy the unit from us, 6 months for your own unit." },
+      { q: "How long is the warranty and what does it cover?", a: "Standard clean: 30 days against water dripping. Strip-down: 60 days. Repairs, relocation and refrigerant top-ups: 30 days. Installation: 1 year if you buy the unit from us, 6 months for your own unit." },
       { q: "How is a refrigerant top-up charged?", a: `The pressure is measured in front of you first. If it is genuinely low it is ${p.repair.refrigerantPerLb} THB per lb; if not, nothing is added.` },
       { q: "How is the repair diagnostic charged?", a: `${p.repair.diagnostic} THB, credited back in full if you go ahead with the repair.` },
       { q: "Can you issue a tax invoice?", a: "Yes, a full VAT tax invoice in the company name." },
@@ -185,7 +185,7 @@ const T = {
     asks: [
       { q: "价格包含路费吗？", a: `包含。服务范围 ${area} 个县 ${coverageTotal} 个分区内不另收路费。` },
       { q: "标准清洗包含消毒吗？", a: "包含，标准清洗和深度拆洗每台都喷消毒剂。" },
-      { q: "保修多久，保什么？", a: "标准清洗滴水保修 30 天，深度拆洗 60 天，维修 30 天，安装在本店购机 1 年、自备机 6 个月。" },
+      { q: "保修多久，保什么？", a: "标准清洗滴水保修 30 天，深度拆洗 60 天，维修、移机和补充冷媒 30 天，安装在本店购机 1 年、自备机 6 个月。" },
       { q: "补充冷媒怎么收费？", a: `先当面测压力，确实不足才按每磅 ${p.repair.refrigerantPerLb} 泰铢收费，不缺不加。` },
       { q: "维修检测费怎么算？", a: `检测费 ${p.repair.diagnostic} 泰铢，决定维修则全额抵扣。` },
       { q: "能开发票吗？", a: "可以，开具公司名义的增值税正式发票。" },
