@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04",
+  "generatedAt": "2026-10-06",
   "files": {
     "app/(en)/en/about/page.tsx": "2026-09-29",
     "app/(en)/en/airbnb/page.tsx": "2026-09-29",
@@ -21,7 +21,7 @@
     "app/(en)/en/work/page.tsx": "2026-09-29",
     "app/(en)/layout.tsx": "2026-08-05",
     "app/(th)/about/page.tsx": "2026-09-29",
-    "app/(th)/answers/page.tsx": "2026-10-04",
+    "app/(th)/answers/page.tsx": "2026-10-06",
     "app/(th)/area/[slug]/page.tsx": "2026-09-30",
     "app/(th)/area/page.tsx": "2026-09-29",
     "app/(th)/blog/[slug]/page.tsx": "2026-09-29",
@@ -64,7 +64,7 @@
     "app/(zh)/zh/case-study/page.tsx": "2026-09-29",
     "app/(zh)/zh/condo/[slug]/page.tsx": "2026-09-30",
     "app/(zh)/zh/condo/page.tsx": "2026-09-29",
-    "app/(zh)/zh/installation/page.tsx": "2026-10-04",
+    "app/(zh)/zh/installation/page.tsx": "2026-10-06",
     "app/(zh)/zh/page.tsx": "2026-09-29",
     "app/(zh)/zh/pricing/page.tsx": "2026-10-04",
     "app/(zh)/zh/repair/page.tsx": "2026-09-29",
@@ -107,7 +107,7 @@
     "components/RecentJobs.tsx": "2026-09-29",
     "components/ReelCard.tsx": "2026-09-24",
     "components/ReelsShowcase.tsx": "2026-09-24",
-    "components/ServiceTerms.tsx": "2026-10-04",
+    "components/ServiceTerms.tsx": "2026-10-06",
     "components/Shell.tsx": "2026-09-25",
     "components/SlotBooking.tsx": "2026-09-29",
     "components/Spotlight.tsx": "2026-09-25",
@@ -240,7 +240,7 @@
     "lib/schema.ts": "2026-09-29",
     "lib/segments.ts": "2026-09-29",
     "lib/seo.ts": "2026-09-29",
-    "lib/site.ts": "2026-10-04",
+    "lib/site.ts": "2026-10-06",
     "lib/work-cases.ts": "2026-09-29"
   }
 }

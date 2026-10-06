@@ -166,7 +166,7 @@ export default function EnInstallationPage() {
           </div>
           <p className="mt-4 flex items-start gap-2.5 text-sm leading-7 text-ink-soft">
             <IconShield className="mt-1 h-5 w-5 shrink-0 text-mint" />
-            Warranty on the installation work: 1 year when you buy the unit from me, 6 months when you supply your own unit. Relocation work: 30 days.
+            Warranty on the installation work: 1 year when you buy the unit from me, 6 months when you supply your own unit. Relocation work: 30 days on refrigerant leaks at the new pipe joints and water dripping.
             The unit itself is covered by the manufacturer or the seller.
           </p>
         </div>
