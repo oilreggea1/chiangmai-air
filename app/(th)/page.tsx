@@ -4,7 +4,7 @@ import { calcRows } from "@/lib/calc-rows";
 import Link from "next/link";
 import { condoDirectory } from "@/lib/condo-directory";
 import Image from "next/image";
-import { site, services, areas, reviews, faqs, edges, heroPhotos, p, btu } from "@/lib/site";
+import { site, services, areas, reviews, faqs, edges, heroPhotos, homeTearDown, p, btu } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { faqSchema, jsonLd } from "@/lib/schema";
 import { thaiDate } from "@/lib/lastmod";
@@ -159,7 +159,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-3xl shadow-lift ring-1 ring-slate-200">
               <Image
                 src={heroPhotos.home.src}
-                alt="ช่างแอร์เชียงใหม่กำลังล้างแอร์ถึงบ้านลูกค้า พร้อมปูผ้าใบคลุมพื้นที่โดยรอบ"
+                alt={heroPhotos.home.alt}
                 width={900}
                 height={1200}
                 // รูปนี้คือ LCP ของหน้าแรก คือสิ่งที่ Google จับเวลาว่าหน้าโหลดเสร็จเมื่อไร
@@ -174,6 +174,7 @@ export default function Home() {
                 priority
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="h-[24rem] w-full object-cover sm:h-[30rem]"
+                style={{ objectPosition: heroPhotos.home.position }}
               />
             </div>
             <div className="card glass absolute -bottom-5 left-4 flex items-center gap-3 px-4 py-3 sm:left-6">
@@ -444,6 +445,22 @@ export default function Home() {
             <p className="lead mt-3">
               กดดูแต่ละงานได้ครบทุกรูป ตั้งแต่สภาพเครื่องตอนผมไปถึง ระหว่างทำงาน จนถึงตอนทำเสร็จ
             </p>
+          </div>
+          {/* รูปแยกชิ้นส่วนที่เจ้าของส่งมาเอง 10 ต.ค. 2569 (คำบรรยายอยู่ที่ homeTearDown ใน lib/site.ts) */}
+          <div className="mt-9 grid gap-4 sm:grid-cols-3">
+            {homeTearDown.map((ph) => (
+              <figure key={ph.src} className="card overflow-hidden">
+                <Image
+                  src={ph.src}
+                  alt={ph.alt}
+                  width={1108}
+                  height={1477}
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+                <figcaption className="px-4 py-3 text-sm font-semibold text-ink">{ph.caption}</figcaption>
+              </figure>
+            ))}
           </div>
           {(["air", "washer"] as const).map((g) => (
             <div key={g} className="mt-10">
