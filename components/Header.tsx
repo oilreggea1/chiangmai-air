@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { site, services, coverageTotal } from "@/lib/site";
-import { IconPhone, IconMenu, IconClose, IconSnow, IconChevron } from "./Icons";
+import { IconPhone, IconMenu, IconClose, IconSnow, IconChevron, IconGlobe } from "./Icons";
 
 /**
  * เมนูบนสุดของจอใหญ่
@@ -129,10 +129,15 @@ const mobileGroups: { heading: string; items: NavItem[] }[] = [
  * ชุดนี้จึงมีเฉพาะหน้าที่มีอยู่จริงในภาษานั้น ไม่ใช่การแปลเมนูไทยทั้งชุด
  * เพราะหน้าไทยส่วนใหญ่ยังไม่มีฉบับแปล การลิงก์ไปจะพาไปเจอหน้าที่อ่านไม่ออก
  */
-const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; menuLabel: string; closeLabel: string }> = {
+// ลิงก์ภาษา (中文 / English / ไทย) ย้ายไปอยู่ที่ LangSwitch แล้ว 10 ต.ค. 2569 ไม่ต้องใส่ซ้ำในรายการนี้
+const intlNav: Record<
+  "en" | "zh-CN",
+  { links: NavItem[]; callLabel: string; menuLabel: string; closeLabel: string; inline: string; inlineHideBtn: string }
+> = {
   en: {
     // 24 ก.ย. 2569 เพิ่ม Installation / Washing machines / About — โลโก้ลิงก์ไปหน้าแรกอยู่แล้วจึงตัด Home ออก
-    // รายการยาวขึ้น แถบจอใหญ่ของเมนูต่างประเทศจึงแสดงตั้งแต่ xl แทน lg ต่ำกว่านั้นใช้ปุ่มเมนู (กันข้อความตัดกลางคำแบบที่เคยเกิดกับเมนูไทย)
+    // 10 ต.ค. 2569 วัดจริง: ป้ายอังกฤษ 10 ลิงก์กว้าง 932px + โลโก้ + ปุ่มโทร/ภาษา ≈ 1,410px เกินกรอบ .wrap (1,152px)
+    // ทุกขนาดจอ แถบเคยล้นจอตั้งแต่ก่อนมีปุ่มภาษา จึงใช้ปุ่มเมนูทุกขนาดจอสำหรับหน้าอังกฤษ (จีนป้ายสั้น วางแถวเดียวได้ตั้งแต่ xl)
     links: [
       { href: "/en/pricing", label: "Prices" },
       { href: "/en/repair", label: "Repair" },
@@ -144,12 +149,12 @@ const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; men
       { href: "/en/condo", label: "Condos" },
       { href: "/en/airbnb", label: "Airbnb & rentals" },
       { href: "/en/about", label: "About" },
-      { href: "/zh", label: "中文" },
-      { href: "/", label: "ไทย" },
     ],
     callLabel: "Call",
     menuLabel: "Open menu",
     closeLabel: "Close menu",
+    inline: "",
+    inlineHideBtn: "",
   },
   "zh-CN": {
     links: [
@@ -162,14 +167,125 @@ const intlNav: Record<"en" | "zh-CN", { links: NavItem[]; callLabel: string; men
       { href: "/zh/blog", label: "空调知识" },
       { href: "/zh/areas", label: "服务范围" },
       { href: "/zh/about", label: "关于" },
-      { href: "/en", label: "English" },
-      { href: "/", label: "ไทย" },
     ],
     callLabel: "电话",
     menuLabel: "打开菜单",
     closeLabel: "关闭菜单",
+    inline: "xl:flex",
+    inlineHideBtn: "xl:hidden",
   },
 };
+
+/**
+ * ปุ่มเปลี่ยนภาษาบนแถบบนสุด (10 ต.ค. 2569)
+ *
+ * เดิมลิงก์ English / 中文 ซ่อนอยู่ในเมนูย่อย "รู้จักเรา / ภาษา" ทั้งจอใหญ่และมือถือ
+ * เจ้าของเองยังหาไม่เจอ คนต่างชาติที่อ่านไทยไม่ออกยิ่งไม่มีทางรู้ว่ามีฉบับภาษาตัวเอง
+ * จึงยกออกมาไว้ข้างปุ่มเมนู มองเห็นทุกขนาดจอ เขียนชื่อภาษาด้วยภาษานั้นเอง (EN / 中文 / ไทย)
+ *
+ * ปลายทางอ่านจาก <link rel="alternate" hreflang> ของหน้าที่เปิดอยู่ จึงพาไปหน้าเดียวกัน
+ * ในอีกภาษา (เช่น /area/nimman → /en/areas/nimman) หน้าที่ยังไม่มีฉบับแปลจะไปหน้าแรกของภาษานั้น
+ * ใช้ <a> ธรรมดาไม่ใช่ <Link> เพราะแต่ละภาษาเป็น root layout แยกกัน ข้ามภาษาต้องโหลดหน้าใหม่อยู่แล้ว
+ */
+const langOpts = [
+  { code: "th", hreflang: "th-TH", home: "/", short: "ไทย", htmlLang: "th" },
+  { code: "en", hreflang: "en-US", home: "/en", short: "EN", htmlLang: "en" },
+  { code: "zh-CN", hreflang: "zh-CN", home: "/zh", short: "中文", htmlLang: "zh-CN" },
+] as const;
+
+type Lang = "th" | "en" | "zh-CN";
+
+function readAlternates(): Record<string, string> {
+  const m: Record<string, string> = {};
+  document.querySelectorAll<HTMLLinkElement>('link[rel="alternate"][hreflang]').forEach((l) => {
+    try {
+      // href ใน hreflang เป็น URL เต็มของโดเมนจริง ใช้แค่ path เพื่อให้ทำงานบนเครื่องทดสอบ/preview ด้วย
+      const u = new URL(l.href);
+      m[l.hreflang] = u.pathname + u.search;
+    } catch {}
+  });
+  return m;
+}
+
+function useAlternates() {
+  const pathname = usePathname();
+  const [alt, setAlt] = useState<Record<string, string>>({});
+  useEffect(() => {
+    // รอให้ Next เปลี่ยน <head> ของหน้าใหม่ให้เสร็จก่อนค่อยอ่าน
+    const id = window.setTimeout(() => setAlt(readAlternates()), 0);
+    return () => window.clearTimeout(id);
+  }, [pathname]);
+  return alt;
+}
+
+/** compact: หัวเว็บอังกฤษ/จีนชื่อร้านยาวกว่า บนมือถือจึงซ่อนรูปลูกโลกเพื่อไม่ให้แถบล้นจอ 375px
+ *  หน้าไทยซ่อนเฉพาะช่วงจอ lg–xl ที่แถบเมนูไทยเต็มพอดี (1024px เคยล้น 4px) มือถือหน้าไทยมีที่พอ
+ *  และเป็นหน้าที่คนต่างชาติต้องเห็นลูกโลกมากที่สุด */
+function LangSwitch({ lang, compact = false }: { lang: Lang; compact?: boolean }) {
+  const alt = useAlternates();
+  return (
+    <div
+      role="group"
+      aria-label="Language · ภาษา · 语言"
+      className={`flex shrink-0 items-center rounded-xl border border-slate-200 bg-white/70 py-0.5 pr-0.5 ${compact ? "pl-0.5 sm:pl-2" : "pl-2 lg:max-xl:pl-0.5"}`}
+    >
+      <IconGlobe className={`h-4 w-4 shrink-0 text-ink-soft ${compact ? "hidden sm:block" : "lg:max-xl:hidden"}`} />
+      {langOpts
+        .filter((o) => o.code !== lang)
+        .map((o) => (
+          <a
+            key={o.code}
+            href={alt[o.hreflang] ?? o.home}
+            hrefLang={o.htmlLang}
+            lang={o.htmlLang}
+            data-cta={`lang-${o.code}`}
+            className="grid min-h-10 min-w-9 place-items-center rounded-lg px-1.5 text-sm sm:min-w-10 sm:px-2 font-semibold whitespace-nowrap text-ink transition-colors hover:bg-slate-50 hover:text-brand-700"
+          >
+            {o.short}
+          </a>
+        ))}
+    </div>
+  );
+}
+
+/**
+ * แถบบอกคนต่างชาติว่ามีหน้าภาษาของเขา โผล่เฉพาะหน้าไทย และเฉพาะเครื่องที่ไม่ได้ตั้งภาษาไทย
+ * วางแบบลอย (absolute) ใต้แถบเมนู ไม่ดันเนื้อหาลง จึงไม่ทำให้หน้ากระตุก
+ * ไม่เด้งเปลี่ยนภาษาให้เอง เพราะ Google แนะนำไม่ให้ redirect ตามภาษาเครื่อง และคนไทยที่ตั้งเครื่องเป็นอังกฤษมีเยอะ
+ */
+function LangHint() {
+  const alt = useAlternates();
+  const [want, setWant] = useState<"en" | "zh-CN" | null>(null);
+  useEffect(() => {
+    try {
+      if (localStorage.getItem("lang-hint-off")) return;
+    } catch {}
+    const langs = (navigator.languages?.length ? navigator.languages : [navigator.language]).map((l) => l.toLowerCase());
+    if (langs.some((l) => l.startsWith("th"))) return;
+    setWant(langs[0]?.startsWith("zh") ? "zh-CN" : "en");
+  }, []);
+  if (!want) return null;
+  const close = () => {
+    setWant(null);
+    try {
+      localStorage.setItem("lang-hint-off", "1");
+    } catch {}
+  };
+  const o = langOpts.find((x) => x.code === want)!;
+  return (
+    <div className="absolute inset-x-0 top-full border-b border-brand-100 bg-brand-50/95 backdrop-blur" lang={o.htmlLang}>
+      <div className="wrap flex items-center justify-between gap-3 py-2 text-sm">
+        <a href={alt[o.hreflang] ?? o.home} hrefLang={o.htmlLang} data-cta={`lang-hint-${o.code}`} className="flex items-center gap-2 font-semibold text-brand-700">
+          <IconGlobe className="h-4 w-4 shrink-0" />
+          {want === "en" ? "This page is available in English →" : "本页有中文版 →"}
+        </a>
+        <button type="button" onClick={close} aria-label={want === "en" ? "Close" : "关闭"} className="grid h-9 w-9 shrink-0 place-items-center rounded-lg text-ink-soft hover:bg-white">
+          <IconClose className="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }) {
   const [open, setOpen] = useState(false);
@@ -231,7 +347,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-0.5 xl:flex" aria-label={lang === "en" ? "Main menu" : "主菜单"}>
+          <nav className={`hidden items-center gap-0.5 ${t.inline}`} aria-label={lang === "en" ? "Main menu" : "主菜单"}>
             {t.links.map((n) => (
               <Link
                 key={n.href}
@@ -247,6 +363,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
           </nav>
 
           <div className="flex shrink-0 items-center gap-2">
+            <LangSwitch lang={lang} compact />
             <a href={`tel:${site.phoneTel}`} className="btn-call hidden px-3.5 py-2.5 text-[15px] whitespace-nowrap sm:inline-flex xl:px-4" data-cta="intl-header-call">
               <IconPhone className="h-5 w-5 shrink-0" />
               {site.phone}
@@ -254,7 +371,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-200 text-ink xl:hidden"
+              className={`grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-slate-200 text-ink ${t.inlineHideBtn}`}
               aria-expanded={open}
               aria-controls="intl-nav"
               aria-label={open ? t.closeLabel : t.menuLabel}
@@ -265,7 +382,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
         </div>
 
         {open && (
-          <div id="intl-nav" className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white xl:hidden">
+          <div id="intl-nav" className={`max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-200 bg-white ${t.inlineHideBtn}`}>
             <nav className="wrap grid gap-1 py-4" aria-label={lang === "en" ? "Mobile menu" : "移动菜单"}>
               {t.links.map((n) => (
                 <Link
@@ -293,6 +410,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+      {!open && <LangHint />}
       <div className="wrap flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
         {/*
           ไม่ใส่ aria-label ที่ลิงก์นี้ (18 ส.ค. 2569)
@@ -390,6 +508,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
+          <LangSwitch lang="th" />
           <a
             href={`tel:${site.phoneTel}`}
             className="btn-call hidden px-3.5 py-2.5 text-[15px] whitespace-nowrap sm:inline-flex xl:px-4"
