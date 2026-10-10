@@ -269,7 +269,9 @@
    ทุกตัวใช้สีชุดเดิม ไม่แตะเนื้อหา ไม่แตะราคา และปิดเองเมื่อผู้ใช้ตั้งค่าลดการเคลื่อนไหว
    ============================================================ */
 
-/* พื้นหลังแสงเหนือ: วงแสงสามวงเคลื่อนช้ามากใต้เนื้อหา ทำให้พื้นไม่ตายเป็นสีเรียบ */
+/* พื้นหลังแสงเหนือ: วงแสงใต้เนื้อหา ทำให้พื้นไม่ตายเป็นสีเรียบ
+   10 ต.ค. 2569 เลิกให้วงแสงขยับ (เจ้าของบอกเว็บหน่วง) วงแสงกว้าง 46rem + blur(70px) ที่ขยับไม่หยุด
+   บังคับให้เครื่องวาดชั้นเบลอใหม่ตลอดเวลา มือถือรุ่นกลาง-ล่างจะเลื่อนจอกระตุก ภาพนิ่งหน้าตาเหมือนเดิม */
 /* ห้ามตั้ง position ที่นี่ เพราะกฎนี้อยู่นอก @layer จึงทับคลาส absolute ของ Tailwind
    แล้วชั้นตกแต่งจะกลายเป็น relative ไปกินที่ในสายเนื้อหาและดันหน้าลงทั้งหน้า (เจอมาแล้ว 25 ก.ย. 2569) */
 .aurora { isolation: isolate; overflow: hidden; }
@@ -287,22 +289,12 @@
   width: 46rem; height: 46rem;
   top: -20rem; right: -14rem;
   background: radial-gradient(circle at 30% 30%, #7dd3fc 0%, #38bdf8 35%, transparent 70%);
-  animation: auroraA 22s ease-in-out infinite alternate;
 }
 .aurora::after {
   width: 38rem; height: 38rem;
   top: 6rem; left: -16rem;
   background: radial-gradient(circle at 60% 40%, #38bdf8 0%, #0284c7 45%, transparent 72%);
   opacity: 0.32;
-  animation: auroraB 27s ease-in-out infinite alternate;
-}
-@keyframes auroraA {
-  from { transform: translate3d(0,0,0) scale(1); }
-  to   { transform: translate3d(-5rem, 3rem, 0) scale(1.12); }
-}
-@keyframes auroraB {
-  from { transform: translate3d(0,0,0) scale(1.05); }
-  to   { transform: translate3d(4rem, -2.5rem, 0) scale(0.95); }
 }
 
 /* ผิวเนียนแบบฟิล์ม ลดการไล่เฉดเป็นวงบนจอใหญ่ และให้พื้นมีเนื้อ ไม่แบนเกินไป */
@@ -321,14 +313,11 @@ h1 .text-accent, .text-shine {
   /* ทุกสีในไล่เฉดนี้วัดกับพื้นขาวได้ 4.1:1 ขึ้นไป ฟ้าสดกับฟ้าน้ำแข็งใช้ไม่ได้เพราะอ่อนเกินจนอ่านไม่ออก */
   background: linear-gradient(100deg, #075985 0%, #0369A1 28%, #0284C7 52%, #0369A1 74%, #075985 100%);
   background-size: 260% 100%;
+  background-position: 40% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shineMove 7s linear infinite;
-}
-@keyframes shineMove {
-  from { background-position: 0% 50%; }
-  to   { background-position: 260% 50%; }
+  /* 10 ต.ค. 2569 เลิกวิ่งไล่เฉด: background-position ที่ขยับไม่หยุดต้องวาดตัวหนังสือใหม่ทุกเฟรม ทุกหน้า */
 }
 
 /* การ์ดกระจก ขอบไล่เฉดบาง ๆ แทนเส้นขอบทึบ */
@@ -386,28 +375,16 @@ header.sticky::after {
   background: linear-gradient(90deg, transparent, rgb(14 116 144 / 0.28) 20%, rgb(125 211 252 / 0.5) 50%, rgb(14 116 144 / 0.28) 80%, transparent);
 }
 
-/* ---------- ค่อย ๆ ปรากฏตอนเลื่อนหน้า (24 ก.ย. 2569) ----------
-   ใช้ animation-timeline ของ CSS ล้วน ไม่มี JavaScript จึงไม่กระทบความเร็วหน้า
-   เบราว์เซอร์ที่ยังไม่รองรับจะข้ามไปเอง เนื้อหาแสดงปกติทุกอย่าง
-   ปิดอัตโนมัติเมื่อผู้ใช้ตั้งค่าลดการเคลื่อนไหว โดยบล็อกด้านล่าง */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) and (min-width: 640px) {
-    @keyframes riseIn {
-      from { opacity: 0; transform: translateY(1.25rem); }
-      to { opacity: 1; transform: none; }
-    }
-    .section > .wrap > *,
-    .section > .wrap {
-      animation: riseIn linear both;
-      animation-timeline: view();
-      animation-range: entry 0% entry 42%;
-    }
-  }
-}
+/* ---------- เลิกเอฟเฟกต์ค่อย ๆ ปรากฏตอนเลื่อนหน้า (10 ต.ค. 2569) ----------
+   เดิม (24 ก.ย.) ทุก section บนจอ ≥640px จางและเลื่อนขึ้นตอนเข้าจอ เจ้าของรู้สึกว่าเว็บหน่วง
+   เพราะเนื้อหาไม่ขึ้นทันทีที่เลื่อนถึง ต้องรอให้จางเข้ามาก่อน ห้ามใส่กลับ */
 
 /* หัวเว็บกระจกฝ้าชัดขึ้นเมื่อเลื่อนลง ให้ขอบบนของหน้าไม่ลอยจนอ่านยาก */
+/* เฉพาะจอใหญ่: บนมือถือการเบลอฉากหลังของแถบที่ติดจอต้องคำนวณใหม่ทุกครั้งที่เลื่อน (10 ต.ค. 2569) */
 @supports (backdrop-filter: blur(1px)) {
-  header.sticky { -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); }
+  @media (min-width: 1024px) {
+    header.sticky { -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); }
+  }
 }
 
 /* สีตอนลากคลุมข้อความ ให้เข้าชุดกับธีมแทนสีฟ้าเริ่มต้นของเบราว์เซอร์ */

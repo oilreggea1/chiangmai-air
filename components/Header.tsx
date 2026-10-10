@@ -331,7 +331,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
   if (lang !== "th") {
     const t = intlNav[lang];
     return (
-      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 lg:bg-white/90 lg:backdrop-blur-md">
         <div className="wrap flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
           <Link href={lang === "en" ? "/en" : "/zh"} onClick={() => setOpen(false)} className="flex shrink-0 items-center gap-2.5">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-md shadow-brand-500/30">
@@ -409,7 +409,7 @@ export default function Header({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 lg:bg-white/90 lg:backdrop-blur-md">
       {!open && <LangHint />}
       <div className="wrap flex h-16 items-center justify-between gap-3 sm:h-[4.5rem]">
         {/*
