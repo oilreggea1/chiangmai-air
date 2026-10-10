@@ -33,14 +33,13 @@ const T = {
     h1: (n: string) => `ล้างแอร์คอนโด ${n} ถึงห้อง`,
     lead: (n: string, t: string) => `ผมรับล้าง ซ่อม และติดตั้งแอร์ในห้องชุดของ ${n} ซึ่งอยู่ใน ${t} เขตบริการปกติของผม ราคาเดียวกับทุกพื้นที่ ไม่คิดค่าเดินทาง และแจ้งราคาให้ทราบก่อนเริ่มงานทุกครั้ง`,
     line: "ส่งเลขห้องและจำนวนเครื่องทาง LINE", call: "โทร",
-    factsH: "ข้อมูลอาคาร", fName: "ชื่อโครงการ", fTambon: "ตำบล", fRoad: "ถนน", fFloors: "จำนวนชั้น", fYear: "ปีที่แล้วเสร็จ", fDev: "ผู้พัฒนาโครงการ",
-    yr: (y: number) => `${y + 543} (อายุอาคารราว ${NOW - y} ปี)`, fl: (f: string) => `${f} ชั้น`,
+    factsH: "ข้อมูลอาคาร", fName: "ชื่อโครงการ", fTambon: "ตำบล", fRoad: "ถนน", fDev: "ผู้พัฒนาโครงการ",
     workH: (n: string) => `งานแอร์ในห้องชุดของ ${n}`,
-    high: (f: number) => `อาคารสูง ${f} ชั้น การขนอุปกรณ์ขึ้นห้องต้องใช้ลิฟต์ และอาคารสูงมักกำหนดช่วงเวลาที่ช่างเข้าทำงานได้ ผมจึงขอให้สอบถามนิติบุคคลก่อนนัด แล้วผมจะจัดคิวให้ตรงช่วงที่เข้าได้`,
-    mid: (f: number) => `อาคาร ${f} ชั้น แจ้งชั้นและอาคารมาด้วย ผมจะได้เผื่อเวลาขนอุปกรณ์และจัดลำดับห้องให้เสร็จในรอบเดียวหากมีหลายห้อง`,
-    low: (f: number) => `อาคาร ${f} ชั้น ห้องชั้นบนที่ไม่มีลิฟต์ต้องหิ้วอุปกรณ์ขึ้นบันได แจ้งชั้นมาก่อนได้ ผมจะเตรียมชุดอุปกรณ์ให้หิ้วได้ในเที่ยวเดียว`,
-    old: (a: number) => `อาคารอายุราว ${a} ปี ห้องที่ยังใช้แอร์ชุดเดิมตั้งแต่สร้างเสร็จมักเป็นเครื่องรุ่นเก่า ก่อนนัดถ่ายรูปป้ายข้างคอยล์ร้อนส่งมาได้ ผมจะดูรุ่นและชนิดน้ำยาให้ก่อน และหากเครื่องต้องซ่อมใหญ่ ผมแจ้งให้เทียบกับราคาเครื่องใหม่ตรง ๆ`,
-    midAge: (a: number) => `อาคารอายุราว ${a} ปี แอร์ในห้องผ่านการใช้งานมาหลายปีแล้ว ถ้ายังไม่เคยล้างใหญ่เลยหรือเริ่มมีกลิ่นอับ ผมจะดูสภาพแล้วแนะนำว่าล้างธรรมดาพอหรือควรถอดล้าง`,
+    high: () => `อาคารสูง การขนอุปกรณ์ขึ้นห้องต้องใช้ลิฟต์ และอาคารสูงมักกำหนดช่วงเวลาที่ช่างเข้าทำงานได้ ผมจึงขอให้สอบถามนิติบุคคลก่อนนัด แล้วผมจะจัดคิวให้ตรงช่วงที่เข้าได้`,
+    mid: () => `แจ้งชั้นและอาคารมาด้วย ผมจะได้เผื่อเวลาขนอุปกรณ์และจัดลำดับห้องให้เสร็จในรอบเดียวหากมีหลายห้อง`,
+    low: () => `ห้องชั้นบนที่ไม่มีลิฟต์ต้องหิ้วอุปกรณ์ขึ้นบันได แจ้งชั้นมาก่อนได้ ผมจะเตรียมชุดอุปกรณ์ให้หิ้วได้ในเที่ยวเดียว`,
+    old: () => `อาคารนี้เปิดใช้งานมานานแล้ว ห้องที่ยังใช้แอร์ชุดเดิมตั้งแต่สร้างเสร็จมักเป็นเครื่องรุ่นเก่า ก่อนนัดถ่ายรูปป้ายข้างคอยล์ร้อนส่งมาได้ ผมจะดูรุ่นและชนิดน้ำยาให้ก่อน และหากเครื่องต้องซ่อมใหญ่ ผมแจ้งให้เทียบกับราคาเครื่องใหม่ตรง ๆ`,
+    midAge: () => `อาคารนี้เปิดใช้งานมาหลายปีแล้ว แอร์ในห้องผ่านการใช้งานมาพอสมควร ถ้ายังไม่เคยล้างใหญ่เลยหรือเริ่มมีกลิ่นอับ ผมจะดูสภาพแล้วแนะนำว่าล้างธรรมดาพอหรือควรถอดล้าง`,
     newAge: `อาคารยังใหม่ แอร์ที่ติดมากับห้องอาจยังอยู่ในระยะรับประกันของผู้ผลิต ตรวจเงื่อนไขประกันก่อนเรียกช่างภายนอกได้ ส่วนการล้างตามรอบผมทำให้ได้ตามปกติ`,
     common: [
       "คอยล์ร้อนของห้องชุดมักอยู่ที่ระเบียงหรือช่องวางเครื่องที่ผนังอาคาร ถ่ายรูปจุดวางส่งมาก่อนได้ ผมจะเตรียมอุปกรณ์ให้ตรงหน้างาน",
@@ -69,14 +68,13 @@ const T = {
     h1: (n: string) => `Aircon cleaning in your room at ${n}`,
     lead: (n: string, t: string) => `I clean, repair and install aircon in rooms at ${n}, which is in ${t}, inside my regular service area. Same price as everywhere else, no travel fee, and the price is always quoted before I start.`,
     line: "Send your room number and units on LINE", call: "Call",
-    factsH: "Building details", fName: "Project", fTambon: "Sub-district", fRoad: "Road", fFloors: "Floors", fYear: "Completed", fDev: "Developer",
-    yr: (y: number) => `${y} (about ${NOW - y} years old)`, fl: (f: string) => `${f} floors`,
+    factsH: "Building details", fName: "Project", fTambon: "Sub-district", fRoad: "Road", fDev: "Developer",
     workH: (n: string) => `Aircon work in rooms at ${n}`,
-    high: (f: number) => `A ${f}-storey high-rise: equipment goes up by lift, and tall buildings usually set the hours when technicians may work. Please check with the juristic office before booking and I'll schedule within those hours.`,
-    mid: (f: number) => `A ${f}-storey building: tell me the building and floor so I can allow time for carrying equipment and, if there are several rooms, finish them all in one visit.`,
-    low: (f: number) => `A ${f}-storey building: upper-floor rooms without a lift mean carrying equipment up the stairs. Tell me the floor and I'll pack a kit I can carry in one trip.`,
-    old: (a: number) => `The building is about ${a} years old. Rooms still using the original aircon often have older models. Send a photo of the label on the outdoor unit before booking and I'll check the model and refrigerant first; if a unit needs a major repair, I'll tell you straight how it compares with a new one.`,
-    midAge: (a: number) => `The building is about ${a} years old, so the aircon has several years of use behind it. If it has never had a deep clean or has started to smell musty, I'll check it and tell you whether a standard clean is enough or a strip-down is worth it.`,
+    high: () => `A high-rise: equipment goes up by lift, and tall buildings usually set the hours when technicians may work. Please check with the juristic office before booking and I'll schedule within those hours.`,
+    mid: () => `Tell me the building and floor so I can allow time for carrying equipment and, if there are several rooms, finish them all in one visit.`,
+    low: () => `Upper-floor rooms without a lift mean carrying equipment up the stairs. Tell me the floor and I'll pack a kit I can carry in one trip.`,
+    old: () => `This building has been in use for many years. Rooms still using the original aircon often have older models. Send a photo of the label on the outdoor unit before booking and I'll check the model and refrigerant first; if a unit needs a major repair, I'll tell you straight how it compares with a new one.`,
+    midAge: () => `This building has been in use for several years, so the aircon has several years of use behind it. If it has never had a deep clean or has started to smell musty, I'll check it and tell you whether a standard clean is enough or a strip-down is worth it.`,
     newAge: "The building is new, so the aircon supplied with the room may still be under the manufacturer's warranty — check its conditions before calling an outside technician. Routine cleaning I can do as usual.",
     common: [
       "In condo rooms the outdoor unit is usually on the balcony or in a service ledge on the building wall. Send a photo of where it is and I'll bring the right equipment.",
@@ -105,14 +103,13 @@ const T = {
     h1: (n: string) => `${n} 公寓空调上门清洗`,
     lead: (n: string, t: string) => `我为 ${n} 的住户提供空调清洗、维修和安装。该项目位于 ${t}，在我的常规服务范围内。价格与其他地区相同，不收路费，每次开工前都会先报价。`,
     line: "用 LINE 发房号和空调台数", call: "致电",
-    factsH: "楼栋信息", fName: "项目", fTambon: "分区", fRoad: "道路", fFloors: "层数", fYear: "竣工年份", fDev: "开发商",
-    yr: (y: number) => `${y} 年（楼龄约 ${NOW - y} 年）`, fl: (f: string) => `${f} 层`,
+    factsH: "楼栋信息", fName: "项目", fTambon: "分区", fRoad: "道路", fDev: "开发商",
     workH: (n: string) => `${n} 房间里的空调工作`,
-    high: (f: number) => `${f} 层高楼：设备要用电梯运送，高楼通常规定技师可进入的时段。请先向公寓管理处确认，预约前告诉我，我会排在可进入的时段内。`,
-    mid: (f: number) => `${f} 层楼：请告诉我楼栋和楼层，方便我预留搬运设备的时间；如果有好几间房，一次上门全部做完。`,
-    low: (f: number) => `${f} 层楼：没有电梯的高楼层需要走楼梯搬设备。请先告诉我楼层，我会准备一趟就能拿上去的工具包。`,
-    old: (a: number) => `楼龄约 ${a} 年。仍在使用原装空调的房间，多半是旧型号。预约前可以先拍室外机侧面的铭牌发给我，我先看型号和冷媒种类；如果需要大修，我会直接告诉您和买新机相比是否划算。`,
-    midAge: (a: number) => `楼龄约 ${a} 年，房间里的空调已经用了好几年。如果从没做过深度清洗，或开始有霉味，我会先看状况，再告诉您普通清洗是否足够，还是值得拆洗。`,
+    high: () => `高楼：设备要用电梯运送，高楼通常规定技师可进入的时段。请先向公寓管理处确认，预约前告诉我，我会排在可进入的时段内。`,
+    mid: () => `请告诉我楼栋和楼层，方便我预留搬运设备的时间；如果有好几间房，一次上门全部做完。`,
+    low: () => `没有电梯的高楼层需要走楼梯搬设备。请先告诉我楼层，我会准备一趟就能拿上去的工具包。`,
+    old: () => `这栋楼已使用多年。仍在使用原装空调的房间，多半是旧型号。预约前可以先拍室外机侧面的铭牌发给我，我先看型号和冷媒种类；如果需要大修，我会直接告诉您和买新机相比是否划算。`,
+    midAge: () => `这栋楼已使用好几年，房间里的空调已经用了好几年。如果从没做过深度清洗，或开始有霉味，我会先看状况，再告诉您普通清洗是否足够，还是值得拆洗。`,
     newAge: "楼盘较新，随房附带的空调可能仍在厂家保修期内，请先查看保修条件再找外部技师。定期清洗我可以照常为您做。",
     common: [
       "公寓的室外机通常在阳台或外墙设备位。先拍一张位置照片发给我，我会带对设备。",
@@ -172,8 +169,8 @@ export function CondoDetailView({ c, lang }: { c: CondoEntry; lang: CondoLang })
   const f = firstInt(k.f);
   const age = k.y ? NOW - k.y : undefined;
   const work: string[] = [];
-  if (f) work.push(f >= 15 ? t.high(f) : f >= 6 ? t.mid(f) : t.low(f));
-  if (age !== undefined) work.push(age >= 12 ? t.old(age) : age >= 5 ? t.midAge(age) : t.newAge);
+  if (f) work.push(f >= 15 ? t.high() : f >= 6 ? t.mid() : t.low());
+  if (age !== undefined) work.push(age >= 12 ? t.old() : age >= 5 ? t.midAge() : t.newAge);
   work.push(...t.common);
   const near = condoDirectory.filter((x) => x.t === c.t && x.s !== c.s).slice(0, 12);
   const faqs = t.faqs(n, tt);
@@ -189,8 +186,6 @@ export function CondoDetailView({ c, lang }: { c: CondoEntry; lang: CondoLang })
     [t.fTambon, a ? <Link href={areaPath(lang, a.slug)} className="text-brand-700 hover:underline">{tt}</Link> : tt],
     // อังกฤษ/จีนแสดงถนนเฉพาะที่มีชื่ออังกฤษที่คัดแล้ว (โครงการแบรนด์) ชื่อถนนภาษาไทยคนต่างชาติอ่านไม่ได้
     ...(lang === "th" ? (c.r ? [[t.fRoad, c.r] as [string, React.ReactNode]] : []) : br ? [[t.fRoad, br.x.roadEn] as [string, React.ReactNode]] : []),
-    ...(k.f ? [[t.fFloors, t.fl(k.f)] as [string, React.ReactNode]] : []),
-    ...(k.y ? [[t.fYear, t.yr(k.y)] as [string, React.ReactNode]] : []),
     ...(br ? [[t.fDev, <Link key="d" href={brandPath(lang, br.b.slug)} className="text-brand-700 hover:underline">{lang === "th" ? br.b.developerTh : br.b.developerEn}</Link>] as [string, React.ReactNode]] : []),
   ];
 

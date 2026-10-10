@@ -71,7 +71,6 @@ const T = {
     dirLead: `รวมคอนโด ${condoDirectory.length} โครงการที่อยู่ในเขตบริการของผม แยกตามตำบล พิมพ์ชื่ออาคารเพื่อค้นหาได้ ทุกโครงการในรายชื่อนี้ผมรับล้าง ซ่อม และติดตั้งแอร์ถึงห้อง ในราคาเดียวกัน ไม่คิดค่าเดินทาง`,
     search: "พิมพ์ชื่อคอนโด เช่น ศุภาลัย ดีคอนโด วันพลัส", empty: "ไม่พบชื่อนี้ในรายชื่อ ส่งชื่ออาคารมาทาง LINE ได้ ผมตรวจให้ว่าอยู่ในเขตบริการหรือไม่",
     brandsH: "หน้าเฉพาะแบรนด์", count: (n: number) => `${n} โครงการ`, areaLink: "ดูหน้าพื้นที่",
-    built: (y: number) => `แล้วเสร็จปี ${y + 543}`, floors: (f: string) => `${f} ชั้น`,
     notListed: "ไม่พบอาคารของคุณ? รายชื่อนี้รวบรวมจากข้อมูลประกาศขายสาธารณะ อาจยังไม่ครบทุกอาคาร ส่งชื่ออาคารมาได้ ผมรับงานทุกอาคารในเขตบริการ",
     source: "รวบรวมจากข้อมูลโครงการที่เผยแพร่สาธารณะ (zmyhome, baania, condonayoo, dotproperty, fazwaz และเว็บผู้พัฒนาโครงการ) ตรวจตำบลจากที่อยู่โครงการ ณ ก.ย. 2569 ชื่อโครงการเป็นของเจ้าของโครงการ ร้านไม่ได้เป็นตัวแทนหรือพันธมิตรของโครงการใด",
     line: "ส่งชื่อคอนโดทาง LINE", call: "โทร",
@@ -81,13 +80,13 @@ const T = {
     bH1: (b: CondoBrand) => `ล้างแอร์คอนโด${b.th} เชียงใหม่ ถึงห้อง`,
     bLead: (b: CondoBrand, n: number) => `รวมโครงการคอนโดของ${b.developerTh}ในเชียงใหม่ ${n} โครงการที่อยู่ในเขตบริการของผม พร้อมข้อมูลอาคารที่ควรรู้ก่อนนัดช่าง ผมรับล้าง ซ่อม และติดตั้งแอร์ในห้องชุดทุกโครงการ ราคาเดียวกับทุกพื้นที่ แจ้งราคาก่อนเริ่มงาน`,
     projH: (b: CondoBrand) => `โครงการคอนโด${b.th}ในเชียงใหม่`,
-    head: ["โครงการ", "ตำบล", "ถนน", "อาคาร / ชั้น / ห้อง", "แล้วเสร็จ"],
+    head: ["โครงการ", "ตำบล", "ถนน", "อาคาร / ห้อง"],
     alt: (t: string) => `บางแหล่งระบุ ต.${t}`,
-    bld: (b?: number, f?: number, u?: number) => [b && `${b} อาคาร`, f && `${f} ชั้น`, u && `${u} ห้อง`].filter(Boolean).join(" · ") || "–",
+    bld: (b?: number, u?: number) => [b && `${b} อาคาร`, u && `${u} ห้อง`].filter(Boolean).join(" · ") || "–",
     upcomingH: "โครงการที่ยังไม่แล้วเสร็จ", upcomingNote: "ยังไม่เปิดใช้งาน เมื่อส่งมอบห้องแล้วรับงานได้ตามปกติ",
     typeH: "งานแอร์ในห้องชุดของโครงการเหล่านี้",
-    high: (lo: number, hi: number) => `อาคารสูง ${lo === hi ? lo : `${lo}–${hi}`} ชั้น: การขนอุปกรณ์ต้องใช้ลิฟต์ และอาคารลักษณะนี้มักกำหนดช่วงเวลาที่ช่างเข้าทำงานได้ ควรสอบถามนิติบุคคลและแจ้งผมก่อนนัด ผมจะจัดคิวให้ตรงช่วงที่เข้าได้จริง`,
-    low: (lo: number, hi: number) => `อาคารเตี้ย ${lo === hi ? lo : `${lo}–${hi}`} ชั้น: มักมีหลายอาคารในโครงการเดียว แจ้งชื่ออาคารและชั้นมาด้วย ผมจะได้เตรียมการขนอุปกรณ์และเวลาให้พอ`,
+    high: () => `อาคารสูง: การขนอุปกรณ์ต้องใช้ลิฟต์ และอาคารลักษณะนี้มักกำหนดช่วงเวลาที่ช่างเข้าทำงานได้ ควรสอบถามนิติบุคคลและแจ้งผมก่อนนัด ผมจะจัดคิวให้ตรงช่วงที่เข้าได้จริง`,
+    low: () => `อาคารเตี้ย: มักมีหลายอาคารในโครงการเดียว แจ้งชื่ออาคารและชั้นมาด้วย ผมจะได้เตรียมการขนอุปกรณ์และเวลาให้พอ`,
     common: [
       "ห้องชุดส่วนใหญ่วางคอยล์ร้อนไว้ที่ระเบียงหรือช่องวางเครื่องที่ผนังอาคาร ถ่ายรูปจุดวางคอยล์ร้อนส่งมาก่อนได้ ผมจะเตรียมอุปกรณ์ให้ตรงหน้างาน",
       "ห้องที่ไม่มีระเบียงล้างได้ ผมใช้ถุงรองน้ำคลุมเครื่องล้างในห้อง และปูผ้าใบกันเปื้อน 2 ชั้น",
@@ -116,7 +115,6 @@ const T = {
     dirLead: `${condoDirectory.length} condo buildings inside my service area, grouped by sub-district. Type your building's name to search. I clean, repair and install aircon in rooms in every building listed, at the same price everywhere, with no travel fee.`,
     search: "Type your condo's name, e.g. Supalai, dcondo, One Plus", empty: "Not in the list? Send me the building name on LINE and I'll confirm whether it's inside my area.",
     brandsH: "Developer pages", count: (n: number) => `${n} buildings`, areaLink: "Area page",
-    built: (y: number) => `completed ${y}`, floors: (f: string) => `${f} floors`,
     notListed: "Can't find your building? This list is compiled from public property listings and may not include every building. Send me the name; I work in every building inside my service area.",
     source: "Compiled from publicly published project data (zmyhome, baania, condonayoo, dotproperty, fazwaz and developers' sites), with the sub-district checked against each project's address, as of September 2026. Project names belong to their owners; I am not an agent or partner of any project.",
     line: "Send your condo name on LINE", call: "Call",
@@ -125,13 +123,13 @@ const T = {
     bH1: (b: CondoBrand) => `Aircon cleaning in ${b.en} condos in Chiang Mai`,
     bLead: (b: CondoBrand, n: number) => `The ${n} ${b.developerEn} condo projects in Chiang Mai inside my service area, with the building details worth knowing before you book. I clean, repair and install aircon in rooms in every one of them, at the same price as everywhere else, quoted before I start.`,
     projH: (b: CondoBrand) => `${b.en} condo projects in Chiang Mai`,
-    head: ["Project", "Sub-district", "Road", "Buildings / floors / units", "Completed"],
+    head: ["Project", "Sub-district", "Road", "Buildings / units"],
     alt: (t: string) => `some sources say ${tambonRoman[t] ?? t}`,
-    bld: (b?: number, f?: number, u?: number) => [b && `${b} bldg`, f && `${f} floors`, u && `${u} units`].filter(Boolean).join(" · ") || "–",
+    bld: (b?: number, u?: number) => [b && `${b} bldg`, u && `${u} units`].filter(Boolean).join(" · ") || "–",
     upcomingH: "Projects not yet completed", upcomingNote: "Not yet handed over. Once rooms are handed over I take jobs there as usual.",
     typeH: "Aircon work in these buildings",
-    high: (lo: number, hi: number) => `High-rise, ${lo === hi ? lo : `${lo}–${hi}`} floors: equipment has to go up by lift, and buildings like this usually set the hours when technicians may work. Check with the juristic office and tell me before booking so I can schedule within those hours.`,
-    low: (lo: number, hi: number) => `Low-rise, ${lo === hi ? lo : `${lo}–${hi}`} floors: projects often have several buildings. Tell me the building and floor so I can plan carrying the equipment and allow enough time.`,
+    high: () => `High-rise buildings: equipment has to go up by lift, and buildings like this usually set the hours when technicians may work. Check with the juristic office and tell me before booking so I can schedule within those hours.`,
+    low: () => `Low-rise buildings: projects often have several buildings. Tell me the building and floor so I can plan carrying the equipment and allow enough time.`,
     common: [
       "Most condo rooms have the outdoor unit on the balcony or in a service ledge on the building wall. Send a photo of where yours is and I'll bring the right equipment.",
       "Rooms without a balcony can be cleaned: I use a drainage cover bag around the unit and lay a two-layer protective sheet.",
@@ -160,7 +158,6 @@ const T = {
     dirLead: `我服务范围内的 ${condoDirectory.length} 个公寓项目，按分区排列，输入楼盘名称即可搜索。名单中的每个项目我都提供上门清洗、维修和安装空调，各区同一价格，不收路费。`,
     search: "输入公寓名称，例如 Supalai、dcondo、One Plus", empty: "名单里没有？用 LINE 把楼名发给我，我帮您确认是否在服务范围内。",
     brandsH: "开发商专页", count: (n: number) => `${n} 个项目`, areaLink: "分区页面",
-    built: (y: number) => `${y} 年竣工`, floors: (f: string) => `${f} 层`,
     notListed: "找不到您的公寓？本名单整理自公开的房产信息，可能未包含所有楼盘。把楼名发给我，服务范围内的楼盘我都接。",
     source: "整理自公开发布的项目资料（zmyhome、baania、condonayoo、dotproperty、fazwaz 及开发商官网），并按项目地址核对分区，截至 2026 年 9 月。项目名称归各自所有者，本店不是任何项目的代理或合作方。",
     line: "用 LINE 发公寓名称", call: "致电",
@@ -169,13 +166,13 @@ const T = {
     bH1: (b: CondoBrand) => `清迈 ${b.en} 公寓空调上门清洗`,
     bLead: (b: CondoBrand, n: number) => `${b.developerEn} 在清迈、位于我服务范围内的 ${n} 个公寓项目，以及预约前值得了解的楼栋信息。每个项目的房间我都提供空调清洗、维修和安装，价格与其他地区相同，开工前报价。`,
     projH: (b: CondoBrand) => `清迈的 ${b.en} 公寓项目`,
-    head: ["项目", "分区", "道路", "栋数 / 层数 / 户数", "竣工"],
+    head: ["项目", "分区", "道路", "栋数 / 户数"],
     alt: (t: string) => `部分资料称 ${tambonRoman[t] ?? t}`,
-    bld: (b?: number, f?: number, u?: number) => [b && `${b} 栋`, f && `${f} 层`, u && `${u} 户`].filter(Boolean).join(" · ") || "–",
+    bld: (b?: number, u?: number) => [b && `${b} 栋`, u && `${u} 户`].filter(Boolean).join(" · ") || "–",
     upcomingH: "尚未竣工的项目", upcomingNote: "尚未交房，交房后照常接单。",
     typeH: "这些楼盘里的空调工作",
-    high: (lo: number, hi: number) => `高层 ${lo === hi ? lo : `${lo}–${hi}`} 层：设备要靠电梯运送，这类大楼通常规定技师可进入的时段。请先向公寓管理处确认，预约前告诉我，我会把时间排在可进入的时段内。`,
-    low: (lo: number, hi: number) => `低层 ${lo === hi ? lo : `${lo}–${hi}`} 层：一个项目常有好几栋楼。请告诉我楼栋和楼层，方便我安排搬运设备并预留足够时间。`,
+    high: () => `高层楼：设备要靠电梯运送，这类大楼通常规定技师可进入的时段。请先向公寓管理处确认，预约前告诉我，我会把时间排在可进入的时段内。`,
+    low: () => `低层楼：一个项目常有好几栋楼。请告诉我楼栋和楼层，方便我安排搬运设备并预留足够时间。`,
     common: [
       "大多数公寓的室外机放在阳台或外墙的设备位上。先拍一张室外机位置的照片发给我，我会带对设备。",
       "没有阳台的房间也能洗：我用接水罩包住室内机清洗，并铺两层防污布。",
@@ -277,7 +274,7 @@ export function CondoDirectoryView({ lang }: { lang: CondoLang }) {
                         {lang !== "th" && c.th && <span className="ml-2 text-sm font-normal text-ink-soft" lang="th">{c.th}</span>}
                       </p>
                       <p className="mt-0.5 text-sm leading-6 text-ink-soft">
-                        {(() => { const k = factsOf(c); return [lang === "th" ? c.r : null, k.f && t.floors(k.f), k.y && t.built(k.y)].filter(Boolean).join(" · "); })()}
+                        {(() => { const k = factsOf(c); return [lang === "th" ? c.r : null].filter(Boolean).join(" · "); })()}
                       </p>
                     </li>
                   ))}
@@ -354,8 +351,7 @@ export function CondoBrandView({ b, lang }: { b: CondoBrand; lang: CondoLang }) 
                     <dt className="text-ink-soft">{t.head[1]}</dt>
                     <dd>{a ? <Link href={areaPath(lang, a.slug)} className="text-brand-700 hover:underline">{tName(lang, x.tambon)}</Link> : tName(lang, x.tambon)}{x.tambonAlt && <span className="text-ink-soft"> ({t.alt(x.tambonAlt)})</span>}</dd>
                     <dt className="text-ink-soft">{t.head[2]}</dt><dd>{lang === "th" ? x.road : x.roadEn}</dd>
-                    <dt className="text-ink-soft">{t.head[3]}</dt><dd>{t.bld(x.buildings, x.floors, x.units)}</dd>
-                    <dt className="text-ink-soft">{t.head[4]}</dt><dd>{x.year ? (lang === "th" ? x.year + 543 : x.year) : "–"}</dd>
+                    <dt className="text-ink-soft">{t.head[3]}</dt><dd>{t.bld(x.buildings, x.units)}</dd>
                   </dl>
                 </li>
               );
@@ -374,8 +370,7 @@ export function CondoBrandView({ b, lang }: { b: CondoBrand; lang: CondoLang }) 
                       <td className="px-4 py-3 font-semibold">{(() => { const c = condoOfBrandProject(x.en); const label = lang === "th" ? x.th : x.en; return c ? <Link href={condoPath(lang, c.s)} className="hover:text-brand-700 hover:underline">{label}</Link> : label; })()}</td>
                       <td className="px-4 py-3">{a ? <Link href={areaPath(lang, a.slug)} className="text-brand-700 hover:underline">{tName(lang, x.tambon)}</Link> : tName(lang, x.tambon)}{x.tambonAlt && <span className="block text-xs text-ink-soft">{t.alt(x.tambonAlt)}</span>}</td>
                       <td className="px-4 py-3">{lang === "th" ? x.road : x.roadEn}</td>
-                      <td className="px-4 py-3">{t.bld(x.buildings, x.floors, x.units)}</td>
-                      <td className="px-4 py-3">{x.year ? (lang === "th" ? x.year + 543 : x.year) : "–"}</td>
+                      <td className="px-4 py-3">{t.bld(x.buildings, x.units)}</td>
                     </tr>
                   );
                 })}
@@ -398,8 +393,8 @@ export function CondoBrandView({ b, lang }: { b: CondoBrand; lang: CondoLang }) 
         <div className="wrap max-w-3xl">
           <h2 className="h2">{t.typeH}</h2>
           <ul className="mt-6 space-y-4">
-            {hi.length > 0 && <li className="card p-5 text-[15px] leading-8 text-ink-soft"><IconCheck className="mr-2 inline h-5 w-5 text-mint" />{t.high(Math.min(...hi), Math.max(...hi))}</li>}
-            {lo.length > 0 && <li className="card p-5 text-[15px] leading-8 text-ink-soft"><IconCheck className="mr-2 inline h-5 w-5 text-mint" />{t.low(Math.min(...lo), Math.max(...lo))}</li>}
+            {hi.length > 0 && <li className="card p-5 text-[15px] leading-8 text-ink-soft"><IconCheck className="mr-2 inline h-5 w-5 text-mint" />{t.high()}</li>}
+            {lo.length > 0 && <li className="card p-5 text-[15px] leading-8 text-ink-soft"><IconCheck className="mr-2 inline h-5 w-5 text-mint" />{t.low()}</li>}
             {t.common.map((c) => <li key={c} className="card p-5 text-[15px] leading-8 text-ink-soft"><IconCheck className="mr-2 inline h-5 w-5 text-mint" />{c}</li>)}
           </ul>
         </div>
