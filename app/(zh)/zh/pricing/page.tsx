@@ -5,6 +5,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { PriceCalculator } from "@/components/PriceCalculator";
 import { calcRows } from "@/lib/calc-rows";
+import { PaymentBox } from "@/components/PaymentBox";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "清迈空调清洗价格表 | Pro Fresh Care";
@@ -117,6 +118,8 @@ export default function ZhPricingPage() {
           </div>
         </div>
       </section>
+
+      <PaymentBox lang="zh-CN" />
 
       <section className="section bg-sand" lang="zh-CN">
         <div className="wrap max-w-3xl">

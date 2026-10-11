@@ -5,6 +5,7 @@ import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import { PriceCalculator } from "@/components/PriceCalculator";
 import { calcRows } from "@/lib/calc-rows";
+import { PaymentBox } from "@/components/PaymentBox";
 import { IconPhone, IconLine, IconCheck, IconChevron } from "@/components/Icons";
 
 const title = "Aircon Cleaning Prices in Chiang Mai | Pro Fresh Care";
@@ -125,6 +126,8 @@ export default function EnPricingPage() {
           </div>
         </div>
       </section>
+
+      <PaymentBox lang="en" />
 
       <section className="section bg-sand" lang="en">
         <div className="wrap max-w-3xl">

@@ -345,7 +345,7 @@ export default function ChinesePage() {
               },
               {
                 t: "完工验收后付款",
-                d: "现金或泰国银行转账均可。需要增值税发票或公司抬头收据请提前说明。",
+                d: "现金或泰国银行转账均可，没有泰国银行账户付现金即可。需要增值税发票或公司抬头收据请提前说明。",
               },
             ].map((x, i) => (
               <li key={x.t} className="card flex items-start gap-4 p-5">

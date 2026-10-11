@@ -380,7 +380,7 @@ export default function EnglishPage() {
               },
               {
                 t: "Pay when it is done",
-                d: "Cash or Thai bank transfer once you have seen the finished work. Receipt in the company name on request.",
+                d: "Cash or Thai bank transfer once you have seen the finished work — no Thai bank account needed, cash is fine. Receipt in the company name on request.",
               },
             ].map((x, i) => (
               <li key={x.t} className="card flex items-start gap-4 p-5">
