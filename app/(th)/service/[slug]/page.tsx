@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu } from "@/lib/site";
+import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu, coverage } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, videoSchema, jsonLd } from "@/lib/schema";
@@ -240,6 +240,27 @@ export default async function ServicePage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+            )}
+            {/* กล่องสรุปบริการล้างเครื่องซักผ้า (16 ต.ค. 2569)
+                ผลค้นหา "ล้างเครื่องซักผ้า เชียงใหม่" มีกล่องสรุปจาก AI ของ Google ขึ้นบนสุด ลิสต์ร้านเป็นรายการ
+                ชื่อร้าน · พื้นที่ · ราคา · เบอร์ แต่ไม่ลิสต์เรา (เราเป็นแค่ลิงก์อ้างอิง) และคลิกหน้านี้เป็น 0 ตั้งแต่ 4 ต.ค.
+                จึงสรุปข้อเท็จจริงเป็นแบบเดียวกันไว้ใกล้หัวหน้า ให้ทั้งคนและ AI อ่านครบในที่เดียว
+                ทุกบรรทัดดึงจากค่ากลาง (p, coverage, site) ห้ามพิมพ์ตัวเลขเอง และห้ามพาดพิงร้านอื่น */}
+            {isWashingMachine && (
+              <dl className="card mt-6 divide-y divide-slate-100 text-[15px]">
+                {[
+                  ["ร้าน", `${site.name} (${site.legalName}) ช่างเข้าล้างถึงบ้าน`],
+                  ["พื้นที่", `${[...coverage].sort((a, b) => Number(!!b.all) - Number(!!a.all)).map((c) => c.amphoe).join(" ")} ไม่คิดค่าเดินทาง`],
+                  ["ราคา", `ฝาบน ไม่เกิน 15 กก. ${p.washer.topLoad} บาท · 15.1–19 กก. ${p.washer.topLoadMid} บาท · มากกว่า 19 กก. ${p.washer.topLoadBig} บาท · ฝาหน้าเริ่ม ${p.washer.frontLoad} บาท`],
+                  ["ที่รวมในราคา", "ถอดถังและชิ้นส่วนออกมาล้างทุกชิ้น ล้างท่อน้ำทิ้ง ประกอบกลับ และทดสอบให้ตรวจรับ ใช้เวลาราว 3 ชั่วโมงต่อเครื่อง รับประกันงาน 30 วัน"],
+                  ["ติดต่อ", `โทร ${site.phone} · LINE ${bookingLineId}`],
+                ].map(([k, v]) => (
+                  <div key={k} className="grid gap-1 px-4 py-3 sm:grid-cols-[7.5rem_1fr] sm:gap-4">
+                    <dt className="font-bold text-ink">{k}</dt>
+                    <dd className="leading-7 text-ink-soft">{v}</dd>
+                  </div>
+                ))}
+              </dl>
             )}
             {/* วันที่จริงจาก git ของไฟล์ข้อมูลบริการ ไม่ใช่วันที่ build — ให้ทั้งลูกค้าและ Google เห็นว่าราคายังดูแลอยู่ */}
             <p className="mt-1.5 text-xs text-ink-soft">
