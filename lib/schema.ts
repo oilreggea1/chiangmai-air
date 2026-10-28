@@ -147,7 +147,7 @@ export function localBusinessSchema() {
     ],
     // googleBusinessUrl ยังว่างจนกว่าโปรไฟล์จะยืนยันผ่าน จึงกรองออกก่อน
     // ถ้าปล่อยสตริงว่างเข้าไป Rich Results Test จะฟ้องว่า URL ไม่ถูกต้องทั้งก้อน
-    sameAs: [site.facebook, site.lineUrl, site.lineUrl2, site.googleBusinessUrl].filter(Boolean),
+    sameAs: [site.facebook, site.facebook2, site.lineUrl, site.lineUrl2, site.googleBusinessUrl].filter(Boolean),
     employee: { "@id": PERSON_ID },
     areaServed: areas.map((a) => ({
       "@type": "City",

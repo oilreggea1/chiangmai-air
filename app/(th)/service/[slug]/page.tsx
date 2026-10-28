@@ -248,14 +248,14 @@ export default async function ServicePage({ params }: Props) {
                 ทุกบรรทัดดึงจากค่ากลาง (p, coverage, site) ห้ามพิมพ์ตัวเลขเอง และห้ามพาดพิงร้านอื่น */}
             {isWashingMachine && (
               <dl className="card mt-6 divide-y divide-slate-100 text-[15px]">
-                {[
+                {([
                   ["ร้าน", `${site.name} (${site.legalName}) ช่างเข้าล้างถึงบ้าน`],
                   ["พื้นที่", `${[...coverage].sort((a, b) => Number("all" in b) - Number("all" in a)).map((c) => c.amphoe).join(" ")} ไม่คิดค่าเดินทาง`],
                   ["ราคา", `ฝาบน ไม่เกิน 15 กก. ${p.washer.topLoad} บาท · 15.1–19 กก. ${p.washer.topLoadMid} บาท · มากกว่า 19 กก. ${p.washer.topLoadBig} บาท · ฝาหน้าเริ่ม ${p.washer.frontLoad} บาท`],
                   ["ที่รวมในราคา", "ถอดถังและชิ้นส่วนออกมาล้างทุกชิ้น ล้างท่อน้ำทิ้ง ประกอบกลับ และทดสอบให้ตรวจรับ ใช้เวลาราว 3 ชั่วโมงต่อเครื่อง รับประกันงาน 30 วัน"],
-                  ["ติดต่อ", `โทร ${site.phone} · LINE ${bookingLineId}`],
-                ].map(([k, v]) => (
-                  <div key={k} className="grid gap-1 px-4 py-3 sm:grid-cols-[7.5rem_1fr] sm:gap-4">
+                  ["ติดต่อ", <>โทร {site.phone} · LINE {bookingLineId} · <a href={site.facebook2} target="_blank" rel="noopener" className="font-semibold text-brand-700 hover:underline">เพจ Facebook ล้างเครื่องซักผ้า</a></>],
+                ] as [string, React.ReactNode][]).map(([k, v]) => (
+                  <div key={String(k)} className="grid gap-1 px-4 py-3 sm:grid-cols-[7.5rem_1fr] sm:gap-4">
                     <dt className="font-bold text-ink">{k}</dt>
                     <dd className="leading-7 text-ink-soft">{v}</dd>
                   </div>

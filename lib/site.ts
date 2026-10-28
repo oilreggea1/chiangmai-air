@@ -138,6 +138,10 @@ export const site = {
   lineId2: "@794xvrnm",
   lineUrl2: "https://line.me/ti/p/~@794xvrnm",
   facebook: "https://www.facebook.com/profile.php?id=61558237094328",
+  /** เพจล้างเครื่องซักผ้า (เจ้าของยืนยัน 28 ต.ค. 2569) — แยกจากเพจแอร์ด้านบน
+   *  ใส่ใน sameAs ของ schema + ฟุตเตอร์ + กล่องสรุปหน้าเครื่องซักผ้า เพื่อบอก Google ว่าเพจนี้คือร้านเดียวกับเว็บ
+   *  (กล่อง AI ของ Google คำ "ล้างเครื่องซักผ้า เชียงใหม่" ลิสต์ร้านจากเพจ Facebook) */
+  facebook2: "https://www.facebook.com/profile.php?id=61570923269775",
   /**
    * TODO(เจ้าของ): ลิงก์โปรไฟล์ Google Business Profile ของร้าน
    *

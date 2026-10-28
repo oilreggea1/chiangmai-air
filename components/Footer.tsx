@@ -63,6 +63,9 @@ function IntlFooter({ lang, year }: { lang: "en" | "zh-CN"; year: number }) {
           <a href={site.facebook} target="_blank" rel="noopener" className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline">
             {en ? "See more work on Facebook →" : "在 Facebook 查看更多实拍 →"}
           </a>
+          <a href={site.facebook2} target="_blank" rel="noopener" className="mt-2 block text-sm font-semibold text-brand-700 hover:underline">
+            {en ? "Washing machine cleaning on Facebook →" : "洗衣机清洗 Facebook 主页 →"}
+          </a>
         </div>
 
         <div>
@@ -217,7 +220,15 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
             rel="noopener"
             className="mt-4 inline-block text-sm font-semibold text-brand-700 hover:underline"
           >
-            ดูผลงานเพิ่มเติมบน Facebook →
+            เพจงานแอร์บน Facebook →
+          </a>
+          <a
+            href={site.facebook2}
+            target="_blank"
+            rel="noopener"
+            className="mt-2 block text-sm font-semibold text-brand-700 hover:underline"
+          >
+            เพจล้างเครื่องซักผ้าบน Facebook →
           </a>
         </div>
 
