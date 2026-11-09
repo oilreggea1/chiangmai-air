@@ -29,6 +29,7 @@ const S = {
     noteRepair: "ค่าซ่อมจริงผมแจ้งหลังตรวจเช็คและก่อนเริ่มซ่อม ค่าตรวจหักคืนเมื่อตกลงซ่อม ",
     noteHours: "งานนอกเวลาทำการมีค่าบริการเพิ่มเติม", send: "ส่งรายการนี้ทาง LINE เพื่อจองคิว",
     sendNote: "",
+    listH: "รายการที่เลือก", clear: "ล้างทั้งหมด", remove: (l: string) => `ลบ ${l}`,
     msgHead: "สอบถามคิวและยืนยันราคา", msgSymptom: "อาการที่พบ:", msgTotal: "ยอดประมาณ", msgTail: "วันที่สะดวก:\nพื้นที่ / หมู่บ้าน:",
   },
   en: {
@@ -42,6 +43,7 @@ const S = {
     noteRepair: "The repair itself is quoted after diagnosis and before any work, and the diagnostic fee comes off the bill if you go ahead. ",
     noteHours: "Work outside working hours carries an extra charge.", send: "Send this list on LINE to book",
     sendNote: "The list is sent in Thai so the booking is handled quickly. Add anything else in English below it.",
+    listH: "Your list", clear: "Clear all", remove: (l: string) => `Remove ${l}`,
     msgHead: "Booking request and price check", msgSymptom: "Problem noticed:", msgTotal: "Estimate", msgTail: "Preferred date:\nArea / building:",
   },
   "zh-CN": {
@@ -55,6 +57,7 @@ const S = {
     noteRepair: "维修费用在检测后、开修前报价；决定维修的话检测费从账单中扣除。",
     noteHours: "工作时间以外另收附加费。", send: "用 LINE 发送清单预约",
     sendNote: "清单会以泰文发送，方便尽快安排。其他情况可以在下面用中文补充。",
+    listH: "已选项目", clear: "全部清除", remove: (l: string) => `删除 ${l}`,
     msgHead: "预约及确认价格", msgSymptom: "故障情况：", msgTotal: "预估", msgTail: "方便的日期：\n地区 / 楼盘：",
   },
 } as const;
@@ -93,6 +96,7 @@ export function PriceCalculator({ rows, lineAir, lineWasher, lang = "th" }: { ro
   const summary = useMemo(() => {
     let lo = 0, hi = 0, from = false, units = 0;
     const lines: string[] = [];
+    const items: { key: string; group: CalcGroup; label: string; q: number; lo: number; hi: number; from: boolean }[] = [];
     for (const r of rows) {
       const q = qty[r.key] ?? 0;
       if (!q) continue;
@@ -100,13 +104,14 @@ export function PriceCalculator({ rows, lineAir, lineWasher, lang = "th" }: { ro
       const uLo = bulk ? r.bulkUnit! : r.unitLo;
       const uHi = bulk ? r.bulkUnit! : r.unitHi;
       lo += uLo * q; hi += uHi * q; units += q;
+      items.push({ key: r.key, group: r.group, label: r.label, q, lo: uLo * q, hi: uHi * q, from: !!r.from });
       if (r.from) from = true;
       // ข้อความ LINE เป็นภาษาไทยเสมอ แม้ลูกค้ากดจากหน้าอังกฤษ/จีน (เจ้าของสั่ง 29 ก.ย. 2569 ให้แอดมินอ่านได้ทันที)
       const th = S.th;
       const thMoney = uLo === uHi ? `${fmt(uLo * q)} ${th.baht}` : `${fmt(uLo * q)}–${fmt(uHi * q)} ${th.baht}`;
       lines.push(`- ${r.labelTh ?? r.label} ${q} ${th.unit} ≈ ${r.from ? th.from : ""}${thMoney}`);
     }
-    return { lo, hi, from, units, lines };
+    return { lo, hi, from, units, lines, items };
   }, [qty, rows, t]);
 
   const washerOnly = summary.units > 0 && rows.every((r) => r.group === "washer" || !(qty[r.key] ?? 0));
@@ -174,7 +179,38 @@ export function PriceCalculator({ rows, lineAir, lineWasher, lang = "th" }: { ro
           <p className="text-sm leading-6 text-ink-soft">{t.empty}</p>
         ) : (
           <>
-            <p className="text-sm font-semibold text-brand-700">{t.est(summary.units)}</p>
+            {/* สรุปรายการที่เลือกจากทุกแท็บ (9 พ.ย. 2569) — เจ้าของบอกว่าเห็นแต่ยอดรวม ไม่รู้ว่ากดอะไรไปบ้าง
+                โดยเฉพาะเมื่อเลือกข้ามแท็บ รายการในแท็บอื่นมองไม่เห็นเลย */}
+            <div className="flex items-baseline justify-between gap-3">
+              <p className="text-sm font-bold text-ink">{t.listH}</p>
+              <button type="button" onClick={() => setQty({})} className="text-xs font-semibold text-brand-700 hover:underline">
+                {t.clear}
+              </button>
+            </div>
+            <ul className="mt-2 divide-y divide-brand-100 rounded-xl bg-white/80 px-3">
+              {summary.items.map((it) => (
+                <li key={it.key} className="flex items-start gap-2 py-2.5">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-semibold text-brand-700">{t.tabs[it.group]}</p>
+                    <p className="text-[14px] leading-6 text-ink">
+                      {it.label} <span className="font-semibold whitespace-nowrap">× {it.q}</span>
+                    </p>
+                  </div>
+                  <p className="shrink-0 pt-4 text-[14px] leading-6 font-semibold whitespace-nowrap tabular-nums text-ink">
+                    {it.from ? t.from : ""}{money(it.lo, it.hi)}{it.from ? t.fromSuf : ""}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setQty((q) => ({ ...q, [it.key]: 0 }))}
+                    className="mt-3.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg text-ink-soft hover:bg-slate-100 hover:text-ink"
+                    aria-label={t.remove(it.label)}
+                  >
+                    ×
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm font-semibold text-brand-700">{t.est(summary.units)}</p>
             <p className="mt-1 text-[clamp(1.6rem,1.2rem+1.6vw,2.2rem)] leading-tight font-extrabold text-ink">
               {summary.from ? t.from : ""}{total}{summary.from ? t.fromSuf : ""}
             </p>
