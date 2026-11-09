@@ -17,6 +17,7 @@ export const article: Article = {
     "แอร์มีกลิ่นอับ", "แอร์กลิ่นเปรี้ยว", "เชื้อราในแอร์ อันตรายไหม",
     "ถอดล้างแอร์ เชียงใหม่", "แอร์เหม็นอับ แก้ยังไง", "ล้างแอร์ Premium Full Wash",
   ],
+  relatedCases: ["mitsubishi-mr-slim-wash-2569-06", "toshiba-inverter-wash-2569-05", "wall-air-blower-dust", "mueang-samsung-wash-2569-05"],
   relatedService: "lang-air",
   related: ["lang-air-thammada-vs-premium", "air-nam-yot-kae-yang-rai", "pm25-lang-air-chiangmai"],
   blocks: [

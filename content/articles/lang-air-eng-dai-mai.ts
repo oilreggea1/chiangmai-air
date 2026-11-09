@@ -17,6 +17,7 @@ export const article: Article = {
     "ล้างแอร์เอง", "ล้างแอร์เองได้ไหม", "ล้างแผ่นกรองแอร์เอง",
     "ดูแลแอร์ด้วยตัวเอง", "ล้างแอร์เองแล้วพัง",
   ],
+  relatedCases: ["standard-air-wash-room-protection", "foam-coil-wash-2569-05", "wall-air-evaporator-dark-deposit", "outdoor-condenser-pressure-wash"],
   relatedService: "lang-air",
   related: ["chek-chang-lang-air", "lang-air-boi-kae-nai", "air-mai-yen-sa-het"],
   blocks: [

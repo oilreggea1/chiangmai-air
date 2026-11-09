@@ -17,6 +17,7 @@ export const article: Article = {
     "ล้างแอร์บ่อยแค่ไหน", "ควรล้างแอร์กี่เดือนครั้ง", "รอบล้างแอร์ เชียงใหม่",
     "ล้างแอร์ปีละกี่ครั้ง", "ล้างแอร์คอนโด หอพัก",
   ],
+  relatedCases: ["toshiba-inverter-wash-2569-05", "haier-outdoor-coil-wash-2569-05", "wall-air-filter-heavy-dust", "mueang-four-units-wash-2569-06"],
   relatedService: "lang-air",
   related: ["pm25-lang-air-chiangmai", "lang-air-thammada-vs-premium", "chek-chang-lang-air"],
   blocks: [

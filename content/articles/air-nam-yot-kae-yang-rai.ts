@@ -17,6 +17,7 @@ export const article: Article = {
     "แอร์น้ำหยด เชียงใหม่", "ท่อน้ำทิ้งแอร์ตัน", "แอร์น้ำหยด แก้ยังไง",
     "แอร์น้ำหยดลงเฟอร์นิเจอร์", "ล้างท่อน้ำทิ้งแอร์", "แอร์หยดน้ำ สาเหตุ",
   ],
+  relatedCases: ["mueang-sharp-gauge-check-wash-2569-05", "air-drain-hose-sediment", "mueang-samsung-wash-2569-05", "air-drain-tray-clean-result"],
   relatedService: "som-air",
   related: ["air-men-ap-chuea-ra", "air-mai-yen-sa-het", "lang-air-boi-kae-nai"],
   blocks: [

@@ -17,6 +17,7 @@ export const article: Article = {
     "แอร์อินเวอร์เตอร์ กับ แอร์ธรรมดา", "อินเวอร์เตอร์ คุ้มไหม", "แอร์ประหยัดไฟ",
     "ค่าซ่อมแผงวงจรแอร์อินเวอร์เตอร์", "น้ำยา R32",
   ],
+  relatedCases: ["lg-dual-inverter-wash-2569-06", "toshiba-inverter-wash-2569-05", "saraphi-daikin-install-2569-05", "midea-chione-install-2569-06"],
   relatedService: "tid-tang-air",
   related: ["khamnuan-btu", "kha-tid-tang-air-ruam-arai", "nam-ya-r32-r410a-r22"],
   blocks: [

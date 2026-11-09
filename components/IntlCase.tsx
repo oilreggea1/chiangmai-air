@@ -132,7 +132,12 @@ export function IntlCaseHub({ lang }: { lang: IntlLang }) {
 export function intlCaseMetadata(c: WorkCase, lang: IntlLang): Metadata {
   const t = T[lang];
   const ct = caseText(lang, c.slug)!;
-  const head = ct.title.split(":")[0].trim();
+  const headOf = (slug: string) => (caseText(lang, slug)?.title ?? "").split(":")[0].trim();
+  // หัวข้อสั้น (ก่อนเครื่องหมาย :) ซ้ำกันได้ เช่น เคสเครื่องซักผ้าฝาบนหลายเคส (audit 9 พ.ย. 2569 เจอ 2 คู่ title ซ้ำ)
+  // ถ้าซ้ำกับเคสอื่นให้ใช้ชื่อเต็มแทน Google จะได้แยกหน้าออกจากกัน
+  const shortHead = headOf(c.slug);
+  const dup = workCases.some((w) => w.slug !== c.slug && headOf(w.slug) === shortHead);
+  const head = dup ? ct.title.trim() : shortHead;
   const title = lang === "en" ? (head.length > 44 ? head : `${head} | Chiang Mai`) : `${head}｜清迈`;
   const description = ct.finding.length > 158 ? `${ct.finding.slice(0, ct.finding.lastIndexOf(" ", 155))}…` : ct.finding;
   return {

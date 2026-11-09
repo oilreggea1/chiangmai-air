@@ -94,6 +94,9 @@ const nextConfig: NextConfig = {
       // แม่ริมอยู่นอกรัศมี 10 กม. เช่นเดียวกับแม่ออน แต่ตอนตัดหน้าออกลืมทำ 301 ไว้
       // Search Console จึงรายงานเป็น 404 หนึ่งรายการมาตั้งแต่ 17 ส.ค. 2569 (ตรวจพบ 13 ก.ย.)
       { source: "/area/mae-rim", destination: "/area", permanent: true },
+      // Search Console พบ 404 ที่ /case-study/ceiling-air-access-panel (4 พ.ย. 2569) ไม่เคยมีหน้านี้ใน repo
+      // น่าจะเป็นลิงก์จากภายนอก ชื่อสื่อถึงแอร์แขวน/ฝังฝ้า จึงพาไปหน้าบริการนั้นแทนการปล่อย 404
+      { source: "/case-study/ceiling-air-access-panel", destination: "/service/lang-air-khwaen-cassette", permanent: true },
 
       // หมวดผลงานที่ตัดออกเพราะเจ้าของไม่ได้รับซ่อมเครื่องซักผ้า รับเฉพาะงานล้าง
       { source: "/portfolio/wm-repair", destination: "/portfolio/wm-top", permanent: true },

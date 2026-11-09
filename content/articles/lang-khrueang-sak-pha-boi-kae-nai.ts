@@ -21,6 +21,7 @@ export const article: Article = {
     "ล้างเครื่องซักผ้า เชียงใหม่", "ถอดล้างเครื่องซักผ้า ปีละกี่ครั้ง",
     "เครื่องซักผ้ามีกลิ่น ต้องล้างไหม", "ล้างถังเครื่องซักผ้า ราคา",
   ],
+  relatedCases: ["sansai-lg-topload-2569-08", "hangdong-hitachi-topload-2569-08", "mueang-haier-topload-2569-08", "lg-frontload-2569-08"],
   relatedService: "lang-washing-machine",
   related: ["lang-thang-sak-pha", "lang-khrueang-sak-pha-eng-dai-mai", "sak-pha-fa-na-vs-fa-bon"],
   blocks: [

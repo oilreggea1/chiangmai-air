@@ -7,6 +7,7 @@ import { articles, getArticle, relatedArticles } from "@/content/articles";
 import { faqSchema, breadcrumbSchema, jsonLd, PERSON_ID } from "@/lib/schema";
 import { clipDesc, share } from "@/lib/seo";
 import { translationsOf } from "@/content/articles-intl";
+import { workCases } from "@/lib/work-cases";
 import ArticleBody, { TableOfContents } from "@/components/ArticleBody";
 import { IconClock, IconChevron, IconEngineer } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
@@ -169,6 +170,32 @@ export default async function ArticlePage({ params }: Props) {
       <article className="wrap max-w-3xl py-8">
         <ArticleBody blocks={a.blocks} lineUrl={bookingLineUrl} lineId={bookingLineId} />
       </article>
+
+      {/* งานจริงของร้านที่เกี่ยวกับเรื่องนี้ (9 พ.ย. 2569) — หลักฐานจากหน้างานที่มีแค่ร้านเรา ดู relatedCases ใน content-types */}
+      {(() => {
+        const cs = (a.relatedCases ?? []).map((s) => workCases.find((w) => w.slug === s)).filter((w): w is (typeof workCases)[number] => !!w);
+        if (!cs.length) return null;
+        return (
+          <section className="wrap max-w-5xl pb-10">
+            <h2 className="h2">งานจริงของร้านที่เกี่ยวกับเรื่องนี้</h2>
+            <p className="lead mt-3">รายงานจากหน้างานที่ผมเข้าไปทำจริงในเชียงใหม่ พร้อมรูปก่อนและหลังทำงาน</p>
+            <ul className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {cs.map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/case-study/${item.slug}`} className="card group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lift">
+                    <Image src={item.images[0].src} alt={item.images[0].alt} width={720} height={540} sizes="(max-width: 640px) 100vw, 25vw" className="aspect-[4/3] w-full object-cover" />
+                    <div className="flex flex-1 flex-col p-5">
+                      <span className="text-xs font-bold text-brand-600">{item.service}{item.date ? ` · ${item.recorded}` : ""}</span>
+                      <h3 className="mt-2 font-bold leading-7 group-hover:text-brand-700">{item.title}</h3>
+                      <p className="mt-2 flex-1 text-sm leading-7 text-ink-soft">{item.finding}</p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })()}
 
       <FaqList items={a.faqs} title="คำถามที่พบบ่อย" />
 
