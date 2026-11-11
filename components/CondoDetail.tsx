@@ -141,9 +141,23 @@ const T = {
  * จึงเก็บเฉพาะหน้าไทยที่มีข้อมูลอาคารครบ (ชื่อไทย ถนน ปีที่สร้าง จำนวนชั้น)
  * ที่เหลือยังเปิดดูได้และลิงก์ไปต่อได้ตามปกติ แค่ตั้ง noindex และไม่อยู่ใน sitemap
  */
+/**
+ * 11 พ.ย. 2569 (เจ้าของสั่ง "ทำเลย" หลังเห็นข้อมูล): ลดหน้ารายโครงการที่ส่งให้ Google จาก 237 เหลือ 10
+ * Search Console 3 เดือน: หน้ารายโครงการไทยที่เคยมีคนเห็นในผลค้นหามีแค่ 10 หน้านี้ (หน้าละ 1–5 ครั้ง)
+ * และ Google ไม่ยอมเก็บ 221 หน้า ("พบแล้ว - ยังไม่ได้จัดทำดัชนี") จึงเลิกส่งหน้าที่เหลือ
+ * ให้ Google เอาแรงไปเก็บหน้าบริการ หน้าพื้นที่ และรายงานงานจริงแทน
+ * หน้าที่ตัดยังเปิดได้ปกติและลิงก์ภายในยังทำงาน (noindex,follow + ไม่อยู่ใน sitemap)
+ * จะเพิ่มหน้ากลับเข้ามา ให้ดูว่ามีคนเห็นใน Search Console ก่อน ห้ามเปิดคืนทั้งชุด
+ */
+const CONDO_KEEP_INDEXED = new Set([
+  "stylish-chiangmai", "impress-town-condominium", "sereno-airport-condo", "glory-condominium-chiangmai",
+  "chiang-mai-riverside-condominium", "the-new-concept-pool-villa-garden-view", "the-siri-condominium",
+  "punna-residence-2-at-nimman", "seven-stars-condominium", "arise-charoen-mueang",
+]);
+
 export function condoIndexable(c: CondoEntry, lang: CondoLang = "th") {
   const f = factsOf(c);
-  return lang === "th" && !!c.th && !!c.r && !!f.f && !!f.y;
+  return lang === "th" && CONDO_KEEP_INDEXED.has(c.s) && !!c.th && !!c.r && !!f.f && !!f.y;
 }
 
 export function condoDetailMetadata(c: CondoEntry, lang: CondoLang): Metadata {
