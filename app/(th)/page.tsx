@@ -12,6 +12,8 @@ import {
   serviceIcons, IconPhone, IconLine, IconCheck, IconPin, IconChevron, IconClock, IconShield, } from "@/components/Icons";
 import { CtaBand, FaqList, ReviewCard } from "@/components/Blocks";
 import { SlotBooking } from "@/components/SlotBooking";
+import { PreSmokeBooking } from "@/components/PreSmokeBooking";
+import PromoWindow from "@/components/PromoWindow";
 import { JobStoryCard } from "@/components/JobStoryCard";
 import { jobs } from "@/lib/jobs";
 import { groups, homeFeatured, jobsIn } from "@/lib/job-stories";
@@ -259,6 +261,11 @@ export default function Home() {
            ถ้าปล่อยไว้ ตัว HTML ที่ส่งให้ Google ยังมีโปรที่หมดอายุติดอยู่ แม้ผู้ใช้จะไม่เห็น ---------- */}
       <section className="section pt-0" id="install-booking">
         <div className="wrap space-y-5">
+          {/* จองคิวก่อนหมอกควัน (11 พ.ย. 2569) ราคาปกติ ไม่ใช่โปรลดราคา — ซ่อนอัตโนมัติหลัง 31 ม.ค. 2570
+              แต่ต้องถอดโค้ดออกจริงต้น ก.พ. 2570 ตามกติกา PromoWindow ด้านบน */}
+          <PromoWindow until="2027-01-31T23:59:59+07:00">
+            <PreSmokeBooking />
+          </PromoWindow>
 
           <div className="card overflow-hidden border-2 border-brand-200 bg-brand-50/60 p-6 sm:p-8">
             <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

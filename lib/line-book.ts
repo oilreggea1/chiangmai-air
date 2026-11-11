@@ -46,3 +46,8 @@ export const bookEveningUrlZh = lineBookUrl(
 export const bookSundayUrlZh = lineBookUrl(
   `我想提前预约周日的时段\n希望的周日：\n时间：\n${tailZh}`,
 );
+
+/** จองคิวล้างแอร์ก่อนฤดูหมอกควัน (11 พ.ย. 2569) ราคาปกติ ไม่มีส่วนลด — เจ้าของยังไม่ได้กำหนดโปร */
+export const bookPreSmokeMessage =
+  "ขอจองคิวล้างแอร์ก่อนหมอกควัน\nวันที่สะดวก (ช่วง ธ.ค.–ม.ค.):\nจำนวนเครื่อง / ขนาด BTU:\nพื้นที่ / หมู่บ้าน:";
+export const bookPreSmokeUrl = lineBookUrl(bookPreSmokeMessage);

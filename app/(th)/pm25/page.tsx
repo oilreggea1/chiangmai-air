@@ -9,6 +9,7 @@ import {
   IconPhone, IconLine, IconChevron, IconCheck, IconSnow, IconShield, IconClock, IconPin,
 } from "@/components/Icons";
 import { CtaBand, FaqList, Breadcrumbs } from "@/components/Blocks";
+import { PreSmokeBooking } from "@/components/PreSmokeBooking";
 
 const title = "ล้างแอร์สู้ฝุ่น PM2.5 เชียงใหม่ ก่อนหมอกควัน";
 const description =
@@ -250,6 +251,13 @@ export default function Pm25Page() {
       </section>
 
       {/* บริการ */}
+      {/* จองคิวก่อนหมอกควัน (11 พ.ย. 2569) — หน้านี้เป็นเรื่องฤดูหมอกควันอยู่แล้ว จึงไม่ต้องห่อ PromoWindow */}
+      <section className="section pt-0" id="book">
+        <div className="wrap max-w-4xl">
+          <PreSmokeBooking showPm25Link={false} />
+        </div>
+      </section>
+
       <section className="section bg-sand">
         <div className="wrap max-w-4xl">
           <h2 className="h2">บริการที่รองรับช่วงฤดูหมอกควัน</h2>
