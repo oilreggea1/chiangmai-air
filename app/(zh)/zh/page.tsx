@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, heroPhotos, coverage, coverageTotal, thumbOf, p, btu } from "@/lib/site";
+import { site, heroPhotos, coverage, coverageTotal, thumbOf, p, btu, airPackageFrom } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import {
@@ -73,8 +73,8 @@ const servicesZh = [
   {
     icon: IconInstall,
     name: "销售新机与二手机 · 旧机折抵",
-    price: "按机型报价",
-    desc: "新机和检测过的二手机都有，含安装。机器和安装由我一人负责，保修同时涵盖机器和安装。机器价格随机型和当期促销变动，所以按机型报价。二手机机身保修 1 个月。旧机也可以折抵，但要先看到实机才能定价。",
+    price: `含安装 ${airPackageFrom} 泰铢起`,
+    desc: "新机和检测过的二手机都有，含安装。机器和安装由我一人负责，保修同时涵盖机器和安装。新变频壁挂机的含安装价格按型号列在价目页，下单前我会在 LINE 上确认最新价格。二手机机身保修 1 个月。旧机也可以折抵，但要先看到实机才能定价。",
   },
   {
     icon: IconWasher,

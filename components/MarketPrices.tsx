@@ -1,35 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IconChevron } from "./Icons";
+import { IconChevron, IconLine } from "./Icons";
 import { marketPrices, marketPricesAsOf } from "@/lib/market-prices";
+import { bookAirPackageUrl } from "@/lib/line-book";
 import { thaiDate } from "@/lib/lastmod";
+import { p, btu } from "@/lib/site";
 
 /**
- * ตารางราคากลางแอร์ติดผนังอินเวอร์เตอร์ บนหน้าร้านแอร์ (29 ก.ย. 2569)
- * เจ้าของสั่งให้ใช้คำว่า "ราคากลาง" และบอกให้ชัดว่าราคาเปลี่ยนแปลงตลอดเวลา
- * ห้ามเขียนให้เข้าใจว่าเป็นราคาขายของร้าน และห้ามใส่ชื่อร้านต้นทาง
+ * ตารางราคาแอร์ติดผนังอินเวอร์เตอร์พร้อมติดตั้ง ของร้าน
+ *
+ * 14 พ.ย. 2569 เจ้าของสั่งให้ขายราคาเดียวกับห้างค้าปลีกรายใหญ่ → ตารางนี้เป็นราคาขายของร้านแล้ว (เดิม 29 ก.ย. เป็น "ราคากลาง")
+ * ห้ามใส่ชื่อห้างต้นทาง · ต้องบอกวันที่ของราคา และให้ยืนยันราคา/สต็อกทาง LINE ก่อนสั่งซื้อ
+ * ข้อมูลรายรุ่นอยู่ที่ lib/market-prices.ts ที่เดียว
  *
  * image = รูปประกอบที่ไม่ติดโลโก้ยี่ห้อ (เจ้าของสั่ง) ถ้าไม่ส่งมาจะไม่แสดงรูป
  */
 const fmt = (n: number) => n.toLocaleString("en-US");
 
-export function MarketPrices({ image, shopLink = false }: { image?: { src: string; alt: string; credit?: string }; shopLink?: boolean }) {
+export function MarketPrices({
+  image,
+  shopLink = false,
+  pageLink = true,
+}: {
+  image?: { src: string; alt: string; credit?: string };
+  shopLink?: boolean;
+  /** ปุ่มไปหน้าราคาแอร์พร้อมติดตั้ง ปิดเมื่อแสดงบนหน้านั้นเอง */
+  pageLink?: boolean;
+}) {
   const asOf = thaiDate(marketPricesAsOf);
   return (
     <section className="section bg-sand" id="market-price">
       <div className="wrap">
         <div className={image ? "grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center" : ""}>
           <div className="max-w-3xl">
-            <p className="eyebrow">ราคากลาง ณ {asOf}</p>
-            <h2 className="h2 mt-4">ราคากลางแอร์ติดผนังอินเวอร์เตอร์ ปี 2569</h2>
+            <p className="eyebrow">ราคา ณ {asOf}</p>
+            <h2 className="h2 mt-4">ราคาแอร์ติดผนังอินเวอร์เตอร์ พร้อมติดตั้ง</h2>
             <p className="lead mt-3">
-              ราคากลางจากร้านค้าปลีกเครื่องใช้ไฟฟ้ารายใหญ่ รวมค่าติดตั้งมาตรฐานแล้ว
-              ใช้เทียบงบประมาณเบื้องต้นก่อนเลือกรุ่น
+              ราคาในตารางรวมตัวเครื่องและงานติดตั้งมาตรฐานของผมแล้ว ได้แก่ ขาแขวน ท่อน้ำยาไม่เกิน 4 เมตร รางครอบ
+              และแวคคั่มระบบครบทุกขั้นตอน งานติดตั้งรับประกัน 1 ปี ตัวเครื่องรับประกันตามเงื่อนไขของผู้ผลิต
             </p>
             <p className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-7 text-amber-900">
-              ราคามีการเปลี่ยนแปลงตลอดเวลาตามรุ่นและโปรโมชั่นของแต่ละช่วง
-              ราคาในตารางเป็นราคากลาง ณ วันที่ {asOf} ไม่ใช่ราคาขายของร้าน
-              ราคาเครื่องที่ผมจำหน่ายแจ้งตามรุ่นทาง LINE ก่อนสั่งซื้อทุกครั้ง
+              ราคาแอร์ปรับตามรอบโปรโมชั่นของแต่ละยี่ห้อ ราคาในตารางเป็นราคา ณ วันที่ {asOf}
+              กดปุ่ม LINE ข้างรุ่นที่สนใจ ผมยืนยันราคาและวันติดตั้งให้ก่อนสั่งซื้อทุกครั้ง
             </p>
           </div>
           {image && (
@@ -53,7 +65,7 @@ export function MarketPrices({ image, shopLink = false }: { image?: { src: strin
                   </span>
                 </div>
                 <ul className="mt-3 divide-y divide-slate-100">
-                  {b.units.map((u) => (
+                  {[...b.units].sort((x, y) => x.price - y.price).map((u) => (
                     <li key={u.model} className="flex items-center justify-between gap-3 py-2">
                       <span className="min-w-0">
                         <span className="block text-[15px] font-semibold text-ink">{u.brand}</span>
@@ -69,7 +81,19 @@ export function MarketPrices({ image, shopLink = false }: { image?: { src: strin
                           · {fmt(u.btu)} BTU
                         </span>
                       </span>
-                      <span className="shrink-0 text-[15px] font-bold tabular-nums text-ink">{fmt(u.price)}</span>
+                      <span className="flex shrink-0 items-center gap-2">
+                        <span className="text-[15px] font-bold tabular-nums text-ink">{fmt(u.price)}</span>
+                        <a
+                          href={bookAirPackageUrl(u)}
+                          target="_blank"
+                          rel="noopener"
+                          data-cta="air-package-line"
+                          aria-label={`สั่ง ${u.brand} ${u.model} พร้อมติดตั้งทาง LINE`}
+                          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#06C755] text-white hover:brightness-95"
+                        >
+                          <IconLine className="h-4 w-4" />
+                        </a>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -78,16 +102,25 @@ export function MarketPrices({ image, shopLink = false }: { image?: { src: strin
           })}
         </div>
         <p className="mt-6 text-sm leading-7 text-ink-soft">
-          กดที่รหัสรุ่นเพื่อดูรูปและสเปกจากเว็บไซต์ทางการของแต่ละแบรนด์
-          ราคากลางรวมค่าติดตั้งมาตรฐานของร้านค้าปลีก ส่วนค่าติดตั้งของผมอยู่ในตารางค่าติดตั้งด้านบน
-          หากซื้อเครื่องมาเองจากร้านใดก็ตาม ผมรับติดตั้งในอัตราเดียวกัน
+          กดที่รหัสรุ่นเพื่อดูรูปและสเปกจากเว็บไซต์ทางการของแต่ละแบรนด์ หน้างานที่ต้องเดินท่อยาวกว่า 4 เมตร
+          ผมวัดระยะและแจ้งส่วนเกินให้ทราบก่อนเริ่มงาน รุ่นที่ไม่มีในตารางสอบถามทาง LINE ได้
+          หากซื้อเครื่องมาเองจากร้านใดก็ตาม ผมรับติดตั้ง {btu.installSmall} BTU จุดละ {p.install.small} บาท
+          และ {btu.installLarge} BTU จุดละ {p.install.large} บาท
         </p>
-        {shopLink && (
-          <Link href="/service/khai-air" className="btn-ghost mt-6" data-cta="market-to-khai-air">
-            ซื้อแอร์พร้อมติดตั้งกับผม ดูรุ่นและเงื่อนไข
-            <IconChevron className="h-4 w-4" />
-          </Link>
-        )}
+        <div className="mt-6 flex flex-wrap gap-3">
+          {pageLink && (
+            <Link href="/price/air-install" className="btn-ghost" data-cta="market-to-air-install">
+              ดูเงื่อนไขแอร์พร้อมติดตั้งทั้งหมด
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          )}
+          {shopLink && (
+            <Link href="/service/khai-air" className="btn-ghost" data-cta="market-to-khai-air">
+              ร้านแอร์ ใหม่และมือสอง
+              <IconChevron className="h-4 w-4" />
+            </Link>
+          )}
+        </div>
       </div>
     </section>
   );

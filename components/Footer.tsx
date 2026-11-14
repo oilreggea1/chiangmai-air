@@ -254,6 +254,11 @@ export default function Footer({ lang = "th" }: { lang?: "th" | "en" | "zh-CN" }
               </Link>
             </li>
             <li>
+              <Link href="/price/air-install" className="text-ink-soft hover:text-brand-700 hover:underline">
+                ราคาแอร์พร้อมติดตั้ง
+              </Link>
+            </li>
+            <li>
               <Link href="/price/washing-machine" className="text-ink-soft hover:text-brand-700 hover:underline">
                 ราคาล้างเครื่องซักผ้า
               </Link>

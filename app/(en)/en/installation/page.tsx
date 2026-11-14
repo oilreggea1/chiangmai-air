@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     q: "Can you supply the unit as well?",
-    a: "Yes. I sell new units from the main brands and checked second-hand units, and I fit them myself. Unit prices depend on the model and the promotion running that month, so I quote per model on LINE. Buying and installing from one place means there is one person responsible if anything goes wrong, and the installation warranty is 1 year.",
+    a: "Yes. I sell new units from the main brands and checked second-hand units, and I fit them myself. New inverter wall units have a fitted price per model on my price list, and I confirm the latest price on LINE before you order. Buying and installing from one place means there is one person responsible if anything goes wrong, and the installation warranty is 1 year.",
   },
   {
     q: "How long does an installation take?",

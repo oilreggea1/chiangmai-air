@@ -51,3 +51,11 @@ export const bookSundayUrlZh = lineBookUrl(
 export const bookPreSmokeMessage =
   "ขอจองคิวล้างแอร์ก่อนหมอกควัน\nวันที่สะดวก (ช่วง ธ.ค.–ม.ค.):\nจำนวนเครื่อง / ขนาด BTU:\nพื้นที่ / หมู่บ้าน:";
 export const bookPreSmokeUrl = lineBookUrl(bookPreSmokeMessage);
+
+/** สั่งแอร์พร้อมติดตั้งจากตารางราคา (14 พ.ย. 2569) ใส่รุ่นและราคาที่เห็นบนเว็บไว้ให้ ลูกค้าไม่ต้องพิมพ์รหัสรุ่นเอง */
+export function bookAirPackageUrl(u: { brand: string; model: string; btu: number; price: number }) {
+  const n = (x: number) => x.toLocaleString("en-US");
+  return lineBookUrl(
+    `สนใจแอร์พร้อมติดตั้ง\nรุ่น: ${u.brand} ${u.model} (${n(u.btu)} BTU)\nราคาบนเว็บ: ${n(u.price)} บาท\nพื้นที่ / หมู่บ้าน:\nวันที่สะดวกติดตั้ง:`,
+  );
+}

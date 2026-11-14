@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { site, heroPhotos, thumbOf, p, btu } from "@/lib/site";
+import { site, heroPhotos, thumbOf, p, btu, airPackageFrom } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, jsonLd } from "@/lib/schema";
 import { share } from "@/lib/seo";
 import {
@@ -80,8 +80,8 @@ const servicesEn = [
   {
     icon: IconInstall,
     name: "Buying a unit and trade-ins",
-    price: "quoted per model",
-    desc: "I sell both new and checked second-hand units, fitted. I supply and fit the unit myself, and the warranty covers both the unit and the installation. Unit prices depend on the model and the promotion running at the time, so I quote per model. Second-hand units carry a 1 month warranty on the unit itself. I also take your old unit in part-exchange, but I have to see it before I can put a price on it.",
+    price: `from ${airPackageFrom} THB fitted`,
+    desc: "I sell both new and checked second-hand units, fitted. I supply and fit the unit myself, and the warranty covers both the unit and the installation. New inverter wall units have a fitted price per model on my price list, and I confirm the latest price on LINE before you order. Second-hand units carry a 1 month warranty on the unit itself. I also take your old unit in part-exchange, but I have to see it before I can put a price on it.",
   },
   {
     icon: IconWasher,
