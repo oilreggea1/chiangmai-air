@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { areas, services, coverage, coverageTotal } from "@/lib/site";
+import { areas, services, coverage, coverageTotal, areaForTambon } from "@/lib/site";
 import { breadcrumbSchema, jsonLd } from "@/lib/schema";
 import { share, clipDesc } from "@/lib/seo";
 import { IconPin, IconChevron } from "@/components/Icons";
@@ -104,12 +104,8 @@ export default function AreaIndex() {
                     {c.tambons.map((t) => {
                       /* ชื่อตำบลกดไปหน้าของตำบลนั้นได้ (29 ก.ย. 2569) ใช้หน้าเฉพาะตำบลก่อน
                          ถ้าไม่มีจึงใช้หน้าที่รวมตำบลนี้ไว้ หรือหน้าอำเภอที่ชื่อเดียวกัน */
-                      const page =
-                        areas.find((x) => x.name === t) ??
-                        areas.find((x) => x.full.includes(`ต.${t} `) || x.full.includes(`ต.${t} /`)) ??
-                        areas.find((x) => x.full === `อ.${t}`) ??
-                        // ตำบลที่ยังไม่มีหน้าของตัวเอง (เช่น แม่ออน) ส่งไปหน้าอำเภอแทน
-                        areas.find((x) => x.full === c.amphoe);
+                      // ตำบลที่ยังไม่มีหน้าของตัวเอง (เช่น แม่ออน) ส่งไปหน้าอำเภอแทน
+                      const page = areaForTambon(t, c.amphoe);
                       const cls = "rounded-full border border-brand-100 bg-brand-50/60 px-3 py-1 text-sm font-medium text-brand-800";
                       return (
                         <li key={t}>

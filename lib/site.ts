@@ -1673,6 +1673,19 @@ export const coverage = [
 
 export const coverageTotal = coverage.reduce((n, c) => n + c.tambons.length, 0);
 
+/**
+ * หน้า /area ของตำบลหนึ่ง: ใช้หน้าเฉพาะตำบลก่อน ถ้าไม่มีจึงใช้หน้าที่รวมตำบลนี้ไว้
+ * หรือหน้าอำเภอชื่อเดียวกัน แล้วจึงตกไปหน้าอำเภอ (ใช้ทั้งหน้า /area และหน้าล้างแอร์)
+ */
+export function areaForTambon(tambon: string, amphoe: string) {
+  return (
+    areas.find((x) => x.name === tambon) ??
+    areas.find((x) => x.full.includes(`ต.${tambon} `) || x.full.includes(`ต.${tambon} /`)) ??
+    areas.find((x) => x.full === `อ.${tambon}`) ??
+    areas.find((x) => x.full === amphoe)
+  );
+}
+
 export const pricing = [
   {
     group: "ล้างแอร์ติดผนัง",

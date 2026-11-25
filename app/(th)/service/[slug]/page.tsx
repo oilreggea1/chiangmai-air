@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu, coverage } from "@/lib/site";
+import { site, services, areas, heroPhotos, servicePhotos, caseStudies, p, btu, coverage, coverageTotal, areaForTambon } from "@/lib/site";
 import { articles } from "@/content/articles";
 import { repairGuides } from "@/lib/repair-guides";
 import { serviceSchema, faqSchema, breadcrumbSchema, howToSchema, videoSchema, jsonLd } from "@/lib/schema";
@@ -291,17 +291,50 @@ export default async function ServicePage({ params }: Props) {
       {s.slug === "lang-air" && (
         <section className="section bg-brand-50/70">
           <div className="wrap max-w-4xl">
-            <h2 className="h2">รับล้างแอร์ถึงบ้านโซนไหนบ้างในเชียงใหม่</h2>
+            {/* ส่วน "ล้างแอร์ใกล้บ้านคุณ" (25 พ.ย. 2569)
+                GSC: คำกลุ่ม "ล้างแอร์ใกล้ฉัน" อันดับตก 4.6 → 9.5 ตั้งแต่ 6 พ.ย. และทั้งกลุ่มไปลงหน้าแรกหน้าเดียว
+                หน้านี้ไม่ติดคำกลุ่มนี้เลย จึงสรุป ร้าน·พื้นที่·ราคา·เวลา·ติดต่อ และลิงก์ทุกตำบลไว้ในหน้าล้างแอร์โดยตรง
+                ทุกค่าดึงจาก p / coverage / site ห้ามพิมพ์ตัวเลขหรือชื่ออำเภอเอง และห้ามแสดงระยะทาง */}
+            <h2 className="h2">ล้างแอร์ใกล้บ้านคุณในเชียงใหม่ ช่างเข้าล้างถึงบ้าน</h2>
             <p className="lead mt-4">
-              ผมรับงานถึงบ้านในอำเภอเมืองเชียงใหม่ สันทราย สันกำแพง แม่ออน สารภี ดอยสะเก็ด
-              และหางดงฝั่งเหนือ เลือกพื้นที่ด้านล่างเพื่อดูรายละเอียดและโซนใกล้เคียง
-              หรือส่งตำแหน่งทาง LINE เพื่อให้ผมตรวจสอบคิวและเวลาเดินทางได้ทันที
+              หากคุณกำลังหาร้านล้างแอร์ใกล้บ้าน ตรวจสอบชื่อตำบลของคุณในรายการด้านล่างได้เลย
+              ทุกตำบลในรายการคิดราคาเดียวกันและไม่มีค่าเดินทาง ส่งตำแหน่งมาทาง LINE แล้วผมแจ้งวันและเวลาที่ว่างให้ทราบ
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              {areas.slice(0, 8).map((area) => (
-                <Link key={area.slug} href={`/area/${area.slug}`} className="btn-ghost">
-                  ช่างแอร์{area.name}
-                </Link>
+            <dl className="card mt-7 divide-y divide-slate-100 text-[15px]">
+              {([
+                ["ร้าน", `${site.name} (${site.legalName}) ช่างเข้าล้างถึงบ้าน`],
+                ["พื้นที่", `${coverage.length} อำเภอ ${coverageTotal} ตำบล: ${[...coverage].sort((a, b) => Number("all" in b) - Number("all" in a)).map((c) => c.amphoe).join(" ")} ไม่คิดค่าเดินทาง`],
+                ["ราคา", `ล้างมาตรฐาน ${p.wash.std} บาท · 3 เครื่องขึ้นไป เครื่องละ ${p.wash.stdBulk} บาท · ถอดล้างทุกชิ้น ${p.wash.premium} บาท`],
+                ["เวลาทำการ", `${site.daysLabel} ${site.hours} · ${site.sundayShort}`],
+                ["ติดต่อ", `โทร ${site.phone} · LINE ${site.lineId}`],
+              ] as [string, string][]).map(([k, v]) => (
+                <div key={k} className="grid gap-1 px-4 py-3 sm:grid-cols-[7.5rem_1fr] sm:gap-4">
+                  <dt className="font-bold text-ink">{k}</dt>
+                  <dd className="leading-7 text-ink-soft">{v}</dd>
+                </div>
+              ))}
+            </dl>
+            <h3 className="mt-10 text-lg font-bold">ตำบลที่ผมรับล้างแอร์ถึงบ้าน</h3>
+            <div className="mt-4 space-y-5">
+              {[...coverage].sort((a, b) => Number("all" in b) - Number("all" in a)).map((c) => (
+                <div key={c.amphoe}>
+                  <p className="text-sm font-bold text-ink">ล้างแอร์{c.amphoe.replace("อ.", "")}</p>
+                  <ul className="mt-2 flex flex-wrap gap-2">
+                    {c.tambons.map((t) => {
+                      const page = areaForTambon(t, c.amphoe);
+                      const cls = "inline-block rounded-full border border-brand-100 bg-white px-3 py-1 text-sm font-medium text-brand-800";
+                      return (
+                        <li key={t}>
+                          {page ? (
+                            <Link href={`/area/${page.slug}`} className={`${cls} hover:border-brand-300 hover:bg-brand-100`}>{t}</Link>
+                          ) : (
+                            <span className={cls}>{t}</span>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               ))}
             </div>
             <a
